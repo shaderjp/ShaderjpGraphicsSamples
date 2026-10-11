@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="CheckSamplePrerequisites" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(GraphicsApi)'=='Direct3D12' and !Exists('$(D3D12Package)build\native\include\d3d12.h')" Text="Agility SDK 1.619.6 is missing. Restore NuGet packages in Visual Studio or run msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true." />
+    <Error Condition="'$(GraphicsApi)'=='Direct3D12' and !Exists('$(DxcToolPath)')" Text="DXC 1.9.2609.5 is missing. Restore the Microsoft.Direct3D.DXC NuGet package." />
+    <Error Condition="'$(GraphicsApi)'=='Vulkan' and (!Exists('$(VULKAN_SDK)\Include\vulkan\vulkan.h') or !Exists('$(VULKAN_SDK)\Lib\vulkan-1.lib'))" Text="Install the Windows Vulkan SDK and restart Visual Studio so VULKAN_SDK points to its installation directory." />
+    <Error Condition="'$(GraphicsApi)'=='Vulkan' and !Exists('$(DxcToolPath)')" Text="Install Vulkan SDK with its DirectX Shader Compiler (Bin\dxc.exe)." />
+    <MakeDir Directories="$(OutDir)Shaders" />
+  </Target>
+  <Target Name="CopySampleAssets" AfterTargets="Build">
+    <Copy SourceFiles="%(None.FullPath)" DestinationFiles="$(OutDir)%(None.AssetTargetPath)" SkipUnchangedFiles="true" Condition="'%(None.AssetTargetPath)'!=''" />
+  </Target>
+  <Target Name="CopyAgilityRuntime" AfterTargets="Build" Condition="'$(GraphicsApi)'=='Direct3D12'">
+    <MakeDir Directories="$(OutDir)D3D12" />
+    <Copy SourceFiles="$(D3D12Package)build\native\bin\x64\D3D12Core.dll" DestinationFolder="$(OutDir)D3D12" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(D3D12Package)build\native\bin\x64\D3D12SDKLayers.dll" DestinationFolder="$(OutDir)D3D12" SkipUnchangedFiles="true" Condition="'$(Configuration)'=='Debug'" />
+  </Target>
+  <Target Name="ValidateSpirv" AfterTargets="Build" Condition="'$(GraphicsApi)'=='Vulkan' and '@(CustomBuild)'!=''">
+    <Error Condition="!Exists('$(VULKAN_SDK)\Bin\spirv-val.exe')" Text="Install Vulkan SDK SPIR-V Tools (Bin\spirv-val.exe)." />
+    <Exec Command="&quot;$(VULKAN_SDK)\Bin\spirv-val.exe&quot; --target-env vulkan1.3 &quot;$(OutDir)Shaders\%(CustomBuild.Filename).spv&quot;" />
+  </Target>
+  <Target Name="CleanSampleDeployment" AfterTargets="Clean">
+    <RemoveDir Directories="$(OutDir)Shaders;$(OutDir)Assets;$(OutDir)D3D12" />
+  </Target>
+</Project>

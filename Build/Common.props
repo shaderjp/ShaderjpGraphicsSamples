@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <RepositoryRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\'))</RepositoryRoot>
+    <OutDir>$(RepositoryRoot)bin\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(RepositoryRoot)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <D3D12Package>$(RepositoryRoot)packages\Microsoft.Direct3D.D3D12.1.619.6\</D3D12Package>
+    <DxcPackage>$(RepositoryRoot)packages\Microsoft.Direct3D.DXC.1.9.2609.5\</DxcPackage>
+    <DxcToolPath Condition="'$(GraphicsApi)'=='Direct3D12'">$(DxcPackage)build\native\bin\x64\dxc.exe</DxcToolPath>
+    <DxcToolPath Condition="'$(GraphicsApi)'=='Vulkan'">$(VULKAN_SDK)\Bin\dxc.exe</DxcToolPath>
+    <ShaderExtension Condition="'$(GraphicsApi)'=='Direct3D12'">cso</ShaderExtension>
+    <ShaderExtension Condition="'$(GraphicsApi)'=='Vulkan'">spv</ShaderExtension>
+    <ShaderApiFlags Condition="'$(GraphicsApi)'=='Vulkan'">-spirv -fspv-target-env=vulkan1.3</ShaderApiFlags>
+    <ShaderBuildFlags Condition="'$(Configuration)'=='Debug'">-Zi -Od</ShaderBuildFlags>
+    <ShaderBuildFlags Condition="'$(Configuration)'=='Debug' and '$(GraphicsApi)'=='Direct3D12'">-Zi -Qembed_debug -Od</ShaderBuildFlags>
+    <ShaderBuildFlags Condition="'$(Configuration)'=='Release'">-O3</ShaderBuildFlags>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>user32.lib;shell32.lib;ole32.lib;windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuild>
+      <Outputs>$(OutDir)Shaders\%(Filename).$(ShaderExtension)</Outputs>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Common.hlsli;$(RepositoryRoot)Build\Common.props;$(RepositoryRoot)Build\Samples.targets;$(DxcToolPath);%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile><Optimization>Disabled</Optimization><RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary><PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile><Optimization>MaxSpeed</Optimization><RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary><PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(GraphicsApi)'=='Direct3D12'">
+    <ClCompile><AdditionalIncludeDirectories>$(D3D12Package)build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <Link><AdditionalDependencies>d3d12.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(GraphicsApi)'=='Vulkan'">
+    <ClCompile><AdditionalIncludeDirectories>$(VULKAN_SDK)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <Link><AdditionalLibraryDirectories>$(VULKAN_SDK)\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories><AdditionalDependencies>vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+</Project>

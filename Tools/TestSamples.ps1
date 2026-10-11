@@ -1,0 +1,32 @@
+param(
+    [ValidateSet('Debug','Release')][string]$Configuration = 'Debug',
+    [switch]$CaptureDocs
+)
+$ErrorActionPreference = 'Stop'
+$repositoryRoot = Split-Path $PSScriptRoot -Parent
+$resultsDirectory = Join-Path $repositoryRoot ('.cache\validation\' + $Configuration)
+New-Item -ItemType Directory -Path $resultsDirectory -Force | Out-Null
+$failures = @()
+foreach ($api in @('Direct3D12','Vulkan')) {
+    foreach ($topic in @('01_Initialization','02_Triangle','03_Texture','04_Box','05_Model')) {
+        $name = $api + '_' + $topic
+        $executable = Join-Path $repositoryRoot ("bin\x64\$Configuration\$name\$name.exe")
+        $log = Join-Path $resultsDirectory ($name + '.log')
+        $image = Join-Path $resultsDirectory ($name + '.png')
+        if ($CaptureDocs) { $image = Join-Path $repositoryRoot ("Docs\$api\Images\$topic.png") }
+        $arguments = @('--frames','48','--test-window','--log',('"' + $log + '"'),'--screenshot',('"' + $image + '"'))
+        $previousSyncSetting = $env:VK_LAYER_VALIDATE_SYNC
+        try {
+            if ($api -eq 'Vulkan' -and $Configuration -eq 'Debug') { $env:VK_LAYER_VALIDATE_SYNC = '1' }
+            $process = Start-Process -FilePath $executable -ArgumentList $arguments -WorkingDirectory $resultsDirectory -PassThru -WindowStyle Hidden
+        } finally { $env:VK_LAYER_VALIDATE_SYNC = $previousSyncSetting }
+        if (-not $process.WaitForExit(30000)) { $process.Kill(); $failures += "$name timed out"; continue }
+        if ($process.ExitCode -ne 0) { $failures += "$name exited with $($process.ExitCode): $(Get-Content -LiteralPath $log -Raw)"; continue }
+        if (-not (Test-Path -LiteralPath $image)) { $failures += "$name did not capture its frame"; continue }
+        $text = Get-Content -LiteralPath $log -Raw
+        if ($Configuration -eq 'Debug' -and $text -notmatch '(Debug Layer|Validation Layer) enabled') { $failures += "$name did not enable its validation layer"; continue }
+        if ($text -notmatch 'Validation errors: 0' -or $text -notmatch 'Minimize/restore test' -or $text -notmatch 'Resized: 640 x 480' -or $text -notmatch 'Resized: 800 x 600') { $failures += "$name did not complete all lifecycle checks"; continue }
+        Write-Output "$name passed (render, resize, minimize/restore, capture, shutdown)"
+    }
+}
+if ($failures.Count) { throw ($failures -join "`n") }

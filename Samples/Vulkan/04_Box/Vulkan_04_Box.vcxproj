@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8CB594F9-6B50-58C1-BB99-295FE2ADAC3A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>Vulkan_04_Box</ProjectName>
+    <RootNamespace>Vulkan_04_Box</RootNamespace>
+    <GraphicsApi>Vulkan</GraphicsApi>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\..\Build\Common.props" />
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sample.cpp" />
+    <ClCompile Include="..\..\..\Common\Application.cpp" />
+    <ClCompile Include="..\..\..\Common\Image.cpp" />
+    <ClCompile Include="..\..\..\Common\Mesh.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sample.h" />
+    <ClInclude Include="..\..\..\Common\Application.h" />
+    <ClInclude Include="..\..\..\Common\Image.h" />
+    <ClInclude Include="..\..\..\Common\Mesh.h" />
+    <ClInclude Include="..\..\..\Shaders\Common.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\Shaders\04_Box\Vertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <Message>DXC Vertex: vs_6_6 / Vulkan</Message>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\02_Triangle\Pixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <Message>DXC Pixel: ps_6_6 / Vulkan</Message>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Build\Common.props" />
+    <None Include="..\..\..\Build\Samples.targets" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\..\Build\Samples.targets" />
+</Project>

@@ -40,7 +40,8 @@
 
 # Build directories
 build/
-Build/
+# Build contains tracked MSBuild settings, not build outputs.
+!Build/
 build-*/
 
 # CMake generated files
@@ -66,3 +67,16 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# Visual Studio / generated files
+.vs/
+*.vcxproj.user
+/bin/
+/obj/
+/packages/
+*.cso
+*.spv
+
+# Wavefront model assets are source data.
+!Assets/**/*.obj
+!Tests/Fixtures/**/*.obj

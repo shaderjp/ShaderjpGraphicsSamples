@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。5つのテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。8つのテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
 
 ## 必要な環境
 
@@ -46,22 +46,28 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | NDCテクスチャ・WIC読込 | [03 Texture](Docs/Direct3D12/03_Texture.md) | [03 Texture](Docs/Vulkan/03_Texture.md) |
 | BOX・Index／Constant Buffer・深度 | [04 Box](Docs/Direct3D12/04_Box.md) | [04 Box](Docs/Vulkan/04_Box.md) |
 | OBJ・指定テクスチャ | [05 Model](Docs/Direct3D12/05_Model.md) | [05 Model](Docs/Vulkan/05_Model.md) |
+| glTF・Albedo・材質参照 | [06 Gltf](Docs/Direct3D12/06_Gltf.md) | [06 Gltf](Docs/Vulkan/06_Gltf.md) |
+| Lambert／Blinn-Phongライティング | [07 Lighting](Docs/Direct3D12/07_Lighting.md) | [07 Lighting](Docs/Vulkan/07_Lighting.md) |
+| Metallic-Roughness PBR・Normal／ORM | [08 PBR](Docs/Direct3D12/08_PBR.md) | [08 PBR](Docs/Vulkan/08_PBR.md) |
 
 各プロジェクトをVSのスタートアッププロジェクトに設定して実行できます。ESCまたは閉じるボタンで終了します。
 
 ![D3D12モデルサンプル](Docs/Direct3D12/Images/05_Model.png)
+
+[Shader BallのBlenderデータとテクスチャ](Docs/Assets/ShaderBall.md)を用意し、06_GltfでAlbedo版を表示します。07は同じAlbedo版へLambert／Blinn-Phong、08はPBR版へNormal・ORM・Emissiveを加えます。[ライティングからPBRへの共通解説](Docs/LightingAndPBR.md)で段階を説明しています。[glTFローダーの共通解説](Docs/GltfLoading.md)ではJSON解析にMITライセンスのnlohmann/jsonを使う理由と対応範囲を説明しています。
 
 ## 共通化と構成
 
 | フォルダ | 内容 |
 |---|---|
 | `Samples/Direct3D12`, `Samples/Vulkan` | テーマ別の独立したVCプロジェクト。API初期化・描画・同期・解放を明示 |
-| `Common` | Win32ライフサイクル、ファイル読込、WIC、OBJ、CPU側のデータと行列計算 |
+| `Common` | Win32ライフサイクル、ファイル読込、WIC、OBJ／glTF、CPU側のデータと行列計算 |
 | `Shaders` | 両APIで共有するHLSL。SM6.6／HLSL 2021、API固有の属性だけマクロ化 |
-| `Assets` | 差し替え可能な自作OBJ／PNG |
+| `Assets` | 差し替え可能な自作OBJ／PNG、glTF／PBRアセット |
+| `SourceArt` | 編集用Blender正本、生成・ベイク・書出しスクリプト |
 | `Build` | 共通MSBuild設定とシェーダ・配布ファイルの処理 |
 | `Docs` | 日本語解説、実際の描画結果、検証記録 |
-| `ThirdParty` | 今後のSubmodule依存関係の運用方針 |
+| `ThirdParty` | 固定Submodule依存関係とライセンス |
 | `Tools`, `Tests` | フィルタ検証、GPUライフサイクル検証、ローダーテスト |
 
 行列・リソース番号・上下方向・色空間については[共通HLSLの規約](Docs/SharedShaders.md)を参照してください。D3D12とVulkanのDXCは別の配布元を使うため、[検証記録](Docs/Verification.md)に各バージョンを残しています。
@@ -78,7 +84,13 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | オプション | 動作 |
 |---|---|
 | `--model <path>` | 05_ModelのOBJを差し替え。省略時は同梱Cube.obj |
+| `--model <path>`（06_Gltf） | glTFを差し替え。省略時は同梱ShaderBall_Albedo.gltf。BIN／PNGのURIはglTF基準 |
 | `--texture <path>` | 03_Texture／05_Modelの画像を差し替え。省略時は同梱UV.png |
+| `--texture <path>`（06〜08） | glTFの参照Albedoを確認用に置換。省略時は材質のbaseColorTextureを使用 |
+| `--model <path>`（07／08） | 07はAlbedo版、08は4画像・接線・共通Sampler・ORMのPBR版glTF |
+| `--shading <mode>`（07） | lambert / blinn-phong / albedo。キー1〜3でも切替 |
+| `--shading <mode>`（08） | pbr / albedo / normal / metallic / roughness / ao / emissive / pbr-flat。キー1〜8でも切替 |
+| `--rotate-light`（07／08） | 方向光の回転を開始。Spaceで開始／停止 |
 | `--frames <N>` | 正の整数N回の通常描画で終了 |
 | `--test-window` | 12フレームで640×480へ変更、24フレームで最小化・800×600へ復帰 |
 | `--screenshot <path>` | 指定フレーム数の終了時、または通常実行の8フレーム後にGPU読戻しPNGを保存 |
@@ -96,9 +108,12 @@ Vulkanのスクリーンショットは、取得済みの画像をPresent前に�
 .\Tools\TestSamples.ps1
 .\Tools\TestSamples.ps1 -Configuration Release
 .\Tools\TestFailureCases.ps1
+.\Tools\TestLighting.ps1
 ```
 
-`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は全10本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。
+`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は全16本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。
+
+`TestLighting`は全表示モードと、既知の色・法線を持つ平面のGPU画素を照合します。追加比較画像は`-CaptureDocs`で保存できます。
 
 Docsの実画像を更新する場合は`Tools/TestSamples.ps1 -CaptureDocs`を使い、生成したPNGを目視確認してください。初回の結果は[検証記録](Docs/Verification.md)を参照できます。
 

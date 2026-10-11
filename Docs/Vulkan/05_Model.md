@@ -61,3 +61,5 @@ BlenderではWavefront OBJで位置・UV・法線を書き出してください�
 前のテーマ: [04 頂点カラーBOXと3D座標変換](04_Box.md)
 
 同じテーマの別API: [Direct3D12](../Direct3D12/05_Model.md)
+
+次のテーマ: [06 glTFモデルのAlbedo表示](06_Gltf.md)

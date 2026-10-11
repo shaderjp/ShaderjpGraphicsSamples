@@ -1,4 +1,4 @@
-# 初回サンプルの検証記録
+# グラフィックスサンプルの検証記録
 
 検証日: 2026-10-11（日本時間）。結果は以下の実機・SDK・コンパイラの組合せに対するものです。
 
@@ -68,3 +68,57 @@ Docsの各API配下に800×600の実画像を5枚ずつ保存しています。�
 - 画像・バイナリがない場合のファイル名付きエラー。
 
 GPU結果の再確認は`Tools/TestSamples.ps1`、Docs画像の更新は`-CaptureDocs`、欠落ファイルの確認は`Tools/TestFailureCases.ps1`で実行できます。試験用ログ・バイナリは`.cache`に置き、Git管理から除外しています。
+
+## サンプル06: glTF Albedoの追加検証
+
+検証日: 2026-10-11。nlohmann/json v3.12.0をSubmoduleで導入し、コミット`55f93686c01528224f448c19128836e7df245f72`のシングルヘッダーを使用しました。LICENSE.MITを保持し、両APIの出力フォルダへコピーできることも確認しています。
+
+環境は上表と同じVS 2026 Community 18.10.0、v145、Windows SDK 10.0.26100.0、RTX 4070／NVIDIA 610.88です。今回確認した`cl.exe`は19.51.36257.0（ツールセット14.51.36257.0）。D3D12用DXCは1.9.2609.5／01b62ad47、Vulkan SDKは1.4.341.1、SDK用DXCは1.9.0.5180／e35541826です。
+
+- MSBuildでNuGet復元、サンプル06を加えた全12プロジェクトのx64 Debug／Releaseビルドに成功。コンパイラの警告・エラー0件。
+- `Tools/ValidateProjects.ps1`で全12組のプロジェクト／フィルタを検証。新規2プロジェクトはJSONヘッダー、LICENSE、glTF／BIN／PNG、Scene.hlsliまで分類済み。
+- サンプル06のDXILのVertex／Pixelを`dxv.exe`で検証し成功。SPIR-VのVertex／Pixelも通常ビルド内の`spirv-val --target-env vulkan1.3`で成功。
+- `Scene.hlsli`の更新時刻だけを変えて、両APIのVertex／Pixel計4出力が再コンパイルされることを確認し、更新時刻を復元。`VULKAN_SDK`を外した環境でDirect3D12_06_Gltf単体のビルドも成功。
+- `Tools/TestLoaders.ps1`で既存OBJ／WIC／バイナリ試験に加え、同梱glTF Albedo／PBRの頂点・インデックスを検証。glTFのオフセット・interleaved stride・16/32-bit Index・座標と頂点順・UV非反転・材質の参照とfactor・percent escape／UTF-8 URIを確認。
+- 不正Accessorの範囲・stride・型・件数、範囲外Index、非有限頂点、UV欠落、外部ファイル欠落、不正URI、ノード変換・拡張などの未対応機能、JSON構文エラーを拒否し、ファイル名／JSON Pointer（構文エラーはbyte位置）を確認。
+- `Tools/TestFailureCases.ps1`で05／06の両APIについて、画像・モデル・ピクセルシェーダの欠落を確認。サンプル06はglTF読込前の失敗も正常に終了し、終了コード1・対象ファイル名・終了処理の検証エラー0件を確認。
+- 全12サンプルでDebug／Releaseの通常描画48回、リサイズ、最小化／復帰、GPU読戻し、終了に成功。Debugは両APIの検証Layer有効、Vulkanは同期検証も有効、検証エラー0件。
+
+[Direct3D12画像](Direct3D12/Images/06_Gltf.png)と[Vulkan画像](Vulkan/Images/06_Gltf.png)は実GPUの800×600画像です。Albedoだけが表示され、白い矢印が上向き、球と台座の前後関係がDepth Testで保たれることを目視確認しました。色・画像はsRGB、計算は線形、factorは既定の白です。両画像の比較は最大チャンネル差1／差のある画素1個で、この環境ではごく小さな補間丸めの差でした。
+
+PBR照明、Normal／ORM／EmissiveのGPU使用、複数モデル・材質や汎用glTF対応はこの回の検証範囲に含めません。Blenderの参考画像とアセット検証は[アセット制作の検証記録](Assets/Verification.md)に分けています。
+
+
+## サンプル07・08：ライティングからPBRへの追加検証
+
+検証日：2026-10-11。07_Lightingと08_PBRを各APIへ追加し、ソリューションは8テーマ・16プロジェクトになりました。検証環境は上表と同じVS 2026 Community 18.10.0、v145、Windows SDK 10.0.26100.0、RTX 4070／NVIDIA 610.88です。cl.exeのFileVersionは19.51.36257.0、ProductVersionは14.51.36257.0。Agility 1.619.6、D3D12 DXC 1.9.2609.5／01b62ad47、Vulkan SDK 1.4.341.1、付属DXC 1.9.0.5180／e35541826を使用しています。
+
+- NuGet復元、全16プロジェクトのx64 Debug／Releaseビルドに成功。最終ビルドはコンパイラ警告・エラー0件。
+- `Tools/ValidateProjects.ps1`で全16組のXML、項目対応、フィルタ階層、GUID、ファイル実在を検証。新規4プロジェクトは共通Lighting.h／Lighting.hlsli、08の追加画像も分類済み。
+- 07／08の各Vertex／PixelのDXILとSPIR-VをDebug／Release両方で検証。dxvの8出力、spirv-valの8出力が成功。
+- `Lighting.hlsli`の更新時刻を変更し、4プロジェクト×2ステージのDebug出力計8本が再コンパイルされたことを確認後、時刻を復元。VULKAN_SDKを外した環境でD3D12_08_PBRのRelease単体ビルドも成功。
+- SPIR-Vを逆アセンブルし、Sceneのメンバーoffsetが0／64／128／192／208／224／240／256／272／288／304であることを確認。CPUの320-byte配置と一致。
+- `Tools/TestLoaders.ps1`で既存の試験と、PBR画像参照・既定値・係数・Sampler共通化・ORM同一参照・UV0・接線の有無／三角形内の符号・画像欠落の成功／失敗ケースが通過。06／07の読込で追加PBR画像パスが未使用であることも確認。
+- `Tools/TestSamples.ps1`をDebug／Releaseで全16本に実行。各48回の通常描画、リサイズ、最小化／復帰、GPU読戻し、終了が成功。Debugは両APIの検証LayerとVulkan同期検証を有効化し、検証エラー0件。
+- `Tools/TestLighting.ps1`をDebug／Releaseで実行。各APIの07の3モードと08の8モードを起動・取得。一定色のPNGと既知の法線・接線を持つ平面で、Albedo／Metallic／Roughness／AO／Emissive／World Normalと、07のAlbedo／LambertをCPUで求めた期待画素に照合。sRGB・ORMチャンネル・材質係数・Normal Scale・接線基底・線形照明・Reinhardを確認し、許容差は8bit RGB各2以内。
+- `Tools/TestFailureCases.ps1 -Topics 07_Lighting,08_PBR`で両APIの画像・glTF・Pixel Shader欠落時のファイル名、終了コード1、終了処理の検証エラー0件を確認。
+
+Docs画像はTestSamples／TestLightingのCaptureDocsで取得した800×600の実GPU画像です。Lambertの曲面の明暗、Blinn-Phongの白いハイライト、08の金属色のハイライト・粗さ領域・Normal Mapの表面模様・赤いEmissive、Normal Mapを外した比較、材質確認表示を目視確認しました。光は固定し、比較時のモデル・カメラ条件を揃えています。
+
+各APIで07／08のAlbedo確認表示と06_GltfのPNGをRGBAの画素で比較し、完全一致しました。両API間の比較は次の通りです。PNGの圧縮データではなく、復号したRGBAを比較しています。
+
+| 表示 | 最大チャンネル差（8bit） | 差のある画素数 |
+|---|---:|---:|
+| 07 Blinn-Phong（既定） | 1 | 6 |
+| 07 Lambert | 1 | 5 |
+| 07 Albedo | 1 | 1 |
+| 08 PBR（既定） | 1 | 5 |
+| 08 World Normal | 1 | 4 |
+| 08 Metallic | 1 | 1 |
+| 08 Roughness | 0 | 0 |
+| 08 AO | 1 | 4 |
+| 08 Emissive | 0 | 0 |
+| 08 PBR without Normal Map | 1 | 4 |
+| 08 Albedo | 1 | 1 |
+
+この環境では差はごく少数の補間丸めでした。異なるGPU／ドライバでの完全一致を保証する比較ではありません。方向光1本、1 mip、単一材質・共通Sampler・ORM画像を対象とし、IBL、Shadow Map、複数光源、Deferred Renderingはこの回には含めていません。常時回転する光は比較キャプチャでは無効です。

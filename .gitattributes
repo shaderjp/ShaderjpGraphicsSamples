@@ -1,0 +1,8 @@
+# Preserve exported bytes and manifest hashes on Windows checkouts too.
+/Assets/Models/ShaderBall/*.gltf text eol=lf
+/Assets/Models/ShaderBall/Manifest.json text eol=lf
+/Assets/Models/ShaderBall/*.bin -text
+/Assets/Models/ShaderBall/Textures/*.png -text
+/SourceArt/Blender/ShaderBall/*.blend -text
+/SourceArt/Blender/ShaderBall/*.py text eol=lf
+/Docs/Assets/Images/*.png -text

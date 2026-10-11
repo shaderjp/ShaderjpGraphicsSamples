@@ -80,3 +80,9 @@ Testing/
 # Wavefront model assets are source data.
 !Assets/**/*.obj
 !Tests/Fixtures/**/*.obj
+
+# Blender authoring backups and intermediate bake images (packed in the source).
+*.blend1
+*.blend2
+SourceArt/**/.generated/
+SourceArt/**/__pycache__/

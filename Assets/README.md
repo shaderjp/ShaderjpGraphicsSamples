@@ -7,3 +7,7 @@ PNGは左上が赤、右上が緑、左下が青、右下が黄です。ラベ�
 OBJは面ごとのUVと法線を持つ一辺2のBOXです。四角形をローダーで三角形化し、位置・UV・法線が異なる組ごとに頂点を分割します。OBJのV座標は読み込み時に`1-v`へ変換してPNGの上から下へ進む行順に合わせます。
 
 Blender製アセットへの差し替えは[モデル読込の説明](../Docs/Direct3D12/05_Model.md)を参照してください。
+
+## 後続glTF／PBR用アセット
+
+[`Models/ShaderBall`](Models/ShaderBall/README.md)に、Shader Ball＋台座とAlbedo／PBR用テクスチャを用意しています。1モデル・1メッシュ・1マテリアルの自作MITデータです。[制作・読込仕様](../Docs/Assets/ShaderBall.md)と[Blender元データ](../SourceArt/Blender/ShaderBall/README.md)を参照してください。既存の05_ModelはOBJ専用で、[サンプル06のglTFローダー](../Docs/GltfLoading.md)がこのデータを読みます。

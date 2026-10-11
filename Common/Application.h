@@ -18,6 +18,8 @@ struct Options
     std::filesystem::path model, texture, screenshot, log;
     uint32_t frames = 0;
     bool testWindow = false;
+    std::wstring shading; // Sample 07/08 choose their supported display modes.
+    bool rotateLight = false;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

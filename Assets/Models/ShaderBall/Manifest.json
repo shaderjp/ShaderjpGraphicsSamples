@@ -1,0 +1,56 @@
+{
+  "asset": "ShaderBall",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 masafumi",
+  "blender": "5.2.1 LTS",
+  "generator": "Shader.jp Shader Ball 1.0",
+  "source": "SourceArt/Blender/ShaderBall/ShaderBall.blend",
+  "triangles": 8640,
+  "uvSets": 1,
+  "files": {
+    "ShaderBall_Albedo.bin": {
+      "bytes": 202112,
+      "sha256": "c28518be9c8874a8634997e0f4541930ef45fe87b6787064af146820ba3ec7ea"
+    },
+    "ShaderBall_Albedo.gltf": {
+      "bytes": 2327,
+      "sha256": "982a70ddf21dd7234f1000c0bc8d6a23cca83fa01233ee875d1fd4bffba30b0b"
+    },
+    "ShaderBall_PBR.bin": {
+      "bytes": 277248,
+      "sha256": "869341345fd6052d917429b25829e106dcd477ee3bf1016d7cfd093547a2139e"
+    },
+    "ShaderBall_PBR.gltf": {
+      "bytes": 3261,
+      "sha256": "f5d2d64552411d98235cbd3413d1306ec4cd6af09c3e54d33b274612acb7fafc"
+    },
+    "Textures/Albedo.png": {
+      "bytes": 10506,
+      "sha256": "61c7b42f0689bfd086f993522317a07e13a1b01d3e44a7dec6394e014384b284"
+    },
+    "Textures/AO.png": {
+      "bytes": 243845,
+      "sha256": "1a25bb0e669a5b62afa59440f780c998f2487f1d1ccc630478d56360d897611e"
+    },
+    "Textures/Emissive.png": {
+      "bytes": 5731,
+      "sha256": "7bed497392ce624ccb9a430d4768ab82f7aa2211e70c009e3b8b41fe2a8618dc"
+    },
+    "Textures/Metallic.png": {
+      "bytes": 10696,
+      "sha256": "da62355ef7bccccfeacac4e5cf5f3b56a2b39afc0d1517c9877ef1520a0385cb"
+    },
+    "Textures/Normal.png": {
+      "bytes": 231083,
+      "sha256": "30a9c84d56c2115843ff6bc3094a424a349cc181af481762dd5df27ff61ea73c"
+    },
+    "Textures/ORM.png": {
+      "bytes": 263522,
+      "sha256": "3de53b6ad24147c5b5aa29fb66e83c74ebd4eceda2d2c2eb058ab0c64dbad745"
+    },
+    "Textures/Roughness.png": {
+      "bytes": 10813,
+      "sha256": "bcd645d2d80431f6cd7eb7cb7d25435c63752bb814cc0f12daf0c645ae0906e4"
+    }
+  }
+}

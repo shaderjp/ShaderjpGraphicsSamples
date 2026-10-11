@@ -76,6 +76,11 @@ Options ParseOptions()
                 options.testWindow = true;
                 continue;
             }
+            if (argument == L"--rotate-light")
+            {
+                options.rotateLight = true;
+                continue;
+            }
             if (i + 1 >= count)
                 throw std::runtime_error("Missing command-line option value");
             std::wstring value = arguments[++i];
@@ -96,6 +101,8 @@ Options ParseOptions()
                     throw std::runtime_error("--frames must be a positive 32-bit integer");
                 options.frames = static_cast<uint32_t>(frames);
             }
+            else if (argument == L"--shading")
+                options.shading = value;
             else
                 throw std::runtime_error("Unknown command-line option");
         }

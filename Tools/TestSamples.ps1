@@ -1,6 +1,8 @@
 param(
     [ValidateSet('Debug','Release')][string]$Configuration = 'Debug',
-    [switch]$CaptureDocs
+    [switch]$CaptureDocs,
+    [ValidateSet('01_Initialization','02_Triangle','03_Texture','04_Box','05_Model','06_Gltf','07_Lighting','08_PBR')]
+    [string[]]$Topics = @('01_Initialization','02_Triangle','03_Texture','04_Box','05_Model','06_Gltf','07_Lighting','08_PBR')
 )
 $ErrorActionPreference = 'Stop'
 $repositoryRoot = Split-Path $PSScriptRoot -Parent
@@ -8,7 +10,7 @@ $resultsDirectory = Join-Path $repositoryRoot ('.cache\validation\' + $Configura
 New-Item -ItemType Directory -Path $resultsDirectory -Force | Out-Null
 $failures = @()
 foreach ($api in @('Direct3D12','Vulkan')) {
-    foreach ($topic in @('01_Initialization','02_Triangle','03_Texture','04_Box','05_Model')) {
+    foreach ($topic in $Topics) {
         $name = $api + '_' + $topic
         $executable = Join-Path $repositoryRoot ("bin\x64\$Configuration\$name\$name.exe")
         $log = Join-Path $resultsDirectory ($name + '.log')

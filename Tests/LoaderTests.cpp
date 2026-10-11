@@ -7,6 +7,7 @@
 #include <objbase.h>
 #include <stdexcept>
 using namespace tutorial;
+void TestGltfLoaders(const std::filesystem::path &root, const std::filesystem::path &directory);
 namespace
 {
 void Require(bool condition, const char *message)
@@ -68,6 +69,7 @@ int main(int argc, char **argv)
         MustReject(triangle, "6");
         mesh = LoadObj(root / "Assets/Models/Cube.obj");
         Require(mesh.vertices.size() == 24 && mesh.indices.size() == 36, "Bundled cube");
+        TestGltfLoaders(root, directory);
         CheckHR(CoInitializeEx(nullptr, COINIT_MULTITHREADED), "Test COM init");
         const auto image = LoadWicImage(root / "Assets/Textures/UV.png");
         Require(image.width == 256 && image.height == 256 && image.rgba[0] == 218 && image.rgba[2] == 62,
@@ -101,7 +103,7 @@ int main(int argc, char **argv)
         }
         Require(missingBinary, "Missing shader must report its path");
         CoUninitialize();
-        std::cout << "OBJ/WIC/binary loader tests passed\n";
+        std::cout << "OBJ/glTF/WIC/binary loader tests passed\n";
         return 0;
     }
     catch (const std::exception &error)

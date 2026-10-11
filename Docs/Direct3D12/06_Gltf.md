@@ -4,6 +4,8 @@ Shader BallのglTFをCPUで読み込み、Direct3D12のVertex／Index Buffer、M
 
 ![Direct3D12実行結果・GPU読戻し](Images/06_Gltf.png)
 
+初期の描画領域は全サンプル共通で**1280×720ピクセル**です。掲載画像は変更前の800×600で取得したものを使用しています。
+
 ## 導入と実行
 
 Visual Studio 2026、v145、Windows SDK 10.0.26100.0、C++20、x64です。Agility SDK 1.619.6／DXC 1.9.2609.5をNuGetで復元します。JSONヘッダーはMITライセンスのnlohmann/json v3.12.0です。

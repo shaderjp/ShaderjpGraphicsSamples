@@ -1,3 +1,6 @@
 [submodule "ThirdParty/nlohmann-json"]
 	path = ThirdParty/nlohmann-json
 	url = https://github.com/nlohmann/json.git
+[submodule "ThirdParty/imgui"]
+	path = ThirdParty/imgui
+	url = https://github.com/ocornut/imgui.git

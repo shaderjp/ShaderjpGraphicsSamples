@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。8つのテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。9つのテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
 
 ## 必要な環境
 
@@ -49,8 +49,11 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | glTF・Albedo・材質参照 | [06 Gltf](Docs/Direct3D12/06_Gltf.md) | [06 Gltf](Docs/Vulkan/06_Gltf.md) |
 | Lambert／Blinn-Phongライティング | [07 Lighting](Docs/Direct3D12/07_Lighting.md) | [07 Lighting](Docs/Vulkan/07_Lighting.md) |
 | Metallic-Roughness PBR・Normal／ORM | [08 PBR](Docs/Direct3D12/08_PBR.md) | [08 PBR](Docs/Vulkan/08_PBR.md) |
+| Dear ImGui・ライト編集・動的Constant／Uniform Buffer | [09 ImGui](Docs/Direct3D12/09_ImGui.md) | [09 ImGui](Docs/Vulkan/09_ImGui.md) |
 
 各プロジェクトをVSのスタートアッププロジェクトに設定して実行できます。ESCまたは閉じるボタンで終了します。
+
+全サンプルの初期描画領域（ウィンドウのクライアント領域）は**1280×720ピクセル**です。`Common/Application.cpp`の`DefaultClientWidth`／`DefaultClientHeight`で揃えています。3Dの投影行列は実際の幅と高さからアスペクト比を求め、リサイズ時も反映します。既存のDocs・記事のスクリーンショットは変更前の800×600を維持しています。
 
 ![D3D12モデルサンプル](Docs/Direct3D12/Images/05_Model.png)
 
@@ -61,6 +64,7 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | フォルダ | 内容 |
 |---|---|
 | `Samples/Direct3D12`, `Samples/Vulkan` | テーマ別の独立したVCプロジェクト。API初期化・描画・同期・解放を明示 |
+| `Samples/Shared` | 09の共通ImGuiウィジェット。GPU描画バックエンドは各APIのプロジェクト内 |
 | `Common` | Win32ライフサイクル、ファイル読込、WIC、OBJ／glTF、CPU側のデータと行列計算 |
 | `Shaders` | 両APIで共有するHLSL。SM6.6／HLSL 2021、API固有の属性だけマクロ化 |
 | `Assets` | 差し替え可能な自作OBJ／PNG、glTF／PBRアセット |
@@ -72,7 +76,9 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 
 行列・リソース番号・上下方向・色空間については[共通HLSLの規約](Docs/SharedShaders.md)を参照してください。D3D12とVulkanのDXCは別の配布元を使うため、[検証記録](Docs/Verification.md)に各バージョンを残しています。
 
-初回の画像ローダーはWICです。DDS・Cubemapを扱う後続テーマでDirectXTex、GUIテーマでimguiを`ThirdParty`のSubmoduleとして追加します。OBJローダーは外部依存なしで、MTL・複数マテリアル・照明は初回の対象に含めません。
+初回の画像ローダーはWICです。Dear ImGuiは09で`ThirdParty/imgui`の固定Submoduleとして導入しました。DDS・Cubemapを扱う後続テーマでDirectXTexを追加します。OBJローダーは外部依存なしで、MTL・複数マテリアル・照明は初回の対象に含めません。
+
+09は08のPBRを使い、ライトの色・強度・方向、回転、環境項、露出、Metallic／Roughness／Normal／AO／Emissiveの係数と表示モードをパネルで変更します。CPU可視のConstant／Uniform BufferをGPU完了後に毎フレーム更新します。UIも共通HLSLを事前コンパイルし、公式Win32入力バックエンドと教材用のAPI別描画バックエンドを組み合わせています。フォントは固定アトラス1枚です。
 
 ## 実行オプション
 
@@ -86,13 +92,15 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | `--model <path>` | 05_ModelのOBJを差し替え。省略時は同梱Cube.obj |
 | `--model <path>`（06_Gltf） | glTFを差し替え。省略時は同梱ShaderBall_Albedo.gltf。BIN／PNGのURIはglTF基準 |
 | `--texture <path>` | 03_Texture／05_Modelの画像を差し替え。省略時は同梱UV.png |
-| `--texture <path>`（06〜08） | glTFの参照Albedoを確認用に置換。省略時は材質のbaseColorTextureを使用 |
-| `--model <path>`（07／08） | 07はAlbedo版、08は4画像・接線・共通Sampler・ORMのPBR版glTF |
+| `--texture <path>`（06〜09） | glTFの参照Albedoを確認用に置換。省略時は材質のbaseColorTextureを使用 |
+| `--model <path>`（07〜09） | 07はAlbedo版、08／09は4画像・接線・共通Sampler・ORMのPBR版glTF |
 | `--shading <mode>`（07） | lambert / blinn-phong / albedo。キー1〜3でも切替 |
 | `--shading <mode>`（08） | pbr / albedo / normal / metallic / roughness / ao / emissive / pbr-flat。キー1〜8でも切替 |
 | `--rotate-light`（07／08） | 方向光の回転を開始。Spaceで開始／停止 |
+| `--shading <mode>`／`--rotate-light`（09） | 08と同じ表示モード名・回転開始指定。起動後はView／Rotate lightのウィジェットで変更 |
+| `--test-ui`（09） | `--frames 36`以上と組み合わせ、スライダー編集・Reset・再編集を入力イベントで検証。`--rotate-light`とは併用不可 |
 | `--frames <N>` | 正の整数N回の通常描画で終了 |
-| `--test-window` | 12フレームで640×480へ変更、24フレームで最小化・800×600へ復帰 |
+| `--test-window` | 12フレームで640×480へ変更、24フレームで最小化・1280×720へ復帰 |
 | `--screenshot <path>` | 指定フレーム数の終了時、または通常実行の8フレーム後にGPU読戻しPNGを保存 |
 | `--log <path>` | 初期化・リサイズ・エラー・検証結果を保存 |
 
@@ -109,11 +117,17 @@ Vulkanのスクリーンショットは、取得済みの画像をPresent前に�
 .\Tools\TestSamples.ps1 -Configuration Release
 .\Tools\TestFailureCases.ps1
 .\Tools\TestLighting.ps1
+.\Tools\TestImGui.ps1
+.\Tools\TestImGui.ps1 -Configuration Release
 ```
 
-`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は全16本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。
+`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は全18本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。
 
 `TestLighting`は全表示モードと、既知の色・法線を持つ平面のGPU画素を照合します。追加比較画像は`-CaptureDocs`で保存できます。
+
+`TestImGui`は09の実ウィジェットへ入力を与え、照明が変わったGPU画像とReset後の一致を確認します。検証用の3画像は`.cache/imgui-tests/<構成>`へ保存します。UI外の3D領域を比較するので、スライダーの表示だけが変わって成功する試験にはなっていません。
+
+09のライト強度比較画像は`Tools/TestImGui.ps1 -CaptureDocs`で更新できます。
 
 Docsの実画像を更新する場合は`Tools/TestSamples.ps1 -CaptureDocs`を使い、生成したPNGを目視確認してください。初回の結果は[検証記録](Docs/Verification.md)を参照できます。
 

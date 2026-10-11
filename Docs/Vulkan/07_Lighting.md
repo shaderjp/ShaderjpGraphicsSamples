@@ -4,6 +4,8 @@
 
 ![Vulkanの実GPU描画](Images/07_Lighting.png)
 
+初期の描画領域は全サンプル共通で**1280×720ピクセル**です。掲載画像は変更前の800×600で取得したものを使用しています。
+
 ## ビルドと実行
 
 Visual Studio 2026／v145、Windows SDK 10.0.26100.0、C++20、x64です。Vulkan SDKを導入し、`VULKAN_SDK`と付属DXCを使用します。Vulkan 1.3、Dynamic Rendering、Synchronization2が必要です。 nlohmann/jsonは06と同じ固定Submoduleを使用します。

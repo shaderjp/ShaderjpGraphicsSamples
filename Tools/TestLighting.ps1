@@ -46,7 +46,7 @@ function Encode([double]$V) {
 }
 function CheckPixel([string]$Image,[double[]]$Linear,[string]$Case) {
     $bitmap = [System.Drawing.Bitmap]::new($Image)
-    try { $color = $bitmap.GetPixel(400,300) } finally { $bitmap.Dispose() }
+    try { $color = $bitmap.GetPixel([int][Math]::Floor($bitmap.Width / 2),[int][Math]::Floor($bitmap.Height / 2)) } finally { $bitmap.Dispose() }
     $actual = @([int]$color.R,[int]$color.G,[int]$color.B)
     for ($c=0; $c -lt 3; ++$c) {
         $expected = Encode $Linear[$c]

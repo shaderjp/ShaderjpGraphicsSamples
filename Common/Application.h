@@ -20,6 +20,7 @@ struct Options
     bool testWindow = false;
     std::wstring shading; // Sample 07/08 choose their supported display modes.
     bool rotateLight = false;
+    bool testUi = false; // Sample 09 exercises actual ImGui widgets through queued input.
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.
@@ -32,6 +33,8 @@ struct ISample
     virtual void OnResize(uint32_t width, uint32_t height) = 0;
     virtual void OnScreenshot(const std::filesystem::path &path) = 0;
     virtual void OnDestroy() noexcept = 0;
+    // Optional platform input hook. Graphics and UI backends remain in each sample.
+    virtual bool OnMessage(HWND, UINT, WPARAM, LPARAM, LRESULT &) { return false; }
 };
 
 int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title);

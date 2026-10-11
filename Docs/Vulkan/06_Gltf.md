@@ -4,6 +4,8 @@ Shader BallのglTFをCPUで読み込み、VulkanのVertex／Index Buffer、Unifo
 
 ![Vulkan実行結果・GPU読戻し](Images/06_Gltf.png)
 
+初期の描画領域は全サンプル共通で**1280×720ピクセル**です。掲載画像は変更前の800×600で取得したものを使用しています。
+
 ## 導入と実行
 
 Visual Studio 2026、v145、Windows SDK 10.0.26100.0、C++20、x64です。`VULKAN_SDK`のヘッダー・ライブラリ・DXCを使い、Vulkan 1.3のDynamic RenderingとSynchronization2を使用します。JSONはMITライセンスのnlohmann/json v3.12.0です。

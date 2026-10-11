@@ -13,12 +13,16 @@ namespace tutorial
 {
 namespace
 {
+// Client-area pixels, shared by all samples and the minimize/restore check.
+constexpr LONG DefaultClientWidth = 1280;
+constexpr LONG DefaultClientHeight = 720;
 std::mutex logMutex;
 std::ofstream logFile;
 uint32_t validationErrors = 0;
 struct WindowState
 {
-    uint32_t width = 800, height = 600;
+    ISample *sample = nullptr;
+    uint32_t width = DefaultClientWidth, height = DefaultClientHeight;
     bool resized = false, minimized = false;
 };
 LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
@@ -29,6 +33,9 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         state = static_cast<WindowState *>(reinterpret_cast<CREATESTRUCTW *>(lParam)->lpCreateParams);
         SetWindowLongPtrW(window, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(state));
     }
+    LRESULT inputResult = 0;
+    const bool handled =
+        state && state->sample && state->sample->OnMessage(window, message, wParam, lParam, inputResult);
     if (message == WM_SIZE && state)
     {
         state->minimized = wParam == SIZE_MINIMIZED;
@@ -41,13 +48,13 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
     {
         KillTimer(window, 1);
         ShowWindow(window, SW_RESTORE);
-        RECT rectangle{0, 0, 800, 600};
+        RECT rectangle{0, 0, DefaultClientWidth, DefaultClientHeight};
         AdjustWindowRect(&rectangle, WS_OVERLAPPEDWINDOW, FALSE);
         SetWindowPos(window, nullptr, 0, 0, rectangle.right - rectangle.left,
                      rectangle.bottom - rectangle.top, SWP_NOMOVE | SWP_NOZORDER);
         return 0;
     }
-    if (message == WM_KEYDOWN && wParam == VK_ESCAPE)
+    if (message == WM_KEYDOWN && wParam == VK_ESCAPE && !handled)
     {
         DestroyWindow(window);
         return 0;
@@ -57,7 +64,7 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         PostQuitMessage(0);
         return 0;
     }
-    return DefWindowProcW(window, message, wParam, lParam);
+    return handled ? inputResult : DefWindowProcW(window, message, wParam, lParam);
 }
 Options ParseOptions()
 {
@@ -79,6 +86,11 @@ Options ParseOptions()
             if (argument == L"--rotate-light")
             {
                 options.rotateLight = true;
+                continue;
+            }
+            if (argument == L"--test-ui")
+            {
+                options.testUi = true;
                 continue;
             }
             if (i + 1 >= count)
@@ -178,6 +190,7 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
     HWND window = nullptr;
     bool comInitialized = false;
     WindowState state;
+    state.sample = &sample;
     int exitCode = 0;
     try
     {
@@ -201,7 +214,7 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
         windowClass.lpszClassName = L"ShaderjpTutorial";
         if (!RegisterClassExW(&windowClass))
             throw std::runtime_error("RegisterClassExW failed");
-        RECT rectangle{0, 0, 800, 600};
+        RECT rectangle{0, 0, DefaultClientWidth, DefaultClientHeight};
         AdjustWindowRect(&rectangle, WS_OVERLAPPEDWINDOW, FALSE);
         window = CreateWindowExW(0, windowClass.lpszClassName, title, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,
                                  CW_USEDEFAULT, rectangle.right - rectangle.left,
@@ -211,7 +224,7 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
         sample.OnInit(window, state.width, state.height, options);
         state.resized = false;
         ShowWindow(window, SW_SHOW);
-        Trace("Initialized (800 x 600)");
+        Trace("Initialized (" + std::to_string(state.width) + " x " + std::to_string(state.height) + ")");
         const auto start = std::chrono::steady_clock::now();
         uint32_t frames = 0;
         bool captured = false, running = true;

@@ -4,6 +4,8 @@
 
 ![Direct3D12の実GPU描画](Images/07_Lighting.png)
 
+初期の描画領域は全サンプル共通で**1280×720ピクセル**です。掲載画像は変更前の800×600で取得したものを使用しています。
+
 ## ビルドと実行
 
 Visual Studio 2026／v145、Windows SDK 10.0.26100.0、C++20、x64です。Agility SDK 1.619.6／DXC 1.9.2609.5をNuGetで復元します。 nlohmann/jsonは06と同じ固定Submoduleを使用します。

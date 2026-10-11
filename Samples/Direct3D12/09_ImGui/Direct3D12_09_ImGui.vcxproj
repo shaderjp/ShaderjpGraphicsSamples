@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3FF8BEA-878E-442D-995E-8B0B41C9539B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>Direct3D12_09_ImGui</ProjectName>
+    <RootNamespace>Direct3D12_09_ImGui</RootNamespace>
+    <GraphicsApi>Direct3D12</GraphicsApi>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\..\Build\Common.props" />
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sample.cpp" />
+    <ClCompile Include="..\..\..\Common\Application.cpp" />
+    <ClCompile Include="..\..\..\Common\Image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sample.h" />
+    <ClInclude Include="..\..\..\Common\Application.h" />
+    <ClInclude Include="..\..\..\Common\Image.h" />
+    <ClInclude Include="..\..\..\Common\Mesh.h" />
+    <ClInclude Include="..\..\..\Shaders\Common.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\Shaders\08_PBR\Vertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <Message>DXC Vertex: vs_6_6 / Direct3D12</Message>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Lighting.hlsli;$(RepositoryRoot)Shaders\08_PBR\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\08_PBR\Pixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <Message>DXC Pixel: ps_6_6 / Direct3D12</Message>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Lighting.hlsli;$(RepositoryRoot)Shaders\08_PBR\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Build\Common.props" />
+    <None Include="..\..\..\Build\Samples.targets" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Common\Gltf.cpp" />
+    <ClInclude Include="..\..\..\Common\Gltf.h" />
+    <ClInclude Include="..\..\..\Shaders\08_PBR\Scene.hlsli" />
+    <ClInclude Include="..\..\..\ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp" />
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_PBR.gltf">
+      <AssetTargetPath>Assets\Models\ShaderBall\ShaderBall_PBR.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_PBR.bin">
+      <AssetTargetPath>Assets\Models\ShaderBall\ShaderBall_PBR.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\ThirdParty\nlohmann-json\LICENSE.MIT">
+      <AssetTargetPath>Licenses\nlohmann-json-LICENSE.MIT</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\LICENSE">
+      <AssetTargetPath>Licenses\ShaderjpGraphicsSamples-LICENSE.txt</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\imgui;$(RepositoryRoot)ThirdParty\imgui\backends;$(RepositoryRoot)ThirdParty\nlohmann-json\single_include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Common\Lighting.h" />
+    <ClInclude Include="..\..\..\Shaders\Lighting.hlsli" />
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\Emissive.png</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\..\Build\Samples.targets" />
+  <Target Name="CheckGltfDependency" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(RepositoryRoot)ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp')" Text="Initialize pinned dependencies: git submodule update --init --recursive" />
+  </Target>
+  <ItemGroup>
+    <ClCompile Include="ImGuiRenderer.cpp" />
+    <ClInclude Include="..\..\..\Common\LightingControls.h" />
+    <ClInclude Include="..\..\Shared\ImGuiPanel.h" />
+    <ClInclude Include="..\..\..\Shaders\09_ImGui\Ui.hlsli" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.cpp" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imconfig.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.h" />
+    <None Include="..\..\..\ThirdParty\imgui\LICENSE.txt">
+      <AssetTargetPath>Licenses\imgui-LICENSE.txt</AssetTargetPath>
+    </None>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <Message>DXC ImGuiVertex: vs_6_6 / Direct3D12</Message>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <Message>DXC ImGuiPixel: ps_6_6 / Direct3D12</Message>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Target Name="CheckImGuiDependency" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(RepositoryRoot)ThirdParty\imgui\imgui.h')" Text="Dear ImGui is missing. Initialize pinned dependencies: git submodule update --init --recursive" />
+  </Target>
+</Project>

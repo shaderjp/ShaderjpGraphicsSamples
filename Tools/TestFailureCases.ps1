@@ -1,4 +1,4 @@
-param([ValidateSet('05_Model','06_Gltf','07_Lighting','08_PBR')][string[]]$Topics = @('05_Model','06_Gltf','07_Lighting','08_PBR'))
+param([ValidateSet('05_Model','06_Gltf','07_Lighting','08_PBR','09_ImGui')][string[]]$Topics = @('05_Model','06_Gltf','07_Lighting','08_PBR','09_ImGui'))
 $ErrorActionPreference = 'Stop'
 $repositoryRoot = Split-Path $PSScriptRoot -Parent
 $resultsDirectory = Join-Path $repositoryRoot '.cache\failure-tests'
@@ -25,6 +25,14 @@ foreach ($api in @('Direct3D12','Vulkan')) {
         Move-Item -LiteralPath $shader -Destination $saved
         ExpectFailure $executable @() (Join-Path $resultsDirectory ($name + '-shader.log')) ("Pixel.$extension")
     } finally { if (Test-Path -LiteralPath $saved) { Move-Item -LiteralPath $saved -Destination $shader } }
+    if ($topic -eq '09_ImGui') {
+        $shader = Join-Path $folder ("Shaders\ImGuiPixel.$extension")
+        $saved = $shader + '.failure-test-backup'
+        try {
+            Move-Item -LiteralPath $shader -Destination $saved
+            ExpectFailure $executable @() (Join-Path $resultsDirectory ($name + '-ui-shader.log')) ("ImGuiPixel.$extension")
+        } finally { if (Test-Path -LiteralPath $saved) { Move-Item -LiteralPath $saved -Destination $shader } }
+    }
     Write-Output "$name missing texture/model/shader diagnostics passed"
   }
 }

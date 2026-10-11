@@ -122,3 +122,47 @@ Docs画像はTestSamples／TestLightingのCaptureDocsで取得した800×600の�
 | 08 Albedo | 1 | 1 |
 
 この環境では差はごく少数の補間丸めでした。異なるGPU／ドライバでの完全一致を保証する比較ではありません。方向光1本、1 mip、単一材質・共通Sampler・ORM画像を対象とし、IBL、Shadow Map、複数光源、Deferred Renderingはこの回には含めていません。常時回転する光は比較キャプチャでは無効です。
+
+## サンプル09：Dear ImGuiと動的Constant／Uniform Buffer
+
+検証日：2026-10-12。08のPBRを使う09_ImGuiを両APIへ追加し、9テーマ・18プロジェクトになりました。Dear ImGui v1.92.9bを`ThirdParty/imgui`のコミット`f1cc2ae15e53a861a874c3034aae6798fde194ab`へ固定しました。Submodule内の変更は0件です。本体4 cppと公式Win32バックエンドを使用し、GPU描画はAPIごとのImGuiRenderer.cppと事前コンパイルした共通HLSLです。
+
+今回確認した環境はVS 2026 Community 18.10.0（18.10.12201.205）、v145、cl.exe 19.51.36257.0／ProductVersion 14.51.36257.0、Windows SDK 10.0.26100.0、RTX 4070／NVIDIA 610.88です。Agility SDK 1.619.6、D3D12 DXC 1.9.2609.5／01b62ad47、Vulkan SDK 1.4.341.1、付属DXC 1.9.0.5180／e35541826を使いました。HLSLはSM6.6／HLSL 2021、Vulkanのターゲット環境は1.3です。
+
+- NuGet復元後、全18プロジェクトのx64 Debug／ReleaseのMSBuildビルド・再構築に成功。最終コンパイラ警告・エラー0件。
+- `Tools/ValidateProjects.ps1`で全18組のXML、ファイル実在、項目の過不足・重複、フィルタの宣言・親階層・GUIDを確認。09はD3D12が47項目、Vulkanが46項目。Dear ImGuiのソース・ヘッダー・Win32バックエンド、UI HLSL、ライセンスも分類済み。
+- 09のモデル用2ステージとUI用2ステージをDebug／Releaseで事前コンパイル。DXILの計8出力をdxv、SPIR-Vの計8出力をspirv-valで検証して成功。
+- UIのUi.hlsliの更新時刻を変更し、両APIのUI用Vertex／Pixel計4出力が再コンパイルされることを確認後、時刻を復元。D3D12_09_ImGuiはVULKAN_SDKを空に指定したRelease単体ビルドも成功。
+- UI用SPIR-Vを逆アセンブルし、行列がset 0／binding 0、offset 0、MatrixStride 16であることを確認。UIの64-byte行列とシーンの320-byte定数は別のBufferで、どちらもGPU完了後に更新します。
+- `Tools/TestLoaders.ps1`で既存OBJ／glTF／WIC／バイナリ、PBR材質・接線・定数のCPUテストが通過。
+- `Tools/TestSamples.ps1`で全18本をDebug／Releaseで実行。各48回の通常描画、640×480への変更、最小化・800×600への復帰、GPU読戻し、終了が成功。09の最終変更後も両構成で再確認。DebugはD3D12 Debug Layer／Vulkan Validation LayerとVulkan同期検証を有効化し、検証エラー0件。
+- `Tools/TestImGui.ps1`を両構成で実行。実ウィジェットへマウス位置・ボタンの入力イベントを与え、Intensityを3.00→10.67へ編集、Reset、再編集。CPUのパラメータへ直接代入して試験を成立させる処理はありません。
+- UIを除いた右側の3D領域を比較すると、両API・両構成とも68,555画素でRGB各2より大きい変化があり、GPU側でライトの変更が反映されました。Reset後の3D領域は各API・構成の元画像と画素単位で完全一致。UI文字列だけが変わったケースでは通らない試験です。
+- `Tools/TestFailureCases.ps1 -Topics 09_ImGui`で両APIのモデル・PNG・モデル用Pixel Shader・UI用Pixel Shaderの欠落を検証。対象ファイル名、終了コード1、部分初期化後の解放、検証エラー0件を確認。
+- Dear ImGuiのMIT LICENSE.txtを両API・両構成の出力先へコピーし、Submoduleのライセンスとバイト単位で一致することを確認。
+
+同じ既定値を使った両APIの3D領域（x=350〜799、800×600画像）の比較結果です。UIに表示されるAPI名は比較から除外しています。
+
+| 構成 | 最大チャンネル差（8bit） | 差のある画素数 |
+|---|---:|---:|
+| Debug | 0 | 0 |
+| Release | 1 | 1 |
+
+添付画像は[Direct3D12の通常表示](Direct3D12/Images/09_ImGui.png)／[強度変更後](Direct3D12/Images/09_ImGui-intensity.png)、[Vulkanの通常表示](Vulkan/Images/09_ImGui.png)／[強度変更後](Vulkan/Images/09_ImGui-intensity.png)です。通常表示はTestSamples -CaptureDocs、比較画像はTestImGui -CaptureDocsで取得しました。すべて800×600の実GPU画像で、パネルの文字・フォント・クリッピング、球と台座、Normal Map、光の強度による明るさの変化を目視確認しました。
+
+09のUI描画は3D用Depth Bufferを使用しません。D3D12はDSVを外してUI用PSOへ切替え、Vulkanは明示的なカラー依存のBarrierとLOADを使う二つ目のDynamic Rendering Scopeに分けています。固定フォントアトラス1枚、単一Viewport、1フレームずつ完了を待つ構成を対象とし、動的フォント・ユーザー画像・複数フレームの並行実行は今回の範囲に含めません。
+
+## 全サンプルの初期解像度を1280×720へ変更
+
+検証日：2026-10-12。全9テーマ・両APIの18プロジェクトの初期クライアント領域を1280×720へ変更しました。`Common/Application.cpp`の`DefaultClientWidth`／`DefaultClientHeight`を、初期状態、ウィンドウ作成、最小化からの復帰で共用します。初期化ログは実際の幅と高さを記録します。途中の640×480への変更はリサイズ検証用に維持しています。
+
+環境はVS 2026 Community 18.10.0（18.10.12201.205）、v145／MSVC 19.51.36257.0、Windows SDK 10.0.26100.0、RTX 4070／NVIDIA 610.88です。Agility SDK 1.619.6、D3D12 DXC 1.9.2609.5／01b62ad47、Vulkan SDK 1.4.341.1／付属DXC 1.9.0.5180／e35541826を使用しました。
+
+- 全18プロジェクトのx64 Debug／ReleaseをMSBuildでビルドし、警告・エラー0件。`Tools/ValidateProjects.ps1`で全18組のプロジェクト／フィルタXMLの検証が成功しました。
+- `Tools/TestLoaders.ps1`のOBJ／glTF／WIC／ファイル読込・材質・定数のCPU検証が成功しました。
+- `Tools/TestSamples.ps1`を両構成で実行。全18本で48フレーム描画、1280×720から640×480への変更、最小化・1280×720への復帰、終了が成功しました。計36枚のGPU読戻しPNGが1280×720であることも確認しました。DebugはD3D12 Debug Layer／Vulkan Validation Layer・同期検証を有効にし、両構成の検証エラーは0件です。
+- `Tools/TestLighting.ps1`の参照画素を画像の幅・高さから求める中心へ変更し、両構成・両APIで全表示モードと定数テクスチャのGPU参照値の検証が成功しました。
+- `Tools/TestImGui.ps1`の画像比較領域を1280×720へ変更し、両構成・両APIでスライダー編集、Reset、再編集を確認しました。UIを除く領域でDirect3D12は184,860画素、Vulkanは184,861画素が変化し、Reset後はそれぞれの元画像と完全一致しました。
+- 確認用のGPU画像は`.cache`へ保存しました。1280×720のPBR・ImGui表示で、パネルの文字・クリッピング、球と台座の奥行きと描画領域を目視確認しました。
+- 既存のDocs・Shader.jp記事画像77点は変更前後のSHA-256が一致しました。上の各節の800×600の撮影条件・比較値は過去の記録として維持し、既存の画像は更新していません。
+- Shader.jpの各API第1〜8回、第0回、目次、初期化比較の説明を更新しました。固定コミットを使う場合の解像度変更手順を第0回に記載し、画像の撮影条件と区別しています。Astroの63ページ・Pagefindの29記事をビルドし、グラフィックス関連22記事の内部リンク・アンカー736件を確認しました。

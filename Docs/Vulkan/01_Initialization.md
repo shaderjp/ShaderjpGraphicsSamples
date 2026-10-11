@@ -4,6 +4,8 @@
 
 ![実行結果](Images/01_Initialization.png)
 
+初期の描画領域は全サンプル共通で**1280×720ピクセル**です。掲載画像は変更前の800×600で取得したものを使用しています。
+
 ## ビルドと実行
 
 Windows、Visual Studio 2026（v145）、Windows SDK 10.0.26100.0、x64が対象です。Vulkan SDKと付属DXCをインストールし、`VULKAN_SDK`を参照できる状態でVSを起動します。実行GPUにはVulkan 1.3、Dynamic Rendering、Synchronization2、graphics/present両対応Queueが必要です。
@@ -17,7 +19,7 @@ msbuild .\Samples\Vulkan\01_Initialization\Vulkan_01_Initialization.vcxproj -p:C
 
 ## データと処理順
 
-画面サイズは初期値800×600です。`OnInit`で初期化、`OnRender`でクリアとPresent、`OnResize`でサイズ依存のリソース再作成、`OnDestroy`でGPU完了を待って解放します。Win32のメッセージ処理だけを`Common/Application.cpp`へ分離しています。
+画面サイズは初期値1280×720です。`OnInit`で初期化、`OnRender`でクリアとPresent、`OnResize`でサイズ依存のリソース再作成、`OnDestroy`でGPU完了を待って解放します。Win32のメッセージ処理だけを`Common/Application.cpp`へ分離しています。
 
 実装は[Sample.cpp](../../Samples/Vulkan/01_Initialization/Sample.cpp)、宣言は[Sample.h](../../Samples/Vulkan/01_Initialization/Sample.h)です。
 
@@ -38,7 +40,7 @@ msbuild .\Samples\Vulkan\01_Initialization\Vulkan_01_Initialization.vcxproj -p:C
 & .\bin\x64\Debug\Vulkan_01_Initialization\Vulkan_01_Initialization.exe --frames 48 --test-window --screenshot ".\.cache\Vulkan_01_Initialization.png" --log ".\.cache\Vulkan_01_Initialization.log"
 ```
 
-`--test-window`は640×480への変更、最小化、800×600への復帰を実行します。`--screenshot`はGPUから描画結果を読み戻してPNGを保存します。Debugの検証エラーが出た場合はログと終了コードで確認できます。画像・シェーダの欠落時も原因のファイル名を表示します。
+`--test-window`は640×480への変更、最小化、1280×720への復帰を実行します。`--screenshot`はGPUから描画結果を読み戻してPNGを保存します。Debugの検証エラーが出た場合はログと終了コードで確認できます。画像・シェーダの欠落時も原因のファイル名を表示します。
 
 テクスチャはsRGBとしてサンプリングし、色の補間・シェーダ計算は線形空間で行い、sRGB描画先で出力変換します。テクスチャの赤／緑／青／黄、上向き矢印、BOXの奥行きがAPI間で一致することを確認します。
 

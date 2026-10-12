@@ -1,4 +1,5 @@
 #pragma once
+#include "CameraNavigation.h"
 #include "LightingScene.h"
 #include <algorithm>
 #include <cmath>
@@ -7,6 +8,7 @@ namespace tutorial
 {
 struct LightingLabPanel
 {
+    CameraNavigation navigation;
     int stage = 10, environmentIndex = 0, view = 0;
     float environmentIntensity = 1, yaw = 0, directIntensity = 3, exposure = 1, bias = .001f, occluder = 0;
     bool shadows = true, pcf = true, visible = true, test = false;
@@ -16,6 +18,7 @@ struct LightingLabPanel
     float initialIntensity = 3, initialExposure = 1;
     void Reset()
     {
+        navigation.Reset();
         environmentIndex = 0;
         view = stage == 10 ? 1 : 0;
         environmentIntensity = 1;
@@ -32,6 +35,7 @@ struct LightingLabPanel
     }
     void Initialize(const LightingScene &s, const Options &o, int technique)
     {
+        navigation.test = o.testCamera;
         stage = technique;
         initialIntensity = s.intensity;
         initialExposure = s.exposure;
@@ -131,6 +135,8 @@ struct LightingLabPanel
         a = ImGui::GetItemRectMin();
         b = ImGui::GetItemRectMax();
         resetPoint = {(a.x + b.x) * .5f, (a.y + b.y) * .5f};
+        if (stage >= 13)
+            navigation.Hint();
         ImGui::PopItemWidth();
         ImGui::End();
         if (test && (frame == 12 || frame == 32) && environmentIntensity < 3)

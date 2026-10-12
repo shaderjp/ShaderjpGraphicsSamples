@@ -1,4 +1,7 @@
 #include "Resources.hlsli"
+#ifdef LIGHT_CULLING
+#include "../LightCulling/Grid.hlsli"
+#endif
 float3 Fresnel(float vh,float3 f0){return f0+(1-f0)*pow(1-vh,5);}
 float Distribution(float nh,float a){float a2=a*a,d=nh*nh*(a2-1)+1;return a2/max(PI*d*d,1e-12);}
 float Visibility(float nv,float nl,float a){float a2=a*a;return .5/max(nl*sqrt(nv*nv*(1-a2)+a2)+nv*sqrt(nl*nl*(1-a2)+a2),1e-6);}
@@ -16,11 +19,22 @@ float3 EvaluateDirect(Surface s,float3 V,float3 L,float3 radiance)
     float nv=max(saturate(dot(s.normal,V)),1e-5);float3 H=SafeNormalize(V+L),F=Fresnel(saturate(dot(V,H)),lerp(.04.xxx,s.base,s.metallic));
     return ((1-F)*(1-s.metallic)*s.base/PI+Distribution(saturate(dot(s.normal,H)),s.roughness*s.roughness)*Visibility(nv,nl,s.roughness*s.roughness)*F)*radiance*nl;
 }
-float3 Shade(Surface s,float3 p)
+float3 ShadeSurface(Surface s,float3 p,uint cell)
 {
     float3 V=SafeNormalize(cameraPosition.xyz-p),direct=0,diffuse=0,specular=0;float visibility=ShadowVisibility(p);
     if(controls.z!=0){direct=EvaluateDirect(s,V,sunDirection.xyz,sunColor.rgb*sunColor.w)*visibility;
-        for(uint light=0;light<controls.x;++light){PointLight l=points[light];float3 d=l.positionRange.xyz-p;float d2=max(dot(d,d),1e-4);float attenuation=1/d2;
+        uint count=controls.x;
+#ifdef LIGHT_CULLING
+        uint2 header=uint2(controls.x,1);
+        if(cell!=0xffffffff && gridControls.x!=0)header=lightHeaders[cell];
+        // A full list is the correctness fallback, including unbounded lights and overflow.
+        count=header.y!=0 ? controls.x : header.x;
+#endif
+        for(uint item=0;item<count;++item){uint light=item;
+#ifdef LIGHT_CULLING
+            if(header.y==0)light=lightIndices[cell*gridSize.w+item];
+#endif
+            PointLight l=points[light];float3 d=l.positionRange.xyz-p;float d2=max(dot(d,d),1e-4);float attenuation=1/d2;
             if(l.positionRange.w>0)attenuation*=pow(saturate(1-pow(sqrt(d2)/l.positionRange.w,4)),2);
             direct+=EvaluateDirect(s,V,SafeNormalize(d),l.colorIntensity.rgb*l.colorIntensity.w*attenuation);}}
     if(controls.w!=0){float nv=max(saturate(dot(s.normal,V)),1e-5);float3 f0=lerp(.04.xxx,s.base,s.metallic),envF=Fresnel(nv,f0);
@@ -30,3 +44,4 @@ float3 Shade(Surface s,float3 p)
     if(controls.y==10)return direct;if(controls.y==11)return diffuse;if(controls.y==12)return specular;if(controls.y==13)return visibility.xxx;
     return max(direct+diffuse+specular+s.emission,0);
 }
+float3 Shade(Surface s,float3 p){return ShadeSurface(s,p,0xffffffff);}

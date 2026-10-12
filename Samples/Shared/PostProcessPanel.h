@@ -1,4 +1,5 @@
 #pragma once
+#include "CameraNavigation.h"
 #include "PostProcessData.h"
 #include <algorithm>
 #include <cmath>
@@ -7,6 +8,7 @@ namespace tutorial
 {
 struct PostProcessPanel
 {
+    CameraNavigation navigation;
     int postView = 0, particleCount = 16384, testImage = 0;
     float threshold = 1, strength = .15f, gravity = 3, fixedDelta = 0;
     bool bloom = true, paused = false, stepRequested = false, resetRequested = true, captureGpu = false,
@@ -21,6 +23,7 @@ struct PostProcessPanel
     float initialIntensity = 3, initialExposure = 1;
     void Reset()
     {
+        navigation.Reset();
         postView = 0;
         threshold = 1;
         strength = .15f;
@@ -46,6 +49,7 @@ struct PostProcessPanel
     }
     void Initialize(const LightingScene &s, const Options &o, int technique)
     {
+        navigation.test = o.testCamera;
         stage = technique;
         postTest = o.testPost;
         captureGpu = o.captureGpu;
@@ -201,6 +205,8 @@ struct PostProcessPanel
         a = ImGui::GetItemRectMin();
         b = ImGui::GetItemRectMax();
         resetPoint = {(a.x + b.x) * .5f, (a.y + b.y) * .5f};
+        if (stage >= 13)
+            navigation.Hint();
         ImGui::PopItemWidth();
         ImGui::End();
         if (test && (frame == 12 || frame == 32) && environmentIntensity < 3)

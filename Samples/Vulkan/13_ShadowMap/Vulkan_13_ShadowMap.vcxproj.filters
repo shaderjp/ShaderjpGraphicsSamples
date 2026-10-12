@@ -42,6 +42,7 @@
     <ClCompile Include="..\..\..\Common\Image.cpp">
       <Filter>Source Files\Common</Filter>
     </ClCompile>
+    <ClInclude Include="..\..\Shared\CameraNavigation.h"><Filter>Header Files</Filter></ClInclude>
     <ClInclude Include="Sample.h">
       <Filter>Header Files</Filter>
     </ClInclude>

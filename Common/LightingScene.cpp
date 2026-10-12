@@ -12,7 +12,8 @@ LightingScene LoadLightingScene(const std::filesystem::path &path)
         const auto j = nlohmann::json::parse(bytes.begin(), bytes.end());
         if (j.at("version") != 1 || j.at("coordinateSystem") != "right-handed Y-up meters")
             throw std::runtime_error("Unsupported lighting scene profile");
-        auto vector = [](const nlohmann::json &a) {
+        auto vector = [](const nlohmann::json &a)
+        {
             if (!a.is_array() || a.size() != 3)
                 throw std::runtime_error("Expected three components");
             DirectX::XMFLOAT3 v{a.at(0).get<float>(), a.at(1).get<float>(), a.at(2).get<float>()};
@@ -85,7 +86,8 @@ LightingScene LoadLightingScene(const std::filesystem::path &path)
 }
 LabConstants MakeLabConstants(uint32_t width, uint32_t height, const LightingScene &s, size_t object,
                               int technique, int view, float envIntensity, float yaw, float direct,
-                              float exposure, bool shadows, bool pcf, float bias, float offset)
+                              float exposure, bool shadows, bool pcf, float bias, float offset,
+                              const DirectX::XMFLOAT3 *eyeOverride, const DirectX::XMFLOAT3 *targetOverride)
 {
     using namespace DirectX;
     const auto &o = s.objects.at(object);
@@ -94,7 +96,8 @@ LabConstants MakeLabConstants(uint32_t width, uint32_t height, const LightingSce
         XMMatrixRotationRollPitchYaw(XMConvertToRadians(o.rotation.x), XMConvertToRadians(o.rotation.y),
                                      XMConvertToRadians(o.rotation.z)) *
         XMMatrixTranslation(o.position.x + (o.movable ? offset : 0), o.position.y, o.position.z);
-    const auto eye = XMLoadFloat3(&s.camera), target = XMLoadFloat3(&s.target);
+    const auto eye = XMLoadFloat3(eyeOverride ? eyeOverride : &s.camera),
+               target = XMLoadFloat3(targetOverride ? targetOverride : &s.target);
     const auto vp =
         XMMatrixLookAtLH(eye, target, XMVectorSet(0, 1, 0, 0)) *
         XMMatrixPerspectiveFovLH(XMConvertToRadians(s.fov), float(width) / float(height), .05f, 40);

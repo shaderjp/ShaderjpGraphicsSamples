@@ -1,13 +1,13 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。18のテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。20のテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
 
 ## 必要な環境
 
 - Windows、Visual Studio 2026の「C++によるデスクトップ開発」、v145、Windows SDK 10.0.26100.0。
 - x64のDebug／Release構成。初回の検証環境はWindows 11とNVIDIA GeForce RTX 4070です。
 - D3D12: FL12_0、Shader Model 6.6対応GPU／ドライバ。Agility SDK 1.619.6とDXC 1.9.2609.5をNuGetで復元します。
-- Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14〜18回）を持つGPU／ドライバが必要です。
+- Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14〜20回）を持つGPU／ドライバが必要です。
 - Debug実行時にはD3D12 Debug Layer／Vulkan Validation Layerを有効化します。D3D12のDebug Interfaceが利用できない場合はWindowsの「グラフィックス ツール」を導入してください。
 
 SDKを導入してもGPU・ドライバの機能対応が追加されるわけではありません。初期化時に必要な対応を確認し、不足している場合はエラーを表示します。
@@ -59,8 +59,12 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | ComputeによるGPUパーティクル・頂点Bufferの再利用 | [16 GpuParticles](Docs/Direct3D12/16_GpuParticles.md) | [16 GpuParticles](Docs/Vulkan/16_GpuParticles.md) |
 | Deferred・Pixel Shader | [17 DeferredPixel](Docs/Direct3D12/17_DeferredPixel.md) | [17 DeferredPixel](Docs/Vulkan/17_DeferredPixel.md) |
 | Deferred・Compute Shader | [18 DeferredCompute](Docs/Direct3D12/18_DeferredCompute.md) | [18 DeferredCompute](Docs/Vulkan/18_DeferredCompute.md) |
+| Tile-based Deferred・多数点光源のリスト | [19 TiledDeferred](Docs/Direct3D12/19_TiledDeferred.md) | [19 TiledDeferred](Docs/Vulkan/19_TiledDeferred.md) |
+| Clustered Shading・対数Zスライス | [20 ClusteredShading](Docs/Direct3D12/20_ClusteredShading.md) | [20 ClusteredShading](Docs/Vulkan/20_ClusteredShading.md) |
 
 各プロジェクトをVSのスタートアッププロジェクトに設定して実行できます。ESCまたは閉じるボタンで終了します。
+
+Visual Studioでは各APIのプロジェクトをDirect3D12／Vulkanのソリューションフォルダに配置します。第13回以降は**WASDで移動、Q/Eで上下、右ドラッグで視線回転、Shiftで加速、Rで固定カメラへ復帰**できます。ImGui操作中はカメラ入力を抑えます。固定カメラ・経路・Resetとの関係と検証手順は[カメラ操作](Docs/CameraNavigation.md)を参照してください。
 
 全サンプルの初期描画領域（ウィンドウのクライアント領域）は**1280×720ピクセル**です。`Common/Application.cpp`の`DefaultClientWidth`／`DefaultClientHeight`で揃えています。3Dの投影行列は実際の幅と高さからアスペクト比を求め、リサイズ時も反映します。既存のDocs・記事のスクリーンショットは変更前の800×600を維持しています。
 
@@ -171,3 +175,15 @@ Docsの実画像を更新する場合は`Tools/TestSamples.ps1 -CaptureDocs`を�
 [Microsoft DirectX Graphics Samples](https://github.com/microsoft/DirectX-Graphics-Samples)の処理順・実装スタイルを参考にしています。外部の参考フォルダやサイトリポジトリはビルドの依存先にはしていません。
 
 参考: [Agility SDK](https://devblogs.microsoft.com/directx/directx12agility/)、[DXC](https://github.com/microsoft/DirectXShaderCompiler)、[Vulkan HLSL](https://github.khronos.org/Vulkan-Site/guide/latest/hlsl.html)
+
+## 発展編：レイトレーシング
+
+基本編とは別の[発展編目次](Docs/AdvancedGraphicsSamples.md)から、DXR／VulkanのAlbedo一次レイ、BRDFと方向光・点光源の影、1バウンスの鏡面反射へ進めます。3テーマ×2 APIの独立したプロジェクトを同じソリューションに追加しています。Workshopの共有形状をBLAS／TLASへ接続し、共通HLSLを事前コンパイルします。
+
+[共通章](Docs/Raytracing.md)と[検証記録](Docs/RaytracingVerification.md)を参照してください。`Tools/TestRaytracing.ps1`／`-Configuration Release`でRT専用GPU試験を実行できます。`--no-reflections`は発展編03、`--rt-test-scene`はRTの診断用です。Mesh Shaderは後続テーマです。
+
+## 多数の点光源とライトリスト
+
+[Tile-based DeferredとClustered Shadingの共通章](Docs/LightCulling.md)では、1区画あたり256個の有限rangeのライトを追加します。Standardは264個、Stressは2,376個、最大4,680個です。同じアプリでAll／Tiled／Clusteredを切り替え、候補数・Zスライス・容量超過とGPU時間を比較します。
+
+検証は Tools/TestLightGrid.ps1、記録は[Light Culling検証記録](Docs/LightCullingVerification.md)です。

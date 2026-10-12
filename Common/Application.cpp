@@ -83,9 +83,12 @@ Options ParseOptions()
                 options.testWindow = true;
                 continue;
             }
+            if (argument == L"--test-camera") { options.testCamera = true; continue; }
             if (argument == L"--pause") { options.pauseParticles = true; continue; }
             if (argument == L"--forward") { options.forward = true; continue; }
+            if (argument == L"--animate-lights") { options.animateLights = true; continue; }
             if (argument == L"--no-shadow") { options.disableShadows = true; continue; }
+            if (argument == L"--no-reflections") { options.disableReflections = true; continue; }
             if (argument == L"--hard-shadow") { options.hardShadows = true; continue; }
             if (argument == L"--no-bloom") { options.disableBloom = true; continue; }
             if (argument == L"--no-ibl") { options.disableIbl = true; continue; }
@@ -128,7 +131,12 @@ Options ParseOptions()
             }
             else if (argument == L"--shading")
                 options.shading = value;
+            else if (argument == L"--rt-test-scene") options.rayTestScene = value;
             else if (argument == L"--workshop-scene") { if(value!=L"Standard"&&value!=L"Stress")throw std::runtime_error("--workshop-scene: Standard / Stress");options.workshopScene=value; }
+            else if (argument == L"--light-culling") { if(value!=L"all"&&value!=L"tile"&&value!=L"cluster")throw std::runtime_error("--light-culling: all / tile / cluster");options.lightCulling=value; }
+            else if (argument == L"--light-view") { if(value!=L"none"&&value!=L"count"&&value!=L"slice"&&value!=L"overflow")throw std::runtime_error("--light-view: none / count / slice / overflow");options.lightView=value; }
+            else if (argument == L"--lights-per-room" || argument == L"--list-capacity") { size_t n=0;auto v=std::stoul(value,&n);if(n!=value.size()||value.empty()||value.front()==L'-'||v>(argument==L"--lights-per-room" ? 512u : 256u)||(argument==L"--list-capacity"&&v==0))throw std::runtime_error("--lights-per-room: 0..512 / --list-capacity: 1..256");if(argument==L"--lights-per-room")options.lightsPerRoom=uint32_t(v);else options.listCapacity=uint32_t(v); }
+            else if (argument == L"--light-radius" || argument == L"--light-intensity") { size_t n=0;float v=std::stof(value,&n);if(n!=value.size()||!(v>=0&&v<=6)||(argument==L"--light-radius"&&v<.25f))throw std::runtime_error("--light-radius: 0.25..6 / --light-intensity: 0..6");if(argument==L"--light-radius")options.lightRadius=v;else options.lightIntensity=v; }
             else if (argument == L"--preset") { if(value!=L"Opaque"&&value!=L"OpaqueMask"&&value!=L"Full")throw std::runtime_error("--preset: Opaque / OpaqueMask / Full");options.preset=value; }
             else if (argument == L"--camera") options.camera=value;
             else if (argument == L"--timings") options.timings=std::filesystem::absolute(value);
@@ -302,6 +310,25 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
             sample.OnUpdate(std::chrono::duration<float>(std::chrono::steady_clock::now() - start).count());
             sample.OnRender();
             ++frames;
+            if (options.testCamera)
+            {
+                auto key = [&](UINT message, WPARAM code) {
+                    const auto scan = MapVirtualKeyW(UINT(code), MAPVK_VK_TO_VSC);
+                    SendMessageW(window, message, code, 1 | (scan << 16));
+                };
+                if (frames == 6) key(WM_KEYDOWN, 'W');
+                if (frames == 12) key(WM_KEYUP, 'W');
+                if (frames == 14) SendMessageW(window, WM_RBUTTONDOWN, MK_RBUTTON, MAKELPARAM(850, 360));
+                if (frames == 16) SendMessageW(window, WM_MOUSEMOVE, MK_RBUTTON, MAKELPARAM(930, 400));
+                if (frames == 20) SendMessageW(window, WM_RBUTTONUP, 0, MAKELPARAM(930, 400));
+                if (frames == 24) key(WM_KEYDOWN, 'R');
+                if (frames == 25) key(WM_KEYUP, 'R');
+                const wchar_t *suffix = frames == 6 ? L"-camera-baseline" : frames == 14 ? L"-camera-move" :
+                                        frames == 22 ? L"-camera-look" : frames == 30 ? L"-camera-reset" : nullptr;
+                if (suffix && !options.screenshot.empty())
+                    sample.OnScreenshot(options.screenshot.parent_path() /
+                        (options.screenshot.stem().wstring() + suffix + L".png"));
+            }
             if (options.testWindow && frames == 12)
             {
                 RECT resized{0, 0, options.testOdd ? 641 : 640, options.testOdd ? 479 : 480};

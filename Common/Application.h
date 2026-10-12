@@ -17,7 +17,7 @@ struct Options
 {
     std::filesystem::path model, texture, screenshot, log;
     uint32_t frames = 0;
-    bool testWindow = false;
+    bool testWindow = false, testCamera = false;
     std::wstring shading; // Sample 07/08 choose their supported display modes.
     bool rotateLight = false;
     bool testUi = false; // Sample 09 exercises actual ImGui widgets through queued input.
@@ -28,12 +28,18 @@ struct Options
     std::wstring postView, testImage;
     uint32_t particleCount = 16384;
     bool pauseParticles = false, captureGpu = false, testPost = false, testOdd = false;
+    bool disableReflections = false;
+    std::wstring rayTestScene;
     float fixedDelta = 0, gravity = 3, bloomThreshold = 1, bloomStrength = .15f;
     std::wstring workshopScene, preset, camera;
     std::filesystem::path timings;
     bool forward = false, benchmark = false, cameraPath = false;
     bool disableShadows = false, hardShadows = false, disableBloom = false, disableIbl = false, disableDirect = false;
     uint32_t pathFrame = 0;
+    std::wstring lightCulling, lightView;
+    uint32_t lightsPerRoom = 256, listCapacity = 256;
+    float lightRadius = 1.6f, lightIntensity = .4f;
+    bool animateLights = false;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

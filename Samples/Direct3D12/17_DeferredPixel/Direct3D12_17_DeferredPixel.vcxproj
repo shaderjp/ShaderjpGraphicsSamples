@@ -40,6 +40,7 @@
     <ClCompile Include="..\..\..\Common\Image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Shared\CameraNavigation.h" />
     <ClInclude Include="Sample.h" />
     <ClInclude Include="..\..\..\Common\Application.h" />
     <ClInclude Include="..\..\..\Common\Image.h" />

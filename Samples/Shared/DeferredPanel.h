@@ -1,11 +1,20 @@
 #pragma once
+#include "CameraNavigation.h"
 #include "DeferredData.h"
+#ifdef LIGHT_CULLING
+#include "LightGridData.h"
+#endif
 #include <imgui.h>
 namespace tutorial
 {
 struct DeferredPanel
 {
+    CameraNavigation navigation;
     int scene = 0, camera = 0, preset = 1, view = 0, pathFrame = 0;
+#ifdef LIGHT_CULLING
+    LightGridSettings grid;
+    LightGridStatistics gridStatistics;
+#endif
     bool visible = true, forward = false, direct = true, ibl = true, shadows = true, pcf = true, bloom = true,
          pathEnabled = false, pathPlaying = false;
     float bias = .001f, exposure = 1, intensity = .8f, yaw = 0, threshold = 1, strength = .15f, occluder = 0;
@@ -16,6 +25,11 @@ struct DeferredPanel
     std::filesystem::path screenshot;
     void Reset(const Workshop &w)
     {
+        navigation.Reset();
+#ifdef LIGHT_CULLING
+        grid = {};
+        gridStatistics = {};
+#endif
         scene = 0;
         preset = 1;
         view = 0;
@@ -37,7 +51,21 @@ struct DeferredPanel
     }
     void Initialize(const Workshop &w, const Options &o)
     {
+        navigation.test = o.testCamera;
         Reset(w);
+#ifdef LIGHT_CULLING
+        grid.perRoom = int(o.lightsPerRoom);
+        grid.capacity = int(o.listCapacity);
+        grid.radius = o.lightRadius;
+        grid.intensity = o.lightIntensity;
+        grid.animate = o.animateLights;
+        if (!o.lightCulling.empty())
+            grid.mode = o.lightCulling == L"all" ? 0 : o.lightCulling == L"tile" ? 1 : 2;
+        grid.view = o.lightView == L"count"      ? 1
+                    : o.lightView == L"slice"    ? 2
+                    : o.lightView == L"overflow" ? 3
+                                                 : 0;
+#endif
         visible = !o.hideUi;
         captureGpu = o.captureGpu;
         screenshot = o.screenshot;
@@ -53,7 +81,10 @@ struct DeferredPanel
             for (size_t i = 0; i < w.cameras.size(); ++i)
                 if (w.cameras[i].name == std::filesystem::path(o.camera).string())
                 {
-                    camera = int(i);
+                    {
+                        camera = int(i);
+                        navigation.Reset();
+                    }
                     found = true;
                 }
             if (!found)
@@ -144,17 +175,24 @@ struct DeferredPanel
         if (ImGui::Combo("Scene", &scene, scenes, 2))
             for (size_t i = 0; i < w.cameras.size(); ++i)
                 if (w.cameras[i].name == (scene ? "StressHero" : "Hero"))
+                {
                     camera = int(i);
+                    navigation.Reset();
+                }
         const char *presets[] = {"Opaque", "OpaqueMask", "Full"};
         ImGui::Combo("Preset", &preset, presets, 3);
         if (ImGui::BeginCombo("Camera", w.cameras[camera].name.c_str()))
         {
             for (size_t i = 0; i < w.cameras.size(); ++i)
                 if (ImGui::Selectable(w.cameras[i].name.c_str(), camera == int(i)))
+                {
                     camera = int(i);
+                    navigation.Reset();
+                }
             ImGui::EndCombo();
         }
-        ImGui::Checkbox("Camera path", &pathEnabled);
+        if (ImGui::Checkbox("Camera path", &pathEnabled))
+            navigation.Reset();
         ImGui::SameLine();
         ImGui::Checkbox("Play", &pathPlaying);
         ImGui::SliderInt("Path frame", &pathFrame, 0, 1200);
@@ -201,8 +239,24 @@ struct DeferredPanel
         b = ImGui::GetItemRectMax();
         resetPoint = {(a.x + b.x) * .5f, (a.y + b.y) * .5f};
         ImGui::Text("G-buffer: 18 B/pixel");
-        for (int i = 0; i < 10; ++i)
+        for (int i = 0; i < GpuPassCount; ++i)
             ImGui::Text("%-12s %.3f ms", GpuPassNames[i], time.milliseconds[i]);
+#ifdef LIGHT_CULLING
+        ImGui::SeparatorText("Many point lights");
+        const char *modes[] = {"All lights", "Tiled", "Clustered"};
+        ImGui::Combo("Culling", &grid.mode, modes, 3);
+        ImGui::SliderInt("Lights / room", &grid.perRoom, 0, 512);
+        ImGui::SliderFloat("Light radius", &grid.radius, .25f, 6);
+        ImGui::SliderFloat("Point intensity", &grid.intensity, 0, 6);
+        ImGui::Checkbox("Animate lights", &grid.animate);
+        ImGui::SliderInt("List capacity", &grid.capacity, 1, 256);
+        const char *lightViews[] = {"Lighting", "Candidates", "Z slice", "Overflow"};
+        ImGui::Combo("Light view", &grid.view, lightViews, 4);
+        ImGui::Text("Lights: %u, active cells: %u", time.pointLights, gridStatistics.active);
+        ImGui::Text("Candidates avg %.1f / max %u", gridStatistics.average, gridStatistics.maximum);
+        ImGui::Text("Overflow: %u (all-light fallback)", gridStatistics.overflow);
+#endif
+        navigation.Hint();
         ImGui::End();
     }
 };

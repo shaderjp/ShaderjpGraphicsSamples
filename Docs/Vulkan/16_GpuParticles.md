@@ -116,3 +116,7 @@ GPUの初期化、リソース、Pipeline、転送、描画、同期、解放は
 前：[第15回](15_ComputeBloom.md)。別API：[Direct3D12 第16回](../Direct3D12/16_GpuParticles.md)。次の候補は、深度・法線・位置復元を使うSSAOです。Async Compute、粒子のソート・衝突、Indirect Drawは後の拡張です。
 
 画像と新規アセット、コードは自作。Copyright (c) 2026 masafumi、[MIT License](../../LICENSE)。比較はStudio、直接光3、環境強度1、露出1、同じ配置とカメラを使います。完成画像は48 frames、257粒子の比較は8 frames、固定dt 1／60で撮影しています。
+
+## カメラ操作
+
+WASDで移動、Q/Eで上下移動、右ドラッグで視線を回転、Shiftで加速します。Rで選択中の固定カメラへ戻り、UIのResetはカメラと設定を初期化します。ImGuiの操作中はカメラ入力を抑えます。[共通の操作と検証手順](../CameraNavigation.md)も参照してください。

@@ -79,3 +79,7 @@ TestLightingLabはCPUのDDS・配置読込と不正データの拒否、両API�
 前：[第12回](12_SpecularIBL.md)。 次の拡張では、動的Reflection Probe、より広いShadowの範囲、反射や間接光の近似を検討できます。 別API：[Vulkan 第13回](../Vulkan/13_ShadowMap.md)。
 
 続き：[第14回 Render-to-Texture](14_RenderTexture.md)でHDRの描画先とモニターを加え、第15回のBloom、第16回のGPUパーティクルへ進みます。
+
+## カメラ操作
+
+WASDで移動、Q/Eで上下移動、右ドラッグで視線を回転、Shiftで加速します。Rで選択中の固定カメラへ戻り、UIのResetはカメラと設定を初期化します。ImGuiの操作中はカメラ入力を抑えます。[共通の操作と検証手順](../CameraNavigation.md)も参照してください。

@@ -171,11 +171,13 @@ bool Sample::OnMessage(HWND window, UINT message, WPARAM wParam, LPARAM lParam, 
 {
     if (!ImGui::GetCurrentContext() || !win32Ui_)
         return false;
+    const bool cameraHandled = panel_.navigation.Message(window, message, wParam, lParam);
     result = ImGui_ImplWin32_WndProcHandler(window, message, wParam, lParam);
     const auto &io = ImGui::GetIO();
-    return result != 0 || (io.WantCaptureKeyboard &&
-                           (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
-                            message == WM_SYSKEYUP || message == WM_CHAR));
+    return cameraHandled || result != 0 ||
+           (io.WantCaptureKeyboard &&
+            (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
+             message == WM_SYSKEYUP || message == WM_CHAR));
 }
 void Sample::OnUpdate(float seconds)
 {
@@ -187,6 +189,7 @@ void Sample::OnUpdate(float seconds)
     delta_ = panel_.fixedDelta > 0 ? panel_.fixedDelta : std::clamp(seconds - lastSeconds_, 0.f, .05f);
     lastSeconds_ = seconds;
     panel_.Draw(width_, height_, model_, "Direct3D12");
+    panel_.navigation.Update(window_, seconds, scene_.camera, scene_.target);
     ImGui::Render();
 }
 
@@ -198,10 +201,11 @@ void Sample::OnRender()
     for (UINT bank = 0; bank < 2; ++bank)
         for (size_t i = 0; i < objects_.size(); ++i)
         {
-            auto c = MakeLabConstants(bank ? 512 : width_ - panel_.SceneLeft(width_), bank ? 512 : height_,
-                                      bank ? secondaryScene_ : scene_, i, 13, panel_.view,
-                                      panel_.environmentIntensity, panel_.yaw, panel_.directIntensity, 1,
-                                      panel_.shadows, panel_.pcf, panel_.bias, panel_.occluder);
+            auto c = MakeLabConstants(
+                bank ? 512 : width_ - panel_.SceneLeft(width_), bank ? 512 : height_,
+                bank ? secondaryScene_ : scene_, i, 13, panel_.view, panel_.environmentIntensity, panel_.yaw,
+                panel_.directIntensity, 1, panel_.shadows, panel_.pcf, panel_.bias, panel_.occluder,
+                bank ? nullptr : panel_.navigation.Position(), bank ? nullptr : panel_.navigation.Target());
             c.lighting.shading = {float(bank ? 512 : width_ - panel_.SceneLeft(width_)),
                                   float(bank ? 512 : height_), float(bank ? 0 : panel_.SceneLeft(width_)), 0};
             std::memcpy(static_cast<uint8_t *>(constantsData_) + (bank * objects_.size() + i) * 512, &c,
@@ -227,7 +231,8 @@ void Sample::OnRender()
     {
         if (reset || dt > 0)
         {
-            auto before = particlesReady_ ? D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER : D3D12_RESOURCE_STATE_COMMON;
+            auto before = particlesReady_ ? D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER
+                                          : D3D12_RESOURCE_STATE_COMMON;
             auto toCompute = Transition(particles_.Get(), before, D3D12_RESOURCE_STATE_UNORDERED_ACCESS);
             commands_->ResourceBarrier(1, &toCompute);
             SetPostBindings(4, 0, 19, true);
@@ -382,6 +387,7 @@ void Sample::OnScreenshot(const std::filesystem::path &path)
 }
 void Sample::OnDestroy() noexcept
 {
+    panel_.navigation.Reset();
     try
     {
         if (queue_ && fence_ && fenceEvent_)
@@ -565,7 +571,8 @@ void Sample::CreatePipeline()
     const auto mipType = (min == 9986 || min == 9987) ? D3D12_FILTER_TYPE_LINEAR : D3D12_FILTER_TYPE_POINT;
     sampler.Filter =
         D3D12_ENCODE_BASIC_FILTER(minType, magType, mipType, D3D12_FILTER_REDUCTION_TYPE_STANDARD);
-    auto address = [](uint32_t wrap) {
+    auto address = [](uint32_t wrap)
+    {
         return wrap == 33071   ? D3D12_TEXTURE_ADDRESS_MODE_CLAMP
                : wrap == 33648 ? D3D12_TEXTURE_ADDRESS_MODE_MIRROR
                                : D3D12_TEXTURE_ADDRESS_MODE_WRAP;
@@ -935,9 +942,8 @@ void Sample::CreatePostResources()
         d.Flags = D3D12_RESOURCE_FLAG_ALLOW_UNORDERED_ACCESS;
         D3D12_HEAP_PROPERTIES h{};
         h.Type = D3D12_HEAP_TYPE_DEFAULT;
-        CheckHR(device_->CreateCommittedResource(&h, D3D12_HEAP_FLAG_NONE, &d,
-                                                 D3D12_RESOURCE_STATE_COMMON, nullptr,
-                                                 IID_PPV_ARGS(&particles_)),
+        CheckHR(device_->CreateCommittedResource(&h, D3D12_HEAP_FLAG_NONE, &d, D3D12_RESOURCE_STATE_COMMON,
+                                                 nullptr, IID_PPV_ARGS(&particles_)),
                 "GPU particles");
         particleView_ = {particles_->GetGPUVirtualAddress(), 65536 * sizeof(Particle), sizeof(Particle)};
         Trace("Particles: same UAV / instance vertex buffer, device-local; 48-byte stride");
@@ -972,9 +978,8 @@ void Sample::CreatePostResources()
     CheckHR(device_->CreateRootSignature(0, blob->GetBufferPointer(), blob->GetBufferSize(),
                                          IID_PPV_ARGS(&postRoot_)),
             "Post root");
-    auto shader = [](const wchar_t *name) {
-        return ReadBinary(AssetPath(std::filesystem::path(L"Shaders") / name));
-    };
+    auto shader = [](const wchar_t *name)
+    { return ReadBinary(AssetPath(std::filesystem::path(L"Shaders") / name)); };
     auto v = shader(L"PostVertex.cso"), pixel = shader(L"PostPixel.cso");
     D3D12_GRAPHICS_PIPELINE_STATE_DESC d{};
     d.pRootSignature = postRoot_.Get();

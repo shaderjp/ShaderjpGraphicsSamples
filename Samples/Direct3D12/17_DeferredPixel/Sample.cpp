@@ -197,11 +197,13 @@ bool Sample::OnMessage(HWND window, UINT message, WPARAM wParam, LPARAM lParam, 
 {
     if (!ImGui::GetCurrentContext() || !win32Ui_)
         return false;
+    const bool cameraHandled = panel_.navigation.Message(window, message, wParam, lParam);
     result = ImGui_ImplWin32_WndProcHandler(window, message, wParam, lParam);
     const auto &io = ImGui::GetIO();
-    return result != 0 || (io.WantCaptureKeyboard &&
-                           (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
-                            message == WM_SYSKEYUP || message == WM_CHAR));
+    return cameraHandled || result != 0 ||
+           (io.WantCaptureKeyboard &&
+            (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
+             message == WM_SYSKEYUP || message == WM_CHAR));
 }
 Sample::ComPtr<ID3D12Resource> Sample::UploadBuffer(const void *data, uint64_t bytes)
 {
@@ -727,7 +729,7 @@ void Sample::Stamp(UINT index)
 {
     commands_->EndQuery(queries_.Get(), D3D12_QUERY_TYPE_TIMESTAMP, index);
 }
-void Sample::OnUpdate(float)
+void Sample::OnUpdate(float seconds)
 {
     if (auto path = panel_.TestCapture(); !path.empty())
         OnScreenshot(path);
@@ -735,6 +737,11 @@ void Sample::OnUpdate(float)
     panel_.QueueTestInput();
     ImGui::NewFrame();
     panel_.Draw(workshop_, timing_, "Direct3D12");
+    const auto &baseCamera =
+        panel_.pathEnabled ? workshop_.path.at(panel_.pathFrame) : workshop_.cameras.at(panel_.camera);
+    if (panel_.navigation.Update(window_, seconds, baseCamera,
+                                 options_.benchmark))
+        panel_.pathEnabled = panel_.pathPlaying = false;
     ImGui::Render();
     if (options_.benchmark)
         panel_.pathFrame = int(timing_.frame < 60 ? 0 : std::min(timing_.frame - 60, 1199u));
@@ -751,7 +758,8 @@ void Sample::OnRender()
         return MakeDeferredConstants(
             workshop_, panel_.scene, panel_.camera, panel_.pathEnabled ? panel_.pathFrame : -1, width_,
             height_, instance, UINT(std::min(panel_.view, 13)), panel_.direct, panel_.ibl, panel_.shadows,
-            panel_.pcf, panel_.bias, panel_.exposure, panel_.intensity, panel_.yaw, panel_.occluder);
+            panel_.pcf, panel_.bias, panel_.exposure, panel_.intensity, panel_.yaw, panel_.occluder,
+            panel_.navigation.Position(), panel_.navigation.Target(), panel_.navigation.Projection());
     };
     auto global = fill(nullptr);
     std::memcpy(constantsData_, &global, sizeof(global));
@@ -1003,6 +1011,7 @@ void Sample::DumpGpuData(const std::filesystem::path &path)
 }
 void Sample::OnDestroy() noexcept
 {
+    panel_.navigation.Reset();
     try
     {
         if (queue_ && fence_ && fenceEvent_)

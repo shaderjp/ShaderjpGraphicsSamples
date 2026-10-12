@@ -78,9 +78,8 @@ void Sample::OnInit(HWND window, uint32_t width, uint32_t height, const Options 
     CheckVk(vkEnumerateInstanceLayerProperties(&layerCount, nullptr), "Enumerate layers");
     std::vector<VkLayerProperties> available(layerCount);
     CheckVk(vkEnumerateInstanceLayerProperties(&layerCount, available.data()), "Enumerate layers");
-    if (std::none_of(available.begin(), available.end(), [](const auto &layer) {
-            return std::strcmp(layer.layerName, "VK_LAYER_KHRONOS_validation") == 0;
-        }))
+    if (std::none_of(available.begin(), available.end(), [](const auto &layer)
+                     { return std::strcmp(layer.layerName, "VK_LAYER_KHRONOS_validation") == 0; }))
         throw std::runtime_error("Install Vulkan SDK validation layers for Debug builds");
     instanceInfo.enabledLayerCount = 1;
     instanceInfo.ppEnabledLayerNames = layers;
@@ -125,9 +124,9 @@ void Sample::OnInit(HWND window, uint32_t width, uint32_t height, const Options 
         CheckVk(vkEnumerateDeviceExtensionProperties(candidate, nullptr, &extensionCount,
                                                      deviceExtensions.data()),
                 "Device extensions");
-        if (std::none_of(deviceExtensions.begin(), deviceExtensions.end(), [](const auto &extension) {
-                return std::strcmp(extension.extensionName, VK_KHR_SWAPCHAIN_EXTENSION_NAME) == 0;
-            }))
+        if (std::none_of(
+                deviceExtensions.begin(), deviceExtensions.end(), [](const auto &extension)
+                { return std::strcmp(extension.extensionName, VK_KHR_SWAPCHAIN_EXTENSION_NAME) == 0; }))
             continue;
         uint32_t familyCount = 0;
         vkGetPhysicalDeviceQueueFamilyProperties(candidate, &familyCount, nullptr);
@@ -411,11 +410,13 @@ bool Sample::OnMessage(HWND window, UINT message, WPARAM wParam, LPARAM lParam, 
 {
     if (!ImGui::GetCurrentContext() || !win32Ui_)
         return false;
+    const bool cameraHandled = panel_.navigation.Message(window, message, wParam, lParam);
     result = ImGui_ImplWin32_WndProcHandler(window, message, wParam, lParam);
     const auto &io = ImGui::GetIO();
-    return result != 0 || (io.WantCaptureKeyboard &&
-                           (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
-                            message == WM_SYSKEYUP || message == WM_CHAR));
+    return cameraHandled || result != 0 ||
+           (io.WantCaptureKeyboard &&
+            (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
+             message == WM_SYSKEYUP || message == WM_CHAR));
 }
 void Sample::OnUpdate(float seconds)
 {
@@ -426,6 +427,7 @@ void Sample::OnUpdate(float seconds)
     ImGui::NewFrame();
     lastSeconds_ = seconds;
     panel_.Draw(width_, height_, model_, "Vulkan");
+    panel_.navigation.Update(window_, seconds, scene_.camera, scene_.target);
     ImGui::Render();
 }
 
@@ -439,7 +441,8 @@ void Sample::OnRender()
         auto c =
             MakeLabConstants(width_ - panel_.SceneLeft(width_), height_, scene_, i, LAB_TECHNIQUE,
                              panel_.view, panel_.environmentIntensity, panel_.yaw, panel_.directIntensity,
-                             panel_.exposure, panel_.shadows, panel_.pcf, panel_.bias, panel_.occluder);
+                             panel_.exposure, panel_.shadows, panel_.pcf, panel_.bias, panel_.occluder,
+                             panel_.navigation.Position(), panel_.navigation.Target());
         c.lighting.shading = {float(width_ - panel_.SceneLeft(width_)), float(height_),
                               float(panel_.SceneLeft(width_)), 0};
         std::memcpy(static_cast<uint8_t *>(constants_.mapped) + i * constantStride_, &c, sizeof(c));
@@ -708,6 +711,7 @@ void Sample::OnScreenshot(const std::filesystem::path &path)
 }
 void Sample::OnDestroy() noexcept
 {
+    panel_.navigation.Reset();
     if (device_)
     {
         const auto result = vkDeviceWaitIdle(device_);
@@ -839,7 +843,8 @@ void Sample::LoadTexture(const std::filesystem::path &path, uint32_t slot, VkFor
             (min == 9728 || min == 9984 || min == 9986) ? VK_FILTER_NEAREST : VK_FILTER_LINEAR;
         sampler.mipmapMode =
             (min == 9986 || min == 9987) ? VK_SAMPLER_MIPMAP_MODE_LINEAR : VK_SAMPLER_MIPMAP_MODE_NEAREST;
-        auto address = [](uint32_t wrap) {
+        auto address = [](uint32_t wrap)
+        {
             return wrap == 33071   ? VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE
                    : wrap == 33648 ? VK_SAMPLER_ADDRESS_MODE_MIRRORED_REPEAT
                                    : VK_SAMPLER_ADDRESS_MODE_REPEAT;
@@ -884,7 +889,8 @@ void Sample::CreatePipeline()
     }
     const auto vertex = ReadBinary(AssetPath(L"Shaders/Vertex.spv"));
     const auto pixel = ReadBinary(AssetPath(L"Shaders/Pixel.spv"));
-    auto shader = [&](const std::vector<uint8_t> &bytes, VkShaderModule &module) {
+    auto shader = [&](const std::vector<uint8_t> &bytes, VkShaderModule &module)
+    {
         if (bytes.size() % 4 || bytes.size() < 20)
             throw std::runtime_error("Invalid SPIR-V binary");
         VkShaderModuleCreateInfo info{VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO};

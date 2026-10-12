@@ -168,11 +168,13 @@ bool Sample::OnMessage(HWND window, UINT message, WPARAM wParam, LPARAM lParam, 
 {
     if (!ImGui::GetCurrentContext() || !win32Ui_)
         return false;
+    const bool cameraHandled = panel_.navigation.Message(window, message, wParam, lParam);
     result = ImGui_ImplWin32_WndProcHandler(window, message, wParam, lParam);
     const auto &io = ImGui::GetIO();
-    return result != 0 || (io.WantCaptureKeyboard &&
-                           (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
-                            message == WM_SYSKEYUP || message == WM_CHAR));
+    return cameraHandled || result != 0 ||
+           (io.WantCaptureKeyboard &&
+            (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
+             message == WM_SYSKEYUP || message == WM_CHAR));
 }
 void Sample::OnUpdate(float seconds)
 {
@@ -183,6 +185,7 @@ void Sample::OnUpdate(float seconds)
     ImGui::NewFrame();
     lastSeconds_ = seconds;
     panel_.Draw(width_, height_, model_, "Direct3D12");
+    panel_.navigation.Update(window_, seconds, scene_.camera, scene_.target);
     ImGui::Render();
 }
 
@@ -196,7 +199,8 @@ void Sample::OnRender()
         auto c =
             MakeLabConstants(width_ - panel_.SceneLeft(width_), height_, scene_, i, LAB_TECHNIQUE,
                              panel_.view, panel_.environmentIntensity, panel_.yaw, panel_.directIntensity,
-                             panel_.exposure, panel_.shadows, panel_.pcf, panel_.bias, panel_.occluder);
+                             panel_.exposure, panel_.shadows, panel_.pcf, panel_.bias, panel_.occluder,
+                             panel_.navigation.Position(), panel_.navigation.Target());
         c.lighting.shading = {float(width_ - panel_.SceneLeft(width_)), float(height_),
                               float(panel_.SceneLeft(width_)), 0};
         std::memcpy(static_cast<uint8_t *>(constantsData_) + i * 512, &c, sizeof(c));
@@ -207,7 +211,8 @@ void Sample::OnRender()
     ID3D12DescriptorHeap *heaps[] = {textureHeap_.Get()};
     commands_->SetDescriptorHeaps(1, heaps);
     commands_->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    auto draw = [&](size_t i) {
+    auto draw = [&](size_t i)
+    {
         auto &o = objects_[i];
         commands_->SetGraphicsRootConstantBufferView(0, constants_->GetGPUVirtualAddress() + i * 512);
         auto table = textureHeap_->GetGPUDescriptorHandleForHeapStart();
@@ -337,6 +342,7 @@ void Sample::OnScreenshot(const std::filesystem::path &path)
 }
 void Sample::OnDestroy() noexcept
 {
+    panel_.navigation.Reset();
     try
     {
         if (queue_ && fence_ && fenceEvent_)
@@ -518,7 +524,8 @@ void Sample::CreatePipeline()
     const auto mipType = (min == 9986 || min == 9987) ? D3D12_FILTER_TYPE_LINEAR : D3D12_FILTER_TYPE_POINT;
     sampler.Filter =
         D3D12_ENCODE_BASIC_FILTER(minType, magType, mipType, D3D12_FILTER_REDUCTION_TYPE_STANDARD);
-    auto address = [](uint32_t wrap) {
+    auto address = [](uint32_t wrap)
+    {
         return wrap == 33071   ? D3D12_TEXTURE_ADDRESS_MODE_CLAMP
                : wrap == 33648 ? D3D12_TEXTURE_ADDRESS_MODE_MIRROR
                                : D3D12_TEXTURE_ADDRESS_MODE_WRAP;

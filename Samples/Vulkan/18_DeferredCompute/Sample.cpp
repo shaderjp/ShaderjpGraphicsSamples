@@ -332,11 +332,13 @@ bool Sample::OnMessage(HWND window, UINT message, WPARAM wParam, LPARAM lParam, 
 {
     if (!ImGui::GetCurrentContext() || !win32Ui_)
         return false;
+    const bool cameraHandled = panel_.navigation.Message(window, message, wParam, lParam);
     result = ImGui_ImplWin32_WndProcHandler(window, message, wParam, lParam);
     const auto &io = ImGui::GetIO();
-    return result != 0 || (io.WantCaptureKeyboard &&
-                           (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
-                            message == WM_SYSKEYUP || message == WM_CHAR));
+    return cameraHandled || result != 0 ||
+           (io.WantCaptureKeyboard &&
+            (message == WM_KEYDOWN || message == WM_KEYUP || message == WM_SYSKEYDOWN ||
+             message == WM_SYSKEYUP || message == WM_CHAR));
 }
 Sample::ImageResource Sample::CreateImage(uint32_t width, uint32_t height, VkFormat format,
                                           VkImageUsageFlags usage, VkImageAspectFlags aspect, uint32_t mips)
@@ -1125,7 +1127,7 @@ void Sample::Stamp(uint32_t i)
     if (queries_)
         vkCmdWriteTimestamp2(commands_, VK_PIPELINE_STAGE_2_BOTTOM_OF_PIPE_BIT, queries_, i);
 }
-void Sample::OnUpdate(float)
+void Sample::OnUpdate(float seconds)
 {
     if (auto path = panel_.TestCapture(); !path.empty())
         OnScreenshot(path);
@@ -1133,6 +1135,11 @@ void Sample::OnUpdate(float)
     panel_.QueueTestInput();
     ImGui::NewFrame();
     panel_.Draw(workshop_, timing_, "Vulkan");
+    const auto &baseCamera =
+        panel_.pathEnabled ? workshop_.path.at(panel_.pathFrame) : workshop_.cameras.at(panel_.camera);
+    if (panel_.navigation.Update(window_, seconds, baseCamera,
+                                 options_.benchmark))
+        panel_.pathEnabled = panel_.pathPlaying = false;
     ImGui::Render();
     if (options_.benchmark)
         panel_.pathFrame = int(timing_.frame < 60 ? 0 : std::min(timing_.frame - 60, 1199u));
@@ -1149,7 +1156,8 @@ void Sample::OnRender()
         return MakeDeferredConstants(
             workshop_, panel_.scene, panel_.camera, panel_.pathEnabled ? panel_.pathFrame : -1, width_,
             height_, instance, uint32_t(std::min(panel_.view, 13)), panel_.direct, panel_.ibl, panel_.shadows,
-            panel_.pcf, panel_.bias, panel_.exposure, panel_.intensity, panel_.yaw, panel_.occluder);
+            panel_.pcf, panel_.bias, panel_.exposure, panel_.intensity, panel_.yaw, panel_.occluder,
+            panel_.navigation.Position(), panel_.navigation.Target(), panel_.navigation.Projection());
     };
     auto global = fill(nullptr);
     std::memcpy(constants_.mapped, &global, sizeof(global));
@@ -1508,6 +1516,7 @@ void Sample::DumpGpuData(const std::filesystem::path &path)
 }
 void Sample::OnDestroy() noexcept
 {
+    panel_.navigation.Reset();
     try
     {
         if (device_)

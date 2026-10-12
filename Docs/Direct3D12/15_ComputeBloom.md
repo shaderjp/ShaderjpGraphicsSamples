@@ -129,3 +129,7 @@ Thresholdを上げると抽出する画素が減り、Strengthを上げると合
 前：[第14回](14_RenderTexture.md)。別API：[Vulkan 第15回](../Vulkan/15_ComputeBloom.md)。次：[第16回](16_GpuParticles.md)。
 
 画像と新規アセット、コードは自作。Copyright (c) 2026 masafumi、[MIT License](../../LICENSE)。比較はStudio、直接光3、環境強度1、露出1、同じ配置とカメラを使います。掲載画像は8 frames、固定dt 1／60で撮影しています。
+
+## カメラ操作
+
+WASDで移動、Q/Eで上下移動、右ドラッグで視線を回転、Shiftで加速します。Rで選択中の固定カメラへ戻り、UIのResetはカメラと設定を初期化します。ImGuiの操作中はカメラ入力を抑えます。[共通の操作と検証手順](../CameraNavigation.md)も参照してください。

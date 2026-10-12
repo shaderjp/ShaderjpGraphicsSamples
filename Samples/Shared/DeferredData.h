@@ -37,7 +37,10 @@ inline DeferredConstants MakeDeferredConstants(const Workshop &w, int scene, int
                                                uint32_t width, uint32_t height,
                                                const WorkshopInstance *instance, uint32_t view, bool direct,
                                                bool ibl, bool shadows, bool pcf, float bias, float exposure,
-                                               float environmentIntensity, float yaw, float occluder)
+                                               float environmentIntensity, float yaw, float occluder,
+                                               const DirectX::XMFLOAT3 *eyeOverride = nullptr,
+                                               const DirectX::XMFLOAT3 *targetOverride = nullptr,
+                                               const DirectX::XMFLOAT3 *lensOverride = nullptr)
 {
     using namespace DirectX;
     const auto &s = w.scenes.at(scene);
@@ -47,9 +50,12 @@ inline DeferredConstants MakeDeferredConstants(const Workshop &w, int scene, int
     if (instance && instance->movable)
         world *= XMMatrixTranslation(occluder, 0, 0);
     auto vp =
-        XMMatrixLookAtLH(XMLoadFloat3(&cam.position), XMLoadFloat3(&cam.target), XMVectorSet(0, 1, 0, 0)) *
-        XMMatrixPerspectiveFovLH(XMConvertToRadians(cam.fov), float(width) / height, cam.nearPlane,
-                                 cam.farPlane);
+        XMMatrixLookAtLH(XMLoadFloat3(eyeOverride ? eyeOverride : &cam.position),
+                         XMLoadFloat3(targetOverride ? targetOverride : &cam.target),
+                         XMVectorSet(0, 1, 0, 0)) *
+        XMMatrixPerspectiveFovLH(XMConvertToRadians((lensOverride ? lensOverride->x : cam.fov)),
+                                 float(width) / height, (lensOverride ? lensOverride->y : cam.nearPlane),
+                                 (lensOverride ? lensOverride->z : cam.farPlane));
     DeferredConstants c{};
     XMStoreFloat4x4(&c.world, world);
     XMStoreFloat4x4(&c.normalMatrix, XMMatrixTranspose(XMMatrixInverse(nullptr, world)));
@@ -65,7 +71,8 @@ inline DeferredConstants MakeDeferredConstants(const Workshop &w, int scene, int
         c.emission.w = float(m.alpha == AlphaMode::Mask);
         c.screen.w = m.cutoff;
     }
-    c.camera = {cam.position.x, cam.position.y, cam.position.z, 1};
+    const auto &eye = eyeOverride ? *eyeOverride : cam.position;
+    c.camera = {eye.x, eye.y, eye.z, 1};
     c.sunDirection = {s.direction.x, s.direction.y, s.direction.z, 0};
     c.sunColor = s.sun;
     c.environment = {environmentIntensity, XMConvertToRadians(yaw), exposure, 0};
@@ -75,17 +82,39 @@ inline DeferredConstants MakeDeferredConstants(const Workshop &w, int scene, int
     c.controls = {uint32_t(s.lights.size()), view, uint32_t(direct), uint32_t(ibl)};
     return c;
 }
-inline constexpr const char *GpuPassNames[] = {"shadow",  "geometry",   "lighting", "sky",     "transparent",
-                                               "extract", "horizontal", "vertical", "display", "total"};
+inline constexpr const char *GpuPassNames[] = {"shadow",
+                                               "geometry",
+                                               "lighting",
+                                               "sky",
+                                               "transparent",
+                                               "extract",
+                                               "horizontal",
+                                               "vertical",
+                                               "display",
+                                               "total"
+#ifdef LIGHT_CULLING
+                                               ,
+                                               "tile-depth",
+                                               "cull"
+#endif
+};
+inline constexpr size_t GpuPassCount = std::size(GpuPassNames);
 struct DeferredTiming
 {
-    std::array<double, 10> milliseconds{};
-    std::vector<std::array<double, 10>> samples;
+    std::array<double, GpuPassCount> milliseconds{};
+    std::vector<std::array<double, GpuPassCount>> samples;
     std::filesystem::path output;
     std::string api, gpu, mode, scene, configuration;
     uint32_t frame = 0;
     bool benchmark = false;
-    void Record(const std::array<double, 10> &values)
+#ifdef LIGHT_CULLING
+    uint32_t pointLights = 0, cells = 0, listCapacity = 256, activeCells = 0, maxCandidates = 0,
+             overflowCells = 0;
+    double averageCandidates = 0;
+    int lightsPerRoom = 256;
+    float lightRadius = 1.6f, lightIntensity = .4f;
+#endif
+    void Record(const std::array<double, GpuPassCount> &values)
     {
         milliseconds = values;
         if (benchmark && frame >= 60 && frame < 1260)
@@ -111,7 +140,23 @@ struct DeferredTiming
                                  {"pathFrames", 1200},
                                  {"fixedDelta", 1.0 / 60},
                                  {"gBufferBytesPerPixel", 18}};
-        for (size_t p = 0; p < 10; ++p)
+#ifdef LIGHT_CULLING
+        report["pointLights"] = pointLights;
+        report["tileSize"] = 16;
+        report["depthSlices"] = 24;
+        report["cells"] = cells;
+        report["listStride"] = 256;
+        report["listCapacity"] = listCapacity;
+        report["lightsPerRoom"] = lightsPerRoom;
+        report["lightRadius"] = lightRadius;
+        report["lightIntensity"] = lightIntensity;
+        report["activeCells"] = activeCells;
+        report["averageCandidates"] = averageCandidates;
+        report["maxCandidates"] = maxCandidates;
+        report["overflowCells"] = overflowCells;
+        report["listBytes"] = uint64_t(cells) * (256 * 4 + 8);
+#endif
+        for (size_t p = 0; p < GpuPassCount; ++p)
         {
             std::vector<double> v;
             double sum = 0;

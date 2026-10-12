@@ -87,3 +87,7 @@ UIはパス別のGPU時間を表示します。ReleaseのベンチマークはUI
 計測はGPU時間の平均・中央値・p95をJSONへ、フレームごとの結果をCSVへ保存します。Benchmark中はOpaqueMaskと照明条件を固定します。PS／CSの処理時間はGPU・シーン・構成に依存します。[検証記録](../DeferredVerification.md)には実測値、SDK／コンパイラ／GPU、画像条件をまとめています。
 
 本サンプルではディレクショナルライトのShadowを統合しています。点光源Shadow、IBLの局所遮蔽、Cyclesの間接光とは差があります。次のTiled／Clustered Renderingでは、この全ライトのループを画素ごとの候補へ絞り込んで比較します。
+
+## カメラ操作
+
+WASDで移動、Q/Eで上下移動、右ドラッグで視線を回転、Shiftで加速します。Rで選択中の固定カメラへ戻り、UIのResetはカメラと設定を初期化します。ImGuiの操作中はカメラ入力を抑えます。[共通の操作と検証手順](../CameraNavigation.md)も参照してください。

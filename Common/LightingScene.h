@@ -30,5 +30,6 @@ LightingScene LoadLightingScene(const std::filesystem::path &path);
 LabConstants MakeLabConstants(uint32_t width, uint32_t height, const LightingScene &scene, size_t object,
                               int technique, int view, float environmentIntensity, float environmentYaw,
                               float directIntensity, float exposure, bool shadows, bool pcf, float bias,
-                              float occluderOffset);
+                              float occluderOffset, const DirectX::XMFLOAT3 *eyeOverride = nullptr,
+                              const DirectX::XMFLOAT3 *targetOverride = nullptr);
 } // namespace tutorial

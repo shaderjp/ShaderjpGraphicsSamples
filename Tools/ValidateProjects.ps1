@@ -52,3 +52,39 @@ foreach ($project in $projects) {
     foreach ($key in $expected.Keys) { if (-not $expected[$key]) { throw "Missing filter mapping: $key" } }
     Write-Output ("Validated {0}: {1} items" -f $project.BaseName, $expected.Count)
 }
+
+# Solution folders are part of the visible IDE organization, separately from file filters.
+$solutionPath=Join-Path $RepositoryRoot 'ShaderjpGraphicsSamples.sln'
+$solution=Get-Content -LiteralPath $solutionPath -Raw
+$solutionProjects=@{}
+$solutionFolders=@{}
+foreach($match in [regex]::Matches($solution,'(?m)^Project\("(?<type>\{[^}]+\})"\) = "(?<name>[^"]+)", "(?<path>[^"]+)", "(?<id>\{[^}]+\})"')) {
+    $id=$match.Groups['id'].Value
+    if($solutionProjects.ContainsKey($id)){throw "Duplicate solution project GUID: $id"}
+    $solutionProjects[$id]=$match.Groups['path'].Value
+    if($match.Groups['type'].Value -eq '{2150E333-8FDC-42A3-9474-1A3956D46DE8}') {
+        $solutionFolders[$match.Groups['name'].Value]=$id
+    }
+}
+$nested=[regex]::Match($solution,'(?s)GlobalSection\(NestedProjects\) = preSolution\s*(.*?)EndGlobalSection')
+if(-not $nested.Success){throw 'Missing solution folder assignments'}
+$assignments=@{}
+foreach($match in [regex]::Matches($nested.Groups[1].Value,'(?m)^\s*(\{[^}]+\}) = (\{[^}]+\})\s*$')) {
+    $child=$match.Groups[1].Value;$parent=$match.Groups[2].Value
+    if($assignments.ContainsKey($child)){throw "Duplicate solution folder assignment: $child"}
+    if(-not $solutionProjects.ContainsKey($child) -or $parent -notin $solutionFolders.Values){throw "Invalid solution folder assignment: $child -> $parent"}
+    $assignments[$child]=$parent
+}
+$apiProjects=0
+foreach($id in $solutionProjects.Keys) {
+    $path=$solutionProjects[$id]
+    if($path -match '^Samples\\(Direct3D12|Vulkan)\\.*\.vcxproj$') {
+        $api=$Matches[1]
+        if($assignments[$id] -ne $solutionFolders[$api]){throw "$path must belong to the $api solution folder"}
+        [xml]$project=Get-Content -LiteralPath (Join-Path $RepositoryRoot $path) -Raw
+        $actualGuid=$project.Project.PropertyGroup.ProjectGuid | Where-Object {$_}
+        if($actualGuid -ne $id){throw "Solution and project GUID mismatch: $path"}
+        $apiProjects++
+    }
+}
+Write-Output "Validated solution folders: $apiProjects API sample projects"

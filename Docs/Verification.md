@@ -244,3 +244,27 @@ Deferred Renderingと、その後のレイトレーシング・Mesh Shaderで共
 Workshopを拡張CPUローダーで読み、PS／CSで同じ18 B／画素のG-bufferをシェーディングする4本を追加しました。Shadow、PBR、IBL、HDR、Bloom、Forward透明合成と診断表示、GPU時間を統合しています。位置はDepthから再構築し、位置用ターゲットは作っていません。
 
 37プロジェクトのfilters・Restore・Debug／Releaseビルド、全36サンプルのライフサイクル、旧ローダー、Workshop CPU、Deferredの数値・UI・Shader欠落試験が成功しました。検証エラーは0件です。PS／CSのG-buffer・Depthは一致し、HDR差は規定内でした。Releaseの固定経路1200 frames×8条件を測定し、1280×720の新規画像18枚を確認しました。詳細と計測データは[Deferred検証記録](DeferredVerification.md)を参照してください。
+
+
+## 2026-10-13 第19・20回：Tiled DeferredとClustered Shading
+
+追加4本のDebug／Release、全プロジェクトとfilters、SPIR-V、旧ローダーとWorkshop CPU試験が成功しました。第1〜18回の両API 36本のライフサイクルも再確認しました。All／Tiled／ClusteredのG-buffer一致、HDRの許容誤差、ライトリストの独立した球／平面検証、4,680ライト、容量超過、641×479、実UIのReset、実行中のモード切替を確認し、検証エラーは0件でした。Releaseの1200 frames×12条件を測定しました。[詳細記録](LightCullingVerification.md)を参照してください。
+
+## 2026-10-13 発展編01〜03：DXR／Vulkanレイトレーシング
+
+Albedo一次レイ、BRDFと方向光・点光源の影、1バウンスの鏡面反射を、両APIの独立した6プロジェクトとして追加しました。Workshopの共有PrimitiveをBLASへ、配置をTLASへ接続し、OPAQUEとMASKを処理します。API初期化・加速構造・State Object／Pipeline・Shader Table／SBT・同期・解放は各サンプルにあります。
+
+VS 2026 Community 18.10.12201.205、v145／cl.exe 19.51.36257.0、Windows SDK 10.0.26100.0、RTX 4070／NVIDIA 610.88、Agility SDK 1.619.6、NuGet DXC 1.9.2609.5、Vulkan SDK 1.4.341.1／DXC 1.9.0.5180で検証しました。SM6.6／HLSL 2021／Vulkan 1.3を維持しています。
+
+Restore、ソリューションのDebug／Release、filters、DXIL／SPIR-VとCPU配置、専用GPU試験、旧ローダーとWorkshop CPU、全サンプルのライフサイクル、既存09 ImGuiと17・18 Deferredの回帰試験が成功しました。既知UV、MASKの表裏・影・反射、ライトまでの距離制限、画面外の反射先とその影、環境Miss、反射OFF、Stress、641×479、実UIとReset、Shader欠落と部分解放を確認し、検証エラーは0件でした。新規画像20点はすべて1280×720の実GPUキャプチャです。[発展編目次](AdvancedGraphicsSamples.md)・[詳細記録](RaytracingVerification.md)を参照してください。
+
+## 2026-10-13：ソリューションフォルダと第13回以降のカメラ操作
+
+- 全46 APIサンプルをDirect3D12／Vulkanのソリューションフォルダへ配置。`ValidateProjects.ps1`で全47プロジェクトのXML／filters、ソリューションとプロジェクトのGUID一致、フォルダ割当を検証した。
+- VS Community 2026 18.10.0、v145／MSVC 19.51.36257、Windows SDK 10.0.26100.0、D3D12 Agility 1.619.6／DXC 1.9.2609.5、Vulkan SDK 1.4.341.1。GPUはNVIDIA GeForce RTX 4070、ドライバ32.0.16.1088（610.88）。
+- Restore成功。ソース確定後の全ソリューションDebug Build／Release Rebuildが成功し、最終ビルドのコンパイラエラー・警告は0件。SPIR-V検証もビルド内で成功した。途中のヘッダー更新と重なったビルドの実行結果は完了判定へ含めていない。
+- `TestCameraNavigationCpu.ps1`成功。左手系の前進、斜め移動の速度、Shift、UI入力取得、フォーカス・キャプチャ喪失、短いドラッグ、上下回転の制限、経路からのFOV／Near／Far引継ぎ、Resetを確認した。
+- `TestCameraNavigation.ps1`をDebug／Releaseで実行。第13〜20回とAdvanced01〜03の両API、計22サンプル×2構成で成功した。実際のWin32キー／マウスメッセージを送り、移動と回転で各1,000画素以上のRGB変化、Rによる初期画像への完全一致を確認した。全撮影は1280×720、検証エラー0件。
+- 移動前・移動後・回転後・Reset後について、第19回のAll／Tiled／Clusteredモードを追加比較した。両APIとも各表示画像のRGB差は0だった。G-buffer、深度再構築、ライトの絞り込みが同じ操作後の視点を使うことを確認した。
+- `TestSamples.ps1`をDebug／Releaseで全46サンプルへ実行。描画、1280×720撮影、640×480リサイズ、最小化から1280×720へ復帰、終了が成功し、全実行で検証エラー0件。`TestLoaders.ps1`も成功した。
+- 既存記事画像と配布アセットは変更せず、操作試験の画像は`.cache/camera-navigation/<構成>`へ保存した。Lighting LabとWorkshopの回転後画像を目視確認した。操作方法は[CameraNavigation.md](CameraNavigation.md)と各サンプルの解説へ記録した。

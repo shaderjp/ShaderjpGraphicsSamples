@@ -1,0 +1,555 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{CD47A57A-27B2-4CF1-BE5C-6BA67E776958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A4C8F623-C70F-4646-BB5F-D908BBBB252F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{17DE818A-28ED-418D-A135-F44B248D2D8C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D62E2F81-1946-4A8D-BFDF-A4A2D978FA7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Build Scripts">
+      <UniqueIdentifier>{82F873C4-31DB-496C-898C-1895D01834B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{5EC7F1A9-7CEB-433D-B268-B0877D34D689}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ThirdParty">
+      <UniqueIdentifier>{5FEF7809-B2F6-437D-98CA-F3172BED6ADD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{B29C7903-E875-49A6-A3D6-15DA2FDE89E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ThirdParty">
+      <UniqueIdentifier>{CC7D4446-46A7-4841-8CA8-8F4AD7D9A41A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Application.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Image.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClInclude Include="Sample.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Application.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Image.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Mesh.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\Common.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <None Include="..\..\..\Build\Common.props">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <None Include="..\..\..\Build\Samples.targets">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <None Include="packages.config">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <ClCompile Include="..\..\..\Common\Gltf.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\Common\Gltf.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <None Include="..\..\..\ThirdParty\nlohmann-json\LICENSE.MIT">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\LICENSE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <ClInclude Include="..\..\..\Common\Lighting.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClCompile Include="ImGuiRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\Shaders\09_ImGui\Ui.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_draw.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_tables.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_widgets.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imconfig.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui_internal.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_rectpack.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_textedit.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_truetype.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <None Include="..\..\..\ThirdParty\imgui\LICENSE.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiVertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <ClCompile Include="..\..\..\Common\Dds.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\LightingScene.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\Common\DdsImage.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\LightingScene.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\LightingLabPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\LightingLab\Scene.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\Vertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\Pixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\SkyVertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\SkyPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\ShadowVertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Box.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Box.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\FloatingPlate.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\FloatingPlate.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Floor.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Floor.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Plinth.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Plinth.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Ramp.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Ramp.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Sphere_0_0.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Sphere_0_0.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Sphere_0_1.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Sphere_0_1.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Sphere_0_2.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Sphere_0_2.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Sphere_0_3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Sphere_0_3.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Sphere_0_4.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Sphere_0_4.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Sphere_1_0.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Sphere_1_0.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Sphere_1_1.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Sphere_1_1.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Sphere_1_2.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Sphere_1_2.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Sphere_1_3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Sphere_1_3.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Sphere_1_4.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Sphere_1_4.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\ThinColumn.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\ThinColumn.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Wall.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Wall.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\BRDF.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Orientation.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Room_Environment.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Room_Irradiance.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Room_Specular.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Environment.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Irradiance.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Specular.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\LightingLab\Exhibition.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Manifest.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_Albedo.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_Albedo.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_PBR.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_PBR.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\AO.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Metallic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Roughness.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\ThirdParty\DirectXTex\LICENSE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <ProjectReference Include="..\..\Support\DirectXTexCpu\DirectXTexCpu.vcxproj">
+      <Filter>Build Scripts</Filter>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Assets\Scenes\LightingLab\Manifest.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\LightingLab\MaterialStudy.json">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

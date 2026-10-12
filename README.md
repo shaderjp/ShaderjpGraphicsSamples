@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。9つのテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。13のテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
 
 ## 必要な環境
 
@@ -50,6 +50,10 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | Lambert／Blinn-Phongライティング | [07 Lighting](Docs/Direct3D12/07_Lighting.md) | [07 Lighting](Docs/Vulkan/07_Lighting.md) |
 | Metallic-Roughness PBR・Normal／ORM | [08 PBR](Docs/Direct3D12/08_PBR.md) | [08 PBR](Docs/Vulkan/08_PBR.md) |
 | Dear ImGui・ライト編集・動的Constant／Uniform Buffer | [09 ImGui](Docs/Direct3D12/09_ImGui.md) | [09 ImGui](Docs/Vulkan/09_ImGui.md) |
+| Cubemap・HDR・Skybox・理想鏡面 | [10 Cubemap](Docs/Direct3D12/10_Cubemap.md) | [10 Cubemap](Docs/Vulkan/10_Cubemap.md) |
+| Irradiance Cubemap・拡散IBL | [11 Diffuse IBL](Docs/Direct3D12/11_DiffuseIBL.md) | [11 Diffuse IBL](Docs/Vulkan/11_DiffuseIBL.md) |
+| GGX Prefilter・BRDF LUT・鏡面IBL | [12 Specular IBL](Docs/Direct3D12/12_SpecularIBL.md) | [12 Specular IBL](Docs/Vulkan/12_SpecularIBL.md) |
+| 方向光Shadow map・バイアス・3×3 PCF | [13 Shadow map](Docs/Direct3D12/13_ShadowMap.md) | [13 Shadow map](Docs/Vulkan/13_ShadowMap.md) |
 
 各プロジェクトをVSのスタートアッププロジェクトに設定して実行できます。ESCまたは閉じるボタンで終了します。
 
@@ -58,6 +62,10 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 ![D3D12モデルサンプル](Docs/Direct3D12/Images/05_Model.png)
 
 [Shader BallのBlenderデータとテクスチャ](Docs/Assets/ShaderBall.md)を用意し、06_GltfでAlbedo版を表示します。07は同じAlbedo版へLambert／Blinn-Phong、08はPBR版へNormal・ORM・Emissiveを加えます。[ライティングからPBRへの共通解説](Docs/LightingAndPBR.md)で段階を説明しています。[glTFローダーの共通解説](Docs/GltfLoading.md)ではJSON解析にMITライセンスのnlohmann/jsonを使う理由と対応範囲を説明しています。
+
+第9回の後には、[LambertとBlinn-PhongからPBRへ ライトとシェーディングを振り返る](Docs/LightingToRendering.md)を読んでください。実描画とCyclesの参考画像から光・材質・遮蔽の役割を整理し、今後のCube map、IBL、Shadowへつなげる読み物です。
+
+第10〜13回は[Lighting Labの自作モデル・HDR環境・IBL事前計算](Docs/Assets/LightingLab.md)を使い、[CubemapからIBLとShadow mapへの共通解説](Docs/EnvironmentLighting.md)に沿って拡張します。Blenderの編集正本と生成スクリプトを配布し、アプリの起動にはBlenderやベイクを必要としません。DirectXTex may2026は固定Submoduleで、CPUのDDS読込に限定して利用しています。
 
 ## 共通化と構成
 
@@ -76,7 +84,7 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 
 行列・リソース番号・上下方向・色空間については[共通HLSLの規約](Docs/SharedShaders.md)を参照してください。D3D12とVulkanのDXCは別の配布元を使うため、[検証記録](Docs/Verification.md)に各バージョンを残しています。
 
-初回の画像ローダーはWICです。Dear ImGuiは09で`ThirdParty/imgui`の固定Submoduleとして導入しました。DDS・Cubemapを扱う後続テーマでDirectXTexを追加します。OBJローダーは外部依存なしで、MTL・複数マテリアル・照明は初回の対象に含めません。
+初回の画像ローダーはWICです。Dear ImGuiは09で`ThirdParty/imgui`、DirectXTexは10で`ThirdParty/DirectXTex`の固定Submoduleとして導入しました。OBJローダーは外部依存なしで、MTL・複数マテリアル・照明は初回の対象に含めません。
 
 09は08のPBRを使い、ライトの色・強度・方向、回転、環境項、露出、Metallic／Roughness／Normal／AO／Emissiveの係数と表示モードをパネルで変更します。CPU可視のConstant／Uniform BufferをGPU完了後に毎フレーム更新します。UIも共通HLSLを事前コンパイルし、公式Win32入力バックエンドと教材用のAPI別描画バックエンドを組み合わせています。フォントは固定アトラス1枚です。
 
@@ -117,11 +125,15 @@ Vulkanのスクリーンショットは、取得済みの画像をPresent前に�
 .\Tools\TestSamples.ps1 -Configuration Release
 .\Tools\TestFailureCases.ps1
 .\Tools\TestLighting.ps1
+.\Tools\TestLightingLabAssets.ps1
+.\Tools\TestLightingLab.ps1
+.\Tools\TestLightingLab.ps1 -Configuration Release
+.\Tools\TestLightingLabFailures.ps1
 .\Tools\TestImGui.ps1
 .\Tools\TestImGui.ps1 -Configuration Release
 ```
 
-`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は全18本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。
+`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は全26本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。
 
 `TestLighting`は全表示モードと、既知の色・法線を持つ平面のGPU画素を照合します。追加比較画像は`-CaptureDocs`で保存できます。
 

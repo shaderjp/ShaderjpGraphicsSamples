@@ -102,3 +102,5 @@ UIのViewportにも負のheightを使い、同じHLSL投影でD3D12と上下方�
 TestImGuiは入力イベントでIntensityを編集し、Resetし、再編集します。UI外のGPU画像が変化し、Reset後に元の画素へ戻ることを確認します。DebugはValidation Layerと同期検証を有効化し、UIの二つのRendering Scope、リサイズ・最小化復帰・終了、欠落ファイルの終了処理も検証しています。SPIR-Vは通常ビルド内のspirv-valで検証します。環境と結果は[検証記録](../Verification.md)、上のPNGはVulkanによる実GPU描画です。
 
 前：[08 PBR](08_PBR.md)。別API：[Direct3D12 09](../Direct3D12/09_ImGui.md)。
+
+この回の後に読む共通章：[LambertとBlinn-PhongからPBRへ ライトとシェーディングを振り返る](../LightingToRendering.md)。Cyclesの参考画像と比較しながら、今後のCube map、IBL、Shadowの役割を説明します。

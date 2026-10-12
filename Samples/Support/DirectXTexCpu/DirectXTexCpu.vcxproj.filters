@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D6018754-218A-426B-B465-CCEB97916B77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{35D2DAA4-2D81-4A14-9F6C-DA8184771208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{94C01C85-ADF9-4E2C-84A6-24469C8A792B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{3DF23E65-DA92-493F-91DF-5A919A5F9A80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Build Scripts">
+      <UniqueIdentifier>{2A5FD50B-193D-44B1-9740-22049BB8BA93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{7D03CD0B-AB2D-4FCE-AC32-B1C0282BF5AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ThirdParty">
+      <UniqueIdentifier>{66EA85E5-1ED8-45AC-89B5-18990AA0451F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{A80311A6-2EE6-463B-BE54-497E2C4D8139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ThirdParty">
+      <UniqueIdentifier>{3D68CE16-5F92-4102-8A43-AC88181D6DF0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BC.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BC4BC5.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BC6HBC7.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexCompress.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexConvert.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexDDS.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexFlipRotate.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexHDR.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexImage.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexMipmaps.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexMisc.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexNormalMaps.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexPMAlpha.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexResize.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexTGA.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexUtil.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexWIC.cpp">
+      <Filter>Source Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BC.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BCDirectCompute.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DDS.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTex.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexP.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\filters.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\scoped.h">
+      <Filter>Header Files\ThirdParty</Filter>
+    </ClInclude>
+    <None Include="..\..\..\ThirdParty\DirectXTex\LICENSE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Build\Common.props">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <None Include="..\..\..\Build\Samples.targets">
+      <Filter>Build Scripts</Filter>
+    </None>
+  </ItemGroup>
+</Project>

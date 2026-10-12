@@ -2,6 +2,8 @@
 
 検証日: 2026-10-11（日本時間）。結果は以下の実機・SDK・コンパイラの組合せに対するものです。
 
+最新の追加結果は末尾の「第10〜13回 Lighting LabとCubemap・IBL・Shadow map」を参照してください。
+
 ## 環境
 
 | 項目 | 検証した環境 |
@@ -166,3 +168,31 @@ Docs画像はTestSamples／TestLightingのCaptureDocsで取得した800×600の�
 - 確認用のGPU画像は`.cache`へ保存しました。1280×720のPBR・ImGui表示で、パネルの文字・クリッピング、球と台座の奥行きと描画領域を目視確認しました。
 - 既存のDocs・Shader.jp記事画像77点は変更前後のSHA-256が一致しました。上の各節の800×600の撮影条件・比較値は過去の記録として維持し、既存の画像は更新していません。
 - Shader.jpの各API第1〜8回、第0回、目次、初期化比較の説明を更新しました。固定コミットを使う場合の解像度変更手順を第0回に記載し、画像の撮影条件と区別しています。Astroの63ページ・Pagefindの29記事をビルドし、グラフィックス関連22記事の内部リンク・アンカー736件を確認しました。
+
+## 第10〜13回 Lighting LabとCubemap・IBL・Shadow map
+
+検証日：2026-10-12（日本時間）。第10 Cubemap、第11 Diffuse IBL、第12 Specular IBL、第13 Shadow mapを両APIへ追加しました。アプリケーションは13テーマ・26本、CPU画像処理用のDirectXTexCpuを含めて27プロジェクトです。
+
+環境はVS 2026 Community 18.10.0（18.10.12201.205）、v145／C++20、cl.exe FileVersion 19.51.36257.0、Windows SDK 10.0.26100.0、NVIDIA GeForce RTX 4070／NVIDIA 610.88（32.0.16.1088）です。Agility SDK 1.619.6、D3D12用DXC 1.9.2609.5／01b62ad47、Vulkan SDK 1.4.341.1、SDK用DXC 1.9.0.5180／e35541826を使いました。HLSLはSM6.6／HLSL 2021、SPIR-Vの対象はVulkan 1.3です。
+
+Blenderは5.2.1 LTS、build hash 9e2066aef7efです。DirectXTex may2026を4feb3e11a020f35b796fc769a74216a555d4f5efへ固定し、vendorソースを変更せずCPUのDDS読込に使用しました。Dear ImGui v1.92.9b／f1cc2ae15e53a861a874c3034aae6798fde194abも変更していません。
+
+- NuGet復元、全27プロジェクトのx64 Debug／Releaseビルドが成功。最終ビルドのコンパイラ警告・エラー0件。
+- Tools/ValidateProjects.ps1で27組のvcxproj／filtersのXML、ファイル実在、項目の一対一対応、フィルタ宣言・親階層・GUIDを検証。追加のScene・DDS・Manifestも分類・配布対象へ登録済み。
+- 新規4テーマのモデル、Skybox、UI、ShadowのDXIL計50出力をdxvで検証して成功。対応するSPIR-V計50出力はビルド内のspirv-val --target-env vulkan1.3で成功。
+- 第13回のVertex SPIR-Vを逆アセンブルし、Sceneのoffset 0／64／128／192／208／224／240／256／272／288／304／320／384／448／464を確認。CPUの480-byte配置と一致。D3D12の格納は512-byte、VulkanはminUniformBufferOffsetAlignmentへ切り上げています。
+- Tools/TestLightingLabAssets.ps1で全17モデルをglTF-Validator 2.0.0-dev.3.10により検証し、エラー・警告0件。合計9,684三角形。保存済み正本から一時フォルダへ再書出しし、JSON・BIN・参照PNGが一致、blendのSHA-256も変化なし。
+- 環境は2048×1024の線形EXR、環境Cube 512×512×6、Irradiance 32×32×6、GGX Prefilter 256×256×6・9 mip、BRDF LUT 256×256。HDR値の保持、面順、mip数、有限値とManifestの配布ハッシュを確認。
+- 固定Hammersley列の1024 samplesで、一定色Cの環境に対するIrradianceがπC、粗さ別Prefilterが全段階でCを保つことを数値検証。DDSはRGBA16F／RG16F、生成と読込でNaN／Infを拒否。
+- Tools/TestLightingLab.ps1をDebug／Releaseで実行。CPUのDDS面・mip・byte配置、Sceneの右手系→左手系、遮蔽物のWorld変換、不正DDSの拒否が成功。
+- 両API・両構成で環境切替、Direct／Diffuse／Specularの寄与、Shadowなし／硬いShadow／3×3 PCF／深度表示、遮蔽物移動、実ウィジェットの編集・Resetを検証。Debugは各APIの検証LayerとVulkan同期検証を有効化し、検証エラー0件。
+- Shadowの有無で11,191画素がRGB各2を超えて変化。遮蔽物の移動で21,223画素が変化し、移動前後の遮蔽物本体の投影範囲を除いても2,067画素が変化しました。両API・両構成で同じ値となり、物体本体の移動だけで成立する試験ではありません。
+- 各テーマのUIはEnvironment intensityを入力イベントで編集。UIを除いたシーン画素の変化と、Reset後の基準画像への完全一致を確認。GPU完了待ちの後に定数・UI Buffer・Descriptorを更新しています。
+- Tools/TestSamples.ps1を両構成で全26本へ実行。描画、640×480への変更、最小化・1280×720への復帰、GPU読戻し、終了が成功。Tools/TestLoaders.ps1と既存09のTools/TestImGui.ps1の両構成も通過。
+- Tools/TestLightingLabFailures.ps1で両API・両構成のScene／DDS／Pixel Shader欠落を検証。対象ファイル名のあるエラー、終了コード1、部分初期化の解放、検証エラー0件を確認。欠落は隔離した配布フォルダで作り、通常の実行データへ影響を与えていません。
+
+新規記事用PNGは45点、すべて1280×720です。実GPUの各寄与・環境切替・粗さ比較・投影するShadow・深度・UIと、Cyclesの環境のみ／方向光のみ／合成の参考画像を確認しました。既存のキャプチャ・Shader Ball配布データ・編集正本の計64ファイルはGitの元データとハッシュが一致しています。
+
+Cycles参考画像はCPU、128 samples、seed 0、denoise有効、AgX／Medium High Contrastです。環境のみと方向光のみは最大バウンス数1、合成は8です。Principled BSDF、局所的な光の伝播、表示変換の違いがあるため、リアルタイム画像と画素の一致を求める比較にはしていません。
+
+この追加は静的環境のIBLと方向光1本のShadowを対象にします。動的Reflection Probe、SSR、レイトレーシング反射、Cascaded Shadow Map、点光源Shadow、面光源の半影は含めていません。新規記事と画像はリポジトリのDocsへ保存し、サイトへの反映・公開・pushは行っていません。

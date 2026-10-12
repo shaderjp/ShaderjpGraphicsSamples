@@ -105,3 +105,5 @@ UIを描く前に`OMSetRenderTargets`のDSVをnullptrへ変更し、UI用PSOのD
 TestImGuiは値への直接代入ではなく、ImGuiの入力イベントでIntensityスライダー、Resetボタン、再編集を操作します。UI外のGPU画素が変化し、Reset後に元の画素へ戻ることを確認します。Debug Layer、リサイズ、最小化復帰、モデル／画像／モデル用・UI用シェーダ欠落時の終了も確認します。[検証記録](../Verification.md)に環境と結果を残しています。上のPNGは本APIの実GPU描画です。
 
 前：[08 PBR](08_PBR.md)。別API：[Vulkan 09](../Vulkan/09_ImGui.md)。
+
+この回の後に読む共通章：[LambertとBlinn-PhongからPBRへ ライトとシェーディングを振り返る](../LightingToRendering.md)。Cyclesの参考画像と比較しながら、今後のCube map、IBL、Shadowの役割を説明します。

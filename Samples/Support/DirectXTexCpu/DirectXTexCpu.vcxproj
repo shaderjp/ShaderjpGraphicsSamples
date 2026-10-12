@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CB12046F-834B-48DC-9188-BECBCE081AF9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>DirectXTexCpu</ProjectName>
+    <RootNamespace>DirectXTexCpu</RootNamespace>
+    <GraphicsApi>CPU</GraphicsApi>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\..\Build\Common.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\DirectXTex\DirectXTex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\..\Build\Samples.targets" />
+  <ItemGroup>
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BC.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BC4BC5.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BC6HBC7.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexCompress.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexConvert.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexDDS.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexFlipRotate.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexHDR.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexImage.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexMipmaps.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexMisc.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexNormalMaps.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexPMAlpha.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexResize.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexTGA.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexUtil.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexWIC.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BC.h" />
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\BCDirectCompute.h" />
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DDS.h" />
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTex.h" />
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\DirectXTexP.h" />
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\filters.h" />
+    <ClInclude Include="..\..\..\ThirdParty\DirectXTex\DirectXTex\scoped.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\ThirdParty\DirectXTex\LICENSE" />
+    <None Include="..\..\..\Build\Common.props" />
+    <None Include="..\..\..\Build\Samples.targets" />
+  </ItemGroup>
+</Project>

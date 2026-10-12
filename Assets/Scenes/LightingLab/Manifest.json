@@ -1,0 +1,655 @@
+{
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 masafumi",
+  "blender": "5.2.1 LTS",
+  "blenderBuild": "9e2066aef7ef",
+  "coordinateSystem": "DDS: left-handed Y-up, glTF/scene: right-handed Y-up meters",
+  "faceOrder": [
+    "+X",
+    "-X",
+    "+Y",
+    "-Y",
+    "+Z",
+    "-Z"
+  ],
+  "colorSpace": "scene-linear Rec.709 RGB; no display transform",
+  "irradiance": "E = integral(Li * NoL dOmega); shader divides by pi",
+  "ggx": {
+    "samples": 1024,
+    "sequence": "Hammersley",
+    "alpha": "max(perceptualRoughness, 0.045)^2",
+    "geometry": "height-correlated Smith",
+    "specularMipRoughness": [
+      0.0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1.0
+    ],
+    "mip0": "ideal mirror resample",
+    "BRDF": "Schlick split sum A/B"
+  },
+  "environmentRender": {
+    "engine": "Cycles CPU",
+    "samples": 256,
+    "seed": 0,
+    "denoise": true,
+    "projection": "equirectangular",
+    "width": 2048,
+    "height": 1024,
+    "EXR": "float32 scene-linear"
+  },
+  "sources": [
+    {
+      "path": "SourceArt/Blender/LightingLab/bake.py",
+      "sha256": "7f6b5bc888e36edafe91e1f98ccf1df0a253e21053be61b7fecc707f89a0e7f2"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/export.py",
+      "sha256": "19c99e7e5be3749a6a2d3860833f9aa6c2cbb46d6f7fd35464b1f5068dc3a4df"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/generate.py",
+      "sha256": "a6d3a7da5c6b15dce4edba9a7441bafb7cfe8c92caa9d20a322e4fdee160d439"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/ibl.py",
+      "sha256": "cf36278ad09dca90e58f61b204304ac3497c14c0901bf060ba6ca36cb2d17067"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/LightingLab.blend",
+      "sha256": "e8b7e5f735b6f45ab224afc1da94baa73cde5335cc23ca57a7ecc60121c97c93"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/render_references.py",
+      "sha256": "693eb40f282f4a88d032d0f9bf81954ef8887f1677f576c9f493bff35c088f34"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/Room.blend",
+      "sha256": "838a98b531ffdc6611a8eba3a0dda6da0c2cc0811210e99db6f4afbafcfc35d8"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/Room.exr",
+      "sha256": "f98078b2703be8f6084ad5ebe471053a38ce0ec979ed53e25f29adb89f4d59b8"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/Studio.blend",
+      "sha256": "f6deca1badfc011fbb88e87d9409dded189082608c04936541d5e839054f7114"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/Studio.exr",
+      "sha256": "9fb755c6c8f4f9bb13fc1a79ac563409236f016f80fa0ff64af91396690a3c2e"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/validate.py",
+      "sha256": "105657ecd81b2ef951ff7dbbbbc5c2003c303856415f3c7d3253e1d9466565ae"
+    }
+  ],
+  "triangles": 9684,
+  "files": [
+    {
+      "path": "Environments/LightingLab/BRDF.dds",
+      "bytes": 262292,
+      "sha256": "dd079279607c23ee34c8dea352294ed924e9244e4e79c6140cbad86577788cfd"
+    },
+    {
+      "path": "Environments/LightingLab/Orientation.dds",
+      "bytes": 3145876,
+      "sha256": "859246b7cce85e3f3f1cfcec747e0772c1561fa9a664a34db5acb1de3360cb21"
+    },
+    {
+      "path": "Environments/LightingLab/Room_Environment.dds",
+      "bytes": 12583060,
+      "sha256": "b9570796f418471f0e46d89cd06231b6c688618dac09b55b2160fb2f0de6ddcf"
+    },
+    {
+      "path": "Environments/LightingLab/Room_Irradiance.dds",
+      "bytes": 49300,
+      "sha256": "aafd4146de08ec39c1551940ea6d29f3086e49cdf95678b784f375c824758108"
+    },
+    {
+      "path": "Environments/LightingLab/Room_Specular.dds",
+      "bytes": 4194436,
+      "sha256": "e800a8e0ca4f7f760bd1acad38470b8cef8caf91e448d8e3476b267b5ea3a6fc"
+    },
+    {
+      "path": "Environments/LightingLab/Studio_Environment.dds",
+      "bytes": 12583060,
+      "sha256": "636145e1481d761126d5e83e81aea823577a064747cee1561d308504688d983e"
+    },
+    {
+      "path": "Environments/LightingLab/Studio_Irradiance.dds",
+      "bytes": 49300,
+      "sha256": "edcdbf329460a5d06c651f1fbd44816ee897598a5628072ebd63874550a1eb89"
+    },
+    {
+      "path": "Environments/LightingLab/Studio_Specular.dds",
+      "bytes": 4194436,
+      "sha256": "dc2400b1d0bf056e35266b363f048e819bbf022b8fca02b10d4ebb00ca5ad98a"
+    },
+    {
+      "path": "Models/LightingLab/Box/Box.bin",
+      "bytes": 1224,
+      "sha256": "0268057dd10035b5a967a1c93eda6d9d2505537747fce733643487e1c2dfafc5"
+    },
+    {
+      "path": "Models/LightingLab/Box/Box.gltf",
+      "bytes": 3161,
+      "sha256": "cd0a6cc73c61731c53a4bdcf524d4883057fb2ecb846dd87981e1abd58f9c444"
+    },
+    {
+      "path": "Models/LightingLab/Box/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "68c6972a669b6b737e030576d9e3fbf2ad453793b56ee81befe6dcf4761ba05a"
+    },
+    {
+      "path": "Models/LightingLab/Box/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Box/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Box/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "5e00db5ca68ad4f2d44abea75a6572c82261ad108157d9305a232f5e24e14511"
+    },
+    {
+      "path": "Models/LightingLab/FloatingPlate/FloatingPlate.bin",
+      "bytes": 1224,
+      "sha256": "9fdc01168357ae53535dfda758b61009341d05084c7c07d18646705282c826f6"
+    },
+    {
+      "path": "Models/LightingLab/FloatingPlate/FloatingPlate.gltf",
+      "bytes": 3179,
+      "sha256": "09b2859518bb3ae135ab3a183a48466d5bb7ff0916b17a018a8d855f4b4fac1b"
+    },
+    {
+      "path": "Models/LightingLab/FloatingPlate/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "68c6972a669b6b737e030576d9e3fbf2ad453793b56ee81befe6dcf4761ba05a"
+    },
+    {
+      "path": "Models/LightingLab/FloatingPlate/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/FloatingPlate/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/FloatingPlate/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "5e00db5ca68ad4f2d44abea75a6572c82261ad108157d9305a232f5e24e14511"
+    },
+    {
+      "path": "Models/LightingLab/Floor/Floor.bin",
+      "bytes": 1224,
+      "sha256": "08c6845777dd9d1ba1d115bdf9d2b83c0ec48e4970903e0e5ed8e4ace8b88542"
+    },
+    {
+      "path": "Models/LightingLab/Floor/Floor.gltf",
+      "bytes": 3097,
+      "sha256": "8cbd1aee147e1e24aa4ef3f7c60a06ccc9f4ad4785eaba08d60d9aa3bd5995fe"
+    },
+    {
+      "path": "Models/LightingLab/Floor/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "68c6972a669b6b737e030576d9e3fbf2ad453793b56ee81befe6dcf4761ba05a"
+    },
+    {
+      "path": "Models/LightingLab/Floor/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Floor/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Floor/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "5e00db5ca68ad4f2d44abea75a6572c82261ad108157d9305a232f5e24e14511"
+    },
+    {
+      "path": "Models/LightingLab/Plinth/Plinth.bin",
+      "bytes": 1224,
+      "sha256": "285a3828b90ab26d198e4e8cd94aae2ed2866fd03d0e53c8387c795a7e96866c"
+    },
+    {
+      "path": "Models/LightingLab/Plinth/Plinth.gltf",
+      "bytes": 3083,
+      "sha256": "e996e8ebcb2f77ac69b4c9a1c0ff6225d47120e18bf553258958684528548fc9"
+    },
+    {
+      "path": "Models/LightingLab/Plinth/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "68c6972a669b6b737e030576d9e3fbf2ad453793b56ee81befe6dcf4761ba05a"
+    },
+    {
+      "path": "Models/LightingLab/Plinth/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Plinth/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Plinth/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "5e00db5ca68ad4f2d44abea75a6572c82261ad108157d9305a232f5e24e14511"
+    },
+    {
+      "path": "Models/LightingLab/Ramp/Ramp.bin",
+      "bytes": 1224,
+      "sha256": "b9638bd08d18b137e904bf0686c2bb704c3d5d2c839aca49d1af1a1d7b3e7073"
+    },
+    {
+      "path": "Models/LightingLab/Ramp/Ramp.gltf",
+      "bytes": 3165,
+      "sha256": "40c6d79f06f977fcbd8d7c046a26e2b57974d189f847c49925e9159f0eaa0d4d"
+    },
+    {
+      "path": "Models/LightingLab/Ramp/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "68c6972a669b6b737e030576d9e3fbf2ad453793b56ee81befe6dcf4761ba05a"
+    },
+    {
+      "path": "Models/LightingLab/Ramp/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Ramp/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Ramp/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "5e00db5ca68ad4f2d44abea75a6572c82261ad108157d9305a232f5e24e14511"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_0/Sphere_0_0.bin",
+      "bytes": 32592,
+      "sha256": "8e01e50cfcabfabe887303929302b8f36a6b05c63ecb5d8a9c76bd67034b9802"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_0/Sphere_0_0.gltf",
+      "bytes": 3197,
+      "sha256": "678596289d82ee5e503d29ac3a32dd436d0b084f921e39074aeee2efe0060dc6"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_0/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_0/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_0/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_0/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "3bc4875d25fcabd012667ba8fce314324aa656be996c6081137fbb86545393e0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_1/Sphere_0_1.bin",
+      "bytes": 32592,
+      "sha256": "d737c60768e2cc873dc2b1a5231440af890d33312c9fd27d502bb56dcc2e5409"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_1/Sphere_0_1.gltf",
+      "bytes": 3201,
+      "sha256": "fad9d6106839b7722c90b99e276ffc79c2af61e1b8986945334019cf06899696"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_1/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_1/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_1/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_1/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "f9c355a08b9a1f5d681ddd675b178c7d6c0274ea6549803bf4bd403f963fd983"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_2/Sphere_0_2.bin",
+      "bytes": 32592,
+      "sha256": "873a49720bebdc41a454cbcadc32cce61f844fe53fc7c8fca40601a9c0d3ad63"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_2/Sphere_0_2.gltf",
+      "bytes": 3201,
+      "sha256": "f1cf5e1b3098beec36fcbe321e9abc4543bf72df2f8d082fb0885c6f44fb31a8"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_2/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_2/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_2/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_2/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "26d487b8f346742ed7db2646633b4a8820926e861aec32a781c656b39ddc02ae"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_3/Sphere_0_3.bin",
+      "bytes": 32592,
+      "sha256": "b789b7aaaf3966665b949dc5ea16759451b87a40be04779d145361eb3e1a8a9f"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_3/Sphere_0_3.gltf",
+      "bytes": 3201,
+      "sha256": "79f629fc53419e272af8a5ad498891b3e1f777719f74021b420865afb49309d6"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_3/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_3/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_3/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_3/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "fa45aa9613e261a5300e5c4be050f376672028a37fd5832a90e4b818a6bd24ec"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_4/Sphere_0_4.bin",
+      "bytes": 32592,
+      "sha256": "a369183c49acfe760b765b88f77e822763990485c65681e08de41a1fa3d9ac21"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_4/Sphere_0_4.gltf",
+      "bytes": 3201,
+      "sha256": "068a62026e03930a6f483ec7be829300a69509991dbc2d8af0a85a88e89ab79e"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_4/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_4/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_4/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_0_4/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "0ae92dba6a605e11b09aab0f039eb6b76fa32ead5e7c238c32528b968499f382"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_0/Sphere_1_0.bin",
+      "bytes": 32592,
+      "sha256": "290c550c2d81a3b1e47b8e4ea6dc1b6bc592e55734190b43f9de5bf4c4cfa926"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_0/Sphere_1_0.gltf",
+      "bytes": 3201,
+      "sha256": "1cba2dbbd92ae6a61ebed1a41cae6f673f639c4f6d828e9b9071c28e27ff0b52"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_0/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_0/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_0/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_0/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "4ea34ac20cf4c735f173cc430b53902398cdb422a912c66e7a8af83e4502e10c"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_1/Sphere_1_1.bin",
+      "bytes": 32592,
+      "sha256": "d737c60768e2cc873dc2b1a5231440af890d33312c9fd27d502bb56dcc2e5409"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_1/Sphere_1_1.gltf",
+      "bytes": 3201,
+      "sha256": "c63995a8ce709b5a0ec7473709337e9bd53b60e4a05cd40ba4705dcca936fc86"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_1/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_1/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_1/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_1/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "9ecf8cadb06d90b262a11e493ff5114e58406aaecda1aaf0ffc881ed013a9758"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_2/Sphere_1_2.bin",
+      "bytes": 32592,
+      "sha256": "1bd15ee78155d19ee932f7335aade383bae141479ba2ea721b073577b2bf0786"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_2/Sphere_1_2.gltf",
+      "bytes": 3201,
+      "sha256": "1366845dd90542224982ec9c5b679dbdc89b03824ecc98fc937ebcd47acdb075"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_2/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_2/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_2/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_2/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "97008c3656a2fe9af97ae5384cf66122fbdc7298a357fa02eda44d8ef28756d6"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_3/Sphere_1_3.bin",
+      "bytes": 32592,
+      "sha256": "176eaaea38ff123e655d4c51bd54e59455c4d8c753512424fb7ddbc628a229e2"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_3/Sphere_1_3.gltf",
+      "bytes": 3201,
+      "sha256": "f70f2df2b202bdcc697adce32e8e55ef538907fe5b36514ee138acaf8042e809"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_3/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_3/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_3/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_3/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "e1845e909e3946a6eb1687e845897c1e5c3257e908e82b20c96eec61883ddcd8"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_4/Sphere_1_4.bin",
+      "bytes": 32592,
+      "sha256": "290c550c2d81a3b1e47b8e4ea6dc1b6bc592e55734190b43f9de5bf4c4cfa926"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_4/Sphere_1_4.gltf",
+      "bytes": 3201,
+      "sha256": "abfc5d624ae7c01e3b8291129247536e97b5f3951d74859bccc3d1a42806e8e8"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_4/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "30384e52840822ecfd13d3f3a546c2c5f92e374fe593c4f252987c2fb7272df0"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_4/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_4/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Sphere_1_4/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "59f22e55929d9f6dfcd53bb44caeec61c3026bd2167fba76efc778ef76dcc606"
+    },
+    {
+      "path": "Models/LightingLab/ThinColumn/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "68c6972a669b6b737e030576d9e3fbf2ad453793b56ee81befe6dcf4761ba05a"
+    },
+    {
+      "path": "Models/LightingLab/ThinColumn/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/ThinColumn/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/ThinColumn/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "5e00db5ca68ad4f2d44abea75a6572c82261ad108157d9305a232f5e24e14511"
+    },
+    {
+      "path": "Models/LightingLab/ThinColumn/ThinColumn.bin",
+      "bytes": 1224,
+      "sha256": "d3df98329d50b91c1a31a5b792eae06be18254e2efd072842e67c8ed35205746"
+    },
+    {
+      "path": "Models/LightingLab/ThinColumn/ThinColumn.gltf",
+      "bytes": 3175,
+      "sha256": "86dc10fd892b22d113ad1d0aa5cab938af2b2d12f65e02930f1e04c5acb3a3e7"
+    },
+    {
+      "path": "Models/LightingLab/Wall/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "68c6972a669b6b737e030576d9e3fbf2ad453793b56ee81befe6dcf4761ba05a"
+    },
+    {
+      "path": "Models/LightingLab/Wall/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/LightingLab/Wall/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/LightingLab/Wall/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "5e00db5ca68ad4f2d44abea75a6572c82261ad108157d9305a232f5e24e14511"
+    },
+    {
+      "path": "Models/LightingLab/Wall/Wall.bin",
+      "bytes": 1224,
+      "sha256": "25c9c09147fd547104709b6d0ca536d5ac612568ebbc1ed463a5533302bc00b3"
+    },
+    {
+      "path": "Models/LightingLab/Wall/Wall.gltf",
+      "bytes": 3131,
+      "sha256": "4175911f298ef00cec9fa13f09be5463fd3d99ddb92664926ee08c5c0ee3687f"
+    },
+    {
+      "path": "Scenes/LightingLab/Exhibition.json",
+      "bytes": 7459,
+      "sha256": "cf89974a1890c14200845f1312f648fe265a9793ff9c639b317754f1111fc588"
+    },
+    {
+      "path": "Scenes/LightingLab/MaterialStudy.json",
+      "bytes": 4534,
+      "sha256": "e654e67dd25d868752586d202a6c390c732d66bf93ec6eafe4c4cbc9ca6f987f"
+    }
+  ]
+}

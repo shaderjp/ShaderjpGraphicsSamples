@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "coordinateSystem": "right-handed Y-up meters",
+  "objects": [
+    {
+      "name": "Sphere_0_0",
+      "model": "../../Models/LightingLab/Sphere_0_0/Sphere_0_0.gltf",
+      "position": [
+        0.15000000596046448,
+        0.3199999928474426,
+        -1.600000023841858
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_0_1",
+      "model": "../../Models/LightingLab/Sphere_0_1/Sphere_0_1.gltf",
+      "position": [
+        0.6700000166893005,
+        0.3199999928474426,
+        -1.600000023841858
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_0_2",
+      "model": "../../Models/LightingLab/Sphere_0_2/Sphere_0_2.gltf",
+      "position": [
+        1.190000057220459,
+        0.3199999928474426,
+        -1.600000023841858
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_0_3",
+      "model": "../../Models/LightingLab/Sphere_0_3/Sphere_0_3.gltf",
+      "position": [
+        1.7100000381469727,
+        0.3199999928474426,
+        -1.600000023841858
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_0_4",
+      "model": "../../Models/LightingLab/Sphere_0_4/Sphere_0_4.gltf",
+      "position": [
+        2.2300000190734863,
+        0.3199999928474426,
+        -1.600000023841858
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_1_0",
+      "model": "../../Models/LightingLab/Sphere_1_0/Sphere_1_0.gltf",
+      "position": [
+        0.15000000596046448,
+        0.3199999928474426,
+        -1.0499999523162842
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_1_1",
+      "model": "../../Models/LightingLab/Sphere_1_1/Sphere_1_1.gltf",
+      "position": [
+        0.6700000166893005,
+        0.3199999928474426,
+        -1.0499999523162842
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_1_2",
+      "model": "../../Models/LightingLab/Sphere_1_2/Sphere_1_2.gltf",
+      "position": [
+        1.190000057220459,
+        0.3199999928474426,
+        -1.0499999523162842
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_1_3",
+      "model": "../../Models/LightingLab/Sphere_1_3/Sphere_1_3.gltf",
+      "position": [
+        1.7100000381469727,
+        0.3199999928474426,
+        -1.0499999523162842
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    },
+    {
+      "name": "Sphere_1_4",
+      "model": "../../Models/LightingLab/Sphere_1_4/Sphere_1_4.gltf",
+      "position": [
+        2.2300000190734863,
+        0.3199999928474426,
+        -1.0499999523162842
+      ],
+      "rotation": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "castsShadow": true,
+      "movable": false
+    }
+  ],
+  "camera": {
+    "position": [
+      1.2,
+      1.7,
+      1.6
+    ],
+    "target": [
+      1.2,
+      0.32,
+      -1.3
+    ],
+    "fovDegrees": 45
+  },
+  "light": {
+    "direction": [
+      -0.7,
+      0.9,
+      -0.4
+    ],
+    "color": [
+      1,
+      0.95,
+      0.9
+    ],
+    "intensity": 3
+  },
+  "exposure": 1,
+  "environments": {
+    "Studio": "../../Environments/LightingLab/Studio",
+    "Room": "../../Environments/LightingLab/Room"
+  }
+}

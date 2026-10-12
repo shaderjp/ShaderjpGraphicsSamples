@@ -21,6 +21,10 @@ struct Options
     std::wstring shading; // Sample 07/08 choose their supported display modes.
     bool rotateLight = false;
     bool testUi = false; // Sample 09 exercises actual ImGui widgets through queued input.
+    std::filesystem::path scene;
+    std::wstring environment;
+    bool hideUi = false;
+    float occluderOffset = 0;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

@@ -123,4 +123,6 @@ Depth Bufferは04〜06と同じ「手前の面を残す」処理です。ライ�
 
 API実装：[Direct3D12 07](Direct3D12/07_Lighting.md)、[Vulkan 07](Vulkan/07_Lighting.md)、[Direct3D12 08](Direct3D12/08_PBR.md)、[Vulkan 08](Vulkan/08_PBR.md)。
 
+第9回まで進んだ後の読み物：[LambertとBlinn-PhongからPBRへ ライトとシェーディングを振り返る](LightingToRendering.md)。実描画とCyclesの参考画像を使い、反射モデルと入射光の違い、Cube map・IBL・Shadowの役割を整理します。
+
 検証：`Tools/TestLoaders.ps1`、`Tools/TestSamples.ps1`、[Tools/TestLighting.ps1](../Tools/TestLighting.ps1)。最後のテストは全表示モードに加え、一定色の画像と既知の法線を持つ平面をGPUで描き、sRGB変換・各係数・ORMチャンネル・Normal Scale・接線基底・Lambert照明を期待画素と照合します。[実機検証記録](Verification.md)も参照してください。

@@ -83,6 +83,7 @@ Options ParseOptions()
                 options.testWindow = true;
                 continue;
             }
+            if (argument == L"--no-ui") { options.hideUi = true; continue; }
             if (argument == L"--rotate-light")
             {
                 options.rotateLight = true;
@@ -115,6 +116,17 @@ Options ParseOptions()
             }
             else if (argument == L"--shading")
                 options.shading = value;
+            else if (argument == L"--scene")
+                options.scene = std::filesystem::absolute(value);
+            else if (argument == L"--environment")
+                options.environment = value;
+            else if (argument == L"--occluder-x")
+            {
+                size_t consumed = 0;
+                options.occluderOffset = std::stof(value, &consumed);
+                if (consumed != value.size() || !(options.occluderOffset >= -1.5f && options.occluderOffset <= 1.5f))
+                    throw std::runtime_error("--occluder-x must be in [-1.5, 1.5]");
+            }
             else
                 throw std::runtime_error("Unknown command-line option");
         }

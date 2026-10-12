@@ -6,3 +6,11 @@
 /SourceArt/Blender/ShaderBall/*.blend -text
 /SourceArt/Blender/ShaderBall/*.py text eol=lf
 /Docs/Assets/Images/*.png -text
+/Assets/Models/LightingLab/**/*.gltf text eol=lf
+/Assets/Models/LightingLab/**/*.bin -text
+/Assets/Models/LightingLab/**/*.png -text
+/Assets/Environments/LightingLab/*.dds -text
+/Assets/Scenes/LightingLab/*.json text eol=lf
+/SourceArt/Blender/LightingLab/*.blend -text
+/SourceArt/Blender/LightingLab/*.exr -text
+/SourceArt/Blender/LightingLab/*.py text eol=lf

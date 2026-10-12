@@ -25,6 +25,10 @@ struct Options
     std::wstring environment;
     bool hideUi = false;
     float occluderOffset = 0;
+    std::wstring postView, testImage;
+    uint32_t particleCount = 16384;
+    bool pauseParticles = false, captureGpu = false, testPost = false, testOdd = false;
+    float fixedDelta = 0, gravity = 3, bloomThreshold = 1, bloomStrength = .15f;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

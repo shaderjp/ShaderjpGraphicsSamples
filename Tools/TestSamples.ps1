@@ -1,8 +1,8 @@
 param(
     [ValidateSet('Debug','Release')][string]$Configuration = 'Debug',
     [switch]$CaptureDocs,
-    [ValidateSet('01_Initialization','02_Triangle','03_Texture','04_Box','05_Model','06_Gltf','07_Lighting','08_PBR','09_ImGui','10_Cubemap','11_DiffuseIBL','12_SpecularIBL','13_ShadowMap')]
-    [string[]]$Topics = @('01_Initialization','02_Triangle','03_Texture','04_Box','05_Model','06_Gltf','07_Lighting','08_PBR','09_ImGui','10_Cubemap','11_DiffuseIBL','12_SpecularIBL','13_ShadowMap')
+    [ValidateSet('01_Initialization','02_Triangle','03_Texture','04_Box','05_Model','06_Gltf','07_Lighting','08_PBR','09_ImGui','10_Cubemap','11_DiffuseIBL','12_SpecularIBL','13_ShadowMap','14_RenderTexture','15_ComputeBloom','16_GpuParticles')]
+    [string[]]$Topics = @('01_Initialization','02_Triangle','03_Texture','04_Box','05_Model','06_Gltf','07_Lighting','08_PBR','09_ImGui','10_Cubemap','11_DiffuseIBL','12_SpecularIBL','13_ShadowMap','14_RenderTexture','15_ComputeBloom','16_GpuParticles')
 )
 $ErrorActionPreference = 'Stop'
 $repositoryRoot = Split-Path $PSScriptRoot -Parent

@@ -14,3 +14,9 @@
 /SourceArt/Blender/LightingLab/*.blend -text
 /SourceArt/Blender/LightingLab/*.exr -text
 /SourceArt/Blender/LightingLab/*.py text eol=lf
+/Assets/Models/PostProcess/**/*.gltf text eol=lf
+/Assets/Models/PostProcess/**/*.bin -text
+/Assets/Models/PostProcess/**/*.png -text
+/Assets/Scenes/PostProcess/*.json text eol=lf
+/SourceArt/Blender/PostProcess/*.blend -text
+/SourceArt/Blender/PostProcess/*.py text eol=lf

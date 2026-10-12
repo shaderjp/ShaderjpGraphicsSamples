@@ -2,7 +2,7 @@
 
 検証日: 2026-10-11（日本時間）。結果は以下の実機・SDK・コンパイラの組合せに対するものです。
 
-最新の追加結果は末尾の「第10〜13回 Lighting LabとCubemap・IBL・Shadow map」を参照してください。
+最新の追加結果は末尾の「第14〜16回 HDR Render-to-Texture・Compute Bloom・GPUパーティクル」を参照してください。
 
 ## 環境
 
@@ -196,3 +196,38 @@ Blenderは5.2.1 LTS、build hash 9e2066aef7efです。DirectXTex may2026を4feb3
 Cycles参考画像はCPU、128 samples、seed 0、denoise有効、AgX／Medium High Contrastです。環境のみと方向光のみは最大バウンス数1、合成は8です。Principled BSDF、局所的な光の伝播、表示変換の違いがあるため、リアルタイム画像と画素の一致を求める比較にはしていません。
 
 この追加は静的環境のIBLと方向光1本のShadowを対象にします。動的Reflection Probe、SSR、レイトレーシング反射、Cascaded Shadow Map、点光源Shadow、面光源の半影は含めていません。新規記事と画像はリポジトリのDocsへ保存し、サイトへの反映・公開・pushは行っていません。
+
+## 第14〜16回 HDR Render-to-Texture・Compute Bloom・GPUパーティクル
+
+検証日：2026-10-12（日本時間）。両APIの独立した実行プロジェクト6本を追加しました。合計16テーマ・32アプリ、DirectXTexCpuを含め33プロジェクトです。
+
+検証環境はVS 2026 Community 18.10.0（18.10.12201.205）、v145／C++20、cl.exe 19.51.36257.0、Windows SDK 10.0.26100.0、NVIDIA GeForce RTX 4070／NVIDIA 610.88です。Agility SDK 1.619.6、D3D12 DXC 1.9.2609.5／01b62ad47、Vulkan SDK 1.4.341.1／DXC 1.9.0.5180／e35541826、SM6.6／HLSL 2021、Vulkan 1.3を維持しました。
+
+- NuGet復元、全33プロジェクトのx64 Debug／Releaseビルド、SPIR-V検証が成功。最終ビルドの警告・エラー0件。新規6本のDXIL計80出力（両構成）もdxvで検証しました。
+- `Tools/ValidateProjects.ps1`で33組のvcxproj／filtersをXML解析し、全項目の一対一対応、フィルタ宣言、親階層、GUIDとファイル実在を確認しました。MonitorのglTF・BIN・PNG・Scene・Manifestと追加HLSL・共有ヘッダーも分類済みです。
+- `Tools/TestPostProcessAssets.ps1`でMonitorをglTF-Validator 2.0.0-dev.3.10により検証。エラー・警告0件、1 Node・1 Mesh・1 Primitive・1 Material、12三角形です。Blender 5.2.1 LTS／9e2066aef7efの保存済み正本からJSON・BIN・参照PNGが一致し、正本のSHA-256も変化しませんでした。
+- `Tools/TestLoaders.ps1`と拡張したLightingLab CPU試験が両構成で成功。旧Sceneの既定値、新Sceneの第二カメラとモニター指定、右手系から左手系への変換、不正FOV／同じ位置とTargetの拒否を確認しました。
+- `Tools/TestSamples.ps1`をDebug／Releaseで全32本へ実行。48フレームの描画、640×480、最小化・1280×720への復帰、GPU読戻しPNG、終了が成功しました。Debugは両APIの検証Layer、Vulkanの同期検証を有効にし、検証エラー0件です。
+- `Tools/TestPostProcess.ps1`が両API・両構成で成功。Final／Grayscale／Monitor／HDR input／Extract／Horizontal／Bloom、StudioとRoom、箱の移動による別カメラ映像の更新を確認しました。512×512の診断表示は縦横比を保持します。
+- 第14回の線形HDR読戻しで、メイン画像の最大RGBは72.875、別カメラは24.453125でした。旧Exhibition.jsonを使った第13回と第14回の表示差は、両API・両構成とも8bitで最大1。表示変換の位置を移しても、従来の照明を維持しています。
+- 第15回は黒入力を黒のまま維持し、一定色[4, 2, 0.5]・Threshold 1から抽出[3, 1.5, 0.375]を確認。横・縦のフィルタ後もFP16精度内（絶対差0.003以内）で一定色を保持しました。端の単一HDR画素を独立したCPU計算と照合し、逆側の端の汚染がないことも確認しました。
+- 641×479へのリサイズで半解像度は321×240となり、画像外のスレッドと2×2／9 tapの端処理が成功。読戻した全HDR画像にNaN／Infはありませんでした。
+- 第16回は257個の粒子の7回のEuler更新を、初期位置・速度・年齢から独立して計算した値と照合（絶対差0.00002以内）。257以降の未使用領域は初期Bufferと完全一致。最小1個、最大65,536個でも同じ先頭粒子の更新と有限値を確認し、1個の場合の未使用領域も一致しました。
+- 実ウィジェットへ入力してPause中のStep、Reset、Pause解除を試験。Stepは1回だけ更新し、Reset後の全容量BufferとUI外のシーン画素は基準と完全一致しました。同じGPU BufferをStorage／UAVとInstance用頂点入力へ接続しています。通常フレームに粒子のCPU読戻し・再転送はありません。
+- 第14・15回の実スライダーとReset、既存09の`Tools/TestImGui.ps1`、第10〜13回の`Tools/TestLightingLab.ps1`も両構成で成功しました。
+- `Tools/TestPostProcessFailures.ps1`でPostPixel／Extract／ParticleUpdateの欠落を隔離した配布フォルダで作り、両API・両構成で対象ファイル名のあるエラー、終了コード1、部分初期化の解放、検証エラー0件を確認しました。
+
+Bloomを合成する前と後のPNGで、RGBの最大差が2を超えた画素数です。Studio、同じカメラ、露出1、Threshold 1、Strength 0.15、UIなしで比較しました。
+
+| 構成 | Direct3D 12 | Vulkan |
+|---|---:|---:|
+| Debug | 3,865 | 3,865 |
+| Release | 3,863 | 3,865 |
+
+新規Docs画像は24点、すべて1280×720。第14回のモニターとGrayscale、第15回の抽出・横・縦の途中画像、第16回の火花と257粒子の比較を実GPUから撮影しました。標準条件はStudio、直接光3、環境強度1、露出1。完成した火花は48 frames、それ以外は8 frames、固定dt 1／60、固定Hash seedです。モニター移動比較だけOccluder Xを1へ変えています。
+
+今回の変更前から存在する画像・DDS・EXR・glTF・BIN・Blender正本217ファイルはGitの元データとバイト単位で一致しています。第三者のSubmoduleソースも変更していません。
+
+Shader.jp向けにはAPI別6記事と共通章・モニター制作章をローカルで準備しました。Astroの91ページ、Pagefindの50記事、内部リンク・アンカー4,456件、24枚の新規画像とソースのSHA-256を検証しています。記事の準備時点では第14〜16回のコードを公開準備版として明記し、存在しない公開ファイルへのリンクは作っていません。Shader.jpへのサイト公開は別工程です。
+
+SSAOは第17回の候補です。Async Compute、粒子のソート・衝突、Indirect Drawは後の拡張とし、今回のGPU粒子は加算合成・深度テストあり・深度書込みなしです。

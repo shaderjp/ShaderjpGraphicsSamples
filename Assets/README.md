@@ -13,3 +13,5 @@ Blender製アセットへの差し替えは[モデル読込の説明](../Docs/Di
 [`Models/ShaderBall`](Models/ShaderBall/README.md)に、Shader Ball＋台座とAlbedo／PBR用テクスチャを用意しています。1モデル・1メッシュ・1マテリアルの自作MITデータです。[制作・読込仕様](../Docs/Assets/ShaderBall.md)と[Blender元データ](../SourceArt/Blender/ShaderBall/README.md)を参照してください。既存の05_ModelはOBJ専用で、[サンプル06のglTFローダー](../Docs/GltfLoading.md)がこのデータを読みます。
 
 第10〜13回では[Lighting Lab](../Docs/Assets/LightingLab.md)を使います。`Models/LightingLab`は材質比較球・床・壁・遮蔽物、`Environments/LightingLab`は自作HDR環境のCubemap・Irradiance・粗さ別GGX環境・BRDF LUT、`Scenes/LightingLab`は配置とカメラ・ライト・配布Manifestです。自作アセットはMIT Licenseで、実行時の再生成は不要です。
+
+第14〜16回は[モニター](../Docs/Assets/Monitor.md)を追加します。`Models/PostProcess/Monitor`のglTFと、`Scenes/PostProcess`の第二カメラ・配置・ハッシュを同梱します。Blender正本は`SourceArt/Blender/PostProcess`です。

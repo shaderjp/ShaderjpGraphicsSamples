@@ -77,3 +77,5 @@ Shadow depthでは光源の深度画像を画面全体へ表示します。3×3 
 TestLightingLabはCPUのDDS・配置読込と不正データの拒否、両APIの環境切替、IBLの寄与、Shadow・遮蔽物の移動、実ウィジェットの編集とResetを確認します。TestSamplesはリサイズ・最小化復帰・読戻し・終了を確認します。Debugではグラフィックス検証Layerを有効にし、Vulkanでは同期検証も使います。結果と環境は[検証記録](../Verification.md)を参照してください。
 
 前：[第12回](12_SpecularIBL.md)。 次の拡張では、動的Reflection Probe、より広いShadowの範囲、反射や間接光の近似を検討できます。 別API：[Direct3D12 第13回](../Direct3D12/13_ShadowMap.md)。
+
+続き：[第14回 Render-to-Texture](14_RenderTexture.md)でHDRの描画先とモニターを加え、第15回のBloom、第16回のGPUパーティクルへ進みます。

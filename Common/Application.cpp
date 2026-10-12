@@ -83,6 +83,10 @@ Options ParseOptions()
                 options.testWindow = true;
                 continue;
             }
+            if (argument == L"--pause") { options.pauseParticles = true; continue; }
+            if (argument == L"--capture-gpu") { options.captureGpu = true; continue; }
+            if (argument == L"--test-post") { options.testPost = true; continue; }
+            if (argument == L"--test-odd") { options.testOdd = options.testWindow = true; continue; }
             if (argument == L"--no-ui") { options.hideUi = true; continue; }
             if (argument == L"--rotate-light")
             {
@@ -120,6 +124,22 @@ Options ParseOptions()
                 options.scene = std::filesystem::absolute(value);
             else if (argument == L"--environment")
                 options.environment = value;
+            else if (argument == L"--post-view") options.postView = value;
+            else if (argument == L"--test-image") options.testImage = value;
+            else if (argument == L"--particles") {
+                size_t n = 0; auto v = std::stoul(value, &n);
+                if (n != value.size() || v < 1 || v > 65536) throw std::runtime_error("--particles: 1..65536");
+                options.particleCount = static_cast<uint32_t>(v);
+            }
+            else if (argument == L"--fixed-dt" || argument == L"--gravity" || argument == L"--bloom-threshold" || argument == L"--bloom-strength") {
+                size_t n = 0; float v = std::stof(value, &n);
+                if (n != value.size() || !(v >= 0 && v <= 20) || (argument == L"--fixed-dt" && v > .05f))
+                    throw std::runtime_error("Invalid post-process numeric option");
+                if (argument == L"--fixed-dt") options.fixedDelta = v;
+                else if (argument == L"--gravity") options.gravity = v;
+                else if (argument == L"--bloom-threshold") options.bloomThreshold = v;
+                else options.bloomStrength = v;
+            }
             else if (argument == L"--occluder-x")
             {
                 size_t consumed = 0;
@@ -271,7 +291,7 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
             ++frames;
             if (options.testWindow && frames == 12)
             {
-                RECT resized{0, 0, 640, 480};
+                RECT resized{0, 0, options.testOdd ? 641 : 640, options.testOdd ? 479 : 480};
                 AdjustWindowRect(&resized, WS_OVERLAPPEDWINDOW, FALSE);
                 SetWindowPos(window, nullptr, 0, 0, resized.right - resized.left,
                              resized.bottom - resized.top, SWP_NOMOVE | SWP_NOZORDER);

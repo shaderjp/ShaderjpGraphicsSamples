@@ -7,7 +7,7 @@ struct LightingObject
     std::string name;
     GltfModel model;
     DirectX::XMFLOAT3 position{}, rotation{}, scale{1, 1, 1};
-    bool castsShadow = true, movable = false;
+    bool castsShadow = true, movable = false, renderTexture = false;
 };
 struct LightingScene
 {
@@ -15,6 +15,8 @@ struct LightingScene
     DirectX::XMFLOAT3 camera{}, target{}, direction{}, lightColor{1, 1, 1};
     float fov = 45, intensity = 3, exposure = 1;
     std::array<std::filesystem::path, 2> environments;
+    DirectX::XMFLOAT3 secondaryCamera{4, 3, -4}, secondaryTarget{0, .8f, 0};
+    float secondaryFov = 45;
 };
 struct alignas(16) LabConstants
 {

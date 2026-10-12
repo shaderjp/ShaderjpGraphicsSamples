@@ -62,6 +62,18 @@ Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_12_SpecularIBL", "Sa
 EndProject
 Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_13_ShadowMap", "Samples\Vulkan\13_ShadowMap\Vulkan_13_ShadowMap.vcxproj", "{06E6341C-3F1D-4135-819D-123B150B7C93}"
 EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_14_RenderTexture", "Samples\Direct3D12\14_RenderTexture\Direct3D12_14_RenderTexture.vcxproj", "{2C6CDD74-D3DF-44FE-ADE7-B0CB9BC6E45D}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_15_ComputeBloom", "Samples\Direct3D12\15_ComputeBloom\Direct3D12_15_ComputeBloom.vcxproj", "{BC592B0B-043C-478B-80F8-B0982A783F15}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_16_GpuParticles", "Samples\Direct3D12\16_GpuParticles\Direct3D12_16_GpuParticles.vcxproj", "{143A2B65-D92D-4F2E-8F7A-03FFE0A4BA67}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_14_RenderTexture", "Samples\Vulkan\14_RenderTexture\Vulkan_14_RenderTexture.vcxproj", "{F2F4151F-9328-406E-BEBE-B3C2C8AF5B9F}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_15_ComputeBloom", "Samples\Vulkan\15_ComputeBloom\Vulkan_15_ComputeBloom.vcxproj", "{EC614381-5970-41F5-B87E-973E14B8DF0F}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_16_GpuParticles", "Samples\Vulkan\16_GpuParticles\Vulkan_16_GpuParticles.vcxproj", "{47D47D94-0E51-4E7E-9C78-35F69D8AC447}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -176,6 +188,30 @@ Global
 		{06E6341C-3F1D-4135-819D-123B150B7C93}.Debug|x64.Build.0 = Debug|x64
 		{06E6341C-3F1D-4135-819D-123B150B7C93}.Release|x64.ActiveCfg = Release|x64
 		{06E6341C-3F1D-4135-819D-123B150B7C93}.Release|x64.Build.0 = Release|x64
+			{2C6CDD74-D3DF-44FE-ADE7-B0CB9BC6E45D}.Debug|x64.ActiveCfg = Debug|x64
+		{2C6CDD74-D3DF-44FE-ADE7-B0CB9BC6E45D}.Debug|x64.Build.0 = Debug|x64
+		{2C6CDD74-D3DF-44FE-ADE7-B0CB9BC6E45D}.Release|x64.ActiveCfg = Release|x64
+		{2C6CDD74-D3DF-44FE-ADE7-B0CB9BC6E45D}.Release|x64.Build.0 = Release|x64
+			{BC592B0B-043C-478B-80F8-B0982A783F15}.Debug|x64.ActiveCfg = Debug|x64
+		{BC592B0B-043C-478B-80F8-B0982A783F15}.Debug|x64.Build.0 = Debug|x64
+		{BC592B0B-043C-478B-80F8-B0982A783F15}.Release|x64.ActiveCfg = Release|x64
+		{BC592B0B-043C-478B-80F8-B0982A783F15}.Release|x64.Build.0 = Release|x64
+			{143A2B65-D92D-4F2E-8F7A-03FFE0A4BA67}.Debug|x64.ActiveCfg = Debug|x64
+		{143A2B65-D92D-4F2E-8F7A-03FFE0A4BA67}.Debug|x64.Build.0 = Debug|x64
+		{143A2B65-D92D-4F2E-8F7A-03FFE0A4BA67}.Release|x64.ActiveCfg = Release|x64
+		{143A2B65-D92D-4F2E-8F7A-03FFE0A4BA67}.Release|x64.Build.0 = Release|x64
+			{F2F4151F-9328-406E-BEBE-B3C2C8AF5B9F}.Debug|x64.ActiveCfg = Debug|x64
+		{F2F4151F-9328-406E-BEBE-B3C2C8AF5B9F}.Debug|x64.Build.0 = Debug|x64
+		{F2F4151F-9328-406E-BEBE-B3C2C8AF5B9F}.Release|x64.ActiveCfg = Release|x64
+		{F2F4151F-9328-406E-BEBE-B3C2C8AF5B9F}.Release|x64.Build.0 = Release|x64
+			{EC614381-5970-41F5-B87E-973E14B8DF0F}.Debug|x64.ActiveCfg = Debug|x64
+		{EC614381-5970-41F5-B87E-973E14B8DF0F}.Debug|x64.Build.0 = Debug|x64
+		{EC614381-5970-41F5-B87E-973E14B8DF0F}.Release|x64.ActiveCfg = Release|x64
+		{EC614381-5970-41F5-B87E-973E14B8DF0F}.Release|x64.Build.0 = Release|x64
+			{47D47D94-0E51-4E7E-9C78-35F69D8AC447}.Debug|x64.ActiveCfg = Debug|x64
+		{47D47D94-0E51-4E7E-9C78-35F69D8AC447}.Debug|x64.Build.0 = Debug|x64
+		{47D47D94-0E51-4E7E-9C78-35F69D8AC447}.Release|x64.ActiveCfg = Release|x64
+		{47D47D94-0E51-4E7E-9C78-35F69D8AC447}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{21A334DA-4CA5-4AAF-B253-2EC5FE701868} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}

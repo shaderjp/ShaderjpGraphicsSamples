@@ -1,0 +1,59 @@
+{
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 masafumi",
+  "blender": "5.2.1 LTS / 9e2066aef7ef",
+  "coordinateSystem": "right-handed Y-up meters",
+  "dimensionsMeters": [
+    1.4,
+    1.4,
+    0.08
+  ],
+  "triangles": 12,
+  "files": [
+    {
+      "path": "Models/PostProcess/Monitor/Monitor.bin",
+      "bytes": 1224,
+      "sha256": "aad1308e1e0fed9a2efb8999ece2295372c504743fa6fcff3214b387e5d57455"
+    },
+    {
+      "path": "Models/PostProcess/Monitor/Monitor.gltf",
+      "bytes": 3161,
+      "sha256": "cfb40d00560d086806e57d3bf42c07ec9c5a07973a5f98073c31ccb8b116624b"
+    },
+    {
+      "path": "Models/PostProcess/Monitor/Textures/Albedo.png",
+      "bytes": 75,
+      "sha256": "6e2872fc177e3dd60a54232fe5fff2bf36dd8ae8eb88d7f9d7217ce26c8cc8a6"
+    },
+    {
+      "path": "Models/PostProcess/Monitor/Textures/Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Models/PostProcess/Monitor/Textures/Normal.png",
+      "bytes": 75,
+      "sha256": "87bbe7914db93a5d76335901d7a8bd3e277f17d52ea75913c92ec55e84b6d005"
+    },
+    {
+      "path": "Models/PostProcess/Monitor/Textures/ORM.png",
+      "bytes": 75,
+      "sha256": "45c86698cda5ded69b030442c034c1f1c8e5a6f28d4ab5350cfad440d4adfcf1"
+    },
+    {
+      "path": "Scenes/PostProcess/Exhibition.json",
+      "bytes": 7990,
+      "sha256": "0f7d1ee19e3741c0a23b34e3d35c3568d194c38214f0b8aeaef88b9b45d937cb"
+    }
+  ],
+  "sources": [
+    {
+      "path": "SourceArt/Blender/PostProcess/Monitor.blend",
+      "sha256": "e226b1a99306bb766dd26944b506132ec9974d6a2af9699728ee1d60af4ec016"
+    },
+    {
+      "path": "SourceArt/Blender/PostProcess/monitor.py",
+      "sha256": "1075145df9072fb945c8f0f0abbcee08a440ad1edf2e6525c81926fce8c9dc8a"
+    }
+  ]
+}

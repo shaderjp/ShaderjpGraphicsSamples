@@ -1,13 +1,13 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。13のテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。16のテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
 
 ## 必要な環境
 
 - Windows、Visual Studio 2026の「C++によるデスクトップ開発」、v145、Windows SDK 10.0.26100.0。
 - x64のDebug／Release構成。初回の検証環境はWindows 11とNVIDIA GeForce RTX 4070です。
 - D3D12: FL12_0、Shader Model 6.6対応GPU／ドライバ。Agility SDK 1.619.6とDXC 1.9.2609.5をNuGetで復元します。
-- Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/present両対応Queueを持つGPU／ドライバが必要です。
+- Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14〜16回）を持つGPU／ドライバが必要です。
 - Debug実行時にはD3D12 Debug Layer／Vulkan Validation Layerを有効化します。D3D12のDebug Interfaceが利用できない場合はWindowsの「グラフィックス ツール」を導入してください。
 
 SDKを導入してもGPU・ドライバの機能対応が追加されるわけではありません。初期化時に必要な対応を確認し、不足している場合はエラーを表示します。
@@ -54,6 +54,9 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | Irradiance Cubemap・拡散IBL | [11 Diffuse IBL](Docs/Direct3D12/11_DiffuseIBL.md) | [11 Diffuse IBL](Docs/Vulkan/11_DiffuseIBL.md) |
 | GGX Prefilter・BRDF LUT・鏡面IBL | [12 Specular IBL](Docs/Direct3D12/12_SpecularIBL.md) | [12 Specular IBL](Docs/Vulkan/12_SpecularIBL.md) |
 | 方向光Shadow map・バイアス・3×3 PCF | [13 Shadow map](Docs/Direct3D12/13_ShadowMap.md) | [13 Shadow map](Docs/Vulkan/13_ShadowMap.md) |
+| HDR Render-to-Texture・ポスト処理・3Dモニター | [14 RenderTexture](Docs/Direct3D12/14_RenderTexture.md) | [14 RenderTexture](Docs/Vulkan/14_RenderTexture.md) |
+| ComputeによるHDR Bloom・9 tap Gaussian | [15 ComputeBloom](Docs/Direct3D12/15_ComputeBloom.md) | [15 ComputeBloom](Docs/Vulkan/15_ComputeBloom.md) |
+| ComputeによるGPUパーティクル・頂点Bufferの再利用 | [16 GpuParticles](Docs/Direct3D12/16_GpuParticles.md) | [16 GpuParticles](Docs/Vulkan/16_GpuParticles.md) |
 
 各プロジェクトをVSのスタートアッププロジェクトに設定して実行できます。ESCまたは閉じるボタンで終了します。
 
@@ -67,12 +70,14 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 
 第10〜13回は[Lighting Labの自作モデル・HDR環境・IBL事前計算](Docs/Assets/LightingLab.md)を使い、[CubemapからIBLとShadow mapへの共通解説](Docs/EnvironmentLighting.md)に沿って拡張します。Blenderの編集正本と生成スクリプトを配布し、アプリの起動にはBlenderやベイクを必要としません。DirectXTex may2026は固定Submoduleで、CPUのDDS読込に限定して利用しています。
 
+第14〜16回は[HDRとComputeの共通章](Docs/PostProcessing.md)に沿って、描画結果を別カメラの[モニター](Docs/Assets/Monitor.md)、Bloom、GPUパーティクルへ再利用します。粒子BufferはComputeの書込み先とインスタンス用頂点入力で同じリソースを使います。
+
 ## 共通化と構成
 
 | フォルダ | 内容 |
 |---|---|
 | `Samples/Direct3D12`, `Samples/Vulkan` | テーマ別の独立したVCプロジェクト。API初期化・描画・同期・解放を明示 |
-| `Samples/Shared` | 09の共通ImGuiウィジェット。GPU描画バックエンドは各APIのプロジェクト内 |
+| `Samples/Shared` | 09以降の共通ImGuiウィジェットとCPU側定数・検証データ。GPU描画バックエンドは各APIのプロジェクト内 |
 | `Common` | Win32ライフサイクル、ファイル読込、WIC、OBJ／glTF、CPU側のデータと行列計算 |
 | `Shaders` | 両APIで共有するHLSL。SM6.6／HLSL 2021、API固有の属性だけマクロ化 |
 | `Assets` | 差し替え可能な自作OBJ／PNG、glTF／PBRアセット |
@@ -107,6 +112,12 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | `--rotate-light`（07／08） | 方向光の回転を開始。Spaceで開始／停止 |
 | `--shading <mode>`／`--rotate-light`（09） | 08と同じ表示モード名・回転開始指定。起動後はView／Rotate lightのウィジェットで変更 |
 | `--test-ui`（09） | `--frames 36`以上と組み合わせ、スライダー編集・Reset・再編集を入力イベントで検証。`--rotate-light`とは併用不可 |
+| `--post-view <mode>`（14〜16） | final / grayscale / monitor / input。15以降はextract / horizontal / bloomも選択 |
+| `--particles <N>`／`--pause`／`--gravity <G>`（16） | 1〜65,536粒子、Pause開始、重力指定 |
+| `--fixed-dt <seconds>`（14〜16） | 撮影・検証の固定時間刻み。0なら通常の経過時間 |
+| `--test-post`（16） | `--frames 36`以上とUI表示で実Step／Reset／Pauseを検証 |
+| `--test-odd` | リサイズ検証を641×479へ変更。24フレームで最小化・1280×720復帰 |
+| `--capture-gpu`（14〜16） | 撮影時に線形HDR・粒子データとメタデータを`.gpu`へ保存 |
 | `--frames <N>` | 正の整数N回の通常描画で終了 |
 | `--test-window` | 12フレームで640×480へ変更、24フレームで最小化・1280×720へ復帰 |
 | `--screenshot <path>` | 指定フレーム数の終了時、または通常実行の8フレーム後にGPU読戻しPNGを保存 |
@@ -121,6 +132,10 @@ Vulkanのスクリーンショットは、取得済みの画像をPresent前に�
 ```powershell
 .\Tools\ValidateProjects.ps1
 .\Tools\TestLoaders.ps1
+.\Tools\TestPostProcessAssets.ps1
+.\Tools\TestPostProcess.ps1
+.\Tools\TestPostProcess.ps1 -Configuration Release
+.\Tools\TestPostProcessFailures.ps1
 .\Tools\TestSamples.ps1
 .\Tools\TestSamples.ps1 -Configuration Release
 .\Tools\TestFailureCases.ps1
@@ -133,7 +148,9 @@ Vulkanのスクリーンショットは、取得済みの画像をPresent前に�
 .\Tools\TestImGui.ps1 -Configuration Release
 ```
 
-`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は全26本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。
+`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は全32本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。
+
+`TestPostProcess`はHDRの保持と表示変換、モニターの更新、黒・一定色・端のBloom、641×479、257粒子の更新境界、Step／ResetをGPU画像とBufferで検証します。標準Python 3.11以上を`-PythonPath`で指定でき、既定ではアセット制作用Blenderの付属Pythonを使います。`--capture-gpu`はこの診断時だけ読戻しを行い、通常フレームでは読み戻しません。
 
 `TestLighting`は全表示モードと、既知の色・法線を持つ平面のGPU画素を照合します。追加比較画像は`-CaptureDocs`で保存できます。
 

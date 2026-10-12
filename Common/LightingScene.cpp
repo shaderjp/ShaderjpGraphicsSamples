@@ -25,6 +25,22 @@ LightingScene LoadLightingScene(const std::filesystem::path &path)
         s.camera.z = -s.camera.z;
         s.target = vector(j.at("camera").at("target"));
         s.target.z = -s.target.z;
+        if (j.contains("secondaryCamera"))
+        {
+            s.secondaryCamera = vector(j.at("secondaryCamera").at("position"));
+            s.secondaryCamera.z = -s.secondaryCamera.z;
+            s.secondaryTarget = vector(j.at("secondaryCamera").at("target"));
+            s.secondaryTarget.z = -s.secondaryTarget.z;
+            s.secondaryFov = j.at("secondaryCamera").at("fovDegrees").get<float>();
+            if (!(s.secondaryFov > 1 && s.secondaryFov < 170))
+                throw std::runtime_error("Invalid secondary camera");
+            const auto forward = DirectX::XMVectorSubtract(DirectX::XMLoadFloat3(&s.secondaryTarget),
+                                                           DirectX::XMLoadFloat3(&s.secondaryCamera));
+            if (DirectX::XMVectorGetX(DirectX::XMVector3LengthSq(forward)) < 1e-8f ||
+                DirectX::XMVectorGetX(DirectX::XMVector3LengthSq(
+                    DirectX::XMVector3Cross(forward, DirectX::XMVectorSet(0, 1, 0, 0)))) < 1e-8f)
+                throw std::runtime_error("Degenerate secondary camera");
+        }
         s.direction = vector(j.at("light").at("direction"));
         s.direction.z = -s.direction.z;
         s.lightColor = vector(j.at("light").at("color"));
@@ -54,6 +70,7 @@ LightingScene LoadLightingScene(const std::filesystem::path &path)
                 throw std::runtime_error("Positive scales required");
             item.castsShadow = o.at("castsShadow").get<bool>();
             item.movable = o.at("movable").get<bool>();
+            item.renderTexture = o.value("renderTexture", false);
             s.objects.push_back(std::move(item));
         }
         for (size_t i = 0; i < 2; ++i)

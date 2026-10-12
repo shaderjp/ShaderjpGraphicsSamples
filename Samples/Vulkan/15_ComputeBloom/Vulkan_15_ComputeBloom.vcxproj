@@ -1,0 +1,610 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EC614381-5970-41F5-B87E-973E14B8DF0F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>Vulkan_15_ComputeBloom</ProjectName>
+    <RootNamespace>Vulkan_15_ComputeBloom</RootNamespace>
+    <GraphicsApi>Vulkan</GraphicsApi>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\..\Build\Common.props" />
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sample.cpp" />
+    <ClCompile Include="..\..\..\Common\Application.cpp" />
+    <ClCompile Include="..\..\..\Common\Image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sample.h" />
+    <ClInclude Include="..\..\..\Common\Application.h" />
+    <ClInclude Include="..\..\..\Common\Image.h" />
+    <ClInclude Include="..\..\..\Common\Mesh.h" />
+    <ClInclude Include="..\..\..\Shaders\Common.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Build\Common.props" />
+    <None Include="..\..\..\Build\Samples.targets" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Common\Gltf.cpp" />
+    <ClInclude Include="..\..\..\Common\Gltf.h" />
+    <ClInclude Include="..\..\..\ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp" />
+    <None Include="..\..\..\ThirdParty\nlohmann-json\LICENSE.MIT">
+      <AssetTargetPath>Licenses\nlohmann-json-LICENSE.MIT</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\LICENSE">
+      <AssetTargetPath>Licenses\ShaderjpGraphicsSamples-LICENSE.txt</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\DirectXTex\DirectXTex;$(RepositoryRoot)ThirdParty\imgui;$(RepositoryRoot)ThirdParty\imgui\backends;$(RepositoryRoot)ThirdParty\nlohmann-json\single_include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Common\Lighting.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\..\Build\Samples.targets" />
+  <Target Name="CheckGltfDependency" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(RepositoryRoot)ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp')" Text="Initialize pinned dependencies: git submodule update --init --recursive" />
+  </Target>
+  <ItemGroup>
+    <ClCompile Include="ImGuiRenderer.cpp" />
+    <ClInclude Include="..\..\..\Shaders\09_ImGui\Ui.hlsli" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.cpp" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imconfig.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.h" />
+    <None Include="..\..\..\ThirdParty\imgui\LICENSE.txt">
+      <AssetTargetPath>Licenses\imgui-LICENSE.txt</AssetTargetPath>
+    </None>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <Message>DXC ImGuiVertex: vs_6_6 / Vulkan</Message>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <Message>DXC ImGuiPixel: ps_6_6 / Vulkan</Message>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Target Name="CheckImGuiDependency" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(RepositoryRoot)ThirdParty\imgui\imgui.h')" Text="Dear ImGui is missing. Initialize pinned dependencies: git submodule update --init --recursive" />
+  </Target>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>LAB_TECHNIQUE=13;POST_TECHNIQUE=15;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\DirectXTex\DirectXTex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Common\Dds.cpp" />
+    <ClCompile Include="..\..\..\Common\LightingScene.cpp" />
+    <ClInclude Include="..\..\..\Common\DdsImage.h" />
+    <ClInclude Include="..\..\..\Common\LightingScene.h" />
+    <ClInclude Include="..\..\Shared\LightingLabPanel.h" />
+    <ClInclude Include="..\..\..\Shaders\LightingLab\Scene.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\Vertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -D LAB_TECHNIQUE=13 -D LINEAR_HDR=1 -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\Pixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -D LAB_TECHNIQUE=13 -D LINEAR_HDR=1 -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\SkyVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -D LAB_TECHNIQUE=13 -D LINEAR_HDR=1 -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\SkyPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -D LAB_TECHNIQUE=13 -D LINEAR_HDR=1 -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightingLab\ShadowVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -D LAB_TECHNIQUE=13 -D LINEAR_HDR=1 -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Box.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Box\Box.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Box.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Box\Box.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\FloatingPlate.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\FloatingPlate\FloatingPlate.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\FloatingPlate.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\FloatingPlate\FloatingPlate.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Floor.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Floor\Floor.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Floor.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Floor\Floor.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Plinth.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Plinth\Plinth.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Plinth.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Plinth\Plinth.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Ramp.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Ramp\Ramp.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Ramp.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Ramp\Ramp.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Sphere_0_0.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_0\Sphere_0_0.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Sphere_0_0.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_0\Sphere_0_0.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Sphere_0_1.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_1\Sphere_0_1.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Sphere_0_1.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_1\Sphere_0_1.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Sphere_0_2.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_2\Sphere_0_2.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Sphere_0_2.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_2\Sphere_0_2.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Sphere_0_3.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_3\Sphere_0_3.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Sphere_0_3.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_3\Sphere_0_3.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Sphere_0_4.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_4\Sphere_0_4.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Sphere_0_4.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_4\Sphere_0_4.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Sphere_1_0.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_0\Sphere_1_0.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Sphere_1_0.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_0\Sphere_1_0.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Sphere_1_1.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_1\Sphere_1_1.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Sphere_1_1.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_1\Sphere_1_1.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Sphere_1_2.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_2\Sphere_1_2.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Sphere_1_2.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_2\Sphere_1_2.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Sphere_1_3.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_3\Sphere_1_3.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Sphere_1_3.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_3\Sphere_1_3.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Sphere_1_4.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_4\Sphere_1_4.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Sphere_1_4.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_4\Sphere_1_4.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\ThinColumn.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\ThinColumn\ThinColumn.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\ThinColumn.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\ThinColumn\ThinColumn.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Wall.bin">
+      <AssetTargetPath>Assets\Models\LightingLab\Wall\Wall.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Wall.gltf">
+      <AssetTargetPath>Assets\Models\LightingLab\Wall\Wall.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Wall\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Wall\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Wall\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Wall\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Wall\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\ThinColumn\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\ThinColumn\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\ThinColumn\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\ThinColumn\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\ThinColumn\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_4\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_4\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_4\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_4\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_4\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_3\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_3\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_3\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_3\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_3\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_2\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_2\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_2\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_2\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_2\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_1\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_1\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_1\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_1\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_1\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_0\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_0\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_0\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_1_0\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_1_0\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_4\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_4\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_4\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_4\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_4\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_3\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_3\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_3\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_3\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_3\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_2\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_2\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_2\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_2\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_2\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_1\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_1\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_1\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_1\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_1\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_0\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_0\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_0\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Sphere_0_0\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Sphere_0_0\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Ramp\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Ramp\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Ramp\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Ramp\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Ramp\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Plinth\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Plinth\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Plinth\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Plinth\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Plinth\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Floor\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Floor\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Floor\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Floor\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Floor\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\FloatingPlate\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\FloatingPlate\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\FloatingPlate\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\FloatingPlate\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\FloatingPlate\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Box\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Box\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Box\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\LightingLab\Box\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\LightingLab\Box\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\BRDF.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\BRDF.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Orientation.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Orientation.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Room_Environment.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Room_Environment.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Room_Irradiance.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Room_Irradiance.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Room_Specular.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Room_Specular.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Environment.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Studio_Environment.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Irradiance.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Studio_Irradiance.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Specular.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Studio_Specular.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\LightingLab\Exhibition.json">
+      <AssetTargetPath>Assets\Scenes\LightingLab\Exhibition.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Manifest.json">
+      <AssetTargetPath>Assets\Models\ShaderBall\Manifest.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_Albedo.bin">
+      <AssetTargetPath>Assets\Models\ShaderBall\ShaderBall_Albedo.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_Albedo.gltf">
+      <AssetTargetPath>Assets\Models\ShaderBall\ShaderBall_Albedo.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_PBR.bin">
+      <AssetTargetPath>Assets\Models\ShaderBall\ShaderBall_PBR.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_PBR.gltf">
+      <AssetTargetPath>Assets\Models\ShaderBall\ShaderBall_PBR.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\AO.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\AO.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Metallic.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\Metallic.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Roughness.png">
+      <AssetTargetPath>Assets\Models\ShaderBall\Textures\Roughness.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\ThirdParty\DirectXTex\LICENSE">
+      <AssetTargetPath>Licenses\DirectXTex-LICENSE.txt</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Support\DirectXTexCpu\DirectXTexCpu.vcxproj">
+      <Project>{CB12046F-834B-48DC-9188-BECBCE081AF9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Assets\Scenes\LightingLab\Manifest.json">
+      <AssetTargetPath>Assets\Scenes\LightingLab\Manifest.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\LightingLab\MaterialStudy.json">
+      <AssetTargetPath>Assets\Scenes\LightingLab\MaterialStudy.json</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\PostProcessPanel.h" />
+    <ClInclude Include="..\..\Shared\PostProcessData.h" />
+    <ClInclude Include="..\..\..\Shaders\PostProcess\Post.hlsli" />
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\PostVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\PostPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\TestPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\MonitorPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\Extract.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\Blur.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\LightingLab\Scene.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <None Include="..\..\..\Assets\Models\PostProcess\Monitor\Monitor.bin">
+      <AssetTargetPath>Assets\Models\PostProcess\Monitor\Monitor.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\PostProcess\Monitor\Monitor.gltf">
+      <AssetTargetPath>Assets\Models\PostProcess\Monitor\Monitor.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\PostProcess\Monitor\Textures\Albedo.png">
+      <AssetTargetPath>Assets\Models\PostProcess\Monitor\Textures\Albedo.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\PostProcess\Monitor\Textures\Emissive.png">
+      <AssetTargetPath>Assets\Models\PostProcess\Monitor\Textures\Emissive.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\PostProcess\Monitor\Textures\Normal.png">
+      <AssetTargetPath>Assets\Models\PostProcess\Monitor\Textures\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\PostProcess\Monitor\Textures\ORM.png">
+      <AssetTargetPath>Assets\Models\PostProcess\Monitor\Textures\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\PostProcess\Exhibition.json">
+      <AssetTargetPath>Assets\Scenes\PostProcess\Exhibition.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\PostProcess\Manifest.json">
+      <AssetTargetPath>Assets\Scenes\PostProcess\Manifest.json</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\PostProcessCapture.h" />
+  </ItemGroup>
+</Project>

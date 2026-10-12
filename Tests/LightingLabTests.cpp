@@ -37,6 +37,42 @@ int main(int argc, char **argv)
                 "Movable occluder world transform");
         auto work = root / ".cache/lightinglab-cpu";
         std::filesystem::create_directories(work);
+        const auto postPath = root / "Assets/Scenes/PostProcess/Exhibition.json";
+        const auto post = LoadLightingScene(postPath);
+        Require(post.objects.size() == 19 && post.objects.back().renderTexture,
+                "Optional monitor target loaded");
+        Require(!scene.objects.back().renderTexture && scene.secondaryCamera.z < 0,
+                "Legacy scenes retain secondary camera defaults");
+        Require(std::abs(post.secondaryCamera.z + 4.2f) < 1e-5f &&
+                    std::abs(post.secondaryTarget.z - .5f) < 1e-5f && post.secondaryFov == 45,
+                "Secondary camera RH to LH conversion");
+        std::ifstream postStream(postPath);
+        auto postJson = nlohmann::json::parse(postStream);
+        // Use absolute model references so invalid-camera fixtures remain independent of their directory.
+        for (auto &object : postJson["objects"])
+            object["model"] =
+                (postPath.parent_path() / object["model"].get<std::string>()).lexically_normal().string();
+        for (const auto &invalidCamera :
+             {nlohmann::json{{"position", {0, 0, 0}}, {"target", {0, 0, 0}}, {"fovDegrees", 45}},
+              nlohmann::json{{"position", {1, 2, 3}}, {"target", {0, 0, 0}}, {"fovDegrees", 0}}})
+        {
+            postJson["secondaryCamera"] = invalidCamera;
+            const auto fixture = work / "invalid-camera.json";
+            {
+                std::ofstream f(fixture);
+                f << postJson.dump();
+            }
+            bool cameraRejected = false;
+            try
+            {
+                LoadLightingScene(fixture);
+            }
+            catch (const std::exception &e)
+            {
+                cameraRejected = std::string(e.what()).find("secondary") != std::string::npos;
+            }
+            Require(cameraRejected, "Invalid secondary camera rejected");
+        }
         // Mask ONLY the old/new occluder silhouettes when comparing GPU frames.
         // Changes outside these bounds must come from its projected shadow.
         auto boxes = nlohmann::json::array();
@@ -50,13 +86,18 @@ int main(int argc, char **argv)
             {
                 const auto p = XMVector3TransformCoord(XMLoadFloat3(&vertex.position), matrix);
                 const float x = (XMVectorGetX(p) + 1) * 640, y = (1 - XMVectorGetY(p)) * 360;
-                left = std::min(left, x); top = std::min(top, y);
-                right = std::max(right, x); bottom = std::max(bottom, y);
+                left = std::min(left, x);
+                top = std::min(top, y);
+                right = std::max(right, x);
+                bottom = std::max(bottom, y);
             }
-            boxes.push_back({int(std::floor(left))-3,int(std::floor(top))-3,
-                             int(std::ceil(right))+3,int(std::ceil(bottom))+3});
+            boxes.push_back({int(std::floor(left)) - 3, int(std::floor(top)) - 3, int(std::ceil(right)) + 3,
+                             int(std::ceil(bottom)) + 3});
         }
-        { std::ofstream bounds(work / "occluder-bounds.json"); bounds << boxes.dump(2); }
+        {
+            std::ofstream bounds(work / "occluder-bounds.json");
+            bounds << boxes.dump(2);
+        }
         auto invalid = ReadBinary(env / "BRDF.dds");
         invalid[148] = 0;
         invalid[149] = 0x7c;

@@ -1,13 +1,13 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。16のテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。18のテーマを両APIで実装し、共通HLSLからDXILとSPIR-Vを生成します。API処理を各プロジェクトで追える構成にしています。
 
 ## 必要な環境
 
 - Windows、Visual Studio 2026の「C++によるデスクトップ開発」、v145、Windows SDK 10.0.26100.0。
 - x64のDebug／Release構成。初回の検証環境はWindows 11とNVIDIA GeForce RTX 4070です。
 - D3D12: FL12_0、Shader Model 6.6対応GPU／ドライバ。Agility SDK 1.619.6とDXC 1.9.2609.5をNuGetで復元します。
-- Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14〜16回）を持つGPU／ドライバが必要です。
+- Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14〜18回）を持つGPU／ドライバが必要です。
 - Debug実行時にはD3D12 Debug Layer／Vulkan Validation Layerを有効化します。D3D12のDebug Interfaceが利用できない場合はWindowsの「グラフィックス ツール」を導入してください。
 
 SDKを導入してもGPU・ドライバの機能対応が追加されるわけではありません。初期化時に必要な対応を確認し、不足している場合はエラーを表示します。
@@ -57,6 +57,8 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | HDR Render-to-Texture・ポスト処理・3Dモニター | [14 RenderTexture](Docs/Direct3D12/14_RenderTexture.md) | [14 RenderTexture](Docs/Vulkan/14_RenderTexture.md) |
 | ComputeによるHDR Bloom・9 tap Gaussian | [15 ComputeBloom](Docs/Direct3D12/15_ComputeBloom.md) | [15 ComputeBloom](Docs/Vulkan/15_ComputeBloom.md) |
 | ComputeによるGPUパーティクル・頂点Bufferの再利用 | [16 GpuParticles](Docs/Direct3D12/16_GpuParticles.md) | [16 GpuParticles](Docs/Vulkan/16_GpuParticles.md) |
+| Deferred・Pixel Shader | [17 DeferredPixel](Docs/Direct3D12/17_DeferredPixel.md) | [17 DeferredPixel](Docs/Vulkan/17_DeferredPixel.md) |
+| Deferred・Compute Shader | [18 DeferredCompute](Docs/Direct3D12/18_DeferredCompute.md) | [18 DeferredCompute](Docs/Vulkan/18_DeferredCompute.md) |
 
 各プロジェクトをVSのスタートアッププロジェクトに設定して実行できます。ESCまたは閉じるボタンで終了します。
 
@@ -71,6 +73,8 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 第10〜13回は[Lighting Labの自作モデル・HDR環境・IBL事前計算](Docs/Assets/LightingLab.md)を使い、[CubemapからIBLとShadow mapへの共通解説](Docs/EnvironmentLighting.md)に沿って拡張します。Blenderの編集正本と生成スクリプトを配布し、アプリの起動にはBlenderやベイクを必要としません。DirectXTex may2026は固定Submoduleで、CPUのDDS読込に限定して利用しています。
 
 第14〜16回は[HDRとComputeの共通章](Docs/PostProcessing.md)に沿って、描画結果を別カメラの[モニター](Docs/Assets/Monitor.md)、Bloom、GPUパーティクルへ再利用します。粒子BufferはComputeの書込み先とインスタンス用頂点入力で同じリソースを使います。
+
+第17・18回のDeferred Renderingと、その後のレイトレーシング・Mesh Shaderの比較には、[Workshopの工房アセット](Docs/Assets/Workshop.md)を使います。標準251,200三角形と、共有部品を3×3へ配置した負荷比較2,260,800三角形、透明合成・MASK、HDR／IBL、固定カメラとCycles参考画像を配布します。第17・18回では拡張CPUローダーを接続し、同じ18 B／画素のG-bufferをPS／CSでシェーディングします。[Deferred共通章](Docs/DeferredRendering.md)と[検証記録](Docs/DeferredVerification.md)を参照してください。
 
 ## 共通化と構成
 

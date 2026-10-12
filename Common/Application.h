@@ -29,6 +29,11 @@ struct Options
     uint32_t particleCount = 16384;
     bool pauseParticles = false, captureGpu = false, testPost = false, testOdd = false;
     float fixedDelta = 0, gravity = 3, bloomThreshold = 1, bloomStrength = .15f;
+    std::wstring workshopScene, preset, camera;
+    std::filesystem::path timings;
+    bool forward = false, benchmark = false, cameraPath = false;
+    bool disableShadows = false, hardShadows = false, disableBloom = false, disableIbl = false, disableDirect = false;
+    uint32_t pathFrame = 0;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

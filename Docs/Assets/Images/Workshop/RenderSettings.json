@@ -1,0 +1,323 @@
+{
+  "shots": {
+    "Hero_Direct": {
+      "scene": "Standard",
+      "camera": {
+        "nodeId": "camera:Hero",
+        "position": [
+          6.8,
+          4.3,
+          8.4
+        ],
+        "target": [
+          0.0,
+          1.25,
+          -0.35
+        ],
+        "fovDegrees": 45,
+        "near": 0.05,
+        "far": 150
+      },
+      "lighting": "direct",
+      "preset": "OpaqueMask",
+      "samples": 512,
+      "seed": 0,
+      "device": "CPU",
+      "adaptiveSampling": false,
+      "denoise": false,
+      "maxBounces": 1,
+      "transparentMaxBounces": 16,
+      "width": 1280,
+      "height": 720,
+      "exposure": 1.0,
+      "display": "Reinhard + exact sRGB",
+      "environmentIntensity": 0,
+      "fingerprint": "7dd18a409c23d7d20e38ad700242f4d78a033d899edde38fd717c7b58cb20552",
+      "seconds": 40.17,
+      "exr": "Workshop_Hero_Direct.exr",
+      "png": "Workshop_Hero_Direct.png",
+      "exrSha256": "594b934da95ab241ed3c65bf2a86a8bdcf97ad2ad4283aefafc207f77576c232",
+      "pngSha256": "c1df2e5b1b3f0d48c51144128acc8f1458d43d127671a0cdfe63c780a912f098"
+    },
+    "Hero_Environment": {
+      "scene": "Standard",
+      "camera": {
+        "nodeId": "camera:Hero",
+        "position": [
+          6.8,
+          4.3,
+          8.4
+        ],
+        "target": [
+          0.0,
+          1.25,
+          -0.35
+        ],
+        "fovDegrees": 45,
+        "near": 0.05,
+        "far": 150
+      },
+      "lighting": "environment",
+      "preset": "OpaqueMask",
+      "samples": 512,
+      "seed": 0,
+      "device": "CPU",
+      "adaptiveSampling": false,
+      "denoise": false,
+      "maxBounces": 1,
+      "transparentMaxBounces": 16,
+      "width": 1280,
+      "height": 720,
+      "exposure": 1.0,
+      "display": "Reinhard + exact sRGB",
+      "environmentIntensity": 0.8,
+      "fingerprint": "9b38b5593e5ed26c1283d137720f5851f3c5633951e28e98d6e080f256987504",
+      "seconds": 60.02,
+      "exr": "Workshop_Hero_Environment.exr",
+      "png": "Workshop_Hero_Environment.png",
+      "exrSha256": "eb0d6f0172bef616c6f89495a3b47f4de9029ca832bf1ce192ff46a3e8816b31",
+      "pngSha256": "e46d9e64211b77be07b5b2e01c0d696466b08f979eebe1b4c97e31caac6917d4"
+    },
+    "Hero_Combined": {
+      "scene": "Standard",
+      "camera": {
+        "nodeId": "camera:Hero",
+        "position": [
+          6.8,
+          4.3,
+          8.4
+        ],
+        "target": [
+          0.0,
+          1.25,
+          -0.35
+        ],
+        "fovDegrees": 45,
+        "near": 0.05,
+        "far": 150
+      },
+      "lighting": "combined",
+      "preset": "OpaqueMask",
+      "samples": 512,
+      "seed": 0,
+      "device": "CPU",
+      "adaptiveSampling": false,
+      "denoise": false,
+      "maxBounces": 1,
+      "transparentMaxBounces": 16,
+      "width": 1280,
+      "height": 720,
+      "exposure": 1.0,
+      "display": "Reinhard + exact sRGB",
+      "environmentIntensity": 0.8,
+      "fingerprint": "de87543649ab4a625af28d464a8babe6c0c756bd332367eab1cddc24581bc5df",
+      "seconds": 53.96,
+      "exr": "Workshop_Hero_Combined.exr",
+      "png": "Workshop_Hero_Combined.png",
+      "exrSha256": "9e24bd4f44de73d58cbae42083bb53d97626c804a230800de06b3d68af3291d3",
+      "pngSha256": "a043ef8369e5daaacd0e7fe2f00801bf66071b9d120738c90953f77acc7ccd30"
+    },
+    "Materials": {
+      "scene": "Standard",
+      "camera": {
+        "nodeId": "camera:Materials",
+        "position": [
+          3.9,
+          1.9,
+          0.3
+        ],
+        "target": [
+          1.5,
+          1.25,
+          -0.1
+        ],
+        "fovDegrees": 45,
+        "near": 0.05,
+        "far": 150
+      },
+      "lighting": "combined",
+      "preset": "OpaqueMask",
+      "samples": 512,
+      "seed": 0,
+      "device": "CPU",
+      "adaptiveSampling": false,
+      "denoise": false,
+      "maxBounces": 1,
+      "transparentMaxBounces": 16,
+      "width": 1280,
+      "height": 720,
+      "exposure": 1.0,
+      "display": "Reinhard + exact sRGB",
+      "environmentIntensity": 0.8,
+      "fingerprint": "2fecc40c3a54aea7f1628963bbb25fb553432b91b674fc94705d09e974a682f0",
+      "seconds": 146.89,
+      "exr": "Workshop_Materials.exr",
+      "png": "Workshop_Materials.png",
+      "exrSha256": "8bd2ad84693e68f18f42efd261472c77ebae09c756ee9577013518eefc275d3b",
+      "pngSha256": "0b0233e4e4cfa5a0148879cb6e130d03a7eb50561230401ab830876c6d89a78b"
+    },
+    "Occlusion": {
+      "scene": "Standard",
+      "camera": {
+        "nodeId": "camera:Occlusion",
+        "position": [
+          -3.5,
+          1.7,
+          2.4
+        ],
+        "target": [
+          0.5,
+          1.2,
+          -0.8
+        ],
+        "fovDegrees": 55,
+        "near": 0.05,
+        "far": 150
+      },
+      "lighting": "combined",
+      "preset": "OpaqueMask",
+      "samples": 512,
+      "seed": 0,
+      "device": "CPU",
+      "adaptiveSampling": false,
+      "denoise": false,
+      "maxBounces": 1,
+      "transparentMaxBounces": 16,
+      "width": 1280,
+      "height": 720,
+      "exposure": 1.0,
+      "display": "Reinhard + exact sRGB",
+      "environmentIntensity": 0.8,
+      "fingerprint": "6fd8747a83ca641c7c573e99e32d5c4bd4f6bab7034b513c65cd65c5f257465c",
+      "seconds": 119.38,
+      "exr": "Workshop_Occlusion.exr",
+      "png": "Workshop_Occlusion.png",
+      "exrSha256": "ed9c6fccde6f3f860eb267c8cfa36f8fee6fba3ed03c2aa42a872eae8af86a05",
+      "pngSha256": "f83a2a76b589891f00b030dceb72129b7a65cf774c3149280721f26eee60be96"
+    },
+    "Transparency": {
+      "scene": "Standard",
+      "camera": {
+        "nodeId": "camera:Transparency",
+        "position": [
+          1.899999976158142,
+          2.5,
+          -1.0
+        ],
+        "target": [
+          0.3,
+          1.28,
+          -1.7
+        ],
+        "fovDegrees": 40,
+        "near": 0.05,
+        "far": 150
+      },
+      "lighting": "combined",
+      "preset": "Full",
+      "samples": 512,
+      "seed": 0,
+      "device": "CPU",
+      "adaptiveSampling": false,
+      "denoise": false,
+      "maxBounces": 1,
+      "transparentMaxBounces": 16,
+      "width": 1280,
+      "height": 720,
+      "exposure": 1.0,
+      "display": "Reinhard + exact sRGB",
+      "environmentIntensity": 0.8,
+      "fingerprint": "8c6f2bfa6a6666a7f73b8c469f1c4e7ce95053a38f33119e7ac6fe421771753b",
+      "seconds": 228.52,
+      "exr": "Workshop_Transparency.exr",
+      "png": "Workshop_Transparency.png",
+      "exrSha256": "0329693218492a6c5356811758be40aadb5427d430bddf12078ec1f72dcb7474",
+      "pngSha256": "6ec1bbcdef140a8b1653ca7f15d8d5906578fc18ddc77bc0728d580a023c5521"
+    },
+    "Stress": {
+      "scene": "Stress",
+      "camera": {
+        "nodeId": "camera:StressHero",
+        "position": [
+          19.0,
+          14.0,
+          23.0
+        ],
+        "target": [
+          0.0,
+          1.1,
+          0.0
+        ],
+        "fovDegrees": 55,
+        "near": 0.05,
+        "far": 150
+      },
+      "lighting": "combined",
+      "preset": "OpaqueMask",
+      "samples": 512,
+      "seed": 0,
+      "device": "CPU",
+      "adaptiveSampling": false,
+      "denoise": false,
+      "maxBounces": 1,
+      "transparentMaxBounces": 16,
+      "width": 1280,
+      "height": 720,
+      "exposure": 1.0,
+      "display": "Reinhard + exact sRGB",
+      "environmentIntensity": 0.8,
+      "fingerprint": "34722af13df0bb84dc2a3e55b0a19742e23b46949e44ab2294ffc191dcbfe1f7",
+      "seconds": 33.85,
+      "exr": "Workshop_Stress.exr",
+      "png": "Workshop_Stress.png",
+      "exrSha256": "6187c2fb0adc53e4c3157f2df6f07f1f378d98b9917caab2a356e3c823406948",
+      "pngSha256": "e7e85099557f1d7cf50f0a9dfdbc5302bb6f7eb8f98d471ed37d8e43545ad765"
+    },
+    "Beauty": {
+      "scene": "Standard",
+      "camera": {
+        "nodeId": "camera:Hero",
+        "position": [
+          6.8,
+          4.3,
+          8.4
+        ],
+        "target": [
+          0.0,
+          1.25,
+          -0.35
+        ],
+        "fovDegrees": 45,
+        "near": 0.05,
+        "far": 150
+      },
+      "lighting": "combined",
+      "preset": "Full",
+      "samples": 512,
+      "seed": 0,
+      "device": "CPU",
+      "adaptiveSampling": false,
+      "denoise": true,
+      "maxBounces": 8,
+      "transparentMaxBounces": 16,
+      "width": 1280,
+      "height": 720,
+      "exposure": 1.0,
+      "display": "AgX Medium High Contrast",
+      "environmentIntensity": 0.8,
+      "fingerprint": "3c5f893110932be1212f5a3936ff6e29959eb9b2f0f8948f39dfae08baeb9e9c",
+      "seconds": 58.21,
+      "exr": "Workshop_Beauty.exr",
+      "png": "Workshop_Beauty.png",
+      "exrSha256": "ab8508d2ca2995ec895883178a9df93992a57f6dd233c31a66b866554bf78bd7",
+      "pngSha256": "78b25435b28824f310d8b150c4899ff71f7704853792512c668f288eb6a64d91"
+    }
+  },
+  "blender": {
+    "version": "5.2.1 LTS",
+    "hash": "9e2066aef7ef",
+    "exporter": "5.2.40"
+  },
+  "sourceSha256": "34879e6e9adb9b9f24407c22f0424d4af426073916cbe9d04582646c603d9302",
+  "environmentSha256": "e505c356b6eef74d80c05c6f079c17b264474faecec67d25f5a019bb785a39a4"
+}

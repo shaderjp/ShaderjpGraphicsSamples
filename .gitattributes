@@ -20,3 +20,15 @@
 /Assets/Scenes/PostProcess/*.json text eol=lf
 /SourceArt/Blender/PostProcess/*.blend -text
 /SourceArt/Blender/PostProcess/*.py text eol=lf
+/Assets/Models/Workshop/*.gltf text eol=lf
+/Assets/Models/Workshop/*.bin -text
+/Assets/Models/Workshop/Textures/*.png -text
+/Assets/Environments/Workshop/*.dds -text
+/Assets/Scenes/Workshop/*.json text eol=lf
+/SourceArt/Blender/Workshop/*.blend -text
+/SourceArt/Blender/Workshop/*.exr -text
+/SourceArt/Blender/Workshop/*.py text eol=lf
+/SourceArt/Blender/Workshop/*.md text eol=lf
+/Docs/Assets/Images/Workshop/*.png -text
+/Docs/Assets/Images/Workshop/*.exr -text
+/Docs/Assets/Images/Workshop/*.json text eol=lf

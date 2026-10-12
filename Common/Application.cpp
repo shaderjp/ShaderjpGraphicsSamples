@@ -84,6 +84,14 @@ Options ParseOptions()
                 continue;
             }
             if (argument == L"--pause") { options.pauseParticles = true; continue; }
+            if (argument == L"--forward") { options.forward = true; continue; }
+            if (argument == L"--no-shadow") { options.disableShadows = true; continue; }
+            if (argument == L"--hard-shadow") { options.hardShadows = true; continue; }
+            if (argument == L"--no-bloom") { options.disableBloom = true; continue; }
+            if (argument == L"--no-ibl") { options.disableIbl = true; continue; }
+            if (argument == L"--no-direct") { options.disableDirect = true; continue; }
+            if (argument == L"--camera-path") { options.cameraPath = true; continue; }
+            if (argument == L"--benchmark") { options.benchmark = options.cameraPath = options.hideUi = true; options.frames = 1260; continue; }
             if (argument == L"--capture-gpu") { options.captureGpu = true; continue; }
             if (argument == L"--test-post") { options.testPost = true; continue; }
             if (argument == L"--test-odd") { options.testOdd = options.testWindow = true; continue; }
@@ -120,6 +128,11 @@ Options ParseOptions()
             }
             else if (argument == L"--shading")
                 options.shading = value;
+            else if (argument == L"--workshop-scene") { if(value!=L"Standard"&&value!=L"Stress")throw std::runtime_error("--workshop-scene: Standard / Stress");options.workshopScene=value; }
+            else if (argument == L"--preset") { if(value!=L"Opaque"&&value!=L"OpaqueMask"&&value!=L"Full")throw std::runtime_error("--preset: Opaque / OpaqueMask / Full");options.preset=value; }
+            else if (argument == L"--camera") options.camera=value;
+            else if (argument == L"--timings") options.timings=std::filesystem::absolute(value);
+            else if (argument == L"--path-frame") { size_t n=0;auto f=std::stoul(value,&n);if(n!=value.size()||f>1200)throw std::runtime_error("--path-frame: 0..1200");options.pathFrame=uint32_t(f); }
             else if (argument == L"--scene")
                 options.scene = std::filesystem::absolute(value);
             else if (argument == L"--environment")

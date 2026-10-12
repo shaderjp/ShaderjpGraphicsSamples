@@ -1,0 +1,2 @@
+#include "Resources.hlsli"
+float4 PSMain(Fullscreen i):SV_Target{if(controls.y==9){uint2 xy=min(uint2(i.position.xy/screen.xy*shadow.w),uint2(shadow.w-1,shadow.w-1));return float4(shadowTexture.Load(int3(xy,0)).xxx,1);}if(controls.y>=1&&controls.y<=8)return float4(0,0,0,1);float3 p=ReconstructPosition(uint2(i.position.xy),1);float3 ray=SafeNormalize(p-cameraPosition.xyz);return float4(environmentTexture.SampleLevel(environmentSampler,EnvironmentDirection(ray),0).rgb*environment.x,1);}

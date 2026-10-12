@@ -231,3 +231,16 @@ Bloomを合成する前と後のPNGで、RGBの最大差が2を超えた画素�
 Shader.jp向けにはAPI別6記事と共通章・モニター制作章をローカルで準備しました。Astroの91ページ、Pagefindの50記事、内部リンク・アンカー4,456件、24枚の新規画像とソースのSHA-256を検証しています。記事の準備時点では第14〜16回のコードを公開準備版として明記し、存在しない公開ファイルへのリンクは作っていません。Shader.jpへのサイト公開は別工程です。
 
 SSAOは第17回の候補です。Async Compute、粒子のソート・衝突、Indirect Drawは後の拡張とし、今回のGPU粒子は加算合成・深度テストあり・深度書込みなしです。
+
+## Workshopアセットの先行制作
+
+Deferred Renderingと、その後のレイトレーシング・Mesh Shaderで共用するWorkshopを制作しました。標準251,200三角形と負荷比較2,260,800三角形、保存済みBlender正本、共有glTF、環境・IBL、固定カメラ、1280×720のCycles参考画像を配布します。[制作仕様](Assets/Workshop.md)と[アセットの検証記録](Assets/WorkshopVerification.md)を参照してください。
+
+この工程はアセットと読込・接続仕様までです。旧ローダー、C++／HLSL、プロジェクトとSDK設定は維持し、拡張CPUローダー・Deferred・Meshlet・GPU描画試験は後続工程へ引き継ぎます。
+
+
+## 第17・18回 Deferred Rendering
+
+Workshopを拡張CPUローダーで読み、PS／CSで同じ18 B／画素のG-bufferをシェーディングする4本を追加しました。Shadow、PBR、IBL、HDR、Bloom、Forward透明合成と診断表示、GPU時間を統合しています。位置はDepthから再構築し、位置用ターゲットは作っていません。
+
+37プロジェクトのfilters・Restore・Debug／Releaseビルド、全36サンプルのライフサイクル、旧ローダー、Workshop CPU、Deferredの数値・UI・Shader欠落試験が成功しました。検証エラーは0件です。PS／CSのG-buffer・Depthは一致し、HDR差は規定内でした。Releaseの固定経路1200 frames×8条件を測定し、1280×720の新規画像18枚を確認しました。詳細と計測データは[Deferred検証記録](DeferredVerification.md)を参照してください。

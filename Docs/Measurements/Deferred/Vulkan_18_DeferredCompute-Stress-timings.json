@@ -1,0 +1,73 @@
+{
+  "api": "Vulkan",
+  "configuration": "Release",
+  "fixedDelta": 0.016666666666666666,
+  "gBufferBytesPerPixel": 18,
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "height": 720,
+  "measuredFrames": 1200,
+  "mode": "Compute",
+  "msvcFullVersion": 195136257,
+  "passes": {
+    "display": {
+      "averageMs": 0.02335221333333327,
+      "medianMs": 0.017408,
+      "p95Ms": 0.019456
+    },
+    "extract": {
+      "averageMs": 0.032524853333333326,
+      "medianMs": 0.018432,
+      "p95Ms": 0.019456
+    },
+    "geometry": {
+      "averageMs": 2.058671786666665,
+      "medianMs": 0.825344,
+      "p95Ms": 11.28448
+    },
+    "horizontal": {
+      "averageMs": 0.014292106666666733,
+      "medianMs": 0.014336,
+      "p95Ms": 0.01536
+    },
+    "lighting": {
+      "averageMs": 1.817280239999999,
+      "medianMs": 0.948224,
+      "p95Ms": 10.155008
+    },
+    "shadow": {
+      "averageMs": 2.1074826400000024,
+      "medianMs": 0.760288,
+      "p95Ms": 10.298112
+    },
+    "sky": {
+      "averageMs": 0.0047876800000000025,
+      "medianMs": 0.004096,
+      "p95Ms": 0.006144
+    },
+    "total": {
+      "averageMs": 6.081204613333332,
+      "medianMs": 2.816,
+      "p95Ms": 13.867232
+    },
+    "transparent": {
+      "averageMs": 0.0007876266666666802,
+      "medianMs": 0.001024,
+      "p95Ms": 0.001024
+    },
+    "vertical": {
+      "averageMs": 0.0206705866666668,
+      "medianMs": 0.011264,
+      "p95Ms": 0.012288
+    }
+  },
+  "pathFrames": 1200,
+  "pointLights": 72,
+  "preset": "OpaqueMask",
+  "scene": "Stress",
+  "warmupFrames": 60,
+  "width": 1280,
+  "windowsSdk": "10.0.26100.0",
+  "dxcVersion": "dxcompiler.dll: 1.10(5180-e3554182)(1.9.0.5180) - 1.9.0.5180 (e35541826)",
+  "vulkanSdk": "1.4.341.1",
+  "driverVersion": "32.0.16.1088"
+}

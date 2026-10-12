@@ -1,0 +1,458 @@
+{
+  "profile": "workshop-manifest-1",
+  "license": "MIT; Copyright (c) 2026 masafumi",
+  "units": "meters",
+  "geometryCoordinates": "right-handed Y-up",
+  "geometry": "indexed triangles; static; no LOD",
+  "textureColorSpaces": {
+    "Albedo": "sRGB; alpha linear",
+    "Emissive": "sRGB",
+    "Normal": "linear",
+    "ORM": "linear; R=AO G=roughness B=metallic"
+  },
+  "tools": {
+    "Blender": "5.2.1 LTS",
+    "buildHash": "9e2066aef7ef",
+    "exporter": "5.2.40",
+    "validator": "2.0.0-dev.3.10",
+    "Python": "3.13.13",
+    "NumPy": "2.3.4"
+  },
+  "environmentGeneration": {
+    "width": 2048,
+    "height": 1024,
+    "format": "OpenEXR float32 scene-linear RGB",
+    "device": "Cycles CPU",
+    "samples": 256,
+    "seed": 0,
+    "denoise": false
+  },
+  "iblLayout": {
+    "environment": {
+      "size": 512,
+      "faces": 6,
+      "mips": 1,
+      "format": "RGBA16F"
+    },
+    "irradiance": {
+      "size": 32,
+      "faces": 6,
+      "mips": 1,
+      "format": "RGBA16F"
+    },
+    "specular": {
+      "size": 256,
+      "faces": 6,
+      "mips": 9,
+      "format": "RGBA16F"
+    },
+    "brdf": {
+      "size": 256,
+      "faces": 1,
+      "mips": 1,
+      "format": "RG16F"
+    },
+    "samples": 1024
+  },
+  "sharedTools": [
+    "SourceArt/Blender/LightingLab/ibl.py",
+    "SourceArt/Blender/ShaderBall/shader_ball_tools.py"
+  ],
+  "files": [
+    {
+      "path": "Assets/Environments/Workshop/BRDF.dds",
+      "bytes": 262292,
+      "sha256": "dd079279607c23ee34c8dea352294ed924e9244e4e79c6140cbad86577788cfd"
+    },
+    {
+      "path": "Assets/Environments/Workshop/WorkshopSky_Environment.dds",
+      "bytes": 12583060,
+      "sha256": "94044bb318b141d4322ef4956961af156258a350b80206bf8eda5f552e9bc577"
+    },
+    {
+      "path": "Assets/Environments/Workshop/WorkshopSky_Irradiance.dds",
+      "bytes": 49300,
+      "sha256": "4bb90659d7b05904199dce08663266731679e27ddb606d04e2cf2870b28b960d"
+    },
+    {
+      "path": "Assets/Environments/Workshop/WorkshopSky_Specular.dds",
+      "bytes": 4194436,
+      "sha256": "343b2c57744cfd8a43c511b35e16edfd1fa18d7bc86f5841f5e758a064bbff3b"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/amber_Albedo.png",
+      "bytes": 1820,
+      "sha256": "c5d65240d17899999b788b40fea6b2f62adfa00249d70f5f61ede4e6ddb6b78d"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/amber_Emissive.png",
+      "bytes": 5744,
+      "sha256": "53aa2b8c1389c8e93b7dbcff75281bb0e7a83953645b92f1ed27cab819add05b"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/amber_Normal.png",
+      "bytes": 16349,
+      "sha256": "fc2a223516370778fa62e4b5224c0cae2792a25842cd5ff948a0cac80a93b793"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/amber_ORM.png",
+      "bytes": 1818,
+      "sha256": "9673fdeabcedbebcfa63dbbdc9928d7a295bc98354c34259e713e017bd63b574"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/concrete_Albedo.png",
+      "bytes": 126708,
+      "sha256": "04b695ce2cf64424f2859bc4810d63ba75c55088cb0752441a5710655ea653cd"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/concrete_Emissive.png",
+      "bytes": 5684,
+      "sha256": "63f7b9e39db4edcdfea0e852b21c950f8a50ee1e7b516f89e91e08d6052e588f"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/concrete_Normal.png",
+      "bytes": 129360,
+      "sha256": "8b11fb437a03c1641f0bff657a603eec151ffed24190f665a4e2a4ff7cddcae7"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/concrete_ORM.png",
+      "bytes": 5704,
+      "sha256": "b7002741c3c89694e8808d7ef9fe39e79bec9ed7237d427fa7a7a1300833800a"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/display_Albedo.png",
+      "bytes": 3756,
+      "sha256": "3b7713f6a73ad990053f26f96825857aa33781d6447bed101d55ec0e5a4d035c"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/display_Emissive.png",
+      "bytes": 3741,
+      "sha256": "7bb0adee90593acd4a22412a6b764a3f0381ac76307638595e580b85410fce2c"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/display_Normal.png",
+      "bytes": 16349,
+      "sha256": "fc2a223516370778fa62e4b5224c0cae2792a25842cd5ff948a0cac80a93b793"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/display_ORM.png",
+      "bytes": 1818,
+      "sha256": "bd0b376113e4ac6539226a8cd30a4e350ac6e72cce2f1b4d252a1d8893facd55"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/glass_Albedo.png",
+      "bytes": 75,
+      "sha256": "7697320f7996877ce6a4bbf7dd6a0e4a57c98cdf301f59952fbfc23370b954d2"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/glass_Emissive.png",
+      "bytes": 74,
+      "sha256": "1fc5ddbe6ba5683582371cf28957311ce2f7b3ed6e5af5d464d433c5092d93b3"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/glass_Normal.png",
+      "bytes": 90,
+      "sha256": "198ba23143a64c075d1418205d61a26e22666addab09beca6a295eb986cf606b"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/glass_ORM.png",
+      "bytes": 75,
+      "sha256": "5d6f47cc11c7a41003d8c73be4914e3492d26819183870dc74d6144edd82c35c"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/grid_Albedo.png",
+      "bytes": 5476,
+      "sha256": "638c26dbdf1e5572dc35e35189e7160ed167a07bd0f65d3947efdadf035e7edd"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/grid_Emissive.png",
+      "bytes": 1803,
+      "sha256": "424676214cb542404958c12e34433547824b0fccf1db0ebebe061b3b231afeb4"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/grid_Normal.png",
+      "bytes": 16351,
+      "sha256": "7914add245da3852950995fbd5fab347f6f3532611824104ae36c30338793303"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/grid_ORM.png",
+      "bytes": 1818,
+      "sha256": "b26c8218c46745a309c2353ea22af7ef5acafb8a01ca5fa59f8f51e56149a40b"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/label_Albedo.png",
+      "bytes": 2625,
+      "sha256": "d5f358b4e3ee65bc466cb1d739de36b09f764c811936bcb3bcd6eb8d0a41acaf"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/label_Emissive.png",
+      "bytes": 1803,
+      "sha256": "424676214cb542404958c12e34433547824b0fccf1db0ebebe061b3b231afeb4"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/label_Normal.png",
+      "bytes": 16349,
+      "sha256": "fc2a223516370778fa62e4b5224c0cae2792a25842cd5ff948a0cac80a93b793"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/label_ORM.png",
+      "bytes": 1818,
+      "sha256": "e3a7963aa80679883935feba7f26f6ee91223f6f99331a6d557097e63f36c4b4"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/metal_Albedo.png",
+      "bytes": 24368,
+      "sha256": "13f9a16e40305f04fa5b7b68c0b1673584e7a10c7f958af70d61119d83c0d14f"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/metal_Emissive.png",
+      "bytes": 19705,
+      "sha256": "31359dc45f42d7ad90a219880a91bce1f214ee508bb43be44e615a210cd33a52"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/metal_Normal.png",
+      "bytes": 248973,
+      "sha256": "0c98c5a4fa6ee9b2da36e138994bfac6ec8d6b2b7fb7d3ba14e8cb00f54bfd6b"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/metal_ORM.png",
+      "bytes": 19769,
+      "sha256": "cb32ef1de7581e6b640b0ef6f2545a0f7b029f5389d45d942d07b88daf7f8bd8"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/paint_Albedo.png",
+      "bytes": 40024,
+      "sha256": "3ef1080b282c1949e9ef44d2428b474e86542d1ed1cc72213fb8940aad6731d6"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/paint_Emissive.png",
+      "bytes": 5684,
+      "sha256": "63f7b9e39db4edcdfea0e852b21c950f8a50ee1e7b516f89e91e08d6052e588f"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/paint_Normal.png",
+      "bytes": 78712,
+      "sha256": "f30f65222dbbd01897b3e2f4f52e105b698211b6abfbbce5b556710e3cb2f0c7"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/paint_ORM.png",
+      "bytes": 5704,
+      "sha256": "194645b7dc8b957869eb08e84565a522f44548c758abbaf7f3d01648bb3e61d1"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/rubber_Albedo.png",
+      "bytes": 1820,
+      "sha256": "451e497dd049c3c4f07a6791d8aa2566a3a0abe9e40018f709a7b76c33498aa1"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/rubber_Emissive.png",
+      "bytes": 1803,
+      "sha256": "424676214cb542404958c12e34433547824b0fccf1db0ebebe061b3b231afeb4"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/rubber_Normal.png",
+      "bytes": 89000,
+      "sha256": "7ff2b76d887cb1dd02d2982d92505d102d42415d6533a7582ace7a9fb20c14e4"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/rubber_ORM.png",
+      "bytes": 1818,
+      "sha256": "ff560ac9223c405f7b95924adffe5eecf94d6ddba6db1547cbe472d10b14aa34"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/wood_Albedo.png",
+      "bytes": 655730,
+      "sha256": "3066e9edb3176fb69a970dae0f7789f561295bc891c826ef0e6eb4405f2c7fd2"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/wood_Emissive.png",
+      "bytes": 5684,
+      "sha256": "63f7b9e39db4edcdfea0e852b21c950f8a50ee1e7b516f89e91e08d6052e588f"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/wood_Normal.png",
+      "bytes": 917917,
+      "sha256": "09dea3fd218188c80cc32345567194479efa928f014d69744365f0b3d51af098"
+    },
+    {
+      "path": "Assets/Models/Workshop/Textures/wood_ORM.png",
+      "bytes": 5704,
+      "sha256": "4e0b46166ed1258a78b72d5903a5a1a91f13d836547a335b7fd4617ff73d821c"
+    },
+    {
+      "path": "Assets/Models/Workshop/Workshop.bin",
+      "bytes": 4157256,
+      "sha256": "ec939bb2030a834b05c6e026305b97f2476ebd7f87dd34af3966980f5b820250"
+    },
+    {
+      "path": "Assets/Models/Workshop/Workshop.gltf",
+      "bytes": 706590,
+      "sha256": "29992aee5303c402e5fd7510e9923560413954e4b538c18f4ae88e6c87ce7896"
+    },
+    {
+      "path": "Assets/Scenes/Workshop/CameraPath.json",
+      "bytes": 252617,
+      "sha256": "3c120306cebba469d4f5d23d3ae7d47d5c4e4227f332973a7d1e86a8365b3ddc"
+    },
+    {
+      "path": "Assets/Scenes/Workshop/Statistics.json",
+      "bytes": 23441,
+      "sha256": "7d3c80bc6c586e2c8c00b581f6f83da01076fd751d441bee688471554c777628"
+    },
+    {
+      "path": "Assets/Scenes/Workshop/Workshop.json",
+      "bytes": 5228,
+      "sha256": "6966c3f37dd75e86d8f72af6b2b2596ce11b2063b37d16a4d2d4ed510c589aa3"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/RenderSettings.json",
+      "bytes": 8978,
+      "sha256": "297efe2adb2af82f8a3cf0fe418b40edf2e2a33b99cf9479fbd53c2887e353ca"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Beauty.exr",
+      "bytes": 8979159,
+      "sha256": "ab8508d2ca2995ec895883178a9df93992a57f6dd233c31a66b866554bf78bd7"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Beauty.png",
+      "bytes": 1118548,
+      "sha256": "78b25435b28824f310d8b150c4899ff71f7704853792512c668f288eb6a64d91"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Hero_Combined.exr",
+      "bytes": 8371530,
+      "sha256": "9e24bd4f44de73d58cbae42083bb53d97626c804a230800de06b3d68af3291d3"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Hero_Combined.png",
+      "bytes": 624578,
+      "sha256": "a043ef8369e5daaacd0e7fe2f00801bf66071b9d120738c90953f77acc7ccd30"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Hero_Direct.exr",
+      "bytes": 3919989,
+      "sha256": "594b934da95ab241ed3c65bf2a86a8bdcf97ad2ad4283aefafc207f77576c232"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Hero_Direct.png",
+      "bytes": 647959,
+      "sha256": "c1df2e5b1b3f0d48c51144128acc8f1458d43d127671a0cdfe63c780a912f098"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Hero_Environment.exr",
+      "bytes": 8367462,
+      "sha256": "eb0d6f0172bef616c6f89495a3b47f4de9029ca832bf1ce192ff46a3e8816b31"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Hero_Environment.png",
+      "bytes": 552380,
+      "sha256": "e46d9e64211b77be07b5b2e01c0d696466b08f979eebe1b4c97e31caac6917d4"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Materials.exr",
+      "bytes": 10537953,
+      "sha256": "8bd2ad84693e68f18f42efd261472c77ebae09c756ee9577013518eefc275d3b"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Materials.png",
+      "bytes": 1624725,
+      "sha256": "0b0233e4e4cfa5a0148879cb6e130d03a7eb50561230401ab830876c6d89a78b"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Occlusion.exr",
+      "bytes": 9999302,
+      "sha256": "ed9c6fccde6f3f860eb267c8cfa36f8fee6fba3ed03c2aa42a872eae8af86a05"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Occlusion.png",
+      "bytes": 1356657,
+      "sha256": "f83a2a76b589891f00b030dceb72129b7a65cf774c3149280721f26eee60be96"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Stress.exr",
+      "bytes": 7837442,
+      "sha256": "6187c2fb0adc53e4c3157f2df6f07f1f378d98b9917caab2a356e3c823406948"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Stress.png",
+      "bytes": 451365,
+      "sha256": "e7e85099557f1d7cf50f0a9dfdbc5302bb6f7eb8f98d471ed37d8e43545ad765"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Transparency.exr",
+      "bytes": 10681461,
+      "sha256": "0329693218492a6c5356811758be40aadb5427d430bddf12078ec1f72dcb7474"
+    },
+    {
+      "path": "Docs/Assets/Images/Workshop/Workshop_Transparency.png",
+      "bytes": 1717956,
+      "sha256": "6ec1bbcdef140a8b1653ca7f15d8d5906578fc18ddc77bc0728d580a023c5521"
+    },
+    {
+      "path": "SourceArt/Blender/LightingLab/ibl.py",
+      "bytes": 7990,
+      "sha256": "cf36278ad09dca90e58f61b204304ac3497c14c0901bf060ba6ca36cb2d17067"
+    },
+    {
+      "path": "SourceArt/Blender/ShaderBall/shader_ball_tools.py",
+      "bytes": 8777,
+      "sha256": "9759408efc3b48e7a6c8d4b685c55255d7cbbe8243b7712205c87a17a1481bcc"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/bake.py",
+      "bytes": 1722,
+      "sha256": "dc074b1f4f178914708d2471a566ee3c2367a82201f20d958c8819d4af7ccae2"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/export.py",
+      "bytes": 9622,
+      "sha256": "17b9b2f390f6c0db36102d436b20934495c2a7f0e8fe69739aaf3a39f457dcc1"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/generate.py",
+      "bytes": 14892,
+      "sha256": "0dd9d58c753ee0e818e6f0077c388860be7f169c9cf321ad44101944dd1d2c81"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/README.md",
+      "bytes": 2352,
+      "sha256": "238396806f9f4059a6861534eb6ecb63a475ea74339cb97ad4e35f78d5c09342"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/render_references.py",
+      "bytes": 6697,
+      "sha256": "9a8dbdafec0d1ceb2ada7508a2c7c0be2c43a5871ca34b5b2a362deb575fbe5a"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/validate.py",
+      "bytes": 21945,
+      "sha256": "9b63b5d2f87d3329e1012fc5a835722b0eb0de4d7eedc2a445921e2f55f24db6"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/verify_references.py",
+      "bytes": 3579,
+      "sha256": "0dddc46a828b9f864eaad2387c0c5efc07c64b2fdeb8e1706dba634162570b8c"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/Workshop.blend",
+      "bytes": 4678926,
+      "sha256": "34879e6e9adb9b9f24407c22f0424d4af426073916cbe9d04582646c603d9302"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/workshop_tools.py",
+      "bytes": 14394,
+      "sha256": "5c5b38fb66d63301508b52f420102b0cb6adec8b3e562906c72b31e7c796b472"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/WorkshopSky.blend",
+      "bytes": 88268,
+      "sha256": "3978d3a288d14f10185f4f15338a30972ea44c8cb666fbb5e3fe89f8bc9e1283"
+    },
+    {
+      "path": "SourceArt/Blender/Workshop/WorkshopSky.exr",
+      "bytes": 11214155,
+      "sha256": "e505c356b6eef74d80c05c6f079c17b264474faecec67d25f5a019bb785a39a4"
+    }
+  ]
+}

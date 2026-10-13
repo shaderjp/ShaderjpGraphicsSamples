@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C40E3C86-2CB4-413B-ABF7-099D394ED237}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>MeshOptimizerCpu</ProjectName>
+    <RootNamespace>MeshOptimizerCpu</RootNamespace>
+    <GraphicsApi>CPU</GraphicsApi>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\..\Build\Common.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\meshoptimizer\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\..\Build\Samples.targets" />
+  <ItemGroup>
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\allocator.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\clusterizer.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\indexanalyzer.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\indexcodec.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\indexgenerator.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\meshletcodec.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\meshletutils.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\opacitymap.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\overdrawoptimizer.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\partition.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\quantization.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\rasterizer.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\remesher.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\simplifier.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\spatialorder.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\stripifier.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\tangentspace.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\vcacheoptimizer.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\vertexcodec.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\vertexfilter.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\meshoptimizer\src\vfetchoptimizer.cpp" />
+    <ClInclude Include="..\..\..\ThirdParty\meshoptimizer\src\meshoptimizer.h" />
+    <None Include="..\..\..\ThirdParty\meshoptimizer\LICENSE.md" />
+    <None Include="..\..\..\Build\Common.props" />
+    <None Include="..\..\..\Build\Samples.targets" />
+  </ItemGroup>
+</Project>

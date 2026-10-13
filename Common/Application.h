@@ -29,6 +29,8 @@ struct Options
     uint32_t particleCount = 16384;
     bool pauseParticles = false, captureGpu = false, testPost = false, testOdd = false;
     bool disableReflections = false;
+    std::wstring meshRenderPath, meshCulling, meshView;
+    std::wstring meshTestScene;
     std::wstring rayTestScene;
     float fixedDelta = 0, gravity = 3, bloomThreshold = 1, bloomStrength = .15f;
     std::wstring workshopScene, preset, camera;

@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B20018F0-34CE-44B0-AC00-C0A35A130A9A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{DF0DFD85-6F20-4CFC-B67A-56ACD6D239B4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{0343A323-2883-4B46-BA5E-26A14BF283DA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D58DC576-3521-4B6E-AEDD-8705D56DED41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Build Scripts">
+      <UniqueIdentifier>{16E62A2D-8D43-4AB0-A7D9-E35C21E70229}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGuiRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Dds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Workshop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\CameraNavigation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sample.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Gltf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Lighting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_rectpack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_textedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_truetype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\DdsImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\PostProcessData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\PostProcessCapture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Workshop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\DeferredData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\DeferredPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\LightGridData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\MeshPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\MeshletData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\MeshFixtures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\MeshTiming.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Shaders\Common.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\09_ImGui\Ui.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\PostProcess\Post.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\Deferred\DeferredRead.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\Deferred\Lighting.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\Deferred\Resources.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\Deferred\Scene.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\..\..\Shaders\Deferred\LightingCompute.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Deferred\LightingPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Deferred\SkyPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Deferred\SkyVertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\PostVertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\DeferredPostPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\TestPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\Extract.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\Blur.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiVertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\..\..\Shaders\LightCulling\Grid.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\..\..\Shaders\LightCulling\TileDepth.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightCulling\CullLights.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\..\..\Shaders\MeshShader\MeshScene.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\..\..\Shaders\MeshShader\MeshletMesh.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\MeshShader\TaskMesh.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\MeshShader\MeshletTask.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\MeshShader\ResetMeshlets.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\MeshShader\ReferenceVertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\MeshShader\MeshForwardPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\MeshShader\MeshGBufferPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\MeshShader\MeshShadowPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\ThirdParty\nlohmann-json\LICENSE.MIT">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\LICENSE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\ThirdParty\imgui\LICENSE.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\ThirdParty\DirectXTex\LICENSE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Workshop.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Workshop.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\amber_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\amber_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\amber_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\amber_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\concrete_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\concrete_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\concrete_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\concrete_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\display_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\display_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\display_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\display_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\glass_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\glass_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\glass_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\glass_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\grid_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\grid_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\grid_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\grid_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\label_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\label_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\label_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\label_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\metal_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\metal_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\metal_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\metal_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\paint_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\paint_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\paint_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\paint_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\rubber_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\rubber_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\rubber_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\rubber_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\wood_Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\wood_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\wood_Normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\Workshop\Textures\wood_ORM.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\Workshop\CameraPath.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\Workshop\Manifest.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\Workshop\Statistics.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Scenes\Workshop\Workshop.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\Workshop\BRDF.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\Workshop\WorkshopSky_Environment.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\Workshop\WorkshopSky_Irradiance.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Environments\Workshop\WorkshopSky_Specular.dds">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Build\Common.props">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <None Include="..\..\..\Build\Samples.targets">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <None Include="packages.config">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <ProjectReference Include="..\..\Support\DirectXTexCpu\DirectXTexCpu.vcxproj">
+      <Filter>Build Scripts</Filter>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Support\MeshOptimizerCpu\MeshOptimizerCpu.vcxproj">
+      <Filter>Build Scripts</Filter>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -268,3 +268,13 @@ Restore、ソリューションのDebug／Release、filters、DXIL／SPIR-VとCP
 - 移動前・移動後・回転後・Reset後について、第19回のAll／Tiled／Clusteredモードを追加比較した。両APIとも各表示画像のRGB差は0だった。G-buffer、深度再構築、ライトの絞り込みが同じ操作後の視点を使うことを確認した。
 - `TestSamples.ps1`をDebug／Releaseで全46サンプルへ実行。描画、1280×720撮影、640×480リサイズ、最小化から1280×720へ復帰、終了が成功し、全実行で検証エラー0件。`TestLoaders.ps1`も成功した。
 - 既存記事画像と配布アセットは変更せず、操作試験の画像は`.cache/camera-navigation/<構成>`へ保存した。Lighting LabとWorkshopの回転後画像を目視確認した。操作方法は[CameraNavigation.md](CameraNavigation.md)と各サンプルの解説へ記録した。
+
+## 2026-10-14 発展編04〜09：Mesh ShaderとGPU Driven Rendering
+
+04のAlbedoのみのMesh Shader、meshoptimizerの共通章、05のCompute＋Indirect、06のAS／TaskによるMeshlet Culling、07の方向光Shadow Map、08のDeferred、09のTiled Deferredを追加しました。両APIの独立した12アプリに、移動・回転・カメラResetを備えます。meshoptimizer v1.3は`9e1f07b159d3cb777f1c67ed31fc11fd117986f4`へ固定し、上流ソースは変更していません。共通章ではDXR Part 2のCLAS／Cluster BLAS／TLASとMeshletの形状分割のつながりを説明しています。
+
+VS 2026 Community 18.10.12201.205、v145／MSVC 19.51.36257.0、Windows SDK 10.0.26100.0、RTX 4070／NVIDIA 610.88、Agility SDK 1.619.6、NuGet DXC 1.9.2609.5、Vulkan SDK 1.4.341.1／DXC 1.9.0.5180で検証しました。
+
+Restore、全60プロジェクトのDebug／ReleaseビルドとXML／filters、DXIL／SPIR-VとCPU配置、旧ローダー・Workshop・MeshletのCPU試験が成功しました。全58アプリのライフサイクル、新規12アプリのカメラ操作、GPUの可視ID・件数とHDR、MASKの表裏と影、画面外Caster、All／Tiled／容量超過、4,680ライト、UI編集・Reset、Shader欠落と部分解放を両構成で確認しました。Stressの20ケースでも641×479、最小化・1280×720復帰とGPU数値照合が成功しています。既存ImGui、Deferred、Tiled／Clustered、レイトレーシングの回帰も通過し、検証エラーは0件でした。
+
+API別12記事と共通章、1280×720の実GPU画像52枚を確認しました。Releaseの固定経路1,200フレーム×52条件の性能をJSON／CSVへ保存し、GPU TotalとCPUのコマンド記録を区別して報告しています。05のIndirectはCPU記録を減らしましたが、カリングONがGPUで遅い条件もあります。09のStressではAll→TiledのGPU中央値がD3D12で17.9732→2.0480 ms、Vulkanで17.3172→2.2331 msでした。条件、許容誤差と生データは[Mesh Shader検証記録](MeshShaderVerification.md)、記事の入口は[発展編目次](AdvancedGraphicsSamples.md)です。

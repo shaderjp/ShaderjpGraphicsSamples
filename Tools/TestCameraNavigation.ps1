@@ -1,6 +1,7 @@
 param(
     [ValidateSet('Debug','Release')][string]$Configuration='Debug',
-    [string[]]$Topics=@('13_ShadowMap','14_RenderTexture','15_ComputeBloom','16_GpuParticles','17_DeferredPixel','18_DeferredCompute','19_TiledDeferred','20_ClusteredShading','Advanced01_RaytracingBasic','Advanced02_RaytracingShadows','Advanced03_RaytracingReflections')
+    [string[]]$Topics=@('13_ShadowMap','14_RenderTexture','15_ComputeBloom','16_GpuParticles','17_DeferredPixel','18_DeferredCompute','19_TiledDeferred','20_ClusteredShading','Advanced01_RaytracingBasic','Advanced02_RaytracingShadows','Advanced03_RaytracingReflections','Advanced04_MeshShaderBasic','Advanced05_GpuDrivenRendering','Advanced06_MeshletCulling','Advanced07_MeshShaderShadows','Advanced08_MeshShaderDeferred','Advanced09_MeshShaderTiledDeferred'),
+    [string]$PythonPath='C:\Program Files\Blender Foundation\Blender 5.2\5.2\python\bin\python.exe'
 )
 $ErrorActionPreference='Stop'
 $repositoryRoot=Split-Path $PSScriptRoot -Parent
@@ -10,17 +11,17 @@ Add-Type -AssemblyName System.Drawing
 Add-Type -TypeDefinition @'
 public static class CameraPixels {
     public static long[] Compare(byte[] baseline, byte[] move, byte[] look, byte[] reset) {
-        long moved=0, turned=0;
+        long moved=0, turned=0, resetMismatch=-1;
         for(int i=0;i<baseline.Length;i+=4) {
             bool m=false,t=false;
             for(int c=0;c<3;c++) {
                 if(System.Math.Abs(move[i+c]-baseline[i+c])>2)m=true;
                 if(System.Math.Abs(look[i+c]-move[i+c])>2)t=true;
-                if(reset[i+c]!=baseline[i+c])return new long[]{moved,turned,i+c};
+                if(reset[i+c]!=baseline[i+c] && resetMismatch<0)resetMismatch=i+c;
             }
             if(m)moved++;if(t)turned++;
         }
-        return new long[]{moved,turned,-1};
+        return new long[]{moved,turned,resetMismatch};
     }
 }
 '@
@@ -45,6 +46,8 @@ foreach($api in @('Direct3D12','Vulkan')) {
         $log=Join-Path $results "$name.log"
         $image=Join-Path $results "$name.png"
         $arguments=@('--frames','32','--test-camera','--no-ui','--pause','--fixed-dt','0.016666667','--log',('"'+$log+'"'),'--screenshot',('"'+$image+'"'))
+        $numericReset=$topic -in @('Advanced05_GpuDrivenRendering','Advanced09_MeshShaderTiledDeferred')
+        if($numericReset){$arguments+='--capture-gpu'}
         $oldSync=$env:VK_LAYER_VALIDATE_SYNC
         try {
             if($Configuration -eq 'Debug'){$env:VK_LAYER_VALIDATE_SYNC='1'}
@@ -60,8 +63,15 @@ foreach($api in @('Direct3D12','Vulkan')) {
         $reset=ReadPixels (Join-Path $results "$name-camera-reset.png")
         $comparison=[CameraPixels]::Compare($baseline,$move,$look,$reset)
         $moved=$comparison[0];$turned=$comparison[1]
-        if($comparison[2] -ge 0){throw "$name camera Reset failed at byte $($comparison[2])"}
+        $resetDescription='exact Reset'
+        if($numericReset){
+            # GPU work/light ordering can change depth ties and FP accumulation.
+            # Verify exact scene constants plus independent visibility/HDR instead.
+            & $PythonPath (Join-Path $repositoryRoot 'Tests/MeshShaderGpuTests.py') $results $name 'camera'
+            if($LASTEXITCODE -ne 0){throw "$name camera GPU Reset failed"}
+            $resetDescription='GPU constants/visibility/HDR Reset'
+        } elseif($comparison[2] -ge 0){throw "$name camera Reset failed at byte $($comparison[2])"}
         if($moved -lt 1000 -or $turned -lt 1000){throw "$name input did not change rendering: moved=$moved turned=$turned"}
-        Write-Output "$name passed (W movement: $moved pixels, right drag: $turned pixels, exact Reset, validation errors: 0)"
+        Write-Output "$name passed (W movement: $moved pixels, right drag: $turned pixels, $resetDescription, validation errors: 0)"
     }
 }

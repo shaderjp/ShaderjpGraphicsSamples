@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0E84936A-9DC8-431C-A245-24199F9B2D0F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5D65AD0E-5157-4BC8-834D-0235D7A07CBE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{3EEFBC1B-2AC4-472D-B770-8B0D61AEE655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{F79D5A03-6BE5-4B61-8A4D-CB24EA1135E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Build Scripts">
+      <UniqueIdentifier>{2E4894E9-8289-4592-89D0-B2F7693664A0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Gltf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGuiRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sample.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Gltf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\BasicMeshData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Shared\CameraNavigation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Shaders\Common.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\..\..\Shaders\MeshBasic\Vertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\MeshBasic\Pixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\..\..\Shaders\06_Gltf\Scene.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Shaders\MeshBasic\Scene.hlsli">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\..\..\Shaders\MeshBasic\Mesh.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiVertex.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiPixel.hlsl">
+      <Filter>Shaders</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_Albedo.gltf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\ShaderBall_Albedo.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Assets\Models\ShaderBall\Textures\Albedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\ThirdParty\nlohmann-json\LICENSE.MIT">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\LICENSE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\ThirdParty\imgui\LICENSE.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Build\Common.props">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <None Include="..\..\..\Build\Samples.targets">
+      <Filter>Build Scripts</Filter>
+    </None>
+    <None Include="packages.config">
+      <Filter>Build Scripts</Filter>
+    </None>
+  </ItemGroup>
+</Project>

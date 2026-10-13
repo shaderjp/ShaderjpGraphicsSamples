@@ -132,6 +132,10 @@ Options ParseOptions()
             else if (argument == L"--shading")
                 options.shading = value;
             else if (argument == L"--rt-test-scene") options.rayTestScene = value;
+            else if (argument == L"--render-path") options.meshRenderPath = value;
+            else if (argument == L"--meshlet-culling") options.meshCulling = value;
+            else if (argument == L"--meshlet-view") options.meshView = value;
+            else if (argument == L"--mesh-test-scene") options.meshTestScene = value;
             else if (argument == L"--workshop-scene") { if(value!=L"Standard"&&value!=L"Stress")throw std::runtime_error("--workshop-scene: Standard / Stress");options.workshopScene=value; }
             else if (argument == L"--light-culling") { if(value!=L"all"&&value!=L"tile"&&value!=L"cluster")throw std::runtime_error("--light-culling: all / tile / cluster");options.lightCulling=value; }
             else if (argument == L"--light-view") { if(value!=L"none"&&value!=L"count"&&value!=L"slice"&&value!=L"overflow")throw std::runtime_error("--light-view: none / count / slice / overflow");options.lightView=value; }

@@ -180,10 +180,16 @@ Docsの実画像を更新する場合は`Tools/TestSamples.ps1 -CaptureDocs`を�
 
 基本編とは別の[発展編目次](Docs/AdvancedGraphicsSamples.md)から、DXR／VulkanのAlbedo一次レイ、BRDFと方向光・点光源の影、1バウンスの鏡面反射へ進めます。3テーマ×2 APIの独立したプロジェクトを同じソリューションに追加しています。Workshopの共有形状をBLAS／TLASへ接続し、共通HLSLを事前コンパイルします。
 
-[共通章](Docs/Raytracing.md)と[検証記録](Docs/RaytracingVerification.md)を参照してください。`Tools/TestRaytracing.ps1`／`-Configuration Release`でRT専用GPU試験を実行できます。`--no-reflections`は発展編03、`--rt-test-scene`はRTの診断用です。Mesh Shaderは後続テーマです。
+[共通章](Docs/Raytracing.md)と[検証記録](Docs/RaytracingVerification.md)を参照してください。`Tools/TestRaytracing.ps1`／`-Configuration Release`でRT専用GPU試験を実行できます。`--no-reflections`は発展編03、`--rt-test-scene`はRTの診断用です。続く04〜09でMesh Shaderを扱います。
 
 ## 多数の点光源とライトリスト
 
 [Tile-based DeferredとClustered Shadingの共通章](Docs/LightCulling.md)では、1区画あたり256個の有限rangeのライトを追加します。Standardは264個、Stressは2,376個、最大4,680個です。同じアプリでAll／Tiled／Clusteredを切り替え、候補数・Zスライス・容量超過とGPU時間を比較します。
 
 検証は Tools/TestLightGrid.ps1、記録は[Light Culling検証記録](Docs/LightCullingVerification.md)です。
+
+## 発展編04〜09：Mesh ShaderとGPU Driven Rendering
+
+[発展編目次](Docs/AdvancedGraphicsSamples.md)から、単一モデルのMesh Shader基礎、[meshoptimizerとMeshlet](Docs/Meshlets.md)、Compute＋IndirectのGPU Driven Rendering、AS／Taskカリング、Shadow Map、Deferred、Tiled Deferredへ進めます。両APIの独立した12プロジェクトを追加し、全サンプルで既存と同じカメラの移動・回転・Resetを使用できます。
+
+meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定submoduleです。`git submodule update --init --recursive`で取得してください。Mesh Shader Tier／`VK_EXT_mesh_shader`の対応を起動時に確認します。検証は`Tools/TestMeshlets.ps1`、`Tools/TestMeshShaderBinaries.ps1`、`Tools/TestMeshShaders.ps1`で実行します。[検証と性能の記録](Docs/MeshShaderVerification.md)を参照してください。

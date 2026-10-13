@@ -7,3 +7,6 @@
 [submodule "ThirdParty/DirectXTex"]
 	path = ThirdParty/DirectXTex
 	url = https://github.com/microsoft/DirectXTex.git
+[submodule "ThirdParty/meshoptimizer"]
+	path = ThirdParty/meshoptimizer
+	url = https://github.com/zeux/meshoptimizer.git

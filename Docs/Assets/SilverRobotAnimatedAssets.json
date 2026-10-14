@@ -1,0 +1,34 @@
+{
+  "result": "PASS",
+  "validator": "2.0.0-dev.3.10",
+  "khronos": {
+    "gltf": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "truncated": false
+    },
+    "glb": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "truncated": false
+    }
+  },
+  "originalSourceSha256": "fba5ffd1eb112ad10f1c51e786c9408d0fe9393fe3cb3f572cd49eeea288b4ea",
+  "animatedSourceSha256": "2bc090c55de84171320d5445a80738c6aabf055e474dde42f15d69f636809fc8",
+  "savedSourceReexport": "byte-identical",
+  "assetSha256": {
+    "Animations.json": "0a24d348955ed636974849a33626e5a674c5ad620f585cf1da5b79bc58863006",
+    "Humanoid.json": "ffdfc904d85cc8ac84a9677131637347b1a2a508aa242f609c5941fb0b6a83db",
+    "Quaternius-CC0.txt": "f4e7f373b9b996950337e8d41a4a2939c2d90b7725e9baf3d5084a22717ad328",
+    "README.md": "a765c1eb3c28f218663441148885a8c8043621f7f250b743c86d8a9217be3ef1",
+    "SilverRobot.bin": "812fc65cdda8124885c340d16428b99ff296aa9c1e2f7f608636ddf423749b4e",
+    "SilverRobot.glb": "757d20e3bf988b758159eaef4f39b4bca305b803894d7d7111191068a9cd43e8",
+    "SilverRobot.gltf": "5bd8c0b3a95b7bc66a5beec6255e96735757d7a57bbe6fce7885c6efb00834ac"
+  }
+}

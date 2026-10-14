@@ -1,0 +1,151 @@
+{
+  "Debug": {
+    "independentCpuMaximumMetres": 1.1855742812205694e-06,
+    "computeMaximumComponentError": 3.5762786865234375e-07,
+    "VS-CS": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      }
+    },
+    "VS-MS": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 1.7386474609375,
+        "maximumAboveTolerance": 223
+      }
+    },
+    "animated-culling": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      }
+    },
+    "stress-culling": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      }
+    },
+    "offscreen-caster-culling": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      }
+    }
+  },
+  "Release": {
+    "independentCpuMaximumMetres": 1.1855742812205694e-06,
+    "computeMaximumComponentError": 3.5762786865234375e-07,
+    "VS-CS": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      }
+    },
+    "VS-MS": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 1.7386474609375,
+        "maximumAboveTolerance": 223
+      }
+    },
+    "animated-culling": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      }
+    },
+    "stress-culling": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      }
+    },
+    "offscreen-caster-culling": {
+      "depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "shadow-depth": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      },
+      "hdr": {
+        "maximumDifference": 0.0,
+        "maximumAboveTolerance": 0
+      }
+    }
+  },
+  "blenderMaximumMetres": 1.0117798736472502e-06
+}

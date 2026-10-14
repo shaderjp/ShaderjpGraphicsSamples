@@ -32,3 +32,9 @@
 /Docs/Assets/Images/Workshop/*.png -text
 /Docs/Assets/Images/Workshop/*.exr -text
 /Docs/Assets/Images/Workshop/*.json text eol=lf
+# Keep authored skinning assets byte-identical to their recorded SHA-256 hashes.
+/Assets/Models/SilverRobot/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Assets/Models/SilverRobotAnimated/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/SourceArt/Blender/SilverRobot/*.blend -text
+/Docs/Assets/Videos/*.mp4 -text
+/Docs/Assets/Videos/Previews/*.jpg -text

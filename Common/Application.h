@@ -42,6 +42,10 @@ struct Options
     uint32_t lightsPerRoom = 256, listCapacity = 256;
     float lightRadius = 1.6f, lightIntensity = .4f;
     bool animateLights = false;
+    std::wstring animation = L"UAL_Walk";
+    float animationTime = 0, animationSpeed = 1;
+    uint32_t characters = 1;
+    bool pauseAnimation = false;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

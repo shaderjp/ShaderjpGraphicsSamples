@@ -15,3 +15,7 @@ Blender製アセットへの差し替えは[モデル読込の説明](../Docs/Di
 第10〜13回では[Lighting Lab](../Docs/Assets/LightingLab.md)を使います。`Models/LightingLab`は材質比較球・床・壁・遮蔽物、`Environments/LightingLab`は自作HDR環境のCubemap・Irradiance・粗さ別GGX環境・BRDF LUT、`Scenes/LightingLab`は配置とカメラ・ライト・配布Manifestです。自作アセットはMIT Licenseで、実行時の再生成は不要です。
 
 第14〜16回は[モニター](../Docs/Assets/Monitor.md)を追加します。`Models/PostProcess/Monitor`のglTFと、`Scenes/PostProcess`の第二カメラ・配置・ハッシュを同梱します。Blender正本は`SourceArt/Blender/PostProcess`です。
+
+GPUスキニング向けの[Silver Robot原本](../Docs/Assets/SilverRobot.md)は、`Models/SilverRobot`のAポーズglTF／GLBと`SourceArt/Blender/SilverRobot/SilverRobot.blend`へ保持しています。53ボーン、ウェイト、人型対応表、自作確認ActionはMIT Licenseです。
+
+基本22／23と発展10では[Silver Robot Animated](../Docs/Assets/SilverRobotAnimated.md)を使います。`SilverRobotAnimated.blend`と`Models/SilverRobotAnimated`にUniversal Animation Library Standardの6クリップをリターゲットし、A/T確認ポーズも同梱しました。ロボットはMIT、QuaterniusモーションはCC0-1.0で、`Animations.json`に素材版・作者・固定コミット・SHA-256を保存しています。

@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-15",
+  "result": "PASS",
+  "blender": "Blender 5.2.1 LTS",
+  "validator": "2.0.0-dev.3.10",
+  "sourceSha256": "fba5ffd1eb112ad10f1c51e786c9408d0fe9393fe3cb3f572cd49eeea288b4ea",
+  "savedSourceReexport": true,
+  "khronos": {
+    "gltf": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "truncated": false
+    },
+    "glb": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "truncated": false
+    }
+  },
+  "profile": {
+    "gltf": {
+      "vertices": 31138,
+      "triangles": 44584,
+      "joints": 53,
+      "materials": 5,
+      "skins": 1,
+      "primitives": 5,
+      "weightedVertexHistogram": {
+        "1": 30290,
+        "2": 848,
+        "3": 0,
+        "4": 0
+      },
+      "blendedVertices": 848,
+      "inverseBindMaxError": 4.3163853996584347E-07,
+      "aPoseBounds": {
+        "min": [
+          -0.6996005177497864,
+          0.0,
+          -0.1290000081062317
+        ],
+        "max": [
+          0.6996005177497864,
+          1.9079999923706055,
+          0.27399998903274536
+        ]
+      },
+      "actions": {
+        "Bind_Apose": {
+          "durationSeconds": 0.03333333507180214,
+          "endpointMatrixMaxError": 0.0
+        },
+        "Idle": {
+          "durationSeconds": 2.0,
+          "endpointMatrixMaxError": 0.0
+        },
+        "Retarget_Tpose": {
+          "durationSeconds": 0.03333333507180214,
+          "endpointMatrixMaxError": 0.0
+        },
+        "Walk_InPlace": {
+          "durationSeconds": 1.0,
+          "endpointMatrixMaxError": 2.168404344971009E-19
+        }
+      }
+    },
+    "glb": {
+      "vertices": 31138,
+      "triangles": 44584,
+      "joints": 53,
+      "materials": 5,
+      "skins": 1,
+      "primitives": 5,
+      "weightedVertexHistogram": {
+        "1": 30290,
+        "2": 848,
+        "3": 0,
+        "4": 0
+      },
+      "blendedVertices": 848,
+      "inverseBindMaxError": 4.3163853996584347E-07,
+      "aPoseBounds": {
+        "min": [
+          -0.6996005177497864,
+          0.0,
+          -0.1290000081062317
+        ],
+        "max": [
+          0.6996005177497864,
+          1.9079999923706055,
+          0.27399998903274536
+        ]
+      },
+      "actions": {
+        "Bind_Apose": {
+          "durationSeconds": 0.03333333507180214,
+          "endpointMatrixMaxError": 0.0
+        },
+        "Idle": {
+          "durationSeconds": 2.0,
+          "endpointMatrixMaxError": 0.0
+        },
+        "Retarget_Tpose": {
+          "durationSeconds": 0.03333333507180214,
+          "endpointMatrixMaxError": 0.0
+        },
+        "Walk_InPlace": {
+          "durationSeconds": 1.0,
+          "endpointMatrixMaxError": 2.168404344971009E-19
+        }
+      }
+    },
+    "blenderCpuSkinning": {
+      "Bind_Apose": {
+        "frames": [
+          1,
+          2
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 5.684761423509284E-07
+      },
+      "Idle": {
+        "frames": [
+          1,
+          16,
+          31,
+          46,
+          61
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 5.653238430862013E-07
+      },
+      "Retarget_Tpose": {
+        "frames": [
+          1,
+          2
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 4.740737923067553E-07
+      },
+      "Walk_InPlace": {
+        "frames": [
+          1,
+          8,
+          16,
+          23,
+          31
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 7.875527891674967E-07
+      }
+    },
+    "savedSourceReexport": "byte-identical",
+    "sha256": {
+      "Humanoid.json": "ffdfc904d85cc8ac84a9677131637347b1a2a508aa242f609c5941fb0b6a83db",
+      "SilverRobot.bin": "33c0ce7f79c6a830ecfaade52adfe05ffc84bd2d4cf1038929e6a3c17a1a748e",
+      "SilverRobot.glb": "f2fa2cd42dd3c0f9a8a732dc40938fdd6a43e215850b35ebe025f416eb6b567a",
+      "SilverRobot.gltf": "1156f190e9d3358af568e3de09ec0923e816884699264c01bad64279d74894ab"
+    }
+  }
+}

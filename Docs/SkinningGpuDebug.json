@@ -1,0 +1,872 @@
+{
+  "Direct3D12-UAL_Idle-0-independentMaxError": 4.316817699967501e-07,
+  "Direct3D12-UAL_Idle-1-independentMaxError": 4.316817699967501e-07,
+  "Direct3D12-UAL_Idle-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-UAL_Idle-2-independentMaxError": 4.316817699967501e-07,
+  "Direct3D12-UAL_Idle-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Idle-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Idle-task-independentMaxError": 4.316817699967501e-07,
+  "Direct3D12-UAL_Idle-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Walk-0-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-UAL_Walk-1-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-UAL_Walk-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-UAL_Walk-2-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-UAL_Walk-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Walk-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Walk-task-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-UAL_Walk-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Run-0-independentMaxError": 4.873455821119421e-07,
+  "Direct3D12-UAL_Run-1-independentMaxError": 4.873455821119421e-07,
+  "Direct3D12-UAL_Run-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-UAL_Run-2-independentMaxError": 4.873455821119421e-07,
+  "Direct3D12-UAL_Run-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Run-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Run-task-independentMaxError": 4.873455821119421e-07,
+  "Direct3D12-UAL_Run-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpStart-0-independentMaxError": 4.0618196051056543e-07,
+  "Direct3D12-UAL_JumpStart-1-independentMaxError": 4.0618196051056543e-07,
+  "Direct3D12-UAL_JumpStart-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-UAL_JumpStart-2-independentMaxError": 4.0618196051056543e-07,
+  "Direct3D12-UAL_JumpStart-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpStart-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0321197509765625,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpStart-task-independentMaxError": 4.0618196051056543e-07,
+  "Direct3D12-UAL_JumpStart-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLoop-0-independentMaxError": 3.98450320071575e-07,
+  "Direct3D12-UAL_JumpLoop-1-independentMaxError": 3.98450320071575e-07,
+  "Direct3D12-UAL_JumpLoop-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-UAL_JumpLoop-2-independentMaxError": 3.98450320071575e-07,
+  "Direct3D12-UAL_JumpLoop-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLoop-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLoop-task-independentMaxError": 3.98450320071575e-07,
+  "Direct3D12-UAL_JumpLoop-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLand-0-independentMaxError": 3.776708914493554e-07,
+  "Direct3D12-UAL_JumpLand-1-independentMaxError": 3.776708914493554e-07,
+  "Direct3D12-UAL_JumpLand-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-UAL_JumpLand-2-independentMaxError": 3.776708914493554e-07,
+  "Direct3D12-UAL_JumpLand-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLand-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLand-task-independentMaxError": 3.776708914493554e-07,
+  "Direct3D12-UAL_JumpLand-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-stress-0-independentMaxError": 1.1855742812205694e-06,
+  "Direct3D12-stress-1-independentMaxError": 1.1855742812205694e-06,
+  "Direct3D12-stress-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-stress-2-independentMaxError": 1.1855742812205694e-06,
+  "Direct3D12-stress-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-stress-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 1.7386474609375,
+      "aboveTolerance": 210,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-stress-task-independentMaxError": 1.1855742812205694e-06,
+  "Direct3D12-stress-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-shadow-off-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-offscreen-0-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-offscreen-1-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-offscreen-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-offscreen-2-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-offscreen-task-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-offscreen-caster-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-resize-0-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-resize-1-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-resize-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-resize-2-independentMaxError": 2.824014628810545e-07,
+  "Direct3D12-walk-later-independentMaxError": 3.765161546986917e-07,
+  "Direct3D12-walk-later-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-jump-end-independentMaxError": 3.8319214157311876e-07,
+  "Direct3D12-jump-end-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-jump-end-again-independentMaxError": 3.8319214157311876e-07,
+  "Direct3D12-jump-end-again-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-walk-wrapped-independentMaxError": 4.1246079385270917e-07,
+  "Direct3D12-walk-wrapped-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-play-speed-one-independentMaxError": 3.422895242799484e-07,
+  "Direct3D12-play-speed-one-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-play-speed-two-independentMaxError": 2.8142155006349867e-07,
+  "Direct3D12-play-speed-two-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-ui-0-independentMaxError": 3.046322740729579e-07,
+  "Direct3D12-ui-1-independentMaxError": 3.046322740729579e-07,
+  "Direct3D12-ui-1-cacheMaxError": 2.384185791015625e-07,
+  "Direct3D12-ui-2-independentMaxError": 3.046322740729579e-07,
+  "Vulkan-UAL_Idle-0-independentMaxError": 4.316817699967501e-07,
+  "Vulkan-UAL_Idle-1-independentMaxError": 4.316817699967501e-07,
+  "Vulkan-UAL_Idle-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-UAL_Idle-2-independentMaxError": 4.316817699967501e-07,
+  "Vulkan-UAL_Idle-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Idle-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Idle-task-independentMaxError": 4.316817699967501e-07,
+  "Vulkan-UAL_Idle-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Walk-0-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-UAL_Walk-1-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-UAL_Walk-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-UAL_Walk-2-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-UAL_Walk-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Walk-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.09844207763671875,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Walk-task-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-UAL_Walk-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Run-0-independentMaxError": 4.873455821119421e-07,
+  "Vulkan-UAL_Run-1-independentMaxError": 4.873455821119421e-07,
+  "Vulkan-UAL_Run-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-UAL_Run-2-independentMaxError": 4.873455821119421e-07,
+  "Vulkan-UAL_Run-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Run-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Run-task-independentMaxError": 4.873455821119421e-07,
+  "Vulkan-UAL_Run-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpStart-0-independentMaxError": 4.0618196051056543e-07,
+  "Vulkan-UAL_JumpStart-1-independentMaxError": 4.0618196051056543e-07,
+  "Vulkan-UAL_JumpStart-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-UAL_JumpStart-2-independentMaxError": 4.0618196051056543e-07,
+  "Vulkan-UAL_JumpStart-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpStart-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpStart-task-independentMaxError": 4.0618196051056543e-07,
+  "Vulkan-UAL_JumpStart-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLoop-0-independentMaxError": 3.98450320071575e-07,
+  "Vulkan-UAL_JumpLoop-1-independentMaxError": 3.98450320071575e-07,
+  "Vulkan-UAL_JumpLoop-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-UAL_JumpLoop-2-independentMaxError": 3.98450320071575e-07,
+  "Vulkan-UAL_JumpLoop-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLoop-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLoop-task-independentMaxError": 3.98450320071575e-07,
+  "Vulkan-UAL_JumpLoop-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLand-0-independentMaxError": 3.776708914493554e-07,
+  "Vulkan-UAL_JumpLand-1-independentMaxError": 3.776708914493554e-07,
+  "Vulkan-UAL_JumpLand-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-UAL_JumpLand-2-independentMaxError": 3.776708914493554e-07,
+  "Vulkan-UAL_JumpLand-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLand-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLand-task-independentMaxError": 3.776708914493554e-07,
+  "Vulkan-UAL_JumpLand-animated-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-stress-0-independentMaxError": 1.1855742812205694e-06,
+  "Vulkan-stress-1-independentMaxError": 1.1855742812205694e-06,
+  "Vulkan-stress-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-stress-2-independentMaxError": 1.1855742812205694e-06,
+  "Vulkan-stress-VS-CS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-stress-VS-MS": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 1.7386474609375,
+      "aboveTolerance": 223,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-stress-task-independentMaxError": 1.1855742812205694e-06,
+  "Vulkan-stress-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-shadow-off-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-offscreen-0-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-offscreen-1-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-offscreen-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-offscreen-2-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-offscreen-task-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-offscreen-caster-culling": {
+    "depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "hdr": {
+      "maxDifference": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-resize-0-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-resize-1-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-resize-1-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-resize-2-independentMaxError": 2.824014628810545e-07,
+  "Vulkan-walk-later-independentMaxError": 3.765161546986917e-07,
+  "Vulkan-walk-later-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-jump-end-independentMaxError": 3.8319214157311876e-07,
+  "Vulkan-jump-end-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-jump-end-again-independentMaxError": 3.8319214157311876e-07,
+  "Vulkan-jump-end-again-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-walk-wrapped-independentMaxError": 4.1246079385270917e-07,
+  "Vulkan-walk-wrapped-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-play-speed-one-independentMaxError": 3.422895242799484e-07,
+  "Vulkan-play-speed-one-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-play-speed-two-independentMaxError": 2.8142155006349867e-07,
+  "Vulkan-play-speed-two-cacheMaxError": 2.384185791015625e-07,
+  "Vulkan-ui-0-independentMaxError": 3.046322740729579e-07,
+  "Vulkan-ui-1-independentMaxError": 3.046322740729579e-07,
+  "Vulkan-ui-1-cacheMaxError": 3.5762786865234375e-07,
+  "Vulkan-ui-2-independentMaxError": 3.046322740729579e-07
+}

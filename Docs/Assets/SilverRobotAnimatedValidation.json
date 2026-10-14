@@ -1,0 +1,97 @@
+{
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "cpuSkinning": {
+    "Bind_Apose": {
+      "frames": [
+        1,
+        2
+      ],
+      "verticesComparedPerFrame": 31138,
+      "maxErrorMetres": 5.684761423509284e-07
+    },
+    "Retarget_Tpose": {
+      "frames": [
+        1,
+        2
+      ],
+      "verticesComparedPerFrame": 31138,
+      "maxErrorMetres": 4.740737923067553e-07
+    },
+    "UAL_Idle": {
+      "frames": [
+        1,
+        19,
+        38,
+        57,
+        76
+      ],
+      "verticesComparedPerFrame": 31138,
+      "maxErrorMetres": 8.239150793162553e-07
+    },
+    "UAL_JumpLand": {
+      "frames": [
+        1,
+        10,
+        20,
+        29,
+        39
+      ],
+      "verticesComparedPerFrame": 31138,
+      "maxErrorMetres": 6.664491541635802e-07
+    },
+    "UAL_JumpLoop": {
+      "frames": [
+        1,
+        19,
+        38,
+        57,
+        76
+      ],
+      "verticesComparedPerFrame": 31138,
+      "maxErrorMetres": 1.0072887910629407e-06
+    },
+    "UAL_JumpStart": {
+      "frames": [
+        1,
+        11,
+        21,
+        31,
+        41
+      ],
+      "verticesComparedPerFrame": 31138,
+      "maxErrorMetres": 8.467601752664756e-07
+    },
+    "UAL_Run": {
+      "frames": [
+        1,
+        8,
+        15,
+        22,
+        29
+      ],
+      "verticesComparedPerFrame": 31138,
+      "maxErrorMetres": 7.275252771803726e-07
+    },
+    "UAL_Walk": {
+      "frames": [
+        1,
+        11,
+        21,
+        31,
+        41
+      ],
+      "verticesComparedPerFrame": 31138,
+      "maxErrorMetres": 1.0117798736472502e-06
+    }
+  },
+  "files": {
+    "Animations.json": "0a24d348955ed636974849a33626e5a674c5ad620f585cf1da5b79bc58863006",
+    "Humanoid.json": "ffdfc904d85cc8ac84a9677131637347b1a2a508aa242f609c5941fb0b6a83db",
+    "Quaternius-CC0.txt": "f4e7f373b9b996950337e8d41a4a2939c2d90b7725e9baf3d5084a22717ad328",
+    "SilverRobot.bin": "812fc65cdda8124885c340d16428b99ff296aa9c1e2f7f608636ddf423749b4e",
+    "SilverRobot.glb": "757d20e3bf988b758159eaef4f39b4bca305b803894d7d7111191068a9cd43e8",
+    "SilverRobot.gltf": "5bd8c0b3a95b7bc66a5beec6255e96735757d7a57bbe6fce7885c6efb00834ac"
+  },
+  "sourceSha256": "2bc090c55de84171320d5445a80738c6aabf055e474dde42f15d69f636809fc8"
+}

@@ -10,3 +10,6 @@
 [submodule "ThirdParty/meshoptimizer"]
 	path = ThirdParty/meshoptimizer
 	url = https://github.com/zeux/meshoptimizer.git
+[submodule "ThirdParty/UniversalAnimationLibrary"]
+	path = ThirdParty/UniversalAnimationLibrary
+	url = https://github.com/J-Ponzo/gltf-universal-animation-library.git

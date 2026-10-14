@@ -1,6 +1,6 @@
-param(
+﻿param(
     [ValidateSet('Debug','Release')][string]$Configuration='Debug',
-    [string[]]$Topics=@('13_ShadowMap','14_RenderTexture','15_ComputeBloom','16_GpuParticles','17_DeferredPixel','18_DeferredCompute','19_TiledDeferred','20_ClusteredShading','21_VisibilityBuffer','Advanced01_RaytracingBasic','Advanced02_RaytracingShadows','Advanced03_RaytracingReflections','Advanced04_MeshShaderBasic','Advanced05_GpuDrivenRendering','Advanced06_MeshletCulling','Advanced07_MeshShaderShadows','Advanced08_MeshShaderDeferred','Advanced09_MeshShaderTiledDeferred'),
+    [string[]]$Topics=@('13_ShadowMap','14_RenderTexture','15_ComputeBloom','16_GpuParticles','17_DeferredPixel','18_DeferredCompute','19_TiledDeferred','20_ClusteredShading','21_VisibilityBuffer','Advanced01_RaytracingBasic','Advanced02_RaytracingShadows','Advanced03_RaytracingReflections','Advanced04_MeshShaderBasic','Advanced05_GpuDrivenRendering','Advanced06_MeshletCulling','Advanced07_MeshShaderShadows','Advanced08_MeshShaderDeferred','Advanced09_MeshShaderTiledDeferred','22_VertexSkinning','23_ComputeSkinningCache','Advanced10_MeshShaderSkinning'),
     [string]$PythonPath='C:\Program Files\Blender Foundation\Blender 5.2\5.2\python\bin\python.exe'
 )
 $ErrorActionPreference='Stop'
@@ -46,6 +46,7 @@ foreach($api in @('Direct3D12','Vulkan')) {
         $log=Join-Path $results "$name.log"
         $image=Join-Path $results "$name.png"
         $arguments=@('--frames','32','--test-camera','--no-ui','--pause','--fixed-dt','0.016666667','--log',('"'+$log+'"'),'--screenshot',('"'+$image+'"'))
+        if($topic -in @('22_VertexSkinning','23_ComputeSkinningCache','Advanced10_MeshShaderSkinning')){$arguments+=@('--pause-animation','--animation-time','0.3')}
         $numericReset=$topic -in @('Advanced05_GpuDrivenRendering','Advanced09_MeshShaderTiledDeferred','21_VisibilityBuffer')
         if($numericReset){$arguments+='--capture-gpu'}
         $oldSync=$env:VK_LAYER_VALIDATE_SYNC

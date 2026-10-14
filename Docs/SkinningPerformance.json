@@ -1,0 +1,1702 @@
+{
+  "Direct3D12-Compute-1": {
+    "activeCells": 0,
+    "api": "Direct3D12",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 585,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "vertex"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.0001240833333333341,
+        "medianMs": 0.0001,
+        "p95Ms": 0.0002
+      },
+      "color": {
+        "averageMs": 0.07909973333333309,
+        "medianMs": 0.078848,
+        "p95Ms": 0.08192
+      },
+      "cull": {
+        "averageMs": 1.7066666666666665E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.008969386666666712,
+        "medianMs": 0.008192,
+        "p95Ms": 0.009216
+      },
+      "mesh-cpu": {
+        "averageMs": 0.005464166666666662,
+        "medianMs": 0.0051,
+        "p95Ms": 0.0075
+      },
+      "pose-cpu": {
+        "averageMs": 0.0067265833333333665,
+        "medianMs": 0.0064,
+        "p95Ms": 0.0081
+      },
+      "shadow": {
+        "averageMs": 0.050606933333333944,
+        "medianMs": 0.050176,
+        "p95Ms": 0.0512
+      },
+      "skinning-compute": {
+        "averageMs": 0.20685701333333578,
+        "medianMs": 0.2048,
+        "p95Ms": 0.218112
+      },
+      "sky": {
+        "averageMs": 0.005563733333333229,
+        "medianMs": 0.00512,
+        "p95Ms": 0.006144
+      },
+      "tile-depth": {
+        "averageMs": 2.56E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 0.3739755200000001,
+        "medianMs": 0.371712,
+        "p95Ms": 0.386048
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Standard",
+    "skinning": {
+      "actors": 1,
+      "allocatedCacheBytes": 95655936,
+      "animation": "UAL_Walk",
+      "cacheBytes": 1494624,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "compute-cache",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Direct3D12-Compute-64": {
+    "activeCells": 0,
+    "api": "Direct3D12",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 37377,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "vertex"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.0052589166666666695,
+        "medianMs": 0.0052,
+        "p95Ms": 0.0054
+      },
+      "color": {
+        "averageMs": 0.48118442666666633,
+        "medianMs": 0.464896,
+        "p95Ms": 0.513024
+      },
+      "cull": {
+        "averageMs": 5.973333333333333E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009179306666666817,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "mesh-cpu": {
+        "averageMs": 0.11601458333333345,
+        "medianMs": 0.1124,
+        "p95Ms": 0.1288
+      },
+      "pose-cpu": {
+        "averageMs": 0.28487591666666656,
+        "medianMs": 0.2787,
+        "p95Ms": 0.3096
+      },
+      "shadow": {
+        "averageMs": 0.3778841599999986,
+        "medianMs": 0.369664,
+        "p95Ms": 0.385024
+      },
+      "skinning-compute": {
+        "averageMs": 0.4090742400000002,
+        "medianMs": 0.387072,
+        "p95Ms": 0.47104
+      },
+      "sky": {
+        "averageMs": 0.010501973333333515,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "tile-depth": {
+        "averageMs": 2.56E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 1.3173864266666655,
+        "medianMs": 1.265664,
+        "p95Ms": 1.705984
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Stress",
+    "skinning": {
+      "actors": 64,
+      "allocatedCacheBytes": 95655936,
+      "animation": "UAL_Walk",
+      "cacheBytes": 95655936,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "compute-cache",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Direct3D12-MeshDirect-1": {
+    "activeCells": 0,
+    "api": "Direct3D12",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 585,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "mesh"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.00012850000000000063,
+        "medianMs": 0.0001,
+        "p95Ms": 0.0002
+      },
+      "color": {
+        "averageMs": 0.09157205333333324,
+        "medianMs": 0.078848,
+        "p95Ms": 0.083968
+      },
+      "cull": {
+        "averageMs": 8.533333333333334E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.008686933333333379,
+        "medianMs": 0.008192,
+        "p95Ms": 0.009216
+      },
+      "mesh-cpu": {
+        "averageMs": 0.0060610833333333254,
+        "medianMs": 0.0056,
+        "p95Ms": 0.0085
+      },
+      "pose-cpu": {
+        "averageMs": 0.007003250000000015,
+        "medianMs": 0.0067,
+        "p95Ms": 0.0088
+      },
+      "shadow": {
+        "averageMs": 0.3924518133333337,
+        "medianMs": 0.387072,
+        "p95Ms": 0.41056
+      },
+      "sky": {
+        "averageMs": 0.005539839999999894,
+        "medianMs": 0.00512,
+        "p95Ms": 0.006144
+      },
+      "tile-depth": {
+        "averageMs": 1.7066666666666665E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 0.5217913333333345,
+        "medianMs": 0.502784,
+        "p95Ms": 0.539648
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Standard",
+    "skinning": {
+      "actors": 1,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "mesh",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Direct3D12-MeshDirect-64": {
+    "activeCells": 0,
+    "api": "Direct3D12",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 37377,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "mesh"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.00534291666666668,
+        "medianMs": 0.0052,
+        "p95Ms": 0.0053
+      },
+      "color": {
+        "averageMs": 0.5573538133333366,
+        "medianMs": 0.531456,
+        "p95Ms": 0.559104
+      },
+      "cull": {
+        "averageMs": 5.119999999999999E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.008780800000000064,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "mesh-cpu": {
+        "averageMs": 0.10438349999999993,
+        "medianMs": 0.1005,
+        "p95Ms": 0.11850000000000001
+      },
+      "pose-cpu": {
+        "averageMs": 0.28053933333333386,
+        "medianMs": 0.2757,
+        "p95Ms": 0.3
+      },
+      "shadow": {
+        "averageMs": 0.7306373866666676,
+        "medianMs": 0.70144,
+        "p95Ms": 0.746496
+      },
+      "sky": {
+        "averageMs": 0.01436074666666663,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "tile-depth": {
+        "averageMs": 4.266666666666666E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 1.3360496000000015,
+        "medianMs": 1.27488,
+        "p95Ms": 1.851392
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Stress",
+    "skinning": {
+      "actors": 64,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "mesh",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Direct3D12-MeshTask-1": {
+    "activeCells": 0,
+    "api": "Direct3D12",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 585,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "frustum",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "task"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.008958166666666718,
+        "medianMs": 0.0089,
+        "p95Ms": 0.0093
+      },
+      "color": {
+        "averageMs": 0.08677717333333193,
+        "medianMs": 0.080896,
+        "p95Ms": 0.083968
+      },
+      "cull": {
+        "averageMs": 4.266666666666666E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.008671573333333377,
+        "medianMs": 0.008192,
+        "p95Ms": 0.009216
+      },
+      "mesh-cpu": {
+        "averageMs": 0.006152416666666651,
+        "medianMs": 0.0058,
+        "p95Ms": 0.008400000000000001
+      },
+      "pose-cpu": {
+        "averageMs": 0.006596916666666674,
+        "medianMs": 0.0064,
+        "p95Ms": 0.0079
+      },
+      "shadow": {
+        "averageMs": 0.35329381333333276,
+        "medianMs": 0.351232,
+        "p95Ms": 0.36864
+      },
+      "sky": {
+        "averageMs": 0.00554922666666656,
+        "medianMs": 0.00512,
+        "p95Ms": 0.006144
+      },
+      "tile-depth": {
+        "averageMs": 5.119999999999999E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 0.4774356266666665,
+        "medianMs": 0.468992,
+        "p95Ms": 0.49152
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Standard",
+    "skinning": {
+      "actors": 1,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "mesh",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Direct3D12-MeshTask-64": {
+    "activeCells": 0,
+    "api": "Direct3D12",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 37377,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "frustum",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "task"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.5499639166666669,
+        "medianMs": 0.538,
+        "p95Ms": 0.6169
+      },
+      "color": {
+        "averageMs": 0.46029055999999874,
+        "medianMs": 0.4352,
+        "p95Ms": 0.457728
+      },
+      "cull": {
+        "averageMs": 4.266666666666666E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.008777386666666734,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "mesh-cpu": {
+        "averageMs": 0.10329416666666669,
+        "medianMs": 0.10060000000000001,
+        "p95Ms": 0.11220000000000001
+      },
+      "pose-cpu": {
+        "averageMs": 0.28446608333333323,
+        "medianMs": 0.2795,
+        "p95Ms": 0.3065
+      },
+      "shadow": {
+        "averageMs": 0.6043202666666639,
+        "medianMs": 0.577536,
+        "p95Ms": 0.622592
+      },
+      "sky": {
+        "averageMs": 0.008826026666666736,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "tile-depth": {
+        "averageMs": 2.56E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 1.1056359733333319,
+        "medianMs": 1.053696,
+        "p95Ms": 1.626112
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Stress",
+    "skinning": {
+      "actors": 64,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "mesh",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Direct3D12-Vertex-1": {
+    "activeCells": 0,
+    "api": "Direct3D12",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 585,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "vertex"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.0001176666666666677,
+        "medianMs": 0.0001,
+        "p95Ms": 0.0002
+      },
+      "color": {
+        "averageMs": 0.08283733333333208,
+        "medianMs": 0.079872,
+        "p95Ms": 0.091136
+      },
+      "cull": {
+        "averageMs": 3.413333333333333E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009840640000000012,
+        "medianMs": 0.009216,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.006181666666666656,
+        "medianMs": 0.0057,
+        "p95Ms": 0.0086
+      },
+      "pose-cpu": {
+        "averageMs": 0.006214666666666638,
+        "medianMs": 0.006,
+        "p95Ms": 0.0072
+      },
+      "shadow": {
+        "averageMs": 0.25574143999999976,
+        "medianMs": 0.254912,
+        "p95Ms": 0.267264
+      },
+      "sky": {
+        "averageMs": 0.005955413333333215,
+        "medianMs": 0.006144,
+        "p95Ms": 0.006144
+      },
+      "tile-depth": {
+        "averageMs": 3.413333333333333E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 0.3791297333333333,
+        "medianMs": 0.372736,
+        "p95Ms": 0.396288
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Standard",
+    "skinning": {
+      "actors": 1,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "vertex",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Direct3D12-Vertex-64": {
+    "activeCells": 0,
+    "api": "Direct3D12",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 37377,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "vertex"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.005262666666666668,
+        "medianMs": 0.0052,
+        "p95Ms": 0.0053
+      },
+      "color": {
+        "averageMs": 0.5134651733333323,
+        "medianMs": 0.493568,
+        "p95Ms": 0.524288
+      },
+      "cull": {
+        "averageMs": 5.119999999999999E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.010931200000000042,
+        "medianMs": 0.009216,
+        "p95Ms": 0.012288
+      },
+      "mesh-cpu": {
+        "averageMs": 0.11085516666666656,
+        "medianMs": 0.1079,
+        "p95Ms": 0.125
+      },
+      "pose-cpu": {
+        "averageMs": 0.27786875000000016,
+        "medianMs": 0.2741,
+        "p95Ms": 0.2929
+      },
+      "shadow": {
+        "averageMs": 0.7359389600000014,
+        "medianMs": 0.702464,
+        "p95Ms": 1.112064
+      },
+      "sky": {
+        "averageMs": 0.009280000000000068,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "tile-depth": {
+        "averageMs": 3.413333333333333E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 1.2982723733333337,
+        "medianMs": 1.236992,
+        "p95Ms": 1.759232
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Stress",
+    "skinning": {
+      "actors": 64,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "vertex",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Vulkan-Compute-1": {
+    "activeCells": 0,
+    "api": "Vulkan",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 585,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "vertex"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.00013116666666666688,
+        "medianMs": 0.0001,
+        "p95Ms": 0.0002
+      },
+      "color": {
+        "averageMs": 0.06878634666666553,
+        "medianMs": 0.067584,
+        "p95Ms": 0.075776
+      },
+      "cull": {
+        "averageMs": 4.266666666666666E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009586640000000049,
+        "medianMs": 0.009536,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.004511999999999981,
+        "medianMs": 0.004200000000000001,
+        "p95Ms": 0.006
+      },
+      "pose-cpu": {
+        "averageMs": 0.006736000000000007,
+        "medianMs": 0.0065,
+        "p95Ms": 0.0079
+      },
+      "shadow": {
+        "averageMs": 0.05134792000000012,
+        "medianMs": 0.051008,
+        "p95Ms": 0.054112
+      },
+      "skinning-compute": {
+        "averageMs": 0.17298584000000014,
+        "medianMs": 0.172064,
+        "p95Ms": 0.181344
+      },
+      "sky": {
+        "averageMs": 0.0056857599999998905,
+        "medianMs": 0.006144,
+        "p95Ms": 0.006144
+      },
+      "tile-depth": {
+        "averageMs": 5.119999999999999E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 0.3356980533333334,
+        "medianMs": 0.333472,
+        "p95Ms": 0.351168
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Standard",
+    "skinning": {
+      "actors": 1,
+      "allocatedCacheBytes": 95655936,
+      "animation": "UAL_Walk",
+      "cacheBytes": 1494624,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "compute-cache",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Vulkan-Compute-64": {
+    "activeCells": 0,
+    "api": "Vulkan",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 37377,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "vertex"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.005555750000000016,
+        "medianMs": 0.0052,
+        "p95Ms": 0.0064
+      },
+      "color": {
+        "averageMs": 0.5643007999999984,
+        "medianMs": 0.54272,
+        "p95Ms": 0.807936
+      },
+      "cull": {
+        "averageMs": 4.266666666666666E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009935413333333233,
+        "medianMs": 0.010112,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.11497183333333327,
+        "medianMs": 0.1078,
+        "p95Ms": 0.1407
+      },
+      "pose-cpu": {
+        "averageMs": 0.2904159166666664,
+        "medianMs": 0.2777,
+        "p95Ms": 0.3472
+      },
+      "shadow": {
+        "averageMs": 0.3978411733333332,
+        "medianMs": 0.386688,
+        "p95Ms": 0.406272
+      },
+      "skinning-compute": {
+        "averageMs": 0.374633466666666,
+        "medianMs": 0.363168,
+        "p95Ms": 0.388608
+      },
+      "sky": {
+        "averageMs": 0.009600000000000018,
+        "medianMs": 0.009216,
+        "p95Ms": 0.01024
+      },
+      "tile-depth": {
+        "averageMs": 2.56E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 1.383915466666663,
+        "medianMs": 1.340832,
+        "p95Ms": 1.716608
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Stress",
+    "skinning": {
+      "actors": 64,
+      "allocatedCacheBytes": 95655936,
+      "animation": "UAL_Walk",
+      "cacheBytes": 95655936,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "compute-cache",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Vulkan-MeshDirect-1": {
+    "activeCells": 0,
+    "api": "Vulkan",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 585,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "mesh"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.00013866666666666696,
+        "medianMs": 0.0001,
+        "p95Ms": 0.0002
+      },
+      "color": {
+        "averageMs": 0.0772334933333338,
+        "medianMs": 0.063488,
+        "p95Ms": 0.078848
+      },
+      "cull": {
+        "averageMs": 5.119999999999999E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009446346666666697,
+        "medianMs": 0.009216,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.0048211666666666654,
+        "medianMs": 0.0045,
+        "p95Ms": 0.0065
+      },
+      "pose-cpu": {
+        "averageMs": 0.007414416666666665,
+        "medianMs": 0.0072,
+        "p95Ms": 0.0093
+      },
+      "shadow": {
+        "averageMs": 0.3646026666666665,
+        "medianMs": 0.35968,
+        "p95Ms": 0.386272
+      },
+      "sky": {
+        "averageMs": 0.0056857599999999035,
+        "medianMs": 0.006144,
+        "p95Ms": 0.006144
+      },
+      "tile-depth": {
+        "averageMs": 8.533333333333332E-07,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 0.48407864000000017,
+        "medianMs": 0.4656,
+        "p95Ms": 0.536576
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Standard",
+    "skinning": {
+      "actors": 1,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "mesh",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Vulkan-MeshDirect-64": {
+    "activeCells": 0,
+    "api": "Vulkan",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 37377,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "mesh"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.005319833333333343,
+        "medianMs": 0.0052,
+        "p95Ms": 0.0055
+      },
+      "color": {
+        "averageMs": 0.5089228799999952,
+        "medianMs": 0.487424,
+        "p95Ms": 0.499712
+      },
+      "cull": {
+        "averageMs": 2.56E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009873653333333367,
+        "medianMs": 0.009216,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.10195241666666664,
+        "medianMs": 0.09480000000000001,
+        "p95Ms": 0.1273
+      },
+      "pose-cpu": {
+        "averageMs": 0.28164325000000023,
+        "medianMs": 0.2752,
+        "p95Ms": 0.3113
+      },
+      "shadow": {
+        "averageMs": 0.7147337600000001,
+        "medianMs": 0.685376,
+        "p95Ms": 0.734048
+      },
+      "sky": {
+        "averageMs": 0.008896853333333414,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "tile-depth": {
+        "averageMs": 7.680000000000001E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 1.2710984000000016,
+        "medianMs": 1.217888,
+        "p95Ms": 1.757056
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Stress",
+    "skinning": {
+      "actors": 64,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "mesh",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Vulkan-MeshTask-1": {
+    "activeCells": 0,
+    "api": "Vulkan",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 585,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "frustum",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "task"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.0093959166666667,
+        "medianMs": 0.0091,
+        "p95Ms": 0.0106
+      },
+      "color": {
+        "averageMs": 0.07478869333333232,
+        "medianMs": 0.065536,
+        "p95Ms": 0.069632
+      },
+      "cull": {
+        "averageMs": 3.413333333333333E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009471173333333366,
+        "medianMs": 0.009216,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.004465333333333316,
+        "medianMs": 0.004,
+        "p95Ms": 0.0057
+      },
+      "pose-cpu": {
+        "averageMs": 0.0068295833333333516,
+        "medianMs": 0.0065,
+        "p95Ms": 0.0081
+      },
+      "shadow": {
+        "averageMs": 0.3700914933333332,
+        "medianMs": 0.367264,
+        "p95Ms": 0.387392
+      },
+      "sky": {
+        "averageMs": 0.005648213333333234,
+        "medianMs": 0.00512,
+        "p95Ms": 0.006144
+      },
+      "tile-depth": {
+        "averageMs": 4.266666666666666E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 0.48699047999999956,
+        "medianMs": 0.475424,
+        "p95Ms": 0.505696
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Standard",
+    "skinning": {
+      "actors": 1,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "mesh",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Vulkan-MeshTask-64": {
+    "activeCells": 0,
+    "api": "Vulkan",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 37377,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "frustum",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "task"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.5473649999999991,
+        "medianMs": 0.5387,
+        "p95Ms": 0.5913
+      },
+      "color": {
+        "averageMs": 0.44374954666667094,
+        "medianMs": 0.42496,
+        "p95Ms": 0.44032
+      },
+      "cull": {
+        "averageMs": 2.56E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009745280000000025,
+        "medianMs": 0.009216,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.09938883333333322,
+        "medianMs": 0.09490000000000001,
+        "p95Ms": 0.12430000000000001
+      },
+      "pose-cpu": {
+        "averageMs": 0.28374158333333344,
+        "medianMs": 0.2769,
+        "p95Ms": 0.3126
+      },
+      "shadow": {
+        "averageMs": 0.7454832800000004,
+        "medianMs": 0.72112,
+        "p95Ms": 0.766656
+      },
+      "sky": {
+        "averageMs": 0.00914176000000006,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "tile-depth": {
+        "averageMs": 5.973333333333333E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 1.235245173333334,
+        "medianMs": 1.191456,
+        "p95Ms": 1.74224
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Stress",
+    "skinning": {
+      "actors": 64,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "mesh",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Vulkan-Vertex-1": {
+    "activeCells": 0,
+    "api": "Vulkan",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 585,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "vertex"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.0001284166666666673,
+        "medianMs": 0.0001,
+        "p95Ms": 0.0002
+      },
+      "color": {
+        "averageMs": 0.0695833599999988,
+        "medianMs": 0.067584,
+        "p95Ms": 0.069632
+      },
+      "cull": {
+        "averageMs": 3.413333333333333E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.010150773333333349,
+        "medianMs": 0.009216,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.004731249999999982,
+        "medianMs": 0.0043,
+        "p95Ms": 0.0063999999999999994
+      },
+      "pose-cpu": {
+        "averageMs": 0.006683916666666681,
+        "medianMs": 0.0065,
+        "p95Ms": 0.0078
+      },
+      "shadow": {
+        "averageMs": 0.3005022133333333,
+        "medianMs": 0.301568,
+        "p95Ms": 0.320736
+      },
+      "sky": {
+        "averageMs": 0.005658453333333233,
+        "medianMs": 0.00512,
+        "p95Ms": 0.006144
+      },
+      "tile-depth": {
+        "averageMs": 2.56E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 0.41970744000000054,
+        "medianMs": 0.41424,
+        "p95Ms": 0.445888
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Standard",
+    "skinning": {
+      "actors": 1,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "vertex",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  },
+  "Vulkan-Vertex-64": {
+    "activeCells": 0,
+    "api": "Vulkan",
+    "averageCandidates": 0.0,
+    "cells": 3600,
+    "configuration": "Release",
+    "depthSlices": 24,
+    "fixedDelta": 0.016666666666666666,
+    "gBufferBytesPerPixel": 0,
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "height": 720,
+    "lightIntensity": 0.4000000059604645,
+    "lightRadius": 1.600000023841858,
+    "lightsPerRoom": 0,
+    "listBytes": 3715200,
+    "listCapacity": 256,
+    "listStride": 256,
+    "maxCandidates": 0,
+    "measuredFrames": 1200,
+    "mesh": {
+      "candidates": 37377,
+      "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+      "culling": "off",
+      "maxTriangles": 96,
+      "maxVertices": 64,
+      "meshlets": 585,
+      "meshoptimizer": "1.3",
+      "renderPath": "vertex"
+    },
+    "mode": "Forward",
+    "msvcFullVersion": 195136257,
+    "overflowCells": 0,
+    "passes": {
+      "bounds-cpu": {
+        "averageMs": 0.005319166666666659,
+        "medianMs": 0.0052,
+        "p95Ms": 0.0056
+      },
+      "color": {
+        "averageMs": 0.4914585599999985,
+        "medianMs": 0.463872,
+        "p95Ms": 0.508928
+      },
+      "cull": {
+        "averageMs": 2.56E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.009712000000000026,
+        "medianMs": 0.009472,
+        "p95Ms": 0.01024
+      },
+      "mesh-cpu": {
+        "averageMs": 0.10786458333333333,
+        "medianMs": 0.10080000000000001,
+        "p95Ms": 0.1339
+      },
+      "pose-cpu": {
+        "averageMs": 0.28527675000000036,
+        "medianMs": 0.2783,
+        "p95Ms": 0.3267
+      },
+      "shadow": {
+        "averageMs": 0.7008182933333341,
+        "medianMs": 0.6624,
+        "p95Ms": 1.090944
+      },
+      "sky": {
+        "averageMs": 0.008861013333333423,
+        "medianMs": 0.009216,
+        "p95Ms": 0.009216
+      },
+      "tile-depth": {
+        "averageMs": 7.680000000000001E-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 1.2382569866666666,
+        "medianMs": 1.172768,
+        "p95Ms": 1.76448
+      }
+    },
+    "pathFrames": 1200,
+    "pointLights": 0,
+    "preset": "OpaqueMask",
+    "representation": "Skinned Forward PBR",
+    "scene": "Stress",
+    "skinning": {
+      "actors": 64,
+      "allocatedCacheBytes": 48,
+      "animation": "UAL_Walk",
+      "cacheBytes": 0,
+      "cpuMeasurement": "pose and conservative bounds separately; command recording excludes waits/readback",
+      "joints": 53,
+      "sharedSourceGeometry": true,
+      "technique": "vertex",
+      "verticesPerActor": 31138
+    },
+    "tileSize": 16,
+    "warmupFrames": 60,
+    "width": 1280,
+    "windowsSdk": "10.0.26100.0"
+  }
+}

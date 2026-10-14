@@ -2,7 +2,7 @@
 
 検証日: 2026-10-11（日本時間）。結果は以下の実機・SDK・コンパイラの組合せに対するものです。
 
-最新の追加結果は末尾の「第14〜16回 HDR Render-to-Texture・Compute Bloom・GPUパーティクル」を参照してください。
+最新の追加結果は末尾の「第22・23回／発展10 GPUスキニング」を参照してください。
 
 ## 環境
 
@@ -279,8 +279,32 @@ Restore、全60プロジェクトのDebug／ReleaseビルドとXML／filters、D
 
 API別12記事と共通章、1280×720の実GPU画像52枚を確認しました。Releaseの固定経路1,200フレーム×52条件の性能をJSON／CSVへ保存し、GPU TotalとCPUのコマンド記録を区別して報告しています。05のIndirectはCPU記録を減らしましたが、カリングONがGPUで遅い条件もあります。09のStressではAll→TiledのGPU中央値がD3D12で17.9732→2.0480 ms、Vulkanで17.3172→2.2331 msでした。条件、許容誤差と生データは[Mesh Shader検証記録](MeshShaderVerification.md)、記事の入口は[発展編目次](AdvancedGraphicsSamples.md)です。
 
+## 2026-10-15：GPUスキニング用Silver Robotアセット
+
+Aポーズの白銀ヒューマノイドをBlender 5.2.1 LTS（build hash 9e2066aef7ef）で制作しました。53ボーン、指の各節のウェイト、剛体装甲と柔軟部のブレンド、core glTF／GLBと自作の待機・その場歩行Actionを保存しています。編集・書出し方法は[制作仕様](Assets/SilverRobot.md)を参照してください。
+
+Khronos glTF Exporter 5.2.40、glTF-Validator 2.0.0-dev.3.10、Blender付属Python 3.13.13／NumPy 2.3.4で検証しました。glTF／GLBのエラー・警告は0件。31,138出力頂点、44,584三角形、1スキン、5材質を確認し、CPUスキニングとBlenderの全頂点の変形差は最大7.8755e-7 mでした。独立した一時フォルダ内の保存済み正本から再出力したglTF／BIN／GLB／人型対応表は配布物とバイト単位で一致しました。1280×720のCycles CPU参考画像5点を確認しています。[詳細記録](Assets/SilverRobotVerification.md)と[機械可読の結果](Assets/SilverRobotValidation.json)に値を保存しました。
+
+今回はモデル制作の工程で、描画サンプル・ローダー・Visual Studioプロジェクトは追加していません。外部モーションは同梱せず、QuaterniusのCC0ライブラリを今後のリターゲット候補として調査しました。
+
 ## 第21回 Visibility Buffer（2026年10月15日）
 
 両APIの独立した2プロジェクトを追加し、全62プロジェクトのXML／filtersとソリューションの60 APIサンプルのフォルダ、Restore、x64 Debug／Release、DXIL／SPIR-V、既存CPUローダーを検証しました。ID・Depth・参照範囲、独立した重心座標・UV勾配、Near面、MASK／両面／BLEND、影、641×479、カメラの移動・回転・Reset、リサイズ・最小化復帰・終了が成功し、Debug検証エラーは0件です。
 
 1280×720の実GPU画像14枚と、第19・20回、第21回Tiled／Clusteredの16条件の比較CSV／JSONを保存しました。条件と結果は[Visibility Buffer検証記録](VisibilityVerification.md)にまとめています。
+
+## 第22・23回／発展10 GPUスキニング（2026-10-15）
+
+新規6実行プロジェクトを追加し、両APIの基本23＋発展10で計66アプリ、CPUライブラリ2本を含むソリューションをRestore・x64 Debug／Releaseでビルドしました。v145／Windows SDK 10.0.26100.0を維持し、C++／HLSLの警告・エラー0件。vcxproj／filtersのXML整合とVulkan SPIR-V検証も成功しています。
+
+実測環境はVisual Studio Community 2026 18.10.0、cl 19.51.36257（tool directory 14.51.36231）、MSBuild 18.10.1-1.26427.6、NVIDIA GeForce RTX 4070、driver 610.88、Windows 11 Pro 10.0.26300です。D3D12はAgility 1.619.6／DXC 1.9.2609.5（01b62ad47）、Vulkan SDK 1.4.341.1／DXC 1.9.0.5180（e35541826、DLL表示1.10）、SPIRV-Tools v2026.1／target Vulkan1.3を使用しました。
+
+別正本SilverRobotAnimated.blendに固定SubmoduleのUniversal Animation Library Standardから6クリップをリターゲットし、A/T確認ポーズも保存しました。ロボットのMITとQuaterniusモーションのCC0を分けています。glTF／GLBのKhronosエラー・警告0、保存済みblendからのバイト一致、全8 ActionのBlenderと独立CPU評価の最大位置差1.01178e-6 mを確認しました。
+
+新規GPU試験は全クリップ、1体／64体、Computeの実Vertex BufferとCPU参照、VS／CS／MSのDepth・Shadow・HDR、動的境界のカリングON/OFF、画面外Caster、Loop／終端／速度／Seek／Reset、奇数リサイズを両構成で確認しています。全66アプリのライフサイクル回帰、旧ローダー、09のImGui、新6アプリのカメラ、Shader欠落時の終了も成功し、Debug Validationエラー0件です。
+
+1280×720の実GPU画像、CPU／GPU比較JSON、Release 1体／64体の16条件の性能測定を追加しました。CPU姿勢・境界、CS変形、Shadow、Color、GPU Total、キャッシュの使用／確保容量を記録しています。Shader間のRaster順序による少数のHDR成分差も省略せず、[GPUスキニング検証記録](SkinningVerification.md)へまとめました。[ローダー記事](GltfSkinningLoading.md)と[GPU共通解説](GpuSkinning.md)を参照してください。
+
+## GPUスキニングのユーザー確認と動画掲載（2026-10-15）
+
+ユーザーによるローカル動作確認が完了し、OKの連絡とGitHub反映の指示を受けました。提供された6本の1280×720 MP4を確認し、README、API別6記事、glTFローダー記事、GPU共通章、Blenderアセット記事から参照できるようにしました。[動画一覧](Assets/Videos/README.md)と[元ファイル名・SHA-256の記録](Assets/Videos/Manifest.json)を追加しています。動画は再圧縮せず、録画に含まれる方式・クリップ・体数をUIで確認して説明しました。D3D12の2本はいずれもVertex経路のWalk／Runなので、Computeとして扱っていません。

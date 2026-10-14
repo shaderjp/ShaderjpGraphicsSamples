@@ -1,5 +1,6 @@
 #include "Application.h"
 #include <chrono>
+#include <cmath>
 #include <cstdio>
 #include <fstream>
 #include <limits>
@@ -84,6 +85,7 @@ Options ParseOptions()
                 continue;
             }
             if (argument == L"--test-camera") { options.testCamera = true; continue; }
+            if (argument == L"--pause-animation") { options.pauseAnimation = true; continue; }
             if (argument == L"--pause") { options.pauseParticles = true; continue; }
             if (argument == L"--forward") { options.forward = true; continue; }
             if (argument == L"--animate-lights") { options.animateLights = true; continue; }
@@ -132,6 +134,13 @@ Options ParseOptions()
             else if (argument == L"--shading")
                 options.shading = value;
             else if (argument == L"--rt-test-scene") options.rayTestScene = value;
+            else if (argument == L"--animation") options.animation = value;
+            else if (argument == L"--characters") { if(value!=L"1" && value!=L"64")throw std::runtime_error("--characters: 1 / 64");options.characters=value==L"64"?64u:1u; }
+            else if (argument == L"--animation-time" || argument == L"--animation-speed") {
+                size_t consumed=0;float v=std::stof(value,&consumed);
+                if(consumed!=value.size() || !std::isfinite(v) || v<0 || v>(argument==L"--animation-speed"?10.f:10000.f))throw std::runtime_error("Invalid animation value");
+                if(argument==L"--animation-time")options.animationTime=v;else options.animationSpeed=v;
+            }
             else if (argument == L"--render-path") options.meshRenderPath = value;
             else if (argument == L"--meshlet-culling") options.meshCulling = value;
             else if (argument == L"--meshlet-view") options.meshView = value;

@@ -32,5 +32,10 @@ VS 2026、v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを使用
 | 07 Mesh ShaderによるShadow Map | [記事](Direct3D12/Advanced07_MeshShaderShadows.md) | [記事](Vulkan/Advanced07_MeshShaderShadows.md) |
 | 08 Mesh ShaderによるDeferred Rendering | [記事](Direct3D12/Advanced08_MeshShaderDeferred.md) | [記事](Vulkan/Advanced08_MeshShaderDeferred.md) |
 | 09 Mesh ShaderによるTiled Deferred | [記事](Direct3D12/Advanced09_MeshShaderTiledDeferred.md) | [記事](Vulkan/Advanced09_MeshShaderTiledDeferred.md) |
+| 10 Mesh ShaderスキニングとShadow | [記事](Direct3D12/Advanced10_MeshShaderSkinning.md) | [記事](Vulkan/Advanced10_MeshShaderSkinning.md) |
 
-全12本に移動・回転・カメラResetを備えます。D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`を要求し、06以降はTask Shaderも必要です。Workshop使用回はStandard／StressとOPAQUE／MASK、04は単一のAlbedo用ShaderBallです。DXR 2は概念解説で、今回の実行サンプルの必須機能には追加しません。[検証記録](MeshShaderVerification.md)
+全14本に移動・回転・カメラResetを備えます。D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`を要求し、06以降はTask Shaderも必要です。Workshop使用回はStandard／StressとOPAQUE／MASK、04は単一のAlbedo用ShaderBall、10はSilver Robotです。DXR 2は概念解説で、今回の実行サンプルの必須機能には追加しません。[検証記録](MeshShaderVerification.md)
+
+[発展10の実行動画](Assets/Videos/README.md)では、Direct3D12の64体のWalkとVulkanの64体のRunを確認できます。どちらもAS／TaskとAnimated frustumを有効にした録画です。
+
+10は[glTFスキニング対応ローダー](GltfSkinningLoading.md) → [基本22 VS](Direct3D12/22_VertexSkinning.md) → [基本23 Compute Cache](Direct3D12/23_ComputeSkinningCache.md)を前提に、動くSilver RobotをMS内で変形します。カメラ／ライト別のカリング、変形後の保守境界、1体／64体を比較します。[3方式の共通解説](GpuSkinning.md)と[検証・性能](SkinningVerification.md)を参照してください。Mesh Shader編は04〜10の14本になりました。

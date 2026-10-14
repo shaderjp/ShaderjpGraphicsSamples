@@ -2,6 +2,8 @@
 
 Shader BallのglTF Separateデータを読み、1枚のAlbedoを貼って3D描画します。[Direct3D12](Direct3D12/06_Gltf.md)と[Vulkan](Vulkan/06_Gltf.md)の独立したプロジェクトで、CPU側のローダーとHLSLを共有しています。
 
+基本21の後には、[glTFスキニング対応ローダー](GltfSkinningLoading.md)を読みます。既存APIを保持して`LoadGltfSkinned`を追加し、ノード階層、ジョイントとウェイト、逆バインド、TRS補間からGPUへ渡すpaletteまでを別記事で説明します。
+
 ## JSON解析とglTF読込を分ける
 
 JSON構文解析には[nlohmann/json v3.12.0](https://github.com/nlohmann/json/tree/v3.12.0)の`single_include/nlohmann/json.hpp`を使います。MITライセンスなので、このリポジトリのMITライセンスの構成に導入でき、元の著作権・許諾表示を保持しています。Submoduleはコミット`55f93686c01528224f448c19128836e7df245f72`へ固定しています。

@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.0.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -131,6 +131,18 @@ EndProject
 Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_21_VisibilityBuffer", "Samples\Direct3D12\21_VisibilityBuffer\Direct3D12_21_VisibilityBuffer.vcxproj", "{CA92CAD3-7E0B-4CFF-A10B-756F4E730E59}"
 EndProject
 Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_21_VisibilityBuffer", "Samples\Vulkan\21_VisibilityBuffer\Vulkan_21_VisibilityBuffer.vcxproj", "{7EE1D8F8-7488-45E6-9251-1CDEA1D2D1FF}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_22_VertexSkinning", "Samples\Direct3D12\22_VertexSkinning\Direct3D12_22_VertexSkinning.vcxproj", "{BE7EE538-BBA8-4475-A1C9-195296113114}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_23_ComputeSkinningCache", "Samples\Direct3D12\23_ComputeSkinningCache\Direct3D12_23_ComputeSkinningCache.vcxproj", "{A39088A2-FD63-4B86-9EB5-4F8C0FA4A5B7}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced10_MeshShaderSkinning", "Samples\Direct3D12\Advanced10_MeshShaderSkinning\Direct3D12_Advanced10_MeshShaderSkinning.vcxproj", "{3B4CDE29-722D-4739-B984-11731EE4DB0E}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_22_VertexSkinning", "Samples\Vulkan\22_VertexSkinning\Vulkan_22_VertexSkinning.vcxproj", "{EED8B328-4B82-4767-AB40-CDD9556B5D07}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_23_ComputeSkinningCache", "Samples\Vulkan\23_ComputeSkinningCache\Vulkan_23_ComputeSkinningCache.vcxproj", "{A5DBDC16-EACF-44B3-8CCB-278B45AB4495}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced10_MeshShaderSkinning", "Samples\Vulkan\Advanced10_MeshShaderSkinning\Vulkan_Advanced10_MeshShaderSkinning.vcxproj", "{E5C1F449-09EA-4276-818D-49D30B529DEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -386,6 +398,30 @@ Global
 		{7EE1D8F8-7488-45E6-9251-1CDEA1D2D1FF}.Debug|x64.Build.0 = Debug|x64
 		{7EE1D8F8-7488-45E6-9251-1CDEA1D2D1FF}.Release|x64.ActiveCfg = Release|x64
 		{7EE1D8F8-7488-45E6-9251-1CDEA1D2D1FF}.Release|x64.Build.0 = Release|x64
+			{BE7EE538-BBA8-4475-A1C9-195296113114}.Debug|x64.ActiveCfg = Debug|x64
+		{BE7EE538-BBA8-4475-A1C9-195296113114}.Debug|x64.Build.0 = Debug|x64
+		{BE7EE538-BBA8-4475-A1C9-195296113114}.Release|x64.ActiveCfg = Release|x64
+		{BE7EE538-BBA8-4475-A1C9-195296113114}.Release|x64.Build.0 = Release|x64
+		{A39088A2-FD63-4B86-9EB5-4F8C0FA4A5B7}.Debug|x64.ActiveCfg = Debug|x64
+		{A39088A2-FD63-4B86-9EB5-4F8C0FA4A5B7}.Debug|x64.Build.0 = Debug|x64
+		{A39088A2-FD63-4B86-9EB5-4F8C0FA4A5B7}.Release|x64.ActiveCfg = Release|x64
+		{A39088A2-FD63-4B86-9EB5-4F8C0FA4A5B7}.Release|x64.Build.0 = Release|x64
+		{3B4CDE29-722D-4739-B984-11731EE4DB0E}.Debug|x64.ActiveCfg = Debug|x64
+		{3B4CDE29-722D-4739-B984-11731EE4DB0E}.Debug|x64.Build.0 = Debug|x64
+		{3B4CDE29-722D-4739-B984-11731EE4DB0E}.Release|x64.ActiveCfg = Release|x64
+		{3B4CDE29-722D-4739-B984-11731EE4DB0E}.Release|x64.Build.0 = Release|x64
+		{EED8B328-4B82-4767-AB40-CDD9556B5D07}.Debug|x64.ActiveCfg = Debug|x64
+		{EED8B328-4B82-4767-AB40-CDD9556B5D07}.Debug|x64.Build.0 = Debug|x64
+		{EED8B328-4B82-4767-AB40-CDD9556B5D07}.Release|x64.ActiveCfg = Release|x64
+		{EED8B328-4B82-4767-AB40-CDD9556B5D07}.Release|x64.Build.0 = Release|x64
+		{A5DBDC16-EACF-44B3-8CCB-278B45AB4495}.Debug|x64.ActiveCfg = Debug|x64
+		{A5DBDC16-EACF-44B3-8CCB-278B45AB4495}.Debug|x64.Build.0 = Debug|x64
+		{A5DBDC16-EACF-44B3-8CCB-278B45AB4495}.Release|x64.ActiveCfg = Release|x64
+		{A5DBDC16-EACF-44B3-8CCB-278B45AB4495}.Release|x64.Build.0 = Release|x64
+		{E5C1F449-09EA-4276-818D-49D30B529DEA}.Debug|x64.ActiveCfg = Debug|x64
+		{E5C1F449-09EA-4276-818D-49D30B529DEA}.Debug|x64.Build.0 = Debug|x64
+		{E5C1F449-09EA-4276-818D-49D30B529DEA}.Release|x64.ActiveCfg = Release|x64
+		{E5C1F449-09EA-4276-818D-49D30B529DEA}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4CBAD47E-BCC9-573C-97F9-0192CD67B9C2} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
@@ -450,5 +486,11 @@ Global
 		{C40E3C86-2CB4-413B-ABF7-099D394ED237} = {0AD149FE-BC39-476C-87F2-9753AF7248DA}
 		{CA92CAD3-7E0B-4CFF-A10B-756F4E730E59} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{7EE1D8F8-7488-45E6-9251-1CDEA1D2D1FF} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+			{BE7EE538-BBA8-4475-A1C9-195296113114} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{A39088A2-FD63-4B86-9EB5-4F8C0FA4A5B7} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{3B4CDE29-722D-4739-B984-11731EE4DB0E} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{EED8B328-4B82-4767-AB40-CDD9556B5D07} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{A5DBDC16-EACF-44B3-8CCB-278B45AB4495} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{E5C1F449-09EA-4276-818D-49D30B529DEA} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
 	EndGlobalSection
 EndGlobal

@@ -156,6 +156,13 @@ struct DeferredTiming
         report["overflowCells"] = overflowCells;
         report["listBytes"] = uint64_t(cells) * (256 * 4 + 8);
 #endif
+#ifdef VISIBILITY_BUFFER
+        report["gBufferBytesPerPixel"] = 0;
+        report["visibilityBytesPerPixel"] = 12;
+        report["representation"] = "VisibilityBuffer";
+#else
+        report["representation"] = "GBuffer";
+#endif
         for (size_t p = 0; p < GpuPassCount; ++p)
         {
             std::vector<double> v;

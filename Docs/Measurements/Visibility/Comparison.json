@@ -1,0 +1,26 @@
+[
+  {
+    "api": "Direct3D12",
+    "scene": "Standard",
+    "tiledVisibilityVsGBuffer": 1.1049123983379876,
+    "clusteredVisibilityVsGBuffer": 1.058241706268035
+  },
+  {
+    "api": "Direct3D12",
+    "scene": "Stress",
+    "tiledVisibilityVsGBuffer": 1.1002011342769966,
+    "clusteredVisibilityVsGBuffer": 1.0736753129923926
+  },
+  {
+    "api": "Vulkan",
+    "scene": "Standard",
+    "tiledVisibilityVsGBuffer": 1.2465407789498688,
+    "clusteredVisibilityVsGBuffer": 1.4239694580133335
+  },
+  {
+    "api": "Vulkan",
+    "scene": "Stress",
+    "tiledVisibilityVsGBuffer": 1.1399379559291078,
+    "clusteredVisibilityVsGBuffer": 0.967493194112545
+  }
+]

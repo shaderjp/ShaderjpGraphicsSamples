@@ -1,6 +1,6 @@
 param(
     [ValidateSet('Debug','Release')][string]$Configuration='Debug',
-    [string[]]$Topics=@('13_ShadowMap','14_RenderTexture','15_ComputeBloom','16_GpuParticles','17_DeferredPixel','18_DeferredCompute','19_TiledDeferred','20_ClusteredShading','Advanced01_RaytracingBasic','Advanced02_RaytracingShadows','Advanced03_RaytracingReflections','Advanced04_MeshShaderBasic','Advanced05_GpuDrivenRendering','Advanced06_MeshletCulling','Advanced07_MeshShaderShadows','Advanced08_MeshShaderDeferred','Advanced09_MeshShaderTiledDeferred'),
+    [string[]]$Topics=@('13_ShadowMap','14_RenderTexture','15_ComputeBloom','16_GpuParticles','17_DeferredPixel','18_DeferredCompute','19_TiledDeferred','20_ClusteredShading','21_VisibilityBuffer','Advanced01_RaytracingBasic','Advanced02_RaytracingShadows','Advanced03_RaytracingReflections','Advanced04_MeshShaderBasic','Advanced05_GpuDrivenRendering','Advanced06_MeshletCulling','Advanced07_MeshShaderShadows','Advanced08_MeshShaderDeferred','Advanced09_MeshShaderTiledDeferred'),
     [string]$PythonPath='C:\Program Files\Blender Foundation\Blender 5.2\5.2\python\bin\python.exe'
 )
 $ErrorActionPreference='Stop'
@@ -46,7 +46,7 @@ foreach($api in @('Direct3D12','Vulkan')) {
         $log=Join-Path $results "$name.log"
         $image=Join-Path $results "$name.png"
         $arguments=@('--frames','32','--test-camera','--no-ui','--pause','--fixed-dt','0.016666667','--log',('"'+$log+'"'),'--screenshot',('"'+$image+'"'))
-        $numericReset=$topic -in @('Advanced05_GpuDrivenRendering','Advanced09_MeshShaderTiledDeferred')
+        $numericReset=$topic -in @('Advanced05_GpuDrivenRendering','Advanced09_MeshShaderTiledDeferred','21_VisibilityBuffer')
         if($numericReset){$arguments+='--capture-gpu'}
         $oldSync=$env:VK_LAYER_VALIDATE_SYNC
         try {
@@ -67,7 +67,8 @@ foreach($api in @('Direct3D12','Vulkan')) {
         if($numericReset){
             # GPU work/light ordering can change depth ties and FP accumulation.
             # Verify exact scene constants plus independent visibility/HDR instead.
-            & $PythonPath (Join-Path $repositoryRoot 'Tests/MeshShaderGpuTests.py') $results $name 'camera'
+            $numericScript=if($topic -eq '21_VisibilityBuffer'){'Tests/VisibilityGpuTests.py'}else{'Tests/MeshShaderGpuTests.py'}
+            & $PythonPath (Join-Path $repositoryRoot $numericScript) $results $name 'camera'
             if($LASTEXITCODE -ne 0){throw "$name camera GPU Reset failed"}
             $resetDescription='GPU constants/visibility/HDR Reset'
         } elseif($comparison[2] -ge 0){throw "$name camera Reset failed at byte $($comparison[2])"}

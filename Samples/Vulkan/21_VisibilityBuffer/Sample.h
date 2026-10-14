@@ -1,0 +1,141 @@
+#pragma once
+#include "../../Shared/PostProcessData.h"
+#include "../../Shared/VisibilityPanel.h"
+#include "DdsImage.h"
+#define VK_USE_PLATFORM_WIN32_KHR
+#include <vulkan/vulkan.h>
+class Sample final : public tutorial::ISample
+{
+  public:
+    void OnInit(HWND, uint32_t, uint32_t, const tutorial::Options &) override;
+    void OnUpdate(float) override;
+    void OnRender() override;
+    void OnResize(uint32_t, uint32_t) override;
+    void OnScreenshot(const std::filesystem::path &) override;
+    void OnDestroy() noexcept override;
+    bool OnMessage(HWND, UINT, WPARAM, LPARAM, LRESULT &) override;
+
+  private:
+    struct Buffer
+    {
+        VkBuffer buffer = VK_NULL_HANDLE;
+        VkDeviceMemory memory = VK_NULL_HANDLE;
+        void *mapped = nullptr;
+        bool coherent = false;
+        VkDeviceSize size = 0;
+    };
+    struct ImageResource
+    {
+        VkImage image = VK_NULL_HANDLE;
+        VkDeviceMemory memory = VK_NULL_HANDLE;
+        VkImageView view = VK_NULL_HANDLE;
+    };
+    HWND window_ = nullptr;
+    uint32_t width_ = 0, height_ = 0, queueFamily_ = 0, timestampBits_ = 0;
+    Buffer visibilityVertices_, visibilityIndices_, visibilityInstances_, visibilityMaterials_;
+    tutorial::Workshop workshop_;
+    std::unique_ptr<tutorial::VisibilityData> visibilityData_;
+    std::vector<tutorial::VisibilityInstance> visibilityObjects_;
+    tutorial::DeferredPanel panel_;
+    tutorial::DeferredTiming timing_;
+    tutorial::Options options_;
+    std::vector<tutorial::WorkshopLight> frameLights_;
+    tutorial::LightGridConstants gridData_{};
+    uint32_t gridCells_ = 0;
+    float previousSeconds_ = 0;
+    Buffer gridConstants_, gridStatsReadback_;
+    std::array<Buffer, 4> gridBuffers_;
+    VkPipeline tileDepthPipeline_ = VK_NULL_HANDLE, cullPipeline_ = VK_NULL_HANDLE;
+    void CreateLightGridResources();
+    void BuildLightLists();
+    void UpdateLightGridTestState();
+    void CaptureLightGridTestState();
+    void CopyGridStatistics();
+    void ReadGridStatistics();
+    void DumpLightGrid(const std::filesystem::path &);
+    VkInstance instance_ = VK_NULL_HANDLE;
+    VkDebugUtilsMessengerEXT debug_ = VK_NULL_HANDLE;
+    VkSurfaceKHR surface_ = VK_NULL_HANDLE;
+    VkPhysicalDevice physical_ = VK_NULL_HANDLE;
+    VkDevice device_ = VK_NULL_HANDLE;
+    VkQueue queue_ = VK_NULL_HANDLE;
+    VkSwapchainKHR swapchain_ = VK_NULL_HANDLE;
+    VkFormat colorFormat_ = VK_FORMAT_UNDEFINED;
+    std::vector<VkImage> images_;
+    std::vector<VkImageView> views_;
+    std::vector<bool> presented_;
+    std::vector<VkSemaphore> renderFinished_;
+    VkSemaphore imageAvailable_ = VK_NULL_HANDLE;
+    VkCommandPool commandPool_ = VK_NULL_HANDLE;
+    VkCommandBuffer commands_ = VK_NULL_HANDLE;
+    VkFence fence_ = VK_NULL_HANDLE;
+    bool canCapture_ = false, captureOnly_ = false;
+    Buffer capture_, staging_;
+    std::filesystem::path capturePath_;
+    std::array<ImageResource, 2> surfaceBuffers_;
+    std::array<VkImageLayout, 2> surfaceLayouts_{};
+    std::array<ImageResource, 4> hdr_;
+    std::array<VkImageLayout, 4> hdrLayouts_{};
+    ImageResource shadow_, brdf_;
+    VkImageLayout shadowLayout_ = VK_IMAGE_LAYOUT_UNDEFINED;
+    std::array<ImageResource, 3> environment_;
+    std::vector<ImageResource> textures_;
+    struct Geometry
+    {
+        uint32_t count = 0, vertexOffset = 0, indexOffset = 0;
+    };
+    std::vector<Geometry> geometry_;
+    Buffer constants_, points_, postConstants_;
+    VkDeviceSize constantStride_ = 0;
+    VkDescriptorSetLayout descriptorLayout_ = VK_NULL_HANDLE, postDescriptorLayout_ = VK_NULL_HANDLE;
+    VkDescriptorPool descriptorPool_ = VK_NULL_HANDLE, postPool_ = VK_NULL_HANDLE;
+    std::vector<VkDescriptorSet> descriptorSets_;
+    std::array<VkDescriptorSet, 4> postSets_{};
+    VkPipelineLayout pipelineLayout_ = VK_NULL_HANDLE, postLayout_ = VK_NULL_HANDLE;
+    VkSampler sampler_ = VK_NULL_HANDLE, environmentSampler_ = VK_NULL_HANDLE;
+    std::array<VkPipeline, 2> visibilityPipelines_{}, forwardPipelines_{}, transparentPipelines_{},
+        shadowPipelines_{}, bloomPipelines_{};
+    VkPipeline lightingCompute_ = VK_NULL_HANDLE, skyPipeline_ = VK_NULL_HANDLE,
+               postPipeline_ = VK_NULL_HANDLE, testPipeline_ = VK_NULL_HANDLE;
+    std::vector<VkShaderModule> modules_;
+    VkQueryPool queries_ = VK_NULL_HANDLE;
+    double timestampPeriod_ = 0;
+    uint32_t MemoryType(uint32_t, VkMemoryPropertyFlags);
+    Buffer CreateBuffer(VkDeviceSize, VkBufferUsageFlags, const void *data = nullptr, bool local = false);
+    void DestroyBuffer(Buffer &);
+    void Flush(const Buffer &);
+    ImageResource CreateImage(uint32_t, uint32_t, VkFormat, VkImageUsageFlags, VkImageAspectFlags,
+                              uint32_t mips = 1);
+    void DestroyImage(ImageResource &);
+    ImageResource LoadDdsTexture(const std::filesystem::path &);
+    void CreateSwapchain();
+    void DestroySwapchain();
+    void CreateScene();
+    void CreateSizeResources();
+    void UpdateDescriptors();
+    void CreatePipeline();
+    void DestroyPipelines();
+    void Bind(uint32_t object, uint32_t material, bool compute = false);
+    void DrawObjects(int pass);
+    void Move(VkImage, VkImageAspectFlags, VkImageLayout &, VkImageLayout);
+    void Stamp(uint32_t);
+    void Begin(const std::vector<VkImageView> &colors, VkImageView depth, bool clear, bool readOnly,
+               uint32_t width, uint32_t height);
+    void Submit();
+    void DumpGpuData(const std::filesystem::path &);
+    void CreateImGui();
+    void CreateUiPipeline();
+    void RenderImGui();
+    void DestroyImGui() noexcept;
+    bool win32Ui_ = false;
+    Buffer uiVertices_, uiIndices_, uiStaging_, uiConstants_;
+    ImageResource uiFont_;
+    VkSampler uiSampler_ = VK_NULL_HANDLE;
+    VkDescriptorSetLayout uiDescriptorLayout_ = VK_NULL_HANDLE;
+    VkDescriptorPool uiDescriptorPool_ = VK_NULL_HANDLE;
+    VkDescriptorSet uiDescriptorSet_ = VK_NULL_HANDLE;
+    VkPipelineLayout uiLayout_ = VK_NULL_HANDLE;
+    VkPipeline uiPipeline_ = VK_NULL_HANDLE;
+    VkShaderModule uiVertexShader_ = VK_NULL_HANDLE, uiPixelShader_ = VK_NULL_HANDLE;
+    size_t uiVertexCapacity_ = 0, uiIndexCapacity_ = 0;
+};

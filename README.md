@@ -61,6 +61,7 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | Deferred・Compute Shader | [18 DeferredCompute](Docs/Direct3D12/18_DeferredCompute.md) | [18 DeferredCompute](Docs/Vulkan/18_DeferredCompute.md) |
 | Tile-based Deferred・多数点光源のリスト | [19 TiledDeferred](Docs/Direct3D12/19_TiledDeferred.md) | [19 TiledDeferred](Docs/Vulkan/19_TiledDeferred.md) |
 | Clustered Shading・対数Zスライス | [20 ClusteredShading](Docs/Direct3D12/20_ClusteredShading.md) | [20 ClusteredShading](Docs/Vulkan/20_ClusteredShading.md) |
+| Visibility Buffer・IDから材質と勾配を復元 | [21 VisibilityBuffer](Docs/Direct3D12/21_VisibilityBuffer.md) | [21 VisibilityBuffer](Docs/Vulkan/21_VisibilityBuffer.md) |
 
 各プロジェクトをVSのスタートアッププロジェクトに設定して実行できます。ESCまたは閉じるボタンで終了します。
 
@@ -193,3 +194,9 @@ Docsの実画像を更新する場合は`Tools/TestSamples.ps1 -CaptureDocs`を�
 [発展編目次](Docs/AdvancedGraphicsSamples.md)から、単一モデルのMesh Shader基礎、[meshoptimizerとMeshlet](Docs/Meshlets.md)、Compute＋IndirectのGPU Driven Rendering、AS／Taskカリング、Shadow Map、Deferred、Tiled Deferredへ進めます。両APIの独立した12プロジェクトを追加し、全サンプルで既存と同じカメラの移動・回転・Resetを使用できます。
 
 meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定submoduleです。`git submodule update --init --recursive`で取得してください。Mesh Shader Tier／`VK_EXT_mesh_shader`の対応を起動時に確認します。検証は`Tools/TestMeshlets.ps1`、`Tools/TestMeshShaderBinaries.ps1`、`Tools/TestMeshShaders.ps1`で実行します。[検証と性能の記録](Docs/MeshShaderVerification.md)を参照してください。
+
+## 第21回：Visibility Buffer
+
+[共通解説](Docs/VisibilityBuffer.md)では、G-bufferを配置・三角形IDとDepthへ置き換え、Computeで透視補正した重心座標・UV勾配・材質を復元します。可視性用の画像は12 B／画素で、位置画像は追加しません。Shadow、IBL、HDR、Bloom、Forward透明合成とカメラ操作を引き継ぎます。既定は第19回と同じTiledで、Clusteredと全ライトにも切り替えられます。
+
+`Tools/TestVisibility.ps1`はID・Depth・HDRのGPU読戻し、独立した補間・微分計算と第19・20回の比較を検証します。`-Configuration Release -CaptureDocs`で画像、`-Configuration Release -BenchmarkOnly`で同じ20秒経路の比較CSV／JSONを生成します。`Tools/TestVisibilityShaders.ps1`は両APIのシェーダとCPU／SPIR-VのBuffer配置を検証します。[検証と性能の記録](Docs/VisibilityVerification.md)を参照してください。

@@ -1,0 +1,97 @@
+{
+  "activeCells": 3599,
+  "api": "Vulkan",
+  "averageCandidates": 139.50958599611002,
+  "cells": 3600,
+  "configuration": "Release",
+  "depthSlices": 24,
+  "fixedDelta": 0.016666666666666666,
+  "gBufferBytesPerPixel": 0,
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "height": 720,
+  "lightIntensity": 0.4000000059604645,
+  "lightRadius": 1.600000023841858,
+  "lightsPerRoom": 256,
+  "listBytes": 3715200,
+  "listCapacity": 256,
+  "listStride": 256,
+  "maxCandidates": 234,
+  "measuredFrames": 1200,
+  "mode": "Tiled",
+  "msvcFullVersion": 195136257,
+  "overflowCells": 0,
+  "passes": {
+    "cull": {
+      "averageMs": 0.05345543999999999,
+      "medianMs": 0.050176,
+      "p95Ms": 0.052608
+    },
+    "display": {
+      "averageMs": 0.011944133333333336,
+      "medianMs": 0.012064,
+      "p95Ms": 0.012288
+    },
+    "extract": {
+      "averageMs": 0.011851200000000015,
+      "medianMs": 0.011264,
+      "p95Ms": 0.013312
+    },
+    "geometry": {
+      "averageMs": 0.4147353599999998,
+      "medianMs": 0.36352,
+      "p95Ms": 0.86016
+    },
+    "horizontal": {
+      "averageMs": 0.009478346666666653,
+      "medianMs": 0.008192,
+      "p95Ms": 0.009024
+    },
+    "lighting": {
+      "averageMs": 0.9566912266666655,
+      "medianMs": 0.984064,
+      "p95Ms": 1.28
+    },
+    "shadow": {
+      "averageMs": 0.5835971466666677,
+      "medianMs": 0.527232,
+      "p95Ms": 1.033472
+    },
+    "sky": {
+      "averageMs": 0.0031861599999999774,
+      "medianMs": 0.003072,
+      "p95Ms": 0.00512
+    },
+    "tile-depth": {
+      "averageMs": 0.012714853333333437,
+      "medianMs": 0.011264,
+      "p95Ms": 0.012096
+    },
+    "total": {
+      "averageMs": 2.066531066666666,
+      "medianMs": 1.990912,
+      "p95Ms": 2.973088
+    },
+    "transparent": {
+      "averageMs": 0.0005649066666666749,
+      "medianMs": 0.001024,
+      "p95Ms": 0.001024
+    },
+    "vertical": {
+      "averageMs": 0.007157359999999999,
+      "medianMs": 0.00688,
+      "p95Ms": 0.007616
+    }
+  },
+  "pathFrames": 1200,
+  "pointLights": 2376,
+  "preset": "OpaqueMask",
+  "representation": "VisibilityBuffer",
+  "scene": "Stress",
+  "tileSize": 16,
+  "visibilityBytesPerPixel": 12,
+  "warmupFrames": 60,
+  "width": 1280,
+  "windowsSdk": "10.0.26100.0",
+  "idleGpuUtilizationMaxPercent": 10,
+  "idleGpuSamples": 3
+}

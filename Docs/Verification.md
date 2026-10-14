@@ -278,3 +278,9 @@ VS 2026 Community 18.10.12201.205、v145／MSVC 19.51.36257.0、Windows SDK 10.0
 Restore、全60プロジェクトのDebug／ReleaseビルドとXML／filters、DXIL／SPIR-VとCPU配置、旧ローダー・Workshop・MeshletのCPU試験が成功しました。全58アプリのライフサイクル、新規12アプリのカメラ操作、GPUの可視ID・件数とHDR、MASKの表裏と影、画面外Caster、All／Tiled／容量超過、4,680ライト、UI編集・Reset、Shader欠落と部分解放を両構成で確認しました。Stressの20ケースでも641×479、最小化・1280×720復帰とGPU数値照合が成功しています。既存ImGui、Deferred、Tiled／Clustered、レイトレーシングの回帰も通過し、検証エラーは0件でした。
 
 API別12記事と共通章、1280×720の実GPU画像52枚を確認しました。Releaseの固定経路1,200フレーム×52条件の性能をJSON／CSVへ保存し、GPU TotalとCPUのコマンド記録を区別して報告しています。05のIndirectはCPU記録を減らしましたが、カリングONがGPUで遅い条件もあります。09のStressではAll→TiledのGPU中央値がD3D12で17.9732→2.0480 ms、Vulkanで17.3172→2.2331 msでした。条件、許容誤差と生データは[Mesh Shader検証記録](MeshShaderVerification.md)、記事の入口は[発展編目次](AdvancedGraphicsSamples.md)です。
+
+## 第21回 Visibility Buffer（2026年10月15日）
+
+両APIの独立した2プロジェクトを追加し、全62プロジェクトのXML／filtersとソリューションの60 APIサンプルのフォルダ、Restore、x64 Debug／Release、DXIL／SPIR-V、既存CPUローダーを検証しました。ID・Depth・参照範囲、独立した重心座標・UV勾配、Near面、MASK／両面／BLEND、影、641×479、カメラの移動・回転・Reset、リサイズ・最小化復帰・終了が成功し、Debug検証エラーは0件です。
+
+1280×720の実GPU画像14枚と、第19・20回、第21回Tiled／Clusteredの16条件の比較CSV／JSONを保存しました。条件と結果は[Visibility Buffer検証記録](VisibilityVerification.md)にまとめています。

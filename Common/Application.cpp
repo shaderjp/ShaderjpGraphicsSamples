@@ -86,6 +86,7 @@ Options ParseOptions()
             }
             if (argument == L"--test-camera") { options.testCamera = true; continue; }
             if (argument == L"--pause-animation") { options.pauseAnimation = true; continue; }
+            if (argument == L"--test-root-motion") { options.testRootMotion = options.testUi = true; continue; }
             if (argument == L"--pause") { options.pauseParticles = true; continue; }
             if (argument == L"--forward") { options.forward = true; continue; }
             if (argument == L"--animate-lights") { options.animateLights = true; continue; }
@@ -135,6 +136,10 @@ Options ParseOptions()
                 options.shading = value;
             else if (argument == L"--rt-test-scene") options.rayTestScene = value;
             else if (argument == L"--animation") options.animation = value;
+            else if (argument == L"--root-motion") {
+                if(value!=L"on" && value!=L"off")throw std::runtime_error("--root-motion: on / off");
+                options.rootMotion=value==L"on";
+            }
             else if (argument == L"--characters") { if(value!=L"1" && value!=L"64")throw std::runtime_error("--characters: 1 / 64");options.characters=value==L"64"?64u:1u; }
             else if (argument == L"--animation-time" || argument == L"--animation-speed") {
                 size_t consumed=0;float v=std::stof(value,&consumed);

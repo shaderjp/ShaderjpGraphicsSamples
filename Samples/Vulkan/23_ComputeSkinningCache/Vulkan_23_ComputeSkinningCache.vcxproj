@@ -328,5 +328,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Shared\SkinningTiming.h" />
+    <ClInclude Include="..\..\Shared\SkinningRootMotion.h" />
   </ItemGroup>
 </Project>

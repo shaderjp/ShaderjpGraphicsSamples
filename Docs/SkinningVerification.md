@@ -74,7 +74,21 @@ Shadow OFFが床のHDRを変えること、カメラ外のCasterが落とす影�
 
 録画の前半・中間・後半を確認し、UIの方式・クリップ・体数に合わせて記事へ配置しました。MP4のバイト列を保持し、中間フレームからJPEGプレビューを作りました。性能値は動画のUI表示から採らず、以下の固定条件の実測を使います。
 
+## Root motion切り替えの追加検証（2026-10-15）
+
+6サンプル共通のImGuiへRoot motionチェックボックスを追加しました。初期値とResetはOFFです。現在の配布モデルは水平Root移動を持たないため、Walk／Runの支持足の動きから一定速度の進行トラックを復元しています。モデル・Blender・元ライブラリは変更していません。[復元と操作の説明](GpuSkinning.md#root-motionを切り替える)
+
+x64 Debug／Releaseのソリューション全体を再ビルドし、コンパイラ警告・エラー0件、全プロジェクトのXML／filters整合を確認しました。CPU試験では既知の2 m/sの足運びから2 m/sを復元するケース、Walk／Runの連続移動、その他のクリップの移動量0を検査しています。旧ローダー回帰と09のImGui回帰も両APIで成功しています。
+
+GPU試験は両構成・全6アプリで実CheckboxをON→1フレーム送り→OFF→Resetと操作しました。ON／OFFで同じポーズ時刻を保ったまま、実Depth画像のキャラクターが移動することを確認し、Reset後のHDRは初期状態と完全一致しました。更新前のReleaseと、Root motion OFFの全6アプリのHDRもビット単位で一致しています。
+
+Root motion ONでVS／Compute／MeshのDepth・Shadow・HDRを比較し、64体のカリングOFF／frustumも照合しました。周期をまたいでも前進位置が巻き戻らず、速度2で移動時間も2倍、速度0とPauseで停止することをGPU読戻しで確認しています。リサイズ・最小化復帰・キャプチャ・終了も両構成で通過し、DebugのValidationエラーは0件です。更新した記事画像も1280×720です。
+
+具体的な状態、Depthが変化した画素数、Reset・旧表示との一致、移動ONの画像比較は[Root motion検証JSON](SkinningRootMotionVerification.json)へ保存しています。
+
 ## Release性能
+
+以下の性能表と録画は、Root motion切り替えを追加する前の初回検証結果です。水平移動は現在のRoot motion OFFに相当します。
 
 `Tools/MeasureSkinning.ps1`で同一条件を計測しました。1280×720、UAL_Walk、速度1、1体または8×8の64体、Studio IBL、方向光、2048 Shadow、3×3 PCF、UI非表示、Present sync interval 0。1体はHero、64体はStressHeroの固定カメラを全方式で使用します。アニメーション時刻はframe/60で評価し、60 warmup＋1200測定フレームです。Actorは1/64周期ずつ位相をずらします。
 

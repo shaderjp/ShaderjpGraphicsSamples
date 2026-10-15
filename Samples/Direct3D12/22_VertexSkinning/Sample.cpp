@@ -804,6 +804,8 @@ void Sample::OnUpdate(float seconds)
 }
 void Sample::OnRender()
 {
+    skinning_.UpdateRootMotion(workshop_, size_t(panel_.animation),
+                               panel_.rootMotion ? panel_.rootMotionTime : 0);
     WaitForGpu();
     CreateLightGridResources();
     UpdateDescriptors();
@@ -1990,6 +1992,10 @@ void Sample::DumpSkinningData(const std::filesystem::path &directory)
         {"technique", SKIN_TECHNIQUE},
         {"animation", skinning_.model.clips[panel_.animation].name},
         {"time", panel_.animationTime},
+        {"rootMotion", panel_.rootMotion},
+        {"rootMotionTime", panel_.rootMotionTime},
+        {"rootSpeed", skinning_.rootMotion.speeds[panel_.animation]},
+        {"rootOffset", {skinning_.rootOffset.x, skinning_.rootOffset.y, skinning_.rootOffset.z}},
         {"actors", actors},
         {"verticesPerActor", skinning_.vertexCount},
         {"sampleStride", step},

@@ -1,0 +1,1413 @@
+{
+  "date": "2026-10-15",
+  "default": "off",
+  "travelSource": "Reconstructed forward speed from support-foot motion in the unchanged in-place UAL_Walk / UAL_Run clips.",
+  "checks": {
+    "Debug": {
+      "imageComparisons": {
+        "Direct3D12-root-UAL_Walk-0-independentMaxError": 4.402854220098007e-07,
+        "Direct3D12-root-UAL_Walk-1-independentMaxError": 4.402854220098007e-07,
+        "Direct3D12-root-UAL_Walk-1-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-UAL_Walk-2-independentMaxError": 4.402854220098007e-07,
+        "Direct3D12-root-UAL_Walk-VS-CS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Walk-VS-MS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0180511474609375,
+            "aboveTolerance": 3,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Walk-task-independentMaxError": 4.402854220098007e-07,
+        "Direct3D12-root-UAL_Walk-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Run-0-independentMaxError": 5.201038213442644e-07,
+        "Direct3D12-root-UAL_Run-1-independentMaxError": 5.201038213442644e-07,
+        "Direct3D12-root-UAL_Run-1-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-UAL_Run-2-independentMaxError": 5.201038213442644e-07,
+        "Direct3D12-root-UAL_Run-VS-CS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Run-VS-MS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Run-task-independentMaxError": 5.201038213442644e-07,
+        "Direct3D12-root-UAL_Run-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-explicit-off-independentMaxError": 2.824014628810545e-07,
+        "Direct3D12-root-explicit-off-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-default-off-independentMaxError": 2.824014628810545e-07,
+        "Direct3D12-root-default-off-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-default-off": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-before-loop-independentMaxError": 3.9454561373553076e-07,
+        "Direct3D12-root-before-loop-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-after-loop-independentMaxError": 8.844018412057508e-07,
+        "Direct3D12-root-after-loop-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-playing-1-independentMaxError": 4.3393160675808673e-07,
+        "Direct3D12-root-playing-1-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-playing-2-independentMaxError": 2.9576379412254994e-07,
+        "Direct3D12-root-playing-2-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-playing-0-independentMaxError": 3.9454561373553076e-07,
+        "Direct3D12-root-playing-0-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-stress-off-independentMaxError": 7.206758739775054e-07,
+        "Direct3D12-root-stress-frustum-independentMaxError": 7.206758739775054e-07,
+        "Direct3D12-root-stress-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-ui-0-independentMaxError": 3.046322740729579e-07,
+        "Direct3D12-root-ui-1-independentMaxError": 3.046322740729579e-07,
+        "Direct3D12-root-ui-1-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-ui-2-independentMaxError": 3.046322740729579e-07,
+        "Vulkan-root-UAL_Walk-0-independentMaxError": 4.402854220098007e-07,
+        "Vulkan-root-UAL_Walk-1-independentMaxError": 4.402854220098007e-07,
+        "Vulkan-root-UAL_Walk-1-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-UAL_Walk-2-independentMaxError": 4.402854220098007e-07,
+        "Vulkan-root-UAL_Walk-VS-CS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Walk-VS-MS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0180511474609375,
+            "aboveTolerance": 3,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Walk-task-independentMaxError": 4.402854220098007e-07,
+        "Vulkan-root-UAL_Walk-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Run-0-independentMaxError": 5.201038213442644e-07,
+        "Vulkan-root-UAL_Run-1-independentMaxError": 5.201038213442644e-07,
+        "Vulkan-root-UAL_Run-1-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-UAL_Run-2-independentMaxError": 5.201038213442644e-07,
+        "Vulkan-root-UAL_Run-VS-CS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Run-VS-MS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Run-task-independentMaxError": 5.201038213442644e-07,
+        "Vulkan-root-UAL_Run-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-explicit-off-independentMaxError": 2.824014628810545e-07,
+        "Vulkan-root-explicit-off-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-default-off-independentMaxError": 2.824014628810545e-07,
+        "Vulkan-root-default-off-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-default-off": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-before-loop-independentMaxError": 3.9454561373553076e-07,
+        "Vulkan-root-before-loop-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-after-loop-independentMaxError": 8.844018412057508e-07,
+        "Vulkan-root-after-loop-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-playing-1-independentMaxError": 4.3393160675808673e-07,
+        "Vulkan-root-playing-1-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-playing-2-independentMaxError": 2.9576379412254994e-07,
+        "Vulkan-root-playing-2-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-playing-0-independentMaxError": 3.9454561373553076e-07,
+        "Vulkan-root-playing-0-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-stress-off-independentMaxError": 7.206758739775054e-07,
+        "Vulkan-root-stress-frustum-independentMaxError": 7.206758739775054e-07,
+        "Vulkan-root-stress-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-ui-0-independentMaxError": 3.046322740729579e-07,
+        "Vulkan-root-ui-1-independentMaxError": 3.046322740729579e-07,
+        "Vulkan-root-ui-1-cacheMaxError": 3.5762786865234375e-07,
+        "Vulkan-root-ui-2-independentMaxError": 3.046322740729579e-07
+      },
+      "ui": {
+        "Direct3D12-0": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Direct3D12-1": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Direct3D12-2": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Vulkan-0": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Vulkan-1": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Vulkan-2": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        }
+      }
+    },
+    "Release": {
+      "imageComparisons": {
+        "Direct3D12-root-UAL_Walk-0-independentMaxError": 4.402854220098007e-07,
+        "Direct3D12-root-UAL_Walk-1-independentMaxError": 4.402854220098007e-07,
+        "Direct3D12-root-UAL_Walk-1-cacheMaxError": 3.5762786865234375e-07,
+        "Direct3D12-root-UAL_Walk-2-independentMaxError": 4.402854220098007e-07,
+        "Direct3D12-root-UAL_Walk-VS-CS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Walk-VS-MS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0180511474609375,
+            "aboveTolerance": 3,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Walk-task-independentMaxError": 4.402854220098007e-07,
+        "Direct3D12-root-UAL_Walk-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Run-0-independentMaxError": 5.201038213442644e-07,
+        "Direct3D12-root-UAL_Run-1-independentMaxError": 5.201038213442644e-07,
+        "Direct3D12-root-UAL_Run-1-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-UAL_Run-2-independentMaxError": 5.201038213442644e-07,
+        "Direct3D12-root-UAL_Run-VS-CS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Run-VS-MS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-UAL_Run-task-independentMaxError": 5.201038213442644e-07,
+        "Direct3D12-root-UAL_Run-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-explicit-off-independentMaxError": 2.824014628810545e-07,
+        "Direct3D12-root-explicit-off-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-default-off-independentMaxError": 2.824014628810545e-07,
+        "Direct3D12-root-default-off-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-default-off": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-before-loop-independentMaxError": 3.9454561373553076e-07,
+        "Direct3D12-root-before-loop-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-after-loop-independentMaxError": 8.844018412057508e-07,
+        "Direct3D12-root-after-loop-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-playing-1-independentMaxError": 4.3393160675808673e-07,
+        "Direct3D12-root-playing-1-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-playing-2-independentMaxError": 2.9576379412254994e-07,
+        "Direct3D12-root-playing-2-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-playing-0-independentMaxError": 3.9454561373553076e-07,
+        "Direct3D12-root-playing-0-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-stress-off-independentMaxError": 7.206758739775054e-07,
+        "Direct3D12-root-stress-frustum-independentMaxError": 7.206758739775054e-07,
+        "Direct3D12-root-stress-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Direct3D12-root-ui-0-independentMaxError": 3.046322740729579e-07,
+        "Direct3D12-root-ui-1-independentMaxError": 3.046322740729579e-07,
+        "Direct3D12-root-ui-1-cacheMaxError": 2.384185791015625e-07,
+        "Direct3D12-root-ui-2-independentMaxError": 3.046322740729579e-07,
+        "Vulkan-root-UAL_Walk-0-independentMaxError": 4.402854220098007e-07,
+        "Vulkan-root-UAL_Walk-1-independentMaxError": 4.402854220098007e-07,
+        "Vulkan-root-UAL_Walk-1-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-UAL_Walk-2-independentMaxError": 4.402854220098007e-07,
+        "Vulkan-root-UAL_Walk-VS-CS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Walk-VS-MS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0180511474609375,
+            "aboveTolerance": 3,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Walk-task-independentMaxError": 4.402854220098007e-07,
+        "Vulkan-root-UAL_Walk-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Run-0-independentMaxError": 5.201038213442644e-07,
+        "Vulkan-root-UAL_Run-1-independentMaxError": 5.201038213442644e-07,
+        "Vulkan-root-UAL_Run-1-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-UAL_Run-2-independentMaxError": 5.201038213442644e-07,
+        "Vulkan-root-UAL_Run-VS-CS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Run-VS-MS": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-UAL_Run-task-independentMaxError": 5.201038213442644e-07,
+        "Vulkan-root-UAL_Run-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-explicit-off-independentMaxError": 2.824014628810545e-07,
+        "Vulkan-root-explicit-off-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-default-off-independentMaxError": 2.824014628810545e-07,
+        "Vulkan-root-default-off-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-default-off": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-before-loop-independentMaxError": 3.9454561373553076e-07,
+        "Vulkan-root-before-loop-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-after-loop-independentMaxError": 8.844018412057508e-07,
+        "Vulkan-root-after-loop-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-playing-1-independentMaxError": 4.3393160675808673e-07,
+        "Vulkan-root-playing-1-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-playing-2-independentMaxError": 2.9576379412254994e-07,
+        "Vulkan-root-playing-2-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-playing-0-independentMaxError": 3.9454561373553076e-07,
+        "Vulkan-root-playing-0-cacheMaxError": 2.384185791015625e-07,
+        "Vulkan-root-stress-off-independentMaxError": 7.206758739775054e-07,
+        "Vulkan-root-stress-frustum-independentMaxError": 7.206758739775054e-07,
+        "Vulkan-root-stress-culling": {
+          "depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "shadow-depth": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 3e-06
+          },
+          "hdr": {
+            "maxDifference": 0.0,
+            "aboveTolerance": 0,
+            "tolerance": 0.012
+          }
+        },
+        "Vulkan-root-ui-0-independentMaxError": 3.046322740729579e-07,
+        "Vulkan-root-ui-1-independentMaxError": 3.046322740729579e-07,
+        "Vulkan-root-ui-1-cacheMaxError": 3.5762786865234375e-07,
+        "Vulkan-root-ui-2-independentMaxError": 3.046322740729579e-07
+      },
+      "ui": {
+        "Direct3D12-0": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Direct3D12-1": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Direct3D12-2": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Vulkan-0": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Vulkan-1": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        },
+        "Vulkan-2": {
+          "states": {
+            "baseline": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "enabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": true,
+              "rootMotionTime": 0.03333333507180214,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0357045978307724
+              ]
+            },
+            "disabled": {
+              "time": 0.03333333507180214,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            },
+            "reset": {
+              "time": 0.0,
+              "rootMotion": false,
+              "rootMotionTime": 0.0,
+              "rootOffset": [
+                0.0,
+                0.0,
+                -0.0
+              ]
+            }
+          },
+          "changedDepthPixels": 46623,
+          "resetHdrExact": true
+        }
+      }
+    }
+  },
+  "playback": {
+    "Debug-Direct3D12": {
+      "one": {
+        "time": 0.05666666477918625,
+        "rootMotionTime": 1.3900000527501106,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4888817071914673
+        ]
+      },
+      "two": {
+        "time": 0.12333332002162933,
+        "rootMotionTime": 1.456666722893715,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.5602909326553345
+        ]
+      },
+      "zero": {
+        "time": 1.3233333826065063,
+        "rootMotionTime": 1.3233333826065063,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4174726009368896
+        ]
+      },
+      "paused": {
+        "time": 1.3233333826065063,
+        "rootMotionTime": 1.3233333826065063,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4174726009368896
+        ]
+      }
+    },
+    "Debug-Vulkan": {
+      "one": {
+        "time": 0.05666666477918625,
+        "rootMotionTime": 1.3900000527501106,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4888817071914673
+        ]
+      },
+      "two": {
+        "time": 0.12333332002162933,
+        "rootMotionTime": 1.456666722893715,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.5602909326553345
+        ]
+      },
+      "zero": {
+        "time": 1.3233333826065063,
+        "rootMotionTime": 1.3233333826065063,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4174726009368896
+        ]
+      },
+      "paused": {
+        "time": 1.3233333826065063,
+        "rootMotionTime": 1.3233333826065063,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4174726009368896
+        ]
+      }
+    },
+    "Release-Direct3D12": {
+      "one": {
+        "time": 0.05666666477918625,
+        "rootMotionTime": 1.3900000527501106,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4888817071914673
+        ]
+      },
+      "two": {
+        "time": 0.12333332002162933,
+        "rootMotionTime": 1.456666722893715,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.5602909326553345
+        ]
+      },
+      "zero": {
+        "time": 1.3233333826065063,
+        "rootMotionTime": 1.3233333826065063,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4174726009368896
+        ]
+      },
+      "paused": {
+        "time": 1.3233333826065063,
+        "rootMotionTime": 1.3233333826065063,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4174726009368896
+        ]
+      }
+    },
+    "Release-Vulkan": {
+      "one": {
+        "time": 0.05666666477918625,
+        "rootMotionTime": 1.3900000527501106,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4888817071914673
+        ]
+      },
+      "two": {
+        "time": 0.12333332002162933,
+        "rootMotionTime": 1.456666722893715,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.5602909326553345
+        ]
+      },
+      "zero": {
+        "time": 1.3233333826065063,
+        "rootMotionTime": 1.3233333826065063,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4174726009368896
+        ]
+      },
+      "paused": {
+        "time": 1.3233333826065063,
+        "rootMotionTime": 1.3233333826065063,
+        "rootSpeed": 1.0711379051208496,
+        "rootOffset": [
+          0.0,
+          0.0,
+          -1.4174726009368896
+        ]
+      }
+    }
+  },
+  "previousReleaseBaseline": {
+    "Direct3D12-0": "bit-identical HDR",
+    "Direct3D12-1": "bit-identical HDR",
+    "Direct3D12-2": "bit-identical HDR",
+    "Vulkan-0": "bit-identical HDR",
+    "Vulkan-1": "bit-identical HDR",
+    "Vulkan-2": "bit-identical HDR"
+  }
+}

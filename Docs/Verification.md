@@ -308,3 +308,9 @@ Khronos glTF Exporter 5.2.40、glTF-Validator 2.0.0-dev.3.10、Blender付属Pyth
 ## GPUスキニングのユーザー確認と動画掲載（2026-10-15）
 
 ユーザーによるローカル動作確認が完了し、OKの連絡とGitHub反映の指示を受けました。提供された6本の1280×720 MP4を確認し、README、API別6記事、glTFローダー記事、GPU共通章、Blenderアセット記事から参照できるようにしました。[動画一覧](Assets/Videos/README.md)と[元ファイル名・SHA-256の記録](Assets/Videos/Manifest.json)を追加しています。動画は再圧縮せず、録画に含まれる方式・クリップ・体数をUIで確認して説明しました。D3D12の2本はいずれもVertex経路のWalk／Runなので、Computeとして扱っていません。
+
+## 6サンプルのRoot motion ON／OFF（2026-10-15）
+
+ImGuiにRoot motionを追加し、初期値とResetをOFFにしました。Walk／Runのその場モーションから支持足の後退速度を調べて前進量を復元し、Actor Worldへ適用します。Shaderの変形データはローカル空間のまま共有し、Shadow・カリングのWorld変換とライト範囲を移動へ追従させています。配布モデル・Blenderと固定モーション素材のバイト列は変更していません。
+
+全体のx64 Debug／Releaseビルド、vcxproj／filters照合、CPUスキニング・旧ローダー、09のImGui回帰、新6アプリの描画・リサイズ・最小化復帰・終了を検証しました。新6アプリの実Checkbox操作を両構成で行い、ON時のDepth変化、OFFで元配置へ戻ること、ResetでRoot motionがOFFとなりHDRがbaselineへ完全復帰することを確認しています。周期をまたいだ前進、速度・停止、3方式と64体の動的カリングの比較も通過し、Debug検証エラー0件です。初期値OFFのHDRは更新前Releaseの全6アプリとビット一致しました。[検証記録](SkinningVerification.md#root-motion切り替えの追加検証2026-10-15)と[数値結果](SkinningRootMotionVerification.json)を参照してください。

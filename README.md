@@ -261,6 +261,6 @@ meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定Submoduleです。`git s
 
 第21回の後に[glTFスキニング対応ローダー](Docs/GltfSkinningLoading.md)を読み、22のVS、23のCompute Cache、発展10のMSへ進みます。[共通GPU解説](Docs/GpuSkinning.md)では変形の場所、Shadow／Colorでの再利用、Buffer同期、動的Meshlet境界とCPU/GPUの性能差を説明します。
 
-[SilverRobotAnimated.blend](SourceArt/Blender/SilverRobot/SilverRobotAnimated.blend)をBlenderで開くと、6つのリターゲット済みActionとA/T確認ポーズを確認できます。GPUサンプルの初期状態は歩行・速度1・1体。ImGuiでクリップ／再生／Seek／1フレーム送り／Reset／64体／Shadowを操作できます。`--animation UAL_Walk --animation-time 0.3 --pause-animation --characters 64`で同じ条件を再現できます。
+[SilverRobotAnimated.blend](SourceArt/Blender/SilverRobot/SilverRobotAnimated.blend)をBlenderで開くと、6つのリターゲット済みActionとA/T確認ポーズを確認できます。GPUサンプルの初期状態は歩行・速度1・1体・Root motion OFF。ImGuiでクリップ／再生／Root motion／Seek／1フレーム送り／Reset／64体／Shadowを操作できます。Root motionはWalk／Runの足運びから前進量を復元し、OFFまたはResetで元の配置へ戻ります。`--animation UAL_Walk --animation-time 0.3 --pause-animation --characters 64`で同じ条件を再現できます。
 
 `Tools/TestSkinningCpu.ps1`、`Tools/TestSkinning.ps1`、`Tools/TestSkinningFailures.ps1`、`Tools/TestSilverRobotAnimated.ps1`でCPU・GPU・Shader欠落・Blenderを検証し、`Tools/MeasureSkinning.ps1`でReleaseの1体／64体を計測します。[数値結果と検証条件](Docs/SkinningVerification.md)

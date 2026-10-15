@@ -316,5 +316,8 @@
     <ClInclude Include="..\..\Shared\SkinningTiming.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Shared\SkinningRootMotion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

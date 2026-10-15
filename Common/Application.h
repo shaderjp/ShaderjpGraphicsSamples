@@ -46,6 +46,7 @@ struct Options
     float animationTime = 0, animationSpeed = 1;
     uint32_t characters = 1;
     bool pauseAnimation = false;
+    bool rootMotion = false, testRootMotion = false;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

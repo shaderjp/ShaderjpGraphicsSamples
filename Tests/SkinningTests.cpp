@@ -1,3 +1,4 @@
+#include "../Samples/Shared/SkinningRootMotion.h"
 #include "SkinnedGltf.h"
 #include <cmath>
 #include <cstring>
@@ -24,6 +25,39 @@ int main(int argc, char **argv)
         Require(model.primitives.size() == 5 && model.skins.size() == 1 && model.skins[0].joints.size() == 53,
                 "Bundled skin structure");
         Require(model.clips.size() == 8, "Six UAL clips plus A/T pose");
+        SkinningRootMotion motion;
+        motion.Build(model);
+        for (size_t i = 0; i < model.clips.size(); ++i)
+        {
+            auto &name = model.clips[i].name;
+            if (name == "UAL_Walk" || name == "UAL_Run")
+            {
+                Require(motion.speeds[i] > .1f && motion.speeds[i] < 10, "Plausible locomotion speed");
+                auto before = motion.Offset(i, model.clips[i].duration - .001);
+                auto after = motion.Offset(i, model.clips[i].duration + .001);
+                Require(after.z < before.z && before.z < 0, "Continuous forward root across loop");
+                Require(std::abs((after.z - before.z) + motion.speeds[i] * .002f) < 1e-5f,
+                        "Root displacement does not wrap with pose");
+            }
+            else
+                Require(motion.speeds[i] == 0, "Idle/jump/confirmation poses have no reconstructed travel");
+            Require(motion.Offset(i, 0).z == 0, "OFF/reset root remains at original placement");
+        }
+        GltfSkinnedModel planted;
+        planted.nodes.resize(2);
+        planted.nodes[0].name = "Foot.L";
+        planted.nodes[1].name = "Foot.R";
+        SkinChannel footSlide;
+        footSlide.node = 0;
+        footSlide.path = SkinChannelPath::Translation;
+        footSlide.times = {0, 1};
+        footSlide.values = {{0, 0, 0, 0}, {0, 0, 2, 0}};
+        planted.clips.push_back({"UAL_Walk", 1, {footSlide}});
+        planted.nodes[1].translation.y = 1;
+        SkinningRootMotion knownMotion;
+        knownMotion.Build(planted);
+        Require(std::abs(knownMotion.speeds[0] - 2) < 1e-5f, "Support foot reconstructs known 2 m/s speed");
+        Require(std::abs(knownMotion.Offset(0, 2.5).z + 5) < 1e-5f, "Known root displacement over loops");
         auto rest = EvaluateGltfPose(model, SkinRestPose, 0);
         for (size_t p = 0; p < model.primitives.size(); ++p)
         {

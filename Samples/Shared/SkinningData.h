@@ -1,6 +1,7 @@
 #pragma once
 #include "MeshletData.h"
 #include "SkinnedGltf.h"
+#include "SkinningRootMotion.h"
 #include <chrono>
 #include <map>
 namespace tutorial
@@ -19,6 +20,9 @@ struct SkinJointBounds
 struct SkinningData
 {
     GltfSkinnedModel model;
+    SkinningRootMotion rootMotion;
+    DirectX::XMFLOAT3 rootOffset{};
+    std::array<DirectX::XMFLOAT3, 2> baseMinimum{}, baseMaximum{};
     std::vector<SkinInfluence> influences;
     std::vector<std::vector<SkinJointBounds>> jointBounds;
     std::vector<DirectX::XMFLOAT4X4> palettes;
@@ -29,6 +33,7 @@ struct SkinningData
     {
         using namespace DirectX;
         model = LoadGltfSkinned(path);
+        rootMotion.Build(model);
         Workshop w;
         for (auto &p : model.primitives)
             if (p.node != model.primitives.front().node || p.skin != model.primitives.front().skin)
@@ -114,6 +119,8 @@ struct SkinningData
             XMStoreFloat4x4(&floorInstance.world, XMMatrixIdentity());
             s.instances.push_back(floorInstance);
             w.scenes.push_back(s);
+            baseMinimum[scene] = s.minimum;
+            baseMaximum[scene] = s.maximum;
         }
         w.cameras = {{"Hero", {2.2f, 1.8f, -3.1f}, {0, 1, 0}, 40, .05f, 100},
                      {"StressHero", {20, 18, -23}, {0, 1, 0}, 45, .05f, 100},
@@ -123,6 +130,17 @@ struct SkinningData
         w.environmentIntensity = .8f;
         w.exposure = 1;
         return w;
+    }
+    void UpdateRootMotion(Workshop &w, size_t clip, double seconds)
+    {
+        rootOffset = rootMotion.Offset(clip, seconds);
+        for (size_t i = 0; i < w.scenes.size(); ++i)
+        {
+            w.scenes[i].minimum = {baseMinimum[i].x + rootOffset.x, baseMinimum[i].y,
+                                   baseMinimum[i].z + rootOffset.z};
+            w.scenes[i].maximum = {baseMaximum[i].x + rootOffset.x, baseMaximum[i].y,
+                                   baseMaximum[i].z + rootOffset.z};
+        }
     }
     void PrepareBounds(const MeshletData &data)
     {
@@ -195,7 +213,9 @@ struct SkinningData
             instance.primitive.y = actor * vertexCount;
             instance.primitive.z = actor * jointCount;
             instance.primitive.w = actor * uint32_t(data.meshlets.size());
-            auto world = XMLoadFloat4x4(&meshWorlds[actor]) * XMLoadFloat4x4(&instance.world);
+            auto world = XMLoadFloat4x4(&meshWorlds[actor]) *
+                         XMMatrixTranslation(rootOffset.x, rootOffset.y, rootOffset.z) *
+                         XMLoadFloat4x4(&instance.world);
             XMStoreFloat4x4(&instance.world, world);
             XMStoreFloat4x4(&instance.normal, XMMatrixTranspose(XMMatrixInverse(nullptr, world)));
             if (!bounds)

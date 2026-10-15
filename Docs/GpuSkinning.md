@@ -85,7 +85,28 @@ Vulkanは`STORAGE_BUFFER | VERTEX_BUFFER`を持つ同じBufferを使い、`COMPU
 
 各サンプルはGPU完了を待ってからpalette、境界、Instance、UI Bufferを書き換えます。Compute、Shadow、Color、UI、読戻し、解放も各APIのSample.cpp内に置きます。複数フレームを並行させる最適化を追加するなら、paletteとキャッシュのフレーム別領域・Fence・再利用条件も追加してください。
 
-初期値はUAL_Walk／速度1／1体です。クリップ、Paused、速度、Time、30 fpsの1フレーム送り、Reset、1／64体、Shadow、PCF、表示モードを変更できます。64体はクリップ長の1/64ずつ位相をずらした独立姿勢です。JumpStartとJumpLandは自動連結せず、個別のクリップとして終端で保持します。
+初期値はUAL_Walk／速度1／1体／Root motion OFFです。クリップ、Paused、Root motion、速度、Time、30 fpsの1フレーム送り、Reset、1／64体、Shadow、PCF、表示モードを変更できます。64体はクリップ長の1/64ずつ位相をずらした独立姿勢です。JumpStartとJumpLandは自動連結せず、個別のクリップとして終端で保持します。
+
+## Root motionを切り替える
+
+6サンプル共通のImGuiの`Root motion`をONにすると、Walk／Runが左手系の前方（−Z）へ進みます。初期値はOFFで、従来と同じ配置のその場再生です。OFFへ戻すと元の配置へ戻り、ResetでもOFFと移動量0に戻ります。
+
+配布したクリップと固定元ライブラリは水平Root移動を持たないため、[SkinningRootMotion.h](../Samples/Shared/SkinningRootMotion.h)で足運びから進行トラックを復元しています。30 fpsで足／つま先の中心を評価し、床に近い支持足が後方へ動く速度の中央値を使って一定速度の前進を作ります。元の作者が作成したRoot Motion曲線を読み込んだものではありません。glTF／GLBとBlender正本は変更せず、腰の上下動、揺れ、接地補正も維持します。Idle・ジャンプ・A/T確認ポーズには前進を加えません。
+
+前進はActorのWorld行列へ一度だけ加えます。VS／Compute／Meshのpaletteやキャッシュへ二重に加えず、ShadowとColorで同じWorldを使用します。Meshlet境界のWorld変換とライトの撮影範囲も移動に追従します。床とカメラは固定なので、画面外へ進んだ場合はResetまたはカメラ移動を使ってください。
+
+ポーズの時刻はループごとに折り返しますが、移動時間は累積して、周期の境界で位置が巻き戻らないようにします。Paused／速度0では停止し、速度、TimeのSeek、1フレーム送りも移動へ反映します。ONへの切替とクリップ変更は移動量を0から始め、Seekはその時刻の移動位置へ移します。64体にも同じ進行量を適用し、ポーズの位相差は維持します。
+
+CLIでは`--root-motion on`／`--root-motion off`で指定できます。省略時はOFFです。`--pause-animation --animation-time 0.2 --root-motion on`なら、その時刻の移動を含めて再現できます。ImGuiに表示する`Root`は累積距離と復元した速度です。
+
+![Root motionをONにしたVulkanの実GPU表示](Vulkan/Images/22_VertexSkinning-root-motion.png)
+
+[Root motionの検証結果](SkinningRootMotionVerification.json)には、両構成・両API・3方式での実チェックボックス操作、Depthの変化、Resetの完全一致、速度・Pause・周期をまたぐ移動を記録しています。
+
+```powershell
+.\Tools\TestSkinning.ps1 -Configuration Debug -RootMotionOnly
+.\Tools\TestSkinning.ps1 -Configuration Release -RootMotionOnly
+```
 
 ```powershell
 # 3方式・両APIで同じ姿勢を再現できる。

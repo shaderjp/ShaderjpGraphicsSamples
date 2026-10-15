@@ -10,17 +10,19 @@ CLIPS=['UAL_Idle','UAL_Walk','UAL_Run','UAL_JumpStart','UAL_JumpLoop','UAL_JumpL
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--configuration',choices=['Debug','Release'],default='Debug')
-    p.add_argument('--quick',action='store_true');p.add_argument('--api',choices=['Direct3D12','Vulkan']);args=p.parse_args()
+    modes=p.add_mutually_exclusive_group();modes.add_argument('--quick',action='store_true');modes.add_argument('--root-only',action='store_true')
+    p.add_argument('--api',choices=['Direct3D12','Vulkan']);args=p.parse_args()
     work=ROOT/'.cache/skinning/gpu'/args.configuration;work.mkdir(parents=True,exist_ok=True)
     results={};startup=None
     document,accessor=read(ROOT/'Assets/Models/SilverRobotAnimated/SilverRobot.gltf')
     if os.name=='nt':startup=subprocess.STARTUPINFO();startup.dwFlags=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
-    def run(api,topic,label,clip='UAL_Walk',at=.3,extra=(),ui=False,play=False):
+    def run(api,topic,label,clip='UAL_Walk',at=.3,extra=(),ui=False,play=False,root_ui=False):
         name=api+'_'+topic;exe=ROOT/'bin/x64'/args.configuration/name/(name+'.exe')
         image=work/(api+'-'+label+'.png');log=image.with_suffix('.log')
         command=[str(exe),'--frames','4','--fixed-dt','.016666667','--pause-animation','--animation',clip,
                  '--animation-time',str(at),'--no-ui','--capture-gpu','--screenshot',str(image),'--log',str(log),*extra]
         if ui:command[command.index('--frames')+1]='36';command.remove('--no-ui');command.append('--test-ui')
+        if root_ui:command[command.index('--frames')+1]='36';command.remove('--no-ui');command.append('--test-root-motion')
         if play:command.remove('--pause-animation')
         if '--test-window' in extra:command[command.index('--frames')+1]='48'
         env=os.environ.copy()
@@ -32,6 +34,8 @@ def main():
         folder=image.parent/(image.stem+'-gpu');meta=json.loads((folder/'metadata.json').read_text())
         assert all(im['finite'] for im in meta.get('images',[])),(name,label,'Non-finite image')
         skin=json.loads((folder/'skinning.json').read_text());assert skin['actors'] in (1,64)
+        assert skin['rootMotion']==('--root-motion' in extra and extra[extra.index('--root-motion')+1]=='on'),(api,label,'Root motion default/OFF')
+        assert np.allclose(skin['rootOffset'],[0,0,-skin['rootSpeed']*skin['rootMotionTime'] if skin['rootMotion'] else 0],atol=3e-5)
         # Independent glTF evaluator previously checked against Blender; compare C++ handedness and palette math.
         animation=next(a for a in document['animations'] if a['name']==clip)
         duration=max(float(accessor(s['input'])[-1,0]) for s in animation['samplers'])
@@ -66,13 +70,49 @@ def main():
             report[file]={'maxDifference':float(diff.max()),'aboveTolerance':int(bad.sum()),'tolerance':tolerance}
         results[label]=report
     for api in ([args.api] if args.api else ['Direct3D12','Vulkan']):
-        clips=['UAL_Walk'] if args.quick else CLIPS
+        clips=[] if args.root_only else ['UAL_Walk'] if args.quick else CLIPS
         for clip in clips:
             paths=[run(api,topic,clip+'-'+str(i),clip,extra=('--meshlet-culling','off') if i==2 else ()) for i,topic in enumerate(TOPICS)]
             compare(paths[0],paths[1],api+'-'+clip+'-VS-CS');compare(paths[0],paths[2],api+'-'+clip+'-VS-MS')
             task=run(api,TOPICS[2],clip+'-task',clip)
             compare(paths[2],task,api+'-'+clip+'-animated-culling')
         if not args.quick:
+            for clip in ['UAL_Walk','UAL_Run']:
+                moving=[run(api,topic,'root-'+clip+'-'+str(i),clip,at=.2,extra=('--root-motion','on','--meshlet-culling','off') if i==2 else ('--root-motion','on')) for i,topic in enumerate(TOPICS)]
+                compare(moving[0],moving[1],api+'-root-'+clip+'-VS-CS');compare(moving[0],moving[2],api+'-root-'+clip+'-VS-MS')
+                task=run(api,TOPICS[2],'root-'+clip+'-task',clip,at=.2,extra=('--root-motion','on'))
+                compare(moving[2],task,api+'-root-'+clip+'-culling')
+                for folder in moving:
+                    state=json.loads((folder/'skinning.json').read_text());assert state['rootOffset'][2]<-.01
+            explicit_off=run(api,TOPICS[1],'root-explicit-off',extra=('--root-motion','off'))
+            original=run(api,TOPICS[1],'root-default-off');compare(explicit_off,original,api+'-root-default-off')
+            duration=max(float(accessor(s['input'])[-1,0]) for s in next(a for a in document['animations'] if a['name']=='UAL_Walk')['samplers'])
+            before=run(api,TOPICS[1],'root-before-loop',at=duration-.01,extra=('--root-motion','on'))
+            after=run(api,TOPICS[1],'root-after-loop',at=duration+.01,extra=('--root-motion','on'))
+            first=json.loads((before/'skinning.json').read_text());last=json.loads((after/'skinning.json').read_text())
+            assert last['time']<first['time'] and last['rootOffset'][2]<first['rootOffset'][2],(api,'Root must not rewind on loop')
+            playback=[]
+            for speed in (1,2,0):
+                folder=run(api,TOPICS[1],'root-playing-'+str(speed),at=duration-.01,extra=('--root-motion','on','--animation-speed',str(speed)),play=True)
+                playback.append(json.loads((folder/'skinning.json').read_text()))
+            origin=duration-.01
+            assert playback[0]['rootMotionTime']>duration and playback[0]['time']<.2
+            assert abs((playback[1]['rootMotionTime']-origin)-2*(playback[0]['rootMotionTime']-origin))<2e-6
+            assert abs(playback[2]['rootMotionTime']-origin)<2e-6
+            assert abs(first['rootMotionTime']-origin)<2e-6,(api,'Paused root must hold its location')
+            moving_stress=[run(api,TOPICS[2],'root-stress-'+c,at=.2,extra=('--root-motion','on','--characters','64','--meshlet-culling',c)) for c in ('off','frustum')]
+            compare(*moving_stress,api+'-root-stress-culling')
+            for i,topic in enumerate(TOPICS):
+                run(api,topic,'root-ui-'+str(i),at=0,root_ui=True)
+                base=work/(api+'-root-ui-'+str(i)+'-baseline-gpu');enabled=work/(api+'-root-ui-'+str(i)+'-enabled-gpu');disabled=work/(api+'-root-ui-'+str(i)+'-disabled-gpu');reset=work/(api+'-root-ui-'+str(i)+'-reset-gpu')
+                states=[json.loads((path/'skinning.json').read_text()) for path in (base,enabled,disabled,reset)]
+                assert [state['rootMotion'] for state in states]==[False,True,False,False],(api,topic,'Actual ImGui checkbox input')
+                assert states[1]['rootOffset'][2]<-.01 and all(states[j]['rootOffset']==[0,0,0] for j in (0,2,3))
+                assert abs(states[1]['time']-states[2]['time'])<1e-6,(api,'ON/OFF must retain pose time')
+                a=np.fromfile(enabled/'hdr.bin',np.float16);b=np.fromfile(disabled/'hdr.bin',np.float16)
+                assert (np.abs(a.astype(np.float32)-b.astype(np.float32))>.01).sum()>100,(api,topic,'Root checkbox must move GPU geometry')
+                assert np.array_equal(np.fromfile(base/'hdr.bin',np.float16),np.fromfile(reset/'hdr.bin',np.float16)),(api,topic,'Reset disables root motion and restores GPU baseline')
+            if args.root_only:continue
             stress=[run(api,topic,'stress-'+str(i),extra=('--characters','64','--meshlet-culling','off') if i==2 else ('--characters','64')) for i,topic in enumerate(TOPICS)]
             compare(stress[0],stress[1],api+'-stress-VS-CS');compare(stress[0],stress[2],api+'-stress-VS-MS')
             task=run(api,TOPICS[2],'stress-task',extra=('--characters','64'));compare(stress[2],task,api+'-stress-culling')

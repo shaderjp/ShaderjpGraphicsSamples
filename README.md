@@ -109,11 +109,13 @@ Visual Studioでは各APIのプロジェクトをDirect3D12／Vulkanのソリュ
 |---|---|
 | [![AS／TaskカリングのMeshlet分割を色分け](Docs/Vulkan/Images/Advanced06_MeshletCulling-meshlets.png)](Docs/Vulkan/Advanced06_MeshletCulling.md) | [![Mesh ShaderとTiled Deferredのライト候補数](Docs/Direct3D12/Images/Advanced09_MeshShaderTiledDeferred-light-count.png)](Docs/Direct3D12/Advanced09_MeshShaderTiledDeferred.md) |
 
-GPUスキニングの実行動画も追加しました。画像をクリックするとMP4を開きます。[全6本の録画一覧](Docs/Assets/Videos/README.md)
+GPUスキニングの実行動画を更新しました。両API・3方式の1体歩行6本と、Mesh Shaderの64体表示2本を掲載しています。画像をクリックするとMP4を開きます。[全8本の録画一覧](Docs/Assets/Videos/README.md)
 
-| Vertex：Direct3D12、Walk | Compute Cache：Vulkan、Run | Mesh／Task：Vulkan、64体 |
+| Vertex：Direct3D12、Walk 1体 | Compute Cache：Vulkan、Walk 1体 | Mesh／Task：Vulkan、Run 64体 |
 |---|---|---|
-| [![Direct3D12 22_VertexSkinning：UAL_Walk、1体の録画](Docs/Assets/Videos/Previews/Direct3D12_22_VertexSkinning_Walk.jpg)](Docs/Assets/Videos/Direct3D12_22_VertexSkinning_Walk.mp4) | [![Vulkan 23_ComputeSkinningCache：UAL_Run、1体の録画](Docs/Assets/Videos/Previews/Vulkan_23_ComputeSkinningCache_Run.jpg)](Docs/Assets/Videos/Vulkan_23_ComputeSkinningCache_Run.mp4) | [![Vulkan Advanced10_MeshShaderSkinning：UAL_Run、64体の録画](Docs/Assets/Videos/Previews/Vulkan_Advanced10_MeshShaderSkinning_Run64.jpg)](Docs/Assets/Videos/Vulkan_Advanced10_MeshShaderSkinning_Run64.mp4) |
+| [![Direct3D12 22_VertexSkinning：UAL_Walk、1体の録画](Docs/Assets/Videos/Previews/Direct3D12_22_VertexSkinning_Walk.jpg)](Docs/Assets/Videos/Direct3D12_22_VertexSkinning_Walk.mp4) | [![Vulkan 23_ComputeSkinningCache：UAL_Walk、1体の録画](Docs/Assets/Videos/Previews/Vulkan_23_ComputeSkinningCache_Walk.jpg)](Docs/Assets/Videos/Vulkan_23_ComputeSkinningCache_Walk.mp4) | [![Vulkan Advanced10_MeshShaderSkinning：UAL_Run、64体の録画](Docs/Assets/Videos/Previews/Vulkan_Advanced10_MeshShaderSkinning_Run64.jpg)](Docs/Assets/Videos/Vulkan_Advanced10_MeshShaderSkinning_Run64.mp4) |
+
+Mesh Shaderの64体表示は[Direct3D12版](Docs/Assets/Videos/Direct3D12_Advanced10_MeshShaderSkinning_Run64.mp4)と[Vulkan版](Docs/Assets/Videos/Vulkan_Advanced10_MeshShaderSkinning_Run64.mp4)を用意しました。どちらもUAL_Run、Root motion OFFです。
 
 初期のOBJ・テクスチャ描画サンプル（Direct3D12）：
 

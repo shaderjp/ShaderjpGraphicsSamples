@@ -24,7 +24,7 @@
 
 ## GPUサンプルでモーションを見る
 
-[実行動画一覧](Videos/README.md)に、1体のWalk／Runと64体の独立姿勢を掲載しました。Direct3D12のVSによる歩行とJog、VulkanのCompute CacheによるJog、両APIのMesh／Taskによる64体を見られます。上のCycles参考画像と合わせて、実際のPBR／Shadow表示での動きを確認してください。
+[実行動画一覧](Videos/README.md)に、Direct3D12／VulkanのVS・Compute Cache・Mesh Shaderによる1体のWalkを6本掲載しました。Mesh／Taskは両APIの64体Runも用意し、位相をずらした独立姿勢とShadowを確認できます。全8本ともRoot motionはOFFです。上のCycles参考画像と合わせて、実際のPBR／Shadow表示での動きを確認してください。
 
 ## Actionと再生範囲
 

@@ -8,15 +8,11 @@ Vertex ShaderでglTFスキニングし、動くロボットのShadowとPBR Color
 
 プレビュー画像をクリックするとMP4を開きます。
 
-**UAL_Run／1体**：VSでJogを変形し、腕振り・膝の屈曲・床へ落ちる影を確認できます。
-
-[![Direct3D12 22_VertexSkinning：UAL_Run、1体の録画](../Assets/Videos/Previews/Direct3D12_22_VertexSkinning_Run.jpg)](../Assets/Videos/Direct3D12_22_VertexSkinning_Run.mp4)
-
-**UAL_Walk／1体**：同じVSの歩行です。Runとの姿勢・周期の違いと、足に追従するShadowを確認できます。
+**UAL_Walk／1体**：Vertex Shaderによる1体の歩行です。腕振り・膝の屈曲と、足に追従するShadowを確認できます。
 
 [![Direct3D12 22_VertexSkinning：UAL_Walk、1体の録画](../Assets/Videos/Previews/Direct3D12_22_VertexSkinning_Walk.jpg)](../Assets/Videos/Direct3D12_22_VertexSkinning_Walk.mp4)
 
-録画は2026-10-15、1280×720です。[動画一覧と元ファイルの記録](../Assets/Videos/README.md)も参照できます。
+録画は2026-10-15、1280×720です。Root motionはOFF、速度1です。[全8本の動画一覧と元ファイルの記録](../Assets/Videos/README.md)も参照できます。
 
 ## 共通アセットと操作
 

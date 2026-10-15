@@ -4,7 +4,7 @@
 
 静的な[従来のglTFローダー](GltfLoading.md)はそのまま残し、[Common/SkinnedGltf.h](../Common/SkinnedGltf.h)／[cpp](../Common/SkinnedGltf.cpp)に`LoadGltfSkinned`を追加しました。JSON解析は既存のnlohmann/jsonを使い、変形に必要な参照解決と評価は教材のコードで実装しています。CommonはCPUデータを返し、Direct3D12／Vulkanのリソースを所有しません。
 
-[実行動画](Assets/Videos/README.md)では、このローダーが評価したWalk／RunがVS／CS／MSへ渡り、ロボットとShadowが動く結果を確認できます。データの読込とCPU評価は以下で順に追います。
+[実行動画](Assets/Videos/README.md)では、このローダーが評価したWalkを両APIのVS／CS／MSで描画した6本と、Mesh Shaderによる64体のRunを両APIで確認できます。ロボットとShadowが同じ姿勢へ追従する結果を見てください。データの読込とCPU評価は以下で順に追います。
 
 ## glTFの構造と対応範囲
 

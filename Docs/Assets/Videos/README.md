@@ -1,66 +1,87 @@
 # GPUスキニングの実行動画
 
-2026-10-15（日本時間）に録画された6本です。すべて1280×720の実行画面で、ImGuiのAPI別スキニング方式、選択クリップ、体数とShadowの動きを確認できます。**プレビュー画像をクリックするとMP4を開きます。**
+2026-10-15（日本時間）に録画された8本です。Direct3D12／Vulkanの3方式すべてで1体の歩行（UAL_Walk）を掲載し、Mesh Shaderは両APIの64体表示（UAL_Run／Jog）も用意しました。すべて1280×720です。**プレビュー画像をクリックするとMP4を開きます。**
 
-録画はRoot motion切り替えの追加前で、現在のRoot motion OFFに相当するその場再生です。
+全8本ともRoot motionはOFF、速度1、Loop・Shadow・3×3 PCF・IBLはONです。Mesh Shaderの4本はAS／TaskとAnimated frustumを使用しています。UIと手足・Shadowの動きを合わせて確認できます。
 
-ファイル名をAPI・サンプル・クリップ・体数で揃えました。MP4は再圧縮せず、元のバイト列を保持しています。[Manifest.json](Manifest.json)に元ファイル名、掲載先、クリップ、体数、容量、SHA-256を保存しています。
+ファイル名をAPI・サンプル・クリップ・体数で揃えました。MP4は再圧縮せず、元のバイト列を保持しています。[Manifest.json](Manifest.json)に元ファイル名、録画日時、掲載記事、クリップ、体数、再生設定、容量、SHA-256を保存しています。
 
-| 方式 | Direct3D12 | Vulkan | 見どころ |
+| 方式・体数 | Direct3D12の動画 | Vulkanの動画 | 解説記事 |
 |---|---|---|---|
-| Vertex | [22の記事](../../Direct3D12/22_VertexSkinning.md) | [22の記事](../../Vulkan/22_VertexSkinning.md) | 1体のWalk／Runと動くShadow |
-| Compute Cache | [23の記事](../../Direct3D12/23_ComputeSkinningCache.md) | [23の記事](../../Vulkan/23_ComputeSkinningCache.md) | VulkanのRun、変形済み頂点キャッシュ1.43 MiB |
-| Mesh／Task | [発展10の記事](../../Direct3D12/Advanced10_MeshShaderSkinning.md) | [発展10の記事](../../Vulkan/Advanced10_MeshShaderSkinning.md) | 64体の独立姿勢、Animated frustum、Shadow |
+| Vertex：Walk／1体 | [Direct3D12](Direct3D12_22_VertexSkinning_Walk.mp4) | [Vulkan](Vulkan_22_VertexSkinning_Walk.mp4) | [D3D12](../../Direct3D12/22_VertexSkinning.md)／[Vulkan](../../Vulkan/22_VertexSkinning.md) |
+| Compute Cache：Walk／1体 | [Direct3D12](Direct3D12_23_ComputeSkinningCache_Walk.mp4) | [Vulkan](Vulkan_23_ComputeSkinningCache_Walk.mp4) | [D3D12](../../Direct3D12/23_ComputeSkinningCache.md)／[Vulkan](../../Vulkan/23_ComputeSkinningCache.md) |
+| Mesh／Task：Walk／1体 | [Direct3D12](Direct3D12_Advanced10_MeshShaderSkinning_Walk.mp4) | [Vulkan](Vulkan_Advanced10_MeshShaderSkinning_Walk.mp4) | [D3D12](../../Direct3D12/Advanced10_MeshShaderSkinning.md)／[Vulkan](../../Vulkan/Advanced10_MeshShaderSkinning.md) |
+| Mesh／Task：Run／64体 | [Direct3D12](Direct3D12_Advanced10_MeshShaderSkinning_Run64.mp4) | [Vulkan](Vulkan_Advanced10_MeshShaderSkinning_Run64.mp4) | [D3D12](../../Direct3D12/Advanced10_MeshShaderSkinning.md)／[Vulkan](../../Vulkan/Advanced10_MeshShaderSkinning.md) |
 
-今回の録画はD3D12 VSが2本、D3D12 Meshが1本、VulkanはVS／Compute／Meshが各1本です。方式はファイル名だけで判断せず、映像内のUIで確認しています。
+## 1体の歩行：3方式×2API
 
-## Direct3D12 22_VertexSkinning：UAL_Run／1体
+### Direct3D12 22_VertexSkinning：UAL_Walk／1体
 
-VSでJogを変形し、腕振り・膝の屈曲・床へ落ちる影を確認できます。
-
-[![Direct3D12 22_VertexSkinning：UAL_Run、1体の録画](Previews/Direct3D12_22_VertexSkinning_Run.jpg)](Direct3D12_22_VertexSkinning_Run.mp4)
-
-[MP4を開く](Direct3D12_22_VertexSkinning_Run.mp4) · 8.41 MiB
-
-## Direct3D12 22_VertexSkinning：UAL_Walk／1体
-
-同じVSの歩行です。Runとの姿勢・周期の違いと、足に追従するShadowを確認できます。
+Vertex Shaderによる1体の歩行です。腕振り・膝の屈曲と、足に追従するShadowを確認できます。
 
 [![Direct3D12 22_VertexSkinning：UAL_Walk、1体の録画](Previews/Direct3D12_22_VertexSkinning_Walk.jpg)](Direct3D12_22_VertexSkinning_Walk.mp4)
 
-[MP4を開く](Direct3D12_22_VertexSkinning_Walk.mp4) · 8.54 MiB
+[MP4を開く](Direct3D12_22_VertexSkinning_Walk.mp4) · 14.1秒 · 8.55 MiB
 
-## Direct3D12 Advanced10_MeshShaderSkinning：UAL_Walk／64体
+### Direct3D12 23_ComputeSkinningCache：UAL_Walk／1体
 
-AS／TaskとAnimated frustumを有効にし、64体の位相をずらした歩行を描画しています。
+Compute Cacheによる1体の歩行です。UIのCache 1.43 MiBと、変形に追従するShadowを確認できます。
 
-[![Direct3D12 Advanced10_MeshShaderSkinning：UAL_Walk、64体の録画](Previews/Direct3D12_Advanced10_MeshShaderSkinning_Walk64.jpg)](Direct3D12_Advanced10_MeshShaderSkinning_Walk64.mp4)
+[![Direct3D12 23_ComputeSkinningCache：UAL_Walk、1体の録画](Previews/Direct3D12_23_ComputeSkinningCache_Walk.jpg)](Direct3D12_23_ComputeSkinningCache_Walk.mp4)
 
-[MP4を開く](Direct3D12_Advanced10_MeshShaderSkinning_Walk64.mp4) · 11.68 MiB
+[MP4を開く](Direct3D12_23_ComputeSkinningCache_Walk.mp4) · 14.2秒 · 8.58 MiB
 
-## Vulkan 22_VertexSkinning：UAL_Walk／1体
+### Direct3D12 Advanced10_MeshShaderSkinning：UAL_Walk／1体
 
-VulkanのVS経路で歩行、関節の動き、PBRとShadowを確認できます。
+Mesh Shaderによる1体の歩行です。AS／TaskとAnimated frustumを有効にし、関節の動きとShadowを確認できます。
+
+[![Direct3D12 Advanced10_MeshShaderSkinning：UAL_Walk、1体の録画](Previews/Direct3D12_Advanced10_MeshShaderSkinning_Walk.jpg)](Direct3D12_Advanced10_MeshShaderSkinning_Walk.mp4)
+
+[MP4を開く](Direct3D12_Advanced10_MeshShaderSkinning_Walk.mp4) · 14.3秒 · 8.77 MiB
+
+### Vulkan 22_VertexSkinning：UAL_Walk／1体
+
+Vertex Shaderによる1体の歩行です。腕振り・膝の屈曲と、足に追従するShadowを確認できます。
 
 [![Vulkan 22_VertexSkinning：UAL_Walk、1体の録画](Previews/Vulkan_22_VertexSkinning_Walk.jpg)](Vulkan_22_VertexSkinning_Walk.mp4)
 
-[MP4を開く](Vulkan_22_VertexSkinning_Walk.mp4) · 8.99 MiB
+[MP4を開く](Vulkan_22_VertexSkinning_Walk.mp4) · 14.5秒 · 8.73 MiB
 
-## Vulkan 23_ComputeSkinningCache：UAL_Run／1体
+### Vulkan 23_ComputeSkinningCache：UAL_Walk／1体
 
-Compute CacheでJogを描画しています。UIのCache 1.43 MiBと、変形に追従するShadowを確認できます。
+Compute Cacheによる1体の歩行です。UIのCache 1.43 MiBと、変形に追従するShadowを確認できます。
 
-[![Vulkan 23_ComputeSkinningCache：UAL_Run、1体の録画](Previews/Vulkan_23_ComputeSkinningCache_Run.jpg)](Vulkan_23_ComputeSkinningCache_Run.mp4)
+[![Vulkan 23_ComputeSkinningCache：UAL_Walk、1体の録画](Previews/Vulkan_23_ComputeSkinningCache_Walk.jpg)](Vulkan_23_ComputeSkinningCache_Walk.mp4)
 
-[MP4を開く](Vulkan_23_ComputeSkinningCache_Run.mp4) · 9.77 MiB
+[MP4を開く](Vulkan_23_ComputeSkinningCache_Walk.mp4) · 14.8秒 · 8.80 MiB
 
-## Vulkan Advanced10_MeshShaderSkinning：UAL_Run／64体
+### Vulkan Advanced10_MeshShaderSkinning：UAL_Walk／1体
 
-TaskとAnimated frustumを有効にした64体のJogです。歩行のD3D12録画と異なるクリップで独立姿勢を確認できます。
+Mesh Shaderによる1体の歩行です。AS／TaskとAnimated frustumを有効にし、関節の動きとShadowを確認できます。
+
+[![Vulkan Advanced10_MeshShaderSkinning：UAL_Walk、1体の録画](Previews/Vulkan_Advanced10_MeshShaderSkinning_Walk.jpg)](Vulkan_Advanced10_MeshShaderSkinning_Walk.mp4)
+
+[MP4を開く](Vulkan_Advanced10_MeshShaderSkinning_Walk.mp4) · 17.1秒 · 10.17 MiB
+
+## Mesh Shaderの64体表示
+
+両APIともUAL_Runを選び、64体の位相をずらしています。上の1体歩行とはクリップと体数が異なります。
+
+### Direct3D12 Advanced10_MeshShaderSkinning：UAL_Run／64体
+
+AS／TaskとAnimated frustumを有効にした64体のJogです。位相をずらした独立姿勢と、それぞれに追従するShadowを確認できます。
+
+[![Direct3D12 Advanced10_MeshShaderSkinning：UAL_Run、64体の録画](Previews/Direct3D12_Advanced10_MeshShaderSkinning_Run64.jpg)](Direct3D12_Advanced10_MeshShaderSkinning_Run64.mp4)
+
+[MP4を開く](Direct3D12_Advanced10_MeshShaderSkinning_Run64.mp4) · 14.5秒 · 9.16 MiB
+
+### Vulkan Advanced10_MeshShaderSkinning：UAL_Run／64体
+
+AS／TaskとAnimated frustumを有効にした64体のJogです。位相をずらした独立姿勢と、それぞれに追従するShadowを確認できます。
 
 [![Vulkan Advanced10_MeshShaderSkinning：UAL_Run、64体の録画](Previews/Vulkan_Advanced10_MeshShaderSkinning_Run64.jpg)](Vulkan_Advanced10_MeshShaderSkinning_Run64.mp4)
 
-[MP4を開く](Vulkan_Advanced10_MeshShaderSkinning_Run64.mp4) · 11.41 MiB
+[MP4を開く](Vulkan_Advanced10_MeshShaderSkinning_Run64.mp4) · 15.3秒 · 9.58 MiB
 
 ## 動画と数値検証の読み分け
 

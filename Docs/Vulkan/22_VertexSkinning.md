@@ -8,11 +8,11 @@ Vertex ShaderでglTFスキニングし、動くロボットのShadowとPBR Color
 
 プレビュー画像をクリックするとMP4を開きます。
 
-**UAL_Walk／1体**：VulkanのVS経路で歩行、関節の動き、PBRとShadowを確認できます。
+**UAL_Walk／1体**：Vertex Shaderによる1体の歩行です。腕振り・膝の屈曲と、足に追従するShadowを確認できます。
 
 [![Vulkan 22_VertexSkinning：UAL_Walk、1体の録画](../Assets/Videos/Previews/Vulkan_22_VertexSkinning_Walk.jpg)](../Assets/Videos/Vulkan_22_VertexSkinning_Walk.mp4)
 
-録画は2026-10-15、1280×720です。[動画一覧と元ファイルの記録](../Assets/Videos/README.md)も参照できます。
+録画は2026-10-15、1280×720です。Root motionはOFF、速度1です。[全8本の動画一覧と元ファイルの記録](../Assets/Videos/README.md)も参照できます。
 
 ## 共通アセットと操作
 

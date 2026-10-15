@@ -4,13 +4,15 @@ Computeのスキニング結果をVertex Bufferへキャッシュし、動くロ
 
 ![実GPUによる1280×720の表示](Images/23_ComputeSkinningCache.png)
 
-## Compute Cacheの動きを動画で確認する
+## 実行動画
 
-共有HLSLのCompute CacheによるJogは、Vulkan版の実行録画で確認できます。この動画のAPIはVulkanです。Direct3D12固有のUAV／Vertex Buffer遷移は、この後の実装解説を参照してください。
+プレビュー画像をクリックするとMP4を開きます。
 
-[![Vulkan 23_ComputeSkinningCache：UAL_Run、1体の録画](../Assets/Videos/Previews/Vulkan_23_ComputeSkinningCache_Run.jpg)](../Assets/Videos/Vulkan_23_ComputeSkinningCache_Run.mp4)
+**UAL_Walk／1体**：Compute Cacheによる1体の歩行です。UIのCache 1.43 MiBと、変形に追従するShadowを確認できます。
 
-[全6本の録画一覧](../Assets/Videos/README.md)
+[![Direct3D12 23_ComputeSkinningCache：UAL_Walk、1体の録画](../Assets/Videos/Previews/Direct3D12_23_ComputeSkinningCache_Walk.jpg)](../Assets/Videos/Direct3D12_23_ComputeSkinningCache_Walk.mp4)
+
+録画は2026-10-15、1280×720です。Root motionはOFF、速度1です。[全8本の動画一覧と元ファイルの記録](../Assets/Videos/README.md)も参照できます。
 
 ## 共通アセットと操作
 

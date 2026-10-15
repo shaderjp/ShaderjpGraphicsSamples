@@ -70,7 +70,7 @@ Shadow OFFが床のHDRを変えること、カメラ外のCasterが落とす影�
 
 ## ユーザー確認と実行録画
 
-2026-10-15にユーザーが動作を確認し、OKの連絡と6本の実行動画を提供しました。[録画一覧](Assets/Videos/README.md)と[元ファイル名・SHA-256](Assets/Videos/Manifest.json)を保存しています。動画は1280×720で、D3D12 VSのWalk／Run、Vulkan VSのWalk、Vulkan Compute CacheのRun、D3D12 Meshの64体Walk、Vulkan Meshの64体Runです。
+2026-10-15にユーザーが動作を確認した後、22:26〜22:37（日本時間）の最新録画8本へ更新しました。[録画一覧](Assets/Videos/README.md)と[元ファイル名・SHA-256](Assets/Videos/Manifest.json)を保存しています。すべて1280×720で、Direct3D12／VulkanのVS・Compute Cache・Mesh Shaderの1体Walkが各1本、Mesh Shaderの64体Runが両APIで各1本です。全8本ともRoot motion OFF、速度1、Loop・Shadow・3×3 PCF・IBLはONです。Mesh Shaderの4本はAS／TaskとAnimated frustumを有効にしています。
 
 録画の前半・中間・後半を確認し、UIの方式・クリップ・体数に合わせて記事へ配置しました。MP4のバイト列を保持し、中間フレームからJPEGプレビューを作りました。性能値は動画のUI表示から採らず、以下の固定条件の実測を使います。
 
@@ -88,7 +88,7 @@ Root motion ONでVS／Compute／MeshのDepth・Shadow・HDRを比較し、64体�
 
 ## Release性能
 
-以下の性能表と録画は、Root motion切り替えを追加する前の初回検証結果です。水平移動は現在のRoot motion OFFに相当します。
+以下の性能表は、Root motion切り替えを追加する前の初回検証結果です。水平移動は現在のRoot motion OFFに相当します。上の実行録画は切り替え追加後の最新版で、性能表とは別に更新しています。
 
 `Tools/MeasureSkinning.ps1`で同一条件を計測しました。1280×720、UAL_Walk、速度1、1体または8×8の64体、Studio IBL、方向光、2048 Shadow、3×3 PCF、UI非表示、Present sync interval 0。1体はHero、64体はStressHeroの固定カメラを全方式で使用します。アニメーション時刻はframe/60で評価し、60 warmup＋1200測定フレームです。Actorは1/64周期ずつ位相をずらします。
 

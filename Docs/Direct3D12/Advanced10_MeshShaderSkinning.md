@@ -8,11 +8,15 @@ Mesh ShaderでスキニングとShadowを描画し、動くロボットのShadow
 
 プレビュー画像をクリックするとMP4を開きます。
 
-**UAL_Walk／64体**：AS／TaskとAnimated frustumを有効にし、64体の位相をずらした歩行を描画しています。
+**UAL_Walk／1体**：Mesh Shaderによる1体の歩行です。AS／TaskとAnimated frustumを有効にし、関節の動きとShadowを確認できます。
 
-[![Direct3D12 Advanced10_MeshShaderSkinning：UAL_Walk、64体の録画](../Assets/Videos/Previews/Direct3D12_Advanced10_MeshShaderSkinning_Walk64.jpg)](../Assets/Videos/Direct3D12_Advanced10_MeshShaderSkinning_Walk64.mp4)
+[![Direct3D12 Advanced10_MeshShaderSkinning：UAL_Walk、1体の録画](../Assets/Videos/Previews/Direct3D12_Advanced10_MeshShaderSkinning_Walk.jpg)](../Assets/Videos/Direct3D12_Advanced10_MeshShaderSkinning_Walk.mp4)
 
-録画は2026-10-15、1280×720です。[動画一覧と元ファイルの記録](../Assets/Videos/README.md)も参照できます。
+**UAL_Run／64体**：AS／TaskとAnimated frustumを有効にした64体のJogです。位相をずらした独立姿勢と、それぞれに追従するShadowを確認できます。
+
+[![Direct3D12 Advanced10_MeshShaderSkinning：UAL_Run、64体の録画](../Assets/Videos/Previews/Direct3D12_Advanced10_MeshShaderSkinning_Run64.jpg)](../Assets/Videos/Direct3D12_Advanced10_MeshShaderSkinning_Run64.mp4)
+
+録画は2026-10-15、1280×720です。Root motionはOFF、速度1です。[全8本の動画一覧と元ファイルの記録](../Assets/Videos/README.md)も参照できます。
 
 ## 共通アセットと操作
 

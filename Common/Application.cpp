@@ -87,6 +87,7 @@ Options ParseOptions()
             if (argument == L"--test-camera") { options.testCamera = true; continue; }
             if (argument == L"--pause-animation") { options.pauseAnimation = true; continue; }
             if (argument == L"--test-root-motion") { options.testRootMotion = options.testUi = true; continue; }
+            if (argument == L"--test-dqs") { options.testDqs = options.testUi = true; continue; }
             if (argument == L"--pause") { options.pauseParticles = true; continue; }
             if (argument == L"--forward") { options.forward = true; continue; }
             if (argument == L"--animate-lights") { options.animateLights = true; continue; }
@@ -136,6 +137,10 @@ Options ParseOptions()
                 options.shading = value;
             else if (argument == L"--rt-test-scene") options.rayTestScene = value;
             else if (argument == L"--animation") options.animation = value;
+            else if (argument == L"--skinning") {
+                if (value != L"lbs" && value != L"dqs") throw std::runtime_error("--skinning: lbs / dqs");
+                options.skinning = value;
+            }
             else if (argument == L"--root-motion") {
                 if(value!=L"on" && value!=L"off")throw std::runtime_error("--root-motion: on / off");
                 options.rootMotion=value==L"on";

@@ -47,6 +47,8 @@ struct Options
     uint32_t characters = 1;
     bool pauseAnimation = false;
     bool rootMotion = false, testRootMotion = false;
+    std::wstring skinning = L"dqs"; // Sample24: deformation method, independent of the graphics API.
+    bool testDqs = false;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

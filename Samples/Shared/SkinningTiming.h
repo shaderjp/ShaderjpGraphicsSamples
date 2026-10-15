@@ -24,20 +24,20 @@ struct SkinningTiming : MeshTiming
         report["pointLights"] = 0;
         report["skinning"] = {
             {"technique", SKIN_TECHNIQUE == 1   ? "vertex"
-                          : SKIN_TECHNIQUE == 2 ? "compute-cache"
+                          : (SKIN_TECHNIQUE == 2 || SKIN_TECHNIQUE == 5) ? "compute-cache"
                                                 : "mesh"},
             {"animation", animation},
             {"actors", actors},
             {"verticesPerActor", vertices},
             {"joints", joints},
-            {"cacheBytes", SKIN_TECHNIQUE == 2 ? uint64_t(actors) * vertices * 48 : 0},
-            {"allocatedCacheBytes", SKIN_TECHNIQUE == 2 ? uint64_t(64) * vertices * 48 : 48},
+            {"cacheBytes", (SKIN_TECHNIQUE == 2 || SKIN_TECHNIQUE == 5) ? uint64_t(actors) * vertices * 48 : 0},
+            {"allocatedCacheBytes", (SKIN_TECHNIQUE == 2 || SKIN_TECHNIQUE == 5) ? uint64_t(64) * vertices * 48 : 48},
             {"sharedSourceGeometry", true},
             {"cpuMeasurement",
              "pose and conservative bounds separately; command recording excludes waits/readback"}};
         report["passes"]["color"] = report["passes"]["geometry"];
         report["passes"].erase("geometry");
-        if constexpr (SKIN_TECHNIQUE == 2)
+        if constexpr ((SKIN_TECHNIQUE == 2 || SKIN_TECHNIQUE == 5))
             report["passes"]["skinning-compute"] = report["passes"]["mesh-cull"];
         for (auto name : {"lighting", "transparent", "extract", "horizontal", "vertical", "mesh-cull"})
             report["passes"].erase(name);

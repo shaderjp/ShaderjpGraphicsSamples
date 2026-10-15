@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編23テーマ＋発展編10テーマ、両APIで計66本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編25テーマ＋発展編11テーマ、両APIで計72本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -11,7 +11,7 @@
 - D3D12: FL12_0、Shader Model 6.6対応GPU／ドライバ。Agility SDK 1.619.6とDXC 1.9.2609.5をNuGetで復元します。
 - Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14回以降のCompute使用サンプル）を持つGPU／ドライバが必要です。
 - 発展編01〜03: D3D12はDXR Tier 1.0以上、VulkanはKHRのAcceleration Structure／Ray Tracing Pipeline／Deferred Host Operations、Buffer Device Addressなどが必要です。[詳細な要件](Docs/AdvancedGraphicsSamples.md#環境と今回の範囲)
-- 発展編04〜10: D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`と`meshShader`が必要です。Vulkanの06〜10は`taskShader`も使用します。基本22／23はMesh Shaderを要求しません。[Mesh Shaderの要件と検証](Docs/MeshShaderVerification.md)
+- 発展編04〜11: D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`と`meshShader`が必要です。Vulkanの06〜11は`taskShader`も使用します。基本22〜25はMesh Shaderを要求しません。[Mesh Shaderの要件と検証](Docs/MeshShaderVerification.md)
 - Debug実行時にはD3D12 Debug Layer／Vulkan Validation Layerを有効化します。D3D12のDebug Interfaceが利用できない場合はWindowsの「グラフィックス ツール」を導入してください。
 
 SDKを導入してもGPU・ドライバの機能対応が追加されるわけではありません。初期化時に必要な対応を確認し、不足している場合はエラーを表示します。
@@ -71,10 +71,12 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | 共通記事：ノード・ボーン・ウェイト・アニメーション読込 | [glTFスキニング対応ローダー](Docs/GltfSkinningLoading.md) | [両API共通](Docs/GltfSkinningLoading.md) |
 | Vertex Shaderスキニング・Shadow／PBR | [22 VertexSkinning](Docs/Direct3D12/22_VertexSkinning.md) | [22 VertexSkinning](Docs/Vulkan/22_VertexSkinning.md) |
 | Compute変形のVertex BufferキャッシュをShadow／Colorで共有 | [23 ComputeSkinningCache](Docs/Direct3D12/23_ComputeSkinningCache.md) | [23 ComputeSkinningCache](Docs/Vulkan/23_ComputeSkinningCache.md) |
+| Dual Quaternion Skinning・同じ姿勢でLBS／DQS切替 | [24 DualQuaternionSkinning](Docs/Direct3D12/24_DualQuaternionSkinning.md) | [24 DualQuaternionSkinning](Docs/Vulkan/24_DualQuaternionSkinning.md) |
+| DQSをComputeでキャッシュしShadow／Colorへ共有 | [25 DualQuaternionComputeCache](Docs/Direct3D12/25_DualQuaternionComputeCache.md) | [25 DualQuaternionComputeCache](Docs/Vulkan/25_DualQuaternionComputeCache.md) |
 
 ## 発展編サンプル一覧
 
-発展編は01から番号を付け、**10テーマ×2 APIの20本**を同じソリューションに収録しています。[発展編目次](Docs/AdvancedGraphicsSamples.md)から、前提知識・対応機能・読み順も確認できます。
+発展編は01から番号を付け、**11テーマ×2 APIの22本**を同じソリューションに収録しています。[発展編目次](Docs/AdvancedGraphicsSamples.md)から、前提知識・対応機能・読み順も確認できます。
 
 | テーマ | Direct3D12 | Vulkan |
 |---|---|---|
@@ -88,6 +90,7 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | Mesh ShaderによるG-buffer構築・Deferredとの統合 | [08 MeshShader Deferred](Docs/Direct3D12/Advanced08_MeshShaderDeferred.md) | [08 MeshShader Deferred](Docs/Vulkan/Advanced08_MeshShaderDeferred.md) |
 | Meshlet Culling・多数点光源のTiled Deferredとの統合 | [09 MeshShader Tiled Deferred](Docs/Direct3D12/Advanced09_MeshShaderTiledDeferred.md) | [09 MeshShader Tiled Deferred](Docs/Vulkan/Advanced09_MeshShaderTiledDeferred.md) |
 | Mesh Shaderスキニング・動的境界・カメラ／ライト別カリング | [10 MeshShader Skinning](Docs/Direct3D12/Advanced10_MeshShaderSkinning.md) | [10 MeshShader Skinning](Docs/Vulkan/Advanced10_MeshShaderSkinning.md) |
+| DQS Mesh Shader・正規化を考慮した境界・AS／Task | [11 DualQuaternionMeshSkinning](Docs/Direct3D12/Advanced11_DualQuaternionMeshSkinning.md) | [11 DualQuaternionMeshSkinning](Docs/Vulkan/Advanced11_DualQuaternionMeshSkinning.md) |
 
 ## 実行とカメラ操作
 
@@ -263,6 +266,10 @@ meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定Submoduleです。`git s
 
 第21回の後に[glTFスキニング対応ローダー](Docs/GltfSkinningLoading.md)を読み、22のVS、23のCompute Cache、発展10のMSへ進みます。[共通GPU解説](Docs/GpuSkinning.md)では変形の場所、Shadow／Colorでの再利用、Buffer同期、動的Meshlet境界とCPU/GPUの性能差を説明します。
 
+基本24では同じアセットでLBS／DQSを切り替えます。[DQS共通解説](Docs/DualQuaternionSkinning.md)でQuaternionの符号合わせ、正規化、ねじり確認、スケールとカリングの制約を説明します。[検証・性能](Docs/DualQuaternionVerification.md)、`Tools/TestDualQuaternionCpu.ps1`、`Tools/TestDualQuaternion.ps1`でCPU／GPUと実UI入力を確認できます。
+
 [SilverRobotAnimated.blend](SourceArt/Blender/SilverRobot/SilverRobotAnimated.blend)をBlenderで開くと、6つのリターゲット済みActionとA/T確認ポーズを確認できます。GPUサンプルの初期状態は歩行・速度1・1体・Root motion OFF。ImGuiでクリップ／再生／Root motion／Seek／1フレーム送り／Reset／64体／Shadowを操作できます。Root motionはWalk／Runの足運びから前進量を復元し、OFFまたはResetで元の配置へ戻ります。`--animation UAL_Walk --animation-time 0.3 --pause-animation --characters 64`で同じ条件を再現できます。
 
 `Tools/TestSkinningCpu.ps1`、`Tools/TestSkinning.ps1`、`Tools/TestSkinningFailures.ps1`、`Tools/TestSilverRobotAnimated.ps1`でCPU・GPU・Shader欠落・Blenderを検証し、`Tools/MeasureSkinning.ps1`でReleaseの1体／64体を計測します。[数値結果と検証条件](Docs/SkinningVerification.md)
+
+基本25と発展11はDQSのComputeキャッシュ／Mesh Shader版です。[DQSの3方式と境界](Docs/DualQuaternionStages.md)、[両API・各方式の検証と性能](Docs/DualQuaternionStagesVerification.md)を参照してください。既存アセットとモーションを共有し、すべてLBS／DQSを切り替えられ、初期状態はDQS／Root motion OFFです。

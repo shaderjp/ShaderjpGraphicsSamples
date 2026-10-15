@@ -76,3 +76,7 @@ $blenderExe='C:\Program Files\Blender Foundation\Blender 5.2\blender.exe'
 リターゲットを再実行する場合は、原本を開いて`retarget.py -- --output .cache/skinning/NewAnimated.blend`と指定します。既存のAnimated正本を再生成で上書きしないため、デフォルトでは既存出力を拒否します。意図的に作り直す場合だけ`--overwrite`を指定してください。モデルを編集した後の通常の再出力には`export_animated.py`を使います。
 
 検証はglTF／GLBのKhronosエラー・警告0、保存済みblendからのバイト一致、全8 ActionのBlender評価メッシュとCPUスキニングの照合を含みます。[数値結果](SilverRobotAnimatedValidation.json)と[GPU検証](../SkinningVerification.md)を参照してください。
+
+## 同じアセットをDQSで表示する
+
+[基本24：Dual Quaternion Skinning](../DualQuaternionSkinning.md)は、このglTFの最終ジョイント行列を実行時にDQへ変換します。新しいBlenderファイルやモーションは不要です。LBS／DQS切替と30 fpsの手首ねじり確認はビューア内で行い、このページの配布glTF／GLB／Blender正本とライセンスを変更しません。

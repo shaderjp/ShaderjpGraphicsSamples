@@ -320,3 +320,21 @@ ImGuiにRoot motionを追加し、初期値とResetをOFFにしました。Walk�
 22:26〜22:37（日本時間）の録画8本へ差し替えました。Direct3D12／VulkanのVS・Compute Cache・Mesh Shaderによる1体のUAL_Walkを6本、両APIのMesh Shaderによる64体のUAL_Runを2本掲載しています。すべて1280×720、Root motion OFF、速度1です。Mesh ShaderはAS／TaskとAnimated frustumを使用しています。差し替え後のVulkan Compute・Meshの1体動画も前半・中間・後半で実行画面を確認しました。
 
 README、API別6記事、GPU共通章、ローダー、アセット、発展編目次、検証記録の参照と説明を更新しました。8本のMP4は再圧縮せず、SHA-256と容量を照合し、中間フレームから1280×720のJPEGプレビューを作成しました。動画・画像・記事のローカルリンクとManifestの対応を確認しています。[動画一覧](Assets/Videos/README.md)と[元ファイル・設定・SHA-256](Assets/Videos/Manifest.json)を参照してください。今回の変更はドキュメントと動画のみで、既存のビルド・GPU検証・性能測定結果は保持しています。
+
+## 基本24：Dual Quaternion Skinning（2026-10-15）
+
+両APIに独立した24_DualQuaternionSkinningを追加しました。既存アセットをそのまま使い、Indexed VSのLBS／DQSをImGuiで切り替え、Shadow／PBRへ同じ変形を適用します。初期値はDQS、Root motionはOFF。実行時の150度手首ねじり確認、A／Tポーズ、既存6クリップ、1／64体を選べます。配布glTF／GLB／Blenderと素材のライセンスは変更していません。
+
+全68アプリ＋2 CPUライブラリのRestore・x64 Debug／Releaseビルド、SPIR-V、vcxproj／filters照合、全68アプリの両構成ライフサイクル、旧ローダー・既存スキニング・09 ImGui回帰、新2アプリのカメラ／Shader欠落／実UI入力を確認しました。正常試験のDebug検証エラー0件。427姿勢の剛体検査と独立NumPy DQS照合、LBSと基本22のDepth／Shadow／HDR完全一致も通過しています。
+
+[共通DQS解説](DualQuaternionSkinning.md)、[API別記事](Direct3D12/24_DualQuaternionSkinning.md)、[検証・Release 1／64体のLBS／DQS実測](DualQuaternionVerification.md)を追加しました。画像はすべて1280×720の実GPU出力です。
+
+## DQS Compute／Mesh Shaderへの展開（2026-10-16）
+
+両APIに基本25_DualQuaternionComputeCacheとAdvanced11_DualQuaternionMeshSkinningを追加しました。Computeは1フレーム1回の変形結果をShadow／Colorへ共有し、Meshは各MSで直接変形します。両者ともLBS／DQS切替と共通の再生操作を継承し、初期値はDQS／Root motion OFFです。配布アセット・モーション・ライセンスは保持しています。
+
+MeshはDQS正規化を考慮した球をCPUで更新し、カメラ／ライトを独立に判定します。LBSでは従来のAABBへ切り替えます。90条件・約333万Meshlet頂点のCPU境界検査、各構成約119万件のGPU球との照合で境界外0件。両API・両構成の92数値ケースと104描画比較が通過し、Depth／Shadowは完全一致でした。HDRの少数の差とVulkan Debug MSの複合型Load対策は[検証記録](DualQuaternionStagesVerification.md)へ明記しています。
+
+全72 APIアプリ＋2 CPUライブラリをRestore・x64 Debug／Releaseでビルドし、SPIR-Vとfiltersを検証しました。全72アプリの両構成ライフサイクル、新DQS 6アプリの最終再実行、既存ローダー・スキニングCPU／GPU・09 ImGui、カメラ、Shader欠落も通過。正常Debug試験の検証エラー0件です。
+
+[共通DQS実行方式](DualQuaternionStages.md)、API別4記事と既存2記事、目次、1280×720の実GPU画像、Release 32条件の性能を更新しました。Computeがこのモデルの64体ではVertexより遅い結果や、TaskのCPU境界更新費用も省略せず記録しています。

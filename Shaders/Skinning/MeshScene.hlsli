@@ -127,6 +127,10 @@ float3 MeshletColor(uint id)
 }
 bool VisibleMeshlet(uint instance, uint id)
 {
+#if SKIN_TECHNIQUE == 4 || SKIN_TECHNIQUE == 5
+    // The palette at t98 is DQ data, and LBS bone bounds do not enclose DQS.
+    return true;
+#else
     MeshFrame frame = meshFrames[meshPass == 0 ? 0 : 1];
     if (frame.controls.y == 0)
         return true;
@@ -148,5 +152,6 @@ bool VisibleMeshlet(uint instance, uint id)
             return false;
     }
     return true;
+#endif
 }
 #endif

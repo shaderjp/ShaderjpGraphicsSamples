@@ -1,0 +1,406 @@
+{
+  "Direct3D12-Bind_Apose": {
+    "cpu": 1.4057288888480457e-07,
+    "gpu": 1.3680521315784233e-07
+  },
+  "Direct3D12-Retarget_Tpose": {
+    "cpu": 4.3395161708481567e-07,
+    "gpu": 3.926689333688671e-07
+  },
+  "Direct3D12-UAL_Idle": {
+    "cpu": 7.301600402076502e-07,
+    "gpu": 7.406277815480422e-07
+  },
+  "Direct3D12-UAL_JumpLand": {
+    "cpu": 9.942187942924008e-07,
+    "gpu": 1.027691344801518e-06
+  },
+  "Direct3D12-UAL_JumpLoop": {
+    "cpu": 5.173540407188426e-07,
+    "gpu": 4.265901491773416e-07
+  },
+  "Direct3D12-UAL_JumpStart": {
+    "cpu": 5.901262823959641e-07,
+    "gpu": 7.224101888081425e-07
+  },
+  "Direct3D12-UAL_Run": {
+    "cpu": 1.0640623262503368e-06,
+    "gpu": 1.2654377006260376e-06
+  },
+  "Direct3D12-UAL_Walk": {
+    "cpu": 7.800434798088673e-07,
+    "gpu": 8.490459079135704e-07
+  },
+  "Direct3D12-DQS_Twist": {
+    "cpu": 5.521893875481965e-07,
+    "gpu": 5.275945201832499e-07
+  },
+  "Direct3D12-walk-lbs": {
+    "cpu": 2.2209633732117595e-07,
+    "gpu": 1.6917082867884403e-07
+  },
+  "Direct3D12-LBS-22": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Direct3D12-twist-lbs": {
+    "cpu": 3.129903409782031e-07,
+    "gpu": 1.7274966546132475e-07
+  },
+  "Direct3D12-twist-difference": {
+    "depth": {
+      "differentComponents": 8205,
+      "maxError": 0.014712691307067871
+    },
+    "shadow-depth": {
+      "differentComponents": 1404,
+      "maxError": 0.0017032623291015625
+    },
+    "hdr": {
+      "differentComponents": 1439,
+      "maxError": 0.42578125
+    }
+  },
+  "Direct3D12-64-lbs": {
+    "cpu": 1.870867558650957e-07,
+    "gpu": 1.737260444389932e-07
+  },
+  "Direct3D12-64-dqs": {
+    "cpu": 1.3617160322942912e-06,
+    "gpu": 1.4064195158758341e-06
+  },
+  "Direct3D12-root-on": {
+    "cpu": 7.800434798088673e-07,
+    "gpu": 8.490459079135704e-07
+  },
+  "Direct3D12-root-off": {
+    "cpu": 7.800434798088673e-07,
+    "gpu": 8.490459079135704e-07
+  },
+  "Direct3D12-root-default-off": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Direct3D12-UAL_Walk-end": {
+    "cpu": 9.459149151735957e-07,
+    "gpu": 1.0326932935178501e-06
+  },
+  "Direct3D12-UAL_JumpStart-end": {
+    "cpu": 5.741332855802028e-07,
+    "gpu": 5.993865521691788e-07
+  },
+  "Direct3D12-DQS_Twist-end": {
+    "cpu": 3.690978505055398e-07,
+    "gpu": 3.5997768987883205e-07
+  },
+  "Direct3D12-UI": {
+    "cpu": 6.596573645101245e-07,
+    "gpu": 6.990876304235893e-07
+  },
+  "Direct3D12-UI-back": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Direct3D12-UI-reset": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Vulkan-Bind_Apose": {
+    "cpu": 1.4057288888480457e-07,
+    "gpu": 1.3680521315784233e-07
+  },
+  "Vulkan-Retarget_Tpose": {
+    "cpu": 4.3395161708481567e-07,
+    "gpu": 3.926689333688671e-07
+  },
+  "Vulkan-UAL_Idle": {
+    "cpu": 7.301600402076502e-07,
+    "gpu": 7.406277815480422e-07
+  },
+  "Vulkan-UAL_JumpLand": {
+    "cpu": 9.942187942924008e-07,
+    "gpu": 1.027691344801518e-06
+  },
+  "Vulkan-UAL_JumpLoop": {
+    "cpu": 5.173540407188426e-07,
+    "gpu": 4.265901491773416e-07
+  },
+  "Vulkan-UAL_JumpStart": {
+    "cpu": 5.901262823959641e-07,
+    "gpu": 7.224101888081425e-07
+  },
+  "Vulkan-UAL_Run": {
+    "cpu": 1.0640623262503368e-06,
+    "gpu": 1.2654377006260376e-06
+  },
+  "Vulkan-UAL_Walk": {
+    "cpu": 7.800434798088673e-07,
+    "gpu": 8.490459079135704e-07
+  },
+  "Vulkan-DQS_Twist": {
+    "cpu": 5.521893875481965e-07,
+    "gpu": 5.262448168341649e-07
+  },
+  "Vulkan-walk-lbs": {
+    "cpu": 2.2209633732117595e-07,
+    "gpu": 2.2134758403957733e-07
+  },
+  "Vulkan-LBS-22": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Vulkan-twist-lbs": {
+    "cpu": 3.129903409782031e-07,
+    "gpu": 1.7274966546132475e-07
+  },
+  "Vulkan-twist-difference": {
+    "depth": {
+      "differentComponents": 8446,
+      "maxError": 0.014712691307067871
+    },
+    "shadow-depth": {
+      "differentComponents": 1440,
+      "maxError": 0.0017032623291015625
+    },
+    "hdr": {
+      "differentComponents": 1254,
+      "maxError": 0.42578125
+    }
+  },
+  "Vulkan-64-lbs": {
+    "cpu": 1.870867558650957e-07,
+    "gpu": 2.2832497070801594e-07
+  },
+  "Vulkan-64-dqs": {
+    "cpu": 1.3617160322942912e-06,
+    "gpu": 1.4064195158758341e-06
+  },
+  "Vulkan-root-on": {
+    "cpu": 7.800434798088673e-07,
+    "gpu": 8.490459079135704e-07
+  },
+  "Vulkan-root-off": {
+    "cpu": 7.800434798088673e-07,
+    "gpu": 8.490459079135704e-07
+  },
+  "Vulkan-root-default-off": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Vulkan-UAL_Walk-end": {
+    "cpu": 9.459149151735957e-07,
+    "gpu": 1.0375665097928088e-06
+  },
+  "Vulkan-UAL_JumpStart-end": {
+    "cpu": 5.741332855802028e-07,
+    "gpu": 5.993865521691788e-07
+  },
+  "Vulkan-DQS_Twist-end": {
+    "cpu": 3.690978505055398e-07,
+    "gpu": 3.5997768987883205e-07
+  },
+  "Vulkan-UI": {
+    "cpu": 6.596573645101245e-07,
+    "gpu": 6.990876304235893e-07
+  },
+  "Vulkan-UI-back": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Vulkan-UI-reset": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "API-DQS": {
+    "depth": {
+      "differentComponents": 2162,
+      "maxError": 1.1920928955078125e-07,
+      "tolerance": 3e-06,
+      "aboveTolerance": 0
+    },
+    "shadow-depth": {
+      "differentComponents": 289,
+      "maxError": 3.2782554626464844e-06,
+      "tolerance": 5e-06,
+      "aboveTolerance": 0
+    },
+    "hdr": {
+      "differentComponents": 230,
+      "maxError": 0.006305694580078125,
+      "tolerance": 0.012,
+      "aboveTolerance": 0
+    }
+  },
+  "Direct3D12-UI-LBS-change": {
+    "depth": {
+      "differentComponents": 18507,
+      "maxError": 0.009568393230438232
+    },
+    "shadow-depth": {
+      "differentComponents": 3300,
+      "maxError": 0.00030177831649780273
+    },
+    "hdr": {
+      "differentComponents": 5597,
+      "maxError": 0.351470947265625
+    }
+  },
+  "Direct3D12-RootUI": {
+    "cpu": 6.596573645101245e-07,
+    "gpu": 6.990876304235893e-07
+  },
+  "Direct3D12-RootUI-reset": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Direct3D12-RootUI-toggle": {
+    "depth": {
+      "differentComponents": 46725,
+      "maxError": 0.01363217830657959
+    },
+    "shadow-depth": {
+      "differentComponents": 3703969,
+      "maxError": 2.86102294921875e-05
+    },
+    "hdr": {
+      "differentComponents": 159829,
+      "maxError": 5.70947265625
+    }
+  },
+  "Vulkan-UI-LBS-change": {
+    "depth": {
+      "differentComponents": 18382,
+      "maxError": 0.009568393230438232
+    },
+    "shadow-depth": {
+      "differentComponents": 3324,
+      "maxError": 0.00030177831649780273
+    },
+    "hdr": {
+      "differentComponents": 5532,
+      "maxError": 0.351470947265625
+    }
+  },
+  "Vulkan-RootUI": {
+    "cpu": 6.596573645101245e-07,
+    "gpu": 6.990876304235893e-07
+  },
+  "Vulkan-RootUI-reset": {
+    "depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "shadow-depth": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    },
+    "hdr": {
+      "differentComponents": 0,
+      "maxError": 0.0
+    }
+  },
+  "Vulkan-RootUI-toggle": {
+    "depth": {
+      "differentComponents": 46725,
+      "maxError": 0.013632118701934814
+    },
+    "shadow-depth": {
+      "differentComponents": 3703984,
+      "maxError": 2.86102294921875e-05
+    },
+    "hdr": {
+      "differentComponents": 159830,
+      "maxError": 5.70947265625
+    }
+  }
+}

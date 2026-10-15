@@ -8,6 +8,8 @@
 | 基本23 ComputeSkinningCache | [記事](Direct3D12/23_ComputeSkinningCache.md) | [記事](Vulkan/23_ComputeSkinningCache.md) | CSで生成したVertex Bufferを両パスが読む |
 | 発展10 MeshShaderSkinning | [記事](Direct3D12/Advanced10_MeshShaderSkinning.md) | [記事](Vulkan/Advanced10_MeshShaderSkinning.md) | 各パスのMSで直接変形、AS／Taskで可視判定 |
 
+さらに[基本24：Dual Quaternion Skinning](DualQuaternionSkinning.md)でブレンド方式を比較できます。同じロボットとクリップを使い、Indexed VSでLBS／DQSを切り替え、位置・法線・接線とShadowを比較します。以下の3方式の性能表は従来のLBSの測定です。DQSの追加測定は[別の検証記録](DualQuaternionVerification.md)にまとめます。
+
 ## 実行動画で3方式を確認する
 
 [全8本の録画一覧](Assets/Videos/README.md)に、両API・3方式の1体歩行6本と、Mesh Shaderの64体表示2本を掲載しています。下の画像からMP4を開けます。
@@ -136,3 +138,7 @@ WASD／Q・E／右ドラッグ／Shift／Rの[カメラ操作](CameraNavigation.
 Releaseの1体／64体、同じカメラとUAL_Walk、固定1/60秒のアニメーション時刻で、60フレームをwarmupして1200フレームを測定します。CPU姿勢評価、CPU境界更新、CS変形、Shadow、Color、GPU Total、キャッシュ容量を記録します。MSの境界更新はGPU Totalへは含まれないため、CPUの欄も必ず確認してください。
 
 `Tools/MeasureSkinning.ps1`の結果と条件は[検証記録](SkinningVerification.md)にあります。比較はこのモデル・GPU・Shadow＋Colorという条件の結果です。キャッシュが常に速い、MSが常に速いという結論へ広げず、パス数、影響数、見える割合、キャッシュ帯域、CPU評価を合わせて判断します。
+
+## DQSでも3つの実行方式を比較する
+
+基本24のVertex、基本25のComputeキャッシュ、発展11のMesh ShaderでDQSを実行できます。[DQSの3方式](DualQuaternionStages.md)で同じHLSLの呼出し、Shadow／Colorへの再利用、Barrier、DQS専用の保守球を説明し、[性能と検証](DualQuaternionStagesVerification.md)に各方式の測定を記録しています。すべてLBS／DQSをImGuiで切り替え、Root motionの初期値はOFFです。

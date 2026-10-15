@@ -86,3 +86,4 @@ Testing/
 *.blend2
 SourceArt/**/.generated/
 SourceArt/**/__pycache__/
+Tests/__pycache__/

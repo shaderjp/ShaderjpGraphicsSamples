@@ -1,14 +1,14 @@
-param([ValidateSet('Debug','Release')][string]$Configuration='Debug')
+﻿param([ValidateSet('Debug','Release')][string]$Configuration='Debug')
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
 $work=Join-Path $root ".cache/skinning/failures/$Configuration"
 New-Item -ItemType Directory -Path $work -Force | Out-Null
 foreach($api in @('Direct3D12','Vulkan')){
-    foreach($topic in @('22_VertexSkinning','23_ComputeSkinningCache','Advanced10_MeshShaderSkinning')){
+    foreach($topic in @('22_VertexSkinning','23_ComputeSkinningCache','24_DualQuaternionSkinning','25_DualQuaternionComputeCache','Advanced11_DualQuaternionMeshSkinning','Advanced10_MeshShaderSkinning')){
         $name="$api`_$topic"
         $directory=Join-Path $root "bin/x64/$Configuration/$name"
         $exe=Join-Path $directory "$name.exe"
-        $shaderName=if($topic -eq '23_ComputeSkinningCache'){'SkinningCompute'}else{'ReferenceVertex'}
+        $shaderName=if($topic -in @('23_ComputeSkinningCache','25_DualQuaternionComputeCache')){'SkinningCompute'}else{'ReferenceVertex'}
         $extension=if($api -eq 'Direct3D12'){'cso'}else{'spv'}
         $shader=Join-Path $directory "Shaders/$shaderName.$extension"
         $backup=$shader+'.failure-test-'+[guid]::NewGuid().ToString('N')

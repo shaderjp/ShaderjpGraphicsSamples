@@ -33,9 +33,12 @@ VS 2026、v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを使用
 | 08 Mesh ShaderによるDeferred Rendering | [記事](Direct3D12/Advanced08_MeshShaderDeferred.md) | [記事](Vulkan/Advanced08_MeshShaderDeferred.md) |
 | 09 Mesh ShaderによるTiled Deferred | [記事](Direct3D12/Advanced09_MeshShaderTiledDeferred.md) | [記事](Vulkan/Advanced09_MeshShaderTiledDeferred.md) |
 | 10 Mesh ShaderスキニングとShadow | [記事](Direct3D12/Advanced10_MeshShaderSkinning.md) | [記事](Vulkan/Advanced10_MeshShaderSkinning.md) |
+| 11 Dual Quaternion Mesh SkinningとDQS境界 | [記事](Direct3D12/Advanced11_DualQuaternionMeshSkinning.md) | [記事](Vulkan/Advanced11_DualQuaternionMeshSkinning.md) |
 
-全14本に移動・回転・カメラResetを備えます。D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`を要求し、06以降はTask Shaderも必要です。Workshop使用回はStandard／StressとOPAQUE／MASK、04は単一のAlbedo用ShaderBall、10はSilver Robotです。DXR 2は概念解説で、今回の実行サンプルの必須機能には追加しません。[検証記録](MeshShaderVerification.md)
+全16本に移動・回転・カメラResetを備えます。D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`を要求し、06以降はTask Shaderも必要です。Workshop使用回はStandard／StressとOPAQUE／MASK、04は単一のAlbedo用ShaderBall、10／11はSilver Robotです。DXR 2は概念解説で、今回の実行サンプルの必須機能には追加しません。[検証記録](MeshShaderVerification.md)
 
 [発展10の実行動画](Assets/Videos/README.md)では、両APIの1体のWalkと64体のRunを確認できます。4本ともAS／TaskとAnimated frustumを有効にし、Root motionはOFFです。64体では位相をずらした独立姿勢とShadowを比較できます。
 
-10は[glTFスキニング対応ローダー](GltfSkinningLoading.md) → [基本22 VS](Direct3D12/22_VertexSkinning.md) → [基本23 Compute Cache](Direct3D12/23_ComputeSkinningCache.md)を前提に、動くSilver RobotをMS内で変形します。カメラ／ライト別のカリング、変形後の保守境界、1体／64体を比較します。[3方式の共通解説](GpuSkinning.md)と[検証・性能](SkinningVerification.md)を参照してください。Mesh Shader編は04〜10の14本になりました。
+10は[glTFスキニング対応ローダー](GltfSkinningLoading.md) → [基本22 VS](Direct3D12/22_VertexSkinning.md) → [基本23 Compute Cache](Direct3D12/23_ComputeSkinningCache.md)を前提に、動くSilver RobotをMS内で変形します。カメラ／ライト別のカリング、変形後の保守境界、1体／64体を比較します。[3方式の共通解説](GpuSkinning.md)と[検証・性能](SkinningVerification.md)を参照してください。Mesh Shader編は04〜11の16本になりました。
+
+11は[基本24 DQS](DualQuaternionSkinning.md)と[基本25 Compute Cache](DualQuaternionStages.md)に続き、DQSをMS内で実行します。LBSのAABBを流用せず、DQ正規化を考慮した球でカメラ／ライトを独立に可視判定します。[検証・実測](DualQuaternionStagesVerification.md)も参照してください。

@@ -1,0 +1,2586 @@
+{
+  "Direct3D12-Bind_Apose-VS": {
+    "cpuMaxError": 1.4057288888480457e-07,
+    "gpuMaxError": 1.3680521315784233e-07
+  },
+  "Direct3D12-Bind_Apose-CS": {
+    "cpuMaxError": 1.4057288888480457e-07,
+    "gpuMaxError": 1.3680521315784233e-07
+  },
+  "Direct3D12-Bind_Apose-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-Bind_Apose-Task": {
+    "cpuMaxError": 1.4057288888480457e-07,
+    "gpuMaxError": 1.3680521315784233e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-Bind_Apose-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.01930999755859375,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-Retarget_Tpose-VS": {
+    "cpuMaxError": 4.3395161708481567e-07,
+    "gpuMaxError": 3.3298504686918307e-07
+  },
+  "Direct3D12-Retarget_Tpose-CS": {
+    "cpuMaxError": 4.3395161708481567e-07,
+    "gpuMaxError": 3.3298504686918307e-07
+  },
+  "Direct3D12-Retarget_Tpose-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-Retarget_Tpose-Task": {
+    "cpuMaxError": 4.3395161708481567e-07,
+    "gpuMaxError": 3.3298504686918307e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-Retarget_Tpose-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0975341796875,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Idle-VS": {
+    "cpuMaxError": 7.301600402076502e-07,
+    "gpuMaxError": 6.984464617776354e-07
+  },
+  "Direct3D12-UAL_Idle-CS": {
+    "cpuMaxError": 7.301600402076502e-07,
+    "gpuMaxError": 6.984464617776354e-07
+  },
+  "Direct3D12-UAL_Idle-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Idle-Task": {
+    "cpuMaxError": 7.301600402076502e-07,
+    "gpuMaxError": 6.984464617776354e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-UAL_Idle-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Walk-VS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Direct3D12-UAL_Walk-CS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Direct3D12-UAL_Walk-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Walk-Task": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-UAL_Walk-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Walk-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Walk-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Walk-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Run-VS": {
+    "cpuMaxError": 1.0640623262503368e-06,
+    "gpuMaxError": 1.2882124278412732e-06
+  },
+  "Direct3D12-UAL_Run-CS": {
+    "cpuMaxError": 1.0640623262503368e-06,
+    "gpuMaxError": 1.2882124278412732e-06
+  },
+  "Direct3D12-UAL_Run-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_Run-Task": {
+    "cpuMaxError": 1.0640623262503368e-06,
+    "gpuMaxError": 1.2882124278412732e-06,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-UAL_Run-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpStart-VS": {
+    "cpuMaxError": 5.901262823959641e-07,
+    "gpuMaxError": 7.224101888081425e-07
+  },
+  "Direct3D12-UAL_JumpStart-CS": {
+    "cpuMaxError": 5.901262823959641e-07,
+    "gpuMaxError": 7.224101888081425e-07
+  },
+  "Direct3D12-UAL_JumpStart-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpStart-Task": {
+    "cpuMaxError": 5.901262823959641e-07,
+    "gpuMaxError": 7.224101888081425e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-UAL_JumpStart-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLoop-VS": {
+    "cpuMaxError": 5.173540407188426e-07,
+    "gpuMaxError": 4.265901491773416e-07
+  },
+  "Direct3D12-UAL_JumpLoop-CS": {
+    "cpuMaxError": 5.173540407188426e-07,
+    "gpuMaxError": 4.265901491773416e-07
+  },
+  "Direct3D12-UAL_JumpLoop-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLoop-Task": {
+    "cpuMaxError": 5.173540407188426e-07,
+    "gpuMaxError": 4.265901491773416e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-UAL_JumpLoop-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLand-VS": {
+    "cpuMaxError": 9.942187942924008e-07,
+    "gpuMaxError": 1.066447176123475e-06
+  },
+  "Direct3D12-UAL_JumpLand-CS": {
+    "cpuMaxError": 9.942187942924008e-07,
+    "gpuMaxError": 1.066447176123475e-06
+  },
+  "Direct3D12-UAL_JumpLand-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UAL_JumpLand-Task": {
+    "cpuMaxError": 9.942187942924008e-07,
+    "gpuMaxError": 1.066447176123475e-06,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-UAL_JumpLand-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-DQS_Twist-VS": {
+    "cpuMaxError": 5.521893875481965e-07,
+    "gpuMaxError": 5.421172488695447e-07
+  },
+  "Direct3D12-DQS_Twist-CS": {
+    "cpuMaxError": 5.521893875481965e-07,
+    "gpuMaxError": 5.421172488695447e-07
+  },
+  "Direct3D12-DQS_Twist-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-DQS_Twist-Task": {
+    "cpuMaxError": 5.521893875481965e-07,
+    "gpuMaxError": 5.421172488695447e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-DQS_Twist-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0009899139404296875,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-DQS_Twist-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0009899139404296875,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-DQS_Twist-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0009899139404296875,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-DQS_Twist-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-64-dqs-VS": {
+    "cpuMaxError": 1.3617160322942912e-06,
+    "gpuMaxError": 1.4064195158758341e-06
+  },
+  "Direct3D12-64-dqs-CS": {
+    "cpuMaxError": 1.3617160322942912e-06,
+    "gpuMaxError": 1.4064195158758341e-06
+  },
+  "Direct3D12-64-dqs-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-64-dqs-Task": {
+    "cpuMaxError": 1.3617160322942912e-06,
+    "gpuMaxError": 1.4064195158758341e-06,
+    "bounds": {
+      "verticesChecked": 37248,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        37377,
+        37377
+      ],
+      "visibleShadowCamera": [
+        37377,
+        37377
+      ]
+    }
+  },
+  "Direct3D12-64-dqs-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 1.7386474609375,
+      "aboveTolerance": 217,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-64-dqs-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 1.7386474609375,
+      "aboveTolerance": 217,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-64-dqs-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 1.7386474609375,
+      "aboveTolerance": 217,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-64-dqs-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-LBS-VS": {
+    "cpuMaxError": 2.2209633732117595e-07,
+    "gpuMaxError": 1.704963685789096e-07
+  },
+  "Direct3D12-LBS-CS": {
+    "cpuMaxError": 2.2209633732117595e-07,
+    "gpuMaxError": 1.704963685789096e-07
+  },
+  "Direct3D12-LBS-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-LBS-Task": {
+    "cpuMaxError": 2.2209633732117595e-07,
+    "gpuMaxError": 1.704963685789096e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-LBS-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-LBS-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-LBS-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-LBS-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-64-lbs-VS": {
+    "cpuMaxError": 1.870867558650957e-07,
+    "gpuMaxError": 2.0729909966377136e-07
+  },
+  "Direct3D12-64-lbs-CS": {
+    "cpuMaxError": 1.870867558650957e-07,
+    "gpuMaxError": 2.0729909966377136e-07
+  },
+  "Direct3D12-64-lbs-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-64-lbs-Task": {
+    "cpuMaxError": 1.870867558650957e-07,
+    "gpuMaxError": 2.0729909966377136e-07,
+    "bounds": {
+      "verticesChecked": 37248,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        37377,
+        37377
+      ],
+      "visibleShadowCamera": [
+        37377,
+        37377
+      ]
+    }
+  },
+  "Direct3D12-64-lbs-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 1.7386474609375,
+      "aboveTolerance": 210,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-root-on-VS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Direct3D12-root-on-CS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Direct3D12-root-on-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-root-on-Task": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-root-on-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-root-on-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-root-on-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-root-on-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-offscreen-VS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Direct3D12-offscreen-CS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Direct3D12-offscreen-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-offscreen-Task": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        6
+      ]
+    }
+  },
+  "Direct3D12-offscreen-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-offscreen-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-offscreen-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-offscreen-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UI-1": {
+    "cpuMaxError": 6.596573645101245e-07,
+    "gpuMaxError": 6.990876304235893e-07
+  },
+  "Direct3D12-UI-1-back": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UI-1-reset": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-RootUI-1": {
+    "cpuMaxError": 6.596573645101245e-07,
+    "gpuMaxError": 6.990876304235893e-07
+  },
+  "Direct3D12-RootUI-1-reset": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UI-2": {
+    "cpuMaxError": 6.596573645101245e-07,
+    "gpuMaxError": 6.990876304235893e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-UI-2-back": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-UI-2-reset": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Direct3D12-RootUI-2": {
+    "cpuMaxError": 6.596573645101245e-07,
+    "gpuMaxError": 6.990876304235893e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Direct3D12-RootUI-2-reset": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-Bind_Apose-VS": {
+    "cpuMaxError": 1.4057288888480457e-07,
+    "gpuMaxError": 1.3680521315784233e-07
+  },
+  "Vulkan-Bind_Apose-CS": {
+    "cpuMaxError": 1.4057288888480457e-07,
+    "gpuMaxError": 1.3680521315784233e-07
+  },
+  "Vulkan-Bind_Apose-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-Bind_Apose-Task": {
+    "cpuMaxError": 1.4057288888480457e-07,
+    "gpuMaxError": 1.3680521315784233e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-Bind_Apose-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.019317626953125,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-Retarget_Tpose-VS": {
+    "cpuMaxError": 4.3395161708481567e-07,
+    "gpuMaxError": 3.926689333688671e-07
+  },
+  "Vulkan-Retarget_Tpose-CS": {
+    "cpuMaxError": 4.3395161708481567e-07,
+    "gpuMaxError": 3.926689333688671e-07
+  },
+  "Vulkan-Retarget_Tpose-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-Retarget_Tpose-Task": {
+    "cpuMaxError": 4.3395161708481567e-07,
+    "gpuMaxError": 3.926689333688671e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-Retarget_Tpose-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0975341796875,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Idle-VS": {
+    "cpuMaxError": 7.301600402076502e-07,
+    "gpuMaxError": 7.406277815480422e-07
+  },
+  "Vulkan-UAL_Idle-CS": {
+    "cpuMaxError": 7.301600402076502e-07,
+    "gpuMaxError": 7.406277815480422e-07
+  },
+  "Vulkan-UAL_Idle-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Idle-Task": {
+    "cpuMaxError": 7.301600402076502e-07,
+    "gpuMaxError": 7.406277815480422e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-UAL_Idle-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Walk-VS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Vulkan-UAL_Walk-CS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Vulkan-UAL_Walk-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Walk-Task": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-UAL_Walk-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Walk-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Walk-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Walk-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Run-VS": {
+    "cpuMaxError": 1.0640623262503368e-06,
+    "gpuMaxError": 1.2654377006260376e-06
+  },
+  "Vulkan-UAL_Run-CS": {
+    "cpuMaxError": 1.0640623262503368e-06,
+    "gpuMaxError": 1.2654377006260376e-06
+  },
+  "Vulkan-UAL_Run-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_Run-Task": {
+    "cpuMaxError": 1.0640623262503368e-06,
+    "gpuMaxError": 1.2654377006260376e-06,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-UAL_Run-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpStart-VS": {
+    "cpuMaxError": 5.901262823959641e-07,
+    "gpuMaxError": 7.224101888081425e-07
+  },
+  "Vulkan-UAL_JumpStart-CS": {
+    "cpuMaxError": 5.901262823959641e-07,
+    "gpuMaxError": 7.224101888081425e-07
+  },
+  "Vulkan-UAL_JumpStart-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpStart-Task": {
+    "cpuMaxError": 5.901262823959641e-07,
+    "gpuMaxError": 7.224101888081425e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-UAL_JumpStart-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLoop-VS": {
+    "cpuMaxError": 5.173540407188426e-07,
+    "gpuMaxError": 4.265901491773416e-07
+  },
+  "Vulkan-UAL_JumpLoop-CS": {
+    "cpuMaxError": 5.173540407188426e-07,
+    "gpuMaxError": 4.265901491773416e-07
+  },
+  "Vulkan-UAL_JumpLoop-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLoop-Task": {
+    "cpuMaxError": 5.173540407188426e-07,
+    "gpuMaxError": 4.265901491773416e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-UAL_JumpLoop-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLand-VS": {
+    "cpuMaxError": 9.942187942924008e-07,
+    "gpuMaxError": 1.027691344801518e-06
+  },
+  "Vulkan-UAL_JumpLand-CS": {
+    "cpuMaxError": 9.942187942924008e-07,
+    "gpuMaxError": 1.027691344801518e-06
+  },
+  "Vulkan-UAL_JumpLand-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UAL_JumpLand-Task": {
+    "cpuMaxError": 9.942187942924008e-07,
+    "gpuMaxError": 1.027691344801518e-06,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-UAL_JumpLand-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-DQS_Twist-VS": {
+    "cpuMaxError": 5.521893875481965e-07,
+    "gpuMaxError": 5.262448168341649e-07
+  },
+  "Vulkan-DQS_Twist-CS": {
+    "cpuMaxError": 5.521893875481965e-07,
+    "gpuMaxError": 5.262448168341649e-07
+  },
+  "Vulkan-DQS_Twist-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-DQS_Twist-Task": {
+    "cpuMaxError": 5.521893875481965e-07,
+    "gpuMaxError": 5.262448168341649e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-DQS_Twist-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0009899139404296875,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-DQS_Twist-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0009899139404296875,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-DQS_Twist-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0009899139404296875,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-DQS_Twist-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-64-dqs-VS": {
+    "cpuMaxError": 1.3617160322942912e-06,
+    "gpuMaxError": 1.4064195158758341e-06
+  },
+  "Vulkan-64-dqs-CS": {
+    "cpuMaxError": 1.3617160322942912e-06,
+    "gpuMaxError": 1.4064195158758341e-06
+  },
+  "Vulkan-64-dqs-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-64-dqs-Task": {
+    "cpuMaxError": 1.3617160322942912e-06,
+    "gpuMaxError": 1.4064195158758341e-06,
+    "bounds": {
+      "verticesChecked": 37248,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        37377,
+        37377
+      ],
+      "visibleShadowCamera": [
+        37377,
+        37377
+      ]
+    }
+  },
+  "Vulkan-64-dqs-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 1.7386474609375,
+      "aboveTolerance": 217,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-64-dqs-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 1.7386474609375,
+      "aboveTolerance": 217,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-64-dqs-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 1.7386474609375,
+      "aboveTolerance": 217,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-64-dqs-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-LBS-VS": {
+    "cpuMaxError": 2.2209633732117595e-07,
+    "gpuMaxError": 2.2134758403957733e-07
+  },
+  "Vulkan-LBS-CS": {
+    "cpuMaxError": 2.2209633732117595e-07,
+    "gpuMaxError": 2.2134758403957733e-07
+  },
+  "Vulkan-LBS-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-LBS-Task": {
+    "cpuMaxError": 2.2209633732117595e-07,
+    "gpuMaxError": 2.2134758403957733e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-LBS-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.09844207763671875,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-LBS-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.09844207763671875,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-LBS-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.09844207763671875,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-LBS-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-64-lbs-VS": {
+    "cpuMaxError": 1.870867558650957e-07,
+    "gpuMaxError": 2.2832497070801594e-07
+  },
+  "Vulkan-64-lbs-CS": {
+    "cpuMaxError": 1.870867558650957e-07,
+    "gpuMaxError": 2.2832497070801594e-07
+  },
+  "Vulkan-64-lbs-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-64-lbs-Task": {
+    "cpuMaxError": 1.870867558650957e-07,
+    "gpuMaxError": 2.2832497070801594e-07,
+    "bounds": {
+      "verticesChecked": 37248,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        37377,
+        37377
+      ],
+      "visibleShadowCamera": [
+        37377,
+        37377
+      ]
+    }
+  },
+  "Vulkan-64-lbs-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 1.7386474609375,
+      "aboveTolerance": 223,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-root-on-VS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Vulkan-root-on-CS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Vulkan-root-on-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-root-on-Task": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-root-on-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0243072509765625,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-root-on-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0243072509765625,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-root-on-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0243072509765625,
+      "aboveTolerance": 3,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-root-on-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-offscreen-VS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Vulkan-offscreen-CS": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07
+  },
+  "Vulkan-offscreen-VS-CS": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-offscreen-Task": {
+    "cpuMaxError": 7.800434798088673e-07,
+    "gpuMaxError": 8.490459079135704e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        6
+      ]
+    }
+  },
+  "Vulkan-offscreen-VS-Task": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-offscreen-mesh-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-offscreen-task-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-offscreen-vertex-off": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UI-1": {
+    "cpuMaxError": 6.596573645101245e-07,
+    "gpuMaxError": 6.990876304235893e-07
+  },
+  "Vulkan-UI-1-back": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UI-1-reset": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-RootUI-1": {
+    "cpuMaxError": 6.596573645101245e-07,
+    "gpuMaxError": 6.990876304235893e-07
+  },
+  "Vulkan-RootUI-1-reset": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UI-2": {
+    "cpuMaxError": 6.596573645101245e-07,
+    "gpuMaxError": 6.990876304235893e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-UI-2-back": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-UI-2-reset": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  },
+  "Vulkan-RootUI-2": {
+    "cpuMaxError": 6.596573645101245e-07,
+    "gpuMaxError": 6.990876304235893e-07,
+    "bounds": {
+      "verticesChecked": 37028,
+      "maximumEscape": 0
+    },
+    "task": {
+      "testedShadowCamera": [
+        585,
+        585
+      ],
+      "visibleShadowCamera": [
+        585,
+        585
+      ]
+    }
+  },
+  "Vulkan-RootUI-2-reset": {
+    "depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 3e-06
+    },
+    "shadow-depth": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 5e-06
+    },
+    "hdr": {
+      "maxError": 0.0,
+      "aboveTolerance": 0,
+      "tolerance": 0.012
+    }
+  }
+}

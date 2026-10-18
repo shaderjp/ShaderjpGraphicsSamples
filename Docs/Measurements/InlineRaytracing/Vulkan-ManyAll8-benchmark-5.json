@@ -1,0 +1,123 @@
+{
+  "activeCells": 0,
+  "api": "Vulkan",
+  "averageCandidates": 0.0,
+  "cells": 3600,
+  "configuration": "Release",
+  "depthSlices": 24,
+  "fixedDelta": 0.016666666666666666,
+  "gBufferBytesPerPixel": 18,
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "height": 720,
+  "inlineRaytracing": {
+    "accelerationStructuresCommittedBytes": 7011584,
+    "asStartupMs": 832.1343,
+    "inlineSceneBufferBytes": 4785264,
+    "reflections": false,
+    "shadowPointLights": 8,
+    "shadowPointLightsRequested": 8,
+    "sunRayQuery": true
+  },
+  "lightIntensity": 0.4000000059604645,
+  "lightRadius": 1.600000023841858,
+  "lightsPerRoom": 256,
+  "listBytes": 3715200,
+  "listCapacity": 256,
+  "listStride": 256,
+  "maxCandidates": 0,
+  "measuredFrames": 1200,
+  "mesh": {
+    "candidates": 3660,
+    "cpuMeasurement": "geometry command recording; excludes waits and GPU readback",
+    "culling": "frustum-cone",
+    "maxTriangles": 96,
+    "maxVertices": 64,
+    "meshlets": 1362,
+    "meshoptimizer": "1.3",
+    "renderPath": "task"
+  },
+  "mode": "All",
+  "msvcFullVersion": 195136257,
+  "overflowCells": 0,
+  "passes": {
+    "cull": {
+      "averageMs": 2.56e-06,
+      "medianMs": 0.0,
+      "p95Ms": 0.0
+    },
+    "display": {
+      "averageMs": 0.2586213066666694,
+      "medianMs": 0.012288,
+      "p95Ms": 0.016384
+    },
+    "extract": {
+      "averageMs": 0.31108146666666414,
+      "medianMs": 0.013312,
+      "p95Ms": 0.017408
+    },
+    "geometry": {
+      "averageMs": 9.318833493333333,
+      "medianMs": 0.891904,
+      "p95Ms": 33.874944
+    },
+    "horizontal": {
+      "averageMs": 0.09034445333333173,
+      "medianMs": 0.008384,
+      "p95Ms": 0.01024
+    },
+    "lighting": {
+      "averageMs": 56.03674031999998,
+      "medianMs": 34.833408,
+      "p95Ms": 194.917376
+    },
+    "mesh-cpu": {
+      "averageMs": 0.04954216666666662,
+      "medianMs": 0.041400000000000006,
+      "p95Ms": 0.081
+    },
+    "mesh-cull": {
+      "averageMs": 0.0,
+      "medianMs": 0.0,
+      "p95Ms": 0.0
+    },
+    "shadow": {
+      "averageMs": 0.00939349333333334,
+      "medianMs": 0.009376,
+      "p95Ms": 0.013504
+    },
+    "sky": {
+      "averageMs": 0.012171013333333343,
+      "medianMs": 0.00512,
+      "p95Ms": 0.009216
+    },
+    "tile-depth": {
+      "averageMs": 5.119999999999999e-06,
+      "medianMs": 0.0,
+      "p95Ms": 0.0
+    },
+    "total": {
+      "averageMs": 66.17666405333351,
+      "medianMs": 46.813056,
+      "p95Ms": 226.153024
+    },
+    "transparent": {
+      "averageMs": 0.02551040000000048,
+      "medianMs": 0.001024,
+      "p95Ms": 0.001024
+    },
+    "vertical": {
+      "averageMs": 0.1127830133333354,
+      "medianMs": 0.007168,
+      "p95Ms": 0.008896
+    }
+  },
+  "pathFrames": 1200,
+  "pointLights": 264,
+  "preset": "OpaqueMask",
+  "representation": "GBuffer",
+  "scene": "Standard",
+  "tileSize": 16,
+  "warmupFrames": 60,
+  "width": 1280,
+  "windowsSdk": "10.0.26100.0"
+}

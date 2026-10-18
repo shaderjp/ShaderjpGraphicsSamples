@@ -1,4 +1,4 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.0.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -156,12 +156,76 @@ Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_25_DualQuaternionCom
 EndProject
 Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced11_DualQuaternionMeshSkinning", "Samples\Vulkan\Advanced11_DualQuaternionMeshSkinning\Vulkan_Advanced11_DualQuaternionMeshSkinning.vcxproj", "{E466C1D9-6936-4A11-AB78-1920B4D9ABB2}"
 EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced12_BindlessMaterials", "Samples\Direct3D12\Advanced12_BindlessMaterials\Direct3D12_Advanced12_BindlessMaterials.vcxproj", "{07684110-1F86-540D-B341-43E022C4A93A}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced13_BindlessMeshShader", "Samples\Direct3D12\Advanced13_BindlessMeshShader\Direct3D12_Advanced13_BindlessMeshShader.vcxproj", "{582C901E-7123-52BC-A8BA-E9F48D162904}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced14_BindlessRaytracing", "Samples\Direct3D12\Advanced14_BindlessRaytracing\Direct3D12_Advanced14_BindlessRaytracing.vcxproj", "{02C7E0DD-21AF-54EF-8952-9F4533BB834C}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced15_BindlessHybrid", "Samples\Direct3D12\Advanced15_BindlessHybrid\Direct3D12_Advanced15_BindlessHybrid.vcxproj", "{5586CFE3-738D-5B26-8B63-A4CD5D34EEF3}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced12_BindlessMaterials", "Samples\Vulkan\Advanced12_BindlessMaterials\Vulkan_Advanced12_BindlessMaterials.vcxproj", "{1A87D6ED-1CB5-57D5-93DD-731FF2A620E6}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced13_BindlessMeshShader", "Samples\Vulkan\Advanced13_BindlessMeshShader\Vulkan_Advanced13_BindlessMeshShader.vcxproj", "{19D0248A-96F9-5E79-B6DB-48298526DA4D}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced14_BindlessRaytracing", "Samples\Vulkan\Advanced14_BindlessRaytracing\Vulkan_Advanced14_BindlessRaytracing.vcxproj", "{AA62C0D2-8A7C-5333-A60D-2876641B217C}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced15_BindlessHybrid", "Samples\Vulkan\Advanced15_BindlessHybrid\Vulkan_Advanced15_BindlessHybrid.vcxproj", "{8631852E-03FA-5CCB-97AD-B7086311F46F}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_26_InlineRaytracingShadows", "Samples\Direct3D12\26_InlineRaytracingShadows\Direct3D12_26_InlineRaytracingShadows.vcxproj", "{5D5E8FF3-92F4-4E2B-9510-E79230772FAA}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_27_InlineRaytracingReflections", "Samples\Direct3D12\27_InlineRaytracingReflections\Direct3D12_27_InlineRaytracingReflections.vcxproj", "{906DA354-9380-4B35-87CF-DF6114863EF4}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_26_InlineRaytracingShadows", "Samples\Vulkan\26_InlineRaytracingShadows\Vulkan_26_InlineRaytracingShadows.vcxproj", "{E50E5D2A-B7A2-4CDA-91CD-E890FF28C6AC}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_27_InlineRaytracingReflections", "Samples\Vulkan\27_InlineRaytracingReflections\Vulkan_27_InlineRaytracingReflections.vcxproj", "{4F073892-F609-474E-B15A-E119D1BC90E6}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced17_MeshShaderTiledInlineShadows", "Samples\Direct3D12\Advanced17_MeshShaderTiledInlineShadows\Direct3D12_Advanced17_MeshShaderTiledInlineShadows.vcxproj", "{ABBA5304-7FF0-45A3-B5BB-DF776CEB7D18}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced17_MeshShaderTiledInlineShadows", "Samples\Vulkan\Advanced17_MeshShaderTiledInlineShadows\Vulkan_Advanced17_MeshShaderTiledInlineShadows.vcxproj", "{655EF4EF-713D-4790-8A17-60A33A36B6DE}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced16_BindlessInlineHybrid", "Samples\Direct3D12\Advanced16_BindlessInlineHybrid\Direct3D12_Advanced16_BindlessInlineHybrid.vcxproj", "{E8322E53-924B-4FF3-BBB6-7EABF899B273}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced16_BindlessInlineHybrid", "Samples\Vulkan\Advanced16_BindlessInlineHybrid\Vulkan_Advanced16_BindlessInlineHybrid.vcxproj", "{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}.Debug|x64.ActiveCfg = Debug|x64
+		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}.Debug|x64.Build.0 = Debug|x64
+		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}.Release|x64.ActiveCfg = Release|x64
+		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}.Release|x64.Build.0 = Release|x64
+		{E8322E53-924B-4FF3-BBB6-7EABF899B273}.Debug|x64.ActiveCfg = Debug|x64
+		{E8322E53-924B-4FF3-BBB6-7EABF899B273}.Debug|x64.Build.0 = Debug|x64
+		{E8322E53-924B-4FF3-BBB6-7EABF899B273}.Release|x64.ActiveCfg = Release|x64
+		{E8322E53-924B-4FF3-BBB6-7EABF899B273}.Release|x64.Build.0 = Release|x64
+		{655EF4EF-713D-4790-8A17-60A33A36B6DE}.Debug|x64.ActiveCfg = Debug|x64
+		{655EF4EF-713D-4790-8A17-60A33A36B6DE}.Debug|x64.Build.0 = Debug|x64
+		{655EF4EF-713D-4790-8A17-60A33A36B6DE}.Release|x64.ActiveCfg = Release|x64
+		{655EF4EF-713D-4790-8A17-60A33A36B6DE}.Release|x64.Build.0 = Release|x64
+		{ABBA5304-7FF0-45A3-B5BB-DF776CEB7D18}.Debug|x64.ActiveCfg = Debug|x64
+		{ABBA5304-7FF0-45A3-B5BB-DF776CEB7D18}.Debug|x64.Build.0 = Debug|x64
+		{ABBA5304-7FF0-45A3-B5BB-DF776CEB7D18}.Release|x64.ActiveCfg = Release|x64
+		{ABBA5304-7FF0-45A3-B5BB-DF776CEB7D18}.Release|x64.Build.0 = Release|x64
+		{4F073892-F609-474E-B15A-E119D1BC90E6}.Debug|x64.ActiveCfg = Debug|x64
+		{4F073892-F609-474E-B15A-E119D1BC90E6}.Debug|x64.Build.0 = Debug|x64
+		{4F073892-F609-474E-B15A-E119D1BC90E6}.Release|x64.ActiveCfg = Release|x64
+		{4F073892-F609-474E-B15A-E119D1BC90E6}.Release|x64.Build.0 = Release|x64
+		{E50E5D2A-B7A2-4CDA-91CD-E890FF28C6AC}.Debug|x64.ActiveCfg = Debug|x64
+		{E50E5D2A-B7A2-4CDA-91CD-E890FF28C6AC}.Debug|x64.Build.0 = Debug|x64
+		{E50E5D2A-B7A2-4CDA-91CD-E890FF28C6AC}.Release|x64.ActiveCfg = Release|x64
+		{E50E5D2A-B7A2-4CDA-91CD-E890FF28C6AC}.Release|x64.Build.0 = Release|x64
+		{906DA354-9380-4B35-87CF-DF6114863EF4}.Debug|x64.ActiveCfg = Debug|x64
+		{906DA354-9380-4B35-87CF-DF6114863EF4}.Debug|x64.Build.0 = Debug|x64
+		{906DA354-9380-4B35-87CF-DF6114863EF4}.Release|x64.ActiveCfg = Release|x64
+		{906DA354-9380-4B35-87CF-DF6114863EF4}.Release|x64.Build.0 = Release|x64
+		{5D5E8FF3-92F4-4E2B-9510-E79230772FAA}.Debug|x64.ActiveCfg = Debug|x64
+		{5D5E8FF3-92F4-4E2B-9510-E79230772FAA}.Debug|x64.Build.0 = Debug|x64
+		{5D5E8FF3-92F4-4E2B-9510-E79230772FAA}.Release|x64.ActiveCfg = Release|x64
+		{5D5E8FF3-92F4-4E2B-9510-E79230772FAA}.Release|x64.Build.0 = Release|x64
 		{B1B714C8-BDDF-549B-8DE9-1178E60446F2}.Debug|x64.ActiveCfg = Debug|x64
 		{2EFD656D-C72E-4F25-9CD7-0B85709028C0}.Debug|x64.ActiveCfg = Debug|x64
 		{3C711663-1E9A-4553-9441-9A23B1179FB5}.Debug|x64.ActiveCfg = Debug|x64
@@ -458,8 +522,48 @@ Global
 		{E466C1D9-6936-4A11-AB78-1920B4D9ABB2}.Debug|x64.Build.0 = Debug|x64
 		{E466C1D9-6936-4A11-AB78-1920B4D9ABB2}.Release|x64.ActiveCfg = Release|x64
 		{E466C1D9-6936-4A11-AB78-1920B4D9ABB2}.Release|x64.Build.0 = Release|x64
+		{07684110-1F86-540D-B341-43E022C4A93A}.Debug|x64.ActiveCfg = Debug|x64
+		{07684110-1F86-540D-B341-43E022C4A93A}.Debug|x64.Build.0 = Debug|x64
+		{07684110-1F86-540D-B341-43E022C4A93A}.Release|x64.ActiveCfg = Release|x64
+		{07684110-1F86-540D-B341-43E022C4A93A}.Release|x64.Build.0 = Release|x64
+		{582C901E-7123-52BC-A8BA-E9F48D162904}.Debug|x64.ActiveCfg = Debug|x64
+		{582C901E-7123-52BC-A8BA-E9F48D162904}.Debug|x64.Build.0 = Debug|x64
+		{582C901E-7123-52BC-A8BA-E9F48D162904}.Release|x64.ActiveCfg = Release|x64
+		{582C901E-7123-52BC-A8BA-E9F48D162904}.Release|x64.Build.0 = Release|x64
+		{02C7E0DD-21AF-54EF-8952-9F4533BB834C}.Debug|x64.ActiveCfg = Debug|x64
+		{02C7E0DD-21AF-54EF-8952-9F4533BB834C}.Debug|x64.Build.0 = Debug|x64
+		{02C7E0DD-21AF-54EF-8952-9F4533BB834C}.Release|x64.ActiveCfg = Release|x64
+		{02C7E0DD-21AF-54EF-8952-9F4533BB834C}.Release|x64.Build.0 = Release|x64
+		{5586CFE3-738D-5B26-8B63-A4CD5D34EEF3}.Debug|x64.ActiveCfg = Debug|x64
+		{5586CFE3-738D-5B26-8B63-A4CD5D34EEF3}.Debug|x64.Build.0 = Debug|x64
+		{5586CFE3-738D-5B26-8B63-A4CD5D34EEF3}.Release|x64.ActiveCfg = Release|x64
+		{5586CFE3-738D-5B26-8B63-A4CD5D34EEF3}.Release|x64.Build.0 = Release|x64
+		{1A87D6ED-1CB5-57D5-93DD-731FF2A620E6}.Debug|x64.ActiveCfg = Debug|x64
+		{1A87D6ED-1CB5-57D5-93DD-731FF2A620E6}.Debug|x64.Build.0 = Debug|x64
+		{1A87D6ED-1CB5-57D5-93DD-731FF2A620E6}.Release|x64.ActiveCfg = Release|x64
+		{1A87D6ED-1CB5-57D5-93DD-731FF2A620E6}.Release|x64.Build.0 = Release|x64
+		{19D0248A-96F9-5E79-B6DB-48298526DA4D}.Debug|x64.ActiveCfg = Debug|x64
+		{19D0248A-96F9-5E79-B6DB-48298526DA4D}.Debug|x64.Build.0 = Debug|x64
+		{19D0248A-96F9-5E79-B6DB-48298526DA4D}.Release|x64.ActiveCfg = Release|x64
+		{19D0248A-96F9-5E79-B6DB-48298526DA4D}.Release|x64.Build.0 = Release|x64
+		{AA62C0D2-8A7C-5333-A60D-2876641B217C}.Debug|x64.ActiveCfg = Debug|x64
+		{AA62C0D2-8A7C-5333-A60D-2876641B217C}.Debug|x64.Build.0 = Debug|x64
+		{AA62C0D2-8A7C-5333-A60D-2876641B217C}.Release|x64.ActiveCfg = Release|x64
+		{AA62C0D2-8A7C-5333-A60D-2876641B217C}.Release|x64.Build.0 = Release|x64
+		{8631852E-03FA-5CCB-97AD-B7086311F46F}.Debug|x64.ActiveCfg = Debug|x64
+		{8631852E-03FA-5CCB-97AD-B7086311F46F}.Debug|x64.Build.0 = Debug|x64
+		{8631852E-03FA-5CCB-97AD-B7086311F46F}.Release|x64.ActiveCfg = Release|x64
+		{8631852E-03FA-5CCB-97AD-B7086311F46F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{E8322E53-924B-4FF3-BBB6-7EABF899B273} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{655EF4EF-713D-4790-8A17-60A33A36B6DE} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{ABBA5304-7FF0-45A3-B5BB-DF776CEB7D18} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{4F073892-F609-474E-B15A-E119D1BC90E6} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{E50E5D2A-B7A2-4CDA-91CD-E890FF28C6AC} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{906DA354-9380-4B35-87CF-DF6114863EF4} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{5D5E8FF3-92F4-4E2B-9510-E79230772FAA} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{4CBAD47E-BCC9-573C-97F9-0192CD67B9C2} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{370918E6-E682-50B4-BA2D-D6D7E3E86B6E} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{986578FF-B978-5D5C-91CA-09FDA51E60F9} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
@@ -534,5 +638,13 @@ Global
 		{9022ED4F-55EC-4DD2-AA9B-C8E4F7AC638A} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{8139793B-19CE-4FC4-94E9-24D1375798C5} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
 		{E466C1D9-6936-4A11-AB78-1920B4D9ABB2} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{07684110-1F86-540D-B341-43E022C4A93A} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{582C901E-7123-52BC-A8BA-E9F48D162904} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{02C7E0DD-21AF-54EF-8952-9F4533BB834C} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{5586CFE3-738D-5B26-8B63-A4CD5D34EEF3} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{1A87D6ED-1CB5-57D5-93DD-731FF2A620E6} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{19D0248A-96F9-5E79-B6DB-48298526DA4D} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{AA62C0D2-8A7C-5333-A60D-2876641B217C} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{8631852E-03FA-5CCB-97AD-B7086311F46F} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
 	EndGlobalSection
 EndGlobal

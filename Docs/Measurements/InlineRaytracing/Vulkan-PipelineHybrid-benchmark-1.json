@@ -1,0 +1,117 @@
+{
+  "api": "Vulkan",
+  "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+  "binding": "textures",
+  "comparison": "storage-and-access",
+  "configuration": "Release",
+  "cpu": {
+    "gpu-wait": {
+      "averageMs": 0.014733583333333312,
+      "medianMs": 0.013500000000000002,
+      "p95Ms": 0.023200000000000002
+    },
+    "present": {
+      "averageMs": 6.142297166666668,
+      "medianMs": 5.6894,
+      "p95Ms": 8.8534
+    },
+    "record": {
+      "averageMs": 0.15122350000000007,
+      "medianMs": 0.1405,
+      "p95Ms": 0.2456
+    },
+    "submit": {
+      "averageMs": 0.025428250000000055,
+      "medianMs": 0.0227,
+      "p95Ms": 0.0419
+    },
+    "update": {
+      "averageMs": 0.0020400833333333226,
+      "medianMs": 0.0019,
+      "p95Ms": 0.0032
+    }
+  },
+  "culling": true,
+  "descriptorBinds": 3,
+  "descriptorCount": 690,
+  "descriptorUpdatesPerFrame": 0,
+  "dispatches": 513,
+  "draws": 1,
+  "driver": "2559967232",
+  "fixedDelta": 0.016666666666666666,
+  "geometries": 64,
+  "gpu": {
+    "cull": {
+      "averageMs": 6.114666666666697e-05,
+      "medianMs": 6.4e-05,
+      "p95Ms": 6.4e-05
+    },
+    "display": {
+      "averageMs": 0.022946106666666653,
+      "medianMs": 0.02288,
+      "p95Ms": 0.028416
+    },
+    "geometry": {
+      "averageMs": 4.228271813333329,
+      "medianMs": 3.673696,
+      "p95Ms": 6.751296
+    },
+    "lighting": {
+      "averageMs": 0.00012951999999999986,
+      "medianMs": 0.0,
+      "p95Ms": 0.001024
+    },
+    "rt": {
+      "averageMs": 1.4662955200000007,
+      "medianMs": 1.407968,
+      "p95Ms": 2.328288
+    },
+    "total": {
+      "averageMs": 5.7199062666666585,
+      "medianMs": 5.250752,
+      "p95Ms": 8.439616
+    }
+  },
+  "gpuDriven": false,
+  "gpuName": "NVIDIA GeForce RTX 4070",
+  "height": 720,
+  "imageResources": 208,
+  "images": 208,
+  "measuredFrames": 1200,
+  "memory": {
+    "accelerationStructures": 9492608,
+    "attachmentPayload": 77414400,
+    "attachmentsCommitted": 82575360,
+    "buffers": 23395904,
+    "descriptors": null,
+    "images": 290804800,
+    "imagesCommitted": 291160064,
+    "sceneBuffersCommitted": 23396608,
+    "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+  },
+  "msvcFullVersion": 195136257,
+  "objects": 512,
+  "presentMode": "immediate",
+  "residentMaterials": 64,
+  "rtReflections": true,
+  "rtShadows": true,
+  "sceneBufferResources": 9,
+  "startupMs": {
+    "asBuild": 38.0393,
+    "load": 1035.8529,
+    "upload": 1510.3016
+  },
+  "technique": 15,
+  "usedMaterials": 64,
+  "validation": false,
+  "visibility": {
+    "frustumInstancesCpuReference": 459,
+    "frustumMeshletsCpuReference": 41940,
+    "meshletsGpu": null,
+    "primaryGeometries": 64,
+    "primaryInstances": 407
+  },
+  "warmupFrames": 60,
+  "width": 1280,
+  "windowsSdk": "10.0.26100.0"
+}

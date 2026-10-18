@@ -1,0 +1,5200 @@
+{
+  "Direct3D12-A12-128-64-bound-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 128,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23055488,
+      "descriptors": 15584,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23396352,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 487,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 128,
+      "frustumMeshletsCpuReference": 11880,
+      "meshletsGpu": null,
+      "primaryGeometries": 61,
+      "primaryInstances": 120
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-bound-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-bound-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-bound-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-bound-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.114,
+    "cpuRecordRunRangeMs": [
+      0.074,
+      0.137
+    ],
+    "gpuMedianMs": 2.778112,
+    "gpuRunRangeMs": [
+      2.746368,
+      2.792416
+    ],
+    "gpuP95MedianMs": 3.457024,
+    "descriptorBinds": 76,
+    "draws": 129,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 2.789704249999997,
+        "medianMs": 2.7316,
+        "p95Ms": 3.4547
+      },
+      "present": {
+        "averageMs": 0.2137814166666665,
+        "medianMs": 0.2011,
+        "p95Ms": 0.4292
+      },
+      "record": {
+        "averageMs": 0.11988433333333338,
+        "medianMs": 0.114,
+        "p95Ms": 0.2375
+      },
+      "submit": {
+        "averageMs": 0.07171049999999997,
+        "medianMs": 0.0647,
+        "p95Ms": 0.1463
+      },
+      "update": {
+        "averageMs": 0.0036124999999999946,
+        "medianMs": 0.0028,
+        "p95Ms": 0.0065
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 4.693333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.011914239999999916,
+        "medianMs": 0.012288,
+        "p95Ms": 0.012288
+      },
+      "geometry": {
+        "averageMs": 2.8117134133333304,
+        "medianMs": 2.727936,
+        "p95Ms": 3.421184
+      },
+      "lighting": {
+        "averageMs": 0.03234474666666644,
+        "medianMs": 0.032768,
+        "p95Ms": 0.041984
+      },
+      "rt": {
+        "averageMs": 2.56e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 2.855937093333333,
+        "medianMs": 2.778112,
+        "p95Ms": 3.457024
+      }
+    }
+  },
+  "Direct3D12-A12-128-64-textures-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 128,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23055488,
+      "descriptors": 7392,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23396352,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 231,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 128,
+      "frustumMeshletsCpuReference": 11880,
+      "meshletsGpu": null,
+      "primaryGeometries": 61,
+      "primaryInstances": 120
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-textures-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-textures-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-textures-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-textures-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-128-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0965,
+    "cpuRecordRunRangeMs": [
+      0.0686,
+      0.1461
+    ],
+    "gpuMedianMs": 2.735104,
+    "gpuRunRangeMs": [
+      2.710528,
+      2.820096
+    ],
+    "gpuP95MedianMs": 3.514368,
+    "descriptorBinds": 13,
+    "draws": 129,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 2.778393250000002,
+        "medianMs": 2.6656,
+        "p95Ms": 3.7664
+      },
+      "present": {
+        "averageMs": 0.18559308333333352,
+        "medianMs": 0.1668,
+        "p95Ms": 0.3607
+      },
+      "record": {
+        "averageMs": 0.10764950000000001,
+        "medianMs": 0.0965,
+        "p95Ms": 0.206
+      },
+      "submit": {
+        "averageMs": 0.06470133333333333,
+        "medianMs": 0.0572,
+        "p95Ms": 0.128
+      },
+      "update": {
+        "averageMs": 0.0034658333333333273,
+        "medianMs": 0.0028,
+        "p95Ms": 0.0064
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 3.1466666666666665e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.012457813333333371,
+        "medianMs": 0.012288,
+        "p95Ms": 0.013312
+      },
+      "geometry": {
+        "averageMs": 2.7814921599999995,
+        "medianMs": 2.690048,
+        "p95Ms": 3.463168
+      },
+      "lighting": {
+        "averageMs": 0.03259818666666648,
+        "medianMs": 0.032768,
+        "p95Ms": 0.041984
+      },
+      "rt": {
+        "averageMs": 4.266666666666666e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 2.8267118933333353,
+        "medianMs": 2.735104,
+        "p95Ms": 3.514368
+      }
+    }
+  },
+  "Direct3D12-A12-4096-64-bound-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 4096,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 26573120,
+      "descriptors": 15584,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 26869760,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 487,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 1980,
+      "frustumMeshletsCpuReference": 186687,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 1414
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-bound-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-bound-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-bound-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-bound-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.4229,
+    "cpuRecordRunRangeMs": [
+      0.3599,
+      0.4428
+    ],
+    "gpuMedianMs": 4.888576,
+    "gpuRunRangeMs": [
+      4.856832,
+      4.946944
+    ],
+    "gpuP95MedianMs": 6.617088,
+    "descriptorBinds": 76,
+    "draws": 4097,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 5.125382999999997,
+        "medianMs": 4.8573,
+        "p95Ms": 6.521
+      },
+      "present": {
+        "averageMs": 0.17164841666666678,
+        "medianMs": 0.1604,
+        "p95Ms": 0.2994
+      },
+      "record": {
+        "averageMs": 0.44752416666666667,
+        "medianMs": 0.4229,
+        "p95Ms": 0.7406
+      },
+      "submit": {
+        "averageMs": 0.06396850000000001,
+        "medianMs": 0.0607,
+        "p95Ms": 0.1066
+      },
+      "update": {
+        "averageMs": 0.0038189999999999904,
+        "medianMs": 0.003,
+        "p95Ms": 0.0066
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 3.0399999999999997e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.017220266666666924,
+        "medianMs": 0.016384,
+        "p95Ms": 0.02048
+      },
+      "geometry": {
+        "averageMs": 5.043160293333333,
+        "medianMs": 4.758528,
+        "p95Ms": 6.490112
+      },
+      "lighting": {
+        "averageMs": 0.11144277333333276,
+        "medianMs": 0.111616,
+        "p95Ms": 0.126976
+      },
+      "rt": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 5.171924053333337,
+        "medianMs": 4.888576,
+        "p95Ms": 6.617088
+      }
+    }
+  },
+  "Direct3D12-A12-4096-64-textures-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 4096,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 26573120,
+      "descriptors": 7392,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 26869760,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 231,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 1980,
+      "frustumMeshletsCpuReference": 186687,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 1414
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-textures-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-textures-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-textures-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-textures-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-4096-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.4844,
+    "cpuRecordRunRangeMs": [
+      0.2906,
+      0.6634
+    ],
+    "gpuMedianMs": 4.866048,
+    "gpuRunRangeMs": [
+      4.855808,
+      4.990976
+    ],
+    "gpuP95MedianMs": 6.667264,
+    "descriptorBinds": 13,
+    "draws": 4097,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 5.147075666666665,
+        "medianMs": 4.8335,
+        "p95Ms": 6.4948
+      },
+      "present": {
+        "averageMs": 0.19107900000000014,
+        "medianMs": 0.1833,
+        "p95Ms": 0.3168
+      },
+      "record": {
+        "averageMs": 0.4873341666666664,
+        "medianMs": 0.4844,
+        "p95Ms": 0.793
+      },
+      "submit": {
+        "averageMs": 0.07063433333333334,
+        "medianMs": 0.0661,
+        "p95Ms": 0.1165
+      },
+      "update": {
+        "averageMs": 0.00411983333333334,
+        "medianMs": 0.0034,
+        "p95Ms": 0.0069
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 2.2133333333333335e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.017475413333333554,
+        "medianMs": 0.016384,
+        "p95Ms": 0.02048
+      },
+      "geometry": {
+        "averageMs": 5.0678202933333365,
+        "medianMs": 4.732928,
+        "p95Ms": 6.536192
+      },
+      "lighting": {
+        "averageMs": 0.11046058666666612,
+        "medianMs": 0.111616,
+        "p95Ms": 0.126976
+      },
+      "rt": {
+        "averageMs": 5.119999999999999e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 5.195485013333334,
+        "medianMs": 4.866048,
+        "p95Ms": 6.667264
+      }
+    }
+  },
+  "Direct3D12-A12-512-16-bound-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 16,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 64,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23391296,
+      "descriptors": 4832,
+      "images": 89478400,
+      "imagesCommitted": 92274688,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 151,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 399
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-bound-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-bound-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-bound-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-bound-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1226,
+    "cpuRecordRunRangeMs": [
+      0.1019,
+      0.1502
+    ],
+    "gpuMedianMs": 3.039232,
+    "gpuRunRangeMs": [
+      3.009536,
+      3.100672
+    ],
+    "gpuP95MedianMs": 4.389888,
+    "descriptorBinds": 28,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 3.1497205000000017,
+        "medianMs": 3.0012,
+        "p95Ms": 4.4316
+      },
+      "present": {
+        "averageMs": 0.1594365,
+        "medianMs": 0.1474,
+        "p95Ms": 0.2897
+      },
+      "record": {
+        "averageMs": 0.12915241666666666,
+        "medianMs": 0.1226,
+        "p95Ms": 0.2229
+      },
+      "submit": {
+        "averageMs": 0.05686891666666663,
+        "medianMs": 0.0505,
+        "p95Ms": 0.1036
+      },
+      "update": {
+        "averageMs": 0.0035984999999999928,
+        "medianMs": 0.003,
+        "p95Ms": 0.0064
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 3.8133333333333334e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.014831786666666659,
+        "medianMs": 0.013312,
+        "p95Ms": 0.018432
+      },
+      "geometry": {
+        "averageMs": 3.10384744,
+        "medianMs": 2.936832,
+        "p95Ms": 4.272128
+      },
+      "lighting": {
+        "averageMs": 0.07662250666666706,
+        "medianMs": 0.073728,
+        "p95Ms": 0.113664
+      },
+      "rt": {
+        "averageMs": 5.119999999999999e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 3.1946441600000037,
+        "medianMs": 3.039232,
+        "p95Ms": 4.389888
+      }
+    }
+  },
+  "Direct3D12-A12-512-16-textures-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 16,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 64,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23391296,
+      "descriptors": 2784,
+      "images": 89478400,
+      "imagesCommitted": 92274688,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 87,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 399
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-textures-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-textures-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-textures-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-textures-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-16-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1278,
+    "cpuRecordRunRangeMs": [
+      0.0865,
+      0.1405
+    ],
+    "gpuMedianMs": 3.06176,
+    "gpuRunRangeMs": [
+      3.0208,
+      3.11296
+    ],
+    "gpuP95MedianMs": 4.340736,
+    "descriptorBinds": 13,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 3.1827684999999972,
+        "medianMs": 3.0098,
+        "p95Ms": 4.4483
+      },
+      "present": {
+        "averageMs": 0.16730991666666647,
+        "medianMs": 0.1552,
+        "p95Ms": 0.3019
+      },
+      "record": {
+        "averageMs": 0.13423341666666694,
+        "medianMs": 0.1278,
+        "p95Ms": 0.2301
+      },
+      "submit": {
+        "averageMs": 0.05775766666666661,
+        "medianMs": 0.0523,
+        "p95Ms": 0.1057
+      },
+      "update": {
+        "averageMs": 0.003699416666666655,
+        "medianMs": 0.0031,
+        "p95Ms": 0.0066
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 5.1733333333333335e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.015305386666666733,
+        "medianMs": 0.014336,
+        "p95Ms": 0.018432
+      },
+      "geometry": {
+        "averageMs": 3.126770666666666,
+        "medianMs": 2.953216,
+        "p95Ms": 4.243456
+      },
+      "lighting": {
+        "averageMs": 0.07818752000000041,
+        "medianMs": 0.073728,
+        "p95Ms": 0.114688
+      },
+      "rt": {
+        "averageMs": 1.7066666666666665e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 3.2170078133333373,
+        "medianMs": 3.06176,
+        "p95Ms": 4.340736
+      }
+    }
+  },
+  "Direct3D12-A12-512-256-bound-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 256,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 400,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23414336,
+      "descriptors": 46304,
+      "images": 559240000,
+      "imagesCommitted": 576716800,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1447,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-bound-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-bound-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-bound-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-bound-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1626,
+    "cpuRecordRunRangeMs": [
+      0.1237,
+      0.239
+    ],
+    "gpuMedianMs": 6.586368,
+    "gpuRunRangeMs": [
+      6.122496,
+      7.069696
+    ],
+    "gpuP95MedianMs": 9.644032,
+    "descriptorBinds": 268,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 6.45818358333333,
+        "medianMs": 6.5238,
+        "p95Ms": 9.5373
+      },
+      "present": {
+        "averageMs": 0.23347658333333351,
+        "medianMs": 0.1942,
+        "p95Ms": 0.4448
+      },
+      "record": {
+        "averageMs": 0.19389525000000002,
+        "medianMs": 0.1626,
+        "p95Ms": 0.3708
+      },
+      "submit": {
+        "averageMs": 0.08651116666666667,
+        "medianMs": 0.0735,
+        "p95Ms": 0.1626
+      },
+      "update": {
+        "averageMs": 0.005095166666666652,
+        "medianMs": 0.004,
+        "p95Ms": 0.0073
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 3.36e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.01400234666666668,
+        "medianMs": 0.013312,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 6.413331760000005,
+        "medianMs": 6.482944,
+        "p95Ms": 9.51808
+      },
+      "lighting": {
+        "averageMs": 0.07990186666666722,
+        "medianMs": 0.077824,
+        "p95Ms": 0.10752
+      },
+      "rt": {
+        "averageMs": 4.266666666666666e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 6.507582906666662,
+        "medianMs": 6.586368,
+        "p95Ms": 9.644032
+      }
+    }
+  },
+  "Direct3D12-A12-512-256-textures-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 256,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 400,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23414336,
+      "descriptors": 13536,
+      "images": 559240000,
+      "imagesCommitted": 576716800,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 423,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-textures-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-textures-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-textures-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-textures-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-256-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1792,
+    "cpuRecordRunRangeMs": [
+      0.1326,
+      0.2326
+    ],
+    "gpuMedianMs": 6.51776,
+    "gpuRunRangeMs": [
+      6.381568,
+      6.552576
+    ],
+    "gpuP95MedianMs": 9.143296,
+    "descriptorBinds": 13,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 6.260471333333333,
+        "medianMs": 6.3946,
+        "p95Ms": 9.0396
+      },
+      "present": {
+        "averageMs": 0.2588925833333333,
+        "medianMs": 0.2244,
+        "p95Ms": 0.4639
+      },
+      "record": {
+        "averageMs": 0.20611750000000004,
+        "medianMs": 0.1792,
+        "p95Ms": 0.3659
+      },
+      "submit": {
+        "averageMs": 0.09479949999999997,
+        "medianMs": 0.0806,
+        "p95Ms": 0.1712
+      },
+      "update": {
+        "averageMs": 0.004471500000000009,
+        "medianMs": 0.004,
+        "p95Ms": 0.0073
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 4.5599999999999995e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.014319786666666667,
+        "medianMs": 0.013312,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 6.236431999999997,
+        "medianMs": 6.41024,
+        "p95Ms": 9.046016
+      },
+      "lighting": {
+        "averageMs": 0.07868928000000044,
+        "medianMs": 0.0768,
+        "p95Ms": 0.10752
+      },
+      "rt": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 6.328913520000007,
+        "medianMs": 6.51776,
+        "p95Ms": 9.143296
+      }
+    }
+  },
+  "Direct3D12-A12-512-64-bound-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 15584,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 487,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-bound-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-bound-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-bound-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-bound-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1205,
+    "cpuRecordRunRangeMs": [
+      0.0895,
+      0.1995
+    ],
+    "gpuMedianMs": 3.474432,
+    "gpuRunRangeMs": [
+      3.406784,
+      3.56352
+    ],
+    "gpuP95MedianMs": 4.70016,
+    "descriptorBinds": 76,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 3.421934083333334,
+        "medianMs": 3.3961,
+        "p95Ms": 4.8243
+      },
+      "present": {
+        "averageMs": 0.18449583333333305,
+        "medianMs": 0.1516,
+        "p95Ms": 0.3958
+      },
+      "record": {
+        "averageMs": 0.14560825000000013,
+        "medianMs": 0.1205,
+        "p95Ms": 0.3093
+      },
+      "submit": {
+        "averageMs": 0.06580258333333336,
+        "medianMs": 0.0552,
+        "p95Ms": 0.1418
+      },
+      "update": {
+        "averageMs": 0.003488999999999991,
+        "medianMs": 0.0027,
+        "p95Ms": 0.0066
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 3.2533333333333337e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.014743039999999971,
+        "medianMs": 0.014336,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 3.3864350666666656,
+        "medianMs": 3.3792,
+        "p95Ms": 4.553728
+      },
+      "lighting": {
+        "averageMs": 0.07533994666666681,
+        "medianMs": 0.07168,
+        "p95Ms": 0.109568
+      },
+      "rt": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 3.4800171199999976,
+        "medianMs": 3.474432,
+        "p95Ms": 4.70016
+      }
+    }
+  },
+  "Direct3D12-A12-512-64-textures-direct": {
+    "api": "Direct3D12",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 7392,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 231,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-textures-0.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-textures-1.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-textures-2.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-textures-3.json",
+      "Direct3D12-Advanced12_BindlessMaterials-512-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1227,
+    "cpuRecordRunRangeMs": [
+      0.1034,
+      0.1409
+    ],
+    "gpuMedianMs": 3.388416,
+    "gpuRunRangeMs": [
+      3.262432,
+      3.508224
+    ],
+    "gpuP95MedianMs": 4.438016,
+    "descriptorBinds": 13,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 3.328117333333334,
+        "medianMs": 3.3002,
+        "p95Ms": 4.3188
+      },
+      "present": {
+        "averageMs": 0.19031041666666657,
+        "medianMs": 0.1472,
+        "p95Ms": 0.3968
+      },
+      "record": {
+        "averageMs": 0.14905391666666645,
+        "medianMs": 0.1227,
+        "p95Ms": 0.3056
+      },
+      "submit": {
+        "averageMs": 0.06722491666666669,
+        "medianMs": 0.0531,
+        "p95Ms": 0.1429
+      },
+      "update": {
+        "averageMs": 0.0036384166666666605,
+        "medianMs": 0.0027,
+        "p95Ms": 0.0067
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 2.2399999999999997e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.015109973333333346,
+        "medianMs": 0.014336,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 3.3140662400000025,
+        "medianMs": 3.295232,
+        "p95Ms": 4.32128
+      },
+      "lighting": {
+        "averageMs": 0.07421696000000001,
+        "medianMs": 0.07168,
+        "p95Ms": 0.109568
+      },
+      "rt": {
+        "averageMs": 5.119999999999999e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 3.4036987200000035,
+        "medianMs": 3.388416,
+        "p95Ms": 4.438016
+      }
+    }
+  },
+  "Direct3D12-A13-512-64-bound-direct": {
+    "api": "Direct3D12",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 34016,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1063,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-bound-0.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-bound-1.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-bound-2.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-bound-3.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1094,
+    "cpuRecordRunRangeMs": [
+      0.0934,
+      0.1645
+    ],
+    "gpuMedianMs": 3.273728,
+    "gpuRunRangeMs": [
+      3.15904,
+      3.367936
+    ],
+    "gpuP95MedianMs": 4.527104,
+    "descriptorBinds": 140,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 3.236904166666665,
+        "medianMs": 3.1863,
+        "p95Ms": 4.5477
+      },
+      "present": {
+        "averageMs": 0.16263100000000003,
+        "medianMs": 0.1423,
+        "p95Ms": 0.3172
+      },
+      "record": {
+        "averageMs": 0.12350225000000016,
+        "medianMs": 0.1094,
+        "p95Ms": 0.233
+      },
+      "submit": {
+        "averageMs": 0.059857166666666614,
+        "medianMs": 0.0527,
+        "p95Ms": 0.1149
+      },
+      "update": {
+        "averageMs": 0.0035483333333333287,
+        "medianMs": 0.0024,
+        "p95Ms": 0.0067
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 1.4933333333333334e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.014715733333333337,
+        "medianMs": 0.013312,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 3.2314373066666673,
+        "medianMs": 3.175424,
+        "p95Ms": 4.41856
+      },
+      "lighting": {
+        "averageMs": 0.07580586666666689,
+        "medianMs": 0.072704,
+        "p95Ms": 0.110592
+      },
+      "rt": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 3.3225838666666654,
+        "medianMs": 3.273728,
+        "p95Ms": 4.527104
+      }
+    }
+  },
+  "Direct3D12-A13-512-64-resources-direct": {
+    "api": "Direct3D12",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": 17472,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 41287680,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 546,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-0.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-1.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-2.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-3.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0917,
+    "cpuRecordRunRangeMs": [
+      0.0811,
+      0.1173
+    ],
+    "gpuMedianMs": 2.158592,
+    "gpuRunRangeMs": [
+      2.117632,
+      2.2272
+    ],
+    "gpuP95MedianMs": 2.816,
+    "descriptorBinds": 13,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 2.144930083333334,
+        "medianMs": 2.1019,
+        "p95Ms": 2.9485
+      },
+      "present": {
+        "averageMs": 0.14317799999999983,
+        "medianMs": 0.1234,
+        "p95Ms": 0.2833
+      },
+      "record": {
+        "averageMs": 0.10490850000000002,
+        "medianMs": 0.0917,
+        "p95Ms": 0.197
+      },
+      "submit": {
+        "averageMs": 0.051553666666666664,
+        "medianMs": 0.0431,
+        "p95Ms": 0.1021
+      },
+      "update": {
+        "averageMs": 0.0028549999999999956,
+        "medianMs": 0.002,
+        "p95Ms": 0.0057
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 3.786666666666667e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.014928213333333298,
+        "medianMs": 0.014336,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 2.0748220533333326,
+        "medianMs": 2.061312,
+        "p95Ms": 2.702336
+      },
+      "lighting": {
+        "averageMs": 0.07510272000000014,
+        "medianMs": 0.072704,
+        "p95Ms": 0.110592
+      },
+      "rt": {
+        "averageMs": 2.56e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 2.1649634400000006,
+        "medianMs": 2.158592,
+        "p95Ms": 2.816
+      }
+    }
+  },
+  "Direct3D12-A13-512-64-resources-driven": {
+    "api": "Direct3D12",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": true,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "submission-architecture",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": 17472,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 41287680,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 546,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": 41940,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-driven-0.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-driven-1.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-driven-2.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-driven-3.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-resources-driven-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0876,
+    "cpuRecordRunRangeMs": [
+      0.0784,
+      0.1056
+    ],
+    "gpuMedianMs": 2.459648,
+    "gpuRunRangeMs": [
+      2.171904,
+      2.62656
+    ],
+    "gpuP95MedianMs": 3.542016,
+    "descriptorBinds": 17,
+    "draws": 1,
+    "dispatches": 5,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 2.5253862499999995,
+        "medianMs": 2.4154,
+        "p95Ms": 3.5367
+      },
+      "present": {
+        "averageMs": 0.16734483333333341,
+        "medianMs": 0.142,
+        "p95Ms": 0.3088
+      },
+      "record": {
+        "averageMs": 0.10153700000000002,
+        "medianMs": 0.0876,
+        "p95Ms": 0.1829
+      },
+      "submit": {
+        "averageMs": 0.060492249999999984,
+        "medianMs": 0.0503,
+        "p95Ms": 0.1125
+      },
+      "update": {
+        "averageMs": 0.003230833333333332,
+        "medianMs": 0.0024,
+        "p95Ms": 0.006
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 0.04847666666666645,
+        "medianMs": 0.048128,
+        "p95Ms": 0.051392
+      },
+      "display": {
+        "averageMs": 0.01528746666666664,
+        "medianMs": 0.014336,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 2.415810319999999,
+        "medianMs": 2.317312,
+        "p95Ms": 3.410496
+      },
+      "lighting": {
+        "averageMs": 0.07550976000000012,
+        "medianMs": 0.072704,
+        "p95Ms": 0.110592
+      },
+      "rt": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 2.5560658933333364,
+        "medianMs": 2.459648,
+        "p95Ms": 3.542016
+      }
+    }
+  },
+  "Direct3D12-A13-512-64-textures-direct": {
+    "api": "Direct3D12",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 25824,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 807,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-0.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-1.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-2.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-3.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1143,
+    "cpuRecordRunRangeMs": [
+      0.0849,
+      0.1514
+    ],
+    "gpuMedianMs": 3.309568,
+    "gpuRunRangeMs": [
+      3.221504,
+      3.342304
+    ],
+    "gpuP95MedianMs": 4.578304,
+    "descriptorBinds": 77,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 3.3319824166666714,
+        "medianMs": 3.2185,
+        "p95Ms": 4.6027
+      },
+      "present": {
+        "averageMs": 0.17270725000000006,
+        "medianMs": 0.151,
+        "p95Ms": 0.3435
+      },
+      "record": {
+        "averageMs": 0.1286176666666666,
+        "medianMs": 0.1143,
+        "p95Ms": 0.2575
+      },
+      "submit": {
+        "averageMs": 0.06265000000000007,
+        "medianMs": 0.0547,
+        "p95Ms": 0.1251
+      },
+      "update": {
+        "averageMs": 0.003570666666666656,
+        "medianMs": 0.0028,
+        "p95Ms": 0.0064
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 2.1066666666666667e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.015001599999999978,
+        "medianMs": 0.014336,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 3.2899366933333325,
+        "medianMs": 3.196928,
+        "p95Ms": 4.458496
+      },
+      "lighting": {
+        "averageMs": 0.07454208000000005,
+        "medianMs": 0.072704,
+        "p95Ms": 0.108544
+      },
+      "rt": {
+        "averageMs": 5.119999999999999e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 3.381120266666669,
+        "medianMs": 3.309568,
+        "p95Ms": 4.578304
+      }
+    }
+  },
+  "Direct3D12-A13-512-64-textures-driven": {
+    "api": "Direct3D12",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": true,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "submission-architecture",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 25824,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 807,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": 41940,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-driven-0.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-driven-1.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-driven-2.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-driven-3.json",
+      "Direct3D12-Advanced13_BindlessMeshShader-512-64-textures-driven-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1342,
+    "cpuRecordRunRangeMs": [
+      0.0891,
+      0.1493
+    ],
+    "gpuMedianMs": 3.495936,
+    "gpuRunRangeMs": [
+      3.23584,
+      4.16768
+    ],
+    "gpuP95MedianMs": 6.105984,
+    "descriptorBinds": 17,
+    "draws": 1,
+    "dispatches": 5,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 3.7405967500000004,
+        "medianMs": 3.425,
+        "p95Ms": 5.9775
+      },
+      "present": {
+        "averageMs": 0.2467667499999995,
+        "medianMs": 0.2329,
+        "p95Ms": 0.4087
+      },
+      "record": {
+        "averageMs": 0.14602316666666668,
+        "medianMs": 0.1342,
+        "p95Ms": 0.2447
+      },
+      "submit": {
+        "averageMs": 0.08671608333333325,
+        "medianMs": 0.0815,
+        "p95Ms": 0.1452
+      },
+      "update": {
+        "averageMs": 0.0042516666666666736,
+        "medianMs": 0.0039,
+        "p95Ms": 0.0069
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 0.040396666666666435,
+        "medianMs": 0.040224,
+        "p95Ms": 0.041088
+      },
+      "display": {
+        "averageMs": 0.01523797333333332,
+        "medianMs": 0.014336,
+        "p95Ms": 0.017408
+      },
+      "geometry": {
+        "averageMs": 3.732303626666664,
+        "medianMs": 3.356672,
+        "p95Ms": 5.987328
+      },
+      "lighting": {
+        "averageMs": 0.06986752000000006,
+        "medianMs": 0.067584,
+        "p95Ms": 0.104448
+      },
+      "rt": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "total": {
+        "averageMs": 3.8562938399999984,
+        "medianMs": 3.495936,
+        "p95Ms": 6.105984
+      }
+    }
+  },
+  "Direct3D12-A14-512-64-bound-direct": {
+    "api": "Direct3D12",
+    "technique": 14,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 864,
+      "images": 290804800,
+      "imagesCommitted": 291373056,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 27,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-bound-0.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-bound-1.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-bound-2.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-bound-3.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0452,
+    "cpuRecordRunRangeMs": [
+      0.0428,
+      0.0725
+    ],
+    "gpuMedianMs": 2.128896,
+    "gpuRunRangeMs": [
+      2.06336,
+      2.147328
+    ],
+    "gpuP95MedianMs": 2.79552,
+    "descriptorBinds": 9,
+    "draws": 1,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 2.155529416666668,
+        "medianMs": 2.1233,
+        "p95Ms": 2.8381
+      },
+      "present": {
+        "averageMs": 0.09424183333333346,
+        "medianMs": 0.0898,
+        "p95Ms": 0.1459
+      },
+      "record": {
+        "averageMs": 0.04986824999999997,
+        "medianMs": 0.0452,
+        "p95Ms": 0.0812
+      },
+      "submit": {
+        "averageMs": 0.03442474999999997,
+        "medianMs": 0.0332,
+        "p95Ms": 0.0553
+      },
+      "update": {
+        "averageMs": 0.002180999999999985,
+        "medianMs": 0.0014,
+        "p95Ms": 0.0057
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 4.266666666666666e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.03620266666666744,
+        "medianMs": 0.03584,
+        "p95Ms": 0.038912
+      },
+      "geometry": {
+        "averageMs": 1.7066666666666665e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "lighting": {
+        "averageMs": 0.00010325333333333313,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 2.1203509866666668,
+        "medianMs": 2.09408,
+        "p95Ms": 2.75968
+      },
+      "total": {
+        "averageMs": 2.1568830400000016,
+        "medianMs": 2.128896,
+        "p95Ms": 2.79552
+      }
+    }
+  },
+  "Direct3D12-A14-512-64-resources-direct": {
+    "api": "Direct3D12",
+    "technique": 14,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": 17472,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 41287680,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 546,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-resources-0.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-resources-1.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-resources-2.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-resources-3.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-resources-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0708,
+    "cpuRecordRunRangeMs": [
+      0.0431,
+      0.0723
+    ],
+    "gpuMedianMs": 2.008064,
+    "gpuRunRangeMs": [
+      1.992704,
+      2.048
+    ],
+    "gpuP95MedianMs": 2.540544,
+    "descriptorBinds": 9,
+    "draws": 1,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 1.9659654999999994,
+        "medianMs": 1.9601,
+        "p95Ms": 2.541
+      },
+      "present": {
+        "averageMs": 0.15665516666666665,
+        "medianMs": 0.1458,
+        "p95Ms": 0.2621
+      },
+      "record": {
+        "averageMs": 0.07643225000000002,
+        "medianMs": 0.0708,
+        "p95Ms": 0.1277
+      },
+      "submit": {
+        "averageMs": 0.05334308333333331,
+        "medianMs": 0.0477,
+        "p95Ms": 0.0909
+      },
+      "update": {
+        "averageMs": 0.0032292500000000056,
+        "medianMs": 0.0025,
+        "p95Ms": 0.0054
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.037021866666667215,
+        "medianMs": 0.036864,
+        "p95Ms": 0.038912
+      },
+      "geometry": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "lighting": {
+        "averageMs": 0.00010325333333333313,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.9476043199999993,
+        "medianMs": 1.9712,
+        "p95Ms": 2.499584
+      },
+      "total": {
+        "averageMs": 1.9847507733333316,
+        "medianMs": 2.008064,
+        "p95Ms": 2.540544
+      }
+    }
+  },
+  "Direct3D12-A14-512-64-textures-direct": {
+    "api": "Direct3D12",
+    "technique": 14,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 7392,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 231,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-textures-0.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-textures-1.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-textures-2.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-textures-3.json",
+      "Direct3D12-Advanced14_BindlessRaytracing-512-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0457,
+    "cpuRecordRunRangeMs": [
+      0.0435,
+      0.0765
+    ],
+    "gpuMedianMs": 2.412544,
+    "gpuRunRangeMs": [
+      2.352128,
+      2.441216
+    ],
+    "gpuP95MedianMs": 3.011584,
+    "descriptorBinds": 9,
+    "draws": 1,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 2.374123250000006,
+        "medianMs": 2.3962,
+        "p95Ms": 3.035
+      },
+      "present": {
+        "averageMs": 0.0925614166666667,
+        "medianMs": 0.089,
+        "p95Ms": 0.1294
+      },
+      "record": {
+        "averageMs": 0.04970966666666666,
+        "medianMs": 0.0457,
+        "p95Ms": 0.0819
+      },
+      "submit": {
+        "averageMs": 0.033126833333333314,
+        "medianMs": 0.0324,
+        "p95Ms": 0.0509
+      },
+      "update": {
+        "averageMs": 0.0024975833333333217,
+        "medianMs": 0.0015,
+        "p95Ms": 0.0059
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 4.266666666666666e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.03713280000000066,
+        "medianMs": 0.036864,
+        "p95Ms": 0.038912
+      },
+      "geometry": {
+        "averageMs": 3.413333333333333e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "lighting": {
+        "averageMs": 0.00011861333333333309,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 2.3601617066666676,
+        "medianMs": 2.376704,
+        "p95Ms": 2.97472
+      },
+      "total": {
+        "averageMs": 2.3974122666666675,
+        "medianMs": 2.412544,
+        "p95Ms": 3.011584
+      }
+    }
+  },
+  "Direct3D12-A15-512-64-bound-direct": {
+    "api": "Direct3D12",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 864,
+      "images": 290804800,
+      "imagesCommitted": 291373056,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 27,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-bound-0.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-bound-1.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-bound-2.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-bound-3.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1279,
+    "cpuRecordRunRangeMs": [
+      0.0852,
+      0.1638
+    ],
+    "gpuMedianMs": 4.721664,
+    "gpuRunRangeMs": [
+      4.673536,
+      5.060608
+    ],
+    "gpuP95MedianMs": 6.288384,
+    "descriptorBinds": 13,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 4.795701749999999,
+        "medianMs": 4.7133,
+        "p95Ms": 6.2724
+      },
+      "present": {
+        "averageMs": 0.17062775,
+        "medianMs": 0.1472,
+        "p95Ms": 0.3242
+      },
+      "record": {
+        "averageMs": 0.14312783333333323,
+        "medianMs": 0.1279,
+        "p95Ms": 0.2532
+      },
+      "submit": {
+        "averageMs": 0.06412725000000004,
+        "medianMs": 0.0563,
+        "p95Ms": 0.1258
+      },
+      "update": {
+        "averageMs": 0.004202333333333328,
+        "medianMs": 0.0028,
+        "p95Ms": 0.0074
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 2.9066666666666666e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.022711466666666815,
+        "medianMs": 0.022528,
+        "p95Ms": 0.027648
+      },
+      "geometry": {
+        "averageMs": 3.4449834133333375,
+        "medianMs": 3.286016,
+        "p95Ms": 4.891584
+      },
+      "lighting": {
+        "averageMs": 9.813333333333313e-05,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.3346167466666665,
+        "medianMs": 1.324032,
+        "p95Ms": 1.888256
+      },
+      "total": {
+        "averageMs": 4.80298896,
+        "medianMs": 4.721664,
+        "p95Ms": 6.288384
+      }
+    }
+  },
+  "Direct3D12-A15-512-64-resources-direct": {
+    "api": "Direct3D12",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": 17472,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 41287680,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 546,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-0.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-1.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-2.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-3.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1518,
+    "cpuRecordRunRangeMs": [
+      0.0817,
+      0.199
+    ],
+    "gpuMedianMs": 3.761152,
+    "gpuRunRangeMs": [
+      3.699712,
+      3.869696
+    ],
+    "gpuP95MedianMs": 4.49024,
+    "descriptorBinds": 13,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 3.6244045833333294,
+        "medianMs": 3.6501,
+        "p95Ms": 4.5045
+      },
+      "present": {
+        "averageMs": 0.19786824999999994,
+        "medianMs": 0.1822,
+        "p95Ms": 0.3534
+      },
+      "record": {
+        "averageMs": 0.16028325000000032,
+        "medianMs": 0.1518,
+        "p95Ms": 0.2706
+      },
+      "submit": {
+        "averageMs": 0.07044749999999987,
+        "medianMs": 0.0638,
+        "p95Ms": 0.1281
+      },
+      "update": {
+        "averageMs": 0.0036840000000000006,
+        "medianMs": 0.0032,
+        "p95Ms": 0.0062
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 2.9866666666666667e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.024103253333333467,
+        "medianMs": 0.023552,
+        "p95Ms": 0.029696
+      },
+      "geometry": {
+        "averageMs": 2.2393072533333322,
+        "medianMs": 2.219008,
+        "p95Ms": 2.881472
+      },
+      "lighting": {
+        "averageMs": 9.98399999999998e-05,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.3619327999999982,
+        "medianMs": 1.375232,
+        "p95Ms": 1.885184
+      },
+      "total": {
+        "averageMs": 3.6409319199999945,
+        "medianMs": 3.761152,
+        "p95Ms": 4.49024
+      }
+    }
+  },
+  "Direct3D12-A15-512-64-resources-driven": {
+    "api": "Direct3D12",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": true,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "submission-architecture",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": 17472,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 41287680,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 546,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": 41940,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-driven-0.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-driven-1.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-driven-2.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-driven-3.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-resources-driven-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1377,
+    "cpuRecordRunRangeMs": [
+      0.0759,
+      0.1624
+    ],
+    "gpuMedianMs": 4.553728,
+    "gpuRunRangeMs": [
+      3.869696,
+      5.220352
+    ],
+    "gpuP95MedianMs": 5.958624,
+    "descriptorBinds": 17,
+    "draws": 1,
+    "dispatches": 5,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 4.529772333333337,
+        "medianMs": 4.4808,
+        "p95Ms": 5.9501
+      },
+      "present": {
+        "averageMs": 0.21587283333333346,
+        "medianMs": 0.1755,
+        "p95Ms": 0.3904
+      },
+      "record": {
+        "averageMs": 0.15417149999999993,
+        "medianMs": 0.1377,
+        "p95Ms": 0.2824
+      },
+      "submit": {
+        "averageMs": 0.07837849999999992,
+        "medianMs": 0.0655,
+        "p95Ms": 0.1401
+      },
+      "update": {
+        "averageMs": 0.0036969166666666695,
+        "medianMs": 0.0032,
+        "p95Ms": 0.0064
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 0.04924386666666658,
+        "medianMs": 0.04848,
+        "p95Ms": 0.052224
+      },
+      "display": {
+        "averageMs": 0.024157013333333414,
+        "medianMs": 0.023552,
+        "p95Ms": 0.029696
+      },
+      "geometry": {
+        "averageMs": 3.1709190933333304,
+        "medianMs": 3.011584,
+        "p95Ms": 4.373504
+      },
+      "lighting": {
+        "averageMs": 8.618666666666651e-05,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.329520639999998,
+        "medianMs": 1.337344,
+        "p95Ms": 1.790976
+      },
+      "total": {
+        "averageMs": 4.591979920000005,
+        "medianMs": 4.553728,
+        "p95Ms": 5.958624
+      }
+    }
+  },
+  "Direct3D12-A15-512-64-textures-direct": {
+    "api": "Direct3D12",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 7392,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 231,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-0.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-1.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-2.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-3.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1332,
+    "cpuRecordRunRangeMs": [
+      0.0905,
+      0.1549
+    ],
+    "gpuMedianMs": 5.05856,
+    "gpuRunRangeMs": [
+      5.004288,
+      5.385216
+    ],
+    "gpuP95MedianMs": 6.687744,
+    "descriptorBinds": 13,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 5.0282849166666646,
+        "medianMs": 5.0428,
+        "p95Ms": 6.6546
+      },
+      "present": {
+        "averageMs": 0.17973258333333325,
+        "medianMs": 0.1483,
+        "p95Ms": 0.3057
+      },
+      "record": {
+        "averageMs": 0.15555516666666663,
+        "medianMs": 0.1332,
+        "p95Ms": 0.2595
+      },
+      "submit": {
+        "averageMs": 0.0715356666666666,
+        "medianMs": 0.0599,
+        "p95Ms": 0.1208
+      },
+      "update": {
+        "averageMs": 0.003917083333333334,
+        "medianMs": 0.0031,
+        "p95Ms": 0.007
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 2.2133333333333335e-06,
+        "medianMs": 0.0,
+        "p95Ms": 0.0
+      },
+      "display": {
+        "averageMs": 0.023636480000000137,
+        "medianMs": 0.023552,
+        "p95Ms": 0.029696
+      },
+      "geometry": {
+        "averageMs": 3.4724360266666636,
+        "medianMs": 3.326976,
+        "p95Ms": 4.72576
+      },
+      "lighting": {
+        "averageMs": 9.813333333333313e-05,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.6010760533333332,
+        "medianMs": 1.624064,
+        "p95Ms": 2.29376
+      },
+      "total": {
+        "averageMs": 5.095604213333331,
+        "medianMs": 5.05856,
+        "p95Ms": 6.687744
+      }
+    }
+  },
+  "Direct3D12-A15-512-64-textures-driven": {
+    "api": "Direct3D12",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": true,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "submission-architecture",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": 7392,
+      "images": 290804800,
+      "imagesCommitted": 299892736,
+      "sceneBuffersCommitted": 23724032,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 231,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": 41940,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-driven-0.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-driven-1.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-driven-2.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-driven-3.json",
+      "Direct3D12-Advanced15_BindlessHybrid-512-64-textures-driven-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1565,
+    "cpuRecordRunRangeMs": [
+      0.0884,
+      0.1956
+    ],
+    "gpuMedianMs": 6.781952,
+    "gpuRunRangeMs": [
+      6.226944,
+      8.73472
+    ],
+    "gpuP95MedianMs": 9.491456,
+    "descriptorBinds": 17,
+    "draws": 1,
+    "dispatches": 5,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 6.921158333333334,
+        "medianMs": 6.7686,
+        "p95Ms": 9.467
+      },
+      "present": {
+        "averageMs": 0.22553541666666707,
+        "medianMs": 0.2001,
+        "p95Ms": 0.3434
+      },
+      "record": {
+        "averageMs": 0.1749335,
+        "medianMs": 0.1565,
+        "p95Ms": 0.2543
+      },
+      "submit": {
+        "averageMs": 0.08655400000000005,
+        "medianMs": 0.0773,
+        "p95Ms": 0.1311
+      },
+      "update": {
+        "averageMs": 0.0041809166666666765,
+        "medianMs": 0.0033,
+        "p95Ms": 0.0073
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 0.041002266666666454,
+        "medianMs": 0.040928,
+        "p95Ms": 0.042976
+      },
+      "display": {
+        "averageMs": 0.023460693333333477,
+        "medianMs": 0.023552,
+        "p95Ms": 0.028672
+      },
+      "geometry": {
+        "averageMs": 5.318063653333334,
+        "medianMs": 5.039104,
+        "p95Ms": 7.667264
+      },
+      "lighting": {
+        "averageMs": 9.642666666666648e-05,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.5417941333333331,
+        "medianMs": 1.603584,
+        "p95Ms": 2.06336
+      },
+      "total": {
+        "averageMs": 6.925516106666658,
+        "medianMs": 6.781952,
+        "p95Ms": 9.491456
+      }
+    }
+  },
+  "Vulkan-A12-128-64-bound-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 128,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23055488,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23055488,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1650,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 128,
+      "frustumMeshletsCpuReference": 11880,
+      "meshletsGpu": null,
+      "primaryGeometries": 61,
+      "primaryInstances": 120
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-128-64-bound-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-128-64-bound-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-128-64-bound-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-128-64-bound-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-128-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0936,
+    "cpuRecordRunRangeMs": [
+      0.0823,
+      0.0995
+    ],
+    "gpuMedianMs": 2.97536,
+    "gpuRunRangeMs": [
+      2.8688,
+      3.004992
+    ],
+    "gpuP95MedianMs": 4.325664,
+    "descriptorBinds": 66,
+    "draws": 129,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.019236000000000038,
+        "medianMs": 0.0186,
+        "p95Ms": 0.028000000000000004
+      },
+      "present": {
+        "averageMs": 3.516537916666663,
+        "medianMs": 3.4262,
+        "p95Ms": 4.857
+      },
+      "record": {
+        "averageMs": 0.0977991666666667,
+        "medianMs": 0.0936,
+        "p95Ms": 0.1428
+      },
+      "submit": {
+        "averageMs": 0.03411391666666674,
+        "medianMs": 0.0317,
+        "p95Ms": 0.0516
+      },
+      "update": {
+        "averageMs": 0.0026931666666666462,
+        "medianMs": 0.0026,
+        "p95Ms": 0.0042
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.008000000000034e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.01183042666666673,
+        "medianMs": 0.011776,
+        "p95Ms": 0.012384
+      },
+      "geometry": {
+        "averageMs": 3.0176979733333362,
+        "medianMs": 2.926464,
+        "p95Ms": 4.284576
+      },
+      "lighting": {
+        "averageMs": 0.03188674666666657,
+        "medianMs": 0.032096,
+        "p95Ms": 0.0416
+      },
+      "rt": {
+        "averageMs": 0.0025263466666666876,
+        "medianMs": 0.002496,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 3.0662008266666683,
+        "medianMs": 2.97536,
+        "p95Ms": 4.325664
+      }
+    }
+  },
+  "Vulkan-A12-128-64-textures-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 128,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23055488,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23055488,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 687,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 128,
+      "frustumMeshletsCpuReference": 11880,
+      "meshletsGpu": null,
+      "primaryGeometries": 61,
+      "primaryInstances": 120
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-128-64-textures-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-128-64-textures-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-128-64-textures-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-128-64-textures-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-128-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0799,
+    "cpuRecordRunRangeMs": [
+      0.0723,
+      0.0951
+    ],
+    "gpuMedianMs": 2.926624,
+    "gpuRunRangeMs": [
+      2.911424,
+      2.998176
+    ],
+    "gpuP95MedianMs": 4.560416,
+    "descriptorBinds": 3,
+    "draws": 129,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.017416166666666677,
+        "medianMs": 0.015799999999999998,
+        "p95Ms": 0.0264
+      },
+      "present": {
+        "averageMs": 3.653480916666669,
+        "medianMs": 3.3863,
+        "p95Ms": 5.0857
+      },
+      "record": {
+        "averageMs": 0.08465350000000013,
+        "medianMs": 0.0799,
+        "p95Ms": 0.1276
+      },
+      "submit": {
+        "averageMs": 0.030137666666666677,
+        "medianMs": 0.0257,
+        "p95Ms": 0.0508
+      },
+      "update": {
+        "averageMs": 0.0024294166666666505,
+        "medianMs": 0.0022,
+        "p95Ms": 0.0042
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.0800000000000285e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.011848880000000067,
+        "medianMs": 0.011744,
+        "p95Ms": 0.012544
+      },
+      "geometry": {
+        "averageMs": 3.1600160533333255,
+        "medianMs": 2.880416,
+        "p95Ms": 4.501344
+      },
+      "lighting": {
+        "averageMs": 0.03201162666666663,
+        "medianMs": 0.031744,
+        "p95Ms": 0.042432
+      },
+      "rt": {
+        "averageMs": 0.002563573333333352,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 3.2082896266666667,
+        "medianMs": 2.926624,
+        "p95Ms": 4.560416
+      }
+    }
+  },
+  "Vulkan-A12-4096-64-bound-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 4096,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 26573120,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 26573120,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1650,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 1980,
+      "frustumMeshletsCpuReference": 186687,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 1412
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-bound-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-bound-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-bound-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-bound-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.7477,
+    "cpuRecordRunRangeMs": [
+      0.6106,
+      0.8404
+    ],
+    "gpuMedianMs": 5.010624,
+    "gpuRunRangeMs": [
+      4.866848,
+      5.19376
+    ],
+    "gpuP95MedianMs": 6.843776,
+    "descriptorBinds": 66,
+    "draws": 4097,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.016158666666666686,
+        "medianMs": 0.015,
+        "p95Ms": 0.0249
+      },
+      "present": {
+        "averageMs": 5.766364916666662,
+        "medianMs": 5.467,
+        "p95Ms": 7.251
+      },
+      "record": {
+        "averageMs": 0.7775480000000005,
+        "medianMs": 0.7477,
+        "p95Ms": 1.024
+      },
+      "submit": {
+        "averageMs": 0.029253083333333388,
+        "medianMs": 0.0267,
+        "p95Ms": 0.0486
+      },
+      "update": {
+        "averageMs": 0.002665166666666632,
+        "medianMs": 0.0026,
+        "p95Ms": 0.0037
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.146666666666695e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.015597920000000019,
+        "medianMs": 0.015008,
+        "p95Ms": 0.018816
+      },
+      "geometry": {
+        "averageMs": 5.197273600000014,
+        "medianMs": 4.878304,
+        "p95Ms": 6.724256
+      },
+      "lighting": {
+        "averageMs": 0.11152202666666634,
+        "medianMs": 0.111424,
+        "p95Ms": 0.126976
+      },
+      "rt": {
+        "averageMs": 0.0025508800000000145,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 5.328608479999994,
+        "medianMs": 5.010624,
+        "p95Ms": 6.843776
+      }
+    }
+  },
+  "Vulkan-A12-4096-64-textures-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 4096,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 26573120,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 26573120,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 687,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 1980,
+      "frustumMeshletsCpuReference": 186687,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 1412
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-textures-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-textures-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-textures-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-textures-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-4096-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.8134,
+    "cpuRecordRunRangeMs": [
+      0.755,
+      0.9284
+    ],
+    "gpuMedianMs": 5.02784,
+    "gpuRunRangeMs": [
+      4.887648,
+      5.09888
+    ],
+    "gpuP95MedianMs": 7.051616,
+    "descriptorBinds": 3,
+    "draws": 4097,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.017604083333333343,
+        "medianMs": 0.0166,
+        "p95Ms": 0.0238
+      },
+      "present": {
+        "averageMs": 5.851049583333332,
+        "medianMs": 5.4973,
+        "p95Ms": 7.463
+      },
+      "record": {
+        "averageMs": 0.8509032499999982,
+        "medianMs": 0.8134,
+        "p95Ms": 1.2182
+      },
+      "submit": {
+        "averageMs": 0.0320525,
+        "medianMs": 0.0293,
+        "p95Ms": 0.0488
+      },
+      "update": {
+        "averageMs": 0.0028455833333332963,
+        "medianMs": 0.0027,
+        "p95Ms": 0.0041
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.101333333333361e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.015581653333333334,
+        "medianMs": 0.015008,
+        "p95Ms": 0.018752
+      },
+      "geometry": {
+        "averageMs": 5.289579466666666,
+        "medianMs": 4.901888,
+        "p95Ms": 6.926368
+      },
+      "lighting": {
+        "averageMs": 0.11105010666666641,
+        "medianMs": 0.111552,
+        "p95Ms": 0.126976
+      },
+      "rt": {
+        "averageMs": 0.0025531466666666824,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 5.42305050666667,
+        "medianMs": 5.02784,
+        "p95Ms": 7.051616
+      }
+    }
+  },
+  "Vulkan-A12-512-16-bound-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 16,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 64,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23391296,
+      "descriptors": null,
+      "images": 89478400,
+      "imagesCommitted": 89587712,
+      "sceneBuffersCommitted": 23391296,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 450,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 399
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-512-16-bound-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-16-bound-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-16-bound-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-16-bound-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-16-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1579,
+    "cpuRecordRunRangeMs": [
+      0.1546,
+      0.1691
+    ],
+    "gpuMedianMs": 3.309184,
+    "gpuRunRangeMs": [
+      3.281568,
+      3.353824
+    ],
+    "gpuP95MedianMs": 4.939584,
+    "descriptorBinds": 18,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.019002750000000006,
+        "medianMs": 0.0172,
+        "p95Ms": 0.0283
+      },
+      "present": {
+        "averageMs": 4.04116916666666,
+        "medianMs": 3.7844,
+        "p95Ms": 5.4485
+      },
+      "record": {
+        "averageMs": 0.1728600000000002,
+        "medianMs": 0.1579,
+        "p95Ms": 0.2418
+      },
+      "submit": {
+        "averageMs": 0.032484583333333324,
+        "medianMs": 0.0285,
+        "p95Ms": 0.051
+      },
+      "update": {
+        "averageMs": 0.0027374166666666432,
+        "medianMs": 0.0027,
+        "p95Ms": 0.0043
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.040000000000027e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.013798613333333343,
+        "medianMs": 0.012896,
+        "p95Ms": 0.017248
+      },
+      "geometry": {
+        "averageMs": 3.476037519999999,
+        "medianMs": 3.193568,
+        "p95Ms": 4.840544
+      },
+      "lighting": {
+        "averageMs": 0.07758370666666675,
+        "medianMs": 0.073728,
+        "p95Ms": 0.114112
+      },
+      "rt": {
+        "averageMs": 0.0025507466666666854,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 3.571215039999997,
+        "medianMs": 3.309184,
+        "p95Ms": 4.939584
+      }
+    }
+  },
+  "Vulkan-A12-512-16-textures-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 16,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 64,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23391296,
+      "descriptors": null,
+      "images": 89478400,
+      "imagesCommitted": 89587712,
+      "sceneBuffersCommitted": 23391296,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 255,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 399
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-512-16-textures-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-16-textures-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-16-textures-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-16-textures-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-16-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1557,
+    "cpuRecordRunRangeMs": [
+      0.1513,
+      0.1723
+    ],
+    "gpuMedianMs": 3.316192,
+    "gpuRunRangeMs": [
+      3.276768,
+      3.379616
+    ],
+    "gpuP95MedianMs": 4.9424,
+    "descriptorBinds": 3,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.018045083333333337,
+        "medianMs": 0.0168,
+        "p95Ms": 0.0273
+      },
+      "present": {
+        "averageMs": 4.004489166666662,
+        "medianMs": 3.7499,
+        "p95Ms": 5.383
+      },
+      "record": {
+        "averageMs": 0.16735041666666645,
+        "medianMs": 0.1557,
+        "p95Ms": 0.238
+      },
+      "submit": {
+        "averageMs": 0.03158108333333334,
+        "medianMs": 0.0279,
+        "p95Ms": 0.0503
+      },
+      "update": {
+        "averageMs": 0.002650249999999979,
+        "medianMs": 0.0026,
+        "p95Ms": 0.0042
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.0453333333333665e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.013768666666666724,
+        "medianMs": 0.012896,
+        "p95Ms": 0.01712
+      },
+      "geometry": {
+        "averageMs": 3.461760266666663,
+        "medianMs": 3.20192,
+        "p95Ms": 4.823456
+      },
+      "lighting": {
+        "averageMs": 0.07662738666666691,
+        "medianMs": 0.073696,
+        "p95Ms": 0.114688
+      },
+      "rt": {
+        "averageMs": 0.002565946666666682,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 3.559613226666671,
+        "medianMs": 3.316192,
+        "p95Ms": 4.9424
+      }
+    }
+  },
+  "Vulkan-A12-512-256-bound-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 256,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 400,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23414336,
+      "descriptors": null,
+      "images": 559240000,
+      "imagesCommitted": 559923200,
+      "sceneBuffersCommitted": 23414336,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 6450,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-512-256-bound-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-256-bound-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-256-bound-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-256-bound-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-256-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1823,
+    "cpuRecordRunRangeMs": [
+      0.116,
+      0.2692
+    ],
+    "gpuMedianMs": 7.997504,
+    "gpuRunRangeMs": [
+      7.450752,
+      8.14816
+    ],
+    "gpuP95MedianMs": 11.51712,
+    "descriptorBinds": 258,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.02214974999999998,
+        "medianMs": 0.0202,
+        "p95Ms": 0.031
+      },
+      "present": {
+        "averageMs": 8.403022416666671,
+        "medianMs": 8.5067,
+        "p95Ms": 12.0743
+      },
+      "record": {
+        "averageMs": 0.19945449999999984,
+        "medianMs": 0.1823,
+        "p95Ms": 0.2916
+      },
+      "submit": {
+        "averageMs": 0.037315083333333374,
+        "medianMs": 0.033,
+        "p95Ms": 0.0576
+      },
+      "update": {
+        "averageMs": 0.0035362500000000073,
+        "medianMs": 0.0034,
+        "p95Ms": 0.0049
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.085333333333364e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.013281359999999992,
+        "medianMs": 0.012512,
+        "p95Ms": 0.016608
+      },
+      "geometry": {
+        "averageMs": 7.806929546666665,
+        "medianMs": 7.890848,
+        "p95Ms": 11.420192
+      },
+      "lighting": {
+        "averageMs": 0.0788989866666669,
+        "medianMs": 0.0768,
+        "p95Ms": 0.108128
+      },
+      "rt": {
+        "averageMs": 0.0025697600000000155,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002976
+      },
+      "total": {
+        "averageMs": 7.903588106666671,
+        "medianMs": 7.997504,
+        "p95Ms": 11.51712
+      }
+    }
+  },
+  "Vulkan-A12-512-256-textures-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 256,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 400,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23414336,
+      "descriptors": null,
+      "images": 559240000,
+      "imagesCommitted": 559923200,
+      "sceneBuffersCommitted": 23414336,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1263,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-512-256-textures-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-256-textures-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-256-textures-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-256-textures-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-256-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1318,
+    "cpuRecordRunRangeMs": [
+      0.1036,
+      0.2286
+    ],
+    "gpuMedianMs": 7.7528,
+    "gpuRunRangeMs": [
+      7.090752,
+      8.367808
+    ],
+    "gpuP95MedianMs": 11.02096,
+    "descriptorBinds": 3,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.015653083333333373,
+        "medianMs": 0.0146,
+        "p95Ms": 0.0239
+      },
+      "present": {
+        "averageMs": 8.093795583333339,
+        "medianMs": 8.1565,
+        "p95Ms": 11.464
+      },
+      "record": {
+        "averageMs": 0.13738016666666678,
+        "medianMs": 0.1318,
+        "p95Ms": 0.1911
+      },
+      "submit": {
+        "averageMs": 0.02487925000000001,
+        "medianMs": 0.0231,
+        "p95Ms": 0.0374
+      },
+      "update": {
+        "averageMs": 0.002494249999999972,
+        "medianMs": 0.0024,
+        "p95Ms": 0.0036
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.008000000000035e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.013309653333333296,
+        "medianMs": 0.012416,
+        "p95Ms": 0.016576
+      },
+      "geometry": {
+        "averageMs": 7.590224986666677,
+        "medianMs": 7.63232,
+        "p95Ms": 10.895904
+      },
+      "lighting": {
+        "averageMs": 0.07881189333333337,
+        "medianMs": 0.076576,
+        "p95Ms": 0.109376
+      },
+      "rt": {
+        "averageMs": 0.002601920000000009,
+        "medianMs": 0.002528,
+        "p95Ms": 0.003008
+      },
+      "total": {
+        "averageMs": 7.686942933333332,
+        "medianMs": 7.7528,
+        "p95Ms": 11.02096
+      }
+    }
+  },
+  "Vulkan-A12-512-64-bound-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23395904,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1650,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-512-64-bound-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-64-bound-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-64-bound-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-64-bound-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1614,
+    "cpuRecordRunRangeMs": [
+      0.1468,
+      0.167
+    ],
+    "gpuMedianMs": 3.867584,
+    "gpuRunRangeMs": [
+      3.781728,
+      3.94864
+    ],
+    "gpuP95MedianMs": 5.422304,
+    "descriptorBinds": 66,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.019716583333333305,
+        "medianMs": 0.0181,
+        "p95Ms": 0.028999999999999998
+      },
+      "present": {
+        "averageMs": 4.34689241666667,
+        "medianMs": 4.3115,
+        "p95Ms": 5.9308
+      },
+      "record": {
+        "averageMs": 0.17739749999999982,
+        "medianMs": 0.1614,
+        "p95Ms": 0.2475
+      },
+      "submit": {
+        "averageMs": 0.0341374166666667,
+        "medianMs": 0.0294,
+        "p95Ms": 0.055
+      },
+      "update": {
+        "averageMs": 0.0028670833333333213,
+        "medianMs": 0.0027,
+        "p95Ms": 0.0044
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.136000000000024e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.01349421333333335,
+        "medianMs": 0.013056,
+        "p95Ms": 0.015872
+      },
+      "geometry": {
+        "averageMs": 3.7917173866666696,
+        "medianMs": 3.7632,
+        "p95Ms": 5.32576
+      },
+      "lighting": {
+        "averageMs": 0.0745412,
+        "medianMs": 0.072704,
+        "p95Ms": 0.109568
+      },
+      "rt": {
+        "averageMs": 0.002592426666666681,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 3.8846197066666637,
+        "medianMs": 3.867584,
+        "p95Ms": 5.422304
+      }
+    }
+  },
+  "Vulkan-A12-512-64-textures-direct": {
+    "api": "Vulkan",
+    "technique": 12,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23395904,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 687,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced12_BindlessMaterials-512-64-textures-0.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-64-textures-1.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-64-textures-2.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-64-textures-3.json",
+      "Vulkan-Advanced12_BindlessMaterials-512-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1548,
+    "cpuRecordRunRangeMs": [
+      0.1342,
+      0.1634
+    ],
+    "gpuMedianMs": 3.835008,
+    "gpuRunRangeMs": [
+      3.734144,
+      3.892928
+    ],
+    "gpuP95MedianMs": 5.322848,
+    "descriptorBinds": 3,
+    "draws": 513,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.018333249999999978,
+        "medianMs": 0.017,
+        "p95Ms": 0.0275
+      },
+      "present": {
+        "averageMs": 4.240933750000008,
+        "medianMs": 4.2521,
+        "p95Ms": 5.7803
+      },
+      "record": {
+        "averageMs": 0.16525924999999997,
+        "medianMs": 0.1548,
+        "p95Ms": 0.2343
+      },
+      "submit": {
+        "averageMs": 0.03082091666666667,
+        "medianMs": 0.0275,
+        "p95Ms": 0.0485
+      },
+      "update": {
+        "averageMs": 0.0027383333333333105,
+        "medianMs": 0.0026,
+        "p95Ms": 0.0042
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.085333333333361e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.013608826666666681,
+        "medianMs": 0.013024,
+        "p95Ms": 0.015776
+      },
+      "geometry": {
+        "averageMs": 3.741618640000001,
+        "medianMs": 3.744736,
+        "p95Ms": 5.233536
+      },
+      "lighting": {
+        "averageMs": 0.07452874666666671,
+        "medianMs": 0.072544,
+        "p95Ms": 0.109376
+      },
+      "rt": {
+        "averageMs": 0.0027406133333333534,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 3.8344880266666657,
+        "medianMs": 3.835008,
+        "p95Ms": 5.322848
+      }
+    }
+  },
+  "Vulkan-A13-512-64-bound-direct": {
+    "api": "Vulkan",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23395904,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1650,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-bound-0.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-bound-1.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-bound-2.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-bound-3.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.2421,
+    "cpuRecordRunRangeMs": [
+      0.2111,
+      0.2648
+    ],
+    "gpuMedianMs": 3.72112,
+    "gpuRunRangeMs": [
+      3.594336,
+      3.866784
+    ],
+    "gpuP95MedianMs": 5.984736,
+    "descriptorBinds": 66,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.029707000000000015,
+        "medianMs": 0.0294,
+        "p95Ms": 0.0366
+      },
+      "present": {
+        "averageMs": 4.691863583333329,
+        "medianMs": 4.2884,
+        "p95Ms": 6.9528
+      },
+      "record": {
+        "averageMs": 0.24310775000000012,
+        "medianMs": 0.2421,
+        "p95Ms": 0.2912
+      },
+      "submit": {
+        "averageMs": 0.052999833333333336,
+        "medianMs": 0.0516,
+        "p95Ms": 0.0675
+      },
+      "update": {
+        "averageMs": 0.003937250000000027,
+        "medianMs": 0.004,
+        "p95Ms": 0.0053
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.133333333333357e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.013498720000000004,
+        "medianMs": 0.012992,
+        "p95Ms": 0.016064
+      },
+      "geometry": {
+        "averageMs": 3.92671306666667,
+        "medianMs": 3.607296,
+        "p95Ms": 5.912192
+      },
+      "lighting": {
+        "averageMs": 0.07416341333333333,
+        "medianMs": 0.07216,
+        "p95Ms": 0.110112
+      },
+      "rt": {
+        "averageMs": 0.0025945600000000114,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 4.021943813333334,
+        "medianMs": 3.72112,
+        "p95Ms": 5.984736
+      }
+    }
+  },
+  "Vulkan-A13-512-64-resources-direct": {
+    "api": "Vulkan",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23350112,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1632,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-0.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-1.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-2.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-3.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-4.json"
+    ],
+    "cpuRecordMedianMs": 0.239,
+    "cpuRecordRunRangeMs": [
+      0.2155,
+      0.2573
+    ],
+    "gpuMedianMs": 3.908608,
+    "gpuRunRangeMs": [
+      3.716416,
+      3.948576
+    ],
+    "gpuP95MedianMs": 5.958496,
+    "descriptorBinds": 3,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.030956916666666646,
+        "medianMs": 0.0305,
+        "p95Ms": 0.0389
+      },
+      "present": {
+        "averageMs": 4.82002083333333,
+        "medianMs": 4.5079,
+        "p95Ms": 6.8277
+      },
+      "record": {
+        "averageMs": 0.24577908333333312,
+        "medianMs": 0.239,
+        "p95Ms": 0.2991
+      },
+      "submit": {
+        "averageMs": 0.05322008333333336,
+        "medianMs": 0.0525,
+        "p95Ms": 0.0712
+      },
+      "update": {
+        "averageMs": 0.003943916666666706,
+        "medianMs": 0.0039,
+        "p95Ms": 0.0051
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 5.9840000000000355e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.013454373333333347,
+        "medianMs": 0.012896,
+        "p95Ms": 0.015904
+      },
+      "geometry": {
+        "averageMs": 4.097428293333334,
+        "medianMs": 3.803232,
+        "p95Ms": 5.892864
+      },
+      "lighting": {
+        "averageMs": 0.07541223999999999,
+        "medianMs": 0.072512,
+        "p95Ms": 0.109568
+      },
+      "rt": {
+        "averageMs": 0.0025793866666666805,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002976
+      },
+      "total": {
+        "averageMs": 4.191141333333337,
+        "medianMs": 3.908608,
+        "p95Ms": 5.958496
+      }
+    }
+  },
+  "Vulkan-A13-512-64-resources-driven": {
+    "api": "Vulkan",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": true,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "submission-architecture",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23350112,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1632,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": 41940,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-driven-0.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-driven-1.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-driven-2.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-driven-3.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-resources-driven-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1117,
+    "cpuRecordRunRangeMs": [
+      0.0815,
+      0.1177
+    ],
+    "gpuMedianMs": 4.94992,
+    "gpuRunRangeMs": [
+      4.007392,
+      5.840256
+    ],
+    "gpuP95MedianMs": 8.332736,
+    "descriptorBinds": 4,
+    "draws": 1,
+    "dispatches": 5,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.029490666666666644,
+        "medianMs": 0.0297,
+        "p95Ms": 0.0359
+      },
+      "present": {
+        "averageMs": 5.918987416666673,
+        "medianMs": 5.5214,
+        "p95Ms": 8.9301
+      },
+      "record": {
+        "averageMs": 0.10915408333333342,
+        "medianMs": 0.1117,
+        "p95Ms": 0.1371
+      },
+      "submit": {
+        "averageMs": 0.04965549999999993,
+        "medianMs": 0.0511,
+        "p95Ms": 0.0642
+      },
+      "update": {
+        "averageMs": 0.0037066666666666927,
+        "medianMs": 0.0037,
+        "p95Ms": 0.0048
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 0.05987159999999995,
+        "medianMs": 0.059264,
+        "p95Ms": 0.064928
+      },
+      "display": {
+        "averageMs": 0.01365333333333334,
+        "medianMs": 0.013088,
+        "p95Ms": 0.01648
+      },
+      "geometry": {
+        "averageMs": 5.196484906666671,
+        "medianMs": 4.780448,
+        "p95Ms": 8.146976
+      },
+      "lighting": {
+        "averageMs": 0.07384077333333344,
+        "medianMs": 0.07248,
+        "p95Ms": 0.111616
+      },
+      "rt": {
+        "averageMs": 0.0025667200000000136,
+        "medianMs": 0.002528,
+        "p95Ms": 0.003008
+      },
+      "total": {
+        "averageMs": 5.352077439999994,
+        "medianMs": 4.94992,
+        "p95Ms": 8.332736
+      }
+    }
+  },
+  "Vulkan-A13-512-64-textures-direct": {
+    "api": "Vulkan",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "matched-submission",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23395904,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 15114,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 401
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-0.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-1.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-2.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-3.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.2255,
+    "cpuRecordRunRangeMs": [
+      0.1999,
+      0.2485
+    ],
+    "gpuMedianMs": 3.671264,
+    "gpuRunRangeMs": [
+      3.662624,
+      3.821792
+    ],
+    "gpuP95MedianMs": 5.70704,
+    "descriptorBinds": 66,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.026874916666666693,
+        "medianMs": 0.0263,
+        "p95Ms": 0.036
+      },
+      "present": {
+        "averageMs": 4.442013249999998,
+        "medianMs": 4.173,
+        "p95Ms": 6.1983
+      },
+      "record": {
+        "averageMs": 0.2245353333333336,
+        "medianMs": 0.2255,
+        "p95Ms": 0.2824
+      },
+      "submit": {
+        "averageMs": 0.04703658333333339,
+        "medianMs": 0.0464,
+        "p95Ms": 0.0639
+      },
+      "update": {
+        "averageMs": 0.0035279166666666974,
+        "medianMs": 0.0035,
+        "p95Ms": 0.0049
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.058666666666696e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.013465120000000002,
+        "medianMs": 0.01296,
+        "p95Ms": 0.015904
+      },
+      "geometry": {
+        "averageMs": 3.796305013333337,
+        "medianMs": 3.557952,
+        "p95Ms": 5.576352
+      },
+      "lighting": {
+        "averageMs": 0.07454821333333339,
+        "medianMs": 0.07168,
+        "p95Ms": 0.109568
+      },
+      "rt": {
+        "averageMs": 0.002575760000000014,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002944
+      },
+      "total": {
+        "averageMs": 3.887960213333328,
+        "medianMs": 3.671264,
+        "p95Ms": 5.70704
+      }
+    }
+  },
+  "Vulkan-A13-512-64-textures-driven": {
+    "api": "Vulkan",
+    "technique": 13,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": true,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "submission-architecture",
+    "memory": {
+      "accelerationStructures": 0,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23395904,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 15114,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": 41940,
+      "primaryGeometries": 64,
+      "primaryInstances": 400
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-driven-0.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-driven-1.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-driven-2.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-driven-3.json",
+      "Vulkan-Advanced13_BindlessMeshShader-512-64-textures-driven-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0894,
+    "cpuRecordRunRangeMs": [
+      0.062,
+      0.1127
+    ],
+    "gpuMedianMs": 3.6768,
+    "gpuRunRangeMs": [
+      3.605888,
+      4.525248
+    ],
+    "gpuP95MedianMs": 7.090496,
+    "descriptorBinds": 4,
+    "draws": 1,
+    "dispatches": 5,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.024770916666666642,
+        "medianMs": 0.0245,
+        "p95Ms": 0.033299999999999996
+      },
+      "present": {
+        "averageMs": 4.823094833333332,
+        "medianMs": 4.2138,
+        "p95Ms": 7.6286
+      },
+      "record": {
+        "averageMs": 0.09099841666666665,
+        "medianMs": 0.0894,
+        "p95Ms": 0.1241
+      },
+      "submit": {
+        "averageMs": 0.044004750000000016,
+        "medianMs": 0.0442,
+        "p95Ms": 0.0589
+      },
+      "update": {
+        "averageMs": 0.0032079166666666727,
+        "medianMs": 0.0031,
+        "p95Ms": 0.0048
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 0.05090261333333333,
+        "medianMs": 0.050048,
+        "p95Ms": 0.056032
+      },
+      "display": {
+        "averageMs": 0.014125706666666656,
+        "medianMs": 0.013568,
+        "p95Ms": 0.017344
+      },
+      "geometry": {
+        "averageMs": 4.108300053333333,
+        "medianMs": 3.506912,
+        "p95Ms": 6.906496
+      },
+      "lighting": {
+        "averageMs": 0.07340088000000002,
+        "medianMs": 0.068096,
+        "p95Ms": 0.114496
+      },
+      "rt": {
+        "averageMs": 0.002605653333333348,
+        "medianMs": 0.002528,
+        "p95Ms": 0.002976
+      },
+      "total": {
+        "averageMs": 4.253949680000001,
+        "medianMs": 3.6768,
+        "p95Ms": 7.090496
+      }
+    }
+  },
+  "Vulkan-A14-512-64-bound-direct": {
+    "api": "Vulkan",
+    "technique": 14,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291373056,
+      "sceneBuffersCommitted": 23396608,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 78,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-bound-0.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-bound-1.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-bound-2.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-bound-3.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1164,
+    "cpuRecordRunRangeMs": [
+      0.0552,
+      0.1204
+    ],
+    "gpuMedianMs": 2.850976,
+    "gpuRunRangeMs": [
+      2.603648,
+      2.89488
+    ],
+    "gpuP95MedianMs": 3.794752,
+    "descriptorBinds": 2,
+    "draws": 1,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.031675833333333354,
+        "medianMs": 0.031599999999999996,
+        "p95Ms": 0.0383
+      },
+      "present": {
+        "averageMs": 3.5128549166666674,
+        "medianMs": 3.4322,
+        "p95Ms": 4.4583
+      },
+      "record": {
+        "averageMs": 0.11454433333333336,
+        "medianMs": 0.1164,
+        "p95Ms": 0.1404
+      },
+      "submit": {
+        "averageMs": 0.05412900000000005,
+        "medianMs": 0.0543,
+        "p95Ms": 0.0667
+      },
+      "update": {
+        "averageMs": 0.004682666666666646,
+        "medianMs": 0.0048,
+        "p95Ms": 0.0059
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.090666666666699e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.035505466666666735,
+        "medianMs": 0.035648,
+        "p95Ms": 0.037088
+      },
+      "geometry": {
+        "averageMs": 0.004788959999999961,
+        "medianMs": 0.004768,
+        "p95Ms": 0.004992
+      },
+      "lighting": {
+        "averageMs": 0.00014357333333333338,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 2.8462098133333362,
+        "medianMs": 2.807968,
+        "p95Ms": 3.749696
+      },
+      "total": {
+        "averageMs": 2.8898979999999996,
+        "medianMs": 2.850976,
+        "p95Ms": 3.794752
+      }
+    }
+  },
+  "Vulkan-A14-512-64-resources-direct": {
+    "api": "Vulkan",
+    "technique": 14,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23383296,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1635,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-resources-0.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-resources-1.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-resources-2.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-resources-3.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-resources-4.json"
+    ],
+    "cpuRecordMedianMs": 0.0901,
+    "cpuRecordRunRangeMs": [
+      0.066,
+      0.1183
+    ],
+    "gpuMedianMs": 2.70704,
+    "gpuRunRangeMs": [
+      2.616928,
+      2.854176
+    ],
+    "gpuP95MedianMs": 3.51312,
+    "descriptorBinds": 2,
+    "draws": 1,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.0264170833333333,
+        "medianMs": 0.0261,
+        "p95Ms": 0.033
+      },
+      "present": {
+        "averageMs": 3.2774911666666653,
+        "medianMs": 3.2376,
+        "p95Ms": 4.1182
+      },
+      "record": {
+        "averageMs": 0.09170375000000003,
+        "medianMs": 0.0901,
+        "p95Ms": 0.121
+      },
+      "submit": {
+        "averageMs": 0.045601333333333355,
+        "medianMs": 0.0455,
+        "p95Ms": 0.0567
+      },
+      "update": {
+        "averageMs": 0.0031986666666666665,
+        "medianMs": 0.0031,
+        "p95Ms": 0.0044
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.130666666666699e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.037471840000000055,
+        "medianMs": 0.03632,
+        "p95Ms": 0.038016
+      },
+      "geometry": {
+        "averageMs": 0.004776639999999965,
+        "medianMs": 0.004768,
+        "p95Ms": 0.004992
+      },
+      "lighting": {
+        "averageMs": 0.00013898666666666655,
+        "medianMs": 0.0,
+        "p95Ms": 0.000576
+      },
+      "rt": {
+        "averageMs": 2.699632826666667,
+        "medianMs": 2.663232,
+        "p95Ms": 3.469856
+      },
+      "total": {
+        "averageMs": 2.745168453333331,
+        "medianMs": 2.70704,
+        "p95Ms": 3.51312
+      }
+    }
+  },
+  "Vulkan-A14-512-64-textures-direct": {
+    "api": "Vulkan",
+    "technique": 14,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23396608,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 690,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-textures-0.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-textures-1.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-textures-2.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-textures-3.json",
+      "Vulkan-Advanced14_BindlessRaytracing-512-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1195,
+    "cpuRecordRunRangeMs": [
+      0.0928,
+      0.1238
+    ],
+    "gpuMedianMs": 2.707648,
+    "gpuRunRangeMs": [
+      2.597856,
+      2.814592
+    ],
+    "gpuP95MedianMs": 3.512256,
+    "descriptorBinds": 2,
+    "draws": 1,
+    "dispatches": 1,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.032715833333333284,
+        "medianMs": 0.031799999999999995,
+        "p95Ms": 0.0385
+      },
+      "present": {
+        "averageMs": 3.4804121666666665,
+        "medianMs": 3.366,
+        "p95Ms": 4.3824
+      },
+      "record": {
+        "averageMs": 0.11743416666666662,
+        "medianMs": 0.1195,
+        "p95Ms": 0.1427
+      },
+      "submit": {
+        "averageMs": 0.056388999999999946,
+        "medianMs": 0.0556,
+        "p95Ms": 0.0691
+      },
+      "update": {
+        "averageMs": 0.004459250000000018,
+        "medianMs": 0.0045,
+        "p95Ms": 0.0057
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 6.08800000000003e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.0359845066666667,
+        "medianMs": 0.036032,
+        "p95Ms": 0.037376
+      },
+      "geometry": {
+        "averageMs": 0.004793146666666605,
+        "medianMs": 0.004768,
+        "p95Ms": 0.005024
+      },
+      "lighting": {
+        "averageMs": 0.00013895999999999996,
+        "medianMs": 0.0,
+        "p95Ms": 0.000576
+      },
+      "rt": {
+        "averageMs": 2.699998613333333,
+        "medianMs": 2.663712,
+        "p95Ms": 3.469696
+      },
+      "total": {
+        "averageMs": 2.7433251200000064,
+        "medianMs": 2.707648,
+        "p95Ms": 3.512256
+      }
+    }
+  },
+  "Vulkan-A15-512-64-bound-direct": {
+    "api": "Vulkan",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "bound",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291373056,
+      "sceneBuffersCommitted": 23396608,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 78,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced15_BindlessHybrid-512-64-bound-0.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-bound-1.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-bound-2.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-bound-3.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-bound-4.json"
+    ],
+    "cpuRecordMedianMs": 0.2564,
+    "cpuRecordRunRangeMs": [
+      0.1269,
+      0.2892
+    ],
+    "gpuMedianMs": 5.238112,
+    "gpuRunRangeMs": [
+      5.063552,
+      5.39216
+    ],
+    "gpuP95MedianMs": 6.70768,
+    "descriptorBinds": 3,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.022201583333333344,
+        "medianMs": 0.0216,
+        "p95Ms": 0.0334
+      },
+      "present": {
+        "averageMs": 5.841368250000003,
+        "medianMs": 5.7205,
+        "p95Ms": 7.1711
+      },
+      "record": {
+        "averageMs": 0.25599725000000023,
+        "medianMs": 0.2564,
+        "p95Ms": 0.4094
+      },
+      "submit": {
+        "averageMs": 0.04020733333333334,
+        "medianMs": 0.0392,
+        "p95Ms": 0.0664
+      },
+      "update": {
+        "averageMs": 0.0024105833333333106,
+        "medianMs": 0.0023,
+        "p95Ms": 0.0037
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 5.9680000000000343e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.02283165333333332,
+        "medianMs": 0.022528,
+        "p95Ms": 0.028224
+      },
+      "geometry": {
+        "averageMs": 3.847062240000003,
+        "medianMs": 3.621216,
+        "p95Ms": 5.174272
+      },
+      "lighting": {
+        "averageMs": 0.0001139733333333331,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.4741293600000003,
+        "medianMs": 1.472768,
+        "p95Ms": 1.97712
+      },
+      "total": {
+        "averageMs": 5.322668346666668,
+        "medianMs": 5.238112,
+        "p95Ms": 6.70768
+      }
+    }
+  },
+  "Vulkan-A15-512-64-resources-direct": {
+    "api": "Vulkan",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23383296,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1635,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-0.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-1.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-2.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-3.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-4.json"
+    ],
+    "cpuRecordMedianMs": 0.2357,
+    "cpuRecordRunRangeMs": [
+      0.1205,
+      0.2962
+    ],
+    "gpuMedianMs": 5.381728,
+    "gpuRunRangeMs": [
+      5.359488,
+      5.444
+    ],
+    "gpuP95MedianMs": 6.961152,
+    "descriptorBinds": 3,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.020920333333333343,
+        "medianMs": 0.0203,
+        "p95Ms": 0.034300000000000004
+      },
+      "present": {
+        "averageMs": 6.011518666666661,
+        "medianMs": 5.8936,
+        "p95Ms": 7.4328
+      },
+      "record": {
+        "averageMs": 0.23939125000000028,
+        "medianMs": 0.2357,
+        "p95Ms": 0.4296
+      },
+      "submit": {
+        "averageMs": 0.03908633333333329,
+        "medianMs": 0.0365,
+        "p95Ms": 0.0708
+      },
+      "update": {
+        "averageMs": 0.002244583333333308,
+        "medianMs": 0.0022,
+        "p95Ms": 0.0038
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 5.885333333333374e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.023067386666666672,
+        "medianMs": 0.022784,
+        "p95Ms": 0.028832
+      },
+      "geometry": {
+        "averageMs": 4.033788399999998,
+        "medianMs": 3.774912,
+        "p95Ms": 5.419104
+      },
+      "lighting": {
+        "averageMs": 7.543999999999989e-05,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.4665698933333322,
+        "medianMs": 1.46432,
+        "p95Ms": 1.988128
+      },
+      "total": {
+        "averageMs": 5.534547226666671,
+        "medianMs": 5.381728,
+        "p95Ms": 6.961152
+      }
+    }
+  },
+  "Vulkan-A15-512-64-resources-driven": {
+    "api": "Vulkan",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "resources",
+    "gpuDriven": true,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "submission-architecture",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23349908,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23383296,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 1635,
+    "sceneBufferResources": 324,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": 41940,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-driven-0.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-driven-1.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-driven-2.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-driven-3.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-resources-driven-4.json"
+    ],
+    "cpuRecordMedianMs": 0.13,
+    "cpuRecordRunRangeMs": [
+      0.0923,
+      0.1371
+    ],
+    "gpuMedianMs": 8.321824,
+    "gpuRunRangeMs": [
+      8.276064,
+      10.250432
+    ],
+    "gpuP95MedianMs": 10.598912,
+    "descriptorBinds": 4,
+    "draws": 1,
+    "dispatches": 5,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.025868583333333306,
+        "medianMs": 0.025300000000000003,
+        "p95Ms": 0.0417
+      },
+      "present": {
+        "averageMs": 8.869677083333336,
+        "medianMs": 8.8572,
+        "p95Ms": 11.0649
+      },
+      "record": {
+        "averageMs": 0.13532866666666682,
+        "medianMs": 0.13,
+        "p95Ms": 0.2218
+      },
+      "submit": {
+        "averageMs": 0.04895516666666661,
+        "medianMs": 0.0465,
+        "p95Ms": 0.0856
+      },
+      "update": {
+        "averageMs": 0.002766999999999984,
+        "medianMs": 0.0027,
+        "p95Ms": 0.0044
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 0.05662839999999997,
+        "medianMs": 0.056192,
+        "p95Ms": 0.059328
+      },
+      "display": {
+        "averageMs": 0.023235733333333366,
+        "medianMs": 0.023008,
+        "p95Ms": 0.028896
+      },
+      "geometry": {
+        "averageMs": 6.850415893333328,
+        "medianMs": 6.688864,
+        "p95Ms": 8.962752
+      },
+      "lighting": {
+        "averageMs": 0.00011101333333333298,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.4360718399999985,
+        "medianMs": 1.42608,
+        "p95Ms": 1.974176
+      },
+      "total": {
+        "averageMs": 8.367510506666662,
+        "medianMs": 8.321824,
+        "p95Ms": 10.598912
+      }
+    }
+  },
+  "Vulkan-A15-512-64-textures-direct": {
+    "api": "Vulkan",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": false,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "storage-and-access",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23396608,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 690,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": null,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-0.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-1.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-2.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-3.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-4.json"
+    ],
+    "cpuRecordMedianMs": 0.2365,
+    "cpuRecordRunRangeMs": [
+      0.124,
+      0.2606
+    ],
+    "gpuMedianMs": 5.14224,
+    "gpuRunRangeMs": [
+      5.052224,
+      5.25568
+    ],
+    "gpuP95MedianMs": 6.668,
+    "descriptorBinds": 3,
+    "draws": 1,
+    "dispatches": 513,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.021612583333333338,
+        "medianMs": 0.0204,
+        "p95Ms": 0.0342
+      },
+      "present": {
+        "averageMs": 5.755151166666668,
+        "medianMs": 5.6346,
+        "p95Ms": 7.1584
+      },
+      "record": {
+        "averageMs": 0.2436699999999998,
+        "medianMs": 0.2365,
+        "p95Ms": 0.4134
+      },
+      "submit": {
+        "averageMs": 0.03825383333333332,
+        "medianMs": 0.0352,
+        "p95Ms": 0.0694
+      },
+      "update": {
+        "averageMs": 0.0024691666666666373,
+        "medianMs": 0.0024,
+        "p95Ms": 0.0039
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 5.976000000000037e-05,
+        "medianMs": 6.4e-05,
+        "p95Ms": 6.4e-05
+      },
+      "display": {
+        "averageMs": 0.02327213333333333,
+        "medianMs": 0.023008,
+        "p95Ms": 0.02896
+      },
+      "geometry": {
+        "averageMs": 3.866717386666671,
+        "medianMs": 3.640032,
+        "p95Ms": 5.242112
+      },
+      "lighting": {
+        "averageMs": 0.0001091199999999997,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.389014053333333,
+        "medianMs": 1.388032,
+        "p95Ms": 1.903392
+      },
+      "total": {
+        "averageMs": 5.288684133333336,
+        "medianMs": 5.14224,
+        "p95Ms": 6.668
+      }
+    }
+  },
+  "Vulkan-A15-512-64-textures-driven": {
+    "api": "Vulkan",
+    "technique": 15,
+    "objects": 512,
+    "residentMaterials": 64,
+    "binding": "textures",
+    "gpuDriven": true,
+    "images": 208,
+    "geometries": 64,
+    "assetHash": "98e35e9a1588ff0144aa50863fba0b9fd0f772f3dc6bc990a0e1f994cf2d4657",
+    "comparison": "submission-architecture",
+    "memory": {
+      "accelerationStructures": 9492608,
+      "attachmentPayload": 77414400,
+      "attachmentsCommitted": 82575360,
+      "buffers": 23395904,
+      "descriptors": null,
+      "images": 290804800,
+      "imagesCommitted": 291160064,
+      "sceneBuffersCommitted": 23396608,
+      "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+    },
+    "descriptorCount": 690,
+    "sceneBufferResources": 9,
+    "visibility": {
+      "frustumInstancesCpuReference": 459,
+      "frustumMeshletsCpuReference": 41940,
+      "meshletsGpu": 41940,
+      "primaryGeometries": 64,
+      "primaryInstances": 407
+    },
+    "runs": 5,
+    "files": [
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-driven-0.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-driven-1.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-driven-2.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-driven-3.json",
+      "Vulkan-Advanced15_BindlessHybrid-512-64-textures-driven-4.json"
+    ],
+    "cpuRecordMedianMs": 0.1163,
+    "cpuRecordRunRangeMs": [
+      0.094,
+      0.1559
+    ],
+    "gpuMedianMs": 8.752992,
+    "gpuRunRangeMs": [
+      8.493376,
+      11.295456
+    ],
+    "gpuP95MedianMs": 11.54544,
+    "descriptorBinds": 4,
+    "draws": 1,
+    "dispatches": 5,
+    "cpu": {
+      "gpu-wait": {
+        "averageMs": 0.022455333333333362,
+        "medianMs": 0.019,
+        "p95Ms": 0.0408
+      },
+      "present": {
+        "averageMs": 9.257859166666668,
+        "medianMs": 9.2669,
+        "p95Ms": 12.0427
+      },
+      "record": {
+        "averageMs": 0.12699808333333354,
+        "medianMs": 0.1163,
+        "p95Ms": 0.2028
+      },
+      "submit": {
+        "averageMs": 0.03895316666666671,
+        "medianMs": 0.033,
+        "p95Ms": 0.0759
+      },
+      "update": {
+        "averageMs": 0.0029567499999999898,
+        "medianMs": 0.0029,
+        "p95Ms": 0.0045
+      }
+    },
+    "gpu": {
+      "cull": {
+        "averageMs": 0.05217034666666667,
+        "medianMs": 0.051712,
+        "p95Ms": 0.055584
+      },
+      "display": {
+        "averageMs": 0.022914613333333365,
+        "medianMs": 0.022816,
+        "p95Ms": 0.02864
+      },
+      "geometry": {
+        "averageMs": 7.256126560000007,
+        "medianMs": 7.183392,
+        "p95Ms": 10.012128
+      },
+      "lighting": {
+        "averageMs": 7.28799999999999e-05,
+        "medianMs": 0.0,
+        "p95Ms": 0.001024
+      },
+      "rt": {
+        "averageMs": 1.3876057599999998,
+        "medianMs": 1.382144,
+        "p95Ms": 1.97232
+      },
+      "total": {
+        "averageMs": 8.721275919999993,
+        "medianMs": 8.752992,
+        "p95Ms": 11.54544
+      }
+    }
+  }
+}

@@ -29,6 +29,8 @@ struct Options
     uint32_t particleCount = 16384;
     bool pauseParticles = false, captureGpu = false, testPost = false, testOdd = false;
     bool disableReflections = false;
+    std::wstring sunShadow = L"rayquery";
+    uint32_t shadowPointLights = 8;
     std::wstring meshRenderPath, meshCulling, meshView;
     std::wstring meshTestScene;
     std::wstring rayTestScene;
@@ -49,6 +51,9 @@ struct Options
     bool rootMotion = false, testRootMotion = false;
     std::wstring skinning = L"dqs"; // Sample24: deformation method, independent of the graphics API.
     bool testDqs = false;
+    std::wstring binding = L"textures", galleryPreset = L"Standard", galleryView = L"final";
+    uint32_t galleryObjects = 0, galleryMaterials = 0;
+    bool galleryGpuDriven = false;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

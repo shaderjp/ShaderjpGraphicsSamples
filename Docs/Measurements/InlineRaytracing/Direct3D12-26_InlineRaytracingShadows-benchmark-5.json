@@ -1,0 +1,79 @@
+{
+  "api": "Direct3D12",
+  "configuration": "Release",
+  "fixedDelta": 0.016666666666666666,
+  "gBufferBytesPerPixel": 18,
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "height": 720,
+  "inlineRaytracing": {
+    "accelerationStructuresCommittedBytes": 9961472,
+    "asStartupMs": 165.2647,
+    "inlineSceneBufferBytes": 4785264,
+    "reflections": false,
+    "shadowPointLights": 0,
+    "sunRayQuery": true
+  },
+  "measuredFrames": 1200,
+  "mode": "Compute",
+  "msvcFullVersion": 195136257,
+  "passes": {
+    "display": {
+      "averageMs": 0.010645333333333193,
+      "medianMs": 0.01024,
+      "p95Ms": 0.011264
+    },
+    "extract": {
+      "averageMs": 0.017989973333333367,
+      "medianMs": 0.007168,
+      "p95Ms": 0.01024
+    },
+    "geometry": {
+      "averageMs": 0.29080661333333324,
+      "medianMs": 0.287744,
+      "p95Ms": 0.33792
+    },
+    "horizontal": {
+      "averageMs": 0.0290551466666669,
+      "medianMs": 0.008192,
+      "p95Ms": 0.009216
+    },
+    "lighting": {
+      "averageMs": 0.4634880000000015,
+      "medianMs": 0.14848,
+      "p95Ms": 3.820544
+    },
+    "shadow": {
+      "averageMs": 0.027989866666666766,
+      "medianMs": 0.027648,
+      "p95Ms": 0.037888
+    },
+    "sky": {
+      "averageMs": 0.013590186666666778,
+      "medianMs": 0.003072,
+      "p95Ms": 0.007168
+    },
+    "total": {
+      "averageMs": 0.8616699733333332,
+      "medianMs": 0.509952,
+      "p95Ms": 4.29568
+    },
+    "transparent": {
+      "averageMs": 5.119999999999999e-06,
+      "medianMs": 0.0,
+      "p95Ms": 0.0
+    },
+    "vertical": {
+      "averageMs": 0.007757653333333378,
+      "medianMs": 0.008192,
+      "p95Ms": 0.008192
+    }
+  },
+  "pathFrames": 1200,
+  "pointLights": 8,
+  "preset": "OpaqueMask",
+  "representation": "GBuffer",
+  "scene": "Standard",
+  "warmupFrames": 60,
+  "width": 1280,
+  "windowsSdk": "10.0.26100.0"
+}

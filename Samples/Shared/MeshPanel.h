@@ -74,7 +74,11 @@ struct MeshPanel : DeferredPanel
         ImGui::SetNextWindowPos({10, 10}, ImGuiCond_Always);
         ImGui::SetNextWindowSize({340, 650}, ImGuiCond_FirstUseEver);
         ImGui::Begin("Mesh Shader Workshop");
+#ifdef INLINE_SAMPLE
+        ImGui::Text("%s / Advanced 17 / RayQuery", api);
+#else
         ImGui::Text("%s / Advanced %02d", api, MESH_TECHNIQUE);
+#endif
         const char *paths[] = {"Vertex reference", "Mesh direct", "AS / Task", "Compute + Indirect"};
         if (ImGui::BeginCombo("Render path", paths[renderPath]))
         {
@@ -142,8 +146,15 @@ struct MeshPanel : DeferredPanel
         {
             ImGui::Checkbox("Shadow", &shadows);
             ImGui::SameLine();
+#ifdef INLINE_SAMPLE
+            ImGui::BeginDisabled(sunQuery);
+            ImGui::Checkbox("3x3 PCF", &pcf);
+            ImGui::SliderFloat("Map bias", &bias, 0, .01f, "%.4f");
+            ImGui::EndDisabled();
+#else
             ImGui::Checkbox("3x3 PCF", &pcf);
             ImGui::SliderFloat("Bias", &bias, 0, .01f, "%.4f");
+#endif
         }
         if (MESH_TECHNIQUE >= 8)
         {
@@ -154,6 +165,22 @@ struct MeshPanel : DeferredPanel
         }
         if (MESH_TECHNIQUE == 9)
         {
+#ifdef INLINE_SAMPLE
+            if(test && (frame==3 || frame==4))
+                ImGui::SetNextItemOpen(frame==3,ImGuiCond_Always);
+            if(ImGui::CollapsingHeader("Inline Raytracing")) {
+            ImGui::PushItemWidth(150);
+            ImGui::SliderFloat("Ray bias (m)",&inlineBias,.0001f,.01f,"%.4f");
+            const char* methods[]={"Shadow Map","RayQuery"};int method=sunQuery?1:0;
+            if(ImGui::Combo("Sun shadow",&method,methods,2))sunQuery=method==1;
+            int count=int(std::min(shadowPointLights,time.pointLights));
+            if(ImGui::SliderInt("Point shadows",&count,0,int(time.pointLights)))shadowPointLights=uint32_t(count);
+            if(ImGui::Button("Shadow all point lights"))shadowPointLights=UINT32_MAX;
+            const char* diagnostics[]={"Lighting","Shadow ray count"};int diagnostic=inlineView==2?1:0;
+            if(ImGui::Combo("Inline diagnostic",&diagnostic,diagnostics,2)){inlineView=diagnostic?2:0;view=0;grid.view=0;}
+                ImGui::PopItemWidth();
+            }
+#endif
             const char *modes[] = {"All lights", "Tiled"};
             ImGui::Combo("Light culling", &grid.mode, modes, 2);
             ImGui::SliderInt("Lights / room", &grid.perRoom, 0, 512);

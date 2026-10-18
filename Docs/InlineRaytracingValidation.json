@@ -1,0 +1,1508 @@
+{
+  "schemaVersion": 1,
+  "testedDate": "2026-10-18",
+  "numericValidation": [
+    {
+      "api": "Direct3D12",
+      "configuration": "Debug",
+      "passed": true,
+      "hdrTolerance": {
+        "absolute": 0.001,
+        "relative": 0.002
+      },
+      "denseGpuDrivenAmbiguousPrimaryPixels": 323,
+      "denseGpuDrivenComparedPrimaryPixels": 921277,
+      "comparisons": [
+        {
+          "label": "Shadow Map vs basic18",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Reflection OFF",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Self intersection on unoccluded plane",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Reflected offscreen emissive target",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Solid MASK reflection",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Double-sided MASK back-face hit",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery bound",
+          "maximumAbsoluteError": 0.00012743473052978516,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery textures",
+          "maximumAbsoluteError": 0.00012743473052978516,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery resources",
+          "maximumAbsoluteError": 0.00012743473052978516,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "GPU Driven single object",
+          "maximumAbsoluteError": 1.4901161193847656e-08,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Dense GPU Driven matching surfaces",
+          "maximumAbsoluteError": 0.00012743473052978516,
+          "comparedScalars": 3685108,
+          "failedScalars": 0
+        },
+        {
+          "label": "All lights vs tiled",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Overflow fallback",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Point shadows OFF vs advanced09",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "point-beyond",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "mask-shadow-hole",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Tiled UI Reset HDR",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        }
+      ],
+      "uiReset": "26/27/16 exact PNG; 17 HDR tolerance and at most one PNG code step",
+      "sourceReportSha256": "3a27c0287a520ab36ff2f5f2a6117af047aaa5b7b078cebeb1c610cc07f634c9"
+    },
+    {
+      "api": "Vulkan",
+      "configuration": "Debug",
+      "passed": true,
+      "hdrTolerance": {
+        "absolute": 0.001,
+        "relative": 0.002
+      },
+      "denseGpuDrivenAmbiguousPrimaryPixels": 152,
+      "denseGpuDrivenComparedPrimaryPixels": 921448,
+      "comparisons": [
+        {
+          "label": "Shadow Map vs basic18",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Reflection OFF",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Self intersection on unoccluded plane",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Reflected offscreen emissive target",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Solid MASK reflection",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Double-sided MASK back-face hit",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery bound",
+          "maximumAbsoluteError": 0.00013184547424316406,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery textures",
+          "maximumAbsoluteError": 0.00013184547424316406,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery resources",
+          "maximumAbsoluteError": 0.00013184547424316406,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "GPU Driven single object",
+          "maximumAbsoluteError": 2.9802322387695312e-08,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Dense GPU Driven matching surfaces",
+          "maximumAbsoluteError": 0.00013184547424316406,
+          "comparedScalars": 3685792,
+          "failedScalars": 0
+        },
+        {
+          "label": "All lights vs tiled",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Overflow fallback",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Point shadows OFF vs advanced09",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "point-beyond",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "mask-shadow-hole",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Tiled UI Reset HDR",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        }
+      ],
+      "uiReset": "26/27/16 exact PNG; 17 HDR tolerance and at most one PNG code step",
+      "sourceReportSha256": "b33f6856eb572e347100c102cb9260af6f8957b6311e9eb8f793846151c62d6c"
+    },
+    {
+      "api": "Direct3D12",
+      "configuration": "Release",
+      "passed": true,
+      "hdrTolerance": {
+        "absolute": 0.001,
+        "relative": 0.002
+      },
+      "denseGpuDrivenAmbiguousPrimaryPixels": 821,
+      "denseGpuDrivenComparedPrimaryPixels": 920779,
+      "comparisons": [
+        {
+          "label": "Shadow Map vs basic18",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Reflection OFF",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Self intersection on unoccluded plane",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Reflected offscreen emissive target",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Solid MASK reflection",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Double-sided MASK back-face hit",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery bound",
+          "maximumAbsoluteError": 0.00025957822799682617,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery textures",
+          "maximumAbsoluteError": 0.00025957822799682617,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery resources",
+          "maximumAbsoluteError": 0.00025957822799682617,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "GPU Driven single object",
+          "maximumAbsoluteError": 7.450580596923828e-09,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Dense GPU Driven matching surfaces",
+          "maximumAbsoluteError": 0.00025957822799682617,
+          "comparedScalars": 3683116,
+          "failedScalars": 0
+        },
+        {
+          "label": "All lights vs tiled",
+          "maximumAbsoluteError": 0.0078125,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Overflow fallback",
+          "maximumAbsoluteError": 0.0078125,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Point shadows OFF vs advanced09",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "point-beyond",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "mask-shadow-hole",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Tiled UI Reset HDR",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        }
+      ],
+      "uiReset": "26/27/16 exact PNG; 17 HDR tolerance and at most one PNG code step",
+      "sourceReportSha256": "5c0275537d9d0332d486abbce57f7339adbb15b8420b3d6c1ba21ffcd3c7a9bf"
+    },
+    {
+      "api": "Vulkan",
+      "configuration": "Release",
+      "passed": true,
+      "hdrTolerance": {
+        "absolute": 0.001,
+        "relative": 0.002
+      },
+      "denseGpuDrivenAmbiguousPrimaryPixels": 1023,
+      "denseGpuDrivenComparedPrimaryPixels": 920577,
+      "comparisons": [
+        {
+          "label": "Shadow Map vs basic18",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Reflection OFF",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Self intersection on unoccluded plane",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Reflected offscreen emissive target",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Solid MASK reflection",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Double-sided MASK back-face hit",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery bound",
+          "maximumAbsoluteError": 0.00013184547424316406,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery textures",
+          "maximumAbsoluteError": 0.00013184547424316406,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "RT Pipeline vs RayQuery resources",
+          "maximumAbsoluteError": 0.00013184547424316406,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "GPU Driven single object",
+          "maximumAbsoluteError": 2.9802322387695312e-08,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Dense GPU Driven matching surfaces",
+          "maximumAbsoluteError": 0.00013184547424316406,
+          "comparedScalars": 3682308,
+          "failedScalars": 0
+        },
+        {
+          "label": "All lights vs tiled",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Overflow fallback",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "Point shadows OFF vs advanced09",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        },
+        {
+          "label": "point-beyond",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "mask-shadow-hole",
+          "maximumAbsoluteError": 0.0,
+          "comparedScalars": 3,
+          "failedScalars": 0
+        },
+        {
+          "label": "Tiled UI Reset HDR",
+          "maximumAbsoluteError": 0.0009765625,
+          "comparedScalars": 3686400,
+          "failedScalars": 0
+        }
+      ],
+      "uiReset": "26/27/16 exact PNG; 17 HDR tolerance and at most one PNG code step",
+      "sourceReportSha256": "e63a579a710b4e04ca75c34dd30abca94c8f1ad41d08c4c08e92843684e4d36c"
+    }
+  ],
+  "lifecycle": [
+    {
+      "configuration": "Debug",
+      "passedApplications": 88,
+      "validationErrors": 0,
+      "checks": [
+        "1280x720 render/capture",
+        "640x480 resize",
+        "minimize/restore to 1280x720",
+        "shutdown"
+      ],
+      "logs": [
+        {
+          "application": "Direct3D12_01_Initialization",
+          "logSha256": "2462bd183ddb6cb9958975c19d4468afdd61c8fcca40fdb1f81c6e8b0535396c"
+        },
+        {
+          "application": "Direct3D12_02_Triangle",
+          "logSha256": "50ccbb8cac78b391b1e12add9619f5c7d4a72e215b35a8b8bd683799104e1684"
+        },
+        {
+          "application": "Direct3D12_03_Texture",
+          "logSha256": "cf2190039bbd13e5354a6575754a555c56ef8c407cc3f7b4f690592ee350eb62"
+        },
+        {
+          "application": "Direct3D12_04_Box",
+          "logSha256": "732f75490cdef8a1474507a6ec2b861939722d44f05d31b8f9a2b9bf3535a41d"
+        },
+        {
+          "application": "Direct3D12_05_Model",
+          "logSha256": "580db56c81f1a66d1f18e941ca720c7a0f9ce36dfbbacedbc496abc3f03e2a97"
+        },
+        {
+          "application": "Direct3D12_06_Gltf",
+          "logSha256": "4cb9ae6aa1c8e5d88695b4805784d98229bbb77ed7a5cb45589008afabb0e69b"
+        },
+        {
+          "application": "Direct3D12_07_Lighting",
+          "logSha256": "6a3a9aa4c76fc00c54a8a951e5de5c3a605b39adcb6912c0ed5f01b37312fd8b"
+        },
+        {
+          "application": "Direct3D12_08_PBR",
+          "logSha256": "2c409828213d3401343ff3d26b62aad77c027bf3bfa8b517faa0fe914543477f"
+        },
+        {
+          "application": "Direct3D12_09_ImGui",
+          "logSha256": "a014774c80ab0137838de96aae27719d8a058f68cbe2871d58f2e6e392c08995"
+        },
+        {
+          "application": "Direct3D12_10_Cubemap",
+          "logSha256": "ae0cf495bee4027bd9768bb20c408ae9bfd595f515ccadd99aa1db327dca04eb"
+        },
+        {
+          "application": "Direct3D12_11_DiffuseIBL",
+          "logSha256": "3b1479c8a745d7c5fea729cc2070804fb5af43c89d4b9bb4ba2933009ec882ff"
+        },
+        {
+          "application": "Direct3D12_12_SpecularIBL",
+          "logSha256": "4e8868a96a42aadf5abf5246c6035e83d667ee7d93bd7aff14b6d46cc165f69c"
+        },
+        {
+          "application": "Direct3D12_13_ShadowMap",
+          "logSha256": "1c023a3513c75360d6d7113329dbc85012242e7185f83dbcd2fc3723a1626b63"
+        },
+        {
+          "application": "Direct3D12_14_RenderTexture",
+          "logSha256": "346e08c92065088b6b8057fdf5cc2c1f11182c1fa03214a077fcf7ee3c03d815"
+        },
+        {
+          "application": "Direct3D12_15_ComputeBloom",
+          "logSha256": "2a8c835cad3ca35d1a7cd3cc138295d99ae1891c0dc7adf53b0cd61da30c9638"
+        },
+        {
+          "application": "Direct3D12_16_GpuParticles",
+          "logSha256": "ed9c38471c602cf4521f676a0bf5239937eeae22aa6a6583c96ac532e749cfda"
+        },
+        {
+          "application": "Direct3D12_17_DeferredPixel",
+          "logSha256": "6bf6c37e5aaae6906ebf1e6b1abff670cd287fc474f13d3a1d70253f070dd6f6"
+        },
+        {
+          "application": "Direct3D12_18_DeferredCompute",
+          "logSha256": "3663dceb7032d2699386dcec1683f40398e9778a0ae506f19bf5bd1dddf796e8"
+        },
+        {
+          "application": "Direct3D12_Advanced01_RaytracingBasic",
+          "logSha256": "3fbf3f48c3cf2d96a097ee2857f84315c23a75784a6445b6135b3ee28620011e"
+        },
+        {
+          "application": "Direct3D12_Advanced02_RaytracingShadows",
+          "logSha256": "da18ed41c717fb84f83521b6ce8fab3e8faeaededb37b6a18b0bd041b06086e7"
+        },
+        {
+          "application": "Direct3D12_Advanced03_RaytracingReflections",
+          "logSha256": "89a67bbe12068cfae7e412600442a928db9e74a279bae2c42821e496056154df"
+        },
+        {
+          "application": "Direct3D12_Advanced04_MeshShaderBasic",
+          "logSha256": "7a8dc8a6e119ffcbf9315231c6b936f5e72a7ab2592130fbe1afcc62e3b9d562"
+        },
+        {
+          "application": "Direct3D12_Advanced05_GpuDrivenRendering",
+          "logSha256": "2a5186b2a8a0b19ea8d5e038856707bc0e87b7cac9f4c8fec4241a6d3276d987"
+        },
+        {
+          "application": "Direct3D12_Advanced06_MeshletCulling",
+          "logSha256": "1c72bd820f65640506bc2665c299a8b3937e8c231e1a607e79464c24dd55dfec"
+        },
+        {
+          "application": "Direct3D12_Advanced07_MeshShaderShadows",
+          "logSha256": "c1f68a4c411d6f55a0a5a87e0ef1bf9511e96157aea3dffbc7bea86b23d14640"
+        },
+        {
+          "application": "Direct3D12_Advanced08_MeshShaderDeferred",
+          "logSha256": "4c133880447b50c4d6700b39cf604e1342c796dda99990b861d67b750e522490"
+        },
+        {
+          "application": "Direct3D12_Advanced09_MeshShaderTiledDeferred",
+          "logSha256": "d65cb06760901893e90b6eb52990bd5df0ad0fef78344aa4360fd38df488527a"
+        },
+        {
+          "application": "Direct3D12_19_TiledDeferred",
+          "logSha256": "6b9c9150bc5c193f2bfa984cdc13153a8897042d71f6b4ee9467f3e99d1ec87e"
+        },
+        {
+          "application": "Direct3D12_20_ClusteredShading",
+          "logSha256": "29f6fe2870ba5265927b7cb52bf24d0d489da3a4ba28a2e58efefe17390adf9c"
+        },
+        {
+          "application": "Direct3D12_21_VisibilityBuffer",
+          "logSha256": "d1c0fdd0eb4f82d32542272f88990a147d5344a8774e86b9ca50389f2758905d"
+        },
+        {
+          "application": "Direct3D12_22_VertexSkinning",
+          "logSha256": "4cc1312c5eb6807bf641ea63911ae617e68a15e3fdbf1b4be505594e706a408e"
+        },
+        {
+          "application": "Direct3D12_23_ComputeSkinningCache",
+          "logSha256": "91968744180f84731a809bc7edebc518cb0071e1c155afbdb0863661e9557a83"
+        },
+        {
+          "application": "Direct3D12_24_DualQuaternionSkinning",
+          "logSha256": "48d8a2fb06ea0f78c9f578325fc5335070f9b9baecb42d78eead370b8900a1ef"
+        },
+        {
+          "application": "Direct3D12_25_DualQuaternionComputeCache",
+          "logSha256": "d9ef83f49b50c424007d1ccdc44b76e3534e19dc384ae41eccc7ffc259c716d4"
+        },
+        {
+          "application": "Direct3D12_Advanced11_DualQuaternionMeshSkinning",
+          "logSha256": "0075721cfd5533fdaeb17e79fd5f382cc88195d85167a240eb26ded880e69197"
+        },
+        {
+          "application": "Direct3D12_Advanced10_MeshShaderSkinning",
+          "logSha256": "1b132ea31ccabfc48c979513a50fac624fe22b21699e7d7f290a80aa209220c7"
+        },
+        {
+          "application": "Direct3D12_Advanced12_BindlessMaterials",
+          "logSha256": "057255e746631589c901339b93d45d98965b9cea42e4d66fbfa1e07d6e7b96e8"
+        },
+        {
+          "application": "Direct3D12_Advanced13_BindlessMeshShader",
+          "logSha256": "93901b5766a4de2542453f323152c70508a79bae93210f453edf197399d0f8b7"
+        },
+        {
+          "application": "Direct3D12_Advanced14_BindlessRaytracing",
+          "logSha256": "9458b2698f290ce054b7454217aefbdf59af55fc26b103cb7cab2414493018d0"
+        },
+        {
+          "application": "Direct3D12_Advanced15_BindlessHybrid",
+          "logSha256": "c3b6cbc79e2a31ac670a9ed255c5b432ac255a4fb3a3b08eedaadace3012368f"
+        },
+        {
+          "application": "Direct3D12_26_InlineRaytracingShadows",
+          "logSha256": "c6514d91309923db028c42d58eb6cdaf167bca53e3f153f9c2ddb20bfb942bde"
+        },
+        {
+          "application": "Direct3D12_27_InlineRaytracingReflections",
+          "logSha256": "93ef2e4b5c5af2b843ce4e5ad69af85bdce42790ab5e55e09649e8d602b6e5bd"
+        },
+        {
+          "application": "Direct3D12_Advanced16_BindlessInlineHybrid",
+          "logSha256": "b2173188d455224c59877e1fc733c5adbb45957d7896c3704f9d74917e60a244"
+        },
+        {
+          "application": "Direct3D12_Advanced17_MeshShaderTiledInlineShadows",
+          "logSha256": "7f1a9c356eeae8c1e7392736fbafc265c567fce29eeff0b396b74889dade7566"
+        },
+        {
+          "application": "Vulkan_01_Initialization",
+          "logSha256": "b048ec98a304cae9ff466cc2935a140f5e9a9ba75d72064544f59805132c3513"
+        },
+        {
+          "application": "Vulkan_02_Triangle",
+          "logSha256": "73067f5be9ac987b5389326486819ac9463bd448a3600623f6b745529621b58c"
+        },
+        {
+          "application": "Vulkan_03_Texture",
+          "logSha256": "19ab7ee8dae44e6b0d7457126f25aeb3a61b7c1a1362f46231cad3465bb4f280"
+        },
+        {
+          "application": "Vulkan_04_Box",
+          "logSha256": "f51ac3a1bda13cff162ce0278be48825703455fe3f8ed04ad380bc677dd1be24"
+        },
+        {
+          "application": "Vulkan_05_Model",
+          "logSha256": "20af74bda66db9709d55e0dd21833218a1ee04b3bb0b5c94f832dcf040bf27e7"
+        },
+        {
+          "application": "Vulkan_06_Gltf",
+          "logSha256": "36e5867ded974d4d353725d165602d271ccf63573e079225a5e54fa1af71d62e"
+        },
+        {
+          "application": "Vulkan_07_Lighting",
+          "logSha256": "445a6f47cd9c6cda226834518f74b1cd12d8898a7e2d7e8eb7cbcef51e4ab228"
+        },
+        {
+          "application": "Vulkan_08_PBR",
+          "logSha256": "b330f4859320541bfda86e807374ef41173ad5653498a8852398db5c2c29bd26"
+        },
+        {
+          "application": "Vulkan_09_ImGui",
+          "logSha256": "53047e88af56f275b9e741fd3147457963de1c0f82d164c8c9fd2ddeff684ef3"
+        },
+        {
+          "application": "Vulkan_10_Cubemap",
+          "logSha256": "54db833076f7f4c4ea1a706a75249d6ec35aeba304c754e2e1c7b551357bbfb7"
+        },
+        {
+          "application": "Vulkan_11_DiffuseIBL",
+          "logSha256": "d7cb951945d317a1b71ef10c4a5ca48b3dc1df96e5103243187a9e8fdf973a73"
+        },
+        {
+          "application": "Vulkan_12_SpecularIBL",
+          "logSha256": "8cb6a6ac8a30204123460a871ec47c5b67bd8d927bfa5e755135e7d763ba4001"
+        },
+        {
+          "application": "Vulkan_13_ShadowMap",
+          "logSha256": "c1a94a307372317b0660e7361e1dd418476bb0193d19fa00c3ef9e75870d9824"
+        },
+        {
+          "application": "Vulkan_14_RenderTexture",
+          "logSha256": "c7f731351c335000627b98cad652799165644dd617e01b263a43a75acd1ccb39"
+        },
+        {
+          "application": "Vulkan_15_ComputeBloom",
+          "logSha256": "902195581249620624737da57334d7529182e5fe54cd8d7b58896726e946119d"
+        },
+        {
+          "application": "Vulkan_16_GpuParticles",
+          "logSha256": "d812772e057b441d956d798a658597b1dc19d145f419ea775e6a09e612fd16cf"
+        },
+        {
+          "application": "Vulkan_17_DeferredPixel",
+          "logSha256": "fdb18dfdb5f213ea176a728d24bed85c16930e316d0429adf47e5ba36a3b05b3"
+        },
+        {
+          "application": "Vulkan_18_DeferredCompute",
+          "logSha256": "3209d7ed46b12ff81f3ffec9a1b6ed6c2db62db01b1ea1753cd4b8f7d53e8644"
+        },
+        {
+          "application": "Vulkan_Advanced01_RaytracingBasic",
+          "logSha256": "78746fe670c9da7335af522e0b5bf65946dd61fce53b47285fb8d8911d942419"
+        },
+        {
+          "application": "Vulkan_Advanced02_RaytracingShadows",
+          "logSha256": "6ddeb1b63408f8d307ec5ebb55eeecccf7ee7f47f83b6f0a4b2c5905c30e15cd"
+        },
+        {
+          "application": "Vulkan_Advanced03_RaytracingReflections",
+          "logSha256": "9717fb50cf02d8bec4c2f64fcfeeefaf76338824a4e58db55f0ef0b18a5a54d8"
+        },
+        {
+          "application": "Vulkan_Advanced04_MeshShaderBasic",
+          "logSha256": "9a1058ea20052a7f75b7e73351fb2c0a7ccd5d3189a37dca868994f6b97e1bcd"
+        },
+        {
+          "application": "Vulkan_Advanced05_GpuDrivenRendering",
+          "logSha256": "b0c204363989f747188f76f12be10b9ffe2e6231aa0833bbdf245fefc0d7e97e"
+        },
+        {
+          "application": "Vulkan_Advanced06_MeshletCulling",
+          "logSha256": "9166f141764d3af773a4e07a43fac60a0924b076c916e040002098db48b1e7a3"
+        },
+        {
+          "application": "Vulkan_Advanced07_MeshShaderShadows",
+          "logSha256": "dffd284681ab7cf42c4ee404366148004c73e89a20885b961a2b39345226613c"
+        },
+        {
+          "application": "Vulkan_Advanced08_MeshShaderDeferred",
+          "logSha256": "c11ea6e7fe89453c081e5f526e17b7c0eb1aad500940997299bdc5f3f2bb2eeb"
+        },
+        {
+          "application": "Vulkan_Advanced09_MeshShaderTiledDeferred",
+          "logSha256": "4c35188fc4a3436e8482d594ca308bd97d9a79a367e8cf8ffebd38a697a82792"
+        },
+        {
+          "application": "Vulkan_19_TiledDeferred",
+          "logSha256": "7894fa16e3e454f08e210a2eb7835e34320bfae945094081062b0b6ea41694ce"
+        },
+        {
+          "application": "Vulkan_20_ClusteredShading",
+          "logSha256": "e9541d935a5982eee87821167a01fd928d628e875f0ec9b1ccda25de18346ecf"
+        },
+        {
+          "application": "Vulkan_21_VisibilityBuffer",
+          "logSha256": "b43de3cc75d9b3d00f299a9369574dad2286cb5756665c322c991e33748375e2"
+        },
+        {
+          "application": "Vulkan_22_VertexSkinning",
+          "logSha256": "50b5de6b1a3338037698b89bb6790af7090973284c3d6403fd514eb78278cbd7"
+        },
+        {
+          "application": "Vulkan_23_ComputeSkinningCache",
+          "logSha256": "307ec6fbf1e7fd55b55394ac84d8bb8f212b7660187c141a64ec2c3dff4db587"
+        },
+        {
+          "application": "Vulkan_24_DualQuaternionSkinning",
+          "logSha256": "d22b3dd6b7f58bbc8e655a26cc66078e1a584530f7d0a2d6c50a339868d1a4d5"
+        },
+        {
+          "application": "Vulkan_25_DualQuaternionComputeCache",
+          "logSha256": "993aac95325578d6e9553b1cdc38055eb15cf7a721599a627a93b8fc64fe3dc5"
+        },
+        {
+          "application": "Vulkan_Advanced11_DualQuaternionMeshSkinning",
+          "logSha256": "7e0d10f0fabefaafd403d9a8b794917a076049239f7394552cf71a94ab5dc1a6"
+        },
+        {
+          "application": "Vulkan_Advanced10_MeshShaderSkinning",
+          "logSha256": "bb395ae1d1654e73cec1bdf1a5a81bcbe1bb50b1d6acb11e1ed7c59ba6ebbb96"
+        },
+        {
+          "application": "Vulkan_Advanced12_BindlessMaterials",
+          "logSha256": "d372161ba8d580586b6a3df63fd4ec04d842e185879ccf3d6a2773222a0c239d"
+        },
+        {
+          "application": "Vulkan_Advanced13_BindlessMeshShader",
+          "logSha256": "9f06cf48ccb687e6d672fc8b79cedd2e692d3afc7df5f70975625582a67e83b1"
+        },
+        {
+          "application": "Vulkan_Advanced14_BindlessRaytracing",
+          "logSha256": "6a2b9c2409284a9f20ac3c279cb8e86945cab16edb0764143a11b883a01a7365"
+        },
+        {
+          "application": "Vulkan_Advanced15_BindlessHybrid",
+          "logSha256": "9d92934f9f40775b6be1dffecc4e8609af0b9cdb07ff382c2547a4173c03d254"
+        },
+        {
+          "application": "Vulkan_26_InlineRaytracingShadows",
+          "logSha256": "b6eb0e02dda68cdaa8378dddd9f71f4bd190a26c726ec519983eb8d2bdbadfba"
+        },
+        {
+          "application": "Vulkan_27_InlineRaytracingReflections",
+          "logSha256": "db1495502e4c93844b8ed9b010c71b559042fb3d3e38c9290d74f2444d8a817a"
+        },
+        {
+          "application": "Vulkan_Advanced16_BindlessInlineHybrid",
+          "logSha256": "1f9471491edd1efd33d0db45c6de60c4aa0f3edd68f75f9ddba9344136d2df97"
+        },
+        {
+          "application": "Vulkan_Advanced17_MeshShaderTiledInlineShadows",
+          "logSha256": "a0f7d07b50a8470fa81952d069afc2127db91e746f1ef465e434115cc70dc3bf"
+        }
+      ]
+    },
+    {
+      "configuration": "Release",
+      "passedApplications": 88,
+      "validationErrors": 0,
+      "checks": [
+        "1280x720 render/capture",
+        "640x480 resize",
+        "minimize/restore to 1280x720",
+        "shutdown"
+      ],
+      "logs": [
+        {
+          "application": "Direct3D12_01_Initialization",
+          "logSha256": "a3bea2f4e804da256dd385abcd1879b6a4e49a72df7604d4931717b388ff5daf"
+        },
+        {
+          "application": "Direct3D12_02_Triangle",
+          "logSha256": "3344c77a9ae3be3fc80521890dc9c733aaaa9a227432e57bcdada8053e25f2d4"
+        },
+        {
+          "application": "Direct3D12_03_Texture",
+          "logSha256": "7e2676455d9fc0777392576c5274417fb9f73bd9ab018a268dc37f446ae77509"
+        },
+        {
+          "application": "Direct3D12_04_Box",
+          "logSha256": "8702f588faa5993f17d32ba71157829cd62d2176903d4c03b6fd712cc687e947"
+        },
+        {
+          "application": "Direct3D12_05_Model",
+          "logSha256": "de624dbaa89e49a9a74cd5b1530dd7faccb179e7aa9017f62bdc9438b3ed5759"
+        },
+        {
+          "application": "Direct3D12_06_Gltf",
+          "logSha256": "ce9ba187a61714e21e56d1d56c65439020b8b7c17339ca89e971ee771e9795c9"
+        },
+        {
+          "application": "Direct3D12_07_Lighting",
+          "logSha256": "612172e9c0f03c4c789d71c49223234cdb87422a6cf87b6c173e89593fa0d8ce"
+        },
+        {
+          "application": "Direct3D12_08_PBR",
+          "logSha256": "f18425510a63daa844dc0766b5623857f7fb1f4233bcd70249efc0c02c4244e5"
+        },
+        {
+          "application": "Direct3D12_09_ImGui",
+          "logSha256": "999eeefb1f8ce4d2172214a47f8198229e11ad0efca835f5ec7be7b5c4413d66"
+        },
+        {
+          "application": "Direct3D12_10_Cubemap",
+          "logSha256": "a11e8b863d104443119f10b5f6a04bdd9a04bb03e44d9bce687de7c291c4be61"
+        },
+        {
+          "application": "Direct3D12_11_DiffuseIBL",
+          "logSha256": "3cdbf9c1fca3f3ba8a3dade041e072f8f763f8473f5e8e0ad1a28158374a0283"
+        },
+        {
+          "application": "Direct3D12_12_SpecularIBL",
+          "logSha256": "6f968a17159aa4a1571a22aaadea6e9a382cca4d34077aa1cfef9babc24cc81b"
+        },
+        {
+          "application": "Direct3D12_13_ShadowMap",
+          "logSha256": "f229ef20460239c647b4eb26b449d55ea74273318cc5e51d651514a2edaa49d7"
+        },
+        {
+          "application": "Direct3D12_14_RenderTexture",
+          "logSha256": "529122919c24704ebd28ada5d01683d876126866ef86424435827fea50da20c7"
+        },
+        {
+          "application": "Direct3D12_15_ComputeBloom",
+          "logSha256": "02af5b6a0fad02055abb65d73cdcf0cc94225d06b187879756ae08abf53e6daa"
+        },
+        {
+          "application": "Direct3D12_16_GpuParticles",
+          "logSha256": "803e7c8a647b08c090559b9ded8c2fcfee757a2dfbea825de86266b31ceed296"
+        },
+        {
+          "application": "Direct3D12_17_DeferredPixel",
+          "logSha256": "88836522f69990925495440700b61384fa57871c828b949e15b2c37bad3c909e"
+        },
+        {
+          "application": "Direct3D12_18_DeferredCompute",
+          "logSha256": "97a618d1c9ffe2e1e3c4047f8b6ad80f2368e89dd584146b76eb002ab7dbf313"
+        },
+        {
+          "application": "Direct3D12_Advanced01_RaytracingBasic",
+          "logSha256": "d1af2f0badd46930e900ee9bcb64f19fb0e5155e39b0c5eacca1173edabd0f2e"
+        },
+        {
+          "application": "Direct3D12_Advanced02_RaytracingShadows",
+          "logSha256": "91801a5d13fea70347c466f2ff301b7d9edc43f76863db0ab6ad1b702339409f"
+        },
+        {
+          "application": "Direct3D12_Advanced03_RaytracingReflections",
+          "logSha256": "0975421c0f88b6253e07d930e1b93f12ca0c6921693918197062b793b8a931ca"
+        },
+        {
+          "application": "Direct3D12_Advanced04_MeshShaderBasic",
+          "logSha256": "80cb9c7223113090f63569cbeeb0b656ca3f28788e126fe25d4ab37396bbf95a"
+        },
+        {
+          "application": "Direct3D12_Advanced05_GpuDrivenRendering",
+          "logSha256": "35f5a8dcde5c9cd85364a3efcc806adb6b186107e4d82642b9e056d08a0119b4"
+        },
+        {
+          "application": "Direct3D12_Advanced06_MeshletCulling",
+          "logSha256": "b18b985174f2a4fc364fb6d904ac4020074c914f25632f4ae757b0ce14b36cb4"
+        },
+        {
+          "application": "Direct3D12_Advanced07_MeshShaderShadows",
+          "logSha256": "77595f169a28493db85f7700f333545b0fccdaeb0870ab0491367d976268cc1f"
+        },
+        {
+          "application": "Direct3D12_Advanced08_MeshShaderDeferred",
+          "logSha256": "dc9771e24c98f230bfa1aa5653486605e9a2547a746abd0f15a80e80f52284ff"
+        },
+        {
+          "application": "Direct3D12_Advanced09_MeshShaderTiledDeferred",
+          "logSha256": "484d09d9f4f42aae8b6a0bc7f3b7e618603aa27674bcaaa9ec4c406b2c5badc3"
+        },
+        {
+          "application": "Direct3D12_19_TiledDeferred",
+          "logSha256": "95177bdd3c6a2ea7f4ff9bb66c6e4bc7941afe33d0d4c134824a3c434b08c241"
+        },
+        {
+          "application": "Direct3D12_20_ClusteredShading",
+          "logSha256": "5a251c0850d319edc7e352949543ac207cfbaf072fb71dc82bb5c4c5676baf61"
+        },
+        {
+          "application": "Direct3D12_21_VisibilityBuffer",
+          "logSha256": "c7689de1e5b595273f5eeb41628076451a42357dd7ce87ec0d2fe6244bf4e3f9"
+        },
+        {
+          "application": "Direct3D12_22_VertexSkinning",
+          "logSha256": "b855d1ca93e2aac07af10aa7a58563fac3ea430d60ce9b8d2ad6632084406e0b"
+        },
+        {
+          "application": "Direct3D12_23_ComputeSkinningCache",
+          "logSha256": "7752318dd7695f437127d76ca83d2a1ae56eb48a09145c24aa3c6a43c9245c39"
+        },
+        {
+          "application": "Direct3D12_24_DualQuaternionSkinning",
+          "logSha256": "08a953e5b943ddf40917ee9ada73a8d1ef55aa50616645a8a9c84588214b5186"
+        },
+        {
+          "application": "Direct3D12_25_DualQuaternionComputeCache",
+          "logSha256": "ca79d2b676dec6124502d565688f085625e2bb5e354d0761b0c3e60a25b6e3cf"
+        },
+        {
+          "application": "Direct3D12_Advanced11_DualQuaternionMeshSkinning",
+          "logSha256": "a6f0988f044537f141a0bd87619a5595153043bb09abdbf3a7e3190f04fa36bd"
+        },
+        {
+          "application": "Direct3D12_Advanced10_MeshShaderSkinning",
+          "logSha256": "0b020e2e9b84fc7befba5bf727cdc8a0f0bffe61d6391952a8e369b04b614981"
+        },
+        {
+          "application": "Direct3D12_Advanced12_BindlessMaterials",
+          "logSha256": "8daf28f1f24a952482274b871d4afb0dc0249846ea533cbc2733c2b1eccf3173"
+        },
+        {
+          "application": "Direct3D12_Advanced13_BindlessMeshShader",
+          "logSha256": "7777194fef1765f7b3fda4c3560cd569645b15f8dbc521c2b1f15ecfbf6de990"
+        },
+        {
+          "application": "Direct3D12_Advanced14_BindlessRaytracing",
+          "logSha256": "1f2cd249490a627b974bcdc46834625eefa0895cf94983098fd308178644a0f6"
+        },
+        {
+          "application": "Direct3D12_Advanced15_BindlessHybrid",
+          "logSha256": "ac9a6d5ec20cff2bdad56236e3b7aa878d32ec6e8aeb7ae1464dac8a83a2bc36"
+        },
+        {
+          "application": "Direct3D12_26_InlineRaytracingShadows",
+          "logSha256": "eb6398372cad1850ed8c001c4c6a5c6321f78186d1c616464fb88c7911bb5717"
+        },
+        {
+          "application": "Direct3D12_27_InlineRaytracingReflections",
+          "logSha256": "a44946271e8b69158f1f8282ba3fe66d39aa525822f597008160f7ea4a0c9947"
+        },
+        {
+          "application": "Direct3D12_Advanced16_BindlessInlineHybrid",
+          "logSha256": "933d3c100c0d784d9225529748b6e060815520a91a8a16616082e198eee5a5c5"
+        },
+        {
+          "application": "Direct3D12_Advanced17_MeshShaderTiledInlineShadows",
+          "logSha256": "132e25c7a0496592b307387b1f47c67e93cf4c3ec7e31507bc42f5ce09e0fbb2"
+        },
+        {
+          "application": "Vulkan_01_Initialization",
+          "logSha256": "1ab95fb4d0ce6dda1dcf562e551cd0155004a2a43418ddcfb19dcac4bf5bb333"
+        },
+        {
+          "application": "Vulkan_02_Triangle",
+          "logSha256": "f7637439e56009a92aef20b53368d05bbd5dce7a7bf27be1e81f6e39e8e33f39"
+        },
+        {
+          "application": "Vulkan_03_Texture",
+          "logSha256": "174b93a0eba5de6695ca345bf22773f45c936348b7c8ce15827a62fc75ec792f"
+        },
+        {
+          "application": "Vulkan_04_Box",
+          "logSha256": "e14f9eb40723ece71d168ea243d2f046325baaca63ee5d834d4944f8398e327b"
+        },
+        {
+          "application": "Vulkan_05_Model",
+          "logSha256": "2615d98050fc7ceb3b9786f151ac55efb22f3a529b36b02f5b4dc8bccc797b63"
+        },
+        {
+          "application": "Vulkan_06_Gltf",
+          "logSha256": "6e12d2ccc83ecfc85083bcc961185e6daf0a52f009f31d264a98f10aa677e2b6"
+        },
+        {
+          "application": "Vulkan_07_Lighting",
+          "logSha256": "4a6c65b6e03db71004da006f358ec7d2ecc212ee8eb8616aa3451a2ab9063728"
+        },
+        {
+          "application": "Vulkan_08_PBR",
+          "logSha256": "00bde14868fac21144c70b6f1d26e0e3624865d4bcd4c9194b8c41f799ebaf13"
+        },
+        {
+          "application": "Vulkan_09_ImGui",
+          "logSha256": "c203a78c8558595766d4e74922f237a8b826bd0d5099fa654c18517ac7375871"
+        },
+        {
+          "application": "Vulkan_10_Cubemap",
+          "logSha256": "64d070d0e9f76c8466a845a0e437dee761fe64b63e7c1edd079c8a50ff2ff6fc"
+        },
+        {
+          "application": "Vulkan_11_DiffuseIBL",
+          "logSha256": "9e07ab0c1bcde6eec4f6d39f008cef6c6cdcd52b355ab41c4dcd3a8194932da8"
+        },
+        {
+          "application": "Vulkan_12_SpecularIBL",
+          "logSha256": "d0ba6b82647627863e032bd95208cfa2ee6de59ac6153811af0b88cea88abf62"
+        },
+        {
+          "application": "Vulkan_13_ShadowMap",
+          "logSha256": "387fe6ee58e1854f94ac308b67dcd6f8c45e3dd769e6a405d83d20245584ef3c"
+        },
+        {
+          "application": "Vulkan_14_RenderTexture",
+          "logSha256": "bd334b9f68731e2683d81d0cf38985e31c5fbe80ce394f4f636cf779141a359e"
+        },
+        {
+          "application": "Vulkan_15_ComputeBloom",
+          "logSha256": "b77620d271a7932aa6030b8ed8d45ec1503153e3c08f65a3e9a31d35757a91b3"
+        },
+        {
+          "application": "Vulkan_16_GpuParticles",
+          "logSha256": "e4e4825b9396c9d2f32f7ae01afc2f3044a6cbe01499ede01da5d02ebc1e1dd0"
+        },
+        {
+          "application": "Vulkan_17_DeferredPixel",
+          "logSha256": "4e0802ccb1538082e74883803dbb4b408f098623afa84c6466f0dc45855009c9"
+        },
+        {
+          "application": "Vulkan_18_DeferredCompute",
+          "logSha256": "5cd3391e98349ceb4c2f4de9e075b919273337c5dd2aa0142af2fe68e5ac4715"
+        },
+        {
+          "application": "Vulkan_Advanced01_RaytracingBasic",
+          "logSha256": "257310fee3acb05fc86826ec280c454fe95a7e06b54d1e1399d011cce664a996"
+        },
+        {
+          "application": "Vulkan_Advanced02_RaytracingShadows",
+          "logSha256": "82020050ee62e9a1efbe211a4c8211f6d2e5e69544117925832e3382183fe662"
+        },
+        {
+          "application": "Vulkan_Advanced03_RaytracingReflections",
+          "logSha256": "ff503f5cdb4493333e45b0f57e98e06f3fb64982774270220f9a7e136d673953"
+        },
+        {
+          "application": "Vulkan_Advanced04_MeshShaderBasic",
+          "logSha256": "ea83e79c0a60bfd6ac4aa82388a05ba70f8fd46f7c8aafb39aaf241d8d1cfe1c"
+        },
+        {
+          "application": "Vulkan_Advanced05_GpuDrivenRendering",
+          "logSha256": "09e84d99ccbade9cc852e85bf9ac95b3d75ddfed61da3b094447a2e22e6dbcca"
+        },
+        {
+          "application": "Vulkan_Advanced06_MeshletCulling",
+          "logSha256": "b620409beb573d53305c3e8ee891d03c7362abe0b7be70c3f2ca282804244028"
+        },
+        {
+          "application": "Vulkan_Advanced07_MeshShaderShadows",
+          "logSha256": "57017cdc60e6a65966d67b3d3ef255207cf3732f2332ef047275671e07447b39"
+        },
+        {
+          "application": "Vulkan_Advanced08_MeshShaderDeferred",
+          "logSha256": "93ea1e04ab6a1dc37c97d6f4b5bceb1b0b4ea752cd86ffe2471a89e4f88f513d"
+        },
+        {
+          "application": "Vulkan_Advanced09_MeshShaderTiledDeferred",
+          "logSha256": "c66672c845e42275318bbc7a09c0b62c69859c6cded78d9fc3e936f5fa4b1ce3"
+        },
+        {
+          "application": "Vulkan_19_TiledDeferred",
+          "logSha256": "7796a9571fec255caa2c5ea3ef53c981998926fbaa39aed7f3b3c6d867053d58"
+        },
+        {
+          "application": "Vulkan_20_ClusteredShading",
+          "logSha256": "5f627b6b316fa7f4b7528e5f835b43237ec92fdd6a1271158581f6af06921030"
+        },
+        {
+          "application": "Vulkan_21_VisibilityBuffer",
+          "logSha256": "39d2d096b3e59742945421ad112582b7dd08dc9d22969c399651e05cf81c92e8"
+        },
+        {
+          "application": "Vulkan_22_VertexSkinning",
+          "logSha256": "51e27001ceae875abe309b8e07da2c5ccd6a4c7e64c9118536443002f90f72fc"
+        },
+        {
+          "application": "Vulkan_23_ComputeSkinningCache",
+          "logSha256": "297641339cea13e72411b4db3b0fb900112127ebfcc463542304e70006d462b6"
+        },
+        {
+          "application": "Vulkan_24_DualQuaternionSkinning",
+          "logSha256": "7638f6484e4c0e93ee1d76f9919c91f6a9b5b82d45f1d978a99dc7c4af098d3d"
+        },
+        {
+          "application": "Vulkan_25_DualQuaternionComputeCache",
+          "logSha256": "1eae8a1469b45f49950932402bf4993b00f75585b390e6a8c635ebfdfed48700"
+        },
+        {
+          "application": "Vulkan_Advanced11_DualQuaternionMeshSkinning",
+          "logSha256": "18643dfa65e91839bbc98a9e22912cbe38515fedac4250936da793a33cf95de8"
+        },
+        {
+          "application": "Vulkan_Advanced10_MeshShaderSkinning",
+          "logSha256": "38ab4661990d2274ced7836ca46573a09014e826e4971301c15092df1eb9a4ec"
+        },
+        {
+          "application": "Vulkan_Advanced12_BindlessMaterials",
+          "logSha256": "6f6ab853653ede067c54dd5f8acf165557af64078ac14851254294ddf88faff6"
+        },
+        {
+          "application": "Vulkan_Advanced13_BindlessMeshShader",
+          "logSha256": "853b9b2dd0d12439f2cfbcf7e5e21a69510bfa2f17802d8f779b8d36acef8901"
+        },
+        {
+          "application": "Vulkan_Advanced14_BindlessRaytracing",
+          "logSha256": "d29332795c4a7a4ecdc40e5e804c3cb31bb3de105513f09a469b811fca86dffc"
+        },
+        {
+          "application": "Vulkan_Advanced15_BindlessHybrid",
+          "logSha256": "1bca453af131838f6efdaaf7b329e4945629399ff592c6b946293dfaa4ff290c"
+        },
+        {
+          "application": "Vulkan_26_InlineRaytracingShadows",
+          "logSha256": "71f9e6ccaf86526c93d2444773116b24512c8e7d5e6df7d26a7a8f3f9e759439"
+        },
+        {
+          "application": "Vulkan_27_InlineRaytracingReflections",
+          "logSha256": "e68827f602ce0390314e02ad4cec53ea5e5a6f4f3564d6d42ec3652066777904"
+        },
+        {
+          "application": "Vulkan_Advanced16_BindlessInlineHybrid",
+          "logSha256": "d2430c10e8a97db847230c2196c3cc6373833729e036a4356a915dbee8e247a2"
+        },
+        {
+          "application": "Vulkan_Advanced17_MeshShaderTiledInlineShadows",
+          "logSha256": "0103968a7571d4b2902c6a6d419e3557b7fde9a96e25079a795d741b8922209e"
+        }
+      ]
+    }
+  ],
+  "regressions": [
+    {
+      "suite": "deferred",
+      "configuration": "Debug",
+      "passed": true,
+      "logSha256": "c98335a53629d9ac63fefa2b09f3fa49d7239db630726411e12d2dc9e3e558f9"
+    },
+    {
+      "suite": "deferred",
+      "configuration": "Release",
+      "passed": true,
+      "logSha256": "25ff6b83c2679b704d8536712a0b17880b7b85e4469576c1eab103df0c30fc82"
+    },
+    {
+      "suite": "raytracing",
+      "configuration": "Debug",
+      "passed": true,
+      "logSha256": "40a1a119e6a5a61c0142227cc6391eb78f1261213b21a5a938118388629eaf04"
+    },
+    {
+      "suite": "raytracing",
+      "configuration": "Release",
+      "passed": true,
+      "logSha256": "40a1a119e6a5a61c0142227cc6391eb78f1261213b21a5a938118388629eaf04"
+    },
+    {
+      "suite": "mesh",
+      "configuration": "Debug",
+      "passed": true,
+      "logSha256": "d5cf9f8429d759d1acddb5468e5ef175d45deef65ecd0a5196a417c557f3bc69"
+    },
+    {
+      "suite": "mesh",
+      "configuration": "Release",
+      "passed": true,
+      "logSha256": "23f3605be3d252d073bd92aa2790276faf25d4350228fa77a44666b7baa1c685"
+    },
+    {
+      "suite": "bindless",
+      "configuration": "Debug",
+      "passed": true,
+      "logSha256": "3c197dcc2806e0ce1dabf960816bbd36a3ec99f329f25e859875bde4efb5b3ad"
+    },
+    {
+      "suite": "bindless",
+      "configuration": "Release",
+      "passed": true,
+      "logSha256": "3c197dcc2806e0ce1dabf960816bbd36a3ec99f329f25e859875bde4efb5b3ad"
+    },
+    {
+      "suite": "imgui",
+      "configuration": "Debug",
+      "passed": true,
+      "logSha256": "a2f310372099077554deeab09370bc96b1791c6b0ca6729b374f636c7be1655e"
+    },
+    {
+      "suite": "imgui",
+      "configuration": "Release",
+      "passed": true,
+      "logSha256": "a2f310372099077554deeab09370bc96b1791c6b0ca6729b374f636c7be1655e"
+    }
+  ],
+  "performance": {
+    "passedRuns": 80,
+    "measuredFrames": 96000,
+    "runtimeUnchanged": true,
+    "summarySha256": "9a4bb5884ff597e51866f2368b9baac7714b76b0ab574c07a7d00aa2d74aee15"
+  },
+  "normalDebugRunsValidationErrors": 0,
+  "invalidInputRuns": "expected nonzero exit",
+  "sourceTest": "Tools/TestInlineRaytracing.ps1 -Configuration Debug|Release -CaptureDocs",
+  "captureConfiguration": "Release",
+  "captures": [
+    {
+      "file": "Direct3D12/Images/26_InlineRaytracingShadows-basic26.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b6bbb257e26a32376dc179bbdd9bcbb07f98eb7e1ac718874845841cdf4643f6"
+    },
+    {
+      "file": "Direct3D12/Images/26_InlineRaytracingShadows-map.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "c64ca7c5f646909dae3d1fca204257d314cd6b73a9093d4684b4c9951724f1a5"
+    },
+    {
+      "file": "Direct3D12/Images/26_InlineRaytracingShadows-no-shadow.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "58efc99c942f04410b41c622cf5d505f2b56cd1309d5c15226eaa1030c10bd3b"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-basic27.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "4c5ebd5cd8f719f203f07de20b159ad2cd94c82cff158ccf81af8d53aaf20d1e"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-fixture-environment-black.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "392e0ab21ba8753208b2e67fd880228587af8a96a0f3573dbdfaed4b7276a920"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-fixture-environment.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "db47fd3a43116a591e31bbc21bd31ddc620c27567f812f174723451fde030203"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-fixture-reflection-mask-hole.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "392e0ab21ba8753208b2e67fd880228587af8a96a0f3573dbdfaed4b7276a920"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-fixture-reflection-mask-solid.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "cdcae343f0bdd06be24a3567b6f46496ded2dadd3e19fbf18f7166be2cc61f0b"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-fixture-reflection-sun-shadow-clear.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "ef808835dc4ee67474a8f95b33e695e57adf351484b8f1ff99f05bde20f07ecc"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-fixture-reflection-sun-shadow.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "eac5f66f88ebaf72a3fe77229089f36687b26610d3913048e054b4cfde538b0e"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-fixture-reflection.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "20a15ea0d8caabda74ee9f82be33a7188f8c4ec8410be42d0efc32cf554c34ea"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-reflection-off.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b6bbb257e26a32376dc179bbdd9bcbb07f98eb7e1ac718874845841cdf4643f6"
+    },
+    {
+      "file": "Direct3D12/Images/27_InlineRaytracingReflections-reflection.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b8a193dab5fbc46b5429e071895227b3f77dbbcb65accd84aa1f945ca306705f"
+    },
+    {
+      "file": "Direct3D12/Images/Advanced16_BindlessInlineHybrid-hybrid-textures.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "31ee0b02d3917f6a7f7dd796855e3e0fefe2157cfb729234b89b6a3216e05e2f"
+    },
+    {
+      "file": "Direct3D12/Images/Advanced16_BindlessInlineHybrid-pipeline-textures.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6cd89e6f4fccb00b92cf9cd26200c95f33334652142a6b2dd1940d2300d2cba6"
+    },
+    {
+      "file": "Direct3D12/Images/Advanced17_MeshShaderTiledInlineShadows-many-all.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "69f81532b41bc84d321686ffef65147d6424bc404592c6ad13c31ab4e7ad3da9"
+    },
+    {
+      "file": "Direct3D12/Images/Advanced17_MeshShaderTiledInlineShadows-many-all8.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "cce8e1bc9da19285b7901a53c6928bca34fe67f0a9fe4cc4d9cd3220d9a68c07"
+    },
+    {
+      "file": "Direct3D12/Images/Advanced17_MeshShaderTiledInlineShadows-many-map0.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "01563d696eb8c08c455f10873cfb27dca0aee19dbe4cf2b02b046bc4429625b5"
+    },
+    {
+      "file": "Direct3D12/Images/Advanced17_MeshShaderTiledInlineShadows-many-tile8.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "8a3365719bd6f99de67c340d6439dd1edb7bb1d8bb37265e8db5f7cf53c1b20c"
+    },
+    {
+      "file": "Vulkan/Images/26_InlineRaytracingShadows-basic26.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e5a8fb1aebb732bbdadf04931fa0ebc205ff7ca945ada0ae48d45a7097a8dcef"
+    },
+    {
+      "file": "Vulkan/Images/26_InlineRaytracingShadows-map.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e14385453250a5293d558ad610b4c9a59b07fec5428cdfc9cd6c799c2050f49c"
+    },
+    {
+      "file": "Vulkan/Images/26_InlineRaytracingShadows-no-shadow.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "fed9e00e057b89b298c78f71798b75f051259600537497ac48df1c8027e18048"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-basic27.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "18dba4402e167546b328281f675c28d049caa27f53c638bba8978450b876d669"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-fixture-environment-black.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "392e0ab21ba8753208b2e67fd880228587af8a96a0f3573dbdfaed4b7276a920"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-fixture-environment.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "db47fd3a43116a591e31bbc21bd31ddc620c27567f812f174723451fde030203"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-fixture-reflection-mask-hole.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "392e0ab21ba8753208b2e67fd880228587af8a96a0f3573dbdfaed4b7276a920"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-fixture-reflection-mask-solid.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "cdcae343f0bdd06be24a3567b6f46496ded2dadd3e19fbf18f7166be2cc61f0b"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-fixture-reflection-sun-shadow-clear.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "ef808835dc4ee67474a8f95b33e695e57adf351484b8f1ff99f05bde20f07ecc"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-fixture-reflection-sun-shadow.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "eac5f66f88ebaf72a3fe77229089f36687b26610d3913048e054b4cfde538b0e"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-fixture-reflection.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "20a15ea0d8caabda74ee9f82be33a7188f8c4ec8410be42d0efc32cf554c34ea"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-reflection-off.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e5a8fb1aebb732bbdadf04931fa0ebc205ff7ca945ada0ae48d45a7097a8dcef"
+    },
+    {
+      "file": "Vulkan/Images/27_InlineRaytracingReflections-reflection.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "25790ed7ae1e2e4de8a05fcfa3433280bbc275a77afcecd0a03b0585b97e757f"
+    },
+    {
+      "file": "Vulkan/Images/Advanced16_BindlessInlineHybrid-hybrid-textures.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "f08f158e356637d75fd366cf4ea436bbec62b617167e9dc43d0304f225840d84"
+    },
+    {
+      "file": "Vulkan/Images/Advanced16_BindlessInlineHybrid-pipeline-textures.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "f08f158e356637d75fd366cf4ea436bbec62b617167e9dc43d0304f225840d84"
+    },
+    {
+      "file": "Vulkan/Images/Advanced17_MeshShaderTiledInlineShadows-many-all.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "d1e3dec7617cc57a18684dc03a7b8052f22d74e7ca2b6458c2504f688fff25a8"
+    },
+    {
+      "file": "Vulkan/Images/Advanced17_MeshShaderTiledInlineShadows-many-all8.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a8fba9949a93e6adda24d51563653a5ab4abc5cf4793911c96692913cf0d2679"
+    },
+    {
+      "file": "Vulkan/Images/Advanced17_MeshShaderTiledInlineShadows-many-map0.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "52e1d9097b2cd2953c6459f63ba4c72701d47a592e2ccf68b0c8c99f19c8b6c2"
+    },
+    {
+      "file": "Vulkan/Images/Advanced17_MeshShaderTiledInlineShadows-many-tile8.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a8fba9949a93e6adda24d51563653a5ab4abc5cf4793911c96692913cf0d2679"
+    }
+  ]
+}

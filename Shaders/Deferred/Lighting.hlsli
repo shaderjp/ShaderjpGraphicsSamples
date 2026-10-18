@@ -1,4 +1,7 @@
 #include "Resources.hlsli"
+#ifdef INLINE_RT
+#include "../InlineRaytracing/Query.hlsli"
+#endif
 #ifdef LIGHT_CULLING
 #include "../LightCulling/Grid.hlsli"
 #endif
@@ -21,7 +24,12 @@ float3 EvaluateDirect(Surface s,float3 V,float3 L,float3 radiance)
 }
 float3 ShadeSurface(Surface s,float3 p,uint cell)
 {
-    float3 V=SafeNormalize(cameraPosition.xyz-p),direct=0,diffuse=0,specular=0;float visibility=ShadowVisibility(p);
+    float3 V=SafeNormalize(cameraPosition.xyz-p),direct=0,diffuse=0,specular=0;
+#ifdef INLINE_RT
+    float visibility=inlineControls.x!=0 ? InlineVisibility(p,s.normal,sunDirection.xyz,inlineRay.y) : ShadowVisibility(p);
+#else
+    float visibility=ShadowVisibility(p);
+#endif
     if(controls.z!=0){direct=EvaluateDirect(s,V,sunDirection.xyz,sunColor.rgb*sunColor.w)*visibility;
         uint count=controls.x;
 #ifdef LIGHT_CULLING
@@ -36,11 +44,18 @@ float3 ShadeSurface(Surface s,float3 p,uint cell)
 #endif
             PointLight l=points[light];float3 d=l.positionRange.xyz-p;float d2=max(dot(d,d),1e-4);float attenuation=1/d2;
             if(l.positionRange.w>0)attenuation*=pow(saturate(1-pow(sqrt(d2)/l.positionRange.w,4)),2);
-            direct+=EvaluateDirect(s,V,SafeNormalize(d),l.colorIntensity.rgb*l.colorIntensity.w*attenuation);}}
+            float pointVisibility=1;
+#ifdef INLINE_RT
+            if(attenuation>0 && dot(s.normal,d)>0) pointVisibility=InlinePointVisibility(p,s.normal,SafeNormalize(d),sqrt(d2),light);
+#endif
+            direct+=EvaluateDirect(s,V,SafeNormalize(d),l.colorIntensity.rgb*l.colorIntensity.w*attenuation)*pointVisibility;}}
     if(controls.w!=0){float nv=max(saturate(dot(s.normal,V)),1e-5);float3 f0=lerp(.04.xxx,s.base,s.metallic),envF=Fresnel(nv,f0);
         diffuse=(1-envF)*(1-s.metallic)*s.base/PI*irradianceTexture.SampleLevel(environmentSampler,EnvironmentDirection(s.normal),0).rgb*environment.x*s.ao;
         float2 ab=brdfTexture.SampleLevel(environmentSampler,float2(nv,s.roughness),0);
         specular=specularTexture.SampleLevel(environmentSampler,EnvironmentDirection(reflect(-V,s.normal)),s.roughness*8).rgb*(f0*ab.x+ab.y)*environment.x;}
+#if defined(INLINE_RT) && INLINE_SAMPLE == 27
+    if(inlineControls.z!=0 || inlineControls.w==1){float3 incoming=InlineReflection(s,p,V);if(inlineControls.w==1)return incoming;specular=Fresnel(max(saturate(dot(s.normal,V)),1e-5),lerp(.04.xxx,s.base,s.metallic))*incoming;}
+#endif
     if(controls.y==10)return direct;if(controls.y==11)return diffuse;if(controls.y==12)return specular;if(controls.y==13)return visibility.xxx;
     return max(direct+diffuse+specular+s.emission,0);
 }

@@ -1,0 +1,1119 @@
+{
+  "schemaVersion": 1,
+  "environment": {
+    "video": [
+      {
+        "Name": "NVIDIA GeForce RTX 4070",
+        "DriverVersion": "32.0.16.1088"
+      }
+    ],
+    "hlsl": "2021",
+    "spirvTools": "SPIRV-Tools v2026.1 v2026.1-0-gfbe4f3ad\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)",
+    "vulkanSdk": "1.4.341.1",
+    "binaries": {
+      "Vulkan_26_InlineRaytracingShadows": {
+        "executableSha256": "f6f68726f6d106b6b8219f02d9c8829e30a3e7e3d670d1c3b287b265ba7a3e00",
+        "shaders": {
+          "Extract.spv": "8625389c8b8990c07b209e06faa63e5dee61405085e84b5dc2a18fdf6477ab8a",
+          "LightingPixel.spv": "b17d374fa482e62622d9908defb502c2773e9d5eacb1c361f834b67c42b8e41c",
+          "Blur.spv": "bf3ef319ccb5d7fbd21ff637a3db2dcc4a8608b9089cfd4320d87de98b07385f",
+          "TestPixel.spv": "e4934ffb13bb4517d0bb4eda8eca7e392167c810e8f0141a7efe057063c4c717",
+          "InlineLightingCompute.spv": "a7837220c25c244f6156b3138719491827f2a84633cc95fbb8bc7283c95a7f04",
+          "ShadowVertex.spv": "6ac9cd07772ab392d55ec8b08e8352e33369a8aaaf7cc0b2969b95c3b5173f85",
+          "SkyPixel.spv": "287476460e44ed27c78aa950cad74f2bd3575701f3f2d296eb88739f0875191b",
+          "ShadowPixel.spv": "afb6f2b4f21c7569a2a40cc530a588a50da358e8734f261578aef9c37972855c",
+          "ForwardPixel.spv": "37fd4830e3c07b2029ee887cc18be68770fcade29c4c326fdd880b701bcab02d",
+          "PostVertex.spv": "3a2f50223969277b9d7726461776764585c9813449e52c9bf24390a92368d1ad",
+          "ImGuiPixel.spv": "6588f153c36be3883dd4057f86266d23f0cd722438c908c16c75c7bd7a83e918",
+          "ImGuiVertex.spv": "d098ff6a55303fcd371e23041ac7fc9c808966e83a7ce27465e577028256cfa4",
+          "DeferredPostPixel.spv": "4c99055f303714e0009fc32c9886b47858ba85056b2d508f2bf2943a2d34e584",
+          "GBufferPixel.spv": "0268084a20ef8587afd65510e6270a9b0e0aef67c9b3639d3fd2f1480e4f08a2",
+          "GBufferVertex.spv": "3aa2cc10691fb9ae723a12d00c46f087b719ae252ba4fb314170119f4a3f0492",
+          "SkyVertex.spv": "860af73e6f9b69ff44444f5e9fc19de52ff5ba33bf46d7b434267cc51ab62074"
+        }
+      },
+      "Direct3D12_Advanced15_BindlessHybrid": {
+        "executableSha256": "d503fd701dded01b0b00448042cb4dfb713fa22a174105ab0a31d7833d6b4506",
+        "shaders": {
+          "DisplayPixel1.cso": "168c67fea3a27bc554c4f36fa7f22a19f9b6a966fefc40dc971f9da8cfb5c343",
+          "ImGuiVertex.cso": "ad01717d43450d701983f4103ad1bf43b1fe4f191b779bd3bcabfafaee62699e",
+          "Light0.cso": "3078c19adcba4155d514cb8746abdd21c10e301e061a6c3899a81bd22cd6519d",
+          "Finalize1.cso": "278f30d1d93e8ed661228729bbde5f0daf89d567bdf80b35631d37dc339cd7d5",
+          "Light2.cso": "91b3096656bf9bd54c4b2c1ba1b0276f0e091107210b0e3ad0125fc102c83d2b",
+          "DisplayVertex0.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "Cull2.cso": "2aa11f34f8a50ecbc7565d4199db49fe561fdb9ad670a78d4d6ea1aa3a2c9469",
+          "RasterVertex0.cso": "f98871163133f39c1295829f994d0c591dea72d994a8342882d91d2739b9695e",
+          "ImGuiPixel.cso": "a59f0bf346f4e38b0a80b08cf309c7f07db59233d0a1ec023e22cbae33be0f1a",
+          "Mesh2.cso": "ec5aee9f8b4a1a68bf86b2af7f6b23cc74da63d8a652a92baed66d9445e8c012",
+          "RasterPixel2.cso": "f0c61846247b8518b652031c232dfedad2ed38a23d40a86e5ace89e39bac4a04",
+          "RasterPixel1.cso": "d5e6aa9534f1a2c5b6d65462adef503dfde33fc7d469232aacc7230f1b4de90c",
+          "Mesh1.cso": "0a608bf660404e0abeb9dd0006b8cbad155cf9e23bcc060c4c0e36740262b791",
+          "Reset1.cso": "99f8b0b2f35d0df79a1add2ae46a60a998ed286771cc8c9f7b9428f69cf85bee",
+          "CountReset1.cso": "56432a745c228641126cd5458341404a2101db5bbd6e4dd99e15f308ef2ac9a1",
+          "CountVisible2.cso": "25682123684de018a3e87e3ebc4db046805a3abc758ff6a4bdee62851f5057d8",
+          "CountVisible0.cso": "25682123684de018a3e87e3ebc4db046805a3abc758ff6a4bdee62851f5057d8",
+          "CountReset2.cso": "56432a745c228641126cd5458341404a2101db5bbd6e4dd99e15f308ef2ac9a1",
+          "RayLibrary0.cso": "8a90b632f535d58465e03725892daa0bcbf9bff33534e5ae575622a99b9b64b4",
+          "RasterVertex1.cso": "f98871163133f39c1295829f994d0c591dea72d994a8342882d91d2739b9695e",
+          "Mesh0.cso": "0a608bf660404e0abeb9dd0006b8cbad155cf9e23bcc060c4c0e36740262b791",
+          "Cull0.cso": "17f7f964fa2cf41aa99f74b847fc6f4acc595c59ba953f2e0bdfc18701b8a733",
+          "DisplayVertex2.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "DisplayPixel2.cso": "168c67fea3a27bc554c4f36fa7f22a19f9b6a966fefc40dc971f9da8cfb5c343",
+          "DisplayPixel0.cso": "168c67fea3a27bc554c4f36fa7f22a19f9b6a966fefc40dc971f9da8cfb5c343",
+          "DisplayVertex1.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "Light1.cso": "3078c19adcba4155d514cb8746abdd21c10e301e061a6c3899a81bd22cd6519d",
+          "RayLibrary1.cso": "ea56db6c1e6d49e8f856c168496ff043637cf423a2a675a4fff5a4b214eb8350",
+          "CountReset0.cso": "56432a745c228641126cd5458341404a2101db5bbd6e4dd99e15f308ef2ac9a1",
+          "Finalize2.cso": "278f30d1d93e8ed661228729bbde5f0daf89d567bdf80b35631d37dc339cd7d5",
+          "Finalize0.cso": "278f30d1d93e8ed661228729bbde5f0daf89d567bdf80b35631d37dc339cd7d5",
+          "Reset0.cso": "99f8b0b2f35d0df79a1add2ae46a60a998ed286771cc8c9f7b9428f69cf85bee",
+          "RayLibrary2.cso": "e0b6b4ccb8a0706f7a883ed73f08ed36e6d06db132fd7079bdbc85167dc73fb5",
+          "RasterVertex2.cso": "1f4a17bdead450b6426885f524b5229120288bacf24d8a28dcba78cf8fcfef25",
+          "Cull1.cso": "17f7f964fa2cf41aa99f74b847fc6f4acc595c59ba953f2e0bdfc18701b8a733",
+          "RasterPixel0.cso": "63df8776c84f251c1ccc07429d50ea5c331b01bfaff459ce656935fc0a58dacb",
+          "Reset2.cso": "99f8b0b2f35d0df79a1add2ae46a60a998ed286771cc8c9f7b9428f69cf85bee",
+          "CountVisible1.cso": "25682123684de018a3e87e3ebc4db046805a3abc758ff6a4bdee62851f5057d8"
+        }
+      },
+      "Vulkan_Advanced16_BindlessInlineHybrid": {
+        "executableSha256": "a1a6117feb125b11fc1de1d580bdc659776da82ab4961fe41f12fc9598e1cff0",
+        "shaders": {
+          "Finalize1.spv": "8e4b9f7c5bc1adfb2ef04a80814a58b539c14370b735844a2e43f5805a50dfb0",
+          "DisplayPixel0.spv": "c414b55fdfa97e1d3bc216d05ea1f980787e1542e7e5073f446967b3ae05c0c6",
+          "CountReset2.spv": "6f06a65021f251d1bca8962091991ce641c4ee67caeea175d57624cea123fd31",
+          "Light1.spv": "f9b28411706c6e845692cb97510beb624c4b1bd43eaf5e6bdb9d57c9f1abbb3a",
+          "DisplayVertex0.spv": "3a2f50223969277b9d7726461776764585c9813449e52c9bf24390a92368d1ad",
+          "Light0.spv": "66f4214d4c4b4f15bdb4cdf95ec8e2e170c3aae022fa751f3a0b477ce60e03f2",
+          "RasterVertex0.spv": "1710ba1af6af6da4ef76870bded773fa9f5433c1058766857f7305f136fba7a1",
+          "Mesh2.spv": "4b76da1e51c315e7606b55c753d447ff65dca9079b20b22c602cfff2d6a7a8b2",
+          "ImGuiVertex.spv": "d098ff6a55303fcd371e23041ac7fc9c808966e83a7ce27465e577028256cfa4",
+          "CountReset1.spv": "6f06a65021f251d1bca8962091991ce641c4ee67caeea175d57624cea123fd31",
+          "RasterPixel2.spv": "f1f903a00afd92b0bf77e0180b4705859565e3590f20a0aacbf7023dae230611",
+          "Finalize2.spv": "8e4b9f7c5bc1adfb2ef04a80814a58b539c14370b735844a2e43f5805a50dfb0",
+          "Cull1.spv": "10e4031d8c90e38dc2f2b03ec47f7e38326076c407a3ce6c9ba9260818073c7e",
+          "ImGuiPixel.spv": "6588f153c36be3883dd4057f86266d23f0cd722438c908c16c75c7bd7a83e918",
+          "RasterPixel0.spv": "fc0949714045af226044d9597a5235a4eba3fefab0856995fd89fff44b22e067",
+          "Mesh0.spv": "98a5f0aa4f6f5199e79fedc0928e1404a19486e818db4561df772e78b375dcc9",
+          "Reset0.spv": "9bf352bf88c20b3352477383fb16a90ceefaef300fd05ca74bcbd6b6cf58e333",
+          "DisplayVertex1.spv": "ce692ac4a5e7f97f5ea474acb14dd2a930089e8c5632d8639139c3669fafd806",
+          "Finalize0.spv": "696a76b18117c22a0002e19bc7d82067585d408a4909d6bd8a5bbfe7d327df7b",
+          "InlineHybrid1.spv": "e1198e0e9b77469583e1d7660e96b8810f09e1b101b74df36089d589e7496a20",
+          "RasterVertex1.spv": "ecb5bcde6e19140eebecd9cc474852c65daa5442c1285f9b7afcbb158061890c",
+          "InlineHybrid0.spv": "295108c6e6f4d6d41e93f157a9d2b39a121df4fd27106da348d0175bb7cc8fc5",
+          "Cull2.spv": "3f12607730b61e7c5971694759f598710c936cb0f2d6419477e1900429c7443d",
+          "DisplayVertex2.spv": "ce692ac4a5e7f97f5ea474acb14dd2a930089e8c5632d8639139c3669fafd806",
+          "Light2.spv": "1ab4fa87cece6e14965e46361d276883960bd411672b8ceb9c1629ce6df42bee",
+          "CountVisible2.spv": "97b9b8f90de1a50e4725ce4f63dfcbf39b8955e7e59215995371c1266533a0ce",
+          "Reset1.spv": "f95087e8d78a761c5ec0b470a691a53f69169292c250008df68b10cc79a54320",
+          "CountReset0.spv": "776c13ca2cba7bb48e88aee9cab976ac706c7a05880e1c1c59454633315e17d8",
+          "DisplayPixel1.spv": "8da5572f866525c89d0207050cb9589e25f55e912527b2e48a7b2a955f32eeda",
+          "RasterPixel1.spv": "79593c1386c2ad91894dc067cc5b5fedbd546fc802b523695b3fabc268091cb1",
+          "Reset2.spv": "f95087e8d78a761c5ec0b470a691a53f69169292c250008df68b10cc79a54320",
+          "DisplayPixel2.spv": "8da5572f866525c89d0207050cb9589e25f55e912527b2e48a7b2a955f32eeda",
+          "CountVisible1.spv": "97b9b8f90de1a50e4725ce4f63dfcbf39b8955e7e59215995371c1266533a0ce",
+          "RasterVertex2.spv": "b87629ff3d805012beb94d54cf2915eefeab976ac46151856c08b8c01d74b6ef",
+          "Cull0.spv": "5b9bca50367ad3ab88888ec179d1ce191dce447ef21c11f6abb4ae8321a971f7",
+          "InlineHybrid2.spv": "c5c78b4464c7662039c3c9668fe4ef52335d4d8fbcdded5444520131393d20b0",
+          "CountVisible0.spv": "c12cf6459ca511bae7927eda7bcf9c12be57bf255cbe2d03a58847b7ad354593",
+          "Mesh1.spv": "cec3ccb77f30677bafbe26f1075e69a6ddf2357e5a0c5b11546e9b618c896734"
+        }
+      },
+      "Vulkan_27_InlineRaytracingReflections": {
+        "executableSha256": "f8d16290f93e1731eadedf9dac134f80551b9c93d819e8ef9eaa9d8ee63473a3",
+        "shaders": {
+          "Extract.spv": "8625389c8b8990c07b209e06faa63e5dee61405085e84b5dc2a18fdf6477ab8a",
+          "LightingPixel.spv": "b17d374fa482e62622d9908defb502c2773e9d5eacb1c361f834b67c42b8e41c",
+          "Blur.spv": "bf3ef319ccb5d7fbd21ff637a3db2dcc4a8608b9089cfd4320d87de98b07385f",
+          "TestPixel.spv": "e4934ffb13bb4517d0bb4eda8eca7e392167c810e8f0141a7efe057063c4c717",
+          "InlineLightingCompute.spv": "966d3841c4388014c442efedfcde3b68686c83d14f8f83ed738c2bc47aac7fac",
+          "ShadowVertex.spv": "6ac9cd07772ab392d55ec8b08e8352e33369a8aaaf7cc0b2969b95c3b5173f85",
+          "SkyPixel.spv": "287476460e44ed27c78aa950cad74f2bd3575701f3f2d296eb88739f0875191b",
+          "ShadowPixel.spv": "afb6f2b4f21c7569a2a40cc530a588a50da358e8734f261578aef9c37972855c",
+          "ForwardPixel.spv": "37fd4830e3c07b2029ee887cc18be68770fcade29c4c326fdd880b701bcab02d",
+          "PostVertex.spv": "3a2f50223969277b9d7726461776764585c9813449e52c9bf24390a92368d1ad",
+          "ImGuiPixel.spv": "6588f153c36be3883dd4057f86266d23f0cd722438c908c16c75c7bd7a83e918",
+          "ImGuiVertex.spv": "d098ff6a55303fcd371e23041ac7fc9c808966e83a7ce27465e577028256cfa4",
+          "DeferredPostPixel.spv": "4c99055f303714e0009fc32c9886b47858ba85056b2d508f2bf2943a2d34e584",
+          "GBufferPixel.spv": "0268084a20ef8587afd65510e6270a9b0e0aef67c9b3639d3fd2f1480e4f08a2",
+          "GBufferVertex.spv": "3aa2cc10691fb9ae723a12d00c46f087b719ae252ba4fb314170119f4a3f0492",
+          "SkyVertex.spv": "860af73e6f9b69ff44444f5e9fc19de52ff5ba33bf46d7b434267cc51ab62074"
+        }
+      },
+      "Vulkan_Advanced17_MeshShaderTiledInlineShadows": {
+        "executableSha256": "252a1594f265333bcfaadf18c8c771b89dcc5d6c3ba76bc86c03214726c6eba2",
+        "shaders": {
+          "Extract.spv": "8625389c8b8990c07b209e06faa63e5dee61405085e84b5dc2a18fdf6477ab8a",
+          "LightingPixel.spv": "b3c12d3b70402f127e60ccd0eaa9772ec832c04dfb75e2fe62796dfee427254a",
+          "Blur.spv": "bf3ef319ccb5d7fbd21ff637a3db2dcc4a8608b9089cfd4320d87de98b07385f",
+          "TestPixel.spv": "e4934ffb13bb4517d0bb4eda8eca7e392167c810e8f0141a7efe057063c4c717",
+          "InlineLightingCompute.spv": "9dc1d484a261872604c4f6e717e74c5b171904f5eae43b3f9b7e5e64aa87740f",
+          "TaskMesh.spv": "f46bbe994eca86054f9e28516204267009aad3659c78b5ff9a0ecc13a2fe35df",
+          "SkyPixel.spv": "287476460e44ed27c78aa950cad74f2bd3575701f3f2d296eb88739f0875191b",
+          "MeshletTask.spv": "071616ff4d75039046c85a96c8afee2f3bfac981b478670364f8dfb40bc8aaee",
+          "CullLights.spv": "a5ca4ebe8753f0d91923cbb95874cd7b46303e00282e9331c543c43e3e0e4f22",
+          "ReferenceVertex.spv": "8cd03796f9a856a2cc119bea68b70902a3989d3e2e500b3b5578f14526250af3",
+          "ResetMeshlets.spv": "df9a151422212647a7888f159af1798b53f0a5cca306b4949e29a8d38bb27706",
+          "MeshForwardPixel.spv": "ea0b5b0ef422dcf130d80a4ac071bdd55ef376b87d30fc3c7855357763a23472",
+          "PostVertex.spv": "3a2f50223969277b9d7726461776764585c9813449e52c9bf24390a92368d1ad",
+          "ImGuiPixel.spv": "6588f153c36be3883dd4057f86266d23f0cd722438c908c16c75c7bd7a83e918",
+          "ImGuiVertex.spv": "d098ff6a55303fcd371e23041ac7fc9c808966e83a7ce27465e577028256cfa4",
+          "DeferredPostPixel.spv": "4c99055f303714e0009fc32c9886b47858ba85056b2d508f2bf2943a2d34e584",
+          "MeshShadowPixel.spv": "fefacb0431b465c87f0e19fab4f510997797716c051b1e3bfb2fd110a76458aa",
+          "MeshletMesh.spv": "d52d890bb7aa0aadff342b49327ccc35c07a46222c4e435637d5989634f94e8a",
+          "MeshGBufferPixel.spv": "fc57a02aa4a50bf80072ba5bd10995b229b8804e38b5192c20a0a1f05d0ea92a",
+          "TileDepth.spv": "b26e0b8d03c008f2044d3198d454c69a7e7b96cbee13f4bdba8a23b544000c0e",
+          "SkyVertex.spv": "860af73e6f9b69ff44444f5e9fc19de52ff5ba33bf46d7b434267cc51ab62074"
+        }
+      },
+      "Direct3D12_26_InlineRaytracingShadows": {
+        "executableSha256": "568310cfb5655537e6fa76d42403d3e4fe8d563843fdced350f9a1f247913afc",
+        "shaders": {
+          "ImGuiVertex.cso": "ad01717d43450d701983f4103ad1bf43b1fe4f191b779bd3bcabfafaee62699e",
+          "SkyVertex.cso": "824a5128b6bc3f77d35e433e47ce1630a575fe47d9bbd7bc68ccc6f786261c73",
+          "InlineLightingCompute.cso": "3ecdd0281cee9906e7d46cffb8448e9044dbba1434ecbf03933ee2531f1ee815",
+          "GBufferPixel.cso": "032a1ef11d6570da8723de69f5c5c9428b73f71b5db498141d5d261425131b62",
+          "TestPixel.cso": "a6e2b38c6f75a6c863df95b3a601dfc31bb69061fba66ad732ad969fd3dd2bb7",
+          "Extract.cso": "0a64f2a2b3ab1797230e39024c7646ac0fe1337061ce0cc9973e893594515028",
+          "ShadowVertex.cso": "38021a4745c76a0eb88032a95c498f0918231a2802a00c63e8fe33a93f38c19f",
+          "Blur.cso": "21eac936b790ce49442a9cb10cf9a18c26f08aacff585177c05558046ca7214b",
+          "ShadowPixel.cso": "088b9118291ff00bf3aae80d82c885604832250f97bdf89782513bcb27b6cab5",
+          "DeferredPostPixel.cso": "31d94ed76a1509dab38b8c911d5a32a0201966ec99b0b2277254b7aec53a9d08",
+          "PostVertex.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "ImGuiPixel.cso": "a59f0bf346f4e38b0a80b08cf309c7f07db59233d0a1ec023e22cbae33be0f1a",
+          "GBufferVertex.cso": "60a4976f46026ec1f155340e7050a37410c2fa46391795724612c07e19d5257f",
+          "LightingPixel.cso": "9a03cff3c5aa9b31e316143ff4c8012a032207e3545b5ec1d735342691ae604a",
+          "SkyPixel.cso": "d3631765ea151fb200095fd6c6f99f5ed99064f432cdb29a5a70c539ad654b71",
+          "ForwardPixel.cso": "f068acbf811e47c455ba1aa57c926d37facb5c3c9cc71b2097ed1b41f23d94a8"
+        }
+      },
+      "Vulkan_Advanced15_BindlessHybrid": {
+        "executableSha256": "40666cf99eec821a5e2b54b2138353ae7fac79637e442afa00fcff0d857919a4",
+        "shaders": {
+          "Finalize1.spv": "8e4b9f7c5bc1adfb2ef04a80814a58b539c14370b735844a2e43f5805a50dfb0",
+          "DisplayPixel0.spv": "c414b55fdfa97e1d3bc216d05ea1f980787e1542e7e5073f446967b3ae05c0c6",
+          "CountReset2.spv": "6f06a65021f251d1bca8962091991ce641c4ee67caeea175d57624cea123fd31",
+          "Light1.spv": "f9b28411706c6e845692cb97510beb624c4b1bd43eaf5e6bdb9d57c9f1abbb3a",
+          "DisplayVertex0.spv": "3a2f50223969277b9d7726461776764585c9813449e52c9bf24390a92368d1ad",
+          "Light0.spv": "66f4214d4c4b4f15bdb4cdf95ec8e2e170c3aae022fa751f3a0b477ce60e03f2",
+          "RasterVertex0.spv": "1710ba1af6af6da4ef76870bded773fa9f5433c1058766857f7305f136fba7a1",
+          "Mesh2.spv": "4b76da1e51c315e7606b55c753d447ff65dca9079b20b22c602cfff2d6a7a8b2",
+          "ImGuiVertex.spv": "d098ff6a55303fcd371e23041ac7fc9c808966e83a7ce27465e577028256cfa4",
+          "CountReset1.spv": "6f06a65021f251d1bca8962091991ce641c4ee67caeea175d57624cea123fd31",
+          "RasterPixel2.spv": "f1f903a00afd92b0bf77e0180b4705859565e3590f20a0aacbf7023dae230611",
+          "Closest2.spv": "3c5f23220a7ee837a420cf48e0e0fa2682ddcfe301382536092b8abd5ec68ade",
+          "Finalize2.spv": "8e4b9f7c5bc1adfb2ef04a80814a58b539c14370b735844a2e43f5805a50dfb0",
+          "Cull1.spv": "10e4031d8c90e38dc2f2b03ec47f7e38326076c407a3ce6c9ba9260818073c7e",
+          "Miss2.spv": "1f0fd096cfa8197305a76558342ee268240d9b6f4fce4c01c4851687e121638b",
+          "ImGuiPixel.spv": "6588f153c36be3883dd4057f86266d23f0cd722438c908c16c75c7bd7a83e918",
+          "RasterPixel0.spv": "fc0949714045af226044d9597a5235a4eba3fefab0856995fd89fff44b22e067",
+          "Alpha0.spv": "9f398f4a7a8359df7bbb89700d1539451c4437d1f35879d5551f2fe11ae556cb",
+          "Reset0.spv": "9bf352bf88c20b3352477383fb16a90ceefaef300fd05ca74bcbd6b6cf58e333",
+          "DisplayVertex1.spv": "ce692ac4a5e7f97f5ea474acb14dd2a930089e8c5632d8639139c3669fafd806",
+          "RasterVertex2.spv": "b87629ff3d805012beb94d54cf2915eefeab976ac46151856c08b8c01d74b6ef",
+          "Finalize0.spv": "696a76b18117c22a0002e19bc7d82067585d408a4909d6bd8a5bbfe7d327df7b",
+          "RayGeneration2.spv": "8bf95deb9845d3c357075ffcc44581643a0122582c405ad5f7cc322c08352b98",
+          "RasterVertex1.spv": "ecb5bcde6e19140eebecd9cc474852c65daa5442c1285f9b7afcbb158061890c",
+          "RayGeneration0.spv": "fbd7180ba0044c08b2a889b5863725ce32cc0222ff6d6580539ce929ff6cc679",
+          "RayGeneration1.spv": "bdad4e31d791a845002dd0b5c6c78477efa7e268840726c76ed42fce98757002",
+          "Cull2.spv": "3f12607730b61e7c5971694759f598710c936cb0f2d6419477e1900429c7443d",
+          "DisplayVertex2.spv": "ce692ac4a5e7f97f5ea474acb14dd2a930089e8c5632d8639139c3669fafd806",
+          "Light2.spv": "1ab4fa87cece6e14965e46361d276883960bd411672b8ceb9c1629ce6df42bee",
+          "CountVisible2.spv": "97b9b8f90de1a50e4725ce4f63dfcbf39b8955e7e59215995371c1266533a0ce",
+          "Reset1.spv": "f95087e8d78a761c5ec0b470a691a53f69169292c250008df68b10cc79a54320",
+          "CountReset0.spv": "776c13ca2cba7bb48e88aee9cab976ac706c7a05880e1c1c59454633315e17d8",
+          "Alpha2.spv": "39ca4ccb50d539a15c15a2e16eb2fbfb1a3ae8e6aa1a2bad73fb850ce1fdfb90",
+          "Alpha1.spv": "c33585fc985a9b532d4f9f4df411d031795a09da16609e3f621ce0cdb825fd12",
+          "DisplayPixel1.spv": "8da5572f866525c89d0207050cb9589e25f55e912527b2e48a7b2a955f32eeda",
+          "Closest1.spv": "c274a162e92c1ade83199cc64ad8f8d977aad6e8103b3f4528072031637f27a5",
+          "RasterPixel1.spv": "79593c1386c2ad91894dc067cc5b5fedbd546fc802b523695b3fabc268091cb1",
+          "DisplayPixel2.spv": "8da5572f866525c89d0207050cb9589e25f55e912527b2e48a7b2a955f32eeda",
+          "CountVisible1.spv": "97b9b8f90de1a50e4725ce4f63dfcbf39b8955e7e59215995371c1266533a0ce",
+          "Miss0.spv": "2a72f1593a5288bc5467435a9e03dde4a0359145a8af6392d9afa537314c9653",
+          "Mesh0.spv": "98a5f0aa4f6f5199e79fedc0928e1404a19486e818db4561df772e78b375dcc9",
+          "Closest0.spv": "6a8916df88d870d311cff7bf6e559c3d63548f9da3c58c1fc13fc3f90d4c26e0",
+          "Cull0.spv": "5b9bca50367ad3ab88888ec179d1ce191dce447ef21c11f6abb4ae8321a971f7",
+          "Reset2.spv": "f95087e8d78a761c5ec0b470a691a53f69169292c250008df68b10cc79a54320",
+          "Miss1.spv": "1f0fd096cfa8197305a76558342ee268240d9b6f4fce4c01c4851687e121638b",
+          "CountVisible0.spv": "c12cf6459ca511bae7927eda7bcf9c12be57bf255cbe2d03a58847b7ad354593",
+          "Mesh1.spv": "cec3ccb77f30677bafbe26f1075e69a6ddf2357e5a0c5b11546e9b618c896734"
+        }
+      },
+      "Direct3D12_Advanced17_MeshShaderTiledInlineShadows": {
+        "executableSha256": "558ab5572df58126d5626ac18dee3cdc00ab334ed68f6c31ff23f5982f9d0818",
+        "shaders": {
+          "ImGuiVertex.cso": "ad01717d43450d701983f4103ad1bf43b1fe4f191b779bd3bcabfafaee62699e",
+          "InlineLightingCompute.cso": "b2161db3f54aa7be86d8b36a345064a4e6ae32815e9ac23e597bf6559a02d6d9",
+          "ResetMeshlets.cso": "8a70943085264617fb503b2b75f499a33c7c28bb0a8f857905f1da4d13424750",
+          "TestPixel.cso": "a6e2b38c6f75a6c863df95b3a601dfc31bb69061fba66ad732ad969fd3dd2bb7",
+          "Extract.cso": "0a64f2a2b3ab1797230e39024c7646ac0fe1337061ce0cc9973e893594515028",
+          "CullLights.cso": "d1ca4be09768f44edbfb843129df9f2d15f6d7981ef976dde734fc9d0aa5ddfc",
+          "Blur.cso": "21eac936b790ce49442a9cb10cf9a18c26f08aacff585177c05558046ca7214b",
+          "LightingPixel.cso": "4d490549086e997f17bc0074534d3af342e865f9ba9befc6fc386406ccef647c",
+          "MeshShadowPixel.cso": "88e88e7d8f81c94187cdb848c0a165158c3f77815e0a05428ccbb36724d9e29f",
+          "SkyPixel.cso": "d3631765ea151fb200095fd6c6f99f5ed99064f432cdb29a5a70c539ad654b71",
+          "PostVertex.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "ImGuiPixel.cso": "a59f0bf346f4e38b0a80b08cf309c7f07db59233d0a1ec023e22cbae33be0f1a",
+          "ReferenceVertex.cso": "65d73fe52a697c783defa1ea2574ccd069b35b5cee90c2fee6b2ce3c7a8d8912",
+          "DeferredPostPixel.cso": "31d94ed76a1509dab38b8c911d5a32a0201966ec99b0b2277254b7aec53a9d08",
+          "MeshGBufferPixel.cso": "ef7ce51401aab18db13c900ae64f6272ba9b66b326f0110f1158e861fc01a3ee",
+          "MeshletMesh.cso": "fe7e6ca7136eb4bf1ee4fb5ed63541e62d76548d97c18d8ed5abf261c3f7647a",
+          "MeshletTask.cso": "a9918db7747b6434af8f0f66edc4873de933849b9891a81cba76c4d492dbc761",
+          "TileDepth.cso": "9b649644662b3f71e61b45068ef31ad7d273aeadbb47d8579f2cba506a57d98d",
+          "SkyVertex.cso": "824a5128b6bc3f77d35e433e47ce1630a575fe47d9bbd7bc68ccc6f786261c73",
+          "MeshForwardPixel.cso": "7210020bf21dc83d2fea01d87809671923c0ed52b551c01ffc33748b9dcc9b72",
+          "TaskMesh.cso": "595e73e2c841df50ca834d3b3ffd3687f0491a1d4dc508ff2a68e2c7d7ff2a6d"
+        }
+      },
+      "Direct3D12_27_InlineRaytracingReflections": {
+        "executableSha256": "2d550773eae898ec4459deca407b8fd706c66aafef3e69c4f6a7bd54d483348d",
+        "shaders": {
+          "ImGuiVertex.cso": "ad01717d43450d701983f4103ad1bf43b1fe4f191b779bd3bcabfafaee62699e",
+          "SkyVertex.cso": "824a5128b6bc3f77d35e433e47ce1630a575fe47d9bbd7bc68ccc6f786261c73",
+          "InlineLightingCompute.cso": "c8640fa6679cd390fb944b40fbef7d6e03c02d111aca3a2bb05735f26697244a",
+          "GBufferPixel.cso": "032a1ef11d6570da8723de69f5c5c9428b73f71b5db498141d5d261425131b62",
+          "TestPixel.cso": "a6e2b38c6f75a6c863df95b3a601dfc31bb69061fba66ad732ad969fd3dd2bb7",
+          "Extract.cso": "0a64f2a2b3ab1797230e39024c7646ac0fe1337061ce0cc9973e893594515028",
+          "ShadowVertex.cso": "38021a4745c76a0eb88032a95c498f0918231a2802a00c63e8fe33a93f38c19f",
+          "Blur.cso": "21eac936b790ce49442a9cb10cf9a18c26f08aacff585177c05558046ca7214b",
+          "ShadowPixel.cso": "088b9118291ff00bf3aae80d82c885604832250f97bdf89782513bcb27b6cab5",
+          "DeferredPostPixel.cso": "31d94ed76a1509dab38b8c911d5a32a0201966ec99b0b2277254b7aec53a9d08",
+          "PostVertex.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "ImGuiPixel.cso": "a59f0bf346f4e38b0a80b08cf309c7f07db59233d0a1ec023e22cbae33be0f1a",
+          "GBufferVertex.cso": "60a4976f46026ec1f155340e7050a37410c2fa46391795724612c07e19d5257f",
+          "LightingPixel.cso": "9a03cff3c5aa9b31e316143ff4c8012a032207e3545b5ec1d735342691ae604a",
+          "SkyPixel.cso": "d3631765ea151fb200095fd6c6f99f5ed99064f432cdb29a5a70c539ad654b71",
+          "ForwardPixel.cso": "f068acbf811e47c455ba1aa57c926d37facb5c3c9cc71b2097ed1b41f23d94a8"
+        }
+      },
+      "Direct3D12_Advanced16_BindlessInlineHybrid": {
+        "executableSha256": "ab185ea0f3701aa45547b657d8c3141013f3c196f8d6a828324116714ff65580",
+        "shaders": {
+          "DisplayPixel1.cso": "168c67fea3a27bc554c4f36fa7f22a19f9b6a966fefc40dc971f9da8cfb5c343",
+          "Finalize1.cso": "278f30d1d93e8ed661228729bbde5f0daf89d567bdf80b35631d37dc339cd7d5",
+          "ImGuiVertex.cso": "ad01717d43450d701983f4103ad1bf43b1fe4f191b779bd3bcabfafaee62699e",
+          "Light0.cso": "3078c19adcba4155d514cb8746abdd21c10e301e061a6c3899a81bd22cd6519d",
+          "InlineHybrid1.cso": "2a0b239a2b647b86f263a784a50aa0e32517680f9e035d9f48eb41544239d996",
+          "DisplayVertex0.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "Cull2.cso": "2aa11f34f8a50ecbc7565d4199db49fe561fdb9ad670a78d4d6ea1aa3a2c9469",
+          "RasterVertex0.cso": "f98871163133f39c1295829f994d0c591dea72d994a8342882d91d2739b9695e",
+          "ImGuiPixel.cso": "a59f0bf346f4e38b0a80b08cf309c7f07db59233d0a1ec023e22cbae33be0f1a",
+          "Light2.cso": "91b3096656bf9bd54c4b2c1ba1b0276f0e091107210b0e3ad0125fc102c83d2b",
+          "RasterPixel2.cso": "f0c61846247b8518b652031c232dfedad2ed38a23d40a86e5ace89e39bac4a04",
+          "RasterPixel1.cso": "d5e6aa9534f1a2c5b6d65462adef503dfde33fc7d469232aacc7230f1b4de90c",
+          "Mesh1.cso": "0a608bf660404e0abeb9dd0006b8cbad155cf9e23bcc060c4c0e36740262b791",
+          "Reset1.cso": "99f8b0b2f35d0df79a1add2ae46a60a998ed286771cc8c9f7b9428f69cf85bee",
+          "CountReset1.cso": "56432a745c228641126cd5458341404a2101db5bbd6e4dd99e15f308ef2ac9a1",
+          "CountVisible2.cso": "25682123684de018a3e87e3ebc4db046805a3abc758ff6a4bdee62851f5057d8",
+          "CountVisible0.cso": "25682123684de018a3e87e3ebc4db046805a3abc758ff6a4bdee62851f5057d8",
+          "CountReset2.cso": "56432a745c228641126cd5458341404a2101db5bbd6e4dd99e15f308ef2ac9a1",
+          "Mesh2.cso": "ec5aee9f8b4a1a68bf86b2af7f6b23cc74da63d8a652a92baed66d9445e8c012",
+          "InlineHybrid2.cso": "3d063e769d1e893bcedcb08cbf6f7678550c2b7d7e2d126939db85f13f873ab8",
+          "RasterVertex1.cso": "f98871163133f39c1295829f994d0c591dea72d994a8342882d91d2739b9695e",
+          "Mesh0.cso": "0a608bf660404e0abeb9dd0006b8cbad155cf9e23bcc060c4c0e36740262b791",
+          "InlineHybrid0.cso": "21530da8a02d3f0dc6ca7aaf396a327fde5c12b0432a7e8e410950030d36abc8",
+          "Cull0.cso": "17f7f964fa2cf41aa99f74b847fc6f4acc595c59ba953f2e0bdfc18701b8a733",
+          "DisplayVertex2.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "DisplayPixel2.cso": "168c67fea3a27bc554c4f36fa7f22a19f9b6a966fefc40dc971f9da8cfb5c343",
+          "DisplayPixel0.cso": "168c67fea3a27bc554c4f36fa7f22a19f9b6a966fefc40dc971f9da8cfb5c343",
+          "DisplayVertex1.cso": "60ee480fd17bdfe43719c9b33bc3232dc54262da97079480bb890059feede2f1",
+          "Light1.cso": "3078c19adcba4155d514cb8746abdd21c10e301e061a6c3899a81bd22cd6519d",
+          "CountReset0.cso": "56432a745c228641126cd5458341404a2101db5bbd6e4dd99e15f308ef2ac9a1",
+          "Finalize2.cso": "278f30d1d93e8ed661228729bbde5f0daf89d567bdf80b35631d37dc339cd7d5",
+          "Finalize0.cso": "278f30d1d93e8ed661228729bbde5f0daf89d567bdf80b35631d37dc339cd7d5",
+          "Reset0.cso": "99f8b0b2f35d0df79a1add2ae46a60a998ed286771cc8c9f7b9428f69cf85bee",
+          "RasterVertex2.cso": "1f4a17bdead450b6426885f524b5229120288bacf24d8a28dcba78cf8fcfef25",
+          "Cull1.cso": "17f7f964fa2cf41aa99f74b847fc6f4acc595c59ba953f2e0bdfc18701b8a733",
+          "RasterPixel0.cso": "63df8776c84f251c1ccc07429d50ea5c331b01bfaff459ce656935fc0a58dacb",
+          "Reset2.cso": "99f8b0b2f35d0df79a1add2ae46a60a998ed286771cc8c9f7b9428f69cf85bee",
+          "CountVisible1.cso": "25682123684de018a3e87e3ebc4db046805a3abc758ff6a4bdee62851f5057d8"
+        }
+      }
+    },
+    "os": "Microsoft Windows 11 Pro",
+    "capturedUtc": "2026-10-18T07:55:22.6175969Z",
+    "runtimeRoot": "D:\\Git\\ShaderjpGraphicsSamples\\bin\\x64\\Release",
+    "visualStudio": {
+      "version": "18.10.12201.205",
+      "displayVersion": "18.10.0"
+    },
+    "osVersion": "10.0.26300",
+    "shaderModel": "6.6",
+    "vulkanTarget": "1.3",
+    "cpu": [
+      "13th Gen Intel(R) Core(TM) i9-13900F"
+    ],
+    "windowsSdk": "10.0.26100.0",
+    "compilers": {
+      "vulkanDxc": {
+        "sha256": "74b2ab9fb05270ca1f1d7b6ced979b40cb65afdfb5842eeda1f98c5181859661",
+        "output": "dxcompiler.dll: 1.10(5180-e3554182)(1.9.0.5180) - 1.9.0.5180 (e35541826)",
+        "fileVersion": "1.9.0.5180"
+      },
+      "d3dDxc": {
+        "sha256": "aa7965b3763d9c710baaa5a28cedcc633449962a75d1391d161a85304a41b3e2",
+        "output": "dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47)",
+        "fileVersion": "1.9.2609.5"
+      }
+    },
+    "agilitySdk": "1.619.6"
+  },
+  "measurementDirectory": "Measurements/InlineRaytracing",
+  "conditions": {
+    "configuration": "Release",
+    "width": 1280,
+    "height": 720,
+    "warmupFrames": 60,
+    "measuredFramesPerRun": 1200,
+    "repeats": 5,
+    "fixedDeltaSeconds": 0.016666666666666666,
+    "ui": false,
+    "vsync": false,
+    "scope": "GPU timestamp total, including display; startup and transient AS scratch are separate"
+  },
+  "results": [
+    {
+      "api": "Direct3D12",
+      "case": "26_InlineRaytracingShadows",
+      "title": "基本26：RayQueryの太陽の影",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 0.7973028163333333,
+      "medianMs": 0.498688,
+      "p95Ms": 0.73728,
+      "minimumRunAverageMs": 0.747236965,
+      "maximumRunAverageMs": 0.8616699783333334,
+      "asStartupAverageMs": 148.5458,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 9961472,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Direct3D12-26_InlineRaytracingShadows-benchmark-1.json",
+          "sha256": "77fdfe0414813169767299b27e16034a9787ec231240123038be5bf7aee034f2",
+          "csvSha256": "96fb8084078580809d0d8132b2ebf15a2a66ccb9d96ef49f857841b83b19cbd3"
+        },
+        {
+          "file": "Direct3D12-26_InlineRaytracingShadows-benchmark-2.json",
+          "sha256": "a56105efc3bd5023b36e18c3eff2a327552fc58646c13f30edbe2379df7843e3",
+          "csvSha256": "f5412a47fb3285c418be5fe87c73a799c0031e4b222fde83ed23116da396529b"
+        },
+        {
+          "file": "Direct3D12-26_InlineRaytracingShadows-benchmark-3.json",
+          "sha256": "797fd8cceeac94a1c304cd557f53235b98f0484c2de8f356ad473a8816322f43",
+          "csvSha256": "8ecdc924c45a6784be44a01f60703cf3286f25c3b72d913014b0b4d6ba55180e"
+        },
+        {
+          "file": "Direct3D12-26_InlineRaytracingShadows-benchmark-4.json",
+          "sha256": "7aafc8d42d1c9b247954e6cd4b4f3d90e765dfd3959b64efa1b82588c30ff031",
+          "csvSha256": "3541d6e84ad3ce211931da261a32b450d822b24371e350dc65776741ba63e97e"
+        },
+        {
+          "file": "Direct3D12-26_InlineRaytracingShadows-benchmark-5.json",
+          "sha256": "1562b8c180dfbf4eff519bb27916c8efe08e597092cf4ae753e077cf2e0ae070",
+          "csvSha256": "3ea5093599b202d81ec7db4eae492fd8b170f3b33456f0c9d9974a965055afe5"
+        }
+      ]
+    },
+    {
+      "api": "Direct3D12",
+      "case": "ShadowMap",
+      "title": "基本26：Shadow Map",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 1.139504883,
+      "medianMs": 0.677888,
+      "p95Ms": 3.49901,
+      "minimumRunAverageMs": 1.0495918483333333,
+      "maximumRunAverageMs": 1.2164502050000001,
+      "asStartupAverageMs": 157.43084,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 9961472,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Direct3D12-ShadowMap-benchmark-1.json",
+          "sha256": "bb5b243f7740224b09c0307fc6cfcef1b744136d23bf632538fff8bec2008897",
+          "csvSha256": "76628c231a84784cd4f588dae0a2d07e9305d25e9f8372d3b72e86e348fbae6d"
+        },
+        {
+          "file": "Direct3D12-ShadowMap-benchmark-2.json",
+          "sha256": "4400d96a935cdd9f34eb6b3fc09cd810ea811dc585cbd8e0a374aa9ea3fe6e5d",
+          "csvSha256": "be8e3e6e9d5ac3ff50cf8d102863928d282392934e46c5af4eb16ff6e06aee2a"
+        },
+        {
+          "file": "Direct3D12-ShadowMap-benchmark-3.json",
+          "sha256": "ac09a42d0da3052a139425cf693b9c8caae3c887c9fb3230433648d871ece325",
+          "csvSha256": "caa24498d607830452b9ec33ca2b239a6ef63698df230705e749b1d8c93624cb"
+        },
+        {
+          "file": "Direct3D12-ShadowMap-benchmark-4.json",
+          "sha256": "334c3733b952f8e414a4dc669f13de64794ead57569ee9a75c76ade6581c7549",
+          "csvSha256": "b3ffed2cd326d6f8498d73014e5097c493392ee9f1df5c89bf961568fde0531d"
+        },
+        {
+          "file": "Direct3D12-ShadowMap-benchmark-5.json",
+          "sha256": "4bda2ff752ab6ebb5f3ac8eaa427498e99e65b78b2303ee9815371cf04627f30",
+          "csvSha256": "4ca2e78216c40a6d6373ff4b1f6ad4c7554d3218e2dd68d39f6058dc6e2c5d61"
+        }
+      ]
+    },
+    {
+      "api": "Direct3D12",
+      "case": "27_InlineRaytracingReflections",
+      "title": "基本27：太陽の影＋反射",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 1.4222825143333333,
+      "medianMs": 0.841728,
+      "p95Ms": 8.47155,
+      "minimumRunAverageMs": 1.2234581549999999,
+      "maximumRunAverageMs": 1.5011614383333334,
+      "asStartupAverageMs": 151.36426,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 9961472,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Direct3D12-27_InlineRaytracingReflections-benchmark-1.json",
+          "sha256": "dd6457daa4b77d27a349bc182cb01e403cea185a2e7f208571b726610288c4c4",
+          "csvSha256": "e6e6a5e4e81f64bf0631b4ae873078000b655bf4d7242c26e02878ec1cc30c05"
+        },
+        {
+          "file": "Direct3D12-27_InlineRaytracingReflections-benchmark-2.json",
+          "sha256": "439ef00c0bb728bf75bae574ea61318c07cd51a410e0aa299510ee6f9ee03d7d",
+          "csvSha256": "b3d31011aee3aa7bde0108d06d426427ebb34338943025ecbe3e8890339681e3"
+        },
+        {
+          "file": "Direct3D12-27_InlineRaytracingReflections-benchmark-3.json",
+          "sha256": "c4bf2df48dfc0f48ab48ea292a4f2184a573cc32b777a9c698f2890b31924b98",
+          "csvSha256": "bc0714498736993489945cea77c538457ff893833a58ee87863039936de2c735"
+        },
+        {
+          "file": "Direct3D12-27_InlineRaytracingReflections-benchmark-4.json",
+          "sha256": "607055f4ad70c669cc8f36c101261d78c6724eb9e2cf800d454fec57d0246551",
+          "csvSha256": "751f20ee6a8c5eb4a29f4d2bd7a844f2c809955f31c3fa1227aaead25038e1a8"
+        },
+        {
+          "file": "Direct3D12-27_InlineRaytracingReflections-benchmark-5.json",
+          "sha256": "d096de03c1990ee389daeb7d837b39ddc151b2ea6c22ccc5fcfad4fa25f5506b",
+          "csvSha256": "f26e84680b0387cfc19b7fec2e48b0ea080bb013ce1f398d8f6cbd97fbb882a8"
+        }
+      ]
+    },
+    {
+      "api": "Direct3D12",
+      "case": "Advanced16_BindlessInlineHybrid",
+      "title": "発展16：Inline Hybrid",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 10.870372725,
+      "medianMs": 12.903400000000001,
+      "p95Ms": 16.6369,
+      "minimumRunAverageMs": 9.388038566666667,
+      "maximumRunAverageMs": 11.642980308333334,
+      "asStartupAverageMs": 167.14246,
+      "memory": {
+        "accelerationStructures": 9492608,
+        "attachmentPayload": 77414400,
+        "attachmentsCommitted": 82575360,
+        "buffers": 23395904,
+        "descriptors": 7392,
+        "images": 290804800,
+        "imagesCommitted": 299892736,
+        "sceneBuffersCommitted": 23724032,
+        "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Direct3D12-Advanced16_BindlessInlineHybrid-benchmark-1.json",
+          "sha256": "9bcfb8375feff0271d10c8cd46d95551918680248e271f0ccf37c2959518c93e",
+          "csvSha256": "f4c38c57349c971fce16fc7eeebecb6ce8174d9e46ad9b5865ff04b1f8b63726"
+        },
+        {
+          "file": "Direct3D12-Advanced16_BindlessInlineHybrid-benchmark-2.json",
+          "sha256": "c33cc1baa058b93a3a0be0cccc0b3a39ce6fb14c3984c1d056293aab10d5dfa1",
+          "csvSha256": "466ddb48a8299aab41bfa16872d8f00f570ee4b22cd9280f9838d27f1e3cb40a"
+        },
+        {
+          "file": "Direct3D12-Advanced16_BindlessInlineHybrid-benchmark-3.json",
+          "sha256": "7b35c4f12d9319477c2073633a0fbd0b06add28a8553e7098cac52543f2f5188",
+          "csvSha256": "4e938d17dcabf03b85754cd7f6026d3034cfb32f8b60da7f376b73f0d1cd0c4f"
+        },
+        {
+          "file": "Direct3D12-Advanced16_BindlessInlineHybrid-benchmark-4.json",
+          "sha256": "11ab303d343f74ab9ab3ee7d0b2a447e17eea2136373eb601a56aee9435dba29",
+          "csvSha256": "07267690eaa7366f5a488118bf0716bb1fcb80f3072bdb4261d4ddeb43bca980"
+        },
+        {
+          "file": "Direct3D12-Advanced16_BindlessInlineHybrid-benchmark-5.json",
+          "sha256": "e2d75889c0fbc680bb897d5a8530c8d9ff340ef205a6468db679542f09c0562f",
+          "csvSha256": "c78c8de61011a06664b6254956c08f84da6a9d7a1b7e8bbf61f89e27b1680e66"
+        }
+      ]
+    },
+    {
+      "api": "Direct3D12",
+      "case": "PipelineHybrid",
+      "title": "発展15：RT Pipeline比較",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 10.215176225,
+      "medianMs": 12.5051,
+      "p95Ms": 15.7563,
+      "minimumRunAverageMs": 9.4473848,
+      "maximumRunAverageMs": 11.354634058333334,
+      "asStartupAverageMs": 171.04569999999998,
+      "memory": {
+        "accelerationStructures": 9492608,
+        "attachmentPayload": 77414400,
+        "attachmentsCommitted": 82575360,
+        "buffers": 23395904,
+        "descriptors": 7392,
+        "images": 290804800,
+        "imagesCommitted": 299892736,
+        "sceneBuffersCommitted": 23724032,
+        "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Direct3D12-PipelineHybrid-benchmark-1.json",
+          "sha256": "a097e2fbfde8f84d5bb3dbf782fb923873bd54db936dad0e1efabcfbbd8d5aff",
+          "csvSha256": "8cff6c5d05e2d0a990614f315d3e5fe74704601b4f1f4794a6e323cd556f4786"
+        },
+        {
+          "file": "Direct3D12-PipelineHybrid-benchmark-2.json",
+          "sha256": "00258636bf8f5732b6ee81547147d79e3e8f1ee1127c441d33385db60fadde56",
+          "csvSha256": "589d98ed8398f1da46ddd78be2e9c6f1fcd3d86cb5f4898b04541aeed8079fa6"
+        },
+        {
+          "file": "Direct3D12-PipelineHybrid-benchmark-3.json",
+          "sha256": "d512ec076bffa936ffc28c6aa87df69ee40efe4b1afd71de847c8912dccb54ca",
+          "csvSha256": "074da80e52412eee1a39594c805c491fb20776d416fc0d261ec43bb8c18b20ff"
+        },
+        {
+          "file": "Direct3D12-PipelineHybrid-benchmark-4.json",
+          "sha256": "1512d24f817faece6365661f82030df1f5cc71e7d97ca43db47c8b2e3e40d78f",
+          "csvSha256": "c0c1997d2d741e0f3b47eeaead139ecde491f3425d8d5f6cae7437be0b573a54"
+        },
+        {
+          "file": "Direct3D12-PipelineHybrid-benchmark-5.json",
+          "sha256": "d2798bb136ea614e32900e2eded514b27dc75077f14776e767bd72bd9bfcfb26",
+          "csvSha256": "69688cbb7d3cc0aef9650cfa4363fa8a1cea064cd3d44b9531b37e998c4e7453"
+        }
+      ]
+    },
+    {
+      "api": "Direct3D12",
+      "case": "Advanced17_MeshShaderTiledInlineShadows",
+      "title": "発展17：Tiled・影付き8灯",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 2.10146766,
+      "medianMs": 1.19808,
+      "p95Ms": 9.61946,
+      "minimumRunAverageMs": 1.9511310283333334,
+      "maximumRunAverageMs": 2.229940173333333,
+      "asStartupAverageMs": 150.49518,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 9961472,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Direct3D12-Advanced17_MeshShaderTiledInlineShadows-benchmark-1.json",
+          "sha256": "202501865c81688ce7bd29a0c09287e1c9f9fdfcf6450c311a86fad2df8a9d79",
+          "csvSha256": "bec719b9c1a6ce5d927c3b8da940828f23e7013d0d504d8f5221c0eee65da957"
+        },
+        {
+          "file": "Direct3D12-Advanced17_MeshShaderTiledInlineShadows-benchmark-2.json",
+          "sha256": "2cbcde065be04f934191541525dce3ba651771192c9226f2bfc141f3ba99ab6f",
+          "csvSha256": "1bd8186cdcc8ab7a71eda222fd8e45aa992ba087404c476f122d9a3873db3471"
+        },
+        {
+          "file": "Direct3D12-Advanced17_MeshShaderTiledInlineShadows-benchmark-3.json",
+          "sha256": "6ee16702d336f73d253ac616c5bbf4a7d92d83d32341f6ba0e8240ec8b18e78c",
+          "csvSha256": "9928514faf3ff6f0c583c9fd19778436530e62dcf4020fc2d6861850088990ea"
+        },
+        {
+          "file": "Direct3D12-Advanced17_MeshShaderTiledInlineShadows-benchmark-4.json",
+          "sha256": "7a15ab78a132ab04afe036d9a66da7ca850642f343001507a69772ec44980cfa",
+          "csvSha256": "3e2bd9353be3cf4c822a9274e713fdd204b100517f3ebc227b06921bbf9f956d"
+        },
+        {
+          "file": "Direct3D12-Advanced17_MeshShaderTiledInlineShadows-benchmark-5.json",
+          "sha256": "f7750f75c79055e738a1945ea7d02542ccb450ce5b24c8909824e45e90711a74",
+          "csvSha256": "e40ea09a65922460e44561dfd51e6c4a7f61a8770a81c63e1ac94b403604b494"
+        }
+      ]
+    },
+    {
+      "api": "Direct3D12",
+      "case": "ManyAll8",
+      "title": "発展17：全ライト評価・影付き8灯",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 4.3693816666666665,
+      "medianMs": 2.57843,
+      "p95Ms": 11.4872,
+      "minimumRunAverageMs": 4.075737,
+      "maximumRunAverageMs": 4.73718025,
+      "asStartupAverageMs": 152.14452,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 9961472,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Direct3D12-ManyAll8-benchmark-1.json",
+          "sha256": "024a67415a758633a8e38d3394eb35afa22d98d9e431d5d52e2eed457baac00d",
+          "csvSha256": "ef59587f8e65b1613f0e2bfde57a1eb211af9625c565a07845d5fd81a1626782"
+        },
+        {
+          "file": "Direct3D12-ManyAll8-benchmark-2.json",
+          "sha256": "c8fc85272bc4b12dbd82f350e1cbe43fb7551693b208e85f2bb52b0e70079a46",
+          "csvSha256": "6a5c2a61ca645749a4fb0f8cc37d04a63ecbb8b7738a9eae2e1ad12021eed3ad"
+        },
+        {
+          "file": "Direct3D12-ManyAll8-benchmark-3.json",
+          "sha256": "7a2ef15eaa9c6907cc4d18015fcf09f4c454351fb962be3a29064d3c75a52346",
+          "csvSha256": "f87dbb31f4b077bbb6e031d989dfeb575728237cccf94e4f498d620cc71e9e22"
+        },
+        {
+          "file": "Direct3D12-ManyAll8-benchmark-4.json",
+          "sha256": "128febdce3dbce4e7a3d5fb5188def269e267336b22f93c7b8067d22224de4a9",
+          "csvSha256": "7f8b83612e8f56429f98cdeaad31fe44e78d48c40188c793ead221d9e0409f68"
+        },
+        {
+          "file": "Direct3D12-ManyAll8-benchmark-5.json",
+          "sha256": "6853adb3b0455d3110cc46733e01b4bccf435e8f21168cf48443b50c18f2d504",
+          "csvSha256": "32762585e5f715c9547805e1327c458a100f6b91fbc2462c3f2499783791472c"
+        }
+      ]
+    },
+    {
+      "api": "Direct3D12",
+      "case": "ManyTile32",
+      "title": "発展17：Tiled・影付き32灯",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 2.3774935706666667,
+      "medianMs": 1.4377,
+      "p95Ms": 9.9369,
+      "minimumRunAverageMs": 2.120400985,
+      "maximumRunAverageMs": 2.53616819,
+      "asStartupAverageMs": 156.42033999999998,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 9961472,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Direct3D12-ManyTile32-benchmark-1.json",
+          "sha256": "fc12c5fc8c88d52f5eceb2f261817969b5cc4462c21c2bf6f4b2c61df6250244",
+          "csvSha256": "f1bb88a7f82bafcff0430d035e6d4aec748897782426d7fad6a6d11c9c61e5d0"
+        },
+        {
+          "file": "Direct3D12-ManyTile32-benchmark-2.json",
+          "sha256": "b6e6c7bbbfc216baa02cb8a2400199e0e9ed7beb2aeba13552ec5836767e6a1d",
+          "csvSha256": "9bc437d2d34c42e0dde3aac5a9439134877f872bf48885346e95e6cba644a98b"
+        },
+        {
+          "file": "Direct3D12-ManyTile32-benchmark-3.json",
+          "sha256": "5295bcbef72b2dc4176838778bb8802606c64114e4a3e2666fedccfe817922c2",
+          "csvSha256": "3606f23c587c05f9fe8d4b6a49232d392953bfb1423e06a7304f4b011532178f"
+        },
+        {
+          "file": "Direct3D12-ManyTile32-benchmark-4.json",
+          "sha256": "c7f75b38952e0e7b4f4f5e1a62dca3e3df1eda3f66a5f36789cd6801d30dc4e6",
+          "csvSha256": "6135547b8cdcc13dd4cac7f849438e2f074695308cd0c04364cde90cfb8c987a"
+        },
+        {
+          "file": "Direct3D12-ManyTile32-benchmark-5.json",
+          "sha256": "fdad43ebfb16bb8d30276b4067155fac43063491e96055731e2c048ecc511f1d",
+          "csvSha256": "085305f9eed2d0ef25537b39a4c1b952fc47932942123a1c5aa1cf7cde4c8696"
+        }
+      ]
+    },
+    {
+      "api": "Vulkan",
+      "case": "26_InlineRaytracingShadows",
+      "title": "基本26：RayQueryの太陽の影",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 1.2992515236666666,
+      "medianMs": 0.758224,
+      "p95Ms": 6.56576,
+      "minimumRunAverageMs": 0.95648612,
+      "maximumRunAverageMs": 1.6058016716666665,
+      "asStartupAverageMs": 69.53888,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 7011584,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Vulkan-26_InlineRaytracingShadows-benchmark-1.json",
+          "sha256": "508153155804b99d766cfee6a39196fc400d2f25a1b620174a206acdf7b23ce3",
+          "csvSha256": "31bdcba25acfc9c79b26d07eda81e87c21e874795d530a472bc68ec2e8c794f2"
+        },
+        {
+          "file": "Vulkan-26_InlineRaytracingShadows-benchmark-2.json",
+          "sha256": "59358e6627ecbf05ac4e6438976a56a0123d401cb055c2a2a26465374a62385b",
+          "csvSha256": "003b15df458806655c180a629da8832f9fb0c789198d109ddc7427eb328e7dac"
+        },
+        {
+          "file": "Vulkan-26_InlineRaytracingShadows-benchmark-3.json",
+          "sha256": "7850fcb4c2651e3b0be9f82f36265d807bbe8f66fc372afe8e774d03f4a2493f",
+          "csvSha256": "8672968a02222409c28706607f633be05fbd17a622168e1f6a2a73c53cad2691"
+        },
+        {
+          "file": "Vulkan-26_InlineRaytracingShadows-benchmark-4.json",
+          "sha256": "5bc5aa06d1ad494b7f540df6660d3605724e976bcd48caf53dcf750ed3930eb9",
+          "csvSha256": "3e1a41d9a1776aac78fb8003d91c83c4627efdbff26e76dc387248914ef73cb7"
+        },
+        {
+          "file": "Vulkan-26_InlineRaytracingShadows-benchmark-5.json",
+          "sha256": "14a0cb1dab951fcca4050311e37348bbdbaa86ad15307899f1d453c2f50f8805",
+          "csvSha256": "08c9a281ff090351b4c00909e4701a5b5a589fd173a79f4c3ed265f7b12425ed"
+        }
+      ]
+    },
+    {
+      "api": "Vulkan",
+      "case": "ShadowMap",
+      "title": "基本26：Shadow Map",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 1.5575664356666665,
+      "medianMs": 0.8444959999999999,
+      "p95Ms": 8.75277,
+      "minimumRunAverageMs": 1.40701271,
+      "maximumRunAverageMs": 1.806464885,
+      "asStartupAverageMs": 68.56272,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 7011584,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Vulkan-ShadowMap-benchmark-1.json",
+          "sha256": "6d62f0a74a5c8c8cecbc79174178c88c9ff256549fb996ed2a122e24ae67a8aa",
+          "csvSha256": "03edd4bf0fd75f145936bb3c11ef31dddda8c3f9b38a1ffae254948020aa4eef"
+        },
+        {
+          "file": "Vulkan-ShadowMap-benchmark-2.json",
+          "sha256": "01c628ab33baba3ba3d2d12413fd2a5dad722709fc6118791d8213631f776a7c",
+          "csvSha256": "f33e7317c25520d7b265dfb9f54cce7197485d395246b8dad88f3306e8ce862f"
+        },
+        {
+          "file": "Vulkan-ShadowMap-benchmark-3.json",
+          "sha256": "8765de69f97fe9122acf889884e3845e74e588ba10d8b04373ed17a70adb2ecb",
+          "csvSha256": "b5b3bdc124cbe418ec0fb59c31bbef3c0763500ca4f25a325f74224d70351fd0"
+        },
+        {
+          "file": "Vulkan-ShadowMap-benchmark-4.json",
+          "sha256": "b4b32df24d283a984c7c126bdd212d931d47335b309c26129b9f3a67dd9a55b1",
+          "csvSha256": "3f04525db048cf5058469f375597c5ddddd71964cb4e13fe617e932d912a93e2"
+        },
+        {
+          "file": "Vulkan-ShadowMap-benchmark-5.json",
+          "sha256": "d121aaffce34bff9a4961916b9be6eb3074f2118dbd4a632efaa53343b89d20f",
+          "csvSha256": "1cc2502ae2cbca7f02685ca7a40e41da2e2c6723613774388cb64836e0e39e2e"
+        }
+      ]
+    },
+    {
+      "api": "Vulkan",
+      "case": "27_InlineRaytracingReflections",
+      "title": "基本27：太陽の影＋反射",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 1.7214484183333334,
+      "medianMs": 0.995264,
+      "p95Ms": 9.27629,
+      "minimumRunAverageMs": 1.5150724850000001,
+      "maximumRunAverageMs": 1.8379570483333334,
+      "asStartupAverageMs": 74.95622,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 7011584,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Vulkan-27_InlineRaytracingReflections-benchmark-1.json",
+          "sha256": "6b6059fe086e3969ce82aeabc1e2b0391b6ca19768a385e8fcb46b38465801ed",
+          "csvSha256": "9c2bdd60ef390791c25c6efea7b02fb1ef9ffac21f1f22a264c48cf5df76f74e"
+        },
+        {
+          "file": "Vulkan-27_InlineRaytracingReflections-benchmark-2.json",
+          "sha256": "1b18b497d0c07f67ac497c35f85f3fdcabb93622a6fd045f6c030b80b8a3c142",
+          "csvSha256": "70ce13b9e191a3f9b569665fc162753e88e4d046009c00403af6f60ef19f0cde"
+        },
+        {
+          "file": "Vulkan-27_InlineRaytracingReflections-benchmark-3.json",
+          "sha256": "5fc6e7178be65f1dae99001ba653d14314604301c97837e72e494ce372031c9e",
+          "csvSha256": "6496e8d61d4b2a459ca59fd4788fcbb7e964578734ad827e0549fd7b6788b11d"
+        },
+        {
+          "file": "Vulkan-27_InlineRaytracingReflections-benchmark-4.json",
+          "sha256": "90b63bf8a547ca13f380ba53eb14c50730ce37858e514a8f53383079f24bd4e0",
+          "csvSha256": "260db3d324f3c0fbd59b2d8992923e59261c6c98ef415704fecc724991513cb6"
+        },
+        {
+          "file": "Vulkan-27_InlineRaytracingReflections-benchmark-5.json",
+          "sha256": "69b33c4ddd42c87ebfe59a7976ad04d51e8525d8219e1510e9a465191dc636ff",
+          "csvSha256": "8a98d32c899408c5318f67a78cd084d30485ad4e50c9cba502a8c6af925db99d"
+        }
+      ]
+    },
+    {
+      "api": "Vulkan",
+      "case": "Advanced16_BindlessInlineHybrid",
+      "title": "発展16：Inline Hybrid",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 6.763765715,
+      "medianMs": 5.33157,
+      "p95Ms": 15.3617,
+      "minimumRunAverageMs": 5.22297985,
+      "maximumRunAverageMs": 11.8562516,
+      "asStartupAverageMs": 50.52338,
+      "memory": {
+        "accelerationStructures": 9492608,
+        "attachmentPayload": 77414400,
+        "attachmentsCommitted": 82575360,
+        "buffers": 23395904,
+        "descriptors": null,
+        "images": 290804800,
+        "imagesCommitted": 291160064,
+        "sceneBuffersCommitted": 23396608,
+        "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Vulkan-Advanced16_BindlessInlineHybrid-benchmark-1.json",
+          "sha256": "21218ec89825edb00d14a14cc069fb06da49262f6e272fede3bbaf4ac47656de",
+          "csvSha256": "d5a68fa9a47048122335c80edc3030e839ec4b6d1578ba6cb40dd49113a5f5ed"
+        },
+        {
+          "file": "Vulkan-Advanced16_BindlessInlineHybrid-benchmark-2.json",
+          "sha256": "ff10ebd1986359edc277949a8e249f8992a528db45b712b4f41550928e0b57cb",
+          "csvSha256": "0a3498514db448697ecf5830174fb825de54827949ac054cdc8ccde926619acf"
+        },
+        {
+          "file": "Vulkan-Advanced16_BindlessInlineHybrid-benchmark-3.json",
+          "sha256": "e6576f7f29dac6c70b1250fc1a4473eea17154de67acc9475d4ad8212693c7fb",
+          "csvSha256": "5caf581e79917b15ace6bc804e496a2bdb8414b0f7e2b209225b106e7f328546"
+        },
+        {
+          "file": "Vulkan-Advanced16_BindlessInlineHybrid-benchmark-4.json",
+          "sha256": "5723e9bd6125f57effbd841fe9c41e98f2e1fe283cdb93b6a801d9a4cae90888",
+          "csvSha256": "b13331706817321b75d1fa976bc71f87af8e7f40b7bdcb120ce885b54c11d5a9"
+        },
+        {
+          "file": "Vulkan-Advanced16_BindlessInlineHybrid-benchmark-5.json",
+          "sha256": "b8e885ad0d34e2f6508389c03c0bd1cdf90d8df01ff16a0720e1041ef460447f",
+          "csvSha256": "bc1f9b212924466d151b6f9665477981fd7dab64e1ec84670d82a21444a95bc9"
+        }
+      ]
+    },
+    {
+      "api": "Vulkan",
+      "case": "PipelineHybrid",
+      "title": "発展15：RT Pipeline比較",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 7.131252355000001,
+      "medianMs": 5.518174999999999,
+      "p95Ms": 16.7249,
+      "minimumRunAverageMs": 5.258839533333333,
+      "maximumRunAverageMs": 12.809362525,
+      "asStartupAverageMs": 45.84256,
+      "memory": {
+        "accelerationStructures": 9492608,
+        "attachmentPayload": 77414400,
+        "attachmentsCommitted": 82575360,
+        "buffers": 23395904,
+        "descriptors": null,
+        "images": 290804800,
+        "imagesCommitted": 291160064,
+        "sceneBuffersCommitted": 23396608,
+        "scope": "asset images, scene buffers, five RGBA32F + D32 attachments and AS results; excludes swapchain, UI, query pools and transient upload/AS scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Vulkan-PipelineHybrid-benchmark-1.json",
+          "sha256": "17f122d7a91805205c5e27d39309e3008d96394130e123ca97e171acf5230f67",
+          "csvSha256": "fb65e03b366cab5680617e1f9075d5f8c65e8349f2df7df0263e4e38e92451b7"
+        },
+        {
+          "file": "Vulkan-PipelineHybrid-benchmark-2.json",
+          "sha256": "e8e7e10d82767a83aa9dd4639f3f681f290ec8ec231a81b3e6018ef08b3ea2ec",
+          "csvSha256": "83ec31c1ee2e0b9b4aff1436309b1f526aecceb956f6b133a120f45aff75bc2b"
+        },
+        {
+          "file": "Vulkan-PipelineHybrid-benchmark-3.json",
+          "sha256": "ca700efffa2d86ce70da18cb72b011c46704fb2d07ab242827a70a436709a647",
+          "csvSha256": "55d4e587b6a8398937c488332296442020210870e040e6363d329d9603d5514c"
+        },
+        {
+          "file": "Vulkan-PipelineHybrid-benchmark-4.json",
+          "sha256": "a9231cd740b073c77126bd72d248bb2418371365323aef482853cbe25e4335fe",
+          "csvSha256": "eca2051c037834995fe2c757df9763e66d23c92c170bc0f6bab510988c90b74b"
+        },
+        {
+          "file": "Vulkan-PipelineHybrid-benchmark-5.json",
+          "sha256": "68ac830849cf22a46d6005db577c2b51bbe48c92a60f829912d45bec4889da49",
+          "csvSha256": "63c76dede7bc9f27b93b43a149ab31b130744b392fe25f97fd2d405a3d1a5587"
+        }
+      ]
+    },
+    {
+      "api": "Vulkan",
+      "case": "Advanced17_MeshShaderTiledInlineShadows",
+      "title": "発展17：Tiled・影付き8灯",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 11.170190063333333,
+      "medianMs": 8.61581,
+      "p95Ms": 39.4498,
+      "minimumRunAverageMs": 8.065340833333334,
+      "maximumRunAverageMs": 13.427497183333333,
+      "asStartupAverageMs": 413.32340000000005,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 7011584,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Vulkan-Advanced17_MeshShaderTiledInlineShadows-benchmark-1.json",
+          "sha256": "c3bf3c7bf239dd2e415c51953a9d1a781a35e70b40168acb1083f965c86d29ad",
+          "csvSha256": "6ff10755b585922325a314a263718cad29b6cd894f11fa74a93106f434a960a0"
+        },
+        {
+          "file": "Vulkan-Advanced17_MeshShaderTiledInlineShadows-benchmark-2.json",
+          "sha256": "56e523095f0a53417e0c354f8f73b3b94500c58ee58c6eeaff9c4c1c4e338e66",
+          "csvSha256": "e74cf047992241f9fbcfb48701bef585573d4857f5baf2753f15c7c354a28568"
+        },
+        {
+          "file": "Vulkan-Advanced17_MeshShaderTiledInlineShadows-benchmark-3.json",
+          "sha256": "1f78a7ddb380959998ea7385c3864a8f76eb550e79ae3b8dc9a4ee5b24e58ca5",
+          "csvSha256": "7b8234801cd07fba804e65ef70fa823193ebd1209ac8e6b4cf954ee6a342c095"
+        },
+        {
+          "file": "Vulkan-Advanced17_MeshShaderTiledInlineShadows-benchmark-4.json",
+          "sha256": "569125a9da289f6670c2f1cb63038fbfda96b9e02aaaeb07f1ab1fdf8599061c",
+          "csvSha256": "5a6d58a4ef01fbb6fc456e55e88e4e51080d7286dd3e519dbd488b6fe83106d7"
+        },
+        {
+          "file": "Vulkan-Advanced17_MeshShaderTiledInlineShadows-benchmark-5.json",
+          "sha256": "26cfa27a4f0132e6f4c5ac13d3d113d4411a790d3d30c7e8d6029f6407b2a75e",
+          "csvSha256": "c4c3c1a88ac336cac2b8cde0cc06646dcb7eeb861e17b24117f7f79037a3b705"
+        }
+      ]
+    },
+    {
+      "api": "Vulkan",
+      "case": "ManyAll8",
+      "title": "発展17：全ライト評価・影付き8灯",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 55.996961694999996,
+      "medianMs": 52.25765,
+      "p95Ms": 127.752,
+      "minimumRunAverageMs": 38.01698214166667,
+      "maximumRunAverageMs": 68.58098483333333,
+      "asStartupAverageMs": 695.2193199999999,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 7011584,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Vulkan-ManyAll8-benchmark-1.json",
+          "sha256": "1986595ca94f82c738311cbfca69e6c2d1a0762e74038ae03e739f8316a833cd",
+          "csvSha256": "97dc9b093f9d36599c70e1a7fff9a4add2384eb4c589c87819a9ecb51c9cc40a"
+        },
+        {
+          "file": "Vulkan-ManyAll8-benchmark-2.json",
+          "sha256": "42c8df03f29de293536012a2953ec6077feb4f964908323151d991c2ff531781",
+          "csvSha256": "c0c76472f7af1d3037a96c448c82ece8e72ac8102d68a040b0f1913491731e2e"
+        },
+        {
+          "file": "Vulkan-ManyAll8-benchmark-3.json",
+          "sha256": "02a8c7fd1c17d0f1daab8b1c81e4d5636e3c2dc7164eda2eccd353363e2d10c0",
+          "csvSha256": "f678d4a1062ee4689ec36f1dfa239ee7eb5911fac08588ddf8dc363dd9ae89e6"
+        },
+        {
+          "file": "Vulkan-ManyAll8-benchmark-4.json",
+          "sha256": "66e77d36929dc180c1fe21d4d12434ff9cb713659e5e922ea0e1d45b6ed1994c",
+          "csvSha256": "fc5881eca32fd86c3361f70e0eee4add33545cfb9a9fc480ee0988150c749102"
+        },
+        {
+          "file": "Vulkan-ManyAll8-benchmark-5.json",
+          "sha256": "7656fffb1eaa5d4891f8ee7689c70a7fabe24cc72929a2579c3202f9dabbf942",
+          "csvSha256": "c4e4843c31e718198bfc37f3f3a13e5b9dbdda0e062aa21dba984c1e982b4d4c"
+        }
+      ]
+    },
+    {
+      "api": "Vulkan",
+      "case": "ManyTile32",
+      "title": "発展17：Tiled・影付き32灯",
+      "measuredFrames": 6000,
+      "repeats": 5,
+      "averageMs": 24.171276895333335,
+      "medianMs": 23.38145,
+      "p95Ms": 57.4075,
+      "minimumRunAverageMs": 10.175009625,
+      "maximumRunAverageMs": 28.67031779166667,
+      "asStartupAverageMs": 907.0708200000001,
+      "memory": {
+        "accelerationStructuresCommittedBytes": 7011584,
+        "additionalInlineSceneBufferBytes": 4785264,
+        "scope": "AS allocations and additional CPU-uploaded ray scene buffers; excludes raster geometry, attachments and transient scratch"
+      },
+      "sourceReports": [
+        {
+          "file": "Vulkan-ManyTile32-benchmark-1.json",
+          "sha256": "43cc8e6cf66a985575a03fed0806b387643aa0f73ce68012cfef1c7b789ec5ef",
+          "csvSha256": "29ab34f6372fd83236b2e605fb58d299a5e1bc80fccdac2c26f2df357ee7e3fa"
+        },
+        {
+          "file": "Vulkan-ManyTile32-benchmark-2.json",
+          "sha256": "37068fb80c18b16673af8311b8a17b25700691a206487c1419028c212feab0d2",
+          "csvSha256": "b60859036388c8bcb83907fef497120c3d7778f160c8453d855a67df71d86591"
+        },
+        {
+          "file": "Vulkan-ManyTile32-benchmark-3.json",
+          "sha256": "560676d71a2d00472be4cac85f64dc2f517e0f7c4bbc34ac91659c0e7aa2969c",
+          "csvSha256": "b40d07a3506618c98df23f1666d64e9a7f39256fad496220c7fcc34580cbaa1e"
+        },
+        {
+          "file": "Vulkan-ManyTile32-benchmark-4.json",
+          "sha256": "57df49c8ea60479138747f3876d2af12df80bd9074bfacc99b5521f3f857dfb5",
+          "csvSha256": "09130fa6d5e74ef46009fdd49af8bdbb0da0384a5d3b9e8e0537a2d435fa398d"
+        },
+        {
+          "file": "Vulkan-ManyTile32-benchmark-5.json",
+          "sha256": "7565c494cc27302656b6c1b3141861cc90bb2ab94ed6f1285606bbef3d589cd2",
+          "csvSha256": "8f0b1192b1e9f5df35b2a37b2b9be699d0f1e8ef0c9a3a94f550490aacc30ea7"
+        }
+      ]
+    }
+  ]
+}

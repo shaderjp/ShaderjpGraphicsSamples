@@ -1,0 +1,12 @@
+{
+  "archive": "Frames.zip",
+  "sha256": "2717b3f4f9e959f9a5fef87f4f7e386e8aa7b239d7b99b412337d14117e732c2",
+  "runs": 230,
+  "conditions": 46,
+  "repeats": [
+    5
+  ],
+  "frameCount": 276000,
+  "measurementStatus": "reference-only",
+  "audit": "Audit.json"
+}

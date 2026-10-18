@@ -9,6 +9,12 @@ namespace tutorial
 {
 struct DeferredPanel
 {
+#ifdef INLINE_SAMPLE
+    bool sunQuery=true, reflections=INLINE_SAMPLE==27;
+    uint32_t shadowPointLights=8;
+    int inlineView=0;
+    float inlineBias=.001f;
+#endif
     CameraNavigation navigation;
     int scene = 0, camera = 0, preset = 1, view = 0, pathFrame = 0;
 #ifdef LIGHT_CULLING
@@ -25,6 +31,9 @@ struct DeferredPanel
     std::filesystem::path screenshot;
     void Reset(const Workshop &w)
     {
+#ifdef INLINE_SAMPLE
+        sunQuery=true;reflections=INLINE_SAMPLE==27;shadowPointLights=8;inlineView=0;inlineBias=.001f;
+#endif
         navigation.Reset();
 #ifdef LIGHT_CULLING
         grid = {};
@@ -53,6 +62,21 @@ struct DeferredPanel
     {
         navigation.test = o.testCamera;
         Reset(w);
+#ifdef INLINE_SAMPLE
+        sunQuery=o.sunShadow==L"rayquery";reflections=INLINE_SAMPLE==27 && !o.disableReflections;
+        shadowPointLights=o.shadowPointLights;
+        if(o.shading==L"reflection") {
+#if INLINE_SAMPLE != 27
+            throw std::runtime_error("Reflection diagnostic requires basic27");
+#else
+            inlineView=1;
+#endif
+        }
+        if(o.shading==L"ray-count")inlineView=2;
+#if INLINE_SAMPLE == 17
+        if(o.lightCulling==L"cluster")throw std::runtime_error("Inline tiled sample: --light-culling all / tile");
+#endif
+#endif
 #ifdef LIGHT_CULLING
         grid.perRoom = int(o.lightsPerRoom);
         grid.capacity = int(o.listCapacity);
@@ -94,7 +118,11 @@ struct DeferredPanel
             L"final",     L"base",     L"ao",      L"normal-packed", L"normal", L"metallic",
             L"roughness", L"emissive", L"depth",   L"shadow-depth",  L"direct", L"diffuse",
             L"specular",  L"shadow",   L"extract", L"horizontal",    L"bloom"};
-        if (!o.shading.empty())
+        if (!o.shading.empty()
+#ifdef INLINE_SAMPLE
+            && o.shading!=L"reflection" && o.shading!=L"ray-count"
+#endif
+            )
         {
             auto it = std::find(names.begin(), names.end(), o.shading);
             if (it == names.end())
@@ -119,6 +147,9 @@ struct DeferredPanel
             throw std::runtime_error("--test-ui requires visible UI and 36 frames");
         if (o.benchmark)
         {
+#ifdef INLINE_SAMPLE
+            inlineView=0;
+#endif
             preset = 1;
             visible = false;
             exposure = 1;
@@ -180,7 +211,13 @@ struct DeferredPanel
                     navigation.Reset();
                 }
         const char *presets[] = {"Opaque", "OpaqueMask", "Full"};
-        ImGui::Combo("Preset", &preset, presets, 3);
+        ImGui::Combo("Preset", &preset, presets,
+#ifdef INLINE_SAMPLE
+                     2
+#else
+                     3
+#endif
+        );
         if (ImGui::BeginCombo("Camera", w.cameras[camera].name.c_str()))
         {
             for (size_t i = 0; i < w.cameras.size(); ++i)
@@ -196,7 +233,9 @@ struct DeferredPanel
         ImGui::SameLine();
         ImGui::Checkbox("Play", &pathPlaying);
         ImGui::SliderInt("Path frame", &pathFrame, 0, 1200);
+#ifndef INLINE_SAMPLE
         ImGui::Checkbox("Forward diagnostic", &forward);
+#endif
         if (forward && view >= 1 && view <= 9)
             view = 0;
         const char *views[] = {"Final",
@@ -222,8 +261,42 @@ struct DeferredPanel
         ImGui::Checkbox("IBL", &ibl);
         ImGui::Checkbox("Shadow", &shadows);
         ImGui::SameLine();
+#ifdef INLINE_SAMPLE
+        ImGui::BeginDisabled(sunQuery);
+        ImGui::Checkbox("3x3 PCF", &pcf);
+        ImGui::SliderFloat("Map bias", &bias, 0, .01f, "%.4f");
+        ImGui::EndDisabled();
+#else
         ImGui::Checkbox("3x3 PCF", &pcf);
         ImGui::SliderFloat("Bias", &bias, 0, .01f, "%.4f");
+#endif
+#ifdef INLINE_SAMPLE
+        if(test && (frame==3 || frame==4))
+            ImGui::SetNextItemOpen(frame==3,ImGuiCond_Always);
+        if(ImGui::CollapsingHeader("Inline Raytracing")) {
+            ImGui::PushItemWidth(150);
+        ImGui::SliderFloat("Ray bias (m)",&inlineBias,.0001f,.01f,"%.4f");
+        const char* methods[]={"Shadow Map","RayQuery"};int method=sunQuery?1:0;
+        if(ImGui::Combo("Sun shadow",&method,methods,2))sunQuery=method==1;
+#if INLINE_SAMPLE == 27
+        ImGui::Checkbox("Reflections",&reflections);
+#endif
+#if INLINE_SAMPLE == 17
+        int count=int(std::min(shadowPointLights,time.pointLights));
+        if(ImGui::SliderInt("Point shadows",&count,0,int(time.pointLights)))shadowPointLights=uint32_t(count);
+        if(ImGui::Button("Shadow all point lights"))shadowPointLights=UINT32_MAX;
+#endif
+#if INLINE_SAMPLE == 27
+        const char* diagnostics[]={"Lighting","Incoming reflection","Shadow ray count"};
+        if(ImGui::Combo("Inline diagnostic",&inlineView,diagnostics,3))view=0;
+#else
+        const char* diagnostics[]={"Lighting","Shadow ray count"};int diagnostic=inlineView==2?1:0;
+        if(ImGui::Combo("Inline diagnostic",&diagnostic,diagnostics,2)){inlineView=diagnostic?2:0;view=0;}
+#endif
+            ImGui::PopItemWidth();
+        }
+#endif
+
         ImGui::SliderFloat("Occluder X", &occluder, -1.5f, 1.5f);
         ImGui::SliderFloat("Environment", &intensity, 0, 4);
         auto a = ImGui::GetItemRectMin(), b = ImGui::GetItemRectMax();

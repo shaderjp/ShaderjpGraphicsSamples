@@ -38,3 +38,19 @@
 /SourceArt/Blender/SilverRobot/*.blend -text
 /Docs/Assets/Videos/*.mp4 -text
 /Docs/Assets/Videos/Previews/*.jpg -text
+
+# Preserve BindlessGallery exports and byte-hashed measurement records.
+/Assets/Models/BindlessGallery/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Assets/Scenes/BindlessGallery/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/SourceArt/Blender/BindlessGallery/*.blend -text
+/SourceArt/Blender/BindlessGallery/*.py text eol=lf
+/SourceArt/Blender/BindlessGallery/*.md text eol=lf
+/Docs/Assets/Images/BindlessGallery/*.png -text
+/Docs/Assets/Images/BindlessGallery/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Assets/BindlessGalleryManifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Bindless*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/InlineRaytracing*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Measurements/Bindless/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Measurements/InlineRaytracing/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# CollectionAudit records this script's SHA-256 too.
+/Tools/MeasureBindless.ps1 -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

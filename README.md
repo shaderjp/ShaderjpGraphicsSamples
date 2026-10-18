@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編25テーマ＋発展編11テーマ、両APIで計72本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編27テーマ＋発展編17テーマ、両APIで計88本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -12,6 +12,8 @@
 - Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14回以降のCompute使用サンプル）を持つGPU／ドライバが必要です。
 - 発展編01〜03: D3D12はDXR Tier 1.0以上、VulkanはKHRのAcceleration Structure／Ray Tracing Pipeline／Deferred Host Operations、Buffer Device Addressなどが必要です。[詳細な要件](Docs/AdvancedGraphicsSamples.md#環境と今回の範囲)
 - 発展編04〜11: D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`と`meshShader`が必要です。Vulkanの06〜11は`taskShader`も使用します。基本22〜25はMesh Shaderを要求しません。[Mesh Shaderの要件と検証](Docs/MeshShaderVerification.md)
+- 発展12〜15はバインドレス参照に対応します。D3D12はBinding Tier 3、VulkanはRuntime descriptor arrayと画像・Storage Buffer・Storage Imageの非一様参照、および必要な個数上限を確認します。13／15はMesh Shader、14／15はRT Pipelineを使用します。[共通章](Docs/BindlessGraphics.md)
+- 基本26／27・発展16／17はインラインRTを使用します。D3D12はDXR Tier 1.1以上、VulkanはAcceleration Structure／Buffer Device Address／Ray Queryが必要です。16はMesh ShaderとBindless、17はMesh／Task Shaderも使用します。[共通章](Docs/InlineRaytracing.md)
 - Debug実行時にはD3D12 Debug Layer／Vulkan Validation Layerを有効化します。D3D12のDebug Interfaceが利用できない場合はWindowsの「グラフィックス ツール」を導入してください。
 
 SDKを導入してもGPU・ドライバの機能対応が追加されるわけではありません。初期化時に必要な対応を確認し、不足している場合はエラーを表示します。
@@ -73,10 +75,12 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | Compute変形のVertex BufferキャッシュをShadow／Colorで共有 | [23 ComputeSkinningCache](Docs/Direct3D12/23_ComputeSkinningCache.md) | [23 ComputeSkinningCache](Docs/Vulkan/23_ComputeSkinningCache.md) |
 | Dual Quaternion Skinning・同じ姿勢でLBS／DQS切替 | [24 DualQuaternionSkinning](Docs/Direct3D12/24_DualQuaternionSkinning.md) | [24 DualQuaternionSkinning](Docs/Vulkan/24_DualQuaternionSkinning.md) |
 | DQSをComputeでキャッシュしShadow／Colorへ共有 | [25 DualQuaternionComputeCache](Docs/Direct3D12/25_DualQuaternionComputeCache.md) | [25 DualQuaternionComputeCache](Docs/Vulkan/25_DualQuaternionComputeCache.md) |
+| Deferred Compute・RayQueryによる太陽の影 | [26 InlineRaytracingShadows](Docs/Direct3D12/26_InlineRaytracingShadows.md) | [26 InlineRaytracingShadows](Docs/Vulkan/26_InlineRaytracingShadows.md) |
+| Deferred・RayQueryによる1バウンス反射 | [27 InlineRaytracingReflections](Docs/Direct3D12/27_InlineRaytracingReflections.md) | [27 InlineRaytracingReflections](Docs/Vulkan/27_InlineRaytracingReflections.md) |
 
 ## 発展編サンプル一覧
 
-発展編は01から番号を付け、**11テーマ×2 APIの22本**を同じソリューションに収録しています。[発展編目次](Docs/AdvancedGraphicsSamples.md)から、前提知識・対応機能・読み順も確認できます。
+発展編は01から番号を付け、**17テーマ×2 APIの34本**を同じソリューションに収録しています。[発展編目次](Docs/AdvancedGraphicsSamples.md)から、前提知識・対応機能・読み順も確認できます。
 
 | テーマ | Direct3D12 | Vulkan |
 |---|---|---|
@@ -91,6 +95,14 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | Meshlet Culling・多数点光源のTiled Deferredとの統合 | [09 MeshShader Tiled Deferred](Docs/Direct3D12/Advanced09_MeshShaderTiledDeferred.md) | [09 MeshShader Tiled Deferred](Docs/Vulkan/Advanced09_MeshShaderTiledDeferred.md) |
 | Mesh Shaderスキニング・動的境界・カメラ／ライト別カリング | [10 MeshShader Skinning](Docs/Direct3D12/Advanced10_MeshShaderSkinning.md) | [10 MeshShader Skinning](Docs/Vulkan/Advanced10_MeshShaderSkinning.md) |
 | DQS Mesh Shader・正規化を考慮した境界・AS／Task | [11 DualQuaternionMeshSkinning](Docs/Direct3D12/Advanced11_DualQuaternionMeshSkinning.md) | [11 DualQuaternionMeshSkinning](Docs/Vulkan/Advanced11_DualQuaternionMeshSkinning.md) |
+| 12 BindlessMaterials | [12 BindlessMaterials](Docs/Direct3D12/Advanced12_BindlessMaterials.md) | [12 BindlessMaterials](Docs/Vulkan/Advanced12_BindlessMaterials.md) |
+| 13 BindlessMeshShader | [13 BindlessMeshShader](Docs/Direct3D12/Advanced13_BindlessMeshShader.md) | [13 BindlessMeshShader](Docs/Vulkan/Advanced13_BindlessMeshShader.md) |
+| 14 BindlessRaytracing | [14 BindlessRaytracing](Docs/Direct3D12/Advanced14_BindlessRaytracing.md) | [14 BindlessRaytracing](Docs/Vulkan/Advanced14_BindlessRaytracing.md) |
+| 15 BindlessHybrid | [15 BindlessHybrid](Docs/Direct3D12/Advanced15_BindlessHybrid.md) | [15 BindlessHybrid](Docs/Vulkan/Advanced15_BindlessHybrid.md) |
+| 16 Bindless・Mesh Shader・Compute RayQuery | [16 BindlessInlineHybrid](Docs/Direct3D12/Advanced16_BindlessInlineHybrid.md) | [16 BindlessInlineHybrid](Docs/Vulkan/Advanced16_BindlessInlineHybrid.md) |
+| 17 Mesh Shader・Tiled・点光源のRayQuery影 | [17 MeshShaderTiledInlineShadows](Docs/Direct3D12/Advanced17_MeshShaderTiledInlineShadows.md) | [17 MeshShaderTiledInlineShadows](Docs/Vulkan/Advanced17_MeshShaderTiledInlineShadows.md) |
+
+[バインドレス共通章](Docs/BindlessGraphics.md)では、Blenderアセット制作から参照方式・描画集約の比較測定へ進みます。
 
 ## 実行とカメラ操作
 
@@ -273,3 +285,14 @@ meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定Submoduleです。`git s
 `Tools/TestSkinningCpu.ps1`、`Tools/TestSkinning.ps1`、`Tools/TestSkinningFailures.ps1`、`Tools/TestSilverRobotAnimated.ps1`でCPU・GPU・Shader欠落・Blenderを検証し、`Tools/MeasureSkinning.ps1`でReleaseの1体／64体を計測します。[数値結果と検証条件](Docs/SkinningVerification.md)
 
 基本25と発展11はDQSのComputeキャッシュ／Mesh Shader版です。[DQSの3方式と境界](Docs/DualQuaternionStages.md)、[両API・各方式の検証と性能](Docs/DualQuaternionStagesVerification.md)を参照してください。既存アセットとモーションを共有し、すべてLBS／DQSを切り替えられ、初期状態はDQS／Root motion OFFです。
+
+## インライン・レイトレーシング
+
+[共通解説](Docs/InlineRaytracing.md)／[検証記録](Docs/InlineRaytracingVerification.md)。基本26・27、発展16・17を両APIへ追加しました。
+
+| テーマ | Direct3D12 | Vulkan |
+|---|---|---|
+| Deferredの表面からRayQueryで影を調べる | [記事](Docs/Direct3D12/26_InlineRaytracingShadows.md) | [記事](Docs/Vulkan/26_InlineRaytracingShadows.md) |
+| Deferredから1バウンスの反射を計算する | [記事](Docs/Direct3D12/27_InlineRaytracingReflections.md) | [記事](Docs/Vulkan/27_InlineRaytracingReflections.md) |
+| Bindless・Mesh Shader・RayQueryを接続する | [記事](Docs/Direct3D12/Advanced16_BindlessInlineHybrid.md) | [記事](Docs/Vulkan/Advanced16_BindlessInlineHybrid.md) |
+| Tiled Deferredの多数光源へレイによる影を加える | [記事](Docs/Direct3D12/Advanced17_MeshShaderTiledInlineShadows.md) | [記事](Docs/Vulkan/Advanced17_MeshShaderTiledInlineShadows.md) |

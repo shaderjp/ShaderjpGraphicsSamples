@@ -67,9 +67,8 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
     }
     return handled ? inputResult : DefWindowProcW(window, message, wParam, lParam);
 }
-Options ParseOptions()
+void ParseOptions(Options &options)
 {
-    Options options;
     int count = 0;
     auto arguments = CommandLineToArgvW(GetCommandLineW(), &count);
     if (!arguments)
@@ -99,6 +98,7 @@ Options ParseOptions()
             if (argument == L"--no-direct") { options.disableDirect = true; continue; }
             if (argument == L"--camera-path") { options.cameraPath = true; continue; }
             if (argument == L"--benchmark") { options.benchmark = options.cameraPath = options.hideUi = true; options.frames = 1260; continue; }
+            if (argument == L"--gpu-driven") { options.galleryGpuDriven = true; continue; }
             if (argument == L"--capture-gpu") { options.captureGpu = true; continue; }
             if (argument == L"--test-post") { options.testPost = true; continue; }
             if (argument == L"--test-odd") { options.testOdd = options.testWindow = true; continue; }
@@ -133,8 +133,38 @@ Options ParseOptions()
                     throw std::runtime_error("--frames must be a positive 32-bit integer");
                 options.frames = static_cast<uint32_t>(frames);
             }
+            else if (argument == L"--sun-shadow") {
+                if(value!=L"map" && value!=L"rayquery") throw std::runtime_error("--sun-shadow: map / rayquery");
+                options.sunShadow=value;
+            }
+            else if (argument == L"--shadow-point-lights") {
+                if(value==L"all") options.shadowPointLights=UINT32_MAX;
+                else {
+                    size_t consumed=0;
+                    auto parsedCount=std::stoull(value,&consumed);
+                    if(value.empty() || value[0]==L'-' || consumed!=value.size() || parsedCount>4680) throw std::runtime_error("--shadow-point-lights: 0..4680 / all");
+                    options.shadowPointLights=uint32_t(parsedCount);
+                }
+            }
             else if (argument == L"--shading")
                 options.shading = value;
+            else if (argument == L"--binding") {
+                if(value!=L"bound"&&value!=L"textures"&&value!=L"resources")throw std::runtime_error("--binding: bound / textures / resources");
+                options.binding=value;
+            }
+            else if (argument == L"--gallery-preset") {
+                if(value!=L"Mini"&&value!=L"Standard"&&value!=L"Stress")throw std::runtime_error("--gallery-preset: Mini / Standard / Stress");
+                options.galleryPreset=value;
+            }
+            else if (argument == L"--gallery-view") {
+                if(value!=L"final"&&value!=L"material"&&value!=L"geometry"&&value!=L"uv")throw std::runtime_error("--gallery-view: final / material / geometry / uv");
+                options.galleryView=value;
+            }
+            else if (argument == L"--objects" || argument == L"--materials") {
+                size_t n=0; auto v=std::stoul(value,&n);
+                if(n!=value.size()||value.empty()||value.front()==L'-'||v<1||v>(argument==L"--objects"?4096u:256u))throw std::runtime_error("--objects: 1..4096 / --materials: 1..256");
+                if(argument==L"--objects")options.galleryObjects=uint32_t(v);else options.galleryMaterials=uint32_t(v);
+            }
             else if (argument == L"--rt-test-scene") options.rayTestScene = value;
             else if (argument == L"--animation") options.animation = value;
             else if (argument == L"--skinning") {
@@ -201,7 +231,6 @@ Options ParseOptions()
         throw;
     }
     LocalFree(arguments);
-    return options;
 }
 } // namespace
 void Trace(const std::string &message)
@@ -270,7 +299,7 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
     int exitCode = 0;
     try
     {
-        options = ParseOptions();
+        ParseOptions(options);
         if (!options.log.empty())
         {
             if (!options.log.parent_path().empty())
@@ -379,6 +408,14 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
     }
     catch (const std::exception &error)
     {
+        // Preserve parsed --frames/--log even when a later argument is invalid.
+        // Automated failure tests must return an error instead of opening a modal dialog.
+        if (!logFile.is_open() && !options.log.empty())
+        {
+            std::error_code ignored;
+            if (!options.log.parent_path().empty()) std::filesystem::create_directories(options.log.parent_path(), ignored);
+            logFile.open(options.log);
+        }
         Trace(std::string("ERROR: ") + error.what());
         exitCode = 1;
         if (!options.frames)

@@ -1,0 +1,10 @@
+{
+  "processPollIntervalMs": 1000,
+  "finishedUtc": "2026-10-18T09:24:29.6706306Z",
+  "startedUtc": "2026-10-18T08:47:31.6870040Z",
+  "snapshotVerifiedBeforeCollection": true,
+  "rejectedAttempts": 0,
+  "snapshotVerifiedAfterCollection": true,
+  "runtimeSnapshotSha256": "8b352649de1167d0e7dc9ae7edc769a4d4049ded69a571546b2d2ed341343af5",
+  "scriptSha256": "4624b3c7dc685b1e8f9c87a689aaf4334cf93bd312b7366ddeed0d9a0864355e"
+}

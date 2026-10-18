@@ -42,3 +42,21 @@ VS 2026、v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを使用
 10は[glTFスキニング対応ローダー](GltfSkinningLoading.md) → [基本22 VS](Direct3D12/22_VertexSkinning.md) → [基本23 Compute Cache](Direct3D12/23_ComputeSkinningCache.md)を前提に、動くSilver RobotをMS内で変形します。カメラ／ライト別のカリング、変形後の保守境界、1体／64体を比較します。[3方式の共通解説](GpuSkinning.md)と[検証・性能](SkinningVerification.md)を参照してください。Mesh Shader編は04〜11の16本になりました。
 
 11は[基本24 DQS](DualQuaternionSkinning.md)と[基本25 Compute Cache](DualQuaternionStages.md)に続き、DQSをMS内で実行します。LBSのAABBを流用せず、DQ正規化を考慮した球でカメラ／ライトを独立に可視判定します。[検証・実測](DualQuaternionStagesVerification.md)も参照してください。
+
+## バインドレス発展編（12〜15）
+
+[共通章](BindlessGraphics.md) → [Blenderアセット](Assets/BindlessGallery.md)から、材質、Mesh Shader、レイトレーシング、Hybridへ進みます。12〜15の8本に続き、16では同じHybridをRayQueryで実装します。
+
+| テーマ | Direct3D12 | Vulkan |
+|---|---|---|
+| 12 BindlessMaterials | [記事](Direct3D12/Advanced12_BindlessMaterials.md) | [記事](Vulkan/Advanced12_BindlessMaterials.md) |
+| 13 BindlessMeshShader | [記事](Direct3D12/Advanced13_BindlessMeshShader.md) | [記事](Vulkan/Advanced13_BindlessMeshShader.md) |
+| 14 BindlessRaytracing | [記事](Direct3D12/Advanced14_BindlessRaytracing.md) | [記事](Vulkan/Advanced14_BindlessRaytracing.md) |
+| 15 BindlessHybrid | [記事](Direct3D12/Advanced15_BindlessHybrid.md) | [記事](Vulkan/Advanced15_BindlessHybrid.md) |
+
+## インライン・レイトレーシング（発展16〜17）
+
+[共通解説](InlineRaytracing.md)と基本26・27から進みます。発展16は発展15のRayQuery版、発展17は発展09のTiled Deferredに選択した点光源の影を加えます。基本27＋発展17テーマ、両API88本です。
+
+- Bindless・Mesh Shader・RayQueryを接続する：[Direct3D12](Direct3D12/Advanced16_BindlessInlineHybrid.md)／[Vulkan](Vulkan/Advanced16_BindlessInlineHybrid.md)
+- Tiled Deferredの多数光源へレイによる影を加える：[Direct3D12](Direct3D12/Advanced17_MeshShaderTiledInlineShadows.md)／[Vulkan](Vulkan/Advanced17_MeshShaderTiledInlineShadows.md)

@@ -1,0 +1,15 @@
+{
+  "runs": 230,
+  "conditions": 46,
+  "measuredFrames": 276000,
+  "csvMetricsChecked": 7590,
+  "maximumCsvRoundingDeltaMs": 4.7999999999603915e-05,
+  "csvToleranceAbsoluteMs": 1e-05,
+  "csvToleranceRelative": 1e-05,
+  "runtimeSnapshotSha256": "8b352649de1167d0e7dc9ae7edc769a4d4049ded69a571546b2d2ed341343af5",
+  "archiveSha256": "7bf34b00e8e7a252efa37420b282a14c29d5a229150ae0e30b1aadc4e7a5d6bd",
+  "allFramesFiniteAndNonnegative": true,
+  "actualMaterialCountsMatch": true,
+  "allLogsClean": true,
+  "firstPassPreserved": true
+}

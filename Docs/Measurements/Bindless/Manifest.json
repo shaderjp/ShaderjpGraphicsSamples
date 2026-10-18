@@ -1,0 +1,13 @@
+{
+  "measurementStatus": "collected-with-guards",
+  "archive": "Frames.zip",
+  "sha256": "7bf34b00e8e7a252efa37420b282a14c29d5a229150ae0e30b1aadc4e7a5d6bd",
+  "runs": 230,
+  "conditions": 46,
+  "repeats": [
+    5
+  ],
+  "frameCount": 276000,
+  "runtimeSnapshotSha256": "8b352649de1167d0e7dc9ae7edc769a4d4049ded69a571546b2d2ed341343af5",
+  "collectionAudit": "CollectionAudit.json"
+}

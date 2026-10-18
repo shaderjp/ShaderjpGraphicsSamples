@@ -1,0 +1,48 @@
+{
+  "status": "reference-only",
+  "reason": "Concurrent builds changed executables during collection; concurrent GPU tests were also observed",
+  "changedExecutables": {
+    "Direct3D12_Advanced12_BindlessMaterials": {
+      "atStart": "08485cae8425a6015edba4dd4266bb89ad8ba294f1a1c5e68fb1e9909678b53a",
+      "atEnd": "138fa9b0919886a730d855b3b1d18cd4d98e37544a0ddf766093c9b90979a87a",
+      "modified": 1792303573.9946914
+    },
+    "Direct3D12_Advanced15_BindlessHybrid": {
+      "atStart": "22ec096da556ab3d8579ea8c56bd2d3e6a3c8bfda5077ee16fa77e85c5af1e55",
+      "atEnd": "5d5e4f272c9f3d381579fbe95dfafc7e07b63550916484e23d0e7a85fba801f2",
+      "modified": 1792303577.7190816
+    },
+    "Direct3D12_Advanced13_BindlessMeshShader": {
+      "atStart": "7ad2c08f6b9d049d2864d753767d2e4edc3ae1ee878a1b46d6e9dd811f76cff0",
+      "atEnd": "53a0cbdbc71a19d244008f490440071acc9befacb84e5b6ca7950cf4bf438c19",
+      "modified": 1792303574.3387713
+    },
+    "Vulkan_Advanced13_BindlessMeshShader": {
+      "atStart": "36b206c135fe63b9a41762d3e075fd0380a742f5f8a1452e26d2bcab04638af6",
+      "atEnd": "27da6a867e104948cde773d1bedac63af35863cf14d93eb7dc5653af7f1dc406",
+      "modified": 1792303584.5027828
+    },
+    "Vulkan_Advanced15_BindlessHybrid": {
+      "atStart": "36bd21448dcad3076def2f76b566473fe968953f2c1e58ef95eba6ff37ca5cae",
+      "atEnd": "481c00361fc08644e0bd88ad116a7fac7951597f5b8df7270263ed27ed1411ee",
+      "modified": 1792302789.1790383
+    },
+    "Vulkan_Advanced12_BindlessMaterials": {
+      "atStart": "bc84fd00b08590d3c5ac3c0d4621d029a9ffe2110b50f5b64b706670a00421d0",
+      "atEnd": "33c8bef6f40528b891e8e6f962f9511250e456ad26d8777b60912b1b1994d392",
+      "modified": 1792303583.4934092
+    },
+    "Vulkan_Advanced14_BindlessRaytracing": {
+      "atStart": "f9e7179bdd787445e4e824eb4280356f7b97b2c2a510b687ba5a1ce137aa9dd7",
+      "atEnd": "3c90e9a102045c46b9d931b8ff5f722c0fb6fc42a695c00c804e6eaea58b9af1",
+      "modified": 1792303586.111427
+    },
+    "Direct3D12_Advanced14_BindlessRaytracing": {
+      "atStart": "3b742dfb32001f094948319430090c220663a0c70ada6d62fc2011d855bdfdf8",
+      "atEnd": "8105caca899ecee6318b3969ca17b26562f151f2b2b2e44266188bc709d07dcd",
+      "modified": 1792303574.353771
+    }
+  },
+  "runs": 230,
+  "conditions": 46
+}

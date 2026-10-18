@@ -101,6 +101,12 @@ inline constexpr const char *GpuPassNames[] = {"shadow",
 inline constexpr size_t GpuPassCount = std::size(GpuPassNames);
 struct DeferredTiming
 {
+#ifdef INLINE_SAMPLE
+    double asBuildMs=0;
+    uint64_t accelerationStructureBytes=0, inlineSceneBytes=0;
+    bool sunRayQuery=true, inlineReflections=false;
+    uint32_t shadowPointLights=0;
+#endif
     std::array<double, GpuPassCount> milliseconds{};
     std::vector<std::array<double, GpuPassCount>> samples;
     std::filesystem::path output;
@@ -180,6 +186,13 @@ struct DeferredTiming
                     {"p95Ms", v[std::min(v.size() - 1, size_t(v.size() * .95))]}};
         }
         report["measuredFrames"] = samples.size();
+#ifdef INLINE_SAMPLE
+        report["inlineRaytracing"]={{"sunRayQuery",sunRayQuery},{"reflections",inlineReflections},{"shadowPointLights",shadowPointLights},{"asStartupMs",asBuildMs},{"accelerationStructuresCommittedBytes",accelerationStructureBytes},{"inlineSceneBufferBytes",inlineSceneBytes}};
+#ifdef LIGHT_CULLING
+        report["inlineRaytracing"]["shadowPointLightsRequested"]=shadowPointLights;
+        report["inlineRaytracing"]["shadowPointLights"]=std::min(shadowPointLights,pointLights);
+#endif
+#endif
         std::filesystem::create_directories(output.parent_path());
         std::ofstream(output) << report.dump(2);
         std::ofstream csv(output.parent_path() / (output.stem().string() + ".csv"));

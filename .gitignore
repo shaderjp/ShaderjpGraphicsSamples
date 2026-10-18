@@ -87,3 +87,4 @@ Testing/
 SourceArt/**/.generated/
 SourceArt/**/__pycache__/
 Tests/__pycache__/
+Tools/__pycache__/

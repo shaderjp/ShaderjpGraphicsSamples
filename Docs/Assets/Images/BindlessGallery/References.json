@@ -1,0 +1,77 @@
+{
+  "sourceSha256": "f54fb3ef4c46f3ee5a5238c9096d031594ea2ed456c826dbe44a46eb9cc2d001",
+  "blender": "5.2.1 LTS",
+  "buildHash": "9e2066aef7ef",
+  "shots": {
+    "Hero": {
+      "scene": "Standard",
+      "camera": "StandardHero",
+      "width": 1280,
+      "height": 720,
+      "samples": 64,
+      "device": "CPU",
+      "seed": 0,
+      "denoise": true,
+      "maxBounces": 8,
+      "display": "AgX Medium High Contrast",
+      "seconds": 10.789220500000283,
+      "pngSha256": "2174534d4a9f1c15036a040dcf03ba5a94fd67753eeaea6f434b3752e910b0ce"
+    },
+    "Materials": {
+      "scene": "Standard",
+      "camera": "Materials",
+      "width": 1280,
+      "height": 720,
+      "samples": 64,
+      "device": "CPU",
+      "seed": 0,
+      "denoise": true,
+      "maxBounces": 8,
+      "display": "AgX Medium High Contrast",
+      "seconds": 30.720858200000293,
+      "pngSha256": "ea6947aedd51a1b4a56d745529fc6d3ecb399661e24d9105e7fcea5c51895d54"
+    },
+    "Reflection": {
+      "scene": "Standard",
+      "camera": "Reflection",
+      "width": 1280,
+      "height": 720,
+      "samples": 64,
+      "device": "CPU",
+      "seed": 0,
+      "denoise": true,
+      "maxBounces": 8,
+      "display": "AgX Medium High Contrast",
+      "seconds": 18.342239399999926,
+      "pngSha256": "a0c251fb7dc64a7444a23fdd096eef652b86bbaaf20fb49581c54afe91286a96"
+    },
+    "Occlusion": {
+      "scene": "Standard",
+      "camera": "Occlusion",
+      "width": 1280,
+      "height": 720,
+      "samples": 64,
+      "device": "CPU",
+      "seed": 0,
+      "denoise": true,
+      "maxBounces": 8,
+      "display": "AgX Medium High Contrast",
+      "seconds": 22.01840429999993,
+      "pngSha256": "7076c939dd869c65e80ed313ed0684f022609a91f68c3761fb0dadf492b94f21"
+    },
+    "Stress": {
+      "scene": "Stress",
+      "camera": "StressHero",
+      "width": 1280,
+      "height": 720,
+      "samples": 64,
+      "device": "CPU",
+      "seed": 0,
+      "denoise": true,
+      "maxBounces": 8,
+      "display": "AgX Medium High Contrast",
+      "seconds": 15.842801599999802,
+      "pngSha256": "80bbebb7ed977cf5839a03531a64d41683380155517b509718a368d40d195651"
+    }
+  }
+}

@@ -338,3 +338,45 @@ MeshはDQS正規化を考慮した球をCPUで更新し、カメラ／ライト�
 全72 APIアプリ＋2 CPUライブラリをRestore・x64 Debug／Releaseでビルドし、SPIR-Vとfiltersを検証しました。全72アプリの両構成ライフサイクル、新DQS 6アプリの最終再実行、既存ローダー・スキニングCPU／GPU・09 ImGui、カメラ、Shader欠落も通過。正常Debug試験の検証エラー0件です。
 
 [共通DQS実行方式](DualQuaternionStages.md)、API別4記事と既存2記事、目次、1280×720の実GPU画像、Release 32条件の性能を更新しました。Computeがこのモデルの64体ではVertexより遅い結果や、TaskのCPU境界更新費用も省略せず記録しています。
+
+## バインドレス発展12〜15（2026-10-18）
+
+独立したBlender 5.2.1 LTS正本BindlessGalleryを先に制作・検証し、Direct3D12／Vulkanの発展12〜15、計8実行プロジェクトを追加しました。64形状、256材質、400枚の固有512×512 PNG、3プリセットと20秒の固定経路を収録しています。保存済み正本からの隔離再書出しはバイト一致、glTF Validatorのerror／warningは0件です。1280×720のCycles参考画像5枚と実GPU画像8枚を確認しました。
+
+この工程の既存72＋新規8アプリをRestore、x64 Debug／Releaseでビルドし、filters、496本のDXIL／SPIR-V、CPUローダー、全80本のライフサイクル、09 ImGuiを検証しました。新規8本は参照方式のHDR／Depth／MASK比較、独立したID／UV照合、GPU Drivenの空・全可視・端数、影・反射、実UI／Reset、容量超過・不正ID・Shader欠落も検査しています。正常Debug試験のValidationエラーは0件です。最終XML検査には並行工程の8本を含む88本が入っていますが、このページのGPU回帰対象は80本です。
+
+検証環境はWindows 11 Pro 10.0.26300、Intel Core i9-13900F、RTX 4070、driver 32.0.16.1088、Visual Studio 2026／v145／MSVC 19.51.36257、Windows SDK 10.0.26100.0、Agility 1.619.6、DXC 1.9.2609.5、Vulkan SDK 1.4.341.1／付属DXC 1.9.0.5180、C++20／HLSL 2021／SM6.6です。未対応GPU実機での起動拒否は未実施です。
+
+初回46条件×5反復の性能データは、並行GPU試験・ビルドとの重複を最終監査で確認したため参考値として保存しました。初回時点ではユーザー指定により再測定を保留しました。再測定の結果は次節に記載します。固定ランタイムと試行前後のハッシュ確認を用いた再測定手順を用意しています。[共通章](BindlessGraphics.md)、[アセット制作](Assets/BindlessGallery.md)、[検証記録](BindlessVerification.md)、[機械可読の結果](BindlessValidation.json)を参照してください。
+
+## 基本26・27／発展16・17：インラインRT（2026-10-18）
+
+Direct3D12／Vulkanへ独立した8実行プロジェクトを追加し、基本27テーマ＋発展17テーマ、計88アプリになりました。基本26はDeferred ComputeへRayQueryの太陽の影を、27はScene Bufferから復元する1バウンス反射を接続します。発展16はBindlessGalleryの既存15と同じ照明・反射合成をComputeへ移し、RT Pipeline／SBTを作りません。発展17はWorkshopのMesh Shader Tiled Deferredで、安定したグローバルLight ID順の点光源へ影を付けます。
+
+全88アプリ＋2 CPUライブラリのNuGet Restore・x64 Debug／Releaseビルド、XML／filtersの一意な対応、DXIL／SPIR-VとRayQuery／RT Pipelineの機能宣言、CPU／Shaderレイアウトを検査しました。C++／HLSLの警告・エラーは0件。既存CPUローダー・Workshop・Meshlet・Bindless CPU試験、全88アプリの両構成ライフサイクル、既存Deferred・RT・Mesh Shader・Bindless・09 ImGuiの両構成回帰も通過しました。正常Debug実行は検証レイヤー有効・検証エラー0件です。
+
+新8アプリでは既知形状の自己交差・MASKの穴と裏面・回転／移動Instance・光源より先の遮蔽物・画面外反射・環境Miss・反射先の太陽の影、全ライト／Tiled、影付き0／8／全灯、容量超過、空タイル、ライト移動、UI／Reset、641×479を検査しました。基本26 Shadow Mapと18、27の反射OFFと26はG-bufferまたはHDRが完全一致。発展16と15、発展17の全ライト／TiledはHDRの絶対1e-3＋相対2e-3以内です。密集GPU Drivenの同深度面とFP16の加算順序による差は、比較対象の条件と数値を[専用検証記録](InlineRaytracingVerification.md)に保存しました。
+
+実測環境はWindows 11 Pro 10.0.26300、Intel Core i9-13900F、NVIDIA GeForce RTX 4070、driver 32.0.16.1088、Visual Studio 2026 Community 18.10.12201.205、v145／MSVC 19.51.36257（tool directory 14.51.36231）、Windows SDK 10.0.26100.0です。Agility 1.619.6、D3D12 DXC 1.9.2609.5（01b62ad47）、Vulkan SDK 1.4.341.1／付属DXC 1.9.0.5180（e35541826、DLL表示1.10）、SPIR-V Tools 2026.1（fbe4f3ad）、C++20／HLSL 2021／SM6.6／target Vulkan 1.3を使用しました。
+
+Releaseは1280×720・UI／VSync無効、60フレーム準備後の固定経路1,200フレームを5反復しました。Inlineの8条件×両API、計80反復・96,000測定フレームについて、実行前後のバイナリ／Shaderハッシュ、GPU時間、AS初期構築、メモリの範囲を記録しています。反復間の変動を含むため、発展15／16の平均値だけで優劣を確定しません。[実測値・環境](InlineRaytracingPerformance.json)と[元JSON／CSV](Measurements/InlineRaytracing)を保存しました。
+
+日本語のAPI別8記事、[共通解説](InlineRaytracing.md)、README・目次、1280×720の実GPU比較画像38枚を追加・確認しました。[数値検証と画像のSHA-256](InlineRaytracingValidation.json)から結果を追えます。
+
+## バインドレス比較の再測定（2026-10-18）
+
+発展12〜15の8本をReleaseで更新し、実行ファイル・Shader・アセット・DLLを固定コピーして、両APIの46条件×5反復＝230試行を再測定しました。17:47〜18:24（日本時間）、VSync／UI OFF、60フレームのウォームアップと固定経路1,200フレーム、合計276,000測定フレームです。他サンプル・コンパイラ・MSBuildを1秒間隔で監視し、他工程のログ更新も確認しました。重複検出は0件、試行前後のEXEと収集前後の全ファイルのハッシュは一致しました。
+
+JSON／CSV／ログ／Snapshot／収集監査を保存し、7,590項目の集計値とCSV、フレーム連番、有限・非負値、実使用材質数を照合しました。比較表と3グラフは再測定分へ更新し、反復間の最小〜最大も表示しています。初回参考データはFirstPassへ保持しています。
+
+Vulkanの発展13／resourcesではGPU DrivenでDispatchが513→5、CPU記録中央値が0.2356→0.1076 msとなり、GPU合計は3.4632→4.6004 msへ増えました。発展12の512配置・64材質ではバインド件数は減りますが、CPU／GPU時間の反復間の幅が重なります。速度向上を一律の結論にせず、[比較表・グラフと条件](BindlessVerification.md)、[集計JSON](BindlessPerformance.json)、[収集監査](Measurements/Bindless/CollectionAudit.json)、[データ検査](Measurements/Bindless/DataChecks.json)に結果を記載しました。
+
+## インライン・レイトレーシング（2026-10-18）
+
+基本26／27と発展16／17を両APIへ追加しました。RayQueryによる太陽の影・1バウンス反射、BindlessGalleryのInline Hybrid、Mesh Shader／Tiled照明の点光源の影を比較できます。日本語のAPI別8記事と共通解説、実GPU画像38枚、80反復・96,000測定フレームのJSON／CSVを収録しています。
+
+全88 APIアプリ＋2 CPUライブラリのRestore・x64 Debug／Releaseビルド、XML／filters、DXIL／SPIR-Vと配列Stride／定数Offset、CPUローダー、全88本の両構成ライフサイクルを検証しました。専用GPU試験は両API・両構成で通過し、既存Deferred、RT Pipeline、Mesh Shader、Bindless、09 ImGuiの回帰も成功しました。正常Debug試験のValidationエラーは0件です。MASK・裏面・自己交差・画面外・環境Miss・反射先の影、Tiledの空／容量超過／Stress、実UI／Reset、641×479も確認しています。
+
+検証環境はWindows 11 Pro 10.0.26300、Intel Core i9-13900F、RTX 4070／driver 32.0.16.1088、Visual Studio 2026 Community 18.10.12201.205、MSVC 19.51.36257／v145、Windows SDK 10.0.26100.0、Agility 1.619.6、DXC 1.9.2609.5（01b62ad47）、Vulkan SDK 1.4.341.1／付属DXC 1.9.0.5180（e35541826）、SPIRV-Tools v2026.1（fbe4f3ad）、C++20／HLSL 2021／SM6.6です。
+
+HDRの許容差と密集GPU Drivenの境界条件、FP16のReset差、反復間の幅とメモリ集計範囲は[検証記録](InlineRaytracingVerification.md)へ記載しました。[共通解説](InlineRaytracing.md)、[数値検証と画像ハッシュ](InlineRaytracingValidation.json)、[性能データ](InlineRaytracingPerformance.json)を参照してください。

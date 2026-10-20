@@ -63,3 +63,7 @@ Agility SDK 1.619.6、D3D12 DXC `dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) 
 3記事を追加し、Astro／Pagefindビルドに成功しました。1440×1000と390×844で本文・画像・見出しを確認し、横方向のはみ出しと画像欠落はありませんでした。ここまでの結果はPush前のローカル検証で得たものです。
 
 両APIの5秒動画は[動画記録](CharacterControllerVideos.json)にSHA-256と符号化条件を記録しました。実GPUの連続300フレームを使用しています。
+
+## 公開サンプルの参照
+
+実装・画像・動画は[コミット`f48de6a`](https://github.com/shaderjp/ShaderjpGraphicsSamples/tree/f48de6a62e17425b73961ce38339df90f840486b/)を参照できます。検証環境の基点コミットと作業ツリー情報は、公開前の検証時点の記録として保持しています。

@@ -276,5 +276,7 @@
       }
     ],
     "scope": "Browser playback and article/media validation; no new C++ or GPU regression run required for this documentation-only update"
-  }
+  },
+  "publishedSampleCommit": "f48de6a62e17425b73961ce38339df90f840486b",
+  "publishedSampleUrl": "https://github.com/shaderjp/ShaderjpGraphicsSamples/tree/f48de6a62e17425b73961ce38339df90f840486b"
 }

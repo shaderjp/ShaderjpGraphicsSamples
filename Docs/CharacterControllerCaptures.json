@@ -1,8 +1,8 @@
 {
   "date": "2026-10-21",
   "repository": "https://github.com/shaderjp/ShaderjpGraphicsSamples",
-  "publicationStatus": "local-unpublished",
-  "commit": null,
+  "publicationStatus": "published",
+  "commit": "f48de6a62e17425b73961ce38339df90f840486b",
   "baseCommit": "54529ac08cfb4da75e9aa9f51c1bc7cb617d252d",
   "images": [
     {

@@ -193,3 +193,7 @@ Release版を自動操作し、実GPUの300フレームを保存して、Windows
 [MicrosoftのSink Writer解説](https://learn.microsoft.com/en-us/windows/win32/medfound/using-the-sink-writer)も参照してください。
 
 [Direct3D12の操作動画](Assets/Videos/Direct3D12_28_CharacterController.mp4)／[Vulkanの操作動画](Assets/Videos/Vulkan_28_CharacterController.mp4)
+
+## 公開サンプルの参照
+
+実装・画像・動画は[コミット`f48de6a`](https://github.com/shaderjp/ShaderjpGraphicsSamples/tree/f48de6a62e17425b73961ce38339df90f840486b/)を参照できます。検証環境の基点コミットと作業ツリー情報は、公開前の検証時点の記録として保持しています。

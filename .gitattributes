@@ -54,3 +54,11 @@
 /Docs/Measurements/InlineRaytracing/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 # CollectionAudit records this script's SHA-256 too.
 /Tools/MeasureBindless.ps1 -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve CharacterController captures, manifests and hashed CPU regression sources.
+/Docs/CharacterController*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Measurements/CharacterController/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Direct3D12/Images/28_CharacterController*.png -text
+/Docs/Vulkan/Images/28_CharacterController*.png -text
+/Samples/Shared/CharacterController.h text eol=lf
+/Tests/CharacterControllerTests.cpp text eol=lf

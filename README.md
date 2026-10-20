@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編27テーマ＋発展編17テーマ、両APIで計88本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編28テーマ＋発展編17テーマ、両APIで計90本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -77,6 +77,9 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | DQSをComputeでキャッシュしShadow／Colorへ共有 | [25 DualQuaternionComputeCache](Docs/Direct3D12/25_DualQuaternionComputeCache.md) | [25 DualQuaternionComputeCache](Docs/Vulkan/25_DualQuaternionComputeCache.md) |
 | Deferred Compute・RayQueryによる太陽の影 | [26 InlineRaytracingShadows](Docs/Direct3D12/26_InlineRaytracingShadows.md) | [26 InlineRaytracingShadows](Docs/Vulkan/26_InlineRaytracingShadows.md) |
 | Deferred・RayQueryによる1バウンス反射 | [27 InlineRaytracingReflections](Docs/Direct3D12/27_InlineRaytracingReflections.md) | [27 InlineRaytracingReflections](Docs/Vulkan/27_InlineRaytracingReflections.md) |
+| XInput／WASD・三人称移動・ジャンプ・姿勢ブレンド | [28 CharacterController](Docs/Direct3D12/28_CharacterController.md) | [28 CharacterController](Docs/Vulkan/28_CharacterController.md) |
+
+[キャラクター操作の共通解説](Docs/CharacterController.md)では、入力・移動・ジャンプ・ローカル姿勢ブレンドを扱います。
 
 ## 発展編サンプル一覧
 
@@ -111,6 +114,10 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 Visual Studioでは各APIのプロジェクトをDirect3D12／Vulkanのソリューションフォルダに配置します。第13回以降は**WASDで移動、Q/Eで上下、右ドラッグで視線回転、Shiftで加速、Rで固定カメラへ復帰**できます。ImGui操作中はカメラ入力を抑えます。固定カメラ・経路・Resetとの関係と検証手順は[カメラ操作](Docs/CameraNavigation.md)を参照してください。
 
 全サンプルの初期描画領域（ウィンドウのクライアント領域）は**1280×720ピクセル**です。`Common/Application.cpp`の`DefaultClientWidth`／`DefaultClientHeight`で揃えています。3Dの投影行列は実際の幅と高さからアスペクト比を求め、リサイズ時も反映します。初期の記事の800×600画像は維持し、新しい記事画像は1280×720で撮影しています。発展編も同じカメラの移動・回転・Resetに対応します。
+
+第28回ではWASDをキャラクター移動に使い、Spaceでジャンプ、右ドラッグで三人称カメラを回転します。XInputパッドにも対応します。
+
+ユーザー提供の1280×720の操作録画：[Direct3D12版](<Docs/Assets/Videos/Shader.jp Direct3D12 28_CharacterController 2026-10-21 01-05-16.mp4>)（約23.3秒）／[Vulkan版](<Docs/Assets/Videos/Shader.jp Vulkan 28_CharacterController 2026-10-21 01-05-58.mp4>)（約24.5秒）。[動画一覧と出典](Docs/Assets/Videos/README.md#第28回操作キャラクター)も参照できます。
 
 ## 描画例
 

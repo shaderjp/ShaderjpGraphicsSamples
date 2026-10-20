@@ -17,7 +17,7 @@ struct Options
 {
     std::filesystem::path model, texture, screenshot, log;
     uint32_t frames = 0;
-    bool testWindow = false, testCamera = false;
+    bool testWindow = false, testCamera = false, testCharacter = false;
     std::wstring shading; // Sample 07/08 choose their supported display modes.
     bool rotateLight = false;
     bool testUi = false; // Sample 09 exercises actual ImGui widgets through queued input.

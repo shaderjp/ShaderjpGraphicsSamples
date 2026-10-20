@@ -1,0 +1,42 @@
+{
+  "verificationDateJapan": "2026-10-21",
+  "baseCommit": "54529ac08cfb4da75e9aa9f51c1bc7cb617d252d",
+  "workingTreeChanges": true,
+  "os": {
+    "Caption": "Microsoft Windows 11 Pro",
+    "Version": "10.0.26300"
+  },
+  "visualStudio": "18.10.12201.205",
+  "msvcToolset": "14.51.36231",
+  "compilerVersion": "19.51.36257.0",
+  "windowsSdk": "10.0.26100.0",
+  "vulkanSdk": "1.4.341.1",
+  "gpu": [
+    {
+      "Name": "NVIDIA GeForce RTX 4070",
+      "DriverVersion": "32.0.16.1088"
+    }
+  ],
+  "agilitySdk": "1.619.6",
+  "d3dDxc": "dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47)",
+  "vulkanDxc": "dxcompiler.dll: 1.10(5180-e3554182)(1.9.0.5180) - 1.9.0.5180 (e35541826)",
+  "shaderModel": "6.6",
+  "hlsl": "2021",
+  "vulkanTarget": "1.3",
+  "xinputSlotResults": [
+    1167,
+    1167,
+    1167,
+    1167
+  ],
+  "physicalGamepadValidation": "XInput slot 0 connection observed; physical stick/button and unplug/replug tests not manually exercised",
+  "xinputLaterObservation": {
+    "slotResults": [
+      0,
+      1167,
+      1167,
+      1167
+    ],
+    "note": "Slot 0 connection was observed later in the validation session. Stick/button actions and deliberate disconnect/reconnect were not manually exercised."
+  }
+}

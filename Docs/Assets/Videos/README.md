@@ -1,4 +1,4 @@
-# GPUスキニングの実行動画
+# GPUスキニングとキャラクター操作の実行動画
 
 2026-10-15（日本時間）に録画された8本です。Direct3D12／Vulkanの3方式すべてで1体の歩行（UAL_Walk）を掲載し、Mesh Shaderは両APIの64体表示（UAL_Run／Jog）も用意しました。すべて1280×720です。**プレビュー画像をクリックするとMP4を開きます。**
 
@@ -88,3 +88,20 @@ AS／TaskとAnimated frustumを有効にした64体のJogです。位相をず�
 動画ではモーション、キャラクター別の位相、操作パネルとShadowの追従を確認できます。キャッシュを複数パスが実際に共有すること、Barrierの妥当性、VS／CS／MSの数値一致は、コードと[GPU読戻し検証](../../SkinningVerification.md)で確認します。録画中のUIに表示されたCPU時間は、条件を固定したReleaseベンチマークの代わりには使いません。
 
 モデルとモーションの出所・ライセンスは[Silver Robot Animated](../SilverRobotAnimated.md)、仕組みは[glTFローダー](../../GltfSkinningLoading.md)と[GPUスキニング共通章](../../GpuSkinning.md)を参照してください。
+
+## 第28回：操作キャラクター
+
+### ユーザー提供の操作録画（2026-10-21）
+
+| API | 元の録画ファイル | 長さ | 容量 |
+|---|---|---:|---:|
+| Direct3D12 | [操作録画](<Shader.jp Direct3D12 28_CharacterController 2026-10-21 01-05-16.mp4>) | 約23.3秒 | 11.67 MiB |
+| Vulkan | [操作録画](<Shader.jp Vulkan 28_CharacterController 2026-10-21 01-05-58.mp4>) | 約24.5秒 | 10.23 MiB |
+
+どちらも1280×720、H.264の動画とAACの音声トラックを含むMP4です。録画のフレーム間隔は一定ではありません。元ファイル名とバイト列を保持し、Shader.jpの記事にも同じ動画を配置しています。[第28回の動画記録](../../CharacterControllerVideos.json)に出典、録画日時、容量、SHA-256、形式を記録しています。
+
+解説：[共通章](../../CharacterController.md#ユーザー録画の操作動画)／[Direct3D12](../../Direct3D12/28_CharacterController.md#操作動画)／[Vulkan](../../Vulkan/28_CharacterController.md#操作動画)
+
+### 固定入力による再現動画
+
+[Direct3D12](Direct3D12_28_CharacterController.mp4)／[Vulkan](Vulkan_28_CharacterController.mp4)：300フレーム、1280×720、60 fps、5秒。固定刻みの自動入力で歩行・走行・回転・ジャンプ・着地・Resetを再現します。`Tools/CaptureCharacterVideo.ps1`で再生成できます。

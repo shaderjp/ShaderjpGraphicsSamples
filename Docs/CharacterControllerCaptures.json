@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-21",
+  "repository": "https://github.com/shaderjp/ShaderjpGraphicsSamples",
+  "publicationStatus": "local-unpublished",
+  "commit": null,
+  "baseCommit": "54529ac08cfb4da75e9aa9f51c1bc7cb617d252d",
+  "images": [
+    {
+      "file": "direct3d12-28_charactercontroller-baseline.png",
+      "source": "Docs/Direct3D12/Images/28_CharacterController-baseline.png",
+      "sha256": "65ef03c1364adc0538f162efad07a8590844dd877f17ee48805301190328b8d0",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "direct3d12-28_charactercontroller-jump.png",
+      "source": "Docs/Direct3D12/Images/28_CharacterController-jump.png",
+      "sha256": "c111728ede45ecdb426af7fda420da727c8a5ba479127b170d56b7d3999b8f36",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "direct3d12-28_charactercontroller-land.png",
+      "source": "Docs/Direct3D12/Images/28_CharacterController-land.png",
+      "sha256": "2c07750b1ff78b6cc5e07c0b51ab22d1c8b8ed15f6be0453c67b8a3661d7b094",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "direct3d12-28_charactercontroller-reset.png",
+      "source": "Docs/Direct3D12/Images/28_CharacterController-reset.png",
+      "sha256": "65ef03c1364adc0538f162efad07a8590844dd877f17ee48805301190328b8d0",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "direct3d12-28_charactercontroller-run.png",
+      "source": "Docs/Direct3D12/Images/28_CharacterController-run.png",
+      "sha256": "0910ffe8c1a2e04eb10e0414962255c2be187c40aeda484720312cc0d57eec77",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "direct3d12-28_charactercontroller-turn.png",
+      "source": "Docs/Direct3D12/Images/28_CharacterController-turn.png",
+      "sha256": "a56d8a8576beaaa96108adb138c460239a2f47cf0c7e2267a4a4e1d542af0270",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "direct3d12-28_charactercontroller-walk.png",
+      "source": "Docs/Direct3D12/Images/28_CharacterController-walk.png",
+      "sha256": "b3d1b81f09835d64a6da5b8bdab045040e9aab2f6546660dd76c3cd8f2aa0c51",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "direct3d12-28_charactercontroller.png",
+      "source": "Docs/Direct3D12/Images/28_CharacterController.png",
+      "sha256": "70751d8a4c97836acd3de113e06adf2eb51c1077b63a401b25175c00bb6c295d",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "vulkan-28_charactercontroller-baseline.png",
+      "source": "Docs/Vulkan/Images/28_CharacterController-baseline.png",
+      "sha256": "32173a503ddcd2d6a73ce413e199614746c4223420c4872dcb6107c89378104c",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "vulkan-28_charactercontroller-jump.png",
+      "source": "Docs/Vulkan/Images/28_CharacterController-jump.png",
+      "sha256": "4606b16286fa4fc428770fb14e4d8bbbc84e4fc51f31fb1c88d711c201d89b65",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "vulkan-28_charactercontroller-land.png",
+      "source": "Docs/Vulkan/Images/28_CharacterController-land.png",
+      "sha256": "7f30b8e12227d4357f78129b7804e5870807a90cde8109eb2caa3a77a3ae8f7b",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "vulkan-28_charactercontroller-reset.png",
+      "source": "Docs/Vulkan/Images/28_CharacterController-reset.png",
+      "sha256": "32173a503ddcd2d6a73ce413e199614746c4223420c4872dcb6107c89378104c",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "vulkan-28_charactercontroller-run.png",
+      "source": "Docs/Vulkan/Images/28_CharacterController-run.png",
+      "sha256": "9e13e4433664d1b4e51900a4b33fd184e4511557b979a3c3516b1defd25870f1",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "vulkan-28_charactercontroller-turn.png",
+      "source": "Docs/Vulkan/Images/28_CharacterController-turn.png",
+      "sha256": "c4c29bb6e0260e28e9612b4da96773ce1c797aa0fa11771d2316800f239098db",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "vulkan-28_charactercontroller-walk.png",
+      "source": "Docs/Vulkan/Images/28_CharacterController-walk.png",
+      "sha256": "e72843fefe18ff2602a4d033043091173a5690fc90c56dc34fd7fd8cc7707d18",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    },
+    {
+      "file": "vulkan-28_charactercontroller.png",
+      "source": "Docs/Vulkan/Images/28_CharacterController.png",
+      "sha256": "aca51979e27a0024eb598eefbde0e5c76e626e8edaaa2768cba26ed5c36baa10",
+      "width": 1280,
+      "height": 720,
+      "processing": "Original GPU capture, bytes preserved",
+      "license": "MIT; Quaternius motions CC0-1.0"
+    }
+  ]
+}

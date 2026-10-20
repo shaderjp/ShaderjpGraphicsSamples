@@ -84,6 +84,7 @@ void ParseOptions(Options &options)
                 continue;
             }
             if (argument == L"--test-camera") { options.testCamera = true; continue; }
+            if (argument == L"--test-character") { options.testCharacter = true; continue; }
             if (argument == L"--pause-animation") { options.pauseAnimation = true; continue; }
             if (argument == L"--test-root-motion") { options.testRootMotion = options.testUi = true; continue; }
             if (argument == L"--test-dqs") { options.testDqs = options.testUi = true; continue; }

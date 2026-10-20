@@ -1,0 +1,280 @@
+{
+  "date": "2026-10-21",
+  "environment": {
+    "verificationDateJapan": "2026-10-21",
+    "baseCommit": "54529ac08cfb4da75e9aa9f51c1bc7cb617d252d",
+    "workingTreeChanges": true,
+    "os": {
+      "Caption": "Microsoft Windows 11 Pro",
+      "Version": "10.0.26300"
+    },
+    "visualStudio": "18.10.12201.205",
+    "msvcToolset": "14.51.36231",
+    "compilerVersion": "19.51.36257.0",
+    "windowsSdk": "10.0.26100.0",
+    "vulkanSdk": "1.4.341.1",
+    "gpu": [
+      {
+        "Name": "NVIDIA GeForce RTX 4070",
+        "DriverVersion": "32.0.16.1088"
+      }
+    ],
+    "agilitySdk": "1.619.6",
+    "d3dDxc": "dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47)",
+    "vulkanDxc": "dxcompiler.dll: 1.10(5180-e3554182)(1.9.0.5180) - 1.9.0.5180 (e35541826)",
+    "shaderModel": "6.6",
+    "hlsl": "2021",
+    "vulkanTarget": "1.3",
+    "xinputSlotResults": [
+      1167,
+      1167,
+      1167,
+      1167
+    ],
+    "physicalGamepadValidation": "XInput slot 0 connection observed; physical stick/button and unplug/replug tests not manually exercised",
+    "xinputLaterObservation": {
+      "slotResults": [
+        0,
+        1167,
+        1167,
+        1167
+      ],
+      "note": "Slot 0 connection was observed later in the validation session. Stick/button actions and deliberate disconnect/reconnect were not manually exercised."
+    }
+  },
+  "apiApplications": 90,
+  "lifecycleRuns": 180,
+  "cpu": "PASS",
+  "gpu": [
+    {
+      "physicalGamepad": "Not exercised by deterministic input test",
+      "validationErrors": 0,
+      "executableSha256": "2bd390254a1d6eb9122c015142c4568c0caf54b4aa222d3d92eb5b90d5edcef6",
+      "resetDifferentPixels": 0,
+      "api": "Direct3D12",
+      "configuration": "Debug",
+      "peakMetres": 1.275306224822998,
+      "frames": 300,
+      "changedPixels": {
+        "land": 658280,
+        "walk": 73411,
+        "turn": 637247,
+        "run": 110342,
+        "jump": 660127
+      }
+    },
+    {
+      "physicalGamepad": "Not exercised by deterministic input test",
+      "validationErrors": 0,
+      "executableSha256": "cb6e0f4baa45a77fa81d6067799ee30e9625312a975b11e9878661fd83dd4bb8",
+      "resetDifferentPixels": 0,
+      "api": "Vulkan",
+      "configuration": "Debug",
+      "peakMetres": 1.275306224822998,
+      "frames": 300,
+      "changedPixels": {
+        "land": 658280,
+        "walk": 73412,
+        "turn": 637247,
+        "run": 110344,
+        "jump": 660126
+      }
+    },
+    {
+      "physicalGamepad": "Not exercised by deterministic input test",
+      "validationErrors": 0,
+      "executableSha256": "45b36de3dff7947e89d2f56901228e242823fea2aebd50caeef5db19f97e5204",
+      "resetDifferentPixels": 0,
+      "api": "Direct3D12",
+      "configuration": "Release",
+      "peakMetres": 1.275306224822998,
+      "frames": 300,
+      "changedPixels": {
+        "land": 658281,
+        "walk": 73410,
+        "turn": 637246,
+        "run": 110337,
+        "jump": 660128
+      }
+    },
+    {
+      "physicalGamepad": "Not exercised by deterministic input test",
+      "validationErrors": 0,
+      "executableSha256": "dc73dfe0547967542f33d3569bcd38144b2e0673bac43e9f8cdd2d38941028c4",
+      "resetDifferentPixels": 0,
+      "api": "Vulkan",
+      "configuration": "Release",
+      "peakMetres": 1.275306224822998,
+      "frames": 300,
+      "changedPixels": {
+        "land": 658280,
+        "walk": 73412,
+        "turn": 637247,
+        "run": 110344,
+        "jump": 660126
+      }
+    }
+  ],
+  "simulationTracesEqual": true,
+  "existingSkinning": "Full LBS VS/CS/MS clip, root motion, culling and UI suite: Debug/Release PASS",
+  "cameraTopics": [
+    "13_ShadowMap",
+    "22_VertexSkinning"
+  ],
+  "imgui": "09: Debug/Release PASS",
+  "videos": [
+    {
+      "api": "Direct3D12",
+      "source": "Docs/Assets/Videos/Direct3D12_28_CharacterController.mp4",
+      "website": "/media/character-controller/direct3d12-28-character-controller.mp4",
+      "sha256": "a3b6e755c31797d7d572e2976e86e2d11aa6a67c8013426cb408e6ef52899cad",
+      "frames": 300,
+      "fps": 60,
+      "seconds": 5,
+      "width": 1280,
+      "height": 720,
+      "codec": "H.264",
+      "input": "--test-character, fixed 1/60 second simulation",
+      "encoder": "Windows SDK Media Foundation H.264, BT.709 NV12",
+      "kind": "deterministic-test",
+      "bytes": 3501998,
+      "processing": "Generated fixed-step capture; original encoded MP4 bytes preserved.",
+      "assetLicense": "SilverRobot mesh/rig: MIT; Quaternius motions: CC0-1.0"
+    },
+    {
+      "api": "Vulkan",
+      "source": "Docs/Assets/Videos/Vulkan_28_CharacterController.mp4",
+      "website": "/media/character-controller/vulkan-28-character-controller.mp4",
+      "sha256": "c5c539c05039b6d8933e0986f892ed5e51bf3b7442ed46d29422a75137aecad2",
+      "frames": 300,
+      "fps": 60,
+      "seconds": 5,
+      "width": 1280,
+      "height": 720,
+      "codec": "H.264",
+      "input": "--test-character, fixed 1/60 second simulation",
+      "encoder": "Windows SDK Media Foundation H.264, BT.709 NV12",
+      "kind": "deterministic-test",
+      "bytes": 3495641,
+      "processing": "Generated fixed-step capture; original encoded MP4 bytes preserved.",
+      "assetLicense": "SilverRobot mesh/rig: MIT; Quaternius motions: CC0-1.0"
+    },
+    {
+      "kind": "user-recording",
+      "api": "Direct3D12",
+      "source": "Docs/Assets/Videos/Shader.jp Direct3D12 28_CharacterController 2026-10-21 01-05-16.mp4",
+      "originalFileName": "Shader.jp Direct3D12 28_CharacterController 2026-10-21 01-05-16.mp4",
+      "recordedAtFromFileName": "2026-10-21T01:05:16+09:00",
+      "providedBy": "User",
+      "website": "/media/character-controller/direct3d12-28-character-controller-recording.mp4",
+      "sha256": "96d77be68d28f84e6da48f7982a8682a26d03c1daafbac2c864f570aeaa55799",
+      "bytes": 12237974,
+      "width": 1280,
+      "height": 720,
+      "frames": 644,
+      "seconds": 23.251167,
+      "durationBasis": "Chromium HTMLVideoElement.duration; MP4 movie and track durations retained separately",
+      "containerSeconds": 23.1893125,
+      "videoTrackSeconds": 23.184466666666665,
+      "frameRateMode": "variable",
+      "averageFps": 27.77721865501902,
+      "codec": "H.264/AVC (avc1)",
+      "audioCodec": "AAC (mp4a)",
+      "input": "User-operated sample recording; the video does not identify which input device generated each action",
+      "processing": "Original MP4 bytes and source filename preserved; website copy has the same SHA-256",
+      "assetLicense": "SilverRobot mesh/rig: MIT; Quaternius motions: CC0-1.0",
+      "recordingPermission": "User provided this recording for documentation/article use; no separate recording license was specified",
+      "buildConfiguration": null,
+      "executableSha256": null
+    },
+    {
+      "kind": "user-recording",
+      "api": "Vulkan",
+      "source": "Docs/Assets/Videos/Shader.jp Vulkan 28_CharacterController 2026-10-21 01-05-58.mp4",
+      "originalFileName": "Shader.jp Vulkan 28_CharacterController 2026-10-21 01-05-58.mp4",
+      "recordedAtFromFileName": "2026-10-21T01:05:58+09:00",
+      "providedBy": "User",
+      "website": "/media/character-controller/vulkan-28-character-controller-recording.mp4",
+      "sha256": "384826489d09663851996e1e3991b4f85b5cef137bbc7b972e505a0607f26efd",
+      "bytes": 10724304,
+      "width": 1280,
+      "height": 720,
+      "frames": 679,
+      "seconds": 24.5012,
+      "durationBasis": "Chromium HTMLVideoElement.duration; MP4 movie and track durations retained separately",
+      "containerSeconds": 24.447979166666666,
+      "videoTrackSeconds": 24.4345,
+      "frameRateMode": "variable",
+      "averageFps": 27.78857762589781,
+      "codec": "H.264/AVC (avc1)",
+      "audioCodec": "AAC (mp4a)",
+      "input": "User-operated sample recording; the video does not identify which input device generated each action",
+      "processing": "Original MP4 bytes and source filename preserved; website copy has the same SHA-256",
+      "assetLicense": "SilverRobot mesh/rig: MIT; Quaternius motions: CC0-1.0",
+      "recordingPermission": "User provided this recording for documentation/article use; no separate recording license was specified",
+      "buildConfiguration": null,
+      "executableSha256": null
+    }
+  ],
+  "physicalGamepad": "User reported inverted left-stick horizontal movement. Post-fix physical controls/unplug/replug were not manually exercised by the agent.",
+  "logs": {
+    "path": "Measurements/CharacterController/ValidationLogs.zip",
+    "sha256": "13cb72385fcdbb62d4b26756862742dc7faa87a452feab94b45a4e9b4d4a270a",
+    "files": 231
+  },
+  "horizontalDirectionFix": {
+    "verifiedAt": "2026-10-21T01:04:58+09:00",
+    "cause": "The camera-right basis had the opposite sign from XMMatrixLookAtLH.",
+    "rightBasis": "(-cos(cameraYaw), 0, sin(cameraYaw))",
+    "cpu": {
+      "beforeFix": "FAIL: wrong camera-space left-stick direction",
+      "afterFix": "PASS",
+      "directions": "XInput LX -32768/-16000/16000/32767 and Win32 A/D",
+      "yawCount": 5,
+      "pitchCount": 3,
+      "totalCases": 90,
+      "oracle": "Velocity transformed by the actual XMMatrixLookAtLH camera View matrix"
+    },
+    "build": "Full solution x64 Debug/Release PASS; XML/filters validation PASS",
+    "gpu": "Both APIs and configurations: existing deterministic 300-frame test and lifecycle PASS; validation errors 0, exact Reset RGB",
+    "gpuTestScope": "The horizontal direction regression uses CPU input decoding and the actual View matrix. The GPU script exercises forward movement, orbit, jump, landing and Reset.",
+    "baselineRegressionScope": "The 180 lifecycle runs and existing skinning/camera/ImGui suites above were completed before this correction. Post-fix GPU reruns cover sample 28 only.",
+    "sourceSha256": {
+      "Samples/Shared/CharacterController.h": "1c2d45083d38f9eed31a6f532fee260d785816768939bb14e8c5f8a450731a33",
+      "Tests/CharacterControllerTests.cpp": "471e76312225caa3d0d5f2f41b91e6cb63b9107ed27e14ac4da1f4e623d2a46c"
+    }
+  },
+  "userRecordingReview": {
+    "dateJapan": "2026-10-21",
+    "websiteBuild": "PASS: 184 static pages",
+    "fileIntegrity": "All 4 video source/public/dist SHA-256 values match; 16 existing PNG hashes unchanged",
+    "localPathsAndAnchors": 96,
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "horizontalOverflow": false
+      }
+    ],
+    "playback": [
+      {
+        "api": "Direct3D12",
+        "durationSeconds": 23.251167,
+        "ended": true,
+        "mediaError": null
+      },
+      {
+        "api": "Vulkan",
+        "durationSeconds": 24.5012,
+        "ended": true,
+        "mediaError": null
+      }
+    ],
+    "scope": "Browser playback and article/media validation; no new C++ or GPU regression run required for this documentation-only update"
+  }
+}

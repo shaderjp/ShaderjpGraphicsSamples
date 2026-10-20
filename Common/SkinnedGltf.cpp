@@ -503,7 +503,7 @@ GltfSkinnedModel LoadGltfSkinned(const std::filesystem::path &path)
         throw std::runtime_error(path.string() + ": invalid skinned glTF: " + e.what());
     }
 }
-SkinPose EvaluateGltfPose(const GltfSkinnedModel &model, size_t clip, float seconds)
+SkinLocalPose EvaluateGltfLocalPose(const GltfSkinnedModel &model, size_t clip, float seconds)
 {
     using namespace DirectX;
     if (!std::isfinite(seconds))
@@ -529,6 +529,31 @@ SkinPose EvaluateGltfPose(const GltfSkinnedModel &model, size_t clip, float seco
             else
                 XMStoreFloat3(&n.scale, v);
         }
+    return {std::move(nodes)};
+}
+SkinLocalPose BlendGltfLocalPoses(const SkinLocalPose &from, const SkinLocalPose &to, float weight)
+{
+    using namespace DirectX;
+    if (from.nodes.size() != to.nodes.size() || !std::isfinite(weight))
+        throw std::runtime_error("Invalid local pose blend");
+    weight = std::clamp(weight, 0.f, 1.f);
+    SkinLocalPose result = from;
+    for (size_t i = 0; i < result.nodes.size(); ++i)
+    {
+        auto &out = result.nodes[i];
+        const auto &a = from.nodes[i], &b = to.nodes[i];
+        if (out.hasMatrix)
+            continue;
+        XMStoreFloat3(&out.translation, XMVectorLerp(XMLoadFloat3(&a.translation), XMLoadFloat3(&b.translation), weight));
+        XMStoreFloat3(&out.scale, XMVectorLerp(XMLoadFloat3(&a.scale), XMLoadFloat3(&b.scale), weight));
+        XMStoreFloat4(&out.rotation, XMQuaternionNormalize(XMQuaternionSlerp(XMLoadFloat4(&a.rotation), XMLoadFloat4(&b.rotation), weight)));
+    }
+    return result;
+}
+SkinPose MakeGltfGlobalPose(const SkinLocalPose &localPose)
+{
+    using namespace DirectX;
+    const auto &nodes = localPose.nodes;
     SkinPose pose;
     pose.globals.resize(nodes.size());
     std::vector<bool> done(nodes.size());
@@ -552,6 +577,10 @@ SkinPose EvaluateGltfPose(const GltfSkinnedModel &model, size_t clip, float seco
     for (size_t i = 0; i < nodes.size(); ++i)
         visit(i);
     return pose;
+}
+SkinPose EvaluateGltfPose(const GltfSkinnedModel &model, size_t clip, float seconds)
+{
+    return MakeGltfGlobalPose(EvaluateGltfLocalPose(model, clip, seconds));
 }
 std::vector<DirectX::XMFLOAT4X4> MakeSkinPalette(const GltfSkinnedModel &model, const SkinPose &pose,
                                                  size_t primitive)

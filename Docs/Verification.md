@@ -2,7 +2,7 @@
 
 検証日: 2026-10-11（日本時間）。結果は以下の実機・SDK・コンパイラの組合せに対するものです。
 
-最新の追加結果は末尾の「第22・23回／発展10 GPUスキニング」を参照してください。
+最新の追加結果は末尾の「第28回 キャラクター操作」を参照してください。
 
 ## 環境
 
@@ -380,3 +380,15 @@ Vulkanの発展13／resourcesではGPU DrivenでDispatchが513→5、CPU記録�
 検証環境はWindows 11 Pro 10.0.26300、Intel Core i9-13900F、RTX 4070／driver 32.0.16.1088、Visual Studio 2026 Community 18.10.12201.205、MSVC 19.51.36257／v145、Windows SDK 10.0.26100.0、Agility 1.619.6、DXC 1.9.2609.5（01b62ad47）、Vulkan SDK 1.4.341.1／付属DXC 1.9.0.5180（e35541826）、SPIRV-Tools v2026.1（fbe4f3ad）、C++20／HLSL 2021／SM6.6です。
 
 HDRの許容差と密集GPU Drivenの境界条件、FP16のReset差、反復間の幅とメモリ集計範囲は[検証記録](InlineRaytracingVerification.md)へ記載しました。[共通解説](InlineRaytracing.md)、[数値検証と画像ハッシュ](InlineRaytracingValidation.json)、[性能データ](InlineRaytracingPerformance.json)を参照してください。
+
+## 第28回 キャラクター操作（2026-10-21）
+
+両APIに28_CharacterControllerを追加しました。全90アプリと補助ライブラリのx64 Debug／Releaseをビルドし、全180回のライフサイクル試験と、既存スキニング・カメラ・ImGuiの回帰試験が成功しました。新規の300フレーム操作試験では両APIの状態・位置ログが完全一致し、ResetのRGB差は0画素、Graphics Validationエラーは0件です。
+
+Visual Studio 18.10.12201.205、v145／cl 19.51.36257.0、Windows SDK 10.0.26100.0、Vulkan SDK 1.4.341.1、Agility SDK 1.619.6、DXC 1.9.2609.5／Vulkan DXC 1.9.0.5180、RTX 4070／ドライバ32.0.16.1088で検証しました。
+
+[詳細と物理パッドの未検証範囲](CharacterControllerVerification.md)、[環境記録](CharacterControllerEnvironment.json)、[PNG出典](CharacterControllerCaptures.json)、[動画記録](CharacterControllerVideos.json)を参照してください。ここまでの結果はPush前のローカル検証で得たものです。
+
+同日のユーザーによる実機操作で左スティックの左右逆転が判明し、カメラの右ベクトルの符号を修正しました。生のXInput値とA／DキーをView行列へ照合する90条件の回帰試験は、修正前に失敗し、修正後に成功しました。XML／filters、全ソリューションの両構成ビルド、第28回の両API・両構成のGPU操作・ライフサイクル試験を再実行し、Validationエラーは0件です。
+
+さらに、ユーザー提供のDirect3D12／Vulkanの操作録画2本（1280×720、約23.3秒／24.5秒）をドキュメントと記事へ追加しました。元のMP4と掲載用コピーのSHA-256を照合し、録画の出典・形式を[動画記録](CharacterControllerVideos.json)へ追記しています。従来の5秒の自動操作動画も維持しています。

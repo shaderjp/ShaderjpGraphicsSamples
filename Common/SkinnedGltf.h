@@ -78,8 +78,16 @@ struct SkinPose
 {
     std::vector<DirectX::XMFLOAT4X4> globals;
 };
+// Local TRS is blended before composing the hierarchy. Matrix nodes remain static.
+struct SkinLocalPose
+{
+    std::vector<SkinNode> nodes;
+};
 inline constexpr size_t SkinRestPose = std::numeric_limits<size_t>::max();
 GltfSkinnedModel LoadGltfSkinned(const std::filesystem::path &path);
+SkinLocalPose EvaluateGltfLocalPose(const GltfSkinnedModel &, size_t clip, float seconds);
+SkinLocalPose BlendGltfLocalPoses(const SkinLocalPose &, const SkinLocalPose &, float weight);
+SkinPose MakeGltfGlobalPose(const SkinLocalPose &);
 SkinPose EvaluateGltfPose(const GltfSkinnedModel &model, size_t clip, float seconds);
 std::vector<DirectX::XMFLOAT4X4> MakeSkinPalette(const GltfSkinnedModel &, const SkinPose &,
                                                  size_t primitive);

@@ -188,12 +188,24 @@ Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced16_Bindl
 EndProject
 Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced16_BindlessInlineHybrid", "Samples\Vulkan\Advanced16_BindlessInlineHybrid\Vulkan_Advanced16_BindlessInlineHybrid.vcxproj", "{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}"
 EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_28_CharacterController", "Samples\Direct3D12\28_CharacterController\Direct3D12_28_CharacterController.vcxproj", "{4A324E7C-105D-4AEE-96FF-4F2A5855761E}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_28_CharacterController", "Samples\Vulkan\28_CharacterController\Vulkan_28_CharacterController.vcxproj", "{6C79A3BD-9776-4D12-A576-3F25F67D5FF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C79A3BD-9776-4D12-A576-3F25F67D5FF7}.Debug|x64.ActiveCfg = Debug|x64
+		{6C79A3BD-9776-4D12-A576-3F25F67D5FF7}.Debug|x64.Build.0 = Debug|x64
+		{6C79A3BD-9776-4D12-A576-3F25F67D5FF7}.Release|x64.ActiveCfg = Release|x64
+		{6C79A3BD-9776-4D12-A576-3F25F67D5FF7}.Release|x64.Build.0 = Release|x64
+		{4A324E7C-105D-4AEE-96FF-4F2A5855761E}.Debug|x64.ActiveCfg = Debug|x64
+		{4A324E7C-105D-4AEE-96FF-4F2A5855761E}.Debug|x64.Build.0 = Debug|x64
+		{4A324E7C-105D-4AEE-96FF-4F2A5855761E}.Release|x64.ActiveCfg = Release|x64
+		{4A324E7C-105D-4AEE-96FF-4F2A5855761E}.Release|x64.Build.0 = Release|x64
 		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}.Debug|x64.ActiveCfg = Debug|x64
 		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}.Debug|x64.Build.0 = Debug|x64
 		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6}.Release|x64.ActiveCfg = Release|x64
@@ -556,6 +568,8 @@ Global
 		{8631852E-03FA-5CCB-97AD-B7086311F46F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{6C79A3BD-9776-4D12-A576-3F25F67D5FF7} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{4A324E7C-105D-4AEE-96FF-4F2A5855761E} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{15BD009F-35F3-445C-ABDB-4EB04E09A7A6} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
 		{E8322E53-924B-4FF3-BBB6-7EABF899B273} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{655EF4EF-713D-4790-8A17-60A33A36B6DE} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}

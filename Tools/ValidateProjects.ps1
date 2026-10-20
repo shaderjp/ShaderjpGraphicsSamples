@@ -35,6 +35,14 @@ foreach ($project in $projects) {
         $include = $item.GetAttribute('Include')
         $fullPath = [IO.Path]::GetFullPath((Join-Path $project.DirectoryName $include))
         if (-not (Test-Path -LiteralPath $fullPath)) { throw "Missing project file $fullPath" }
+        if ($item.LocalName -eq 'ProjectReference') {
+            $referenceId = $item.SelectSingleNode('m:Project', $projectNs)
+            if (-not $referenceId -or $referenceId.HasChildNodes -and $referenceId.FirstChild.NodeType -ne 'Text') { throw "Invalid project reference metadata: $include" }
+            $referenceGuid = [guid]$referenceId.InnerText
+            [xml]$referenceXml = Get-Content -LiteralPath $fullPath -Raw
+            $actualReferenceGuid = @($referenceXml.Project.PropertyGroup.ProjectGuid | Where-Object { $_ })
+            if ($actualReferenceGuid.Count -ne 1 -or $referenceGuid -ne [guid]$actualReferenceGuid[0]) { throw "Project reference GUID mismatch: $include" }
+        }
         $key = $item.LocalName + '|' + $fullPath
         if ($expected.ContainsKey($key)) { throw "Duplicate project item $include" }
         $expected[$key] = $false

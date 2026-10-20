@@ -82,3 +82,5 @@ Color : Index → ReferenceVertex → SkinVertexAt → camera VP → PBR HDR
 実行ローダーの対象はglTF JSON＋外部BIN、4インフルエンス、TRS LINEAR／STEPです。Morph、CUBICSPLINE、追加ウェイトセット、任意のTexture材質は対象外として診断します。モデル・モーションのライセンスは[アセット記事](../Assets/SilverRobotAnimated.md#採用素材とライセンス)を参照してください。
 
 次は[基本23 Compute Cache](23_ComputeSkinningCache.md)へ進みます。
+
+WASD／XInputでキャラクターを操作する発展例は[第28回 CharacterController](28_CharacterController.md)です。移動、ジャンプと姿勢ブレンドを追加します。

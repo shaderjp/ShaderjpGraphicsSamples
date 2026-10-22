@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Direct3D12_29_MotionMatching",
+    "configuration": "Debug",
+    "frames": 300,
+    "validationErrors": 0,
+    "resetRgb": "identical",
+    "traceMatchesOtherApi": true,
+    "maxFootError": 4.053554221172817E-07,
+    "maxPenetration": 0.0,
+    "executableSha256": "948aeffedeaf49f8518352e6342121177044b57a9a2401a6e335951f4a672fce",
+    "captures": {
+      "Direct3D12_29_MotionMatching-baseline.png": "8a36780e14d9656b686b98d477ae25c4e67e47e7cfc9256bdf93d1ff4e513e28",
+      "Direct3D12_29_MotionMatching.png": "25e866b5a890c51b81a77949901b05f894761c89b354a0681bbb53120a70dbdc",
+      "Direct3D12_29_MotionMatching-turn.png": "4dafbe11aab30bb7e5b683f22d4ddedf4bd4b64821dd1c206cfa170f9e9ba772",
+      "Direct3D12_29_MotionMatching-walk.png": "9197b8f6b1c4e88e7f47f21955f374c3828666db8dc2f2b07a78c5df473b441e",
+      "Direct3D12_29_MotionMatching-run.png": "e3e6b0e274f6dbf7288494ca41fd542c33ed32a7b2c1dc7b90760e6d5f41bb10",
+      "Direct3D12_29_MotionMatching-reset.png": "8a36780e14d9656b686b98d477ae25c4e67e47e7cfc9256bdf93d1ff4e513e28"
+    }
+  },
+  {
+    "name": "Direct3D12_30_TraversalController",
+    "configuration": "Debug",
+    "frames": 900,
+    "validationErrors": 0,
+    "resetRgb": "identical",
+    "traceMatchesOtherApi": true,
+    "maxFootError": 4.436068365976098E-07,
+    "maxPenetration": 0.0,
+    "executableSha256": "392b81c675916b632ff534bfb9d3781edda027d77d5c368f2b928bba598b13c6",
+    "captures": {
+      "Direct3D12_30_TraversalController.png": "c89e77a1e962d439f7b3c39ee04cff5df4721c566501990d23f3195ba269f4ca",
+      "Direct3D12_30_TraversalController-baseline.png": "a2ea1436bd44192794054eb00e2275ee9ea28600088d7cad864bf6117f9cffea",
+      "Direct3D12_30_TraversalController-jump.png": "ba40a028aeeb9b2500ece27573641f6be7b0973eacbb15d2457556576547a52e",
+      "Direct3D12_30_TraversalController-reset.png": "a2ea1436bd44192794054eb00e2275ee9ea28600088d7cad864bf6117f9cffea",
+      "Direct3D12_30_TraversalController-wall.png": "762c4d94e91175ebc495d3d7d74f1f10d381f31bae4f4050ed695d4694ea589f",
+      "Direct3D12_30_TraversalController-walk.png": "c244d1894585bda821a9ba668766ce801c816f22bfce89743334eb9081cea6c0",
+      "Direct3D12_30_TraversalController-land.png": "47284a969b304249f7fbd1ba02b7ac27487c3f44b36e62827e34fc8b1b7d7236"
+    }
+  },
+  {
+    "name": "Vulkan_29_MotionMatching",
+    "configuration": "Debug",
+    "frames": 300,
+    "validationErrors": 0,
+    "resetRgb": "identical",
+    "traceMatchesOtherApi": true,
+    "maxFootError": 4.053554221172817E-07,
+    "maxPenetration": 0.0,
+    "executableSha256": "8c2e2bab8fa8094fd69adc74f1a7feea2116f64837262e75ffbef4fc4f1dce88",
+    "captures": {
+      "Vulkan_29_MotionMatching-walk.png": "071be0d9cee72f098f724b1c9e127aa73c4c4f7e749747002c567e3243955cb8",
+      "Vulkan_29_MotionMatching-baseline.png": "105139fbb831b214b3aa77d2ec8d48c9fb3de20217a7e228b769037fcb21539a",
+      "Vulkan_29_MotionMatching-reset.png": "105139fbb831b214b3aa77d2ec8d48c9fb3de20217a7e228b769037fcb21539a",
+      "Vulkan_29_MotionMatching-run.png": "90c67a0b5e037c81d8ab078a6f374aa5693cec541f32696f4c5ab7c70b085c1c",
+      "Vulkan_29_MotionMatching.png": "8c77553c409c9c16be1f6a58f86fd70a1fcebb53f1bcd5398fab9c1f4f5c1d20",
+      "Vulkan_29_MotionMatching-turn.png": "edabd3bb0534658f6aecaa6b55ea2989d5db6f1d19cc9e7031951f8caf12bd97"
+    }
+  },
+  {
+    "name": "Vulkan_30_TraversalController",
+    "configuration": "Debug",
+    "frames": 900,
+    "validationErrors": 0,
+    "resetRgb": "identical",
+    "traceMatchesOtherApi": true,
+    "maxFootError": 4.436068365976098E-07,
+    "maxPenetration": 0.0,
+    "executableSha256": "d0e9a4c897bab9c550d1b269ba933c61022ddff167e2f8f481b09f0466182aab",
+    "captures": {
+      "Vulkan_30_TraversalController-reset.png": "bb1c8b412bf13155e5d316a5a5252b73ea27d852ee32437ac6682a0e0982243f",
+      "Vulkan_30_TraversalController.png": "289781e0a8eb9f511718da52c9b0c09f2f8dca1471637ad1de559e28123d01e4",
+      "Vulkan_30_TraversalController-land.png": "dad970ca2ea774d2f3ec1c00357665a9fc71d0f8c49d83f5f7165d1a54cb1ca7",
+      "Vulkan_30_TraversalController-walk.png": "8f1fd666dfb84951ade6fc8eda6b1c9ca87c2665175807ddb3fed1ac7a42e1bd",
+      "Vulkan_30_TraversalController-baseline.png": "bb1c8b412bf13155e5d316a5a5252b73ea27d852ee32437ac6682a0e0982243f",
+      "Vulkan_30_TraversalController-jump.png": "14f69d3a2a0177e3bd25c75e813cf1abdc568358fb53d9570e1a931d1845f321",
+      "Vulkan_30_TraversalController-wall.png": "c220e5b52d872f60a83886611cee5c4dd44f8bd8f33ed7781e58ad1e9b9b890a"
+    }
+  }
+]

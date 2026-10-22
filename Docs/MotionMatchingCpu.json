@@ -1,0 +1,20 @@
+{
+  "clips": 13,
+  "fallRecovery": true,
+  "frameRates": [
+    30,
+    60,
+    144
+  ],
+  "jumpHeightMetres": 1.275306224822998,
+  "maxCapsulePenetrationMetres": 0.0,
+  "maxFootResidualMetres": 4.931051762468996e-07,
+  "normalJumpLanded": true,
+  "result": "PASS",
+  "rootHeadingVerified": true,
+  "rotatedWallBlocked": true,
+  "searchableFrames": 281,
+  "selectedClips": 6,
+  "staleDatabaseRejected": true,
+  "stepHeightMetres": 0.20045943558216095
+}

@@ -1,0 +1,182 @@
+{
+  "result": "PASS",
+  "khronos": {
+    "SilverRobot.glb": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "truncated": false
+    },
+    "SilverRobot.gltf": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "truncated": false
+    },
+    "Course.gltf": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "truncated": false
+    }
+  },
+  "savedSourceReexport": "byte-identical",
+  "sourceHashes": {
+    "SourceArt/Blender/TraversalCourse/TraversalCourse.blend": "8E97F4BEC020A410433785BDC37607E614AEC57B31671BDC9F0B3ADE6CBB7C53",
+    "SourceArt/Blender/MotionMatching/SilverRobotMotionSet.blend": "134C572B32980CF61C96B9C77604E0DF97567B4B146379B602B66C567C1B4667"
+  },
+  "deformation": {
+    "blender": "5.2.1 LTS",
+    "clips": {
+      "MM_Idle": {
+        "frames": [
+          1,
+          19,
+          38,
+          57,
+          76
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 8.03220243269116E-07
+      },
+      "MM_JumpLand": {
+        "frames": [
+          1,
+          10,
+          20,
+          29,
+          39
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 8.239499381783563E-07
+      },
+      "MM_JumpLoop": {
+        "frames": [
+          1,
+          19,
+          38,
+          57,
+          76
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 1.1146135888213306E-06
+      },
+      "MM_JumpStart": {
+        "frames": [
+          1,
+          11,
+          21,
+          31,
+          41
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 8.654900226501456E-07
+      },
+      "MM_Run": {
+        "frames": [
+          1,
+          8,
+          15,
+          22,
+          29
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 7.969778437915844E-07
+      },
+      "MM_Sprint": {
+        "frames": [
+          1,
+          6,
+          11,
+          16,
+          21
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 8.693008085493453E-07
+      },
+      "MM_Start": {
+        "frames": [
+          1,
+          8,
+          16,
+          23,
+          31
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 7.619889712505398E-07
+      },
+      "MM_Stop": {
+        "frames": [
+          1,
+          8,
+          16,
+          23,
+          31
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 9.36729238005823E-07
+      },
+      "MM_Turn180": {
+        "frames": [
+          1,
+          11,
+          21,
+          31,
+          41
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 7.266894887639902E-07
+      },
+      "MM_Turn90": {
+        "frames": [
+          1,
+          11,
+          21,
+          31,
+          41
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 8.079250600971873E-07
+      },
+      "MM_TurnLeft180": {
+        "frames": [
+          1,
+          11,
+          21,
+          31,
+          41
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 9.884148779617138E-07
+      },
+      "MM_TurnLeft90": {
+        "frames": [
+          1,
+          11,
+          21,
+          31,
+          41
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 6.08533693754843E-07
+      },
+      "MM_Walk": {
+        "frames": [
+          1,
+          11,
+          21,
+          31,
+          41
+        ],
+        "verticesComparedPerFrame": 31138,
+        "maxErrorMetres": 6.766423464889635E-07
+      }
+    }
+  }
+}

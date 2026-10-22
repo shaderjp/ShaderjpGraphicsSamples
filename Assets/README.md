@@ -1,5 +1,7 @@
 # 初回アセット
 
+第29・30回は`Models/SilverRobotMotionSet`の地上移動・通常ジャンプ13クリップと、静的な箱・段差の`Models/TraversalCourse`を使います。[モーションマッチング](../Docs/MotionMatching.md)と[衝突付き移動](../Docs/TraversalController.md)を参照してください。
+
 `Models/Cube.obj`と`Textures/UV.png`はこのリポジトリ用の自作データです。リポジトリのMITライセンスで利用できます。
 
 PNGは左上が赤、右上が緑、左下が青、右下が黄です。ラベルと上向き矢印で色・上下方向・UVを確認できます。画像はsRGBとして読み込み、両APIのsRGB描画先へ出力します。

@@ -62,3 +62,22 @@
 /Docs/Vulkan/Images/28_CharacterController*.png -text
 /Samples/Shared/CharacterController.h text eol=lf
 /Tests/CharacterControllerTests.cpp text eol=lf
+
+# Motion and traversal exports carry byte hashes.
+/Assets/Models/SilverRobotMotionSet/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Assets/Models/TraversalCourse/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Retain the creator's license text verbatim, including its original spacing.
+/Assets/Models/SilverRobotMotionSet/Quaternius-CC0.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/SourceArt/Blender/MotionMatching/Quaternius-CC0.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/SourceArt/Blender/MotionMatching/*.blend -text
+/SourceArt/Blender/MotionMatching/*.py text eol=lf
+/SourceArt/Blender/MotionMatching/*.json text eol=lf
+/SourceArt/Blender/TraversalCourse/*.blend -text
+/SourceArt/Blender/TraversalCourse/*.py text eol=lf
+/Docs/MotionMatching*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/MotionAssetsVerification.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Measurements/MotionMatching/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Direct3D12/Images/29_MotionMatching*.png -text
+/Docs/Direct3D12/Images/30_TraversalController*.png -text
+/Docs/Vulkan/Images/29_MotionMatching*.png -text
+/Docs/Vulkan/Images/30_TraversalController*.png -text

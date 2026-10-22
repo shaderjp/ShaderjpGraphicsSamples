@@ -1,0 +1,22 @@
+[
+  {
+    "sample": "Direct3D12_29_MotionMatching",
+    "frames": 155,
+    "sha256": "da42aa3c69ad1f40e6f792103abc245001fb4578dcd3bc2a532f684577d9a786"
+  },
+  {
+    "sample": "Direct3D12_30_TraversalController",
+    "frames": 240,
+    "sha256": "45d3088bdf13cceea099eb9e9f04d15d89bc0cf7198ef5f9d11a54d6b1efe707"
+  },
+  {
+    "sample": "Vulkan_29_MotionMatching",
+    "frames": 155,
+    "sha256": "ad607aa04eeddc7c97a1d3f2a76511b83ecf88b4b011d7212978ae70725f5a3f"
+  },
+  {
+    "sample": "Vulkan_30_TraversalController",
+    "frames": 240,
+    "sha256": "5b8d525577c9cb22b9b133b17df8cdf295c07c1c9cd540307307a39cca213920"
+  }
+]

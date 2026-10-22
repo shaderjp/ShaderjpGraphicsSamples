@@ -1,0 +1,25 @@
+{
+  "profile": "workshop-scene-1",
+  "model": "Course.gltf",
+  "cameras": {
+    "Hero": {
+      "position": [
+        0,
+        2,
+        5
+      ],
+      "target": [
+        0,
+        1,
+        0
+      ],
+      "fovDegrees": 50,
+      "near": 0.05,
+      "far": 100
+    }
+  },
+  "environment": {
+    "prefix": "../../Environments/LightingLab/Studio"
+  },
+  "exposure": 1
+}

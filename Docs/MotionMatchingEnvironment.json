@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Tokyo",
+  "visualStudio": "18.10.12201.205",
+  "compiler": "19.51.36257.0",
+  "msvcTools": "14.51.36231",
+  "toolset": "v145",
+  "windowsSdk": "10.0.26100.0",
+  "os": {
+    "Caption": "Microsoft Windows 11 Pro",
+    "Version": "10.0.26300",
+    "BuildNumber": "26300"
+  },
+  "gpu": {
+    "Name": "NVIDIA GeForce RTX 4070",
+    "DriverVersion": "32.0.16.1088"
+  },
+  "agilitySdk": "1.619.6",
+  "d3dDxc": "dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47)",
+  "vulkanSdk": "C:\\VulkanSDK\\1.4.341.1",
+  "vulkanDxc": "dxcompiler.dll: 1.10(5180-e3554182)(1.9.0.5180) - 1.9.0.5180 (e35541826)",
+  "blender": "5.2.1 LTS 9e2066aef7ef"
+}

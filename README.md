@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編28テーマ＋発展編17テーマ、両APIで計90本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編30テーマ＋発展編17テーマ、両APIで計94本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -78,6 +78,8 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | Deferred Compute・RayQueryによる太陽の影 | [26 InlineRaytracingShadows](Docs/Direct3D12/26_InlineRaytracingShadows.md) | [26 InlineRaytracingShadows](Docs/Vulkan/26_InlineRaytracingShadows.md) |
 | Deferred・RayQueryによる1バウンス反射 | [27 InlineRaytracingReflections](Docs/Direct3D12/27_InlineRaytracingReflections.md) | [27 InlineRaytracingReflections](Docs/Vulkan/27_InlineRaytracingReflections.md) |
 | XInput／WASD・三人称移動・ジャンプ・姿勢ブレンド | [28 CharacterController](Docs/Direct3D12/28_CharacterController.md) | [28 CharacterController](Docs/Vulkan/28_CharacterController.md) |
+| フレーム検索による地上移動 | [29 MotionMatching](Docs/Direct3D12/29_MotionMatching.md) | [29 MotionMatching](Docs/Vulkan/29_MotionMatching.md) |
+| カプセルと静的な箱の連続衝突判定 | [30 TraversalController](Docs/Direct3D12/30_TraversalController.md) | [30 TraversalController](Docs/Vulkan/30_TraversalController.md) |
 
 [キャラクター操作の共通解説](Docs/CharacterController.md)では、入力・移動・ジャンプ・ローカル姿勢ブレンドを扱います。
 
@@ -231,7 +233,7 @@ Vulkanのスクリーンショットは、取得済みの画像をPresent前に�
 .\Tools\TestImGui.ps1 -Configuration Release
 ```
 
-`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は基本編・発展編の全60本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。GPUが一部の発展機能に対応しない場合は、`-Topics`で実行するテーマを指定してください。
+`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は基本編・発展編の全94本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。GPUが一部の発展機能に対応しない場合は、`-Topics`で実行するテーマを指定してください。
 
 `TestPostProcess`はHDRの保持と表示変換、モニターの更新、黒・一定色・端のBloom、641×479、257粒子の更新境界、Step／ResetをGPU画像とBufferで検証します。標準Python 3.11以上を`-PythonPath`で指定でき、既定ではアセット制作用Blenderの付属Pythonを使います。`--capture-gpu`はこの診断時だけ読戻しを行い、通常フレームでは読み戻しません。
 
@@ -252,6 +254,8 @@ Silver Robot Animatedに適用したQuaternius Universal Animation Libraryのモ
 [Microsoft DirectX Graphics Samples](https://github.com/microsoft/DirectX-Graphics-Samples)の処理順・実装スタイルを参考にしています。外部の参考フォルダやサイトリポジトリはビルドの依存先にはしていません。
 
 参考: [Agility SDK](https://devblogs.microsoft.com/directx/directx12agility/)、[DXC](https://github.com/microsoft/DirectXShaderCompiler)、[Vulkan HLSL](https://github.khronos.org/Vulkan-Site/guide/latest/hlsl.html)
+
+第29・30回は`Tools/TestMotionMatchingCpu.ps1`、`Tools/TestMotionAssets.ps1`、`Tools/TestMotionMatching.ps1`でCPU・素材・GPUを確認します。[検証記録](Docs/MotionMatchingVerification.md)に環境と実施範囲をまとめています。
 
 ## 発展編の読み順と検証
 
@@ -303,3 +307,5 @@ meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定Submoduleです。`git s
 | Deferredから1バウンスの反射を計算する | [記事](Docs/Direct3D12/27_InlineRaytracingReflections.md) | [記事](Docs/Vulkan/27_InlineRaytracingReflections.md) |
 | Bindless・Mesh Shader・RayQueryを接続する | [記事](Docs/Direct3D12/Advanced16_BindlessInlineHybrid.md) | [記事](Docs/Vulkan/Advanced16_BindlessInlineHybrid.md) |
 | Tiled Deferredの多数光源へレイによる影を加える | [記事](Docs/Direct3D12/Advanced17_MeshShaderTiledInlineShadows.md) | [記事](Docs/Vulkan/Advanced17_MeshShaderTiledInlineShadows.md) |
+
+[第28〜30回の学習順と制作工程](Docs/MotionMatchingRoadmap.md)では、入力・姿勢ブレンドからモーションマッチングと衝突付き移動までを説明しています。

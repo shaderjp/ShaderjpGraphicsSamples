@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E4FAEEDD-03D1-405B-BEB5-58533395666D}</ProjectGuid>
+    <ProjectName>MotionDatabaseBuilder</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\..\Build\Common.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\nlohmann-json\single_include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Tools\MotionDatabaseBuilder.cpp" />
+    <ClCompile Include="..\..\..\Common\SkinnedGltf.cpp" />
+    <ClCompile Include="..\..\..\Common\Application.cpp" />
+    <ClInclude Include="..\..\Shared\MotionDatabase.h" />
+    <ClInclude Include="..\..\..\Common\SkinnedGltf.h" />
+    <ClInclude Include="..\..\..\Common\Application.h" />
+    <None Include="..\..\..\Build\Common.props" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE" />
+    <None Include="..\..\..\ThirdParty\nlohmann-json\LICENSE.MIT" />
+  </ItemGroup>
+  <Target Name="CopyToolLicenses" AfterTargets="Build">
+    <MakeDir Directories="$(OutDir)Licenses" />
+    <Copy SourceFiles="$(RepositoryRoot)LICENSE;$(RepositoryRoot)ThirdParty\nlohmann-json\LICENSE.MIT" DestinationFiles="$(OutDir)Licenses\ShaderjpGraphicsSamples-LICENSE.txt;$(OutDir)Licenses\nlohmann-json-LICENSE.MIT" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

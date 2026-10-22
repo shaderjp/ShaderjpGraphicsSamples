@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E5286E64-39D8-4492-8BC5-2952CA31AF35}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>Direct3D12_30_TraversalController</ProjectName>
+    <RootNamespace>Direct3D12_30_TraversalController</RootNamespace>
+    <GraphicsApi>Direct3D12</GraphicsApi>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\..\Build\Common.props" />
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sample.cpp" />
+    <ClCompile Include="..\..\..\Common\Application.cpp" />
+    <ClCompile Include="..\..\..\Common\Image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\CameraNavigation.h" />
+    <ClInclude Include="Sample.h" />
+    <ClInclude Include="..\..\..\Common\Application.h" />
+    <ClInclude Include="..\..\..\Common\Image.h" />
+    <ClInclude Include="..\..\..\Common\Mesh.h" />
+    <ClInclude Include="..\..\..\Shaders\Common.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Build\Common.props" />
+    <None Include="..\..\..\Build\Samples.targets" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Common\Gltf.h" />
+    <ClInclude Include="..\..\..\ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp" />
+    <None Include="..\..\..\ThirdParty\nlohmann-json\LICENSE.MIT">
+      <AssetTargetPath>Licenses\nlohmann-json-LICENSE.MIT</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\LICENSE">
+      <AssetTargetPath>Licenses\ShaderjpGraphicsSamples-LICENSE.txt</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\meshoptimizer\src;$(RepositoryRoot)ThirdParty\DirectXTex\DirectXTex;$(RepositoryRoot)ThirdParty\imgui;$(RepositoryRoot)ThirdParty\imgui\backends;$(RepositoryRoot)ThirdParty\nlohmann-json\single_include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Common\Lighting.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\..\Build\Samples.targets" />
+  <Target Name="CheckGltfDependency" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(RepositoryRoot)ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp')" Text="Initialize pinned dependencies: git submodule update --init --recursive" />
+  </Target>
+  <ItemGroup>
+    <ClCompile Include="ImGuiRenderer.cpp" />
+    <ClInclude Include="..\..\..\Shaders\09_ImGui\Ui.hlsli" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.cpp" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imconfig.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.h" />
+    <None Include="..\..\..\ThirdParty\imgui\LICENSE.txt">
+      <AssetTargetPath>Licenses\imgui-LICENSE.txt</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <Target Name="CheckImGuiDependency" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(RepositoryRoot)ThirdParty\imgui\imgui.h')" Text="Dear ImGui is missing. Initialize pinned dependencies: git submodule update --init --recursive" />
+  </Target>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>DEFERRED_COMPUTE=1;LIGHT_CULLING=1;MESH_TECHNIQUE=0;POST_TECHNIQUE=15;%(PreprocessorDefinitions);SKIN_TECHNIQUE=1</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\meshoptimizer\src;$(RepositoryRoot)ThirdParty\DirectXTex\DirectXTex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Common\Dds.cpp" />
+    <ClInclude Include="..\..\..\Common\DdsImage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\ThirdParty\DirectXTex\LICENSE">
+      <AssetTargetPath>Licenses\DirectXTex-LICENSE.txt</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Support\DirectXTexCpu\DirectXTexCpu.vcxproj">
+      <Project>{CB12046F-834B-48DC-9188-BECBCE081AF9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\PostProcessData.h" />
+    <ClInclude Include="..\..\..\Shaders\PostProcess\Post.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\PostProcessCapture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Common\Workshop.cpp" />
+    <ClInclude Include="..\..\..\Common\Workshop.h" />
+    <ClInclude Include="..\..\Shared\DeferredData.h" />
+    <ClInclude Include="..\..\Shared\DeferredPanel.h" />
+    <ClInclude Include="..\..\..\Shaders\Deferred\DeferredRead.hlsli" />
+    <ClInclude Include="..\..\..\Shaders\Deferred\Lighting.hlsli" />
+    <ClInclude Include="..\..\..\Shaders\Deferred\Resources.hlsli" />
+    <ClInclude Include="..\..\..\Shaders\Deferred\Scene.hlsli" />
+    <CustomBuild Include="..\..\..\Shaders\Deferred\LightingCompute.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <ShaderEntry>CSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Deferred\LightingPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Deferred\SkyPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Deferred\SkyVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\PostVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\DeferredPostPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\TestPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\Extract.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <ShaderEntry>CSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\PostProcess\Blur.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <ShaderEntry>CSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <None Include="..\..\..\Assets\Environments\Workshop\BRDF.dds">
+      <AssetTargetPath>Assets\Environments\Workshop\BRDF.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\Workshop\WorkshopSky_Environment.dds">
+      <AssetTargetPath>Assets\Environments\Workshop\WorkshopSky_Environment.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\Workshop\WorkshopSky_Irradiance.dds">
+      <AssetTargetPath>Assets\Environments\Workshop\WorkshopSky_Irradiance.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\Workshop\WorkshopSky_Specular.dds">
+      <AssetTargetPath>Assets\Environments\Workshop\WorkshopSky_Specular.dds</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\LightGridData.h" />
+    <ClInclude Include="..\..\..\Shaders\LightCulling\Grid.hlsli" />
+    <CustomBuild Include="..\..\..\Shaders\LightCulling\TileDepth.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <ShaderEntry>CSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\LightCulling\CullLights.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <ShaderEntry>CSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;$(RepositoryRoot)Shaders\Deferred\DeferredRead.hlsli;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\PostProcess\Post.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\MeshPanel.h" />
+    <ClInclude Include="..\..\Shared\MeshletData.h" />
+    <ClInclude Include="..\..\..\Shaders\Skinning\MeshScene.hlsli" />
+    <ProjectReference Include="..\..\Support\MeshOptimizerCpu\MeshOptimizerCpu.vcxproj">
+      <Project>{C40E3C86-2CB4-413B-ABF7-099D394ED237}</Project>
+    </ProjectReference>
+    <CustomBuild Include="..\..\..\Shaders\Skinning\ResetMeshlets.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <ShaderEntry>CSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -D MESH_TECHNIQUE=7 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags)  $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\MeshShader\MeshScene.hlsli;$(RepositoryRoot)Shaders\MeshShader\MeshletMesh.hlsl;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Skinning\ReferenceVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -D MESH_TECHNIQUE=7 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags)  $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\MeshShader\MeshScene.hlsli;$(RepositoryRoot)Shaders\MeshShader\MeshletMesh.hlsl;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Skinning\MeshForwardPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -D MESH_TECHNIQUE=7 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags)  $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\MeshShader\MeshScene.hlsli;$(RepositoryRoot)Shaders\MeshShader\MeshletMesh.hlsl;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Skinning\MeshGBufferPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -D MESH_TECHNIQUE=7 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags)  $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\MeshShader\MeshScene.hlsli;$(RepositoryRoot)Shaders\MeshShader\MeshletMesh.hlsl;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Skinning\MeshShadowPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D SKIN_TECHNIQUE=1 -D LIGHT_CULLING=1 -D MESH_TECHNIQUE=7 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags)  $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\MeshShader\MeshScene.hlsli;$(RepositoryRoot)Shaders\MeshShader\MeshletMesh.hlsl;$(RepositoryRoot)Shaders\Deferred\Lighting.hlsli;$(RepositoryRoot)Shaders\Deferred\Resources.hlsli;$(RepositoryRoot)Shaders\Deferred\Scene.hlsli;$(RepositoryRoot)Shaders\LightCulling\Grid.hlsli;%(AdditionalInputs);$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\MeshFixtures.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\MeshTiming.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Common\SkinnedGltf.cpp" />
+    <ClInclude Include="..\..\..\Common\SkinnedGltf.h" />
+    <ClInclude Include="..\..\..\Samples\Shared\SkinningData.h" />
+    <ClInclude Include="..\..\..\Samples\Shared\SkinningPanel.h" />
+    <ClInclude Include="..\..\..\Shaders\Skinning\SkinningCommon.hlsli" />
+    <None Include="..\..\..\Assets\Models\SilverRobotMotionSet\MotionSet.json">
+      <AssetTargetPath>Assets\Models\SilverRobotMotionSet\MotionSet.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\SilverRobotMotionSet\Humanoid.json">
+      <AssetTargetPath>Assets\Models\SilverRobotMotionSet\Humanoid.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\SilverRobotMotionSet\Quaternius-CC0.txt">
+      <AssetTargetPath>Assets\Models\SilverRobotMotionSet\Quaternius-CC0.txt</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\SilverRobotMotionSet\SilverRobot.bin">
+      <AssetTargetPath>Assets\Models\SilverRobotMotionSet\SilverRobot.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\SilverRobotMotionSet\SilverRobot.glb">
+      <AssetTargetPath>Assets\Models\SilverRobotMotionSet\SilverRobot.glb</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\SilverRobotMotionSet\SilverRobot.gltf">
+      <AssetTargetPath>Assets\Models\SilverRobotMotionSet\SilverRobot.gltf</AssetTargetPath>
+    </None>
+    <CustomBuild Include="..\..\..\Shaders\Skinning\CacheVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D LIGHT_CULLING=1 -D SKIN_TECHNIQUE=1 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Skinning\SkinningCompute.hlsl">
+      <ShaderProfile>cs_6_6</ShaderProfile>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -D LIGHT_CULLING=1 -D SKIN_TECHNIQUE=1 -Zpr -WX -T cs_6_6 -E CSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Skinning\MeshScene.hlsli;$(RepositoryRoot)Shaders\Skinning\SkinningCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Environment.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Studio_Environment.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Irradiance.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Studio_Irradiance.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\Studio_Specular.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\Studio_Specular.dds</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Environments\LightingLab\BRDF.dds">
+      <AssetTargetPath>Assets\Environments\LightingLab\BRDF.dds</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\SkinningTiming.h" />
+    <ClInclude Include="..\..\Shared\SkinningRootMotion.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\CharacterController.h" />
+    <ClInclude Include="..\..\Shared\CharacterInput.h" />
+    <ClInclude Include="..\..\Shared\CharacterPanel.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\MotionMatchingPanel.h" />
+    <ClInclude Include="..\..\Shared\MotionMatchingController.h" />
+    <ClInclude Include="..\..\Shared\MotionDatabase.h" />
+    <ClInclude Include="..\..\Shared\PoseInertializer.h" />
+    <None Include="..\..\..\Assets\Models\SilverRobotMotionSet\Locomotion.mmdb">
+      </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\TraversalController.h" />
+    <ClInclude Include="..\..\Shared\TraversalWorld.h" />
+    <None Include="..\..\..\Assets\Models\TraversalCourse\Black.png">
+      <AssetTargetPath>Assets\Models\TraversalCourse\Black.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\TraversalCourse\CameraPath.json">
+      <AssetTargetPath>Assets\Models\TraversalCourse\CameraPath.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\TraversalCourse\Course.bin">
+      <AssetTargetPath>Assets\Models\TraversalCourse\Course.bin</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\TraversalCourse\Course.gltf">
+      <AssetTargetPath>Assets\Models\TraversalCourse\Course.gltf</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\TraversalCourse\Normal.png">
+      <AssetTargetPath>Assets\Models\TraversalCourse\Normal.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\TraversalCourse\ORM.png">
+      <AssetTargetPath>Assets\Models\TraversalCourse\ORM.png</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\TraversalCourse\Scene.json">
+      <AssetTargetPath>Assets\Models\TraversalCourse\Scene.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\TraversalCourse\Traversal.json">
+      <AssetTargetPath>Assets\Models\TraversalCourse\Traversal.json</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\Assets\Models\TraversalCourse\White.png">
+      <AssetTargetPath>Assets\Models\TraversalCourse\White.png</AssetTargetPath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Support\MotionDatabaseBuilder\MotionDatabaseBuilder.vcxproj">
+      <Project>{E4FAEEDD-03D1-405B-BEB5-58533395666D}</Project>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="BuildMotionDatabase" BeforeTargets="CopySampleAssets" Inputs="$(RepositoryRoot)Assets\Models\SilverRobotMotionSet\SilverRobot.gltf;$(RepositoryRoot)Assets\Models\SilverRobotMotionSet\SilverRobot.bin;$(RepositoryRoot)Assets\Models\SilverRobotMotionSet\MotionSet.json;$(RepositoryRoot)bin\$(Platform)\$(Configuration)\MotionDatabaseBuilder\MotionDatabaseBuilder.exe" Outputs="$(OutDir)Assets\Models\SilverRobotMotionSet\Locomotion.mmdb">
+    <MakeDir Directories="$(OutDir)Assets\Models\SilverRobotMotionSet" />
+    <Exec Command="&quot;$(RepositoryRoot)bin\$(Platform)\$(Configuration)\MotionDatabaseBuilder\MotionDatabaseBuilder.exe&quot; &quot;$(RepositoryRoot)Assets\Models\SilverRobotMotionSet&quot; &quot;$(OutDir)Assets\Models\SilverRobotMotionSet\Locomotion.mmdb&quot;" />
+  </Target>
+</Project>

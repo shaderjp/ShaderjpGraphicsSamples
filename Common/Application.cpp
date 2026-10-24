@@ -166,6 +166,23 @@ void ParseOptions(Options &options)
                 if(n!=value.size()||value.empty()||value.front()==L'-'||v<1||v>(argument==L"--objects"?4096u:256u))throw std::runtime_error("--objects: 1..4096 / --materials: 1..256");
                 if(argument==L"--objects")options.galleryObjects=uint32_t(v);else options.galleryMaterials=uint32_t(v);
             }
+            else if (argument == L"--pt-scene") {
+                if(value!=L"room" && value!=L"workshop") throw std::runtime_error("--pt-scene: room / workshop");
+                options.ptScene=value;
+            }
+            else if (argument == L"--pt-sampling") {
+                if(value!=L"bsdf" && value!=L"mis") throw std::runtime_error("--pt-sampling: bsdf / mis");
+                options.ptSampling=value;
+            }
+            else if (argument == L"--pt-max-bounces" || argument == L"--pt-target-spp" || argument == L"--pt-seed") {
+                size_t n=0; auto v=std::stoull(value,&n);
+                if(value.empty() || value.front()==L'-' || n!=value.size() || v>UINT32_MAX ||
+                   (argument==L"--pt-max-bounces" && (v<1 || v>32)) || (argument==L"--pt-target-spp" && v>16777216))
+                    throw std::runtime_error("Invalid path tracing value: bounces 1..32, target spp 0..16777216, seed uint32");
+                if(argument==L"--pt-max-bounces") options.ptMaxBounces=uint32_t(v);
+                else if(argument==L"--pt-target-spp") options.ptTargetSpp=uint32_t(v);
+                else options.ptSeed=uint32_t(v);
+            }
             else if (argument == L"--rt-test-scene") options.rayTestScene = value;
             else if (argument == L"--animation") options.animation = value;
             else if (argument == L"--skinning") {

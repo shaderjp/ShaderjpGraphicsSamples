@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.0.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -201,6 +201,10 @@ EndProject
 Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_30_TraversalController", "Samples\Direct3D12\30_TraversalController\Direct3D12_30_TraversalController.vcxproj", "{E5286E64-39D8-4492-8BC5-2952CA31AF35}"
 EndProject
 Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_30_TraversalController", "Samples\Vulkan\30_TraversalController\Vulkan_30_TraversalController.vcxproj", "{7DDA6B2F-8E2F-49C4-8343-F9CE0CB2B9D1}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced18_PathTracingBasic", "Samples\Direct3D12\Advanced18_PathTracingBasic\Direct3D12_Advanced18_PathTracingBasic.vcxproj", "{826604CF-9090-49BB-8CB4-5DB05DD1ECBC}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced18_PathTracingBasic", "Samples\Vulkan\Advanced18_PathTracingBasic\Vulkan_Advanced18_PathTracingBasic.vcxproj", "{D9E85411-DE1E-4937-ADB0-C326906C5F36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -596,6 +600,14 @@ Global
 		{8631852E-03FA-5CCB-97AD-B7086311F46F}.Debug|x64.Build.0 = Debug|x64
 		{8631852E-03FA-5CCB-97AD-B7086311F46F}.Release|x64.ActiveCfg = Release|x64
 		{8631852E-03FA-5CCB-97AD-B7086311F46F}.Release|x64.Build.0 = Release|x64
+		{826604CF-9090-49BB-8CB4-5DB05DD1ECBC}.Debug|x64.ActiveCfg = Debug|x64
+		{826604CF-9090-49BB-8CB4-5DB05DD1ECBC}.Debug|x64.Build.0 = Debug|x64
+		{826604CF-9090-49BB-8CB4-5DB05DD1ECBC}.Release|x64.ActiveCfg = Release|x64
+		{826604CF-9090-49BB-8CB4-5DB05DD1ECBC}.Release|x64.Build.0 = Release|x64
+		{D9E85411-DE1E-4937-ADB0-C326906C5F36}.Debug|x64.ActiveCfg = Debug|x64
+		{D9E85411-DE1E-4937-ADB0-C326906C5F36}.Debug|x64.Build.0 = Debug|x64
+		{D9E85411-DE1E-4937-ADB0-C326906C5F36}.Release|x64.ActiveCfg = Release|x64
+		{D9E85411-DE1E-4937-ADB0-C326906C5F36}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7DDA6B2F-8E2F-49C4-8343-F9CE0CB2B9D1} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
@@ -695,5 +707,7 @@ Global
 		{19D0248A-96F9-5E79-B6DB-48298526DA4D} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
 		{AA62C0D2-8A7C-5333-A60D-2876641B217C} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
 		{8631852E-03FA-5CCB-97AD-B7086311F46F} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
+		{826604CF-9090-49BB-8CB4-5DB05DD1ECBC} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{D9E85411-DE1E-4937-ADB0-C326906C5F36} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
 	EndGlobalSection
 EndGlobal

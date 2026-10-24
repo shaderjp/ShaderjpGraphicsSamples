@@ -77,6 +77,8 @@ struct Workshop
     float exposure = 1, environmentIntensity = .8f, environmentYaw = 0;
 };
 Workshop LoadWorkshop(const std::filesystem::path &settings);
+// Static path-tracing profile: sun, environment and camera path are optional.
+Workshop LoadPathTracingScene(const std::filesystem::path &settings);
 std::vector<Image> GenerateMipChain(Image base, ImageSemantic semantic, float alphaCutoff = 0);
 DirectX::XMFLOAT2 EncodeOctahedral(DirectX::XMFLOAT3 normal);
 DirectX::XMFLOAT3 DecodeOctahedral(DirectX::XMFLOAT2 encoded);

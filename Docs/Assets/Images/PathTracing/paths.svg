@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="#f4f7fb"/>
+<text x="48" y="62" font-family="Yu Gothic, sans-serif" font-size="32" fill="#172d48">レイを使って、何を計算するのか</text>
+<text x="48" y="104" font-family="Yu Gothic, sans-serif" font-size="19" fill="#52677e">矢印はカメラから経路をたどる向き。パストレーシングもレイトレーシングを使います。</text>
+<rect x="40" y="145" width="390" height="510" rx="14" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="60" y="189" font-family="Yu Gothic, sans-serif" font-size="24" fill="#172d48">影の可視性</text>
+<rect x="280" y="245" width="105" height="35" rx="14" fill="#fff0cc" stroke="#d78013" stroke-width="2"/>
+<text x="290" y="267" font-family="Yu Gothic, sans-serif" font-size="20" fill="#172d48">光源</text>
+<polyline points="75,330 180,505" fill="none" stroke="#2573c8" stroke-width="4"/>
+<polygon points="180,505 167.45615879135062,496.7749135121757 178.64555484422536,490.06127588045086" fill="#2573c8"/>
+<circle cx="75" cy="330" r="7" fill="#2573c8"/>
+<text x="60" y="364" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">カメラ</text>
+<circle cx="180" cy="505" r="7" fill="#2573c8"/>
+<text x="165" y="539" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">表面A</text>
+<polyline points="180,505 320,285" fill="none" stroke="#d78013" stroke-width="4"/>
+<polygon points="320,285 318.2530353252646,299.8979231581193 307.24412523665046,292.89225310172844" fill="#d78013"/>
+<text x="65" y="594" font-family="Yu Gothic, sans-serif" font-size="19" fill="#172d48">光源まで遮られるかを判定</text>
+<rect x="454" y="145" width="390" height="510" rx="14" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="474" y="189" font-family="Yu Gothic, sans-serif" font-size="24" fill="#172d48">1回の鏡面反射＋IBL</text>
+<rect x="694" y="245" width="105" height="35" rx="14" fill="#fff0cc" stroke="#d78013" stroke-width="2"/>
+<text x="704" y="267" font-family="Yu Gothic, sans-serif" font-size="20" fill="#172d48">光源</text>
+<polyline points="489,330 594,505" fill="none" stroke="#2573c8" stroke-width="4"/>
+<polygon points="594,505 581.4561587913506,496.7749135121757 592.6455548442253,490.06127588045086" fill="#2573c8"/>
+<circle cx="489" cy="330" r="7" fill="#2573c8"/>
+<text x="474" y="364" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">カメラ</text>
+<circle cx="594" cy="505" r="7" fill="#2573c8"/>
+<text x="579" y="539" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">表面A</text>
+<polyline points="594,505 744,405" fill="none" stroke="#168974" stroke-width="4"/>
+<polygon points="744,405 736.3808728586176,417.920870775743 729.1426088449363,407.063474755221" fill="#168974"/>
+<circle cx="744" cy="405" r="7" fill="#2573c8"/>
+<text x="729" y="439" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">表面B</text>
+<polyline points="744,405 744,285" fill="none" stroke="#d78013" stroke-width="4"/>
+<polygon points="744,285 750.5244830116685,298.50670653529016 737.4755169883315,298.50670653529016" fill="#d78013"/>
+<text x="479" y="594" font-family="Yu Gothic, sans-serif" font-size="19" fill="#172d48">反射先の照明＋環境近似</text>
+<rect x="868" y="145" width="390" height="510" rx="14" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="888" y="189" font-family="Yu Gothic, sans-serif" font-size="24" fill="#172d48">確率的な多重反射</text>
+<rect x="1108" y="245" width="105" height="35" rx="14" fill="#fff0cc" stroke="#d78013" stroke-width="2"/>
+<text x="1118" y="267" font-family="Yu Gothic, sans-serif" font-size="20" fill="#172d48">光源</text>
+<polyline points="903,330 1008,505" fill="none" stroke="#2573c8" stroke-width="4"/>
+<polygon points="1008,505 995.4561587913506,496.7749135121757 1006.6455548442253,490.06127588045086" fill="#2573c8"/>
+<circle cx="903" cy="330" r="7" fill="#2573c8"/>
+<text x="888" y="364" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">カメラ</text>
+<circle cx="1008" cy="505" r="7" fill="#2573c8"/>
+<text x="993" y="539" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">表面A</text>
+<polyline points="1008,505 1168,440 1033,350 1148,285" fill="none" stroke="#168974" stroke-width="4"/>
+<polygon points="1148,285 1139.4519824287759,297.3260454161927 1133.0311440049802,285.9661005125539" fill="#168974"/>
+<circle cx="1168" cy="440" r="7" fill="#2573c8"/>
+<text x="1153" y="474" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">B</text>
+<circle cx="1033" cy="350" r="7" fill="#2573c8"/>
+<text x="1018" y="384" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">C</text>
+<text x="893" y="594" font-family="Yu Gothic, sans-serif" font-size="19" fill="#172d48">拡散・粗い反射を繰り返す</text>
+</svg>

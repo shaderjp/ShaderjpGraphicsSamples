@@ -21,3 +21,5 @@ Blender製アセットへの差し替えは[モデル読込の説明](../Docs/Di
 GPUスキニング向けの[Silver Robot原本](../Docs/Assets/SilverRobot.md)は、`Models/SilverRobot`のAポーズglTF／GLBと`SourceArt/Blender/SilverRobot/SilverRobot.blend`へ保持しています。53ボーン、ウェイト、人型対応表、自作確認ActionはMIT Licenseです。
 
 基本22／23と発展10では[Silver Robot Animated](../Docs/Assets/SilverRobotAnimated.md)を使います。`SilverRobotAnimated.blend`と`Models/SilverRobotAnimated`にUniversal Animation Library Standardの6クリップをリターゲットし、A/T確認ポーズも同梱しました。ロボットはMIT、QuaterniusモーションはCC0-1.0で、`Animations.json`に素材版・作者・固定コミット・SHA-256を保存しています。
+
+発展18以降のパストレーシングには[専用Room](../Docs/Assets/PathTracing.md)と既存Workshopを使います。`Models/PathTracing`と`Scenes/PathTracing`に共通配布データ、`SourceArt/Blender/PathTracing`に保存正本を収録しています。

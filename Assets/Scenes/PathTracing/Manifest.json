@@ -1,0 +1,76 @@
+{
+  "profile": "pathtracing-assets-1",
+  "license": "MIT",
+  "author": "masafumi",
+  "blender": "5.2.1 LTS",
+  "files": {
+    "Assets/Models/PathTracing/PathTracing.bin": {
+      "bytes": 428340,
+      "sha256": "5ab9a79988c3b51deffdb40174f9f1e6ffb639c001db90e51e87bfdd20809eff"
+    },
+    "Assets/Models/PathTracing/PathTracing.gltf": {
+      "bytes": 26040,
+      "sha256": "4e74ed32d5ef8aad6967a69e003c9beb580696e198c483102b6de51bd858442c"
+    },
+    "Assets/Models/PathTracing/Textures/PathRoom_Albedo.png": {
+      "bytes": 72,
+      "sha256": "f0e1c8ef3bdc28093427b22e79dbc84a53ff22d74eb0756bfccfb50d12282cda"
+    },
+    "Assets/Models/PathTracing/Textures/PathRoom_Emissive.png": {
+      "bytes": 72,
+      "sha256": "f0e1c8ef3bdc28093427b22e79dbc84a53ff22d74eb0756bfccfb50d12282cda"
+    },
+    "Assets/Models/PathTracing/Textures/PathRoom_Normal.png": {
+      "bytes": 75,
+      "sha256": "1757cdc24e2419f3b1016d990de4d3045775e282c4a182f7c20e0412c43522d7"
+    },
+    "Assets/Models/PathTracing/Textures/PathRoom_ORM.png": {
+      "bytes": 72,
+      "sha256": "f0e1c8ef3bdc28093427b22e79dbc84a53ff22d74eb0756bfccfb50d12282cda"
+    },
+    "Assets/Models/PathTracing/Textures/ShaderBall_Albedo.png": {
+      "bytes": 10506,
+      "sha256": "61c7b42f0689bfd086f993522317a07e13a1b01d3e44a7dec6394e014384b284"
+    },
+    "Assets/Models/PathTracing/Textures/ShaderBall_Emissive.png": {
+      "bytes": 5731,
+      "sha256": "7bed497392ce624ccb9a430d4768ab82f7aa2211e70c009e3b8b41fe2a8618dc"
+    },
+    "Assets/Models/PathTracing/Textures/ShaderBall_Normal.png": {
+      "bytes": 231083,
+      "sha256": "30a9c84d56c2115843ff6bc3094a424a349cc181af481762dd5df27ff61ea73c"
+    },
+    "Assets/Models/PathTracing/Textures/ShaderBall_ORM.png": {
+      "bytes": 263522,
+      "sha256": "3de53b6ad24147c5b5aa29fb66e83c74ebd4eceda2d2c2eb058ab0c64dbad745"
+    },
+    "Assets/Scenes/PathTracing/PathTracing.json": {
+      "bytes": 807,
+      "sha256": "72b4189a8b157f46ab6751d64074b670176464323b359cf5b066c5b2ee2d2b43"
+    },
+    "SourceArt/Blender/PathTracing/export.py": {
+      "bytes": 6817,
+      "sha256": "069fb7d15495847fcca7cc11da6dbd6ba13b3198efd849a6c87f8b303e6f7da0"
+    },
+    "SourceArt/Blender/PathTracing/generate.py": {
+      "bytes": 4968,
+      "sha256": "3ff9435cc9a05576a3870eb6a69dec2eb0e00fbf311827a9865d326976d30362"
+    },
+    "SourceArt/Blender/PathTracing/PathTracing.blend": {
+      "bytes": 1094011,
+      "sha256": "b6aa59ce448ca08df25190828c5b25584041b31d3fb154b6d20f02d3d1e2112f"
+    },
+    "SourceArt/Blender/PathTracing/README.md": {
+      "bytes": 1722,
+      "sha256": "5c1400af4b60c63dc11c0ca16686ccb113d0ecac113b4978da740a3d4f56b292"
+    },
+    "SourceArt/Blender/PathTracing/validate.py": {
+      "bytes": 3927,
+      "sha256": "64af817156e7bd8f56abb77d16ba68627710c4a6116e2b892238f7b4f1a256e3"
+    }
+  },
+  "reusedSources": {
+    "SourceArt/Blender/ShaderBall/ShaderBall.blend": "12372b5ef2e8bd5db0dc7857a2d402d492edb5bf38b81f64163688e141024855",
+    "Assets/Models/ShaderBall/ShaderBall_PBR.gltf": "f5d2d64552411d98235cbd3413d1306ec4cd6af09c3e54d33b274612acb7fafc"
+  }
+}

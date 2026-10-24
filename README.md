@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編30テーマ＋発展編17テーマ、両APIで計94本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編30テーマ＋発展編18テーマ、両APIで計96本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -85,7 +85,7 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 
 ## 発展編サンプル一覧
 
-発展編は01から番号を付け、**17テーマ×2 APIの34本**を同じソリューションに収録しています。[発展編目次](Docs/AdvancedGraphicsSamples.md)から、前提知識・対応機能・読み順も確認できます。
+発展編は01から番号を付け、**18テーマ×2 APIの36本**を同じソリューションに収録しています。[発展編目次](Docs/AdvancedGraphicsSamples.md)から、前提知識・対応機能・読み順も確認できます。
 
 | テーマ | Direct3D12 | Vulkan |
 |---|---|---|
@@ -106,6 +106,7 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | 15 BindlessHybrid | [15 BindlessHybrid](Docs/Direct3D12/Advanced15_BindlessHybrid.md) | [15 BindlessHybrid](Docs/Vulkan/Advanced15_BindlessHybrid.md) |
 | 16 Bindless・Mesh Shader・Compute RayQuery | [16 BindlessInlineHybrid](Docs/Direct3D12/Advanced16_BindlessInlineHybrid.md) | [16 BindlessInlineHybrid](Docs/Vulkan/Advanced16_BindlessInlineHybrid.md) |
 | 17 Mesh Shader・Tiled・点光源のRayQuery影 | [17 MeshShaderTiledInlineShadows](Docs/Direct3D12/Advanced17_MeshShaderTiledInlineShadows.md) | [17 MeshShaderTiledInlineShadows](Docs/Vulkan/Advanced17_MeshShaderTiledInlineShadows.md) |
+| 18 パストレーシング・NEE／MIS・多重反射と蓄積 | [18 PathTracingBasic](Docs/Direct3D12/Advanced18_PathTracingBasic.md) | [18 PathTracingBasic](Docs/Vulkan/Advanced18_PathTracingBasic.md) |
 
 [バインドレス共通章](Docs/BindlessGraphics.md)では、Blenderアセット制作から参照方式・描画集約の比較測定へ進みます。
 
@@ -233,7 +234,7 @@ Vulkanのスクリーンショットは、取得済みの画像をPresent前に�
 .\Tools\TestImGui.ps1 -Configuration Release
 ```
 
-`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は基本編・発展編の全94本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。GPUが一部の発展機能に対応しない場合は、`-Topics`で実行するテーマを指定してください。
+`ValidateProjects`は`.vcxproj`と`.filters`をXMLで照合し、全項目の一対一対応、物理ファイル、フィルタ宣言、GUIDと親階層を検証します。`TestLoaders`はVSの開発環境を設定し、外部テストライブラリなしでCPU側テストをコンパイルします。`TestSamples`は基本編・発展編の全96本で描画、リサイズ、最小化復帰、PNG取得、正常終了を確認します。GPUが一部の発展機能に対応しない場合は、`-Topics`で実行するテーマを指定してください。
 
 `TestPostProcess`はHDRの保持と表示変換、モニターの更新、黒・一定色・端のBloom、641×479、257粒子の更新境界、Step／ResetをGPU画像とBufferで検証します。標準Python 3.11以上を`-PythonPath`で指定でき、既定ではアセット制作用Blenderの付属Pythonを使います。`--capture-gpu`はこの診断時だけ読戻しを行い、通常フレームでは読み戻しません。
 
@@ -309,3 +310,7 @@ meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定Submoduleです。`git s
 | Tiled Deferredの多数光源へレイによる影を加える | [記事](Docs/Direct3D12/Advanced17_MeshShaderTiledInlineShadows.md) | [記事](Docs/Vulkan/Advanced17_MeshShaderTiledInlineShadows.md) |
 
 [第28〜30回の学習順と制作工程](Docs/MotionMatchingRoadmap.md)では、入力・姿勢ブレンドからモーションマッチングと衝突付き移動までを説明しています。
+
+## 発展18：パストレーシング入門
+
+[共通解説と理論図](Docs/PathTracing.md) → [共通アセット](Docs/Assets/PathTracing.md) → [Direct3D12](Docs/Direct3D12/Advanced18_PathTracingBasic.md)／[Vulkan](Docs/Vulkan/Advanced18_PathTracingBasic.md)。専用RoomとWorkshopでLambert＋GGX、多重反射、NEE＋MIS、RGBA32F蓄積を比較します。ReSTIRとデノイズは後続テーマです。[検証記録](Docs/PathTracingVerification.md)も参照してください。

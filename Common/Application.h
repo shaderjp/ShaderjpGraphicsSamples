@@ -34,6 +34,8 @@ struct Options
     std::wstring meshRenderPath, meshCulling, meshView;
     std::wstring meshTestScene;
     std::wstring rayTestScene;
+    std::wstring ptScene = L"room", ptSampling = L"mis";
+    uint32_t ptMaxBounces = 8, ptTargetSpp = 0, ptSeed = 1;
     float fixedDelta = 0, gravity = 3, bloomThreshold = 1, bloomStrength = .15f;
     std::wstring workshopScene, preset, camera;
     std::filesystem::path timings;

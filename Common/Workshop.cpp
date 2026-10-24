@@ -313,7 +313,7 @@ class Reader
 };
 } // namespace
 
-static Workshop LoadWorkshopData(const std::filesystem::path &settings)
+static Workshop LoadWorkshopData(const std::filesystem::path &settings, bool pathTracing = false)
 {
     using namespace DirectX;
     auto check = [](bool ok, const std::string &why)
@@ -323,7 +323,7 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings)
     };
     auto bytes = ReadBinary(settings);
     auto config = Json::parse(bytes);
-    check(config.at("profile") == "workshop-scene-1", "unsupported scene profile");
+    check(config.at("profile") == (pathTracing ? "pathtracing-scene-1" : "workshop-scene-1"), "unsupported scene profile");
     Reader r(settings.parent_path() / config.at("model").get<std::string>());
     const auto &root = r.Get("");
     r.Check(r.Get("/asset/version") == "2.0", "/asset/version", "Expected glTF 2.0");
@@ -472,6 +472,7 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings)
     {
         id(sj);
         WorkshopScene s;
+        if (pathTracing) s.sun = {0, 0, 0, 0};
         s.name = sj.at("name");
         s.minimum = {FLT_MAX, FLT_MAX, FLT_MAX};
         s.maximum = {-FLT_MAX, -FLT_MAX, -FLT_MAX};
@@ -508,6 +509,7 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings)
                     XMStoreFloat4x4(&instance.world, world);
                     // The central-bay tool box is the sole movable diagnostic occluder.
                     instance.movable =
+                        (pathTracing && n.value("name", std::string()) == "WhiteBox") ||
                         n.value("name", std::string()).find("ToolBox_00") != std::string::npos &&
                         (s.name == "Standard" || instance.id.find("11") != std::string::npos);
                     instance.minimum = {FLT_MAX, FLT_MAX, FLT_MAX};
@@ -561,7 +563,7 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings)
         };
         for (const auto &node : sj.at("nodes"))
             visit(node.get<size_t>(), XMMatrixIdentity());
-        check(sunCount == 1 && !s.instances.empty(), "empty scene or missing sun");
+        check((pathTracing || sunCount == 1) && !s.instances.empty(), "empty scene or missing sun");
         result.scenes.push_back(std::move(s));
     }
     auto camera = [&](const std::string &name, const Json &j)
@@ -582,14 +584,22 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings)
     };
     for (const auto &[name, j] : config.at("cameras").items())
         result.cameras.push_back(camera(name, j));
+    if (!pathTracing || std::filesystem::exists(settings.parent_path() / "CameraPath.json"))
+    {
     auto pathBytes = ReadBinary(settings.parent_path() / "CameraPath.json");
     auto path = Json::parse(pathBytes);
     for (const auto &j : path.at("frames"))
         result.path.push_back(camera("Path", j));
+    }
+    if (!pathTracing || config.contains("environment"))
+    {
     result.environment = settings.parent_path() / config.at("environment").at("prefix").get<std::string>();
     result.environmentIntensity = config.at("environment").value("intensity", .8f);
     result.environmentYaw = config.at("environment").value("yawDegrees", 0.f);
+    }
+    else result.environmentIntensity = 0;
     result.exposure = config.value("exposure", 1.f);
+    check(!result.cameras.empty(), "missing cameras");
     check(std::isfinite(result.exposure) && result.exposure > 0 &&
               std::isfinite(result.environmentIntensity) && result.environmentIntensity >= 0 &&
               std::isfinite(result.environmentYaw),
@@ -606,6 +616,11 @@ Workshop LoadWorkshop(const std::filesystem::path &settings)
     {
         throw std::runtime_error(settings.string() + ": invalid Workshop JSON/reference: " + e.what());
     }
+}
+Workshop LoadPathTracingScene(const std::filesystem::path &settings)
+{
+    try { return LoadWorkshopData(settings, true); }
+    catch (const Json::exception &e) { throw std::runtime_error(settings.string() + ": invalid PathTracing JSON/reference: " + e.what()); }
 }
 DirectX::XMFLOAT2 EncodeOctahedral(DirectX::XMFLOAT3 n)
 {

@@ -1,6 +1,6 @@
 # グラフィックスサンプル発展編：Direct3D 12／Vulkan
 
-基本編で学んだリソース転送・同期・PBR・IBL・Deferred Renderingを土台に、GPUのレイトレーシング、Mesh ShaderとGPU Driven Renderingを実装するシリーズです。発展編は01から番号を付け、各テーマを両APIの独立した実行プロジェクトで比較します。
+基本編で学んだリソース転送・同期・PBR・IBL・Deferred Renderingを土台に、GPUのレイトレーシング、Mesh Shader、GPU Driven Rendering、パストレーシングを実装するシリーズです。発展編は01から番号を付け、各テーマを両APIの独立した実行プロジェクトで比較します。現在は基本30テーマ＋発展18テーマ、両API96本です。
 
 | 発展編 | Direct3D 12 / DXR | Vulkan |
 |---|---|---|
@@ -56,7 +56,17 @@ VS 2026、v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを使用
 
 ## インライン・レイトレーシング（発展16〜17）
 
-[共通解説](InlineRaytracing.md)と基本26・27から進みます。発展16は発展15のRayQuery版、発展17は発展09のTiled Deferredに選択した点光源の影を加えます。基本27＋発展17テーマ、両API88本です。
+[共通解説](InlineRaytracing.md)と基本26・27から進みます。発展16は発展15のRayQuery版、発展17は発展09のTiled Deferredに選択した点光源の影を加えます。
 
 - Bindless・Mesh Shader・RayQueryを接続する：[Direct3D12](Direct3D12/Advanced16_BindlessInlineHybrid.md)／[Vulkan](Vulkan/Advanced16_BindlessInlineHybrid.md)
 - Tiled Deferredの多数光源へレイによる影を加える：[Direct3D12](Direct3D12/Advanced17_MeshShaderTiledInlineShadows.md)／[Vulkan](Vulkan/Advanced17_MeshShaderTiledInlineShadows.md)
+
+## パストレーシング（発展18）
+
+レイトレーシング01〜03、Inline Raytracing編に続き、[共通解説](PathTracing.md)で光の経路、Monte Carlo、NEE、MIS、蓄積を学びます。[専用室内とWorkshop](Assets/PathTracing.md)を両APIと後続記事で共有します。
+
+| 発展編 | Direct3D12 | Vulkan |
+|---|---|---|
+| 18 PathTracing Basic | [記事](Direct3D12/Advanced18_PathTracingBasic.md) | [記事](Vulkan/Advanced18_PathTracingBasic.md) |
+
+初回は拡散・粗い鏡面反射、面光源、多重反射、全解像度の蓄積です。ReSTIR・デノイズ・再投影は含めません。[実機検証](PathTracingVerification.md)

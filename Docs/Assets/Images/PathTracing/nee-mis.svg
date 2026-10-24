@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="#f4f7fb"/>
+<text x="48" y="62" font-family="Yu Gothic, sans-serif" font-size="32" fill="#172d48">NEEとMIS：光源へ到達する二つの選び方</text>
+<text x="48" y="104" font-family="Yu Gothic, sans-serif" font-size="19" fill="#52677e">同じ直接光を二重に加算せず、それぞれのPDFに応じて重みを付けます。</text>
+<rect x="45" y="145" width="740" height="510" rx="14" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<rect x="825" y="145" width="410" height="510" rx="14" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<rect x="425" y="205" width="270" height="45" rx="14" fill="#fff0cc" stroke="#d78013" stroke-width="2"/>
+<text x="510" y="235" font-family="Yu Gothic, sans-serif" font-size="24" fill="#172d48">面光源</text>
+<circle cx="130" cy="340" r="7" fill="#2573c8"/>
+<text x="115" y="374" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">カメラ</text>
+<circle cx="330" cy="540" r="7" fill="#2573c8"/>
+<text x="315" y="574" font-family="Yu Gothic, sans-serif" font-size="18" fill="#172d48">表面</text>
+<polyline points="130,340 330,540" fill="none" stroke="#2573c8" stroke-width="4"/>
+<polygon points="330,540 315.8358100361125,535.0628223986869 325.0628223986869,525.8358100361124" fill="#2573c8"/>
+<polyline points="330,540 490,255" fill="none" stroke="#d78013" stroke-width="6"/>
+<polygon points="490,255 489.0772410965232,269.9715902964934 477.6987543081273,263.5836678889729" fill="#d78013"/>
+<text x="65" y="242" font-family="Yu Gothic, sans-serif" font-size="22" fill="#d78013">NEE：光源上の点を選ぶ</text>
+<polyline points="330,540 650,255" fill="none" stroke="#168974" stroke-width="6"/>
+<polygon points="650,255 644.253015323677,268.8554020919679 635.5743077353515,259.1108883085849" fill="#168974"/>
+<text x="410" y="411" font-family="Yu Gothic, sans-serif" font-size="21" fill="#168974">BSDF：方向を選ぶ</text>
+<text x="850" y="211" font-family="Yu Gothic, sans-serif" font-size="21" fill="#172d48">面積PDF → 立体角PDF</text>
+<text x="850" y="260" font-family="Yu Gothic, sans-serif" font-size="20" fill="#172d48">pL = p(select) × distance²</text>
+<text x="850" y="292" font-family="Yu Gothic, sans-serif" font-size="20" fill="#172d48">       / (area × cos(light))</text>
+<text x="850" y="379" font-family="Yu Gothic, sans-serif" font-size="24" fill="#172d48">power heuristic</text>
+<text x="850" y="427" font-family="Yu Gothic, sans-serif" font-size="22" fill="#172d48">wL = pL² / (pL² + pB²)</text>
+<text x="850" y="461" font-family="Yu Gothic, sans-serif" font-size="22" fill="#172d48">wB = pB² / (pL² + pB²)</text>
+<text x="850" y="568" font-family="Yu Gothic, sans-serif" font-size="28" fill="#172d48">wL + wB = 1</text>
+<text x="850" y="615" font-family="Yu Gothic, sans-serif" font-size="20" fill="#52677e">PDFは同じ測度で比較する</text>
+</svg>

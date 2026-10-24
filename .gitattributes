@@ -81,3 +81,15 @@
 /Docs/Direct3D12/Images/30_TraversalController*.png -text
 /Docs/Vulkan/Images/29_MotionMatching*.png -text
 /Docs/Vulkan/Images/30_TraversalController*.png -text
+
+# Path tracing exports and authoring sources are hashed by their manifest.
+/Assets/Models/PathTracing/*.gltf text eol=lf
+/Assets/Models/PathTracing/*.bin -text
+/Assets/Models/PathTracing/Textures/*.png -text
+/Assets/Scenes/PathTracing/*.json text eol=lf
+/SourceArt/Blender/PathTracing/*.blend -text
+/SourceArt/Blender/PathTracing/*.py text eol=lf
+/SourceArt/Blender/PathTracing/*.md text eol=lf
+/Docs/Assets/Images/PathTracing/*.png -text
+/Docs/Assets/Images/PathTracing/*.svg text eol=lf
+/Docs/PathTracing*.json text eol=lf

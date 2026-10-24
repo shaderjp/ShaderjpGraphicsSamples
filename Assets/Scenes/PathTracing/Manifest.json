@@ -49,12 +49,12 @@
       "sha256": "72b4189a8b157f46ab6751d64074b670176464323b359cf5b066c5b2ee2d2b43"
     },
     "SourceArt/Blender/PathTracing/export.py": {
-      "bytes": 6817,
-      "sha256": "069fb7d15495847fcca7cc11da6dbd6ba13b3198efd849a6c87f8b303e6f7da0"
+      "bytes": 6708,
+      "sha256": "b28b4a7412b2a43b4a16edcd7617805f91825af89acd81e72d8a18a70fcd7fe7"
     },
     "SourceArt/Blender/PathTracing/generate.py": {
-      "bytes": 4968,
-      "sha256": "3ff9435cc9a05576a3870eb6a69dec2eb0e00fbf311827a9865d326976d30362"
+      "bytes": 4896,
+      "sha256": "c661ee85f64ba19036c71be8684ced66549e08ac1aa4b15a5e018e9435e320a5"
     },
     "SourceArt/Blender/PathTracing/PathTracing.blend": {
       "bytes": 1094011,

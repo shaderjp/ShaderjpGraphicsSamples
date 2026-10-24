@@ -22,6 +22,7 @@
 - NuGet Restoreとソリューション全99プロジェクト（96 APIサンプル＋3 Support）のx64 Debug／Releaseビルドを実行しました。最終のビルドにエラー・警告はありません。
 - `Tools/ValidateProjects.ps1`で全project／filtersのXML、全項目の一対一対応、GUID、親フィルタ、ファイル存在、ソリューションのAPIフォルダ配置を検証しました。新規プロジェクトはD3D12が120項目、Vulkanが119項目です。
 - `Tools/TestPathTracingShaders.ps1`で両構成のDXIL／SPIR-V、KHR機能宣言、RGBA32F蓄積、CPU／GPU配置を検証しました。Vertex 48、Material 80、Instance 144、PathLight 64 bytes、Scene定数240 bytesです。
+- Windowsの`core.autocrlf=true`による隔離チェックアウトでも、Manifestの全ファイルハッシュが一致することを確認しました。ハッシュ対象のテキストはLFで固定します。
 - `Tools/TestPathTracingAssets.ps1`はglTFのエラー・警告とも0件、安定ID、法線・接線、Index、参照、Manifest、保存済みblendだけを使った隔離再書出しを通過しました。正本は書出し前後で同一ハッシュです。
 - `Tools/TestPathTracingCpu.ps1`で太陽・環境・経路なしの新プロファイル、旧プロファイルの拒否規則、データ結合、面光源の面積・CDF・検索先、空／退化光源を確認しました。既存の`TestLoaders`と`TestWorkshopLoader`も通過しました。
 

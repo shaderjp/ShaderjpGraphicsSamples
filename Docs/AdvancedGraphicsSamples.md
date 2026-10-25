@@ -1,6 +1,6 @@
 # グラフィックスサンプル発展編：Direct3D 12／Vulkan
 
-基本編で学んだリソース転送・同期・PBR・IBL・Deferred Renderingを土台に、GPUのレイトレーシング、Mesh Shader、GPU Driven Rendering、パストレーシングを実装するシリーズです。発展編は01から番号を付け、各テーマを両APIの独立した実行プロジェクトで比較します。現在は基本30テーマ＋発展18テーマ、両API96本です。
+基本編で学んだリソース転送・同期・PBR・IBL・Deferred Renderingを土台に、GPUのレイトレーシング、Mesh Shader、GPU Driven Rendering、パストレーシングを実装するシリーズです。発展編は01から番号を付け、各テーマを両APIの独立した実行プロジェクトで比較します。現在は基本30テーマ＋発展19テーマ、両API98本です。
 
 | 発展編 | Direct3D 12 / DXR | Vulkan |
 |---|---|---|
@@ -70,3 +70,10 @@ VS 2026、v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを使用
 | 18 PathTracing Basic | [記事](Direct3D12/Advanced18_PathTracingBasic.md) | [記事](Vulkan/Advanced18_PathTracingBasic.md) |
 
 初回は拡散・粗い鏡面反射、面光源、多重反射、全解像度の蓄積です。ReSTIR・デノイズ・再投影は含めません。[実機検証](PathTracingVerification.md)
+
+
+## BRDFとBSDF（発展19）
+
+[共通解説](BRDFAndBSDF.md) → [追加ガラスアセット](Assets/BSDFMaterials.md) → [Direct3D12](Direct3D12/Advanced19_BSDFMaterials.md)／[Vulkan](Vulkan/Advanced19_BSDFMaterials.md)へ進みます。発展18と同じパストレーシングで、反射＋透過、反射成分のみ、従来の不透明PBRを全画面で比較します。
+
+発展19以降の新規サンプルは1920×1080です。既存サンプルと掲載画像の解像度は維持します。透明・すりガラスと距離吸収を扱い、ReSTIR・デノイズ・入れ子の媒質は後続候補です。[検証記録](BSDFMaterialsVerification.md)

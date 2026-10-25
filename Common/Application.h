@@ -35,6 +35,9 @@ struct Options
     std::wstring meshTestScene;
     std::wstring rayTestScene;
     std::wstring ptScene = L"room", ptSampling = L"mis";
+    std::wstring bsdfMode = L"full", bsdfPreset = L"lab", bsdfTest;
+    std::wstring bsdfMaterial = L"material:ClearGlass";
+    float bsdfIor = -1, bsdfRoughness = -1, bsdfAbsorptionDistance = -1;
     uint32_t ptMaxBounces = 8, ptTargetSpp = 0, ptSeed = 1;
     float fixedDelta = 0, gravity = 3, bloomThreshold = 1, bloomStrength = .15f;
     std::wstring workshopScene, preset, camera;
@@ -72,7 +75,11 @@ struct ISample
     virtual bool OnMessage(HWND, UINT, WPARAM, LPARAM, LRESULT &) { return false; }
 };
 
-int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title);
+struct SampleDefaults
+{
+    uint32_t clientWidth = 1280, clientHeight = 720, pathMaxBounces = 8;
+};
+int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title, SampleDefaults defaults = {});
 void CheckHR(HRESULT result, const char *operation);
 void Trace(const std::string &message);
 void ValidationError(const std::string &message);

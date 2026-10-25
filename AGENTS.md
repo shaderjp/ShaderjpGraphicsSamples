@@ -2,7 +2,8 @@
 
 - Work only in this repository. `D:\Git\DirectX-Graphics-Samples2026` is a read-only Microsoft implementation reference; `D:\Git\Shaderjp` contains the website and is changed only on a separate article request.
 - Use a single Visual Studio 2026 solution, native `.vcxproj` applications, v145, Windows SDK 10.0.26100.0, C++20, x64 Debug/Release. Add a separate executable project for each technique/API.
-- Use a 1280x720 initial client area for every sample, configured in `Common/Application.cpp`. The minimize/restore test returns to this size. Keep existing 800x600 documentation/article captures unchanged; capture new article images at 1280x720.
+- New samples starting with Advanced19 use a 1920x1080 client area and documentation captures. Pass `SampleDefaults` to `RunSample`; minimize/restore returns to that sample's initial size. Existing samples retain 1280x720 and existing 800x600/1280x720 images remain unchanged.
+- Projects that override the client size must also declare matching `SampleClientWidth` and `SampleClientHeight` MSBuild properties for lifecycle tests. Apply CLI overrides after `SampleDefaults`.
 - Keep graphics initialization, resource creation, drawing, synchronization, and teardown visible in each sample. `Common` is for Win32 lifecycle, CPU data/file/image/model loading, and math, not a shared rendering API.
 - D3D12 uses Agility SDK 1.619.6 and DXC 1.9.2609.5 from NuGet. Vulkan uses the installed Vulkan SDK, including its DXC, and targets Vulkan 1.3.
 - Share HLSL source; compile offline with DXC, Shader Model 6.6, HLSL 2021. Preserve register/binding conventions (b0=0, t0=1, s0=2, set 0), row-major matrices, left-handed camera, depth 0..1, and Vulkan's negative-height viewport.

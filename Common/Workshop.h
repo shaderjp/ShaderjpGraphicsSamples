@@ -31,6 +31,9 @@ struct WorkshopMaterial
     AlphaMode alpha = AlphaMode::Opaque;
     float cutoff = .5f;
     bool doubleSided = false;
+    // Loaded only by the restricted BSDF tutorial profile; legacy GPU layouts stay unchanged.
+    float transmission = 0, ior = 1.5f, thickness = 0, attenuationDistance = 0;
+    DirectX::XMFLOAT3 attenuationColor{1, 1, 1}; // distance=0 means no absorption
 };
 struct WorkshopPrimitive
 {
@@ -79,6 +82,7 @@ struct Workshop
 Workshop LoadWorkshop(const std::filesystem::path &settings);
 // Static path-tracing profile: sun, environment and camera path are optional.
 Workshop LoadPathTracingScene(const std::filesystem::path &settings);
+Workshop LoadBSDFScene(const std::filesystem::path &settings);
 std::vector<Image> GenerateMipChain(Image base, ImageSemantic semantic, float alphaCutoff = 0);
 DirectX::XMFLOAT2 EncodeOctahedral(DirectX::XMFLOAT3 normal);
 DirectX::XMFLOAT3 DecodeOctahedral(DirectX::XMFLOAT2 encoded);

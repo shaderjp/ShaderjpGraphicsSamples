@@ -20,7 +20,7 @@ using Json = nlohmann::json;
 class Reader
 {
   public:
-    explicit Reader(const std::filesystem::path &path) : path_(std::filesystem::absolute(path))
+    explicit Reader(const std::filesystem::path &path, bool bsdf = false) : path_(std::filesystem::absolute(path)), bsdf_(bsdf)
     {
         const auto bytes = ReadFile(path_, "/", 16 * 1024 * 1024);
         try
@@ -292,12 +292,12 @@ class Reader
                     if (child.is_object())
                         for (const auto &[extension, unused] : child.items())
                             Check(extension == "KHR_lights_punctual" ||
-                                      extension == "KHR_materials_emissive_strength",
+                                      extension == "KHR_materials_emissive_strength" || BSDFExtension(extension),
                                   childAt, "Unsupported extension: " + extension);
                     else
                         for (const auto &extension : child)
                             Check(extension == "KHR_lights_punctual" ||
-                                      extension == "KHR_materials_emissive_strength",
+                                      extension == "KHR_materials_emissive_strength" || BSDFExtension(extension),
                                   childAt, "Unsupported extension");
                 }
                 if (key != "extras")
@@ -307,13 +307,15 @@ class Reader
             for (size_t i = 0; i < value.size(); ++i)
                 RejectExtensions(value[i], at + "/" + std::to_string(i));
     }
+    bool BSDFExtension(const std::string &name) const { return bsdf_ && (name == "KHR_materials_transmission" || name == "KHR_materials_ior" || name == "KHR_materials_volume"); }
     std::filesystem::path path_;
+    bool bsdf_ = false;
     Json document_;
     std::vector<std::vector<uint8_t>> buffers_;
 };
 } // namespace
 
-static Workshop LoadWorkshopData(const std::filesystem::path &settings, bool pathTracing = false)
+static Workshop LoadWorkshopData(const std::filesystem::path &settings, bool pathTracing = false, bool bsdf = false)
 {
     using namespace DirectX;
     auto check = [](bool ok, const std::string &why)
@@ -323,8 +325,8 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings, bool pat
     };
     auto bytes = ReadBinary(settings);
     auto config = Json::parse(bytes);
-    check(config.at("profile") == (pathTracing ? "pathtracing-scene-1" : "workshop-scene-1"), "unsupported scene profile");
-    Reader r(settings.parent_path() / config.at("model").get<std::string>());
+    check(config.at("profile") == (bsdf ? "bsdf-scene-1" : pathTracing ? "pathtracing-scene-1" : "workshop-scene-1"), "unsupported scene profile");
+    Reader r(settings.parent_path() / config.at("model").get<std::string>(), bsdf);
     const auto &root = r.Get("");
     r.Check(r.Get("/asset/version") == "2.0", "/asset/version", "Expected glTF 2.0");
     for (auto key : {"animations", "skins"})
@@ -361,7 +363,7 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings, bool pat
         auto emission = j.value("emissiveFactor", Json::array({0, 0, 0}));
         check(emission.size() == 3, "emissive factor size");
         float strength = 1;
-        if (j.contains("extensions"))
+        if (j.contains("extensions") && j["extensions"].contains("KHR_materials_emissive_strength"))
             strength = r.Scalar(
                 j["extensions"].at("KHR_materials_emissive_strength").value("emissiveStrength", Json(1)), at);
         check(strength >= 0, "negative emissive strength");
@@ -391,6 +393,36 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings, bool pat
         check(m.sampler==GltfSampler{},"Workshop runtime profile requires linear repeat mip sampling");
         if (m.alpha == AlphaMode::Mask)
             result.images[m.images[0]].alphaCutoff = m.base.w > 0 ? std::min(1.0f, m.cutoff / m.base.w) : 1;
+        if (bsdf && j.contains("extensions")) {
+            const auto &ext = j["extensions"];
+            if (ext.contains("KHR_materials_transmission")) {
+                const auto &tr = ext["KHR_materials_transmission"];
+                check(!tr.contains("transmissionTexture"), "transmission textures are outside the BSDF tutorial profile");
+                m.transmission = r.Factor(tr.value("transmissionFactor", Json(0)), at);
+                check(m.transmission == 0 || m.transmission == 1, "transmissionFactor must be 0 or 1 in this profile");
+            }
+            if (ext.contains("KHR_materials_ior")) m.ior = r.Scalar(ext["KHR_materials_ior"].value("ior", Json(1.5)), at);
+            check(m.ior >= 1 && m.ior <= 3, "IOR must be finite and in 1..3");
+            if (ext.contains("KHR_materials_volume")) {
+                const auto &vol = ext["KHR_materials_volume"];
+                check(!vol.contains("thicknessTexture"), "thickness textures are outside the BSDF tutorial profile");
+                m.thickness = r.Scalar(vol.value("thicknessFactor", Json(0)), at);
+                check(m.thickness >= 0, "negative volume thickness");
+                if (vol.contains("attenuationDistance")) {
+                    m.attenuationDistance = r.Scalar(vol["attenuationDistance"], at);
+                    check(m.attenuationDistance > 0, "attenuationDistance must be positive");
+                }
+                auto color = vol.value("attenuationColor", Json::array({1,1,1}));
+                check(color.size() == 3, "attenuationColor requires three components");
+                m.attenuationColor = {r.Factor(color[0], at), r.Factor(color[1], at), r.Factor(color[2], at)};
+            }
+            if (m.transmission > 0) {
+                check(m.thickness > 0 && m.factors.x == 0 && m.alpha == AlphaMode::Opaque,
+                      "transmissive materials require a thick, opaque-alpha dielectric volume (metallic=0)");
+                check(m.base.x == 1 && m.base.y == 1 && m.base.z == 1 && m.base.w == 1,
+                      "use white Base Color; color this tutorial's glass with volume absorption");
+            }
+        }
         result.materials.push_back(m);
     }
     std::vector<std::vector<uint32_t>> meshes;
@@ -486,7 +518,7 @@ static Workshop LoadWorkshopData(const std::filesystem::path &settings, bool pat
                  scale = vec(n.value("scale", Json::array({1, 1, 1})));
             auto rotation = n.value("rotation", Json::array({0, 0, 0, 1}));
             check(rotation.size() == 4, "rotation size");
-            check(scale.x > 0 && std::abs(scale.x - scale.y) < 1e-5 && std::abs(scale.x - scale.z) < 1e-5,
+            check(scale.x > 0 && scale.y > 0 && scale.z > 0 && (bsdf || (std::abs(scale.x - scale.y) < 1e-5 && std::abs(scale.x - scale.z) < 1e-5)),
                   "positive uniform Node scale required");
             XMFLOAT4 q{r.Scalar(rotation[0], "rotation"), r.Scalar(rotation[1], "rotation"),
                        r.Scalar(rotation[2], "rotation"), r.Scalar(rotation[3], "rotation")};
@@ -622,6 +654,66 @@ Workshop LoadPathTracingScene(const std::filesystem::path &settings)
     try { return LoadWorkshopData(settings, true); }
     catch (const Json::exception &e) { throw std::runtime_error(settings.string() + ": invalid PathTracing JSON/reference: " + e.what()); }
 }
+
+Workshop LoadBSDFScene(const std::filesystem::path &settings)
+{
+    try {
+        const auto config = Json::parse(ReadBinary(settings));
+        auto result = LoadWorkshopData(settings, true, true);
+        auto base = LoadPathTracingScene(settings.parent_path() / config.at("baseScene").get<std::string>());
+        const uint32_t imageBase = uint32_t(result.images.size()), materialBase = uint32_t(result.materials.size()),
+                       primitiveBase = uint32_t(result.primitives.size());
+        result.images.insert(result.images.end(), base.images.begin(), base.images.end());
+        for (auto m : base.materials) { for (auto &i : m.images) i += imageBase; result.materials.push_back(m); }
+        for (auto p : base.primitives) { p.material += materialBase; result.primitives.push_back(std::move(p)); }
+        for (auto &s : result.scenes) {
+            const auto &keep = config.at("baseInstances").at(s.name);
+            for (auto i : base.scenes.at(0).instances) {
+                if (std::find(keep.begin(), keep.end(), Json(i.id)) == keep.end()) continue;
+                i.primitive += primitiveBase; i.movable = false; s.instances.push_back(i);
+            }
+            // Preserve the base room bounds for camera navigation.
+            s.minimum = base.scenes[0].minimum; s.maximum = base.scenes[0].maximum;
+        }
+        // Tutorial volumes must be watertight, outward-oriented and spatially separated.
+        // Weld UV seams by position for topology; retain the actual shading vertices.
+        std::set<uint32_t> verified;
+        for (const auto &s : result.scenes) {
+            std::vector<const WorkshopInstance *> volumes;
+            for (const auto &i : s.instances) {
+                const auto &p = result.primitives[i.primitive];
+                if (result.materials[p.material].transmission == 0) continue;
+                for (auto other : volumes) {
+                    const bool overlap = i.minimum.x < other->maximum.x && i.maximum.x > other->minimum.x &&
+                        i.minimum.y < other->maximum.y && i.maximum.y > other->minimum.y &&
+                        i.minimum.z < other->maximum.z && i.maximum.z > other->minimum.z;
+                    if (overlap) throw std::runtime_error("BSDF profile requires disjoint volume bounding boxes: " + i.id);
+                }
+                volumes.push_back(&i);
+                if (!verified.insert(i.primitive).second) continue;
+                using Position = std::array<int64_t, 3>;
+                std::map<std::pair<Position, Position>, std::pair<uint32_t, int>> edges;
+                auto position = [&](uint32_t index) {
+                    const auto &v = p.vertices[index].position;
+                    return Position{int64_t(std::llround(v.x * 100000)), int64_t(std::llround(v.y * 100000)), int64_t(std::llround(v.z * 100000))};
+                };
+                double volume = 0;
+                for (size_t t = 0; t < p.indices.size(); t += 3) {
+                    for (size_t j = 0; j < 3; ++j) {
+                        auto a = position(p.indices[t+j]), b = position(p.indices[t+(j+1)%3]);
+                        auto &edge = edges[std::minmax(a,b)]; ++edge.first; edge.second += a < b ? 1 : -1;
+                    }
+                    const auto &a = p.vertices[p.indices[t]].position, &b = p.vertices[p.indices[t+1]].position, &c = p.vertices[p.indices[t+2]].position;
+                    volume += double(a.x)*(double(b.y)*c.z-double(b.z)*c.y) + double(a.y)*(double(b.z)*c.x-double(b.x)*c.z) + double(a.z)*(double(b.x)*c.y-double(b.y)*c.x);
+                }
+                if (volume <= 0 || std::any_of(edges.begin(), edges.end(), [](const auto &e) { return e.second.first != 2 || e.second.second != 0; }))
+                    throw std::runtime_error("BSDF volume must be a closed outward-oriented manifold: " + i.id);
+            }
+        }
+        return result;
+    } catch (const Json::exception &e) { throw std::runtime_error(settings.string() + ": invalid BSDF scene: " + e.what()); }
+}
+
 DirectX::XMFLOAT2 EncodeOctahedral(DirectX::XMFLOAT3 n)
 {
     float sum = std::abs(n.x) + std::abs(n.y) + std::abs(n.z);

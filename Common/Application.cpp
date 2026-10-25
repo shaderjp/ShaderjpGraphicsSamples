@@ -24,6 +24,7 @@ struct WindowState
 {
     ISample *sample = nullptr;
     uint32_t width = DefaultClientWidth, height = DefaultClientHeight;
+    uint32_t initialWidth = DefaultClientWidth, initialHeight = DefaultClientHeight;
     bool resized = false, minimized = false;
 };
 LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
@@ -49,7 +50,7 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
     {
         KillTimer(window, 1);
         ShowWindow(window, SW_RESTORE);
-        RECT rectangle{0, 0, DefaultClientWidth, DefaultClientHeight};
+        RECT rectangle{0, 0, LONG(state->initialWidth), LONG(state->initialHeight)};
         AdjustWindowRect(&rectangle, WS_OVERLAPPEDWINDOW, FALSE);
         SetWindowPos(window, nullptr, 0, 0, rectangle.right - rectangle.left,
                      rectangle.bottom - rectangle.top, SWP_NOMOVE | SWP_NOZORDER);
@@ -165,6 +166,25 @@ void ParseOptions(Options &options)
                 size_t n=0; auto v=std::stoul(value,&n);
                 if(n!=value.size()||value.empty()||value.front()==L'-'||v<1||v>(argument==L"--objects"?4096u:256u))throw std::runtime_error("--objects: 1..4096 / --materials: 1..256");
                 if(argument==L"--objects")options.galleryObjects=uint32_t(v);else options.galleryMaterials=uint32_t(v);
+            }
+            else if (argument == L"--bsdf-mode") {
+                if(value!=L"full" && value!=L"reflection" && value!=L"legacy-pbr") throw std::runtime_error("--bsdf-mode: full / reflection / legacy-pbr");
+                options.bsdfMode=value;
+            }
+            else if (argument == L"--bsdf-preset") {
+                if(value!=L"lab" && value!=L"thickness") throw std::runtime_error("--bsdf-preset: lab / thickness");
+                options.bsdfPreset=value;
+            }
+            else if (argument == L"--bsdf-test") { options.bsdfTest=value; }
+            else if (argument == L"--bsdf-material") { options.bsdfMaterial=value; }
+            else if (argument == L"--bsdf-ior" || argument == L"--bsdf-roughness" || argument == L"--bsdf-absorption-distance") {
+                size_t consumed=0;float v=std::stof(value,&consumed);
+                if(consumed!=value.size() || !std::isfinite(v) || v<0 ||
+                   (argument==L"--bsdf-ior" && (v<1 || v>3)) ||
+                   (argument==L"--bsdf-roughness" && v>1))throw std::runtime_error("invalid BSDF material override");
+                if(argument==L"--bsdf-ior")options.bsdfIor=v;
+                else if(argument==L"--bsdf-roughness")options.bsdfRoughness=v;
+                else options.bsdfAbsorptionDistance=v;
             }
             else if (argument == L"--pt-scene") {
                 if(value!=L"room" && value!=L"workshop") throw std::runtime_error("--pt-scene: room / workshop");
@@ -307,13 +327,16 @@ std::vector<uint8_t> ReadBinary(const std::filesystem::path &path)
         throw std::runtime_error("Cannot read file: " + path.string());
     return bytes;
 }
-int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
+int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title, SampleDefaults defaults)
 {
     Options options;
+    options.ptMaxBounces = defaults.pathMaxBounces;
     HWND window = nullptr;
     bool comInitialized = false;
     WindowState state;
     state.sample = &sample;
+    state.width = state.initialWidth = defaults.clientWidth;
+    state.height = state.initialHeight = defaults.clientHeight;
     int exitCode = 0;
     try
     {
@@ -337,7 +360,7 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title)
         windowClass.lpszClassName = L"ShaderjpTutorial";
         if (!RegisterClassExW(&windowClass))
             throw std::runtime_error("RegisterClassExW failed");
-        RECT rectangle{0, 0, DefaultClientWidth, DefaultClientHeight};
+        RECT rectangle{0, 0, LONG(state.initialWidth), LONG(state.initialHeight)};
         AdjustWindowRect(&rectangle, WS_OVERLAPPEDWINDOW, FALSE);
         window = CreateWindowExW(0, windowClass.lpszClassName, title, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,
                                  CW_USEDEFAULT, rectangle.right - rectangle.left,

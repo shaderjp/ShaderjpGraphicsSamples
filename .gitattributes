@@ -93,3 +93,15 @@
 /Docs/Assets/Images/PathTracing/*.png -text
 /Docs/Assets/Images/PathTracing/*.svg text eol=lf
 /Docs/PathTracing*.json text eol=lf
+
+# BSDF teaching assets use canonical bytes for reproducible manifests.
+/Assets/Models/BSDFMaterials/*.gltf text eol=lf
+/Assets/Models/BSDFMaterials/*.bin -text
+/Assets/Models/BSDFMaterials/Textures/*.png -text
+/Assets/Scenes/BSDFMaterials/*.json text eol=lf
+/SourceArt/Blender/BSDFMaterials/*.blend -text
+/SourceArt/Blender/BSDFMaterials/*.py text eol=lf
+/SourceArt/Blender/BSDFMaterials/*.md text eol=lf
+/Docs/Assets/Images/BSDFMaterials/*.png -text
+/Docs/Assets/Images/BSDFMaterials/*.svg text eol=lf
+/Docs/BSDF*.json text eol=lf

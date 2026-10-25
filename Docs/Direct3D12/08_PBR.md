@@ -99,3 +99,5 @@ DebugではD3D12 Debug Layerを有効にして検証しています。CPUの材�
 次はIBL・環境Cubemap、Shadow Map、複数光源、Deferred Renderingなどへ拡張できます。
 
 前：[07_Lighting](07_Lighting.md)。 別API：[Vulkan 08](../Vulkan/08_PBR.md)。
+
+この回のLambert＋GGXは表面の反射を表すBRDFです。BRDFもBSDFの反射成分に含まれます。透過や内部吸収を加えた場合の違いは[発展19の共通章](../BRDFAndBSDF.md)で同一アセットを使って比較します。

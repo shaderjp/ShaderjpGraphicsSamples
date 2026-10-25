@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編30テーマ＋発展編18テーマ、両APIで計96本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編30テーマ＋発展編19テーマ、両APIで計98本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -10,7 +10,7 @@
 - x64のDebug／Release構成。初回の検証環境はWindows 11とNVIDIA GeForce RTX 4070です。
 - D3D12: FL12_0、Shader Model 6.6対応GPU／ドライバ。Agility SDK 1.619.6とDXC 1.9.2609.5をNuGetで復元します。
 - Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14回以降のCompute使用サンプル）を持つGPU／ドライバが必要です。
-- 発展編01〜03: D3D12はDXR Tier 1.0以上、VulkanはKHRのAcceleration Structure／Ray Tracing Pipeline／Deferred Host Operations、Buffer Device Addressなどが必要です。[詳細な要件](Docs/AdvancedGraphicsSamples.md#環境と今回の範囲)
+- 発展編01〜03・18〜19: D3D12はDXR Tier 1.0以上、VulkanはKHRのAcceleration Structure／Ray Tracing Pipeline／Deferred Host Operations、Buffer Device Addressなどが必要です。[詳細な要件](Docs/AdvancedGraphicsSamples.md#環境と今回の範囲)
 - 発展編04〜11: D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`と`meshShader`が必要です。Vulkanの06〜11は`taskShader`も使用します。基本22〜25はMesh Shaderを要求しません。[Mesh Shaderの要件と検証](Docs/MeshShaderVerification.md)
 - 発展12〜15はバインドレス参照に対応します。D3D12はBinding Tier 3、VulkanはRuntime descriptor arrayと画像・Storage Buffer・Storage Imageの非一様参照、および必要な個数上限を確認します。13／15はMesh Shader、14／15はRT Pipelineを使用します。[共通章](Docs/BindlessGraphics.md)
 - 基本26／27・発展16／17はインラインRTを使用します。D3D12はDXR Tier 1.1以上、VulkanはAcceleration Structure／Buffer Device Address／Ray Queryが必要です。16はMesh ShaderとBindless、17はMesh／Task Shaderも使用します。[共通章](Docs/InlineRaytracing.md)
@@ -107,6 +107,7 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | 16 Bindless・Mesh Shader・Compute RayQuery | [16 BindlessInlineHybrid](Docs/Direct3D12/Advanced16_BindlessInlineHybrid.md) | [16 BindlessInlineHybrid](Docs/Vulkan/Advanced16_BindlessInlineHybrid.md) |
 | 17 Mesh Shader・Tiled・点光源のRayQuery影 | [17 MeshShaderTiledInlineShadows](Docs/Direct3D12/Advanced17_MeshShaderTiledInlineShadows.md) | [17 MeshShaderTiledInlineShadows](Docs/Vulkan/Advanced17_MeshShaderTiledInlineShadows.md) |
 | 18 パストレーシング・NEE／MIS・多重反射と蓄積 | [18 PathTracingBasic](Docs/Direct3D12/Advanced18_PathTracingBasic.md) | [18 PathTracingBasic](Docs/Vulkan/Advanced18_PathTracingBasic.md) |
+| 19 BRDFとBSDF・反射／透過・色ガラスと吸収 | [19 BSDFMaterials](Docs/Direct3D12/Advanced19_BSDFMaterials.md) | [19 BSDFMaterials](Docs/Vulkan/Advanced19_BSDFMaterials.md) |
 
 [バインドレス共通章](Docs/BindlessGraphics.md)では、Blenderアセット制作から参照方式・描画集約の比較測定へ進みます。
 
@@ -116,7 +117,7 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 
 Visual Studioでは各APIのプロジェクトをDirect3D12／Vulkanのソリューションフォルダに配置します。第13回以降は**WASDで移動、Q/Eで上下、右ドラッグで視線回転、Shiftで加速、Rで固定カメラへ復帰**できます。ImGui操作中はカメラ入力を抑えます。固定カメラ・経路・Resetとの関係と検証手順は[カメラ操作](Docs/CameraNavigation.md)を参照してください。
 
-全サンプルの初期描画領域（ウィンドウのクライアント領域）は**1280×720ピクセル**です。`Common/Application.cpp`の`DefaultClientWidth`／`DefaultClientHeight`で揃えています。3Dの投影行列は実際の幅と高さからアスペクト比を求め、リサイズ時も反映します。初期の記事の800×600画像は維持し、新しい記事画像は1280×720で撮影しています。発展編も同じカメラの移動・回転・Resetに対応します。
+発展19以降の新規サンプルは初期描画領域と記事撮影を**1920×1080ピクセル**とし、`RunSample`の`SampleDefaults`で指定します。既存サンプルは1280×720を維持します。最小化からは各サンプルの初期サイズへ復帰します。3Dの投影行列は実際の幅と高さからアスペクト比を求め、リサイズ時も反映します。既存の800×600／1280×720画像は維持します。発展編も同じカメラの移動・回転・Resetに対応します。
 
 第28回ではWASDをキャラクター移動に使い、Spaceでジャンプ、右ドラッグで三人称カメラを回転します。XInputパッドにも対応します。
 
@@ -202,10 +203,10 @@ Mesh Shaderの64体表示は[Direct3D12版](Docs/Assets/Videos/Direct3D12_Advanc
 | `--particles <N>`／`--pause`／`--gravity <G>`（16） | 1〜65,536粒子、Pause開始、重力指定 |
 | `--fixed-dt <seconds>`（14〜16） | 撮影・検証の固定時間刻み。0なら通常の経過時間 |
 | `--test-post`（16） | `--frames 36`以上とUI表示で実Step／Reset／Pauseを検証 |
-| `--test-odd` | リサイズ検証を641×479へ変更。24フレームで最小化・1280×720復帰 |
+| `--test-odd` | リサイズ検証を641×479へ変更。24フレームで最小化・サンプル初期サイズへ復帰 |
 | `--capture-gpu`（14〜16） | 撮影時に線形HDR・粒子データとメタデータを`.gpu`へ保存 |
 | `--frames <N>` | 正の整数N回の通常描画で終了 |
-| `--test-window` | 12フレームで640×480へ変更、24フレームで最小化・1280×720へ復帰 |
+| `--test-window` | 12フレームで640×480へ変更、24フレームで最小化・サンプル初期サイズへ復帰 |
 | `--screenshot <path>` | 指定フレーム数の終了時、または通常実行の8フレーム後にGPU読戻しPNGを保存 |
 | `--log <path>` | 初期化・リサイズ・エラー・検証結果を保存 |
 
@@ -314,3 +315,16 @@ meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定Submoduleです。`git s
 ## 発展18：パストレーシング入門
 
 [共通解説と理論図](Docs/PathTracing.md) → [共通アセット](Docs/Assets/PathTracing.md) → [Direct3D12](Docs/Direct3D12/Advanced18_PathTracingBasic.md)／[Vulkan](Docs/Vulkan/Advanced18_PathTracingBasic.md)。専用RoomとWorkshopでLambert＋GGX、多重反射、NEE＋MIS、RGBA32F蓄積を比較します。ReSTIRとデノイズは後続テーマです。[検証記録](Docs/PathTracingVerification.md)も参照してください。
+
+
+## 発展19：BRDFとBSDFの比較
+
+[共通解説](Docs/BRDFAndBSDF.md)／[追加ガラスアセット](Docs/Assets/BSDFMaterials.md)／[Direct3D12](Docs/Direct3D12/Advanced19_BSDFMaterials.md)／[Vulkan](Docs/Vulkan/Advanced19_BSDFMaterials.md)
+
+掲載記事：[共通解説](https://www.shader.jp/blog/graphics-samples-brdf-bsdf/)／[アセット制作](https://www.shader.jp/blog/graphics-samples-bsdf-materials-assets/)／[Direct3D12](https://www.shader.jp/blog/direct3d12-advanced19-bsdf-materials/)／[Vulkan](https://www.shader.jp/blog/vulkan-advanced19-bsdf-materials/)。
+
+`Advanced19_BSDFMaterials`は、同じパストレーサーで反射＋透過、反射成分のみ、従来の不透明PBRを比較します。Fresnel・屈折・全反射、GGX透過、実距離による吸収を扱います。Blender正本と追加glTFを保存し、既存Roomを実行時に流用します。
+
+この回から新規サンプルの標準解像度は1920×1080です。`RunSample`の`SampleDefaults`でサンプル別の初期解像度・積分初期値を指定し、既存サンプルの1280×720と旧画像は維持します。新規プロジェクトでは試験用の`SampleClientWidth`／`SampleClientHeight`メタデータも設定してください。
+
+検証は`Tools/TestBSDFCpu.ps1`、`TestBSDFAssets.ps1`、`TestBSDFShaders.ps1`、`TestBSDF.ps1`と、`TestSamples.ps1 -Topics Advanced19_BSDFMaterials`です。[実機記録](Docs/BSDFMaterialsVerification.md)に条件と結果を残します。

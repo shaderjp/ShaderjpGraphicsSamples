@@ -38,6 +38,8 @@ WorkshopのScene／固定Cameraを変更すると、その視点から操作を�
 
 CPU試験は左手系の前進、斜め移動の速度、Shift、UI入力取得、フォーカス・キャプチャ喪失、上下回転の制限、Resetを確認します。GPU試験は各実行ファイルへWin32のキーとマウスメッセージを送り、1280×720の移動前・移動後・回転後・Reset後の画像を比較します。移動と回転で各1,000画素以上が変わり、Reset後のRGBは初期画像と完全一致することを要求します。
 
+発展19以降の新規サンプルは1920×1080です。発展19のカメラと同じsppでのResetは`Tools/TestBSDF.ps1`で検証します。`Tools/TestSamples.ps1`の最小化・復帰試験は、プロジェクトの`SampleClientWidth`／`SampleClientHeight`を参照します。既存サンプルは1280×720のままです。
+
 `--test-camera`はこの自動試験専用です。バックグラウンドでの入力と1/60秒の移動刻みを許可します。通常実行の操作はフォアグラウンドのウィンドウに限定します。画像は`.cache/camera-navigation/<構成>`へ保存し、既存の記事画像を上書きしません。
 
 Visual Studioの全APIサンプルは、[ソリューション](../ShaderjpGraphicsSamples.sln)のDirect3D12／Vulkanフォルダへ配置します。既に開いているVisual Studioにはソリューションを再読み込みしてください。`ValidateProjects`はプロジェクトのXML／filtersに加え、ソリューションとプロジェクトのGUID一致、APIフォルダへの配置も検証します。

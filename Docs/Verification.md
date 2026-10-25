@@ -404,3 +404,11 @@ Visual Studio 18.10.12201.205、v145／cl 19.51.36257.0、Windows SDK 10.0.26100
 実測環境はVS 2026 Community 18.10.12201.205、v145／cl.exe 19.51.36257.0、Windows SDK 10.0.26100.0、Windows 10.0.26300.0、GeForce RTX 4070／NVIDIA 621.01です。Agility SDK 1.619.6、D3D12 DXC 1.9.2609.5（01b62ad47）、Vulkan SDK 1.4.341.1／DXC 1.9.0.5180（e35541826）、SM6.6／HLSL 2021、Vulkanターゲット1.3を使用しました。
 
 面光源の独立した数値積分、MISとBSDFの3 seed比較、RGBA32F蓄積、Reset・露出・Pause／Resume・カメラ、MASK、奇数サイズ、最小化直後の撮影、欠落ファイル時の解放を確認しました。Debugのグラフィックス検証エラーは0件です。旧RT 01〜03とCPUローダーも回帰試験を通過しました。[詳細・数値・条件](PathTracingVerification.md)
+
+## 発展19 BRDFとBSDF（2026-10-25）
+
+Direct3D12／Vulkanへ独立した`Advanced19_BSDFMaterials`を追加しました。同一アセットの反射＋透過、Fresnel反射成分のみ、従来の不透明PBRを切り替え、粗い透過・全反射・内部吸収と厚みを比較します。新規サンプルは1920×1080で、既存サンプルの1280×720を維持します。
+
+Restore、全101プロジェクト（98 APIアプリ＋3 Support）のx64 Debug／Releaseビルド、project／filters、DXIL／SPIR-Vと構造体配置、CPUとBlender正本の隔離再書出しを確認しました。両API・両構成の光学・PDF・吸収・統計・UI・カメラの専用GPU試験、52件の異常終了試験が成功しました。全98アプリを両構成でライフサイクル試験し、計196ケースが成功、DebugのValidationエラーは0件です。旧RT 01〜03・発展18の専用GPU回帰もDebugの両APIで通過しました。
+
+実測環境はVS 2026 Community 18.10.12201.205、v145／cl 19.51.36257.0、Windows SDK 10.0.26100.0、RTX 4070／NVIDIA 621.01です。共通章・アセット記事・API別記事、編集可能なSVG／PNG 4組、1080pの実GPU画像22枚、Blender正本を収録しました。[詳細な検証記録](BSDFMaterialsVerification.md)、[数値・撮影条件・画像ハッシュ](BSDFMaterialsResults.json)、[環境JSON](BSDFMaterialsEnvironment.json)を参照してください。本記録は公開前のローカル検証結果で、掲載記事は[Shader.jpのグラフィックス目次](https://www.shader.jp/blog/graphics-samples/)から案内します。

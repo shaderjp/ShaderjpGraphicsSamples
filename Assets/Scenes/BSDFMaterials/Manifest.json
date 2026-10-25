@@ -1,0 +1,66 @@
+{
+  "profile": "bsdf-materials-assets-1",
+  "license": "MIT",
+  "author": "masafumi",
+  "blender": "5.2.1 LTS",
+  "files": {
+    "Assets/Models/BSDFMaterials/BSDFMaterials.bin": {
+      "bytes": 257784,
+      "sha256": "e7d3113523ff6a7cef664a44f675eb2ba149bee481c6b2d8ac50fead81a81819"
+    },
+    "Assets/Models/BSDFMaterials/BSDFMaterials.gltf": {
+      "bytes": 20194,
+      "sha256": "60c59eeedfae04a5ff3b73cc6d450b71d321c2a73772b1222d8c78f955cb5a1a"
+    },
+    "Assets/Models/BSDFMaterials/Textures/BSDF_Albedo.png": {
+      "bytes": 72,
+      "sha256": "f0e1c8ef3bdc28093427b22e79dbc84a53ff22d74eb0756bfccfb50d12282cda"
+    },
+    "Assets/Models/BSDFMaterials/Textures/BSDF_Emissive.png": {
+      "bytes": 72,
+      "sha256": "f0e1c8ef3bdc28093427b22e79dbc84a53ff22d74eb0756bfccfb50d12282cda"
+    },
+    "Assets/Models/BSDFMaterials/Textures/BSDF_Grid.png": {
+      "bytes": 5455,
+      "sha256": "9cf5f067fd98877b8cdec11796aa65bd9f0c7ef628fe9855a4c3d68c6f7bfd6e"
+    },
+    "Assets/Models/BSDFMaterials/Textures/BSDF_Normal.png": {
+      "bytes": 75,
+      "sha256": "1757cdc24e2419f3b1016d990de4d3045775e282c4a182f7c20e0412c43522d7"
+    },
+    "Assets/Models/BSDFMaterials/Textures/BSDF_ORM.png": {
+      "bytes": 72,
+      "sha256": "f0e1c8ef3bdc28093427b22e79dbc84a53ff22d74eb0756bfccfb50d12282cda"
+    },
+    "Assets/Scenes/BSDFMaterials/BSDFMaterials.json": {
+      "bytes": 2004,
+      "sha256": "9dfc1346e1a8019ed84eb70ff59d088a231ac51f0b290d95ef3f70781a6897b5"
+    },
+    "SourceArt/Blender/BSDFMaterials/BSDFMaterials.blend": {
+      "bytes": 231840,
+      "sha256": "76471ab44bdb59d990b0f7fb7575db3d7cb79019905f32fbeafcc8d8a54137bc"
+    },
+    "SourceArt/Blender/BSDFMaterials/export.py": {
+      "bytes": 3986,
+      "sha256": "35f23850c4bf38ccea1288c5471373a6749830869c68c44a7ff76d692e3c9ddd"
+    },
+    "SourceArt/Blender/BSDFMaterials/generate.py": {
+      "bytes": 6508,
+      "sha256": "93e454c09a645e617275653dfbf594a90f31da528289a8dabe2b4aa9197f5bc4"
+    },
+    "SourceArt/Blender/BSDFMaterials/README.md": {
+      "bytes": 2504,
+      "sha256": "9364d35774dd74879d965b5803a8f6cd08882d0096301ce7cc500438217a09cf"
+    },
+    "SourceArt/Blender/BSDFMaterials/validate.py": {
+      "bytes": 6112,
+      "sha256": "ebb9c9dbda3dc6953a292d2c8ac6a4e373d5d54b3490735b073bd02312b382a7"
+    }
+  },
+  "reusedSources": {
+    "SourceArt/Blender/PathTracing/PathTracing.blend": "b6aa59ce448ca08df25190828c5b25584041b31d3fb154b6d20f02d3d1e2112f",
+    "Assets/Models/PathTracing/PathTracing.gltf": "4e74ed32d5ef8aad6967a69e003c9beb580696e198c483102b6de51bd858442c",
+    "Assets/Models/PathTracing/PathTracing.bin": "5ab9a79988c3b51deffdb40174f9f1e6ffb639c001db90e51e87bfdd20809eff",
+    "Assets/Scenes/PathTracing/PathTracing.json": "72b4189a8b157f46ab6751d64074b670176464323b359cf5b066c5b2ee2d2b43"
+  }
+}

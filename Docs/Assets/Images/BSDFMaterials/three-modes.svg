@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<rect width="1920" height="1080" fill="#f4f7fb"/>
+<text x="64" y="84" font-family="Yu Gothic, sans-serif" font-size="46" fill="#172d48">同じアセットを3モードで評価する</text>
+<text x="64" y="140" font-family="Yu Gothic, sans-serif" font-size="28" fill="#52677e">形状・カメラ・照明・露出は共通。ガラスに指定したマテリアルの評価だけを切り替えます。</text>
+<rect x="60" y="220" width="590" height="760" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="84" y="280" font-family="Yu Gothic, sans-serif" font-size="30" fill="#172d48">BSDF：反射＋透過</text>
+<circle cx="345" cy="530" r="120" fill="#d8eeee" stroke="#2573c8" stroke-width="4"/>
+<polyline points="115,390 275,440" fill="none" stroke="#2573c8" stroke-width="6"/>
+<polygon points="275,440 252.24844433993613,443.37145592393193 258.21645405820055,424.27382482548575" fill="#2573c8"/>
+<polyline points="275,440 135,350" fill="none" stroke="#c65040" stroke-width="6"/>
+<polygon points="135,350 157.8308956106267,352.7839191110137 147.01119354222928,369.6145667729652" fill="#c65040"/>
+<polyline points="275,440 420,580 575,675" fill="none" stroke="#168974" stroke-width="6"/>
+<polygon points="575,675 552.1145673279291,672.7071913703699 562.5702056210689,655.6479920499837" fill="#168974"/>
+<text x="88" y="788" font-family="Yu Gothic, sans-serif" font-size="28" fill="#172d48">屈折した先の像が見える</text>
+<text x="88" y="830" font-family="Yu Gothic, sans-serif" font-size="28" fill="#172d48">内部の実距離で色が変わる</text>
+<rect x="680" y="220" width="590" height="760" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="704" y="280" font-family="Yu Gothic, sans-serif" font-size="30" fill="#172d48">BRDF：反射成分のみ</text>
+<circle cx="965" cy="530" r="120" fill="#37404b" stroke="#2573c8" stroke-width="4"/>
+<polyline points="735,390 895,440" fill="none" stroke="#2573c8" stroke-width="6"/>
+<polygon points="895,440 872.2484443399361,443.37145592393193 878.2164540582006,424.27382482548575" fill="#2573c8"/>
+<polyline points="895,440 755,350" fill="none" stroke="#c65040" stroke-width="6"/>
+<polygon points="755,350 777.8308956106267,352.7839191110137 767.0111935422293,369.6145667729652" fill="#c65040"/>
+<text x="708" y="788" font-family="Yu Gothic, sans-serif" font-size="28" fill="#172d48">同じFresnel反射を残す</text>
+<text x="708" y="830" font-family="Yu Gothic, sans-serif" font-size="28" fill="#172d48">透過した先の寄与を省く</text>
+<rect x="1300" y="220" width="590" height="760" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="1324" y="280" font-family="Yu Gothic, sans-serif" font-size="30" fill="#172d48">従来の不透明PBR</text>
+<circle cx="1585" cy="530" r="120" fill="#e3e8ef" stroke="#2573c8" stroke-width="4"/>
+<polyline points="1355,390 1515,440" fill="none" stroke="#2573c8" stroke-width="6"/>
+<polygon points="1515,440 1492.2484443399362,443.37145592393193 1498.2164540582005,424.27382482548575" fill="#2573c8"/>
+<polyline points="1515,440 1375,350" fill="none" stroke="#c65040" stroke-width="6"/>
+<polygon points="1375,350 1397.8308956106266,352.7839191110137 1387.0111935422292,369.6145667729652" fill="#c65040"/>
+<polyline points="1490,520 1425,550" fill="none" stroke="#c65040" stroke-width="3"/>
+<polygon points="1425,550 1439.6117512554126,532.2377725144072 1447.9964409986455,550.4046002914122" fill="#c65040"/>
+<polyline points="1490,520 1395,480" fill="none" stroke="#c65040" stroke-width="3"/>
+<polygon points="1395,480 1417.9695324350876,478.8165390950876 1410.2051271014768,497.25700176241327" fill="#c65040"/>
+<polyline points="1490,520 1455,620" fill="none" stroke="#c65040" stroke-width="3"/>
+<polygon points="1455,620 1452.399096257922,597.1475318679919 1471.2842055466183,603.7573201190356" fill="#c65040"/>
+<text x="1328" y="788" font-family="Yu Gothic, sans-serif" font-size="28" fill="#172d48">Lambert＋GGXで不透明評価</text>
+<text x="1328" y="830" font-family="Yu Gothic, sans-serif" font-size="28" fill="#172d48">透過情報を使わない再現モード</text>
+<text x="70" y="1038" font-family="Yu Gothic, sans-serif" font-size="28" fill="#172d48">反射のみのモードでは、取り除いた透過のエネルギーを反射へ振り替えません。</text>
+</svg>

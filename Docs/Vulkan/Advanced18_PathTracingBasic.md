@@ -71,3 +71,5 @@ WASD／Q・E／右ドラッグ／Shift／Rのカメラ操作と、ImGui入力中
 `--pt-target-spp 0`は上限なしです。`--frames`を指定する場合、撮影に必要なspp以上のフレーム数を設定してください。`--capture-gpu`は撮影画像と同名の`-gpu`フォルダへfloat32のHDR、最終サンプル、表面情報と、実際のspp・seed・バウンス数を含むJSONを保存します。HDRをfloat16として読み込まないでください。
 
 試験には既知の発光面、独立した面積積分による直接光の照合、複数seedのBSDF／MIS比較、実UIの編集・Reset・露出、奇数サイズを含めます。確率的画像のAPI間のバイト一致は要求しません。
+
+この回の`BSDF.hlsli`は反射成分だけを扱います。BRDF／BTDF／BSDFの関係と、同じアセットでの反射・透過の比較は[共通章](../BRDFAndBSDF.md)と[発展19](Advanced19_BSDFMaterials.md)へ進んでください。

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<rect width="1920" height="1080" fill="#f4f7fb"/>
+<text x="64" y="84" font-family="Yu Gothic, sans-serif" font-size="46" fill="#172d48">BRDF・BTDF・BSDF：表面のどちら側へ進むか</text>
+<text x="64" y="140" font-family="Yu Gothic, sans-serif" font-size="28" fill="#52677e">BRDFは反射、BTDFは透過。BSDFはこの二つをまとめた表面散乱の表現です。</text>
+<rect x="60" y="220" width="590" height="690" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="86" y="279" font-family="Yu Gothic, sans-serif" font-size="31" fill="#172d48">BRDF：同じ側へ反射</text>
+<rect x="82" y="580" width="546" height="260" rx="18" fill="#e4f4ed" stroke="#d2dce8" stroke-width="2"/>
+<polyline points="82,580 628,580" fill="none" stroke="#52677e" stroke-width="3"/>
+<polyline points="350,350 350,810" fill="none" stroke="#a5b1c0" stroke-width="2"/>
+<text x="364" y="382" font-family="Yu Gothic, sans-serif" font-size="22" fill="#52677e">法線</text>
+<polyline points="175,385 350,580" fill="none" stroke="#2573c8" stroke-width="6"/>
+<polygon points="350,580 328.7218459168071,571.268438924688 343.6129540688359,557.9046239164571" fill="#2573c8"/>
+<text x="95" y="444" font-family="Yu Gothic, sans-serif" font-size="24" fill="#2573c8">入射光</text>
+<polyline points="350,580 510,380" fill="none" stroke="#c65040" stroke-width="6"/>
+<polygon points="510,380 504.874361986952,402.42159305132435 489.25041512352334,389.92243556058145" fill="#c65040"/>
+<text x="410" y="476" font-family="Yu Gothic, sans-serif" font-size="26" fill="#c65040">反射</text>
+<rect x="680" y="220" width="590" height="690" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="706" y="279" font-family="Yu Gothic, sans-serif" font-size="31" fill="#172d48">BTDF：反対側へ透過</text>
+<rect x="702" y="580" width="546" height="260" rx="18" fill="#e4f4ed" stroke="#d2dce8" stroke-width="2"/>
+<polyline points="702,580 1248,580" fill="none" stroke="#52677e" stroke-width="3"/>
+<polyline points="970,350 970,810" fill="none" stroke="#a5b1c0" stroke-width="2"/>
+<text x="984" y="382" font-family="Yu Gothic, sans-serif" font-size="22" fill="#52677e">法線</text>
+<polyline points="795,385 970,580" fill="none" stroke="#2573c8" stroke-width="6"/>
+<polygon points="970,580 948.7218459168072,571.268438924688 963.612954068836,557.9046239164571" fill="#2573c8"/>
+<text x="715" y="444" font-family="Yu Gothic, sans-serif" font-size="24" fill="#2573c8">入射光</text>
+<polyline points="970,580 1065,790" fill="none" stroke="#168974" stroke-width="6"/>
+<polygon points="1065,790 1047.3489741071548,775.2541095579104 1065.5787991445113,767.0072839457729" fill="#168974"/>
+<text x="1082" y="746" font-family="Yu Gothic, sans-serif" font-size="26" fill="#168974">透過</text>
+<rect x="1300" y="220" width="590" height="690" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="1326" y="279" font-family="Yu Gothic, sans-serif" font-size="31" fill="#172d48">BSDF：反射と透過</text>
+<rect x="1322" y="580" width="546" height="260" rx="18" fill="#e4f4ed" stroke="#d2dce8" stroke-width="2"/>
+<polyline points="1322,580 1868,580" fill="none" stroke="#52677e" stroke-width="3"/>
+<polyline points="1590,350 1590,810" fill="none" stroke="#a5b1c0" stroke-width="2"/>
+<text x="1604" y="382" font-family="Yu Gothic, sans-serif" font-size="22" fill="#52677e">法線</text>
+<polyline points="1415,385 1590,580" fill="none" stroke="#2573c8" stroke-width="6"/>
+<polygon points="1590,580 1568.721845916807,571.268438924688 1583.612954068836,557.9046239164571" fill="#2573c8"/>
+<text x="1335" y="444" font-family="Yu Gothic, sans-serif" font-size="24" fill="#2573c8">入射光</text>
+<polyline points="1590,580 1750,380" fill="none" stroke="#c65040" stroke-width="6"/>
+<polygon points="1750,380 1744.874361986952,402.42159305132435 1729.2504151235235,389.92243556058145" fill="#c65040"/>
+<text x="1650" y="476" font-family="Yu Gothic, sans-serif" font-size="26" fill="#c65040">反射</text>
+<polyline points="1590,580 1685,790" fill="none" stroke="#168974" stroke-width="6"/>
+<polygon points="1685,790 1667.3489741071548,775.2541095579104 1685.5787991445113,767.0072839457729" fill="#168974"/>
+<text x="1702" y="746" font-family="Yu Gothic, sans-serif" font-size="26" fill="#168974">透過</text>
+<text x="70" y="984" font-family="Yu Gothic, sans-serif" font-size="29" fill="#172d48">矢印は光の進行方向。数式の wi / wo は、どちらも表面から外向きに定義します。</text>
+</svg>

@@ -1,0 +1,1079 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v5.2.40",
+    "version": "2.0"
+  },
+  "extensionsUsed": [
+    "KHR_materials_ior",
+    "KHR_materials_transmission",
+    "KHR_materials_volume"
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "extras": {
+        "id": "bsdf:scene:Lab"
+      },
+      "name": "Lab",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:scene:Thickness"
+      },
+      "name": "Thickness",
+      "nodes": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "extras": {
+        "id": "bsdf:instance:AbsorbingWedge"
+      },
+      "mesh": 0,
+      "name": "AbsorbingWedge",
+      "translation": [
+        -1.25,
+        0,
+        -0.949999988079071
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:instance:ClearSphere"
+      },
+      "mesh": 1,
+      "name": "ClearSphere",
+      "translation": [
+        -1.25,
+        0.6499999761581421,
+        0.949999988079071
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:instance:GridBackdrop:Lab"
+      },
+      "mesh": 2,
+      "name": "GridBackdrop",
+      "translation": [
+        0,
+        1.7200000286102295,
+        -2.380000114440918
+      ]
+    },
+    {
+      "camera": 0,
+      "extras": {
+        "id": "camera:InsideClear",
+        "targetRH": [
+          -1.25,
+          0.65,
+          -2.3
+        ]
+      },
+      "name": "InsideClear",
+      "rotation": [
+        0,
+        0.0762505903840065,
+        0,
+        0.9970887899398804
+      ],
+      "translation": [
+        -0.75,
+        0.6499999761581421,
+        0.949999988079071
+      ]
+    },
+    {
+      "camera": 1,
+      "extras": {
+        "id": "camera:Lab",
+        "targetRH": [
+          0.0,
+          1.55,
+          -0.35
+        ]
+      },
+      "name": "Lab",
+      "rotation": [
+        -0.06252358853816986,
+        0,
+        0,
+        0.9980435371398926
+      ],
+      "translation": [
+        0,
+        2.549999952316284,
+        7.599999904632568
+      ]
+    },
+    {
+      "camera": 2,
+      "extras": {
+        "id": "camera:LabClose",
+        "targetRH": [
+          0.0,
+          1.15,
+          -0.25
+        ]
+      },
+      "name": "LabClose",
+      "rotation": [
+        -0.0762505829334259,
+        0,
+        0,
+        0.9970887303352356
+      ],
+      "translation": [
+        0,
+        2.049999952316284,
+        5.599999904632568
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:instance:RoughSphere"
+      },
+      "mesh": 3,
+      "name": "RoughSphere",
+      "translation": [
+        1.25,
+        0.6499999761581421,
+        -0.8999999761581421
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:instance:GridBackdrop:Thickness"
+      },
+      "mesh": 2,
+      "name": "GridBackdrop",
+      "translation": [
+        0,
+        1.7200000286102295,
+        -2.380000114440918
+      ]
+    },
+    {
+      "camera": 3,
+      "extras": {
+        "id": "camera:Thickness",
+        "targetRH": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "name": "Thickness",
+      "rotation": [
+        -0.06027526035904884,
+        0,
+        0,
+        0.9981818199157715
+      ],
+      "translation": [
+        0,
+        1.7999999523162842,
+        6.599999904632568
+      ]
+    },
+    {
+      "camera": 4,
+      "extras": {
+        "id": "camera:ThicknessOblique",
+        "targetRH": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "name": "ThicknessOblique",
+      "rotation": [
+        -0.07959222048521042,
+        0.20040111243724823,
+        0.016336901113390923,
+        0.9763389229774475
+      ],
+      "translation": [
+        2.4000000953674316,
+        2,
+        5.599999904632568
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:instance:ThickPlate"
+      },
+      "mesh": 4,
+      "name": "ThickPlate",
+      "translation": [
+        0.8500000238418579,
+        0.8999999761581421,
+        0
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:instance:ThinPlate"
+      },
+      "mesh": 5,
+      "name": "ThinPlate",
+      "translation": [
+        -0.8500000238418579,
+        0.8999999761581421,
+        0
+      ]
+    }
+  ],
+  "cameras": [
+    {
+      "name": "InsideClear",
+      "perspective": {
+        "aspectRatio": 1.7777777777777777,
+        "yfov": 1.2217305898666382,
+        "zfar": 150,
+        "znear": 0.05000000074505806
+      },
+      "type": "perspective"
+    },
+    {
+      "name": "Lab",
+      "perspective": {
+        "aspectRatio": 1.7777777777777777,
+        "yfov": 0.7330383062362671,
+        "zfar": 150,
+        "znear": 0.05000000074505806
+      },
+      "type": "perspective"
+    },
+    {
+      "name": "LabClose",
+      "perspective": {
+        "aspectRatio": 1.7777777777777777,
+        "yfov": 0.8377580046653748,
+        "zfar": 150,
+        "znear": 0.05000000074505806
+      },
+      "type": "perspective"
+    },
+    {
+      "name": "Thickness",
+      "perspective": {
+        "aspectRatio": 1.7777777777777777,
+        "yfov": 0.7330383062362671,
+        "zfar": 150,
+        "znear": 0.05000000074505806
+      },
+      "type": "perspective"
+    },
+    {
+      "name": "ThicknessOblique",
+      "perspective": {
+        "aspectRatio": 1.7777777777777777,
+        "yfov": 0.7853981852531433,
+        "zfar": 150,
+        "znear": 0.05000000074505806
+      },
+      "type": "perspective"
+    }
+  ],
+  "materials": [
+    {
+      "name": "AbsorbingGlass",
+      "extras": {
+        "id": "material:AbsorbingGlass"
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "emissiveTexture": {
+        "index": 3
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "extensions": {
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1
+        },
+        "KHR_materials_ior": {
+          "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 0.5,
+          "attenuationColor": [
+            0.18,
+            0.65,
+            0.85
+          ],
+          "attenuationDistance": 0.5
+        }
+      }
+    },
+    {
+      "name": "ClearGlass",
+      "extras": {
+        "id": "material:ClearGlass"
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "emissiveTexture": {
+        "index": 3
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "extensions": {
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1
+        },
+        "KHR_materials_ior": {
+          "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 0.5,
+          "attenuationColor": [
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "name": "Grid",
+      "extras": {
+        "id": "material:Grid"
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.85,
+        "baseColorTexture": {
+          "index": 4
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "emissiveTexture": {
+        "index": 3
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": false
+    },
+    {
+      "name": "RoughGlass",
+      "extras": {
+        "id": "material:RoughGlass"
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.3,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "emissiveTexture": {
+        "index": 3
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "extensions": {
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1
+        },
+        "KHR_materials_ior": {
+          "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 0.5,
+          "attenuationColor": [
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "extras": {
+        "id": "bsdf:mesh:AbsorbingWedge"
+      },
+      "name": "BSDF_AbsorbingWedge",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2,
+            "TANGENT": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "extras": {
+            "id": "bsdf:mesh:AbsorbingWedge:primitive:0"
+          }
+        }
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:mesh:ClearSphere"
+      },
+      "name": "BSDF_ClearSphere",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6,
+            "TEXCOORD_0": 7,
+            "TANGENT": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "extras": {
+            "id": "bsdf:mesh:ClearSphere:primitive:0"
+          }
+        }
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:mesh:GridBackdrop"
+      },
+      "name": "BSDF_GridBackdrop",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 10,
+            "NORMAL": 11,
+            "TEXCOORD_0": 12,
+            "TANGENT": 13
+          },
+          "indices": 14,
+          "material": 2,
+          "extras": {
+            "id": "bsdf:mesh:GridBackdrop:primitive:0"
+          }
+        }
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:mesh:RoughSphere"
+      },
+      "name": "BSDF_RoughSphere",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 15,
+            "NORMAL": 16,
+            "TEXCOORD_0": 17,
+            "TANGENT": 18
+          },
+          "indices": 19,
+          "material": 3,
+          "extras": {
+            "id": "bsdf:mesh:RoughSphere:primitive:0"
+          }
+        }
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:mesh:ThickPlate"
+      },
+      "name": "BSDF_ThickPlate",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 20,
+            "NORMAL": 21,
+            "TEXCOORD_0": 22,
+            "TANGENT": 23
+          },
+          "indices": 14,
+          "material": 0,
+          "extras": {
+            "id": "bsdf:mesh:ThickPlate:primitive:0"
+          }
+        }
+      ]
+    },
+    {
+      "extras": {
+        "id": "bsdf:mesh:ThinPlate"
+      },
+      "name": "BSDF_ThinPlate",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 24,
+            "NORMAL": 25,
+            "TEXCOORD_0": 26,
+            "TANGENT": 27
+          },
+          "indices": 14,
+          "material": 0,
+          "extras": {
+            "id": "bsdf:mesh:ThinPlate:primitive:0"
+          }
+        }
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    },
+    {
+      "source": 2,
+      "sampler": 0
+    },
+    {
+      "source": 3,
+      "sampler": 0
+    },
+    {
+      "source": 4,
+      "sampler": 0
+    }
+  ],
+  "images": [
+    {
+      "uri": "Textures/BSDF_Albedo.png"
+    },
+    {
+      "uri": "Textures/BSDF_ORM.png"
+    },
+    {
+      "uri": "Textures/BSDF_Normal.png"
+    },
+    {
+      "uri": "Textures/BSDF_Emissive.png"
+    },
+    {
+      "uri": "Textures/BSDF_Grid.png"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 18,
+      "max": [
+        0.550000011920929,
+        1.350000023841858,
+        0.44999998807907104
+      ],
+      "min": [
+        -0.550000011920929,
+        0,
+        -0.44999998807907104
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 18,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 18,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 18,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 24,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 2143,
+      "max": [
+        0.6499997973442078,
+        0.6499999761581421,
+        0.6499996185302734
+      ],
+      "min": [
+        -0.6499994993209839,
+        -0.6499999761581421,
+        -0.6499999761581421
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 2143,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 2143,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 2143,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5123,
+      "count": 11904,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        2.4000000953674316,
+        1.6749999523162842,
+        0.009999999776482582
+      ],
+      "min": [
+        -2.4000000953674316,
+        -1.6749999523162842,
+        -0.009999999776482582
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 2143,
+      "max": [
+        0.6499997973442078,
+        0.6499999761581421,
+        0.6499996185302734
+      ],
+      "min": [
+        -0.6499994993209839,
+        -0.6499999761581421,
+        -0.6499999761581421
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5126,
+      "count": 2143,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 17,
+      "componentType": 5126,
+      "count": 2143,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 18,
+      "componentType": 5126,
+      "count": 2143,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 19,
+      "componentType": 5123,
+      "count": 11904,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 20,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        0.550000011920929,
+        0.8999999761581421,
+        0.25
+      ],
+      "min": [
+        -0.550000011920929,
+        -0.8999999761581421,
+        -0.25
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 21,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 22,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 23,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 24,
+      "componentType": 5126,
+      "count": 24,
+      "max": [
+        0.550000011920929,
+        0.8999999761581421,
+        0.05000000074505806
+      ],
+      "min": [
+        -0.550000011920929,
+        -0.8999999761581421,
+        -0.05000000074505806
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 25,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 26,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 27,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC4"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 216,
+      "byteOffset": 0,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 216,
+      "byteOffset": 216,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 144,
+      "byteOffset": 432,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 576,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 48,
+      "byteOffset": 864,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 25716,
+      "byteOffset": 912,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 25716,
+      "byteOffset": 26628,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 17144,
+      "byteOffset": 52344,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 34288,
+      "byteOffset": 69488,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 23808,
+      "byteOffset": 103776,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 127584,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 127872,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 192,
+      "byteOffset": 128160,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 384,
+      "byteOffset": 128352,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 72,
+      "byteOffset": 128736,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 25716,
+      "byteOffset": 128808,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 25716,
+      "byteOffset": 154524,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 17144,
+      "byteOffset": 180240,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 34288,
+      "byteOffset": 197384,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 23808,
+      "byteOffset": 231672,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 255480,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 255768,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 192,
+      "byteOffset": 256056,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 384,
+      "byteOffset": 256248,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 256632,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 256920,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 192,
+      "byteOffset": 257208,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 384,
+      "byteOffset": 257400,
+      "target": 34962
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 257784,
+      "uri": "BSDFMaterials.bin"
+    }
+  ]
+}

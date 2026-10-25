@@ -1,0 +1,107 @@
+{
+  "profile": "bsdf-scene-1",
+  "model": "../../Models/BSDFMaterials/BSDFMaterials.gltf",
+  "baseScene": "../PathTracing/PathTracing.json",
+  "baseInstances": {
+    "Lab": [
+      "instance:Floor",
+      "instance:BackWall",
+      "instance:LeftWall",
+      "instance:RightWall",
+      "instance:Ceiling",
+      "instance:CeilingLight",
+      "instance:ShaderBall"
+    ],
+    "Thickness": [
+      "instance:Floor",
+      "instance:BackWall",
+      "instance:LeftWall",
+      "instance:RightWall",
+      "instance:Ceiling",
+      "instance:CeilingLight"
+    ]
+  },
+  "coordinateSystem": "right-handed Y-up meters",
+  "exposure": 1,
+  "environment": {
+    "prefix": "../../Environments/Workshop/WorkshopSky",
+    "intensity": 0
+  },
+  "cameras": {
+    "InsideClear": {
+      "position": [
+        -0.75,
+        0.6499999761581421,
+        0.949999988079071
+      ],
+      "target": [
+        -1.25,
+        0.65,
+        -2.3
+      ],
+      "fovDegrees": 70,
+      "near": 0.01,
+      "far": 100
+    },
+    "Lab": {
+      "position": [
+        0.0,
+        2.549999952316284,
+        7.599999904632568
+      ],
+      "target": [
+        0.0,
+        1.55,
+        -0.35
+      ],
+      "fovDegrees": 42,
+      "near": 0.01,
+      "far": 100
+    },
+    "LabClose": {
+      "position": [
+        0.0,
+        2.049999952316284,
+        5.599999904632568
+      ],
+      "target": [
+        0.0,
+        1.15,
+        -0.25
+      ],
+      "fovDegrees": 48,
+      "near": 0.01,
+      "far": 100
+    },
+    "Thickness": {
+      "position": [
+        0.0,
+        1.7999999523162842,
+        6.599999904632568
+      ],
+      "target": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fovDegrees": 42,
+      "near": 0.01,
+      "far": 100
+    },
+    "ThicknessOblique": {
+      "position": [
+        2.4000000953674316,
+        2.0,
+        5.599999904632568
+      ],
+      "target": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fovDegrees": 42,
+      "near": 0.01,
+      "far": 100
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<rect width="1920" height="1080" fill="#f4f7fb"/>
+<text x="64" y="84" font-family="Yu Gothic, sans-serif" font-size="46" fill="#172d48">厚みと吸収：表面のBSDFと内部の減衰を分ける</text>
+<text x="64" y="140" font-family="Yu Gothic, sans-serif" font-size="28" fill="#52677e">同じ表面・同じ吸収係数でも、内部を長く進むほど透過光が減ります。</text>
+<rect x="70" y="220" width="880" height="510" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="105" y="286" font-family="Yu Gothic, sans-serif" font-size="36" fill="#172d48">薄い板：0.1 m</text>
+<rect x="315" y="350" width="130" height="250" rx="18" fill="#b6dedb" stroke="#168974" stroke-width="2"/>
+<polyline points="105,475 315,475" fill="none" stroke="#2573c8" stroke-width="7"/>
+<polygon points="315,475 294.28971664588846,485.0042072845583 294.28971664588846,464.9957927154417" fill="#2573c8"/>
+<polyline points="445,475 900,475" fill="none" stroke="#b5eaf7" stroke-width="15"/>
+<polygon points="900,475 879.2897166458885,485.0042072845583 879.2897166458885,464.9957927154417" fill="#b5eaf7"/>
+<text x="105" y="662" font-family="Yu Gothic, sans-serif" font-size="27" fill="#172d48">内部の透過率 T = (0.710, 0.917, 0.968)</text>
+<rect x="1000" y="220" width="880" height="510" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="1035" y="286" font-family="Yu Gothic, sans-serif" font-size="36" fill="#172d48">厚い板：0.5 m</text>
+<rect x="1245" y="350" width="360" height="250" rx="18" fill="#b6dedb" stroke="#168974" stroke-width="2"/>
+<polyline points="1035,475 1245,475" fill="none" stroke="#2573c8" stroke-width="7"/>
+<polygon points="1245,475 1224.2897166458883,485.0042072845583 1224.2897166458883,464.9957927154417" fill="#2573c8"/>
+<polyline points="1605,475 1830,475" fill="none" stroke="#2ea6d9" stroke-width="15"/>
+<polygon points="1830,475 1809.2897166458883,485.0042072845583 1809.2897166458883,464.9957927154417" fill="#2ea6d9"/>
+<text x="1035" y="662" font-family="Yu Gothic, sans-serif" font-size="27" fill="#172d48">内部の透過率 T = (0.180, 0.650, 0.850)</text>
+<rect x="70" y="780" width="1780" height="230" rx="18" fill="white" stroke="#d2dce8" stroke-width="2"/>
+<text x="105" y="844" font-family="Yu Gothic, sans-serif" font-size="34" fill="#172d48">sigmaA = −ln(C) / D     T(d) = exp(−sigmaA d) = C^(d / D)</text>
+<text x="105" y="909" font-family="Yu Gothic, sans-serif" font-size="29" fill="#172d48">C = (0.18, 0.65, 0.85)、D = 0.5 m。図の数値は内部だけの減衰です。</text>
+<text x="105" y="964" font-family="Yu Gothic, sans-serif" font-size="29" fill="#172d48">境界ではFresnel反射・屈折を評価し、その間の実距離へ吸収を適用します。</text>
+</svg>

@@ -6,7 +6,7 @@
 
 ## このプロジェクトの入力と初期化
 
-[Sample.cpp](../../Samples/Direct3D12/25_DualQuaternionComputeCache/Sample.cpp)にデバイス初期化、Buffer、Pipeline、転送、Barrier、描画、終了処理があります。VS 2026／v145／Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを維持します。Agility SDK 1.619.6、DXC 1.9.2609.5、SM6.6／HLSL 2021を使います。Mesh Shader Tierは要求しません。Root SignatureにJOINTS／WEIGHTS、LBS行列、DQ、キャッシュUAVのTableを置きます。
+[Sample.cpp](../../Samples/Direct3D12/25_DualQuaternionComputeCache/Sample.cpp)にデバイス初期化、Buffer、Pipeline、転送、Barrier、描画、終了処理があります。VS 2026／v145／Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを維持します。Agility SDK 1.620.1、DXC 1.9.2609.5、SM6.6／HLSL 2021を使います。Mesh Shader Tierは要求しません。Root SignatureにJOINTS／WEIGHTS、LBS行列、DQ、キャッシュUAVのTableを置きます。
 
 元頂点とインフルエンスは共有SRV、DQ／行列はUpload heap、変形結果はDefault heapのUAV対応Bufferです。CreateSkinResourcesで最大64体分のキャッシュを確保し、UpdateSkinBuffersで現在のpaletteを転送します。
 

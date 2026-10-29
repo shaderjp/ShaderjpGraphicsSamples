@@ -68,7 +68,7 @@ text = f'''# 第29・30回の検証記録
 
 Windows 11 Pro {environment['os']['Version']}、Visual Studio 2026 {environment['visualStudio']}、v145／MSVC {environment['msvcTools']}、cl {environment['compiler']}、C++20、Windows SDK {environment['windowsSdk']}。GPUは{environment['gpu']['Name']}、ドライバ{environment['gpu']['DriverVersion']}です。Blenderは{environment['blender']}です。
 
-D3D12はAgility SDK 1.619.6／DXC 1.9.2609.5、VulkanはSDK 1.4.341.1と同梱DXCを使用しました。SM6.6、HLSL 2021、Vulkan 1.3です。[詳細環境](MotionMatchingEnvironment.json)
+D3D12はAgility SDK {environment['agilitySdk']}／DXC 1.9.2609.5、VulkanはSDK 1.4.341.1と同梱DXCを使用しました。SM6.6、HLSL 2021、Vulkan 1.3です。[詳細環境](MotionMatchingEnvironment.json)
 
 ソリューションをRestoreし、x64 Debug／Releaseをビルドしました。SPIR-V検証、全vcxproj／filtersのXML・項目対応・GUID検査、ローダー試験も成功しました。
 

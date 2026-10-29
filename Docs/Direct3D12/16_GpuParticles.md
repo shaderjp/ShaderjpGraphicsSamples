@@ -8,7 +8,7 @@
 
 ## ビルドと実行
 
-VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64を維持します。D3D12はAgility SDK 1.619.6、DXC 1.9.2609.5です。
+VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64を維持します。D3D12はAgility SDK 1.620.1、DXC 1.9.2609.5です。
 
 ```powershell
 msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true

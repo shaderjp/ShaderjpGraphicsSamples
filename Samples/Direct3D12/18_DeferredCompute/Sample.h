@@ -26,7 +26,7 @@ class Sample final : public tutorial::ISample
     tutorial::DeferredTiming timing_;
     tutorial::Options options_;
     ComPtr<IDXGIFactory6> factory_;
-    ComPtr<ID3D12Device> device_;
+    ComPtr<ID3D12Device16> device_;
     ComPtr<ID3D12CommandQueue> queue_;
     ComPtr<IDXGISwapChain3> swapchain_;
     ComPtr<ID3D12CommandAllocator> allocator_;

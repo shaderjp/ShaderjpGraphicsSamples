@@ -412,3 +412,11 @@ Direct3D12／Vulkanへ独立した`Advanced19_BSDFMaterials`を追加しまし�
 Restore、全101プロジェクト（98 APIアプリ＋3 Support）のx64 Debug／Releaseビルド、project／filters、DXIL／SPIR-Vと構造体配置、CPUとBlender正本の隔離再書出しを確認しました。両API・両構成の光学・PDF・吸収・統計・UI・カメラの専用GPU試験、52件の異常終了試験が成功しました。全98アプリを両構成でライフサイクル試験し、計196ケースが成功、DebugのValidationエラーは0件です。旧RT 01〜03・発展18の専用GPU回帰もDebugの両APIで通過しました。
 
 実測環境はVS 2026 Community 18.10.12201.205、v145／cl 19.51.36257.0、Windows SDK 10.0.26100.0、RTX 4070／NVIDIA 621.01です。共通章・アセット記事・API別記事、編集可能なSVG／PNG 4組、1080pの実GPU画像22枚、Blender正本を収録しました。[詳細な検証記録](BSDFMaterialsVerification.md)、[数値・撮影条件・画像ハッシュ](BSDFMaterialsResults.json)、[環境JSON](BSDFMaterialsEnvironment.json)を参照してください。本記録は公開前のローカル検証結果で、掲載記事は[Shader.jpのグラフィックス目次](https://www.shader.jp/blog/graphics-samples/)から案内します。
+
+## 発展20〜23 Clustered Geometry／Partitioned TLAS（2026-10-30）
+
+Direct3D12専用の4プロジェクトを追加しました。全105プロジェクト（102 APIアプリ＋3 Support）のx64 Debug／Releaseビルド、NuGet Restore、project／filters、SPIR-V検証、全102アプリの両構成ライフサイクル試験に成功しました。新4本の両構成64ケースのGPU数値・UI・Stress試験、CPUの属性・トポロジー・容量検査、計42件の異常終了試験、既存Loader／ImGui／RT／Inline RT／Bindless／PathTracing／BSDFの関連回帰も通過し、Debugのグラフィックス検証エラーは0件です。
+
+既存D3D12をAgility 1.620.1／SDK export 620へ更新しました。新4本だけはAgility 1.722.0-preview／DXC 1.10.2605.37-previewを使用し、20〜22のCluster LibraryだけをSM6.10にしています。RTX 4070／NVIDIA 621.01でPreview機能を照会し、実際のCLAS・テンプレート・PTLASを実行しました。VS 2026 18.10.12201.205、v145／cl 19.51.36257.0、Windows SDK 10.0.26100.0を維持しています。
+
+1920×1080の実機画像11枚、自作Blender正本と再生成スクリプト、13条件×5回のRelease計測、中央値・p95・メモリ容量・検証ログを保存しました。既存画像と過去の記録は保持しています。[詳細な検証・計測条件](ClusteredRaytracingVerification.md)、[結果と画像ハッシュ](ClusterGeometryResults.json)、[環境](ClusterGeometryEnvironment.json)、[計測表](Measurements/ClusterGeometry/Summary.md)を参照してください。

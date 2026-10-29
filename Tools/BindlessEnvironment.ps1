@@ -1,7 +1,10 @@
 # Records the binaries used to build the offline shaders, independently of run timings.
 function Get-BindlessEnvironment([string]$RepositoryRoot,[string]$RuntimeRoot='') {
     if(-not $RuntimeRoot){$RuntimeRoot=Join-Path $RepositoryRoot 'bin/x64/Release'}
-    $dxcD3d=Join-Path $RepositoryRoot 'packages/microsoft.direct3d.dxc.1.9.2609.5/build/native/bin/x64/dxc.exe'
+    [xml]$settings=Get-Content -LiteralPath (Join-Path $RepositoryRoot 'Build/Common.props') -Raw
+    $agilityVersion=$settings.SelectSingleNode("//*[local-name()='D3D12PackageVersion']").InnerText
+    $dxcVersion=$settings.SelectSingleNode("//*[local-name()='DxcPackageVersion']").InnerText
+    $dxcD3d=Join-Path $RepositoryRoot "packages/microsoft.direct3d.dxc.$dxcVersion/build/native/bin/x64/dxc.exe"
     $dxcVulkan=Join-Path $env:VULKAN_SDK 'Bin/dxc.exe'
     $tools=@{}
     foreach($entry in @(@('d3dDxc',$dxcD3d),@('vulkanDxc',$dxcVulkan))){
@@ -23,7 +26,7 @@ function Get-BindlessEnvironment([string]$RepositoryRoot,[string]$RuntimeRoot=''
         capturedUtc=[DateTime]::UtcNow.ToString('o');os=$os.Caption;osVersion=$os.Version
         cpu=@(Get-CimInstance Win32_Processor|Select-Object -ExpandProperty Name)
         video=@(Get-CimInstance Win32_VideoController|Select-Object Name,DriverVersion)
-        vulkanSdk=(Split-Path $env:VULKAN_SDK -Leaf);windowsSdk='10.0.26100.0';agilitySdk='1.619.6'
+        vulkanSdk=(Split-Path $env:VULKAN_SDK -Leaf);windowsSdk='10.0.26100.0';agilitySdk=$agilityVersion
         hlsl='2021';shaderModel='6.6';vulkanTarget='1.3';compilers=$tools;binaries=$binaries;runtimeRoot=$RuntimeRoot
     }
 }

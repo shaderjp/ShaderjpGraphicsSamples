@@ -4,10 +4,10 @@
 #include <string>
 using namespace tutorial;
 
-// Agility SDK 1.619.6. The DLLs live in a separate directory next to the exe.
+// Agility SDK selected by Build/Common.props. The DLLs live in a separate directory next to the exe.
 extern "C"
 {
-    __declspec(dllexport) extern const UINT D3D12SDKVersion = 619;
+    __declspec(dllexport) extern const UINT D3D12SDKVersion = TUTORIAL_D3D12_SDK_VERSION;
     __declspec(dllexport) extern const char *D3D12SDKPath = ".\\D3D12\\";
 }
 namespace
@@ -65,7 +65,7 @@ void Sample::OnInit(HWND window, uint32_t width, uint32_t height, const Options 
     if (!device_)
         throw std::runtime_error("A hardware D3D12 feature level 12_0 device is required");
     D3D12_FEATURE_DATA_SHADER_MODEL shaderModel{D3D_SHADER_MODEL_6_6};
-    CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_SHADER_MODEL, &shaderModel, sizeof(shaderModel)),
+    CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_SHADER_MODEL, &shaderModel, sizeof(shaderModel), TUTORIAL_D3D12_SDK_VERSION),
             "Shader Model query");
     if (shaderModel.HighestShaderModel < D3D_SHADER_MODEL_6_6)
         throw std::runtime_error("Shader Model 6.6 is required; update your GPU driver");

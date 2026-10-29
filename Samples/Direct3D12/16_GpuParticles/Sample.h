@@ -68,7 +68,7 @@ class Sample final : public tutorial::ISample
     HWND window_ = nullptr;
     uint32_t width_ = 0, height_ = 0, rtvStride_ = 0, renderedBuffer_ = 0;
     ComPtr<IDXGIFactory6> factory_;
-    ComPtr<ID3D12Device> device_;
+    ComPtr<ID3D12Device16> device_;
     ComPtr<ID3D12CommandQueue> queue_;
     ComPtr<IDXGISwapChain3> swapchain_;
     ComPtr<ID3D12DescriptorHeap> rtvHeap_;

@@ -4,8 +4,11 @@
     <RepositoryRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\'))</RepositoryRoot>
     <OutDir>$(RepositoryRoot)bin\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(RepositoryRoot)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <D3D12Package>$(RepositoryRoot)packages\Microsoft.Direct3D.D3D12.1.619.6\</D3D12Package>
-    <DxcPackage>$(RepositoryRoot)packages\Microsoft.Direct3D.DXC.1.9.2609.5\</DxcPackage>
+    <D3D12PackageVersion Condition="'$(D3D12PackageVersion)'==''">1.620.1</D3D12PackageVersion>
+    <D3D12SdkVersion Condition="'$(D3D12SdkVersion)'==''">620</D3D12SdkVersion>
+    <DxcPackageVersion Condition="'$(DxcPackageVersion)'==''">1.9.2609.5</DxcPackageVersion>
+    <D3D12Package>$(RepositoryRoot)packages\Microsoft.Direct3D.D3D12.$(D3D12PackageVersion)\</D3D12Package>
+    <DxcPackage>$(RepositoryRoot)packages\Microsoft.Direct3D.DXC.$(DxcPackageVersion)\</DxcPackage>
     <DxcToolPath Condition="'$(GraphicsApi)'=='Direct3D12'">$(DxcPackage)build\native\bin\x64\dxc.exe</DxcToolPath>
     <DxcToolPath Condition="'$(GraphicsApi)'=='Vulkan'">$(VULKAN_SDK)\Bin\dxc.exe</DxcToolPath>
     <ShaderExtension Condition="'$(GraphicsApi)'=='Direct3D12'">cso</ShaderExtension>
@@ -44,7 +47,7 @@
     <ClCompile><Optimization>MaxSpeed</Optimization><RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary><PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(GraphicsApi)'=='Direct3D12'">
-    <ClCompile><AdditionalIncludeDirectories>$(D3D12Package)build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <ClCompile><AdditionalIncludeDirectories>$(D3D12Package)build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><PreprocessorDefinitions>TUTORIAL_D3D12_SDK_VERSION=$(D3D12SdkVersion);%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
     <Link><AdditionalDependencies>d3d12.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(GraphicsApi)'=='Vulkan'">

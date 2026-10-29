@@ -6,7 +6,7 @@ using namespace tutorial;
 using namespace DirectX;
 extern "C"
 {
-    __declspec(dllexport) extern const UINT D3D12SDKVersion = 619;
+    __declspec(dllexport) extern const UINT D3D12SDKVersion = TUTORIAL_D3D12_SDK_VERSION;
     __declspec(dllexport) extern const char *D3D12SDKPath = ".\\D3D12\\";
 }
 namespace
@@ -77,9 +77,9 @@ void Sample::OnInit(HWND window, uint32_t width, uint32_t height, const Options 
     if (!device_)
         throw std::runtime_error("Hardware D3D12 device required");
     D3D12_FEATURE_DATA_SHADER_MODEL sm{D3D_SHADER_MODEL_6_6};
-    CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_SHADER_MODEL, &sm, sizeof(sm)), "Shader Model query");
+    CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_SHADER_MODEL, &sm, sizeof(sm), TUTORIAL_D3D12_SDK_VERSION), "Shader Model query");
     D3D12_FEATURE_DATA_D3D12_OPTIONS binding{};
-    CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_D3D12_OPTIONS, &binding, sizeof(binding)),
+    CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_D3D12_OPTIONS, &binding, sizeof(binding), TUTORIAL_D3D12_SDK_VERSION),
             "Binding tier query");
     if (sm.HighestShaderModel < D3D_SHADER_MODEL_6_6 ||
         binding.ResourceBindingTier < D3D12_RESOURCE_BINDING_TIER_3)
@@ -87,7 +87,7 @@ void Sample::OnInit(HWND window, uint32_t width, uint32_t height, const Options 
     if constexpr (GALLERY_TECHNIQUE == 13 || GALLERY_TECHNIQUE == 15)
     {
         D3D12_FEATURE_DATA_D3D12_OPTIONS7 mesh{};
-        CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_D3D12_OPTIONS7, &mesh, sizeof(mesh)),
+        CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_D3D12_OPTIONS7, &mesh, sizeof(mesh), TUTORIAL_D3D12_SDK_VERSION),
                 "Mesh feature query");
         if (mesh.MeshShaderTier == D3D12_MESH_SHADER_TIER_NOT_SUPPORTED)
             throw std::runtime_error("Mesh Shader required");
@@ -95,7 +95,7 @@ void Sample::OnInit(HWND window, uint32_t width, uint32_t height, const Options 
     if constexpr (GALLERY_TECHNIQUE >= 14)
     {
         D3D12_FEATURE_DATA_D3D12_OPTIONS5 rt{};
-        CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_D3D12_OPTIONS5, &rt, sizeof(rt)), "DXR query");
+        CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_D3D12_OPTIONS5, &rt, sizeof(rt), TUTORIAL_D3D12_SDK_VERSION), "DXR query");
         if (rt.RaytracingTier < D3D12_RAYTRACING_TIER_1_1)
             throw std::runtime_error("DXR Tier 1.1 required for RayQuery");
     }

@@ -18,7 +18,7 @@ Tiled方式は、同じ16×16タイルの近い面と遠い面へ同じ候補リ
 
 ## ビルドと実行
 
-VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64を維持します。Agility SDK 1.619.6、NuGet DXC 1.9.2609.5を使います。実行には同梱のglTF、PNG、DDS、JSONを使い、Blenderと再ベイクは不要です。
+VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64を維持します。Agility SDK 1.620.1、NuGet DXC 1.9.2609.5を使います。実行には同梱のglTF、PNG、DDS、JSONを使い、Blenderと再ベイクは不要です。
 
 ```powershell
 msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true

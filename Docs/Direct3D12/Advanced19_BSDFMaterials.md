@@ -6,7 +6,7 @@
 
 ## ビルドと初期状態
 
-VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseです。D3D12はAgility SDK 1.619.6とNuGet DXC 1.9.2609.5、VulkanはSDK付属DXCでVulkan 1.3向けにコンパイルします。共通HLSLはSM6.6／HLSL 2021です。
+VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseです。D3D12はAgility SDK 1.620.1とNuGet DXC 1.9.2609.5、VulkanはSDK付属DXCでVulkan 1.3向けにコンパイルします。共通HLSLはSM6.6／HLSL 2021です。
 
 ```powershell
 msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true

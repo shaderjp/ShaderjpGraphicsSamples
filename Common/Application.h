@@ -17,6 +17,7 @@ struct Options
 {
     std::filesystem::path model, texture, screenshot, log;
     uint32_t frames = 0;
+    uint32_t clientWidthOverride = 0, clientHeightOverride = 0;
     bool testWindow = false, testCamera = false, testCharacter = false;
     std::wstring shading; // Sample 07/08 choose their supported display modes.
     bool rotateLight = false;
@@ -54,6 +55,9 @@ struct Options
     uint32_t characters = 1;
     bool pauseAnimation = false;
     bool rootMotion = false, testRootMotion = false;
+    std::wstring clusterMode, clusterView = L"final", clusterPartition = L"spatial", clusterTest;
+    uint32_t clusterLod = 0, clusterActivePercent = 1;
+    bool clusterForceUnsupported = false;
     std::wstring skinning = L"dqs"; // Sample24: deformation method, independent of the graphics API.
     bool testDqs = false;
     std::wstring binding = L"textures", galleryPreset = L"Standard", galleryView = L"final";

@@ -1,0 +1,83 @@
+{
+  "comparisons": {
+    "20-rebuild": {
+      "smoothAgreement": 0.999990906362818,
+      "normalizedRms": 0.006647507194429636
+    },
+    "21-direct": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 0.0
+    },
+    "21-rebuild": {
+      "smoothAgreement": 0.9999909170178753,
+      "normalizedRms": 0.006723587401211262
+    },
+    "21-refit": {
+      "smoothAgreement": 0.9999909170178753,
+      "normalizedRms": 0.006723587401211262
+    },
+    "22-direct": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 0.0
+    },
+    "22-rebuild": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 2.466624391672667e-05
+    },
+    "23-rebuild": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 0.0
+    },
+    "23-refit": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 0.0
+    },
+    "22-lod2": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 2.466624391672667e-05
+    },
+    "22-lod4": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 2.447969018248841e-05
+    },
+    "22-lod8": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 2.4052185835898854e-05
+    },
+    "23-spatial": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 0.0
+    },
+    "23-global": {
+      "smoothAgreement": 1.0,
+      "normalizedRms": 0.0
+    }
+  },
+  "geometry": [
+    "20-clusters",
+    "20-rebuild",
+    "21-templates",
+    "21-direct",
+    "21-rebuild",
+    "21-refit",
+    "22-templates",
+    "22-direct",
+    "22-rebuild",
+    "23-ptlas",
+    "23-rebuild",
+    "23-refit",
+    "20-stress",
+    "21-stress",
+    "22-stress",
+    "23-stress"
+  ],
+  "ui": [
+    21,
+    22,
+    23
+  ],
+  "analyticPlaneDistance": {
+    "maxAbsoluteErrorMetres": 0.00045333220271359664,
+    "maxRelativeError": 2.5456627034741605e-05
+  }
+}

@@ -6,7 +6,7 @@
 
 ## 独立プロジェクトとCPUデータ
 
-[Sample.cpp](../../Samples/Direct3D12/24_DualQuaternionSkinning/Sample.cpp)がデバイス・Buffer・Root Signature・PSO・描画・同期・解放を持ちます。VS 2026／v145／SDK 10.0.26100.0、Agility 1.619.6、DXC 1.9.2609.5、SM6.6／HLSL 2021です。Mesh Shader対応は不要です。
+[Sample.cpp](../../Samples/Direct3D12/24_DualQuaternionSkinning/Sample.cpp)がデバイス・Buffer・Root Signature・PSO・描画・同期・解放を持ちます。VS 2026／v145／SDK 10.0.26100.0、Agility 1.620.1、DXC 1.9.2609.5、SM6.6／HLSL 2021です。Mesh Shader対応は不要です。
 
 [DualQuaternionSkinningData.h](../../Samples/Shared/DualQuaternionSkinningData.h)は既存glTF CPU評価を再利用し、メッシュローカル空間の最終行列を32 byteのReal／Dualペアへ変換します。比較用にLBS行列とDQを両方保持するため、ImGuiの切替でアセットを再読込しません。
 

@@ -29,7 +29,7 @@ class Sample final : public tutorial::ISample
     tutorial::GalleryTimings timing_;
     tutorial::GalleryConstants frame_{};
     ComPtr<IDXGIFactory6> factory_;
-    ComPtr<ID3D12Device5> device_;
+    ComPtr<ID3D12Device16> device_;
     ComPtr<ID3D12CommandQueue> queue_;
     ComPtr<IDXGISwapChain3> swapchain_;
     ComPtr<ID3D12CommandAllocator> allocator_;

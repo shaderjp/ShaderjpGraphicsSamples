@@ -8,7 +8,7 @@
 
 ## ビルドと実行
 
-VS 2026／v145、SDK 10.0.26100.0、C++20、x64、Agility SDK 1.619.6とNuGet DXC 1.9.2609.5を使います。Shader Model 6.6／HLSL 2021をオフラインでコンパイルし、配布済みWorkshopのglTF・PNG・DDS・JSONだけで実行できます。
+VS 2026／v145、SDK 10.0.26100.0、C++20、x64、Agility SDK 1.620.1とNuGet DXC 1.9.2609.5を使います。Shader Model 6.6／HLSL 2021をオフラインでコンパイルし、配布済みWorkshopのglTF・PNG・DDS・JSONだけで実行できます。
 
 ```powershell
 msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true

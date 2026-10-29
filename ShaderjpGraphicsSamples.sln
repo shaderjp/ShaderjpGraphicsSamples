@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.0.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -210,12 +210,36 @@ Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced19_BSDFM
 EndProject
 Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Vulkan_Advanced19_BSDFMaterials", "Samples\Vulkan\Advanced19_BSDFMaterials\Vulkan_Advanced19_BSDFMaterials.vcxproj", "{87D2825F-3D9E-4F49-B6A5-464CA4C8A6C6}"
 EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced20_ClusteredGeometry", "Samples\Direct3D12\Advanced20_ClusteredGeometry\Direct3D12_Advanced20_ClusteredGeometry.vcxproj", "{6A55A1C6-FBE4-41DC-9679-9EBB3B0B88E0}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced21_ClusterTemplates", "Samples\Direct3D12\Advanced21_ClusterTemplates\Direct3D12_Advanced21_ClusterTemplates.vcxproj", "{C3A7852D-31D4-4DC6-BC36-E4C7F1FF70BE}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced22_ClusterTessellation", "Samples\Direct3D12\Advanced22_ClusterTessellation\Direct3D12_Advanced22_ClusterTessellation.vcxproj", "{9E376A33-9A4E-40D3-AE8C-D254A31C0604}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "Direct3D12_Advanced23_PartitionedTLAS", "Samples\Direct3D12\Advanced23_PartitionedTLAS\Direct3D12_Advanced23_PartitionedTLAS.vcxproj", "{DF422415-4DB6-4851-A4D5-DDBCF70C4C6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A55A1C6-FBE4-41DC-9679-9EBB3B0B88E0}.Debug|x64.ActiveCfg = Debug|x64
+		{6A55A1C6-FBE4-41DC-9679-9EBB3B0B88E0}.Debug|x64.Build.0 = Debug|x64
+		{6A55A1C6-FBE4-41DC-9679-9EBB3B0B88E0}.Release|x64.ActiveCfg = Release|x64
+		{6A55A1C6-FBE4-41DC-9679-9EBB3B0B88E0}.Release|x64.Build.0 = Release|x64
+		{C3A7852D-31D4-4DC6-BC36-E4C7F1FF70BE}.Debug|x64.ActiveCfg = Debug|x64
+		{C3A7852D-31D4-4DC6-BC36-E4C7F1FF70BE}.Debug|x64.Build.0 = Debug|x64
+		{C3A7852D-31D4-4DC6-BC36-E4C7F1FF70BE}.Release|x64.ActiveCfg = Release|x64
+		{C3A7852D-31D4-4DC6-BC36-E4C7F1FF70BE}.Release|x64.Build.0 = Release|x64
+		{9E376A33-9A4E-40D3-AE8C-D254A31C0604}.Debug|x64.ActiveCfg = Debug|x64
+		{9E376A33-9A4E-40D3-AE8C-D254A31C0604}.Debug|x64.Build.0 = Debug|x64
+		{9E376A33-9A4E-40D3-AE8C-D254A31C0604}.Release|x64.ActiveCfg = Release|x64
+		{9E376A33-9A4E-40D3-AE8C-D254A31C0604}.Release|x64.Build.0 = Release|x64
+		{DF422415-4DB6-4851-A4D5-DDBCF70C4C6D}.Debug|x64.ActiveCfg = Debug|x64
+		{DF422415-4DB6-4851-A4D5-DDBCF70C4C6D}.Debug|x64.Build.0 = Debug|x64
+		{DF422415-4DB6-4851-A4D5-DDBCF70C4C6D}.Release|x64.ActiveCfg = Release|x64
+		{DF422415-4DB6-4851-A4D5-DDBCF70C4C6D}.Release|x64.Build.0 = Release|x64
 		{7DDA6B2F-8E2F-49C4-8343-F9CE0CB2B9D1}.Debug|x64.ActiveCfg = Debug|x64
 		{7DDA6B2F-8E2F-49C4-8343-F9CE0CB2B9D1}.Debug|x64.Build.0 = Debug|x64
 		{7DDA6B2F-8E2F-49C4-8343-F9CE0CB2B9D1}.Release|x64.ActiveCfg = Release|x64
@@ -622,6 +646,10 @@ Global
 		{87D2825F-3D9E-4F49-B6A5-464CA4C8A6C6}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{6A55A1C6-FBE4-41DC-9679-9EBB3B0B88E0} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{C3A7852D-31D4-4DC6-BC36-E4C7F1FF70BE} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{9E376A33-9A4E-40D3-AE8C-D254A31C0604} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
+		{DF422415-4DB6-4851-A4D5-DDBCF70C4C6D} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{7DDA6B2F-8E2F-49C4-8343-F9CE0CB2B9D1} = {6F028670-94D3-5DF1-A05E-2C956AF520D0}
 		{E5286E64-39D8-4492-8BC5-2952CA31AF35} = {67681639-E8F5-5BF6-87D5-80031207F7A7}
 		{E4FAEEDD-03D1-405B-BEB5-58533395666D} = {0AD149FE-BC39-476C-87F2-9753AF7248DA}

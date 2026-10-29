@@ -8,7 +8,7 @@ PNGをCPUでRGBA8に展開し、GPUへ転送して四角形に貼ります。頂
 
 ## ビルドと実行
 
-Windows、Visual Studio 2026（v145）、Windows SDK 10.0.26100.0、x64が対象です。Agility SDK 1.619.6とDXC 1.9.2609.5をNuGet復元します。FL12_0／Shader Model 6.6対応GPUとドライバが必要です。Vulkan SDKはこのプロジェクト単体には不要です。
+Windows、Visual Studio 2026（v145）、Windows SDK 10.0.26100.0、x64が対象です。Agility SDK 1.620.1とDXC 1.9.2609.5をNuGet復元します。FL12_0／Shader Model 6.6対応GPUとドライバが必要です。Vulkan SDKはこのプロジェクト単体には不要です。
 
 ```powershell
 msbuild .\Samples\Direct3D12\03_Texture\Direct3D12_03_Texture.vcxproj -p:Configuration=Debug -p:Platform=x64

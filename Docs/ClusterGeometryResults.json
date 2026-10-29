@@ -1,0 +1,404 @@
+{
+  "result": "PASS",
+  "environmentCapturedUtc": "2026-10-29T17:06:45.9128858Z",
+  "apiApplications": 102,
+  "supportProjects": 3,
+  "gpuCasesPerConfiguration": 32,
+  "expectedFailureCasesPerConfiguration": 21,
+  "lifecycle": {
+    "Debug": [
+      "Direct3D12_01_Initialization",
+      "Direct3D12_02_Triangle",
+      "Direct3D12_03_Texture",
+      "Direct3D12_04_Box",
+      "Direct3D12_05_Model",
+      "Direct3D12_06_Gltf",
+      "Direct3D12_07_Lighting",
+      "Direct3D12_08_PBR",
+      "Direct3D12_09_ImGui",
+      "Direct3D12_10_Cubemap",
+      "Direct3D12_11_DiffuseIBL",
+      "Direct3D12_12_SpecularIBL",
+      "Direct3D12_13_ShadowMap",
+      "Direct3D12_14_RenderTexture",
+      "Direct3D12_15_ComputeBloom",
+      "Direct3D12_16_GpuParticles",
+      "Direct3D12_17_DeferredPixel",
+      "Direct3D12_18_DeferredCompute",
+      "Direct3D12_19_TiledDeferred",
+      "Direct3D12_20_ClusteredShading",
+      "Direct3D12_21_VisibilityBuffer",
+      "Direct3D12_22_VertexSkinning",
+      "Direct3D12_23_ComputeSkinningCache",
+      "Direct3D12_24_DualQuaternionSkinning",
+      "Direct3D12_25_DualQuaternionComputeCache",
+      "Direct3D12_26_InlineRaytracingShadows",
+      "Direct3D12_27_InlineRaytracingReflections",
+      "Direct3D12_28_CharacterController",
+      "Direct3D12_29_MotionMatching",
+      "Direct3D12_30_TraversalController",
+      "Direct3D12_Advanced01_RaytracingBasic",
+      "Direct3D12_Advanced02_RaytracingShadows",
+      "Direct3D12_Advanced03_RaytracingReflections",
+      "Direct3D12_Advanced04_MeshShaderBasic",
+      "Direct3D12_Advanced05_GpuDrivenRendering",
+      "Direct3D12_Advanced06_MeshletCulling",
+      "Direct3D12_Advanced07_MeshShaderShadows",
+      "Direct3D12_Advanced08_MeshShaderDeferred",
+      "Direct3D12_Advanced09_MeshShaderTiledDeferred",
+      "Direct3D12_Advanced10_MeshShaderSkinning",
+      "Direct3D12_Advanced11_DualQuaternionMeshSkinning",
+      "Direct3D12_Advanced12_BindlessMaterials",
+      "Direct3D12_Advanced13_BindlessMeshShader",
+      "Direct3D12_Advanced14_BindlessRaytracing",
+      "Direct3D12_Advanced15_BindlessHybrid",
+      "Direct3D12_Advanced16_BindlessInlineHybrid",
+      "Direct3D12_Advanced17_MeshShaderTiledInlineShadows",
+      "Direct3D12_Advanced18_PathTracingBasic",
+      "Direct3D12_Advanced19_BSDFMaterials",
+      "Direct3D12_Advanced20_ClusteredGeometry",
+      "Direct3D12_Advanced21_ClusterTemplates",
+      "Direct3D12_Advanced22_ClusterTessellation",
+      "Direct3D12_Advanced23_PartitionedTLAS",
+      "Vulkan_01_Initialization",
+      "Vulkan_02_Triangle",
+      "Vulkan_03_Texture",
+      "Vulkan_04_Box",
+      "Vulkan_05_Model",
+      "Vulkan_06_Gltf",
+      "Vulkan_07_Lighting",
+      "Vulkan_08_PBR",
+      "Vulkan_09_ImGui",
+      "Vulkan_10_Cubemap",
+      "Vulkan_11_DiffuseIBL",
+      "Vulkan_12_SpecularIBL",
+      "Vulkan_13_ShadowMap",
+      "Vulkan_14_RenderTexture",
+      "Vulkan_15_ComputeBloom",
+      "Vulkan_16_GpuParticles",
+      "Vulkan_17_DeferredPixel",
+      "Vulkan_18_DeferredCompute",
+      "Vulkan_19_TiledDeferred",
+      "Vulkan_20_ClusteredShading",
+      "Vulkan_21_VisibilityBuffer",
+      "Vulkan_22_VertexSkinning",
+      "Vulkan_23_ComputeSkinningCache",
+      "Vulkan_24_DualQuaternionSkinning",
+      "Vulkan_25_DualQuaternionComputeCache",
+      "Vulkan_26_InlineRaytracingShadows",
+      "Vulkan_27_InlineRaytracingReflections",
+      "Vulkan_28_CharacterController",
+      "Vulkan_29_MotionMatching",
+      "Vulkan_30_TraversalController",
+      "Vulkan_Advanced01_RaytracingBasic",
+      "Vulkan_Advanced02_RaytracingShadows",
+      "Vulkan_Advanced03_RaytracingReflections",
+      "Vulkan_Advanced04_MeshShaderBasic",
+      "Vulkan_Advanced05_GpuDrivenRendering",
+      "Vulkan_Advanced06_MeshletCulling",
+      "Vulkan_Advanced07_MeshShaderShadows",
+      "Vulkan_Advanced08_MeshShaderDeferred",
+      "Vulkan_Advanced09_MeshShaderTiledDeferred",
+      "Vulkan_Advanced10_MeshShaderSkinning",
+      "Vulkan_Advanced11_DualQuaternionMeshSkinning",
+      "Vulkan_Advanced12_BindlessMaterials",
+      "Vulkan_Advanced13_BindlessMeshShader",
+      "Vulkan_Advanced14_BindlessRaytracing",
+      "Vulkan_Advanced15_BindlessHybrid",
+      "Vulkan_Advanced16_BindlessInlineHybrid",
+      "Vulkan_Advanced17_MeshShaderTiledInlineShadows",
+      "Vulkan_Advanced18_PathTracingBasic",
+      "Vulkan_Advanced19_BSDFMaterials"
+    ],
+    "Release": [
+      "Direct3D12_01_Initialization",
+      "Direct3D12_02_Triangle",
+      "Direct3D12_03_Texture",
+      "Direct3D12_04_Box",
+      "Direct3D12_05_Model",
+      "Direct3D12_06_Gltf",
+      "Direct3D12_07_Lighting",
+      "Direct3D12_08_PBR",
+      "Direct3D12_09_ImGui",
+      "Direct3D12_10_Cubemap",
+      "Direct3D12_11_DiffuseIBL",
+      "Direct3D12_12_SpecularIBL",
+      "Direct3D12_13_ShadowMap",
+      "Direct3D12_14_RenderTexture",
+      "Direct3D12_15_ComputeBloom",
+      "Direct3D12_16_GpuParticles",
+      "Direct3D12_17_DeferredPixel",
+      "Direct3D12_18_DeferredCompute",
+      "Direct3D12_19_TiledDeferred",
+      "Direct3D12_20_ClusteredShading",
+      "Direct3D12_21_VisibilityBuffer",
+      "Direct3D12_22_VertexSkinning",
+      "Direct3D12_23_ComputeSkinningCache",
+      "Direct3D12_24_DualQuaternionSkinning",
+      "Direct3D12_25_DualQuaternionComputeCache",
+      "Direct3D12_26_InlineRaytracingShadows",
+      "Direct3D12_27_InlineRaytracingReflections",
+      "Direct3D12_28_CharacterController",
+      "Direct3D12_29_MotionMatching",
+      "Direct3D12_30_TraversalController",
+      "Direct3D12_Advanced01_RaytracingBasic",
+      "Direct3D12_Advanced02_RaytracingShadows",
+      "Direct3D12_Advanced03_RaytracingReflections",
+      "Direct3D12_Advanced04_MeshShaderBasic",
+      "Direct3D12_Advanced05_GpuDrivenRendering",
+      "Direct3D12_Advanced06_MeshletCulling",
+      "Direct3D12_Advanced07_MeshShaderShadows",
+      "Direct3D12_Advanced08_MeshShaderDeferred",
+      "Direct3D12_Advanced09_MeshShaderTiledDeferred",
+      "Direct3D12_Advanced10_MeshShaderSkinning",
+      "Direct3D12_Advanced11_DualQuaternionMeshSkinning",
+      "Direct3D12_Advanced12_BindlessMaterials",
+      "Direct3D12_Advanced13_BindlessMeshShader",
+      "Direct3D12_Advanced14_BindlessRaytracing",
+      "Direct3D12_Advanced15_BindlessHybrid",
+      "Direct3D12_Advanced16_BindlessInlineHybrid",
+      "Direct3D12_Advanced17_MeshShaderTiledInlineShadows",
+      "Direct3D12_Advanced18_PathTracingBasic",
+      "Direct3D12_Advanced19_BSDFMaterials",
+      "Direct3D12_Advanced20_ClusteredGeometry",
+      "Direct3D12_Advanced21_ClusterTemplates",
+      "Direct3D12_Advanced22_ClusterTessellation",
+      "Direct3D12_Advanced23_PartitionedTLAS",
+      "Vulkan_01_Initialization",
+      "Vulkan_02_Triangle",
+      "Vulkan_03_Texture",
+      "Vulkan_04_Box",
+      "Vulkan_05_Model",
+      "Vulkan_06_Gltf",
+      "Vulkan_07_Lighting",
+      "Vulkan_08_PBR",
+      "Vulkan_09_ImGui",
+      "Vulkan_10_Cubemap",
+      "Vulkan_11_DiffuseIBL",
+      "Vulkan_12_SpecularIBL",
+      "Vulkan_13_ShadowMap",
+      "Vulkan_14_RenderTexture",
+      "Vulkan_15_ComputeBloom",
+      "Vulkan_16_GpuParticles",
+      "Vulkan_17_DeferredPixel",
+      "Vulkan_18_DeferredCompute",
+      "Vulkan_19_TiledDeferred",
+      "Vulkan_20_ClusteredShading",
+      "Vulkan_21_VisibilityBuffer",
+      "Vulkan_22_VertexSkinning",
+      "Vulkan_23_ComputeSkinningCache",
+      "Vulkan_24_DualQuaternionSkinning",
+      "Vulkan_25_DualQuaternionComputeCache",
+      "Vulkan_26_InlineRaytracingShadows",
+      "Vulkan_27_InlineRaytracingReflections",
+      "Vulkan_28_CharacterController",
+      "Vulkan_29_MotionMatching",
+      "Vulkan_30_TraversalController",
+      "Vulkan_Advanced01_RaytracingBasic",
+      "Vulkan_Advanced02_RaytracingShadows",
+      "Vulkan_Advanced03_RaytracingReflections",
+      "Vulkan_Advanced04_MeshShaderBasic",
+      "Vulkan_Advanced05_GpuDrivenRendering",
+      "Vulkan_Advanced06_MeshletCulling",
+      "Vulkan_Advanced07_MeshShaderShadows",
+      "Vulkan_Advanced08_MeshShaderDeferred",
+      "Vulkan_Advanced09_MeshShaderTiledDeferred",
+      "Vulkan_Advanced10_MeshShaderSkinning",
+      "Vulkan_Advanced11_DualQuaternionMeshSkinning",
+      "Vulkan_Advanced12_BindlessMaterials",
+      "Vulkan_Advanced13_BindlessMeshShader",
+      "Vulkan_Advanced14_BindlessRaytracing",
+      "Vulkan_Advanced15_BindlessHybrid",
+      "Vulkan_Advanced16_BindlessInlineHybrid",
+      "Vulkan_Advanced17_MeshShaderTiledInlineShadows",
+      "Vulkan_Advanced18_PathTracingBasic",
+      "Vulkan_Advanced19_BSDFMaterials"
+    ]
+  },
+  "gpu": {
+    "Debug": {
+      "comparisons": {
+        "20-rebuild": {
+          "smoothAgreement": 0.9969532436586541,
+          "normalizedRms": 0.01758943870663643
+        },
+        "21-direct": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "21-rebuild": {
+          "smoothAgreement": 0.9971475549822404,
+          "normalizedRms": 0.017789868637919426
+        },
+        "21-refit": {
+          "smoothAgreement": 0.9971475549822404,
+          "normalizedRms": 0.017789868637919426
+        },
+        "22-direct": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "22-rebuild": {
+          "smoothAgreement": 0.9969178202825038,
+          "normalizedRms": 0.0014075690414756536
+        },
+        "23-rebuild": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "23-refit": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "22-lod2": {
+          "smoothAgreement": 0.9969178202825038,
+          "normalizedRms": 0.0014075690414756536
+        },
+        "22-lod4": {
+          "smoothAgreement": 0.9969071610427798,
+          "normalizedRms": 0.0032929268199950457
+        },
+        "22-lod8": {
+          "smoothAgreement": 0.996926430907239,
+          "normalizedRms": 0.0018045093165710568
+        },
+        "23-spatial": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "23-global": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        }
+      },
+      "geometry": [
+        "20-clusters",
+        "20-rebuild",
+        "21-templates",
+        "21-direct",
+        "21-rebuild",
+        "21-refit",
+        "22-templates",
+        "22-direct",
+        "22-rebuild",
+        "23-ptlas",
+        "23-rebuild",
+        "23-refit",
+        "20-stress",
+        "21-stress",
+        "22-stress",
+        "23-stress"
+      ],
+      "ui": [
+        21,
+        22,
+        23
+      ],
+      "analyticPlaneDistance": {
+        "maxAbsoluteErrorMetres": 0.00013002903240888486,
+        "maxRelativeError": 7.06387417968792e-06
+      }
+    },
+    "Release": {
+      "comparisons": {
+        "20-rebuild": {
+          "smoothAgreement": 0.999990906362818,
+          "normalizedRms": 0.006647507194429636
+        },
+        "21-direct": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "21-rebuild": {
+          "smoothAgreement": 0.9999909170178753,
+          "normalizedRms": 0.006723587401211262
+        },
+        "21-refit": {
+          "smoothAgreement": 0.9999909170178753,
+          "normalizedRms": 0.006723587401211262
+        },
+        "22-direct": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "22-rebuild": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 2.466624391672667e-05
+        },
+        "23-rebuild": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "23-refit": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "22-lod2": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 2.466624391672667e-05
+        },
+        "22-lod4": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 2.447969018248841e-05
+        },
+        "22-lod8": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 2.4052185835898854e-05
+        },
+        "23-spatial": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        },
+        "23-global": {
+          "smoothAgreement": 1.0,
+          "normalizedRms": 0.0
+        }
+      },
+      "geometry": [
+        "20-clusters",
+        "20-rebuild",
+        "21-templates",
+        "21-direct",
+        "21-rebuild",
+        "21-refit",
+        "22-templates",
+        "22-direct",
+        "22-rebuild",
+        "23-ptlas",
+        "23-rebuild",
+        "23-refit",
+        "20-stress",
+        "21-stress",
+        "22-stress",
+        "23-stress"
+      ],
+      "ui": [
+        21,
+        22,
+        23
+      ],
+      "analyticPlaneDistance": {
+        "maxAbsoluteErrorMetres": 0.00045333220271359664,
+        "maxRelativeError": 2.5456627034741605e-05
+      }
+    }
+  },
+  "images": {
+    "Docs/Direct3D12/Images/Advanced20_ClusteredGeometry-clusters.png": "f04c4a023b64e4b40268d8fe15ae4bffdef3ff36d597c40f5c64fec60d549870",
+    "Docs/Direct3D12/Images/Advanced20_ClusteredGeometry-triangles.png": "fd472e9dc8df49aea79ae1aafec0a8a41b204eae2d1f7919cbbda5ad6d904665",
+    "Docs/Direct3D12/Images/Advanced20_ClusteredGeometry.png": "a7b9ea08c6f4f723f4556364f70816e4da9aba2478db422ac6c200cf0dff59aa",
+    "Docs/Direct3D12/Images/Advanced21_ClusterTemplates-clusters.png": "544165ffcd21fe02c4b4d96770860ca3528a5dd149186f38b2bb3198348e7765",
+    "Docs/Direct3D12/Images/Advanced21_ClusterTemplates.png": "5d9e1f88183560830e29cd26658191ea25396f235f9e4284aae3b4604ce94b5c",
+    "Docs/Direct3D12/Images/Advanced22_ClusterTessellation-lod.png": "97a1aa926511e78cf73473f00144452fa3ac1f11463ddb9061e84835c025273c",
+    "Docs/Direct3D12/Images/Advanced22_ClusterTessellation-triangles.png": "8298adf8d9c47114ec808728d2adc99e3e6ca441bf6c8888f6738bb882dbcec6",
+    "Docs/Direct3D12/Images/Advanced22_ClusterTessellation.png": "dedcd05db0b50555d8bbd3bfa37db2db05cf0402152ff6307000eecb882d6fa3",
+    "Docs/Direct3D12/Images/Advanced23_PartitionedTLAS-activity.png": "722b9cfae36855a8fb01836ddf6161867a7ba9c7bbd2b1ef520f8b5e68a11bbb",
+    "Docs/Direct3D12/Images/Advanced23_PartitionedTLAS-partition.png": "f61930b516dc0affce04022dd7b410ee375e8c3fff1cac242b1087b31ecc5ffc",
+    "Docs/Direct3D12/Images/Advanced23_PartitionedTLAS.png": "8d68163dd2a34cef6dbbfc13ede6b8f6a66114c2d14630c88dcafd783292bf39"
+  },
+  "limitations": [
+    "RTX 4070 / driver 621.01 only",
+    "Unsupported-device branch tested by an explicit failure hook",
+    "Memory values are logical buffer capacities, not physical VRAM usage"
+  ]
+}

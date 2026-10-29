@@ -85,6 +85,7 @@ void ParseOptions(Options &options)
                 continue;
             }
             if (argument == L"--test-camera") { options.testCamera = true; continue; }
+            if (argument == L"--cg-force-unsupported") { options.clusterForceUnsupported = true; continue; }
             if (argument == L"--test-character") { options.testCharacter = true; continue; }
             if (argument == L"--pause-animation") { options.pauseAnimation = true; continue; }
             if (argument == L"--test-root-motion") { options.testRootMotion = options.testUi = true; continue; }
@@ -120,6 +121,19 @@ void ParseOptions(Options &options)
             std::wstring value = arguments[++i];
             if (argument == L"--model")
                 options.model = std::filesystem::absolute(value);
+            else if (argument == L"--cg-mode") options.clusterMode = value;
+            else if (argument == L"--cg-view") options.clusterView = value;
+            else if (argument == L"--cg-partition") options.clusterPartition = value;
+            else if (argument == L"--cg-test") options.clusterTest = value;
+            else if (argument == L"--cg-lod" || argument == L"--cg-active-percent")
+            {
+                size_t used = 0; auto n = std::stoul(value, &used);
+                if (used != value.size() || value.empty() || value.front() == L'-' ||
+                    (argument == L"--cg-lod" ? (n != 0 && n != 2 && n != 4 && n != 8) : n > 100))
+                    throw std::runtime_error("--cg-lod: 0/2/4/8; --cg-active-percent: 0..100");
+                if (argument == L"--cg-lod") options.clusterLod = uint32_t(n);
+                else options.clusterActivePercent = uint32_t(n);
+            }
             else if (argument == L"--texture")
                 options.texture = std::filesystem::absolute(value);
             else if (argument == L"--screenshot")
@@ -134,6 +148,14 @@ void ParseOptions(Options &options)
                     frames > UINT32_MAX)
                     throw std::runtime_error("--frames must be a positive 32-bit integer");
                 options.frames = static_cast<uint32_t>(frames);
+            }
+            else if (argument == L"--width" || argument == L"--height")
+            {
+                size_t used=0;auto dimension=std::stoul(value,&used);
+                if(used!=value.size()||value.empty()||value.front()==L'-'||dimension<64||dimension>8192)
+                    throw std::runtime_error("--width/--height must be in [64, 8192]");
+                if(argument==L"--width")options.clientWidthOverride=uint32_t(dimension);
+                else options.clientHeightOverride=uint32_t(dimension);
             }
             else if (argument == L"--sun-shadow") {
                 if(value!=L"map" && value!=L"rayquery") throw std::runtime_error("--sun-shadow: map / rayquery");
@@ -260,7 +282,7 @@ void ParseOptions(Options &options)
                     throw std::runtime_error("--occluder-x must be in [-1.5, 1.5]");
             }
             else
-                throw std::runtime_error("Unknown command-line option");
+                throw std::runtime_error("Unknown command-line option: " + std::filesystem::path(argument).string());
         }
     }
     catch (...)
@@ -341,6 +363,8 @@ int RunSample(ISample &sample, HINSTANCE instance, const wchar_t *title, SampleD
     try
     {
         ParseOptions(options);
+        if(options.clientWidthOverride)state.width=state.initialWidth=options.clientWidthOverride;
+        if(options.clientHeightOverride)state.height=state.initialHeight=options.clientHeightOverride;
         if (!options.log.empty())
         {
             if (!options.log.parent_path().empty())

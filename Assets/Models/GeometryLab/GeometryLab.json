@@ -1,0 +1,84 @@
+{
+  "profile": "geometry-lab-1",
+  "seed": 20261029,
+  "binary": "GeometryLab.bin",
+  "vertexStride": 48,
+  "coordinateSystem": "left-handed Y-up meters",
+  "primitives": [
+    {
+      "name": "Floor",
+      "vertexOffset": 0,
+      "vertexCount": 8,
+      "indexOffset": 384,
+      "indexCount": 36,
+      "material": "floor",
+      "motion": 0
+    },
+    {
+      "name": "Plinth",
+      "vertexOffset": 528,
+      "vertexCount": 8,
+      "indexOffset": 912,
+      "indexCount": 36,
+      "material": "stone",
+      "motion": 0
+    },
+    {
+      "name": "Panel",
+      "vertexOffset": 1056,
+      "vertexCount": 8,
+      "indexOffset": 1440,
+      "indexCount": 36,
+      "material": "teal",
+      "motion": 0
+    },
+    {
+      "name": "Relief",
+      "vertexOffset": 1584,
+      "vertexCount": 33153,
+      "indexOffset": 1592928,
+      "indexCount": 196608,
+      "material": "bronze",
+      "motion": 0
+    },
+    {
+      "name": "Ribbon",
+      "vertexOffset": 2379360,
+      "vertexCount": 8385,
+      "indexOffset": 2781840,
+      "indexCount": 49152,
+      "material": "teal",
+      "motion": 1
+    }
+  ],
+  "materials": {
+    "stone": [
+      0.6,
+      0.5,
+      0.34,
+      0,
+      0.8
+    ],
+    "bronze": [
+      0.7,
+      0.32,
+      0.09,
+      0.85,
+      0.24
+    ],
+    "teal": [
+      0.055,
+      0.5,
+      0.42,
+      0.35,
+      0.3
+    ],
+    "floor": [
+      0.22,
+      0.25,
+      0.3,
+      0.1,
+      0.36
+    ]
+  }
+}

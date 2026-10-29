@@ -8,7 +8,7 @@
 
 ## ビルドと実行
 
-Visual Studio 2026／v145、Windows SDK 10.0.26100.0、C++20、x64を使います。Agility SDK 1.619.6／DXC 1.9.2609.5はNuGet、nlohmann/json v3.12.0とDear ImGui v1.92.9bは固定Submoduleです。Vulkan SDKはD3D12単体ビルドには不要です。
+Visual Studio 2026／v145、Windows SDK 10.0.26100.0、C++20、x64を使います。Agility SDK 1.620.1／DXC 1.9.2609.5はNuGet、nlohmann/json v3.12.0とDear ImGui v1.92.9bは固定Submoduleです。Vulkan SDKはD3D12単体ビルドには不要です。
 
 ```powershell
 git submodule update --init --recursive

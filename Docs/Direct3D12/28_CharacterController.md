@@ -8,7 +8,7 @@
 
 ## 実行する
 
-`ShaderjpGraphicsSamples.sln`から`Direct3D12_28_CharacterController`を選び、x64 Debug／Releaseで実行します。VS2026、v145、Windows SDK 10.0.26100.0、Agility SDK 1.619.6、DXC 1.9.2609.5を使用します。パッド入力はWindows SDKの`xinput.lib`です。
+`ShaderjpGraphicsSamples.sln`から`Direct3D12_28_CharacterController`を選び、x64 Debug／Releaseで実行します。VS2026、v145、Windows SDK 10.0.26100.0、Agility SDK 1.620.1、DXC 1.9.2609.5を使用します。パッド入力はWindows SDKの`xinput.lib`です。
 
 WASDで移動、Shiftで走行、Spaceでジャンプ、右ドラッグでカメラを回転します。パッドでは左スティック、L3保持、A、右スティックです。R／ViewまたはUIのResetで初期状態へ戻します。初期クライアント領域は1280×720です。
 

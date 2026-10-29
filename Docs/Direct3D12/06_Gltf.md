@@ -8,7 +8,7 @@ Shader BallのglTFをCPUで読み込み、Direct3D12のVertex／Index Buffer、M
 
 ## 導入と実行
 
-Visual Studio 2026、v145、Windows SDK 10.0.26100.0、C++20、x64です。Agility SDK 1.619.6／DXC 1.9.2609.5をNuGetで復元します。JSONヘッダーはMITライセンスのnlohmann/json v3.12.0です。
+Visual Studio 2026、v145、Windows SDK 10.0.26100.0、C++20、x64です。Agility SDK 1.620.1／DXC 1.9.2609.5をNuGetで復元します。JSONヘッダーはMITライセンスのnlohmann/json v3.12.0です。
 
 ```powershell
 git submodule update --init --recursive

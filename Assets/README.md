@@ -23,3 +23,5 @@ GPUスキニング向けの[Silver Robot原本](../Docs/Assets/SilverRobot.md)�
 基本22／23と発展10では[Silver Robot Animated](../Docs/Assets/SilverRobotAnimated.md)を使います。`SilverRobotAnimated.blend`と`Models/SilverRobotAnimated`にUniversal Animation Library Standardの6クリップをリターゲットし、A/T確認ポーズも同梱しました。ロボットはMIT、QuaterniusモーションはCC0-1.0で、`Animations.json`に素材版・作者・固定コミット・SHA-256を保存しています。
 
 発展18以降のパストレーシングには[専用Room](../Docs/Assets/PathTracing.md)と既存Workshopを使います。`Models/PathTracing`と`Scenes/PathTracing`に共通配布データ、`SourceArt/Blender/PathTracing`に保存正本を収録しています。
+
+発展20〜23は自作MITの[Geometry Lab](../Docs/Assets/GeometryLab.md)を使用します。高密度彫刻、変形する薄板、規則タイル、可動パネルを使い、[Blender正本](../SourceArt/Blender/GeometryLab/README.md)から再生成できます。

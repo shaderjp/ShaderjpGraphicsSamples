@@ -1,6 +1,6 @@
 # グラフィックスサンプル発展編：Direct3D 12／Vulkan
 
-基本編で学んだリソース転送・同期・PBR・IBL・Deferred Renderingを土台に、GPUのレイトレーシング、Mesh Shader、GPU Driven Rendering、パストレーシングを実装するシリーズです。発展編は01から番号を付け、各テーマを両APIの独立した実行プロジェクトで比較します。現在は基本30テーマ＋発展19テーマ、両API98本です。
+基本編で学んだリソース転送・同期・PBR・IBL・Deferred Renderingを土台に、GPUのレイトレーシング、Mesh Shader、GPU Driven Rendering、パストレーシングを実装するシリーズです。発展編は01から番号を付け、発展01〜19は両APIの独立した実行プロジェクトで比較し、20〜23はDirect3D12 Previewを扱います。現在は基本30テーマ＋発展23テーマ、D3D12 53本・Vulkan 49本の計102本です。
 
 | 発展編 | Direct3D 12 / DXR | Vulkan |
 |---|---|---|
@@ -77,3 +77,14 @@ VS 2026、v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを使用
 [共通解説](BRDFAndBSDF.md) → [追加ガラスアセット](Assets/BSDFMaterials.md) → [Direct3D12](Direct3D12/Advanced19_BSDFMaterials.md)／[Vulkan](Vulkan/Advanced19_BSDFMaterials.md)へ進みます。発展18と同じパストレーシングで、反射＋透過、反射成分のみ、従来の不透明PBRを全画面で比較します。
 
 発展19以降の新規サンプルは1920×1080です。既存サンプルと掲載画像の解像度は維持します。透明・すりガラスと距離吸収を扱い、ReSTIR・デノイズ・入れ子の媒質は後続候補です。[検証記録](BSDFMaterialsVerification.md)
+
+## DXR Preview：発展20〜23
+
+[Clustered Geometry／PTLASの共通章](ClusteredRaytracing.md)へ続きます。この4本はDirect3D12専用で、Preview SDKをプロジェクト単位で選びます。既存サンプルはRetail SDKとSM6.6を維持します。
+
+| 回 | Direct3D12 | Vulkan |
+|---|---|---|
+| 20 | [Clustered Geometry](Direct3D12/Advanced20_ClusteredGeometry.md) | — |
+| 21 | [Cluster Templates](Direct3D12/Advanced21_ClusterTemplates.md) | — |
+| 22 | [Cluster Tessellation](Direct3D12/Advanced22_ClusterTessellation.md) | — |
+| 23 | [Partitioned TLAS](Direct3D12/Advanced23_PartitionedTLAS.md) | — |

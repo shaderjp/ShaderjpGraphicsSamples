@@ -5,7 +5,8 @@
 - New samples starting with Advanced19 use a 1920x1080 client area and documentation captures. Pass `SampleDefaults` to `RunSample`; minimize/restore returns to that sample's initial size. Existing samples retain 1280x720 and existing 800x600/1280x720 images remain unchanged.
 - Projects that override the client size must also declare matching `SampleClientWidth` and `SampleClientHeight` MSBuild properties for lifecycle tests. Apply CLI overrides after `SampleDefaults`.
 - Keep graphics initialization, resource creation, drawing, synchronization, and teardown visible in each sample. `Common` is for Win32 lifecycle, CPU data/file/image/model loading, and math, not a shared rendering API.
-- D3D12 uses Agility SDK 1.619.6 and DXC 1.9.2609.5 from NuGet. Vulkan uses the installed Vulkan SDK, including its DXC, and targets Vulkan 1.3.
+- D3D12 uses Agility SDK 1.620.1 and DXC 1.9.2609.5 from NuGet. Vulkan uses the installed Vulkan SDK, including its DXC, and targets Vulkan 1.3.
+- Advanced20–23 are Direct3D12-only preview samples: pin Agility 1.722.0-preview and DXC 1.10.2605.37-preview. Only the Advanced20–22 clustered ray libraries use SM 6.10; their conventional libraries and all Advanced23 shaders remain SM 6.6. Keep the matching SDK export, headers and runtime together, and enable experimental features only in these executables.
 - Share HLSL source; compile offline with DXC, Shader Model 6.6, HLSL 2021. Preserve register/binding conventions (b0=0, t0=1, s0=2, set 0), row-major matrices, left-handed camera, depth 0..1, and Vulkan's negative-height viewport.
 - Use WIC for the initial PNG samples. Manage future non-SDK dependencies as pinned Git submodules under `ThirdParty`; introduce DirectXTex/imgui only with the corresponding later tutorial.
 - Provide Japanese Markdown under `Docs/<API>` and real rendered screenshots when available. Do not publish or push unless requested.

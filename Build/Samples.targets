@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="CheckSamplePrerequisites" BeforeTargets="PrepareForBuild">
-    <Error Condition="'$(GraphicsApi)'=='Direct3D12' and !Exists('$(D3D12Package)build\native\include\d3d12.h')" Text="Agility SDK 1.619.6 is missing. Restore NuGet packages in Visual Studio or run msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true." />
-    <Error Condition="'$(GraphicsApi)'=='Direct3D12' and !Exists('$(DxcToolPath)')" Text="DXC 1.9.2609.5 is missing. Restore the Microsoft.Direct3D.DXC NuGet package." />
+    <Error Condition="'$(GraphicsApi)'=='Direct3D12' and !Exists('$(D3D12Package)build\native\include\d3d12.h')" Text="Agility SDK $(D3D12PackageVersion) is missing. Restore NuGet packages in Visual Studio or run msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true." />
+    <Error Condition="'$(GraphicsApi)'=='Direct3D12' and !Exists('$(DxcToolPath)')" Text="DXC $(DxcPackageVersion) is missing. Restore the Microsoft.Direct3D.DXC NuGet package." />
     <Error Condition="'$(GraphicsApi)'=='Vulkan' and (!Exists('$(VULKAN_SDK)\Include\vulkan\vulkan.h') or !Exists('$(VULKAN_SDK)\Lib\vulkan-1.lib'))" Text="Install the Windows Vulkan SDK and restart Visual Studio so VULKAN_SDK points to its installation directory." />
     <Error Condition="'$(GraphicsApi)'=='Vulkan' and !Exists('$(DxcToolPath)')" Text="Install Vulkan SDK with its DirectX Shader Compiler (Bin\dxc.exe)." />
     <MakeDir Directories="$(OutDir)Shaders" />

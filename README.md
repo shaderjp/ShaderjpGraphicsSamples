@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編30テーマ＋発展編19テーマ、両APIで計98本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編30テーマ＋発展編23テーマ、D3D12 53本・Vulkan 49本、計102本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -8,7 +8,8 @@
 
 - Windows、Visual Studio 2026の「C++によるデスクトップ開発」、v145、Windows SDK 10.0.26100.0。
 - x64のDebug／Release構成。初回の検証環境はWindows 11とNVIDIA GeForce RTX 4070です。
-- D3D12: FL12_0、Shader Model 6.6対応GPU／ドライバ。Agility SDK 1.619.6とDXC 1.9.2609.5をNuGetで復元します。
+- D3D12: FL12_0、Shader Model 6.6対応GPU／ドライバ。Agility SDK 1.620.1とDXC 1.9.2609.5をNuGetで復元します。
+- 発展20〜23はD3D12専用です。Agility 1.722.0-preview／DXC 1.10.2605.37-previewとWindows Developer Mode、Clusters／PTLAS対応ドライバが必要です。20〜22のクラスタ用LibraryだけSM6.10、比較用Libraryと23はSM6.6です。[共通解説](Docs/ClusteredRaytracing.md)
 - Vulkan: Windows用[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)と付属DXC。Vulkan 1.3、Dynamic Rendering、Synchronization2、graphics/compute/presentに対応するQueue（第14回以降のCompute使用サンプル）を持つGPU／ドライバが必要です。
 - 発展編01〜03・18〜19: D3D12はDXR Tier 1.0以上、VulkanはKHRのAcceleration Structure／Ray Tracing Pipeline／Deferred Host Operations、Buffer Device Addressなどが必要です。[詳細な要件](Docs/AdvancedGraphicsSamples.md#環境と今回の範囲)
 - 発展編04〜11: D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`と`meshShader`が必要です。Vulkanの06〜11は`taskShader`も使用します。基本22〜25はMesh Shaderを要求しません。[Mesh Shaderの要件と検証](Docs/MeshShaderVerification.md)
@@ -328,3 +329,18 @@ meshoptimizer v1.3は`ThirdParty/meshoptimizer`の固定Submoduleです。`git s
 この回から新規サンプルの標準解像度は1920×1080です。`RunSample`の`SampleDefaults`でサンプル別の初期解像度・積分初期値を指定し、既存サンプルの1280×720と旧画像は維持します。新規プロジェクトでは試験用の`SampleClientWidth`／`SampleClientHeight`メタデータも設定してください。
 
 検証は`Tools/TestBSDFCpu.ps1`、`TestBSDFAssets.ps1`、`TestBSDFShaders.ps1`、`TestBSDF.ps1`と、`TestSamples.ps1 -Topics Advanced19_BSDFMaterials`です。[実機記録](Docs/BSDFMaterialsVerification.md)に条件と結果を残します。
+
+## DXR発展20〜23：Clustered Geometry／PTLAS
+
+[共通解説](Docs/ClusteredRaytracing.md)／[アセット](Docs/Assets/GeometryLab.md)／[検証・計測](Docs/ClusteredRaytracingVerification.md)
+
+Shader.jpの記事：[共通解説](https://www.shader.jp/blog/graphics-samples-clustered-raytracing/)／[アセット制作](https://www.shader.jp/blog/graphics-samples-geometry-lab/)／[発展20](https://www.shader.jp/blog/direct3d12-advanced20-clustered-geometry/)／[21](https://www.shader.jp/blog/direct3d12-advanced21-cluster-templates/)／[22](https://www.shader.jp/blog/direct3d12-advanced22-cluster-tessellation/)／[23](https://www.shader.jp/blog/direct3d12-advanced23-partitioned-tlas/)。
+
+| 回 | Direct3D12 Preview |
+|---|---|
+| 20 | [Clustered Geometry](Docs/Direct3D12/Advanced20_ClusteredGeometry.md) |
+| 21 | [Cluster Templates](Docs/Direct3D12/Advanced21_ClusterTemplates.md) |
+| 22 | [Cluster Tessellation](Docs/Direct3D12/Advanced22_ClusterTessellation.md) |
+| 23 | [Partitioned TLAS](Docs/Direct3D12/Advanced23_PartitionedTLAS.md) |
+
+新4本は1920×1080で起動します。`--cg-mode`、`--cg-view`、`--cg-lod`、`--cg-partition`、`--cg-active-percent`を使用します。`--width`／`--height`で初期サイズ、`--fixed-dt`と`--animation-time`で時間条件を指定できます。

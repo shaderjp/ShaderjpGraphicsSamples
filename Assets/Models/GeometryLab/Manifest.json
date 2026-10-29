@@ -1,0 +1,25 @@
+{
+  "profile": "geometry-lab-manifest-1",
+  "seed": 20261029,
+  "license": "MIT",
+  "files": {
+    "GeometryLab.bin": {
+      "bytes": 2978448,
+      "sha256": "f2d042e9388a696c387af673462bafd48637d163f3659ccac277c05db901970a"
+    },
+    "GeometryLab.json": {
+      "bytes": 1536,
+      "sha256": "a77d647a6a64e788b0a21f123b3aa469896412ea3df26893c4f3d197b46cad6e"
+    }
+  },
+  "sources": {
+    "SourceArt/Blender/GeometryLab/generate.py": {
+      "bytes": 5606,
+      "sha256": "aea605c2a660bc8eec959aba7e3f3eb29ea655094b104c8dee5ffbb3dec84f76"
+    },
+    "SourceArt/Blender/GeometryLab/GeometryLab.blend": {
+      "bytes": 1614699,
+      "sha256": "602cbfdc79cb180d5b3cc920ba984f26547208ef6e65b7054f3b0dc4e78a0129"
+    }
+  }
+}

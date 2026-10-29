@@ -8,7 +8,7 @@ Workshopの工房を使い、PBR、IBL、Shadow Map、HDR、BloomをDeferred Ren
 
 ## ビルドと実行
 
-VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64の規約を維持します。Agility SDK 1.619.6、NuGet DXC 1.9.2609.5、FL12_0／SM6.6を使います。
+VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64の規約を維持します。Agility SDK 1.620.1、NuGet DXC 1.9.2609.5、FL12_0／SM6.6を使います。
 
 ```powershell
 msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true

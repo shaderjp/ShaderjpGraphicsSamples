@@ -105,3 +105,12 @@
 /Docs/Assets/Images/BSDFMaterials/*.png -text
 /Docs/Assets/Images/BSDFMaterials/*.svg text eol=lf
 /Docs/BSDF*.json text eol=lf
+
+# Preserve Geometry Lab export/measurement bytes and source hashes on Windows.
+/Assets/Models/GeometryLab/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/SourceArt/Blender/GeometryLab/*.blend -text
+/SourceArt/Blender/GeometryLab/*.py text eol=lf
+/SourceArt/Blender/GeometryLab/*.md text eol=lf
+/Docs/ClusterGeometry*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Measurements/ClusterGeometry/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Direct3D12/Images/Advanced2[0-3]_*.png -text

@@ -6,7 +6,7 @@
 
 ## ビルドと実行
 
-VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを使用します。HLSL 2021・SM6.6をオフラインでコンパイルします。D3D12は固定NuGet版Agility SDK 1.619.6／DXC 1.9.2609.5、Vulkanはインストール済みSDKのDXCを使用し、実行ターゲットはVulkan 1.3です。
+VS 2026／v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを使用します。HLSL 2021・SM6.6をオフラインでコンパイルします。D3D12は固定NuGet版Agility SDK 1.620.1／DXC 1.9.2609.5、Vulkanはインストール済みSDKのDXCを使用し、実行ターゲットはVulkan 1.3です。
 
 ```powershell
 msbuild ShaderjpGraphicsSamples.sln -t:Restore -p:RestorePackagesConfig=true

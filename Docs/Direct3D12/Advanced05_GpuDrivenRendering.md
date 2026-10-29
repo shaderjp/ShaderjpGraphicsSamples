@@ -15,7 +15,7 @@ bin\x64\Debug\Direct3D12_Advanced05_GpuDrivenRendering\Direct3D12_Advanced05_Gpu
 
 ## 使用するAPIと事前コンパイル
 
-D3D12はAgility SDK 1.619.6、NuGet DXC 1.9.2609.5、SM6.6を使用します。Mesh Shader Tierを起動時に問い合わせます。Pipeline State StreamにMS／PSを設定し、通常描画は`ID3D12GraphicsCommandList6::DispatchMesh`で起動します。 GPU生成の引数は`D3D12_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH`を持つCommand Signatureと`ExecuteIndirect`で消費します。UAV書込みからShader／Indirectの読取りへ遷移します。
+D3D12はAgility SDK 1.620.1、NuGet DXC 1.9.2609.5、SM6.6を使用します。Mesh Shader Tierを起動時に問い合わせます。Pipeline State StreamにMS／PSを設定し、通常描画は`ID3D12GraphicsCommandList6::DispatchMesh`で起動します。 GPU生成の引数は`D3D12_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH`を持つCommand Signatureと`ExecuteIndirect`で消費します。UAV書込みからShader／Indirectの読取りへ遷移します。
 
 VS 2026、v145、Windows SDK 10.0.26100.0、C++20、x64 Debug／Releaseを維持します。共通HLSLは`Shaders/MeshShader`にあります。GPUリソース、Pipeline、描画、Barrier、Fence／Semaphore、終了時の解放はこのプロジェクトの`Sample.cpp`で追えます。共有C++はCPUデータとウィジェットです。
 

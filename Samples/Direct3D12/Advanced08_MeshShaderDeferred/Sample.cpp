@@ -22,10 +22,10 @@ template <class T, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE Type> struct alignas(void
 #pragma warning(pop)
 #pragma warning(pop)
 
-// Agility SDK 1.619.6. The DLLs live in a separate directory next to the exe.
+// Agility SDK selected by Build/Common.props. The DLLs live in a separate directory next to the exe.
 extern "C"
 {
-    __declspec(dllexport) extern const UINT D3D12SDKVersion = 619;
+    __declspec(dllexport) extern const UINT D3D12SDKVersion = TUTORIAL_D3D12_SDK_VERSION;
     __declspec(dllexport) extern const char *D3D12SDKPath = ".\\D3D12\\";
 }
 namespace
@@ -105,7 +105,7 @@ void Sample::OnInit(HWND window, uint32_t width, uint32_t height, const Options 
     if (!device_)
         throw std::runtime_error("A hardware D3D12 feature level 12_0 device is required");
     D3D12_FEATURE_DATA_SHADER_MODEL shaderModel{D3D_SHADER_MODEL_6_6};
-    CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_SHADER_MODEL, &shaderModel, sizeof(shaderModel)),
+    CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_SHADER_MODEL, &shaderModel, sizeof(shaderModel), TUTORIAL_D3D12_SDK_VERSION),
             "Shader Model query");
     if (shaderModel.HighestShaderModel < D3D_SHADER_MODEL_6_6)
         throw std::runtime_error("Shader Model 6.6 is required; update your GPU driver");
@@ -114,7 +114,7 @@ void Sample::OnInit(HWND window, uint32_t width, uint32_t height, const Options 
     Trace("D3D12 Debug Layer enabled");
 #endif
     D3D12_FEATURE_DATA_D3D12_OPTIONS7 meshSupport{};
-    CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_D3D12_OPTIONS7, &meshSupport, sizeof(meshSupport)),
+    CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_D3D12_OPTIONS7, &meshSupport, sizeof(meshSupport), TUTORIAL_D3D12_SDK_VERSION),
             "Mesh Shader Tier query");
     Trace("Mesh Shader Tier: " + std::to_string(meshSupport.MeshShaderTier));
     if (meshSupport.MeshShaderTier == D3D12_MESH_SHADER_TIER_NOT_SUPPORTED)
@@ -256,7 +256,7 @@ Sample::ComPtr<ID3D12Resource> Sample::LoadDdsTexture(const std::filesystem::pat
     desc.Format = d.format == DdsFormat::Rg16Float ? DXGI_FORMAT_R16G16_FLOAT : DXGI_FORMAT_R16G16B16A16_FLOAT;
     desc.SampleDesc.Count = 1;
     D3D12_FEATURE_DATA_FORMAT_SUPPORT support{desc.Format};
-    CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_FORMAT_SUPPORT, &support, sizeof(support)), "HDR format query");
+    CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_FORMAT_SUPPORT, &support, sizeof(support), TUTORIAL_D3D12_SDK_VERSION), "HDR format query");
     if (!(support.Support1 & D3D12_FORMAT_SUPPORT1_SHADER_SAMPLE))
         throw std::runtime_error("HDR sampling unsupported");
     D3D12_HEAP_PROPERTIES heap{};
@@ -408,7 +408,7 @@ void Sample::CreateSizeResources()
     auto make = [&](UINT w, UINT h, DXGI_FORMAT format, D3D12_RESOURCE_FLAGS flags, D3D12_RESOURCE_STATES state,
                     bool depth) {
         D3D12_FEATURE_DATA_FORMAT_SUPPORT support{depth ? DXGI_FORMAT_D32_FLOAT : format};
-        CheckHR(device_->CheckFeatureSupport(D3D12_FEATURE_FORMAT_SUPPORT, &support, sizeof(support)),
+        CheckHR(device_->CheckFeatureSupport1(D3D12_FEATURE_FORMAT_SUPPORT, &support, sizeof(support), TUTORIAL_D3D12_SDK_VERSION),
                 "Render format query");
         if (!(support.Support1 & (depth ? D3D12_FORMAT_SUPPORT1_DEPTH_STENCIL : D3D12_FORMAT_SUPPORT1_RENDER_TARGET)))
             throw std::runtime_error("Required render format unsupported");

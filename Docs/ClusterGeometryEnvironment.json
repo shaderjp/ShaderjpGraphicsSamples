@@ -1,0 +1,234 @@
+{
+  "capturedUtc": "2026-10-29T17:06:45.9128858Z",
+  "timeZone": "Asia/Tokyo",
+  "os": {
+    "Caption": "Microsoft Windows 11 Pro",
+    "Version": "10.0.26300",
+    "BuildNumber": "26300"
+  },
+  "cpu": [
+    "13th Gen Intel(R) Core(TM) i9-13900F"
+  ],
+  "gpu": [
+    {
+      "Name": "NVIDIA GeForce RTX 4070",
+      "DriverVersion": "32.0.16.2101"
+    }
+  ],
+  "visualStudio": "18.10.12201.205",
+  "toolset": "v145",
+  "msvcTools": "14.51.36231",
+  "compiler": "19.51.36257.0",
+  "windowsSdk": "10.0.26100.0",
+  "language": "C++20 / HLSL2021",
+  "retailAgility": "1.620.1",
+  "previewAgility": "1.722.0-preview",
+  "vulkanSdk": "C:\\VulkanSDK\\1.4.341.1",
+  "developerMode": 1,
+  "shaderModels": {
+    "previewTriangleAndCompute": "6.6",
+    "clusterLibrary": "6.10",
+    "existing": "6.6"
+  },
+  "meshoptimizer": {
+    "commit": "9e1f07b159d3cb777f1c67ed31fc11fd117986f4",
+    "tag": "v1.3"
+  },
+  "microsoftReference": "68a2b1e97f71642924e74c7757ca21756ad221b5",
+  "rtxmgReference": {
+    "commit": "1c0bc90b06c482213bf313670b238fbc683ed67b",
+    "tag": "v2.2.0"
+  },
+  "compilers": {
+    "1.10.2605.37-preview": {
+      "sha256": "01c6ea34554c3a48a808ed7a55e87b3d19b388eae8c1af0b82aff7c7b837ed76",
+      "version": "dxcompiler.dll: 1.10(5373-c4d8f4f9)(1.10.2605.37) - 1.10.2605.37 (c4d8f4f99)"
+    },
+    "1.9.2609.5": {
+      "sha256": "aa7965b3763d9c710baaa5a28cedcc633449962a75d1391d161a85304a41b3e2",
+      "version": "dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47)"
+    }
+  },
+  "binaries": {
+    "Debug/Direct3D12_Advanced22_ClusterTessellation": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "D3D12SDKLayers.dll": {
+        "sha256": "813ef7d06bc052d74e690acf1a40878932a280a34767998837d6c39e74cd7eab",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "exe": "5927dc3cf670ddca80dc847174a8e04a0d5dd4a7c62614b3e66aa772d3106811",
+      "shaders": {
+        "ImGuiVertex.cso": "fc50397f4f26f1a988df1f89e0b0d172358041615ad5bed18f62c18ede629c3d",
+        "PostVertex.cso": "baac32229c1663dd229ce3c3a82e46b21b636eba274caa3dad79b2d4f2716dd6",
+        "TriangleLibrary.cso": "8db879df077cab317730fede3ffd51dc72e53b7942d0ce617534d7124bd6138e",
+        "Extract.cso": "f270b56b47bc4b20debf65c7323bf91ea09b9e41eecb0cb8337f6cbf24e6ba91",
+        "ClusterLibrary.cso": "fba22fd6a68fd9ab5d221c45fa46df0334fd8e89793ec2c7d6a98d3b33e26e2b",
+        "ImGuiPixel.cso": "608601bb7e2fa133ab5e610b4805982069c2592cc3a0f5c56378ec324c73ad1c",
+        "Blur.cso": "37c24c2fc36bec9c404138c5a9cc35ea7bb26dbbe2d6c55be0a5632dfecbd74a",
+        "GenerateGeometry.cso": "70f399db8198ec5806ad1a40a81a083732f5009a6aafce37fd3e2ea9a0c9f6cb",
+        "DeferredPostPixel.cso": "461b53858b8f31d8d1dae9508503969096c92639112ca24acb1caa9ad49f8196"
+      }
+    },
+    "Debug/Direct3D12_Advanced20_ClusteredGeometry": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "D3D12SDKLayers.dll": {
+        "sha256": "813ef7d06bc052d74e690acf1a40878932a280a34767998837d6c39e74cd7eab",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "exe": "c2a31b1166fbb579de8b43f05b765c0a3c9e9b12873f40a0e391e4396e0f6ada",
+      "shaders": {
+        "ImGuiVertex.cso": "c35b70138f3146f840bf801fc59d5c016a008795007192aa83ec0fa1edc2e701",
+        "PostVertex.cso": "5dfc78ed50ec2d6e02308f513274af5f6a1068419cdb55e15412c82f097031e3",
+        "TriangleLibrary.cso": "5ce904d94acc56513640736c5147fe30fe4a64f40b04490cd6f4bd8e0441ffbb",
+        "Extract.cso": "e00d0f6ef605d196d67341b7ef956553c1e819e624d90b7b13dd821516748df5",
+        "ClusterLibrary.cso": "011515e9b3114f86c4f198b0f3fe1e3603599a3b640cee3c2cb06a0069d7489a",
+        "ImGuiPixel.cso": "9e71ad1fe35a73205f69778c060e8091d8fc70fbc2b89f68dd40c9fadfed4c61",
+        "Blur.cso": "0d315f4c3a9c2f96184afb95cd0467d880d23019eb6cedd87267fb551a3851fc",
+        "GenerateGeometry.cso": "951029b708e69dc0128b9e2a80af280f38f606f5b085c1b29738fdb3d2a25ef7",
+        "DeferredPostPixel.cso": "c03994e7ad9509101be11a8959cee130af64f28ec5744d11ca4aa5e9382a1b94"
+      }
+    },
+    "Debug/Direct3D12_Advanced23_PartitionedTLAS": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "D3D12SDKLayers.dll": {
+        "sha256": "813ef7d06bc052d74e690acf1a40878932a280a34767998837d6c39e74cd7eab",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "exe": "959999843e9c20fb275a6da0fea8e93f16ebd8903d2a827ef7ef34cafbb9b362",
+      "shaders": {
+        "ImGuiVertex.cso": "0ff1b06f9206f38ca5836e5d50a181a52a33a38e1d4def3aab121a3d841a13a9",
+        "PostVertex.cso": "624086cc2b9258720fa943e6e2ea81198c968fdbae6204b1693481f5bc52c3b7",
+        "UpdateInstances.cso": "9b72f08b494b880b3b159d8719856e1ac2ac4c028ecf3df605122d9e2f070ac3",
+        "TriangleLibrary.cso": "30e84b9e90a66e6757e4062538f14c93d72709df93c3a622dd4b1ce4109c44c4",
+        "Extract.cso": "940388165c8201816bdd4a16643a2a0713ca413f24b1cb8a1256e6caa045b72e",
+        "DeferredPostPixel.cso": "507ba8afd7c8be17c6876ddd8a10d13868c09c23a9bae3a2f7d80fd28e91faaa",
+        "ImGuiPixel.cso": "b5672c27f288cbedd5d5d9f8bb34fc9d8a665179100eaf3858819134446baf4e",
+        "Blur.cso": "66e34a805c7a4f2d74bfc75875a48a1d0d89efb4cf204db9f5dc591d5a645626"
+      }
+    },
+    "Release/Direct3D12_Advanced22_ClusterTessellation": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "exe": "6b9897fcac42a29852fef3bdfc7c4dc35d31c8b8251633a48c80aed928b3e61e",
+      "shaders": {
+        "ImGuiVertex.cso": "f8d080b9ffcc76a206e8df9bc0a42e528288dc760c038db76365ced00c872e89",
+        "PostVertex.cso": "9d9971a526c4073fd99f3697eea584a2ac68a68698ca0e979b776685145e2952",
+        "TriangleLibrary.cso": "4402028b07becb4bcd95b218d1ee1dab08ebf9e7fb5fd0e205270a18d629e512",
+        "Extract.cso": "f8050d534f5b8d2fb65ce73d8139af7678bb14a0e5697622f20c218960acb83c",
+        "ClusterLibrary.cso": "8b27990c71dcc643e7fa0a2db576fd71386c4c87f6eb777d8331cfb84eb06ed4",
+        "ImGuiPixel.cso": "bb5fb6c9d21ab39bfdb4c7fad592fdcbd13ada73c7bab226a346ab68aa24f8d3",
+        "Blur.cso": "a857843f58837ca008b539cb124cd2f409a68f57e28a2feacfa3634f8005004e",
+        "GenerateGeometry.cso": "cc37adb1581e9ffbae9604be6c94c1ad49e8c04891eeecd0b7bfb53668e9c4f8",
+        "DeferredPostPixel.cso": "01737f00166506a4e99565ab9182c371be80dc13c6fa34b5a0481aa554124de3"
+      }
+    },
+    "Release/Direct3D12_Advanced21_ClusterTemplates": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "exe": "852cd004b5f2dddf579e56678b384221dfd85cfb310c53cada9c111ca39dbd37",
+      "shaders": {
+        "ImGuiVertex.cso": "f8d080b9ffcc76a206e8df9bc0a42e528288dc760c038db76365ced00c872e89",
+        "PostVertex.cso": "9d9971a526c4073fd99f3697eea584a2ac68a68698ca0e979b776685145e2952",
+        "TriangleLibrary.cso": "4402028b07becb4bcd95b218d1ee1dab08ebf9e7fb5fd0e205270a18d629e512",
+        "Extract.cso": "f8050d534f5b8d2fb65ce73d8139af7678bb14a0e5697622f20c218960acb83c",
+        "ClusterLibrary.cso": "8b27990c71dcc643e7fa0a2db576fd71386c4c87f6eb777d8331cfb84eb06ed4",
+        "ImGuiPixel.cso": "bb5fb6c9d21ab39bfdb4c7fad592fdcbd13ada73c7bab226a346ab68aa24f8d3",
+        "Blur.cso": "a857843f58837ca008b539cb124cd2f409a68f57e28a2feacfa3634f8005004e",
+        "GenerateGeometry.cso": "cc37adb1581e9ffbae9604be6c94c1ad49e8c04891eeecd0b7bfb53668e9c4f8",
+        "DeferredPostPixel.cso": "01737f00166506a4e99565ab9182c371be80dc13c6fa34b5a0481aa554124de3"
+      }
+    },
+    "Debug/Direct3D12_Advanced21_ClusterTemplates": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "D3D12SDKLayers.dll": {
+        "sha256": "813ef7d06bc052d74e690acf1a40878932a280a34767998837d6c39e74cd7eab",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "exe": "63df3cc1f27dc266f580086bd9fdb4b7100718b7379833e9d48494105ebcd9ff",
+      "shaders": {
+        "ImGuiVertex.cso": "3290e0618b0744ca46d3db2903eb301e6421f30f3c1f839812f9af192ca3c616",
+        "PostVertex.cso": "841c6b03c5b2c6e8139dd220fe58d0c2622dff6d0438a993b77141da46c8fa9c",
+        "TriangleLibrary.cso": "150bf61744f1550c786324c401bae9683c2909a0d0e86d1ef95cf7c99e9cb88e",
+        "Extract.cso": "6433421310f895b37cc1df92afdddb2a9cfaac334c4ff29b0eb134cb3720604c",
+        "ClusterLibrary.cso": "cf5c8c31511093b556379e0f0f8dffadaf60b176935ff5743a8a1309d6c293b8",
+        "ImGuiPixel.cso": "a6db07f645787c968dc892281fb0f9214adbfbff10285085e85d1654bb5e3a21",
+        "Blur.cso": "15a6f35b505e8b53967fcc9fcdfd7b5011ab7c9901e545ecd6819040e0dc84d6",
+        "GenerateGeometry.cso": "992b50b832568caf159f8b622c2df3b88f389c9b9b78a5c10f330476246eed86",
+        "DeferredPostPixel.cso": "327bcc0c8a7fb47cbc244438ff130c8114828b092f1e63211a32e4f3cab2278b"
+      }
+    },
+    "Release/Direct3D12_Advanced20_ClusteredGeometry": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "exe": "01d69a8e3ef533de9f8247e17c94558b3dc9583a1c98ed9d5792abd45c2a089d",
+      "shaders": {
+        "ImGuiVertex.cso": "f8d080b9ffcc76a206e8df9bc0a42e528288dc760c038db76365ced00c872e89",
+        "PostVertex.cso": "9d9971a526c4073fd99f3697eea584a2ac68a68698ca0e979b776685145e2952",
+        "TriangleLibrary.cso": "4402028b07becb4bcd95b218d1ee1dab08ebf9e7fb5fd0e205270a18d629e512",
+        "Extract.cso": "f8050d534f5b8d2fb65ce73d8139af7678bb14a0e5697622f20c218960acb83c",
+        "ClusterLibrary.cso": "8b27990c71dcc643e7fa0a2db576fd71386c4c87f6eb777d8331cfb84eb06ed4",
+        "ImGuiPixel.cso": "bb5fb6c9d21ab39bfdb4c7fad592fdcbd13ada73c7bab226a346ab68aa24f8d3",
+        "Blur.cso": "a857843f58837ca008b539cb124cd2f409a68f57e28a2feacfa3634f8005004e",
+        "GenerateGeometry.cso": "cc37adb1581e9ffbae9604be6c94c1ad49e8c04891eeecd0b7bfb53668e9c4f8",
+        "DeferredPostPixel.cso": "01737f00166506a4e99565ab9182c371be80dc13c6fa34b5a0481aa554124de3"
+      }
+    },
+    "Release/Direct3D12_Advanced23_PartitionedTLAS": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "exe": "db8f64536c035ba38a4c08b1ff11050cf298a2c195b62dcd22de73f56053e3d3",
+      "shaders": {
+        "ImGuiVertex.cso": "f8d080b9ffcc76a206e8df9bc0a42e528288dc760c038db76365ced00c872e89",
+        "PostVertex.cso": "9d9971a526c4073fd99f3697eea584a2ac68a68698ca0e979b776685145e2952",
+        "UpdateInstances.cso": "96b071211977896152188b059d8bad57840857f66a99572f27cf0cfb9332e370",
+        "TriangleLibrary.cso": "4402028b07becb4bcd95b218d1ee1dab08ebf9e7fb5fd0e205270a18d629e512",
+        "Extract.cso": "f8050d534f5b8d2fb65ce73d8139af7678bb14a0e5697622f20c218960acb83c",
+        "DeferredPostPixel.cso": "01737f00166506a4e99565ab9182c371be80dc13c6fa34b5a0481aa554124de3",
+        "ImGuiPixel.cso": "bb5fb6c9d21ab39bfdb4c7fad592fdcbd13ada73c7bab226a346ab68aa24f8d3",
+        "Blur.cso": "a857843f58837ca008b539cb124cd2f409a68f57e28a2feacfa3634f8005004e"
+      }
+    }
+  },
+  "runtimePackages": {
+    "1.722.0-preview": {
+      "D3D12Core.dll": {
+        "sha256": "1a588965b12422db5df18f9331e244616f4f7a3893db83a4c578f7de50a36f13",
+        "version": "1.722.0.0.20261026.2"
+      },
+      "D3D12SDKLayers.dll": {
+        "sha256": "813ef7d06bc052d74e690acf1a40878932a280a34767998837d6c39e74cd7eab",
+        "version": "1.722.0.0.20261026.2"
+      }
+    },
+    "1.620.1": {
+      "D3D12Core.dll": {
+        "sha256": "de33d6921ae9284f789682475793207051e129f67e305dda9ad06d5748fb8324",
+        "version": "1.620.1.0.20261026.1"
+      },
+      "D3D12SDKLayers.dll": {
+        "sha256": "75427e41321c80cb7ee804ac9bd8566f77f4519b38bb485ef27e17d3f98fa465",
+        "version": "1.620.1.0.20261026.1"
+      }
+    }
+  }
+}

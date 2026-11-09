@@ -1,0 +1,37 @@
+{
+  "sourceSha256": "91e47a69b1660835a8dd0501b8d4084e07cfdb3695e2e27fd3f6104eb9bbc3f9",
+  "blender": "5.2.1 LTS",
+  "targets": {
+    "Mini": 64,
+    "Standard": 512,
+    "Stress": 4096
+  },
+  "files": {
+    "Assets\\Models\\CullingLab\\CullingLab.bin": "d0bc9215eb1cc2d7c183e7b3790982a93102e1b6c2038b703ee89e7972d06299",
+    "Assets\\Models\\CullingLab\\CullingLab.gltf": "3e283b226e229bdc704ad15f65285dc6f860bbf2f4609f048bea9337c3b38190",
+    "Assets\\Models\\CullingLab\\Textures\\concrete_Albedo.png": "04b695ce2cf64424f2859bc4810d63ba75c55088cb0752441a5710655ea653cd",
+    "Assets\\Models\\CullingLab\\Textures\\concrete_Emissive.png": "63f7b9e39db4edcdfea0e852b21c950f8a50ee1e7b516f89e91e08d6052e588f",
+    "Assets\\Models\\CullingLab\\Textures\\concrete_Normal.png": "8b11fb437a03c1641f0bff657a603eec151ffed24190f665a4e2a4ff7cddcae7",
+    "Assets\\Models\\CullingLab\\Textures\\concrete_ORM.png": "b7002741c3c89694e8808d7ef9fe39e79bec9ed7237d427fa7a7a1300833800a",
+    "Assets\\Models\\CullingLab\\Textures\\grid_Albedo.png": "638c26dbdf1e5572dc35e35189e7160ed167a07bd0f65d3947efdadf035e7edd",
+    "Assets\\Models\\CullingLab\\Textures\\grid_Emissive.png": "424676214cb542404958c12e34433547824b0fccf1db0ebebe061b3b231afeb4",
+    "Assets\\Models\\CullingLab\\Textures\\grid_Normal.png": "7914add245da3852950995fbd5fab347f6f3532611824104ae36c30338793303",
+    "Assets\\Models\\CullingLab\\Textures\\grid_ORM.png": "b26c8218c46745a309c2353ea22af7ef5acafb8a01ca5fa59f8f51e56149a40b",
+    "Assets\\Models\\CullingLab\\Textures\\metal_Albedo.png": "13f9a16e40305f04fa5b7b68c0b1673584e7a10c7f958af70d61119d83c0d14f",
+    "Assets\\Models\\CullingLab\\Textures\\metal_Emissive.png": "31359dc45f42d7ad90a219880a91bce1f214ee508bb43be44e615a210cd33a52",
+    "Assets\\Models\\CullingLab\\Textures\\metal_Normal.png": "0c98c5a4fa6ee9b2da36e138994bfac6ec8d6b2b7fb7d3ba14e8cb00f54bfd6b",
+    "Assets\\Models\\CullingLab\\Textures\\metal_ORM.png": "cb32ef1de7581e6b640b0ef6f2545a0f7b029f5389d45d942d07b88daf7f8bd8",
+    "Assets\\Models\\CullingLab\\Textures\\paint_Albedo.001.png": "3ef1080b282c1949e9ef44d2428b474e86542d1ed1cc72213fb8940aad6731d6",
+    "Assets\\Models\\CullingLab\\Textures\\paint_Albedo.png": "3ef1080b282c1949e9ef44d2428b474e86542d1ed1cc72213fb8940aad6731d6",
+    "Assets\\Models\\CullingLab\\Textures\\paint_Emissive.001.png": "63f7b9e39db4edcdfea0e852b21c950f8a50ee1e7b516f89e91e08d6052e588f",
+    "Assets\\Models\\CullingLab\\Textures\\paint_Emissive.png": "63f7b9e39db4edcdfea0e852b21c950f8a50ee1e7b516f89e91e08d6052e588f",
+    "Assets\\Models\\CullingLab\\Textures\\paint_Normal.001.png": "f30f65222dbbd01897b3e2f4f52e105b698211b6abfbbce5b556710e3cb2f0c7",
+    "Assets\\Models\\CullingLab\\Textures\\paint_Normal.png": "f30f65222dbbd01897b3e2f4f52e105b698211b6abfbbce5b556710e3cb2f0c7",
+    "Assets\\Models\\CullingLab\\Textures\\paint_ORM.001.png": "194645b7dc8b957869eb08e84565a522f44548c758abbaf7f3d01648bb3e61d1",
+    "Assets\\Models\\CullingLab\\Textures\\paint_ORM.png": "194645b7dc8b957869eb08e84565a522f44548c758abbaf7f3d01648bb3e61d1",
+    "Assets\\Models\\CullingLab\\Textures\\wood_Albedo.png": "3066e9edb3176fb69a970dae0f7789f561295bc891c826ef0e6eb4405f2c7fd2",
+    "Assets\\Models\\CullingLab\\Textures\\wood_Emissive.png": "63f7b9e39db4edcdfea0e852b21c950f8a50ee1e7b516f89e91e08d6052e588f",
+    "Assets\\Models\\CullingLab\\Textures\\wood_Normal.png": "09dea3fd218188c80cc32345567194479efa928f014d69744365f0b3d51af098",
+    "Assets\\Models\\CullingLab\\Textures\\wood_ORM.png": "4e0b46166ed1258a78b72d5903a5a1a91f13d836547a335b7fd4617ff73d821c"
+  }
+}

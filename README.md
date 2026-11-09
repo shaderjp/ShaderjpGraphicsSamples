@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編30テーマ＋発展編23テーマ、D3D12 53本・Vulkan 49本、計102本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編34テーマ＋発展編23テーマ、D3D12 57本・Vulkan 53本、計110本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -15,6 +15,7 @@
 - 発展編04〜11: D3D12はMesh Shader Tier、Vulkanは`VK_EXT_mesh_shader`と`meshShader`が必要です。Vulkanの06〜11は`taskShader`も使用します。基本22〜25はMesh Shaderを要求しません。[Mesh Shaderの要件と検証](Docs/MeshShaderVerification.md)
 - 発展12〜15はバインドレス参照に対応します。D3D12はBinding Tier 3、VulkanはRuntime descriptor arrayと画像・Storage Buffer・Storage Imageの非一様参照、および必要な個数上限を確認します。13／15はMesh Shader、14／15はRT Pipelineを使用します。[共通章](Docs/BindlessGraphics.md)
 - 基本26／27・発展16／17はインラインRTを使用します。D3D12はDXR Tier 1.1以上、VulkanはAcceleration Structure／Buffer Device Address／Ray Queryが必要です。16はMesh ShaderとBindless、17はMesh／Task Shaderも使用します。[共通章](Docs/InlineRaytracing.md)
+- 基本32／34のVulkan版は`VK_EXT_conditional_rendering`と`conditionalRendering`が必要です。基本31／33はこの拡張を要求しません。[伝統的なカリング](Docs/TraditionalCulling.md)
 - Debug実行時にはD3D12 Debug Layer／Vulkan Validation Layerを有効化します。D3D12のDebug Interfaceが利用できない場合はWindowsの「グラフィックス ツール」を導入してください。
 
 SDKを導入してもGPU・ドライバの機能対応が追加されるわけではありません。初期化時に必要な対応を確認し、不足している場合はエラーを表示します。
@@ -81,12 +82,18 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | XInput／WASD・三人称移動・ジャンプ・姿勢ブレンド | [28 CharacterController](Docs/Direct3D12/28_CharacterController.md) | [28 CharacterController](Docs/Vulkan/28_CharacterController.md) |
 | フレーム検索による地上移動 | [29 MotionMatching](Docs/Direct3D12/29_MotionMatching.md) | [29 MotionMatching](Docs/Vulkan/29_MotionMatching.md) |
 | カプセルと静的な箱の連続衝突判定 | [30 TraversalController](Docs/Direct3D12/30_TraversalController.md) | [30 TraversalController](Docs/Vulkan/30_TraversalController.md) |
+| CPUフラスタムカリング | [31 FrustumCulling](Docs/Direct3D12/31_FrustumCulling.md) | [31 FrustumCulling](Docs/Vulkan/31_FrustumCulling.md) |
+| オクルージョンクエリ | [32 OcclusionQueries](Docs/Direct3D12/32_OcclusionQueries.md) | [32 OcclusionQueries](Docs/Vulkan/32_OcclusionQueries.md) |
+| CPUソフトウェア遮蔽判定 | [33 SoftwareOcclusion](Docs/Direct3D12/33_SoftwareOcclusion.md) | [33 SoftwareOcclusion](Docs/Vulkan/33_SoftwareOcclusion.md) |
+| Compute Hi-Z遮蔽判定 | [34 HiZOcclusion](Docs/Direct3D12/34_HiZOcclusion.md) | [34 HiZOcclusion](Docs/Vulkan/34_HiZOcclusion.md) |
+
+[伝統的なカリングの共通解説](Docs/TraditionalCulling.md)は、通常のIndexed Drawから視錐台・遮蔽判定を学ぶ4回です。31〜34の後に発展05・06へ進む読み順も選べます。
 
 [キャラクター操作の共通解説](Docs/CharacterController.md)では、入力・移動・ジャンプ・ローカル姿勢ブレンドを扱います。
 
 ## 発展編サンプル一覧
 
-発展編は01から番号を付け、**18テーマ×2 APIの36本**を同じソリューションに収録しています。[発展編目次](Docs/AdvancedGraphicsSamples.md)から、前提知識・対応機能・読み順も確認できます。
+発展編は01から番号を付け、**23テーマ、D3D12 23本・Vulkan 19本の42本**を同じソリューションに収録しています。[発展編目次](Docs/AdvancedGraphicsSamples.md)から、前提知識・対応機能・読み順も確認できます。
 
 | テーマ | Direct3D12 | Vulkan |
 |---|---|---|

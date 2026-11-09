@@ -1,0 +1,142 @@
+[
+  {
+    "file": "Docs/Direct3D12/Images/31_FrustumCulling-bounds.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "5d5db7fa8a3f65e67e67ab182fe91b6b7c5a91ca7f3a0c3f6ff93d2caf2b67a9",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/31_FrustumCulling-plaza.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "ca5a81a8f384bfbd66bd449df25385bcb147ec858280b0a18f6340b421210bc2",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/31_FrustumCulling.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "a1416ed94a5a73d622904d9ba6b35b1b94c04f0e7f0462138b0f5ec3c524e282",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/32_OcclusionQueries-bounds.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "3d15e9b9fd51d1a50b7c5e1c8d063497d8d9d1eb302edb00937e4e938a8fd2ea",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/32_OcclusionQueries.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "a9a035afad2ffd41ea676cbbdf94f33740d1782a8b07a7ada59e06fc6e59ace1",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/33_SoftwareOcclusion-depth.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "975c991f55e608b0b25a935b5b06cf96f4d407af849eb908448a10f0e1789fa6",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/33_SoftwareOcclusion.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "a0ce2a4c774a858113d085e9e880392b8d83e6e8b7a4c1575e2c4ea115dbdcca",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/34_HiZOcclusion-bounds.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "d6a5e83992035072132db77e61d19fe11d19c44d64b91e9af4b99545353b7466",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/34_HiZOcclusion-hiz.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "105c0a9ce1c051ca5f2632540dd946136bfce9b5d4ce882cc936d276501d2712",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Direct3D12/Images/34_HiZOcclusion.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "7abc66804d35af386c79ffa9313b74e7431d73b55e248345fedaba2beb11a81e",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/31_FrustumCulling-bounds.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "4ead88cf7569b3d3e034f1d37403b4a9b32833873a6fd34330365a5131a7d214",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/31_FrustumCulling-plaza.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "eb8aa46f003f69d4590095e6dcf5d33ce9d984d8bd4b7c0ebe2d3a52d3561e0d",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/31_FrustumCulling.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "64e9e003f71dff70e5c16ca1f52b59b211103e846844f51e41c785f6559f2c8e",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/32_OcclusionQueries-bounds.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "523931894b8a706d2cbcd71b557cfe25fad29c8abf64c16de9edcaa115516cbe",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/32_OcclusionQueries.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "54b24380d15ac17cc7fd59db8a7911f0b3c89a56c3eda11376b1c161ea2936da",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/33_SoftwareOcclusion-depth.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "30013cde91bd4dafd09fe71fa97f6c6fa4368b8aa856f68c13f8acba60248062",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/33_SoftwareOcclusion.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "cc02901e0021089d9d162b1a985bd4ba5a73ecca911d6a1ccb4f864e53f6adeb",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/34_HiZOcclusion-bounds.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "8e4d0bc76dd06dfdab926cb8fc971298f6968b2ac540d447422f1f1ed8e98364",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/34_HiZOcclusion-hiz.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "e378b2600094ccd1554aa19a350084403d5607514f85ef9033b960e9ba4487c7",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  },
+  {
+    "file": "Docs/Vulkan/Images/34_HiZOcclusion.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "893d4ce6abae5e3f75a2e8a3b3236ac0f79f5783bef6a504ff3deb6b136f0b89",
+    "source": "Real GPU / Release / Tools/CaptureCulling.ps1"
+  }
+]

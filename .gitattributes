@@ -114,3 +114,15 @@
 /Docs/ClusterGeometry*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /Docs/Measurements/ClusterGeometry/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /Docs/Direct3D12/Images/Advanced2[0-3]_*.png -text
+# CullingLab exports and byte-hashed captures must survive Windows checkout unchanged.
+/Assets/Models/CullingLab/*.gltf text eol=lf
+/Assets/Models/CullingLab/*.bin -text
+/Assets/Models/CullingLab/Textures/*.png -text
+/Assets/Scenes/CullingLab/*.json text eol=lf
+/SourceArt/Blender/CullingLab/*.blend -text
+/SourceArt/Blender/CullingLab/*.py text eol=lf
+/SourceArt/Blender/CullingLab/*.md text eol=lf
+/Docs/Culling*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Measurements/Culling/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Docs/Direct3D12/Images/3[1-4]_*.png -text
+/Docs/Vulkan/Images/3[1-4]_*.png -text

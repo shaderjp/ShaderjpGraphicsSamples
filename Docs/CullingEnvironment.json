@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-09T23:52:24.2472281+09:00",
+  "os": "10.0.26300.0",
+  "visualStudio": "18.10.12201.205",
+  "toolset": "v145",
+  "msvc": "19.51.36257.0",
+  "windowsSdk": "10.0.26100.0",
+  "cpp": "C++20",
+  "agilitySdk": "1.620.1",
+  "d3dDxc": "1.9.2609.5 (01b62ad47)",
+  "vulkanSdk": "1.4.341.1",
+  "vulkanTarget": "1.3",
+  "vulkanDxc": "1.9.0.5180 (e35541826)",
+  "spirvTools": "v2026.1-0-gfbe4f3ad",
+  "hlsl": "2021",
+  "shaderModel": "6.6",
+  "cpu": "13th Gen Intel(R) Core(TM) i9-13900F",
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "nvidiaDriver": "621.01",
+  "windowsDriver": "32.0.16.2101",
+  "blender": "5.2.1 LTS (9e2066aef7ef)",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "depth": "Near 0 / Far 1",
+  "debugValidation": [
+    "D3D12 Debug Layer",
+    "VK_LAYER_KHRONOS_validation",
+    "VK_LAYER_VALIDATE_SYNC=1"
+  ],
+  "powerScheme": "Balanced / 381b4222-f694-41f0-9685-ff5bb260df2e",
+  "clockPolicy": "Default dynamic CPU/GPU clocks; no clock locking"
+}

@@ -420,3 +420,15 @@ Direct3D12専用の4プロジェクトを追加しました。全105プロジェ
 既存D3D12をAgility 1.620.1／SDK export 620へ更新しました。新4本だけはAgility 1.722.0-preview／DXC 1.10.2605.37-previewを使用し、20〜22のCluster LibraryだけをSM6.10にしています。RTX 4070／NVIDIA 621.01でPreview機能を照会し、実際のCLAS・テンプレート・PTLASを実行しました。VS 2026 18.10.12201.205、v145／cl 19.51.36257.0、Windows SDK 10.0.26100.0を維持しています。
 
 1920×1080の実機画像11枚、自作Blender正本と再生成スクリプト、13条件×5回のRelease計測、中央値・p95・メモリ容量・検証ログを保存しました。既存画像と過去の記録は保持しています。[詳細な検証・計測条件](ClusteredRaytracingVerification.md)、[結果と画像ハッシュ](ClusterGeometryResults.json)、[環境](ClusterGeometryEnvironment.json)、[計測表](Measurements/ClusterGeometry/Summary.md)を参照してください。
+
+## 基本31〜34 伝統的なカリング（2026-11-09〜10）
+
+Direct3D12／Vulkanへ、CPU Frustum、Occlusion Query、CPU Software Occlusion、Compute Hi-Zの独立した8プロジェクトを追加しました。Blender正本CullingLabと生成・書出し・検証スクリプト、64／512／4,096対象の3シーン、固定カメラと20秒の経路を収録しています。既存Workshopの制作正本は変更せず、保存済みCullingLabからの隔離再書出しをバイト比較で確認しました。
+
+NuGet Restore、全113プロジェクト（110 APIアプリ＋3 Support）のx64 Debug／Releaseビルド、DXIL／SPIR-V、project／filtersのXML検証が通過しました。新方式のGPU比較312件で可視対象の誤除外・Object ID画素不一致は0、Depthは許容差1e-6以内です。Hi-Z全段のCPU参照比較、Near面、開口部、扉・対象移動、急なカメラ移動、UI／Reset／CLI、奇数サイズと最小化復帰、全110アプリの両構成ライフサイクル、Loader／09 ImGuiの回帰も通過し、正常Debug実行のValidationエラーは0件です。
+
+VS 2026 Community 18.10.12201.205、v145／MSVC 19.51.36257.0、Windows SDK 10.0.26100.0、Agility 1.620.1、D3D12 DXC 1.9.2609.5、Vulkan SDK 1.4.341.1／付属DXC 1.9.0.5180、RTX 4070／NVIDIA 621.01で検証しました。1920×1080の実GPU画像20枚を目視確認し、日本語の共通解説とAPI別8章へ掲載しました。
+
+Releaseは他の検証プロセスを終了後、60フレーム準備＋1,200フレームを5反復しました。室内／広場・両API・7モード、計140ラン・168,000計測フレームを保存し、中央値・p95を元データと照合しています。室内ではQueryによるGPU時間短縮、広場ではHi-Zの追加費用、CPU Softwareでは単一スレッド判定の費用を確認しました。動的クロックによる反復の幅と、GPU完了待ちを含むOnRenderの測定範囲も明記しています。
+
+[共通解説](TraditionalCulling.md)、[実機検証記録](CullingVerification.md)、[数値結果](CullingResults.json)、[環境](CullingEnvironment.json)、[画像ハッシュ](CullingCaptures.json)、[性能比較表](Measurements/Culling/Summary.md)を参照してください。

@@ -1,0 +1,7685 @@
+{
+  "date": "2026-11-10T00:17:31.321311",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "scene": "Standard",
+  "warmupFrames": 60,
+  "measuredFrames": 1200,
+  "repetitions": 5,
+  "rows": [
+    {
+      "api": "Direct3D12",
+      "camera": "Hero",
+      "topic": "31_FrustumCulling",
+      "mode": "off",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 1.681408,
+              "p95": 2.272256
+            },
+            "cpuCull": {
+              "median": 0.0335,
+              "p95": 0.0428
+            },
+            "cpuRecord": {
+              "median": 0.1002,
+              "p95": 0.1371
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.73568,
+              "p95": 2.331648
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.0994,
+              "p95": 2.8672
+            }
+          },
+          "sha256": "18c30834060114681efef097ddffaf2624b7576b6569c9a5662153a595f78428"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 1.419264,
+              "p95": 1.870848
+            },
+            "cpuCull": {
+              "median": 0.034,
+              "p95": 0.0472
+            },
+            "cpuRecord": {
+              "median": 0.097,
+              "p95": 0.1382
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.478656,
+              "p95": 1.921024
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.8345,
+              "p95": 2.5276
+            }
+          },
+          "sha256": "178547a2eace405ece3b80357384087d3a0da47d5d6f8235ffd8faa7ffa21eb3"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 1.117184,
+              "p95": 1.508352
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0388
+            },
+            "cpuRecord": {
+              "median": 0.0895,
+              "p95": 0.1221
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.189888,
+              "p95": 1.58208
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.5395,
+              "p95": 2.1308
+            }
+          },
+          "sha256": "33c91f293a59d832697a5ed4be889d310a6577a439dc7d50d99463f10753f700"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 1.593344,
+              "p95": 2.026496
+            },
+            "cpuCull": {
+              "median": 0.0349,
+              "p95": 0.0535
+            },
+            "cpuRecord": {
+              "median": 0.1033,
+              "p95": 0.1666
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.665024,
+              "p95": 2.108416
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.0791,
+              "p95": 2.7492
+            }
+          },
+          "sha256": "55c580f096661020f504d57967eec47b19ed33b55637c855399792c4be07cf42"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 1.393664,
+              "p95": 1.830912
+            },
+            "cpuCull": {
+              "median": 0.0342,
+              "p95": 0.0469
+            },
+            "cpuRecord": {
+              "median": 0.0986,
+              "p95": 0.1379
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.458144,
+              "p95": 1.903616
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.8362,
+              "p95": 2.469
+            }
+          },
+          "sha256": "26c131df9cb2d480b3c9ff44007ffb1fb6b511fc049f8eb902fdf0b42eeb978a"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 1.419264,
+          "minimum": 1.117184,
+          "maximum": 1.681408,
+          "medianP95": 1.870848
+        },
+        "cpuCull": {
+          "median": 0.034,
+          "minimum": 0.0326,
+          "maximum": 0.0349,
+          "medianP95": 0.0469
+        },
+        "cpuRecord": {
+          "median": 0.0986,
+          "minimum": 0.0895,
+          "maximum": 0.1033,
+          "medianP95": 0.1379
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 1.478656,
+          "minimum": 1.189888,
+          "maximum": 1.73568,
+          "medianP95": 1.921024
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.8362,
+          "minimum": 1.5395,
+          "maximum": 2.0994,
+          "medianP95": 2.5276
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Hero",
+      "topic": "31_FrustumCulling",
+      "mode": "frustum",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.623616,
+              "p95": 0.862208
+            },
+            "cpuCull": {
+              "median": 0.0323,
+              "p95": 0.0373
+            },
+            "cpuRecord": {
+              "median": 0.0612,
+              "p95": 0.0846
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.710656,
+              "p95": 0.944128
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0169,
+              "p95": 1.35
+            }
+          },
+          "sha256": "df052efae60e851c62897e9c06eaa58b6be80fca988430bedf3694dc6af9132a"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.656384,
+              "p95": 0.90112
+            },
+            "cpuCull": {
+              "median": 0.0334,
+              "p95": 0.0411
+            },
+            "cpuRecord": {
+              "median": 0.0631,
+              "p95": 0.0936
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.738304,
+              "p95": 0.978944
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0597,
+              "p95": 1.4826
+            }
+          },
+          "sha256": "3565a739ddbd788b69f388a32c74e398b502e8bbde7bb63cc5ddc53ad131c86b"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.729088,
+              "p95": 1.1008
+            },
+            "cpuCull": {
+              "median": 0.0322,
+              "p95": 0.0399
+            },
+            "cpuRecord": {
+              "median": 0.0616,
+              "p95": 0.0872
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.815104,
+              "p95": 1.180672
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.1239,
+              "p95": 1.6055
+            }
+          },
+          "sha256": "0db77eaa9cf2dec798adc26aa3c0fb0c17b90f2276b73a0f1c4c27a2cbf3ab71"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.59904,
+              "p95": 0.83456
+            },
+            "cpuCull": {
+              "median": 0.0327,
+              "p95": 0.0413
+            },
+            "cpuRecord": {
+              "median": 0.0655,
+              "p95": 0.0929
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.679936,
+              "p95": 0.914432
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.992,
+              "p95": 1.4227
+            }
+          },
+          "sha256": "393181c8ffe09aa8ab6f50f5ed4e39dc6971c78be3f3ba685272c303f4d9ef44"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.6144,
+              "p95": 0.858112
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0384
+            },
+            "cpuRecord": {
+              "median": 0.0639,
+              "p95": 0.0888
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.697344,
+              "p95": 0.93696
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0082,
+              "p95": 1.4071
+            }
+          },
+          "sha256": "833375a05a688f193e1786f83be8d6c7770d25e43c9b434653556fe473c6ce43"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.623616,
+          "minimum": 0.59904,
+          "maximum": 0.729088,
+          "medianP95": 0.862208
+        },
+        "cpuCull": {
+          "median": 0.0326,
+          "minimum": 0.0322,
+          "maximum": 0.0334,
+          "medianP95": 0.0399
+        },
+        "cpuRecord": {
+          "median": 0.0631,
+          "minimum": 0.0612,
+          "maximum": 0.0655,
+          "medianP95": 0.0888
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 0.710656,
+          "minimum": 0.679936,
+          "maximum": 0.815104,
+          "medianP95": 0.944128
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.0169,
+          "minimum": 0.992,
+          "maximum": 1.1239,
+          "medianP95": 1.4227
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Hero",
+      "topic": "32_OcclusionQueries",
+      "mode": "depth-only",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.60416,
+              "p95": 0.872448
+            },
+            "cpuCull": {
+              "median": 0.0329,
+              "p95": 0.0441
+            },
+            "cpuRecord": {
+              "median": 0.0719,
+              "p95": 0.1124
+            },
+            "depth": {
+              "median": 0.03584,
+              "p95": 0.057344
+            },
+            "gpuTotal": {
+              "median": 0.681984,
+              "p95": 0.955392
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0233,
+              "p95": 1.4882
+            }
+          },
+          "sha256": "4899590db58ca831ac34f2f392b3a6643411dda3f1f3e0b111869edc8494d7c9"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.523264,
+              "p95": 0.777216
+            },
+            "cpuCull": {
+              "median": 0.0323,
+              "p95": 0.0373
+            },
+            "cpuRecord": {
+              "median": 0.068,
+              "p95": 0.0947
+            },
+            "depth": {
+              "median": 0.037888,
+              "p95": 0.064512
+            },
+            "gpuTotal": {
+              "median": 0.602112,
+              "p95": 0.84992
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.9142,
+              "p95": 1.3034
+            }
+          },
+          "sha256": "136660d89962c150abd368ade09ad4c1ad4b3f8ec152e59ad44e3ddc3daf8ec5"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.687104,
+              "p95": 0.99328
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0411
+            },
+            "cpuRecord": {
+              "median": 0.0708,
+              "p95": 0.1035
+            },
+            "depth": {
+              "median": 0.03584,
+              "p95": 0.057344
+            },
+            "gpuTotal": {
+              "median": 0.77104,
+              "p95": 1.069056
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0931,
+              "p95": 1.5779
+            }
+          },
+          "sha256": "015122f906de2b8a13e38e68e119470a6e04e7ad7e524f9a9f11cb0d82c7fbef"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.685056,
+              "p95": 0.953344
+            },
+            "cpuCull": {
+              "median": 0.0322,
+              "p95": 0.0388
+            },
+            "cpuRecord": {
+              "median": 0.0692,
+              "p95": 0.0983
+            },
+            "depth": {
+              "median": 0.036864,
+              "p95": 0.058368
+            },
+            "gpuTotal": {
+              "median": 0.765952,
+              "p95": 1.031168
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0818,
+              "p95": 1.5132
+            }
+          },
+          "sha256": "a616ed568064dde668b4c50a90edc0d40a10056890bb9e445cdb171dcda424a4"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.616448,
+              "p95": 0.863232
+            },
+            "cpuCull": {
+              "median": 0.0322,
+              "p95": 0.0376
+            },
+            "cpuRecord": {
+              "median": 0.0691,
+              "p95": 0.0977
+            },
+            "depth": {
+              "median": 0.03584,
+              "p95": 0.054272
+            },
+            "gpuTotal": {
+              "median": 0.69632,
+              "p95": 0.934912
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0116,
+              "p95": 1.3752
+            }
+          },
+          "sha256": "aa897ea8b9b2a7567697eb0732fbf7186192674988545ad567663b3b41b67e90"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.616448,
+          "minimum": 0.523264,
+          "maximum": 0.687104,
+          "medianP95": 0.872448
+        },
+        "cpuCull": {
+          "median": 0.0323,
+          "minimum": 0.0322,
+          "maximum": 0.0329,
+          "medianP95": 0.0388
+        },
+        "cpuRecord": {
+          "median": 0.0692,
+          "minimum": 0.068,
+          "maximum": 0.0719,
+          "medianP95": 0.0983
+        },
+        "depth": {
+          "median": 0.03584,
+          "minimum": 0.03584,
+          "maximum": 0.037888,
+          "medianP95": 0.057344
+        },
+        "gpuTotal": {
+          "median": 0.69632,
+          "minimum": 0.602112,
+          "maximum": 0.77104,
+          "medianP95": 0.955392
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.0233,
+          "minimum": 0.9142,
+          "maximum": 1.0931,
+          "medianP95": 1.4882
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Hero",
+      "topic": "32_OcclusionQueries",
+      "mode": "query",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.262144,
+              "p95": 0.415744
+            },
+            "cpuCull": {
+              "median": 0.0321,
+              "p95": 0.0367
+            },
+            "cpuRecord": {
+              "median": 0.1187,
+              "p95": 0.1568
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.319584,
+              "p95": 0.471648
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.014336,
+              "p95": 0.019456
+            },
+            "renderWall": {
+              "median": 0.648,
+              "p95": 0.9339
+            }
+          },
+          "sha256": "1c880bb8db630cfc3bc08cd3c0255e6efe74b7ba7a4133444bc519baf2b8fb6f"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.253952,
+              "p95": 0.392192
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0378
+            },
+            "cpuRecord": {
+              "median": 0.1204,
+              "p95": 0.162
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.30976,
+              "p95": 0.451648
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.014336,
+              "p95": 0.02048
+            },
+            "renderWall": {
+              "median": 0.6356,
+              "p95": 0.8782
+            }
+          },
+          "sha256": "a8ec4edf0a195225fe6f55b81a3757e56940bdff4c74afcd5d19fd6baaa7e104"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.262144,
+              "p95": 0.408576
+            },
+            "cpuCull": {
+              "median": 0.0321,
+              "p95": 0.0368
+            },
+            "cpuRecord": {
+              "median": 0.1165,
+              "p95": 0.1581
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.317024,
+              "p95": 0.467744
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.014336,
+              "p95": 0.02048
+            },
+            "renderWall": {
+              "median": 0.6422,
+              "p95": 0.9084
+            }
+          },
+          "sha256": "ee2ea901fdb763f3b3f32b0ba6f204ca79eb5cd09070be29855c8d50d50d514c"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.263168,
+              "p95": 0.406528
+            },
+            "cpuCull": {
+              "median": 0.0338,
+              "p95": 0.0455
+            },
+            "cpuRecord": {
+              "median": 0.1332,
+              "p95": 0.1998
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.318432,
+              "p95": 0.463328
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.014336,
+              "p95": 0.02048
+            },
+            "renderWall": {
+              "median": 0.706,
+              "p95": 1.0146
+            }
+          },
+          "sha256": "70a28a8ec29e99ace948ed35b67c88a4bbe04a90fc17e48c812b5daa5370a610"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.274432,
+              "p95": 0.415744
+            },
+            "cpuCull": {
+              "median": 0.0344,
+              "p95": 0.0469
+            },
+            "cpuRecord": {
+              "median": 0.14,
+              "p95": 0.2141
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.33184,
+              "p95": 0.472192
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.014336,
+              "p95": 0.022528
+            },
+            "renderWall": {
+              "median": 0.69,
+              "p95": 0.9966
+            }
+          },
+          "sha256": "d570af7454ca0ee2ff54157f830cbced52714d5597e5d9e7e1bfc7980e865b59"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.262144,
+          "minimum": 0.253952,
+          "maximum": 0.274432,
+          "medianP95": 0.408576
+        },
+        "cpuCull": {
+          "median": 0.0325,
+          "minimum": 0.0321,
+          "maximum": 0.0344,
+          "medianP95": 0.0378
+        },
+        "cpuRecord": {
+          "median": 0.1204,
+          "minimum": 0.1165,
+          "maximum": 0.14,
+          "medianP95": 0.162
+        },
+        "depth": {
+          "median": 0.006144,
+          "minimum": 0.006144,
+          "maximum": 0.006144,
+          "medianP95": 0.007168
+        },
+        "gpuTotal": {
+          "median": 0.318432,
+          "minimum": 0.30976,
+          "maximum": 0.33184,
+          "medianP95": 0.467744
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.014336,
+          "minimum": 0.014336,
+          "maximum": 0.014336,
+          "medianP95": 0.02048
+        },
+        "renderWall": {
+          "median": 0.648,
+          "minimum": 0.6356,
+          "maximum": 0.706,
+          "medianP95": 0.9339
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Hero",
+      "topic": "33_SoftwareOcclusion",
+      "mode": "software",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.502784,
+              "p95": 0.692224
+            },
+            "cpuCull": {
+              "median": 3.685,
+              "p95": 4.7582
+            },
+            "cpuRecord": {
+              "median": 0.0737,
+              "p95": 0.1261
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.595968,
+              "p95": 0.845824
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.7155,
+              "p95": 5.622
+            }
+          },
+          "sha256": "e5d3dbed3a6458e0a42bd193668d0c7d752fa55c86b51608131ba6209a7121d7"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.480256,
+              "p95": 0.6656
+            },
+            "cpuCull": {
+              "median": 3.0699,
+              "p95": 4.0154
+            },
+            "cpuRecord": {
+              "median": 0.0601,
+              "p95": 0.0892
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.590848,
+              "p95": 0.80896
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.0628,
+              "p95": 4.9123
+            }
+          },
+          "sha256": "92b496cb8c2c6238bdfb7a1a5a5223c92793c3a87e6f6f2e24b43e9d85f9e7a7"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.488448,
+              "p95": 1.60768
+            },
+            "cpuCull": {
+              "median": 3.0726,
+              "p95": 4.115
+            },
+            "cpuRecord": {
+              "median": 0.0624,
+              "p95": 0.1006
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.60416,
+              "p95": 1.903616
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.394,
+              "p95": 5.7723
+            }
+          },
+          "sha256": "296d7ca690d12bfa840ec472fd3bba93bde4095fac58fde32ccbe2976016a7b9"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.528384,
+              "p95": 1.588224
+            },
+            "cpuCull": {
+              "median": 3.0541,
+              "p95": 3.9858
+            },
+            "cpuRecord": {
+              "median": 0.0601,
+              "p95": 0.0892
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.628736,
+              "p95": 1.835008
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.2319,
+              "p95": 5.2167
+            }
+          },
+          "sha256": "884fa7bc968bdbe8436777af22cbe43d6913a9e897c817191ac84974d96b95f3"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.502784,
+              "p95": 1.654784
+            },
+            "cpuCull": {
+              "median": 3.081,
+              "p95": 3.9359
+            },
+            "cpuRecord": {
+              "median": 0.0615,
+              "p95": 0.0893
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.621568,
+              "p95": 1.934336
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.4027,
+              "p95": 5.5033
+            }
+          },
+          "sha256": "3a002ea5aba85787634092c2637fe8b1f3c22f66da27ec9aa499a35597713ad4"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.502784,
+          "minimum": 0.480256,
+          "maximum": 0.528384,
+          "medianP95": 1.588224
+        },
+        "cpuCull": {
+          "median": 3.0726,
+          "minimum": 3.0541,
+          "maximum": 3.685,
+          "medianP95": 4.0154
+        },
+        "cpuRecord": {
+          "median": 0.0615,
+          "minimum": 0.0601,
+          "maximum": 0.0737,
+          "medianP95": 0.0893
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 0.60416,
+          "minimum": 0.590848,
+          "maximum": 0.628736,
+          "medianP95": 1.835008
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 4.394,
+          "minimum": 4.0628,
+          "maximum": 4.7155,
+          "medianP95": 5.5033
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Hero",
+      "topic": "34_HiZOcclusion",
+      "mode": "depth-only",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.72704,
+              "p95": 1.030144
+            },
+            "cpuCull": {
+              "median": 0.0329,
+              "p95": 0.0411
+            },
+            "cpuRecord": {
+              "median": 0.076,
+              "p95": 0.1031
+            },
+            "depth": {
+              "median": 0.03584,
+              "p95": 0.059392
+            },
+            "gpuTotal": {
+              "median": 0.79872,
+              "p95": 1.106944
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.1345,
+              "p95": 1.5702
+            }
+          },
+          "sha256": "6748d8e62f4ab2b5bddf8c4e0f12968f159c7458ebf24ebc2c7f6fe8ebb0e450"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.51712,
+              "p95": 0.748544
+            },
+            "cpuCull": {
+              "median": 0.0324,
+              "p95": 0.0376
+            },
+            "cpuRecord": {
+              "median": 0.0707,
+              "p95": 0.0977
+            },
+            "depth": {
+              "median": 0.036864,
+              "p95": 0.058368
+            },
+            "gpuTotal": {
+              "median": 0.590848,
+              "p95": 0.822272
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.9038,
+              "p95": 1.2484
+            }
+          },
+          "sha256": "c012b8be5eff9c16bc46064221e5958e159e5c94df6098b2b30835c168dfe0f6"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.684032,
+              "p95": 0.975872
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0384
+            },
+            "cpuRecord": {
+              "median": 0.0725,
+              "p95": 0.1
+            },
+            "depth": {
+              "median": 0.034816,
+              "p95": 0.054272
+            },
+            "gpuTotal": {
+              "median": 0.758784,
+              "p95": 1.055744
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0751,
+              "p95": 1.5405
+            }
+          },
+          "sha256": "6d7c961c84cccf6f59b93c4a68b57b674e42828c69cde6a5e6edc31cdcf7d668"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.698368,
+              "p95": 0.987136
+            },
+            "cpuCull": {
+              "median": 0.0324,
+              "p95": 0.0408
+            },
+            "cpuRecord": {
+              "median": 0.0718,
+              "p95": 0.0974
+            },
+            "depth": {
+              "median": 0.033792,
+              "p95": 0.050176
+            },
+            "gpuTotal": {
+              "median": 0.772096,
+              "p95": 1.05984
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.0848,
+              "p95": 1.4967
+            }
+          },
+          "sha256": "04c7d06f2e3f8b9f9a3f5bbae2dc4df48fb86022d56579a7143b29833249c734"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.545792,
+              "p95": 0.774144
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0381
+            },
+            "cpuRecord": {
+              "median": 0.0702,
+              "p95": 0.0961
+            },
+            "depth": {
+              "median": 0.036864,
+              "p95": 0.059392
+            },
+            "gpuTotal": {
+              "median": 0.618496,
+              "p95": 0.848864
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.934,
+              "p95": 1.3305
+            }
+          },
+          "sha256": "44db126b8b11c2647238a557bfbf46cf4972fc05bea977aa81b19615d357ea00"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.684032,
+          "minimum": 0.51712,
+          "maximum": 0.72704,
+          "medianP95": 0.975872
+        },
+        "cpuCull": {
+          "median": 0.0325,
+          "minimum": 0.0324,
+          "maximum": 0.0329,
+          "medianP95": 0.0384
+        },
+        "cpuRecord": {
+          "median": 0.0718,
+          "minimum": 0.0702,
+          "maximum": 0.076,
+          "medianP95": 0.0977
+        },
+        "depth": {
+          "median": 0.03584,
+          "minimum": 0.033792,
+          "maximum": 0.036864,
+          "medianP95": 0.058368
+        },
+        "gpuTotal": {
+          "median": 0.758784,
+          "minimum": 0.590848,
+          "maximum": 0.79872,
+          "medianP95": 1.055744
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.0751,
+          "minimum": 0.9038,
+          "maximum": 1.1345,
+          "medianP95": 1.4967
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Hero",
+      "topic": "34_HiZOcclusion",
+      "mode": "hiz",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.330752,
+              "p95": 0.555008
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0405
+            },
+            "cpuRecord": {
+              "median": 0.1176,
+              "p95": 0.156
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.453184,
+              "p95": 0.67824
+            },
+            "hizBuild": {
+              "median": 0.073728,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.807,
+              "p95": 1.0951
+            }
+          },
+          "sha256": "f1ff79597a40a470e23884210d8631effa7ff3ed74612fe5ab632ed00f3e8ea9"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.334848,
+              "p95": 0.553984
+            },
+            "cpuCull": {
+              "median": 0.033,
+              "p95": 0.0425
+            },
+            "cpuRecord": {
+              "median": 0.1187,
+              "p95": 0.1747
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.457344,
+              "p95": 0.67776
+            },
+            "hizBuild": {
+              "median": 0.074752,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.8122,
+              "p95": 1.1445
+            }
+          },
+          "sha256": "32c77bf393d53ae39766a7369a210873afa48c092cb7ec6023f847c7c3f1926c"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.334848,
+              "p95": 0.531456
+            },
+            "cpuCull": {
+              "median": 0.0327,
+              "p95": 0.0397
+            },
+            "cpuRecord": {
+              "median": 0.1156,
+              "p95": 0.1655
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.458752,
+              "p95": 0.654624
+            },
+            "hizBuild": {
+              "median": 0.073728,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.7984,
+              "p95": 1.1436
+            }
+          },
+          "sha256": "a7230c277df98cc126a42d48c61259ce814886987ab24b42d3f05bb8963368ba"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.31744,
+              "p95": 0.49664
+            },
+            "cpuCull": {
+              "median": 0.0324,
+              "p95": 0.0372
+            },
+            "cpuRecord": {
+              "median": 0.113,
+              "p95": 0.1471
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.441088,
+              "p95": 0.618976
+            },
+            "hizBuild": {
+              "median": 0.074752,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.7904,
+              "p95": 1.0304
+            }
+          },
+          "sha256": "9ccc39f38bc2231ac7631c3eb484533e9ed8e134519a3dcb54f51d599b0ab2fb"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.330752,
+              "p95": 0.530432
+            },
+            "cpuCull": {
+              "median": 0.0323,
+              "p95": 0.0387
+            },
+            "cpuRecord": {
+              "median": 0.1107,
+              "p95": 0.1539
+            },
+            "depth": {
+              "median": 0.006144,
+              "p95": 0.007168
+            },
+            "gpuTotal": {
+              "median": 0.453152,
+              "p95": 0.658528
+            },
+            "hizBuild": {
+              "median": 0.073728,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 0.798,
+              "p95": 1.1208
+            }
+          },
+          "sha256": "7e7c1e8c97c16e5878223d0c6652115eba9ce431d1cd238e62dcc694fac773e3"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.330752,
+          "minimum": 0.31744,
+          "maximum": 0.334848,
+          "medianP95": 0.531456
+        },
+        "cpuCull": {
+          "median": 0.0326,
+          "minimum": 0.0323,
+          "maximum": 0.033,
+          "medianP95": 0.0397
+        },
+        "cpuRecord": {
+          "median": 0.1156,
+          "minimum": 0.1107,
+          "maximum": 0.1187,
+          "medianP95": 0.156
+        },
+        "depth": {
+          "median": 0.006144,
+          "minimum": 0.006144,
+          "maximum": 0.006144,
+          "medianP95": 0.007168
+        },
+        "gpuTotal": {
+          "median": 0.453184,
+          "minimum": 0.441088,
+          "maximum": 0.458752,
+          "medianP95": 0.658528
+        },
+        "hizBuild": {
+          "median": 0.073728,
+          "minimum": 0.073728,
+          "maximum": 0.074752,
+          "medianP95": 0.074752
+        },
+        "hizTest": {
+          "median": 0.004096,
+          "minimum": 0.004096,
+          "maximum": 0.004096,
+          "medianP95": 0.00512
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 0.7984,
+          "minimum": 0.7904,
+          "maximum": 0.8122,
+          "medianP95": 1.1208
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Plaza",
+      "topic": "31_FrustumCulling",
+      "mode": "off",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.90624,
+              "p95": 1.036288
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.0452
+            },
+            "cpuRecord": {
+              "median": 0.0929,
+              "p95": 0.1169
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.982016,
+              "p95": 1.133568
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3162,
+              "p95": 1.7672
+            }
+          },
+          "sha256": "a9a1fd4df22977b03158cc6bbac1daa335feabfb515d6e12dd81b4ba1bd73555"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 1.024,
+              "p95": 1.3312
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.0496
+            },
+            "cpuRecord": {
+              "median": 0.0933,
+              "p95": 0.1209
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.103872,
+              "p95": 1.415168
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4591,
+              "p95": 1.9191
+            }
+          },
+          "sha256": "cd77dc80f77bd07ca9f0739f79246554ae937fa5dfd0d47b1dc0ee21ae14f1a4"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.90112,
+              "p95": 1.006592
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0426
+            },
+            "cpuRecord": {
+              "median": 0.0899,
+              "p95": 0.1147
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.986112,
+              "p95": 1.124352
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3331,
+              "p95": 1.7747
+            }
+          },
+          "sha256": "30c817f63a52c86eee2a902742cb4d608ee89dda435a93ce4766f426037a144e"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 1.201152,
+              "p95": 1.533952
+            },
+            "cpuCull": {
+              "median": 0.0384,
+              "p95": 0.0542
+            },
+            "cpuRecord": {
+              "median": 0.0985,
+              "p95": 0.139
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.29024,
+              "p95": 1.629184
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.6576,
+              "p95": 2.1973
+            }
+          },
+          "sha256": "1e5f02d00bcb3593b12f3375476a2501b7126c49d017d285598f8b6119ffe1a1"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.969728,
+              "p95": 1.120256
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.0465
+            },
+            "cpuRecord": {
+              "median": 0.0904,
+              "p95": 0.1153
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.0496,
+              "p95": 1.246208
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4021,
+              "p95": 1.8191
+            }
+          },
+          "sha256": "a58c95ef901c52d38ce2b161170818ea7619741706603c1435b25b439fdfa3f6"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.969728,
+          "minimum": 0.90112,
+          "maximum": 1.201152,
+          "medianP95": 1.120256
+        },
+        "cpuCull": {
+          "median": 0.0376,
+          "minimum": 0.0375,
+          "maximum": 0.0384,
+          "medianP95": 0.0465
+        },
+        "cpuRecord": {
+          "median": 0.0929,
+          "minimum": 0.0899,
+          "maximum": 0.0985,
+          "medianP95": 0.1169
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 1.0496,
+          "minimum": 0.982016,
+          "maximum": 1.29024,
+          "medianP95": 1.246208
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.4021,
+          "minimum": 1.3162,
+          "maximum": 1.6576,
+          "medianP95": 1.8191
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Plaza",
+      "topic": "31_FrustumCulling",
+      "mode": "frustum",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 1.006592,
+              "p95": 1.289216
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.0465
+            },
+            "cpuRecord": {
+              "median": 0.0908,
+              "p95": 0.1175
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.083392,
+              "p95": 1.385472
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4416,
+              "p95": 1.9765
+            }
+          },
+          "sha256": "4cbe4f512af7eb915ca8389b2adf7a1293a03416cf0a91952a34cf6f7486f2b4"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.92672,
+              "p95": 1.012736
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.0436
+            },
+            "cpuRecord": {
+              "median": 0.0885,
+              "p95": 0.112
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.011712,
+              "p95": 1.114112
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3597,
+              "p95": 1.7813
+            }
+          },
+          "sha256": "8a8c13d55fba471238e48820d7d840ecf595507ad7aeeaecb294030913a5ce45"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 1.138688,
+              "p95": 1.630208
+            },
+            "cpuCull": {
+              "median": 0.0378,
+              "p95": 0.0488
+            },
+            "cpuRecord": {
+              "median": 0.0945,
+              "p95": 0.1227
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.221632,
+              "p95": 1.716224
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.5792,
+              "p95": 2.1801
+            }
+          },
+          "sha256": "f570f1d3b7eb7d1d3a1d2f25eb991294dc5e881aa9a0af7cdd56958a9ac86c29"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 1.062912,
+              "p95": 1.456128
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0467
+            },
+            "cpuRecord": {
+              "median": 0.0912,
+              "p95": 0.1187
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.150976,
+              "p95": 1.54624
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.5048,
+              "p95": 2.0306
+            }
+          },
+          "sha256": "bdb55b95e0ca8a8de07db6fa29767be2f1f23670ad6b5c82d21a1f5f136c30bd"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.89088,
+              "p95": 0.996352
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.0444
+            },
+            "cpuRecord": {
+              "median": 0.088,
+              "p95": 0.1152
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.975872,
+              "p95": 1.088512
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3259,
+              "p95": 1.7335
+            }
+          },
+          "sha256": "c33e11f9f49f29d12cfb64eddf455862934a73766d5bdec53f8b533156196112"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 1.006592,
+          "minimum": 0.89088,
+          "maximum": 1.138688,
+          "medianP95": 1.289216
+        },
+        "cpuCull": {
+          "median": 0.0375,
+          "minimum": 0.0374,
+          "maximum": 0.0378,
+          "medianP95": 0.0465
+        },
+        "cpuRecord": {
+          "median": 0.0908,
+          "minimum": 0.088,
+          "maximum": 0.0945,
+          "medianP95": 0.1175
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 1.083392,
+          "minimum": 0.975872,
+          "maximum": 1.221632,
+          "medianP95": 1.385472
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.4416,
+          "minimum": 1.3259,
+          "maximum": 1.5792,
+          "medianP95": 1.9765
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Plaza",
+      "topic": "32_OcclusionQueries",
+      "mode": "depth-only",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.828416,
+              "p95": 0.91648
+            },
+            "cpuCull": {
+              "median": 0.0372,
+              "p95": 0.044
+            },
+            "cpuRecord": {
+              "median": 0.0986,
+              "p95": 0.1286
+            },
+            "depth": {
+              "median": 0.032768,
+              "p95": 0.036864
+            },
+            "gpuTotal": {
+              "median": 0.914432,
+              "p95": 1.004544
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.2693,
+              "p95": 1.6243
+            }
+          },
+          "sha256": "b5549a5f1dcdd141cb8845006935cca48a9afd9b649b690194f9b195861d971e"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 1.001472,
+              "p95": 1.323008
+            },
+            "cpuCull": {
+              "median": 0.038,
+              "p95": 0.0511
+            },
+            "cpuRecord": {
+              "median": 0.1074,
+              "p95": 0.1411
+            },
+            "depth": {
+              "median": 0.033792,
+              "p95": 0.034816
+            },
+            "gpuTotal": {
+              "median": 1.088512,
+              "p95": 1.437696
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4584,
+              "p95": 2.0055
+            }
+          },
+          "sha256": "d1988f272d6dc23488e0eeca738846b0c7f9946f7885d3e89fe03fd71eb03042"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 1.130496,
+              "p95": 1.563648
+            },
+            "cpuCull": {
+              "median": 0.038,
+              "p95": 0.0524
+            },
+            "cpuRecord": {
+              "median": 0.1094,
+              "p95": 0.1648
+            },
+            "depth": {
+              "median": 0.033792,
+              "p95": 0.037888
+            },
+            "gpuTotal": {
+              "median": 1.217536,
+              "p95": 1.65376
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.5898,
+              "p95": 2.2537
+            }
+          },
+          "sha256": "148acc046465e3951053b169d5cf26a60b60a9599b17a85fc2856393ef8c2934"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.924672,
+              "p95": 1.047552
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.047
+            },
+            "cpuRecord": {
+              "median": 0.1008,
+              "p95": 0.1352
+            },
+            "depth": {
+              "median": 0.034816,
+              "p95": 0.036864
+            },
+            "gpuTotal": {
+              "median": 1.011712,
+              "p95": 1.154048
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.378,
+              "p95": 1.7853
+            }
+          },
+          "sha256": "73e2dc535f7f9fe4df4a3a6d165bc0db57b0292edb7920fe9ac37b08205a5bc9"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.982016,
+              "p95": 1.139712
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.0448
+            },
+            "cpuRecord": {
+              "median": 0.1021,
+              "p95": 0.1332
+            },
+            "depth": {
+              "median": 0.032768,
+              "p95": 0.034816
+            },
+            "gpuTotal": {
+              "median": 1.068032,
+              "p95": 1.24416
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4329,
+              "p95": 1.9557
+            }
+          },
+          "sha256": "78c0ae20ac4e8297266397224379d7225d408bbdbd6961374757644bd863c2e5"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.982016,
+          "minimum": 0.828416,
+          "maximum": 1.130496,
+          "medianP95": 1.139712
+        },
+        "cpuCull": {
+          "median": 0.0376,
+          "minimum": 0.0372,
+          "maximum": 0.038,
+          "medianP95": 0.047
+        },
+        "cpuRecord": {
+          "median": 0.1021,
+          "minimum": 0.0986,
+          "maximum": 0.1094,
+          "medianP95": 0.1352
+        },
+        "depth": {
+          "median": 0.033792,
+          "minimum": 0.032768,
+          "maximum": 0.034816,
+          "medianP95": 0.036864
+        },
+        "gpuTotal": {
+          "median": 1.068032,
+          "minimum": 0.914432,
+          "maximum": 1.217536,
+          "medianP95": 1.24416
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.4329,
+          "minimum": 1.2693,
+          "maximum": 1.5898,
+          "medianP95": 1.9557
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Plaza",
+      "topic": "32_OcclusionQueries",
+      "mode": "query",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.886784,
+              "p95": 1.017856
+            },
+            "cpuCull": {
+              "median": 0.0371,
+              "p95": 0.0442
+            },
+            "cpuRecord": {
+              "median": 0.1987,
+              "p95": 0.2371
+            },
+            "depth": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 0.970816,
+              "p95": 1.121984
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.027648,
+              "p95": 0.028672
+            },
+            "renderWall": {
+              "median": 1.4448,
+              "p95": 1.8108
+            }
+          },
+          "sha256": "44c1aefa0095717558a346e32a0b6d1d58deb7dc8e28874743ce616e464b9f57"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.78336,
+              "p95": 0.898048
+            },
+            "cpuCull": {
+              "median": 0.0372,
+              "p95": 0.0458
+            },
+            "cpuRecord": {
+              "median": 0.1971,
+              "p95": 0.2421
+            },
+            "depth": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 0.867712,
+              "p95": 0.980672
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.027648,
+              "p95": 0.028672
+            },
+            "renderWall": {
+              "median": 1.3058,
+              "p95": 1.6087
+            }
+          },
+          "sha256": "edd87988a2df906451bdb35246f5c0a238d250811185548c873bafab4f59196b"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.843776,
+              "p95": 0.985088
+            },
+            "cpuCull": {
+              "median": 0.0372,
+              "p95": 0.0469
+            },
+            "cpuRecord": {
+              "median": 0.1976,
+              "p95": 0.2504
+            },
+            "depth": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 0.927872,
+              "p95": 1.079904
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.027648,
+              "p95": 0.028672
+            },
+            "renderWall": {
+              "median": 1.3941,
+              "p95": 1.7135
+            }
+          },
+          "sha256": "477a9fbee02ff51bd1850b0eaee48fded5a7bf00a79f0c322042a84ee6e2823b"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.843776,
+              "p95": 0.994304
+            },
+            "cpuCull": {
+              "median": 0.0372,
+              "p95": 0.0452
+            },
+            "cpuRecord": {
+              "median": 0.1993,
+              "p95": 0.2362
+            },
+            "depth": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 0.927776,
+              "p95": 1.099328
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.027648,
+              "p95": 0.028672
+            },
+            "renderWall": {
+              "median": 1.3785,
+              "p95": 1.7275
+            }
+          },
+          "sha256": "5eea86da14cafbd8375535100f10db858be033ac3dc30acf76fd0234ce2197d4"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.86016,
+              "p95": 0.999424
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0442
+            },
+            "cpuRecord": {
+              "median": 0.1986,
+              "p95": 0.2395
+            },
+            "depth": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 0.945024,
+              "p95": 1.100704
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.027648,
+              "p95": 0.028672
+            },
+            "renderWall": {
+              "median": 1.4173,
+              "p95": 1.7977
+            }
+          },
+          "sha256": "7cfc8b1b7ca8b5ea5b89a38b9edced507547d471969473a7da081499491a607c"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.843776,
+          "minimum": 0.78336,
+          "maximum": 0.886784,
+          "medianP95": 0.994304
+        },
+        "cpuCull": {
+          "median": 0.0372,
+          "minimum": 0.0371,
+          "maximum": 0.0375,
+          "medianP95": 0.0452
+        },
+        "cpuRecord": {
+          "median": 0.1986,
+          "minimum": 0.1971,
+          "maximum": 0.1993,
+          "medianP95": 0.2395
+        },
+        "depth": {
+          "median": 0.004096,
+          "minimum": 0.004096,
+          "maximum": 0.004096,
+          "medianP95": 0.00512
+        },
+        "gpuTotal": {
+          "median": 0.927872,
+          "minimum": 0.867712,
+          "maximum": 0.970816,
+          "medianP95": 1.099328
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.027648,
+          "minimum": 0.027648,
+          "maximum": 0.027648,
+          "medianP95": 0.028672
+        },
+        "renderWall": {
+          "median": 1.3941,
+          "minimum": 1.3058,
+          "maximum": 1.4448,
+          "medianP95": 1.7275
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Plaza",
+      "topic": "33_SoftwareOcclusion",
+      "mode": "software",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 1.088512,
+              "p95": 1.581056
+            },
+            "cpuCull": {
+              "median": 1.1886,
+              "p95": 1.4356
+            },
+            "cpuRecord": {
+              "median": 0.0992,
+              "p95": 0.1346
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.152,
+              "p95": 1.670144
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.7245,
+              "p95": 3.4256
+            }
+          },
+          "sha256": "bf9c05d015ffa03491753d6665ddec58bebeb087acf681f86d8f9112a4cccf3f"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.903168,
+              "p95": 1.04448
+            },
+            "cpuCull": {
+              "median": 1.1832,
+              "p95": 1.4199
+            },
+            "cpuRecord": {
+              "median": 0.0968,
+              "p95": 0.1198
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.98304,
+              "p95": 1.166336
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.541,
+              "p95": 3.0789
+            }
+          },
+          "sha256": "d36eb25b379a3fa408d1782f68aad3482e2494506bc97a8994629d89dbfebf11"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 1.236992,
+              "p95": 1.654784
+            },
+            "cpuCull": {
+              "median": 1.1914,
+              "p95": 1.4052
+            },
+            "cpuRecord": {
+              "median": 0.0983,
+              "p95": 0.1261
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.324032,
+              "p95": 1.742848
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.8872,
+              "p95": 3.4577
+            }
+          },
+          "sha256": "6d7c4e56f1af485f479ccba2c69c24ee39efa2598ce00673dccab2dbdbf31f03"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.995328,
+              "p95": 1.266688
+            },
+            "cpuCull": {
+              "median": 1.1907,
+              "p95": 1.4275
+            },
+            "cpuRecord": {
+              "median": 0.0959,
+              "p95": 0.1219
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.061888,
+              "p95": 1.37216
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.632,
+              "p95": 3.1783
+            }
+          },
+          "sha256": "862c0704177a1495378cf077e0af77207092670e3e0fbe1b6ac48cb8defdd49e"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 1.038336,
+              "p95": 1.4592
+            },
+            "cpuCull": {
+              "median": 1.2323,
+              "p95": 1.4376
+            },
+            "cpuRecord": {
+              "median": 0.0977,
+              "p95": 0.1286
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 1.117184,
+              "p95": 1.542144
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.7206,
+              "p95": 3.2862
+            }
+          },
+          "sha256": "8bc82ee04c5b27fe2fc7e2669be5c1d9f205ebe4d857275bd6eb0c82f48f69ba"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 1.038336,
+          "minimum": 0.903168,
+          "maximum": 1.236992,
+          "medianP95": 1.4592
+        },
+        "cpuCull": {
+          "median": 1.1907,
+          "minimum": 1.1832,
+          "maximum": 1.2323,
+          "medianP95": 1.4275
+        },
+        "cpuRecord": {
+          "median": 0.0977,
+          "minimum": 0.0959,
+          "maximum": 0.0992,
+          "medianP95": 0.1261
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 1.117184,
+          "minimum": 0.98304,
+          "maximum": 1.324032,
+          "medianP95": 1.542144
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 2.7206,
+          "minimum": 2.541,
+          "maximum": 2.8872,
+          "medianP95": 3.2862
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Plaza",
+      "topic": "34_HiZOcclusion",
+      "mode": "depth-only",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.86016,
+              "p95": 0.960512
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0457
+            },
+            "cpuRecord": {
+              "median": 0.1014,
+              "p95": 0.1302
+            },
+            "depth": {
+              "median": 0.033792,
+              "p95": 0.03584
+            },
+            "gpuTotal": {
+              "median": 0.946176,
+              "p95": 1.068032
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.2955,
+              "p95": 1.7089
+            }
+          },
+          "sha256": "713294dd360fa3ff80707d4d4f9c1fe3f95fd23cb9a8358b5c4f436b4ce55456"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.908288,
+              "p95": 1.053696
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0451
+            },
+            "cpuRecord": {
+              "median": 0.1024,
+              "p95": 0.13
+            },
+            "depth": {
+              "median": 0.034816,
+              "p95": 0.03584
+            },
+            "gpuTotal": {
+              "median": 0.994304,
+              "p95": 1.169408
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.345,
+              "p95": 1.8187
+            }
+          },
+          "sha256": "50961e1fc4f93c730ed96350bb8135223542032677213c60bc1ad69eaaa4e37f"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.878592,
+              "p95": 1.050624
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0474
+            },
+            "cpuRecord": {
+              "median": 0.1088,
+              "p95": 0.1421
+            },
+            "depth": {
+              "median": 0.03584,
+              "p95": 0.04096
+            },
+            "gpuTotal": {
+              "median": 0.966592,
+              "p95": 1.232896
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3276,
+              "p95": 1.8741
+            }
+          },
+          "sha256": "67b09bb31800414ee3a890a5b364173fd7c3869fa785fec8ea6c66f755b925ff"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.872448,
+              "p95": 0.95232
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.044
+            },
+            "cpuRecord": {
+              "median": 0.1006,
+              "p95": 0.1262
+            },
+            "depth": {
+              "median": 0.032768,
+              "p95": 0.03584
+            },
+            "gpuTotal": {
+              "median": 0.959488,
+              "p95": 1.047552
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3107,
+              "p95": 1.6502
+            }
+          },
+          "sha256": "2f5f1b1e390f8a7ee66848a177ea2c5e858ede82200e0a289fa8853441a8ff8d"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 1.139712,
+              "p95": 1.65376
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0473
+            },
+            "cpuRecord": {
+              "median": 0.1052,
+              "p95": 0.1439
+            },
+            "depth": {
+              "median": 0.033792,
+              "p95": 0.037888
+            },
+            "gpuTotal": {
+              "median": 1.225728,
+              "p95": 1.741824
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.5891,
+              "p95": 2.3734
+            }
+          },
+          "sha256": "a08a25b4d72f7a66cf380302bb19a5b768a9e2145beaa6fc42d5dfcc8f7c1af8"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.878592,
+          "minimum": 0.86016,
+          "maximum": 1.139712,
+          "medianP95": 1.050624
+        },
+        "cpuCull": {
+          "median": 0.0375,
+          "minimum": 0.0374,
+          "maximum": 0.0375,
+          "medianP95": 0.0457
+        },
+        "cpuRecord": {
+          "median": 0.1024,
+          "minimum": 0.1006,
+          "maximum": 0.1088,
+          "medianP95": 0.1302
+        },
+        "depth": {
+          "median": 0.033792,
+          "minimum": 0.032768,
+          "maximum": 0.03584,
+          "medianP95": 0.03584
+        },
+        "gpuTotal": {
+          "median": 0.966592,
+          "minimum": 0.946176,
+          "maximum": 1.225728,
+          "medianP95": 1.169408
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.3276,
+          "minimum": 1.2955,
+          "maximum": 1.5891,
+          "medianP95": 1.8187
+        }
+      }
+    },
+    {
+      "api": "Direct3D12",
+      "camera": "Plaza",
+      "topic": "34_HiZOcclusion",
+      "mode": "hiz",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 1.074176,
+              "p95": 1.4592
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0456
+            },
+            "cpuRecord": {
+              "median": 0.1746,
+              "p95": 0.2221
+            },
+            "depth": {
+              "median": 0.00512,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 1.211136,
+              "p95": 1.59936
+            },
+            "hizBuild": {
+              "median": 0.073728,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.6439,
+              "p95": 2.1877
+            }
+          },
+          "sha256": "4a031aa025364590b0463cd7c3f7a1c7d2427303e2aa6042b57eea8620d578b7"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 1.09056,
+              "p95": 1.485824
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.045
+            },
+            "cpuRecord": {
+              "median": 0.1747,
+              "p95": 0.2245
+            },
+            "depth": {
+              "median": 0.00512,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 1.228192,
+              "p95": 1.623712
+            },
+            "hizBuild": {
+              "median": 0.073728,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.6587,
+              "p95": 2.2261
+            }
+          },
+          "sha256": "49651f6dccf1de52fb86313701aac0a74a9191425f36cff605263744942f0e88"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 1.461248,
+              "p95": 1.844224
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.0459
+            },
+            "cpuRecord": {
+              "median": 0.1808,
+              "p95": 0.2355
+            },
+            "depth": {
+              "median": 0.00512,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 1.597472,
+              "p95": 1.981056
+            },
+            "hizBuild": {
+              "median": 0.073728,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.0512,
+              "p95": 2.6137
+            }
+          },
+          "sha256": "6148e19424e31394e11b84322e17dc7c01eab40be5bded045cda25d82c0188de"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 1.692672,
+              "p95": 2.151424
+            },
+            "cpuCull": {
+              "median": 0.0384,
+              "p95": 0.0553
+            },
+            "cpuRecord": {
+              "median": 0.1836,
+              "p95": 0.2595
+            },
+            "depth": {
+              "median": 0.00512,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 1.82976,
+              "p95": 2.288672
+            },
+            "hizBuild": {
+              "median": 0.073728,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.312,
+              "p95": 2.9318
+            }
+          },
+          "sha256": "fc5d73c76826d59217a18a77ac1025b216a9e7e68a480fbbfd51c8a4c131e1c7"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 1.366016,
+              "p95": 1.801216
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.0478
+            },
+            "cpuRecord": {
+              "median": 0.1777,
+              "p95": 0.2322
+            },
+            "depth": {
+              "median": 0.00512,
+              "p95": 0.00512
+            },
+            "gpuTotal": {
+              "median": 1.502912,
+              "p95": 1.936832
+            },
+            "hizBuild": {
+              "median": 0.073728,
+              "p95": 0.074752
+            },
+            "hizTest": {
+              "median": 0.004096,
+              "p95": 0.00512
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.9659,
+              "p95": 2.5912
+            }
+          },
+          "sha256": "439f38f95760db84c73dbdc2b73cc111c4337273c502f17cb4017721af9eeba9"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 1.366016,
+          "minimum": 1.074176,
+          "maximum": 1.692672,
+          "medianP95": 1.801216
+        },
+        "cpuCull": {
+          "median": 0.0376,
+          "minimum": 0.0374,
+          "maximum": 0.0384,
+          "medianP95": 0.0459
+        },
+        "cpuRecord": {
+          "median": 0.1777,
+          "minimum": 0.1746,
+          "maximum": 0.1836,
+          "medianP95": 0.2322
+        },
+        "depth": {
+          "median": 0.00512,
+          "minimum": 0.00512,
+          "maximum": 0.00512,
+          "medianP95": 0.00512
+        },
+        "gpuTotal": {
+          "median": 1.502912,
+          "minimum": 1.211136,
+          "maximum": 1.82976,
+          "medianP95": 1.936832
+        },
+        "hizBuild": {
+          "median": 0.073728,
+          "minimum": 0.073728,
+          "maximum": 0.073728,
+          "medianP95": 0.074752
+        },
+        "hizTest": {
+          "median": 0.004096,
+          "minimum": 0.004096,
+          "maximum": 0.004096,
+          "medianP95": 0.00512
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.9659,
+          "minimum": 1.6439,
+          "maximum": 2.312,
+          "medianP95": 2.5912
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Hero",
+      "topic": "31_FrustumCulling",
+      "mode": "off",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.7168,
+              "p95": 0.790528
+            },
+            "cpuCull": {
+              "median": 0.0336,
+              "p95": 0.0459
+            },
+            "cpuRecord": {
+              "median": 0.1402,
+              "p95": 0.2571
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.827168,
+              "p95": 0.906272
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.6936,
+              "p95": 2.1924
+            }
+          },
+          "sha256": "cb2213bb535e142d4002aef0b7e55e19809f61ebaf05b473fa0601d72157c740"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.715776,
+              "p95": 0.80384
+            },
+            "cpuCull": {
+              "median": 0.0329,
+              "p95": 0.0392
+            },
+            "cpuRecord": {
+              "median": 0.1365,
+              "p95": 0.1968
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.82192,
+              "p95": 0.88352
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.6416,
+              "p95": 1.99
+            }
+          },
+          "sha256": "22aaf00742284b70211dd38d905b5019e57fe828a372f2c5843174c70eb60c04"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.717824,
+              "p95": 0.782336
+            },
+            "cpuCull": {
+              "median": 0.0328,
+              "p95": 0.0383
+            },
+            "cpuRecord": {
+              "median": 0.1382,
+              "p95": 0.1951
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.827424,
+              "p95": 0.884384
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.6572,
+              "p95": 2.0901
+            }
+          },
+          "sha256": "bb70dbb547102ab7b87d580bb4be9554493f165a6a8765ac7f2b7574a308ba6d"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.720896,
+              "p95": 0.785408
+            },
+            "cpuCull": {
+              "median": 0.0333,
+              "p95": 0.0418
+            },
+            "cpuRecord": {
+              "median": 0.1414,
+              "p95": 0.2057
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.828512,
+              "p95": 0.897888
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.6706,
+              "p95": 2.2117
+            }
+          },
+          "sha256": "f922232fb7b3662f8847d76d5bf4db87bc71ee2bc2ebb01b942807f241a5a1ec"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.715776,
+              "p95": 0.779264
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0386
+            },
+            "cpuRecord": {
+              "median": 0.1375,
+              "p95": 0.1904
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.827392,
+              "p95": 0.886016
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.6506,
+              "p95": 2.025
+            }
+          },
+          "sha256": "09eca67af25452295216075b3c2545429c2b20bc8da6879cb1a6ad2595e897e1"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.7168,
+          "minimum": 0.715776,
+          "maximum": 0.720896,
+          "medianP95": 0.785408
+        },
+        "cpuCull": {
+          "median": 0.0329,
+          "minimum": 0.0325,
+          "maximum": 0.0336,
+          "medianP95": 0.0392
+        },
+        "cpuRecord": {
+          "median": 0.1382,
+          "minimum": 0.1365,
+          "maximum": 0.1414,
+          "medianP95": 0.1968
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 0.827392,
+          "minimum": 0.82192,
+          "maximum": 0.828512,
+          "medianP95": 0.886016
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.6572,
+          "minimum": 1.6416,
+          "maximum": 1.6936,
+          "medianP95": 2.0901
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Hero",
+      "topic": "31_FrustumCulling",
+      "mode": "frustum",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.421888,
+              "p95": 0.598016
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0378
+            },
+            "cpuRecord": {
+              "median": 0.0867,
+              "p95": 0.1534
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.509824,
+              "p95": 0.701152
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.2915,
+              "p95": 1.6658
+            }
+          },
+          "sha256": "f56addac7f368a306f00fba2911417b43ae3eb4202cc24391849cb646e787395"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.420864,
+              "p95": 0.608256
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0374
+            },
+            "cpuRecord": {
+              "median": 0.085,
+              "p95": 0.1465
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.506656,
+              "p95": 0.69888
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.2927,
+              "p95": 1.5706
+            }
+          },
+          "sha256": "201e314cf08575ffb3b1bd10d0c1ed162ea5d6c4c8593f3033afdd1f2d88e8fd"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.417792,
+              "p95": 0.59392
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0373
+            },
+            "cpuRecord": {
+              "median": 0.0857,
+              "p95": 0.1486
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.509728,
+              "p95": 0.700128
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3023,
+              "p95": 1.5502
+            }
+          },
+          "sha256": "393d129b18d6c6344ce5c90e6b81290ec42c09dca155bd6c6143335d21bd4d56"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.422912,
+              "p95": 0.603136
+            },
+            "cpuCull": {
+              "median": 0.0327,
+              "p95": 0.0384
+            },
+            "cpuRecord": {
+              "median": 0.0878,
+              "p95": 0.1518
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.512928,
+              "p95": 0.705216
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3313,
+              "p95": 1.8119
+            }
+          },
+          "sha256": "c27b42bf45fb30de51ef9a6c273632fca6d6e2871fb0e505e48be8c98cb41680"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.420864,
+              "p95": 0.60416
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0373
+            },
+            "cpuRecord": {
+              "median": 0.0857,
+              "p95": 0.1499
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.50832,
+              "p95": 0.699712
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.2877,
+              "p95": 1.5228
+            }
+          },
+          "sha256": "a328525b22b405483a62017286ce9743688f3a69020d40b3d3d0ed84d551eab7"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.420864,
+          "minimum": 0.417792,
+          "maximum": 0.422912,
+          "medianP95": 0.603136
+        },
+        "cpuCull": {
+          "median": 0.0326,
+          "minimum": 0.0325,
+          "maximum": 0.0327,
+          "medianP95": 0.0374
+        },
+        "cpuRecord": {
+          "median": 0.0857,
+          "minimum": 0.085,
+          "maximum": 0.0878,
+          "medianP95": 0.1499
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 0.509728,
+          "minimum": 0.506656,
+          "maximum": 0.512928,
+          "medianP95": 0.700128
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.2927,
+          "minimum": 1.2877,
+          "maximum": 1.3313,
+          "medianP95": 1.5706
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Hero",
+      "topic": "32_OcclusionQueries",
+      "mode": "depth-only",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.453632,
+              "p95": 0.65536
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0409
+            },
+            "cpuRecord": {
+              "median": 0.0977,
+              "p95": 0.1689
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.494432,
+              "p95": 0.701824
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.2906,
+              "p95": 1.6279
+            }
+          },
+          "sha256": "7f35266b89ad79826e9f477b9f8ed15780ac20129d9fb7757e72c06a1fcb9e8b"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.459776,
+              "p95": 0.648192
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0371
+            },
+            "cpuRecord": {
+              "median": 0.0992,
+              "p95": 0.162
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.499264,
+              "p95": 0.695424
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3308,
+              "p95": 1.6583
+            }
+          },
+          "sha256": "87f8ca93e5d08a86f3a9deb4f40177718a55ea06c2d2c66f7698d82da8d41607"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.438272,
+              "p95": 0.70656
+            },
+            "cpuCull": {
+              "median": 0.0328,
+              "p95": 0.038
+            },
+            "cpuRecord": {
+              "median": 0.0989,
+              "p95": 0.165
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.478944,
+              "p95": 0.759936
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.32,
+              "p95": 1.676
+            }
+          },
+          "sha256": "fcc087036464133f6796e2c202e4dd6c2aa4da3c36fda80f51cbdd3c14511e4f"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.456704,
+              "p95": 0.652288
+            },
+            "cpuCull": {
+              "median": 0.0332,
+              "p95": 0.0434
+            },
+            "cpuRecord": {
+              "median": 0.1002,
+              "p95": 0.1722
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.497056,
+              "p95": 0.698688
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3434,
+              "p95": 1.6509
+            }
+          },
+          "sha256": "d5239dd06091de8753d92eaa8a75fa19642eab8731f4acec9bf50b841f070bd6"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.45568,
+              "p95": 0.649216
+            },
+            "cpuCull": {
+              "median": 0.0324,
+              "p95": 0.0373
+            },
+            "cpuRecord": {
+              "median": 0.0964,
+              "p95": 0.1649
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.495808,
+              "p95": 0.696544
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3061,
+              "p95": 1.6545
+            }
+          },
+          "sha256": "b985fbc67cd51e8e9617bc532862245fc9550aedcccdb81d1c5bfa053336a18a"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.45568,
+          "minimum": 0.438272,
+          "maximum": 0.459776,
+          "medianP95": 0.652288
+        },
+        "cpuCull": {
+          "median": 0.0325,
+          "minimum": 0.0324,
+          "maximum": 0.0332,
+          "medianP95": 0.038
+        },
+        "cpuRecord": {
+          "median": 0.0989,
+          "minimum": 0.0964,
+          "maximum": 0.1002,
+          "medianP95": 0.165
+        },
+        "depth": {
+          "median": 0.012288,
+          "minimum": 0.012288,
+          "maximum": 0.012288,
+          "medianP95": 0.013312
+        },
+        "gpuTotal": {
+          "median": 0.495808,
+          "minimum": 0.478944,
+          "maximum": 0.499264,
+          "medianP95": 0.698688
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.32,
+          "minimum": 1.2906,
+          "maximum": 1.3434,
+          "medianP95": 1.6545
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Hero",
+      "topic": "32_OcclusionQueries",
+      "mode": "query",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.23552,
+              "p95": 0.287744
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0394
+            },
+            "cpuRecord": {
+              "median": 0.1344,
+              "p95": 0.2204
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.315264,
+              "p95": 0.37008
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000384
+            },
+            "queryResolve": {
+              "median": 0.0352,
+              "p95": 0.04368
+            },
+            "renderWall": {
+              "median": 1.1451,
+              "p95": 1.3459
+            }
+          },
+          "sha256": "bef0378f48fcf69cdb79afb21d9a7bdbf655e062b174f4bfc1a16dd8ac0b9238"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.2304,
+              "p95": 0.283648
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0387
+            },
+            "cpuRecord": {
+              "median": 0.1357,
+              "p95": 0.2231
+            },
+            "depth": {
+              "median": 0.011264,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.309088,
+              "p95": 0.36592
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000416
+            },
+            "queryResolve": {
+              "median": 0.035008,
+              "p95": 0.04352
+            },
+            "renderWall": {
+              "median": 1.2251,
+              "p95": 1.4198
+            }
+          },
+          "sha256": "f256a69cc5bd8c0a4bec13b1733809ab8f8a718f04d94d4b03a3422bca7536e5"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.229376,
+              "p95": 0.283648
+            },
+            "cpuCull": {
+              "median": 0.0327,
+              "p95": 0.0383
+            },
+            "cpuRecord": {
+              "median": 0.1364,
+              "p95": 0.2228
+            },
+            "depth": {
+              "median": 0.011264,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.308608,
+              "p95": 0.365792
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000384
+            },
+            "queryResolve": {
+              "median": 0.034912,
+              "p95": 0.0432
+            },
+            "renderWall": {
+              "median": 1.2416,
+              "p95": 1.458
+            }
+          },
+          "sha256": "156f1729cf9b88a409509d3ca6d544af07bc4bbeff64cb4ce9fbe51a9a455e0e"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.2304,
+              "p95": 0.283648
+            },
+            "cpuCull": {
+              "median": 0.033,
+              "p95": 0.0405
+            },
+            "cpuRecord": {
+              "median": 0.1422,
+              "p95": 0.2254
+            },
+            "depth": {
+              "median": 0.011264,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.310112,
+              "p95": 0.36704
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000416
+            },
+            "queryResolve": {
+              "median": 0.035584,
+              "p95": 0.043936
+            },
+            "renderWall": {
+              "median": 1.3311,
+              "p95": 1.6289
+            }
+          },
+          "sha256": "54cc89ee0902b9b785f6739f4a1dc01b3f35b7caf8b0e4102c6639387353fc95"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.234496,
+              "p95": 0.294912
+            },
+            "cpuCull": {
+              "median": 0.0327,
+              "p95": 0.0398
+            },
+            "cpuRecord": {
+              "median": 0.1361,
+              "p95": 0.223
+            },
+            "depth": {
+              "median": 0.011264,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.316384,
+              "p95": 0.376768
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000416
+            },
+            "queryResolve": {
+              "median": 0.0352,
+              "p95": 0.044128
+            },
+            "renderWall": {
+              "median": 1.2798,
+              "p95": 1.5175
+            }
+          },
+          "sha256": "e03489729170941a7b8da6fea104d040c51d5cbd712eae8d9f8e8632052a544b"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.2304,
+          "minimum": 0.229376,
+          "maximum": 0.23552,
+          "medianP95": 0.283648
+        },
+        "cpuCull": {
+          "median": 0.0327,
+          "minimum": 0.0325,
+          "maximum": 0.033,
+          "medianP95": 0.0394
+        },
+        "cpuRecord": {
+          "median": 0.1361,
+          "minimum": 0.1344,
+          "maximum": 0.1422,
+          "medianP95": 0.223
+        },
+        "depth": {
+          "median": 0.011264,
+          "minimum": 0.011264,
+          "maximum": 0.012288,
+          "medianP95": 0.013312
+        },
+        "gpuTotal": {
+          "median": 0.310112,
+          "minimum": 0.308608,
+          "maximum": 0.316384,
+          "medianP95": 0.36704
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.000192
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.000416
+        },
+        "queryResolve": {
+          "median": 0.0352,
+          "minimum": 0.034912,
+          "maximum": 0.035584,
+          "medianP95": 0.04368
+        },
+        "renderWall": {
+          "median": 1.2416,
+          "minimum": 1.1451,
+          "maximum": 1.3311,
+          "medianP95": 1.458
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Hero",
+      "topic": "33_SoftwareOcclusion",
+      "mode": "software",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.310272,
+              "p95": 0.864256
+            },
+            "cpuCull": {
+              "median": 3.1762,
+              "p95": 4.2907
+            },
+            "cpuRecord": {
+              "median": 0.0661,
+              "p95": 0.0988
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.41936,
+              "p95": 1.074816
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.751,
+              "p95": 7.3477
+            }
+          },
+          "sha256": "fc636543105284852337507b5c8f3abf5416964e9b219a53ae7016fb2c911196"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.330752,
+              "p95": 1.011712
+            },
+            "cpuCull": {
+              "median": 3.1067,
+              "p95": 4.2649
+            },
+            "cpuRecord": {
+              "median": 0.066,
+              "p95": 0.1095
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.447776,
+              "p95": 1.238688
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.7618,
+              "p95": 6.6645
+            }
+          },
+          "sha256": "5bc1a7b320edd7933029bbee321cea1b6d5fad0af2d7e59387a09ae449f3d12e"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.311296,
+              "p95": 0.973824
+            },
+            "cpuCull": {
+              "median": 3.0864,
+              "p95": 4.3021
+            },
+            "cpuRecord": {
+              "median": 0.0669,
+              "p95": 0.1041
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.434112,
+              "p95": 1.20864
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.6704,
+              "p95": 6.4181
+            }
+          },
+          "sha256": "694404fc7d25ffc8f501243de57d669680c01e87634b5db6983cf874372dc837"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.299008,
+              "p95": 0.702464
+            },
+            "cpuCull": {
+              "median": 3.1269,
+              "p95": 4.088
+            },
+            "cpuRecord": {
+              "median": 0.0686,
+              "p95": 0.122
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.400864,
+              "p95": 0.893856
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.6797,
+              "p95": 6.0752
+            }
+          },
+          "sha256": "cc8a709272ee563dfa1f010d0698860bbcd0145d7ca05d6e342cf5af95ce8452"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.32768,
+              "p95": 0.923648
+            },
+            "cpuCull": {
+              "median": 3.1871,
+              "p95": 4.5772
+            },
+            "cpuRecord": {
+              "median": 0.0732,
+              "p95": 0.1214
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.449728,
+              "p95": 1.149184
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 4.8603,
+              "p95": 7.6671
+            }
+          },
+          "sha256": "edc2e82ea7b27d766eccbd6ba7c24eb6f92f6e60f9f45eef8e774e9f1be0c9cd"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.311296,
+          "minimum": 0.299008,
+          "maximum": 0.330752,
+          "medianP95": 0.923648
+        },
+        "cpuCull": {
+          "median": 3.1269,
+          "minimum": 3.0864,
+          "maximum": 3.1871,
+          "medianP95": 4.2907
+        },
+        "cpuRecord": {
+          "median": 0.0669,
+          "minimum": 0.066,
+          "maximum": 0.0732,
+          "medianP95": 0.1095
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 0.434112,
+          "minimum": 0.400864,
+          "maximum": 0.449728,
+          "medianP95": 1.149184
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 4.751,
+          "minimum": 4.6704,
+          "maximum": 4.8603,
+          "medianP95": 6.6645
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Hero",
+      "topic": "34_HiZOcclusion",
+      "mode": "depth-only",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.45568,
+              "p95": 0.71168
+            },
+            "cpuCull": {
+              "median": 0.0339,
+              "p95": 0.0513
+            },
+            "cpuRecord": {
+              "median": 0.1072,
+              "p95": 0.177
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.496704,
+              "p95": 0.763744
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.5349,
+              "p95": 1.9476
+            }
+          },
+          "sha256": "90bebf43c5f69108380c62b969359dedab2698b46cd0858362e424f54603ecd3"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.457728,
+              "p95": 0.652288
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0384
+            },
+            "cpuRecord": {
+              "median": 0.0994,
+              "p95": 0.1663
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.498304,
+              "p95": 0.700672
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4422,
+              "p95": 1.8519
+            }
+          },
+          "sha256": "6ffb1f2c62141c42becd6d0631996281b450804d8d1a4269fcd7aa7915c9ef95"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.449536,
+              "p95": 0.642048
+            },
+            "cpuCull": {
+              "median": 0.0328,
+              "p95": 0.0377
+            },
+            "cpuRecord": {
+              "median": 0.1001,
+              "p95": 0.1686
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.490208,
+              "p95": 0.690848
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4685,
+              "p95": 1.9148
+            }
+          },
+          "sha256": "60793fccf0383713694dc7e4f292794fa42d996da144f93dc0c560c0e1d2bc80"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.446464,
+              "p95": 0.642048
+            },
+            "cpuCull": {
+              "median": 0.0326,
+              "p95": 0.0383
+            },
+            "cpuRecord": {
+              "median": 0.1003,
+              "p95": 0.1681
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.48656,
+              "p95": 0.690528
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4468,
+              "p95": 1.8628
+            }
+          },
+          "sha256": "c838ed2aee1dff88b0559da7f462e7d2aed36db9d516c062aa19ad9bdbfc146b"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.462848,
+              "p95": 0.649216
+            },
+            "cpuCull": {
+              "median": 0.0334,
+              "p95": 0.0401
+            },
+            "cpuRecord": {
+              "median": 0.1048,
+              "p95": 0.1676
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.503072,
+              "p95": 0.697312
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.5051,
+              "p95": 1.9147
+            }
+          },
+          "sha256": "2de8875047b04be822e56805db42767201c663183911f45d0abe855d9987d15c"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.45568,
+          "minimum": 0.446464,
+          "maximum": 0.462848,
+          "medianP95": 0.649216
+        },
+        "cpuCull": {
+          "median": 0.0328,
+          "minimum": 0.0326,
+          "maximum": 0.0339,
+          "medianP95": 0.0384
+        },
+        "cpuRecord": {
+          "median": 0.1003,
+          "minimum": 0.0994,
+          "maximum": 0.1072,
+          "medianP95": 0.1681
+        },
+        "depth": {
+          "median": 0.012288,
+          "minimum": 0.012288,
+          "maximum": 0.012288,
+          "medianP95": 0.014336
+        },
+        "gpuTotal": {
+          "median": 0.496704,
+          "minimum": 0.48656,
+          "maximum": 0.503072,
+          "medianP95": 0.697312
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.4685,
+          "minimum": 1.4422,
+          "maximum": 1.5349,
+          "medianP95": 1.9147
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Hero",
+      "topic": "34_HiZOcclusion",
+      "mode": "hiz",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.253952,
+              "p95": 0.320512
+            },
+            "cpuCull": {
+              "median": 0.0339,
+              "p95": 0.0481
+            },
+            "cpuRecord": {
+              "median": 0.1305,
+              "p95": 0.2379
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.377152,
+              "p95": 0.445824
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.072704
+            },
+            "hizTest": {
+              "median": 0.00624,
+              "p95": 0.006752
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.4381,
+              "p95": 1.8997
+            }
+          },
+          "sha256": "60110dc68536c6ecbe1fac7f38d2d672d1b232e1185f706430e24c70969c9226"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.25088,
+              "p95": 0.316416
+            },
+            "cpuCull": {
+              "median": 0.0329,
+              "p95": 0.0382
+            },
+            "cpuRecord": {
+              "median": 0.1235,
+              "p95": 0.1983
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.37216,
+              "p95": 0.439392
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.00624,
+              "p95": 0.006784
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3776,
+              "p95": 1.6602
+            }
+          },
+          "sha256": "8e392884088fd1ebc2c374562a2566338af2632a74d61287c92294dc9ca5555d"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.243712,
+              "p95": 0.309248
+            },
+            "cpuCull": {
+              "median": 0.0327,
+              "p95": 0.038
+            },
+            "cpuRecord": {
+              "median": 0.1193,
+              "p95": 0.1935
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.366496,
+              "p95": 0.43184
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.006208,
+              "p95": 0.00672
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3683,
+              "p95": 1.634
+            }
+          },
+          "sha256": "e10a55ad6e7fe6cc91861862f7f209855bbeff11d04a57431642ec7c67267648"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.24576,
+              "p95": 0.321536
+            },
+            "cpuCull": {
+              "median": 0.0331,
+              "p95": 0.0439
+            },
+            "cpuRecord": {
+              "median": 0.1206,
+              "p95": 0.1985
+            },
+            "depth": {
+              "median": 0.012288,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.368704,
+              "p95": 0.446944
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.006176,
+              "p95": 0.00672
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3492,
+              "p95": 1.7506
+            }
+          },
+          "sha256": "7b726a586c1557467be40e4f5129055257dd1b16436e910c3753044f1f4857c7"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.252928,
+              "p95": 0.318464
+            },
+            "cpuCull": {
+              "median": 0.0325,
+              "p95": 0.0373
+            },
+            "cpuRecord": {
+              "median": 0.1162,
+              "p95": 0.1899
+            },
+            "depth": {
+              "median": 0.011264,
+              "p95": 0.013312
+            },
+            "gpuTotal": {
+              "median": 0.374592,
+              "p95": 0.441024
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.006368,
+              "p95": 0.00688
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.3543,
+              "p95": 1.5537
+            }
+          },
+          "sha256": "e70d7bbd7b22a2787e5cdb1297ac54c13d1bc62afd844321912714c5e6128311"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.25088,
+          "minimum": 0.243712,
+          "maximum": 0.253952,
+          "medianP95": 0.318464
+        },
+        "cpuCull": {
+          "median": 0.0329,
+          "minimum": 0.0325,
+          "maximum": 0.0339,
+          "medianP95": 0.0382
+        },
+        "cpuRecord": {
+          "median": 0.1206,
+          "minimum": 0.1162,
+          "maximum": 0.1305,
+          "medianP95": 0.1983
+        },
+        "depth": {
+          "median": 0.012288,
+          "minimum": 0.011264,
+          "maximum": 0.012288,
+          "medianP95": 0.013312
+        },
+        "gpuTotal": {
+          "median": 0.37216,
+          "minimum": 0.366496,
+          "maximum": 0.377152,
+          "medianP95": 0.441024
+        },
+        "hizBuild": {
+          "median": 0.069632,
+          "minimum": 0.069632,
+          "maximum": 0.069632,
+          "medianP95": 0.070656
+        },
+        "hizTest": {
+          "median": 0.00624,
+          "minimum": 0.006176,
+          "maximum": 0.006368,
+          "medianP95": 0.006752
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.3683,
+          "minimum": 1.3492,
+          "maximum": 1.4381,
+          "medianP95": 1.6602
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Plaza",
+      "topic": "31_FrustumCulling",
+      "mode": "off",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.669696,
+              "p95": 0.738304
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.043
+            },
+            "cpuRecord": {
+              "median": 0.1384,
+              "p95": 0.1914
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.791776,
+              "p95": 0.806624
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.78,
+              "p95": 2.1411
+            }
+          },
+          "sha256": "cbc3749d1b75522dc1947f8c029ba478593a3439ba44ea61d853990568afa5d7"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.667648,
+              "p95": 0.690176
+            },
+            "cpuCull": {
+              "median": 0.0377,
+              "p95": 0.0452
+            },
+            "cpuRecord": {
+              "median": 0.1377,
+              "p95": 0.1904
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.789792,
+              "p95": 0.815904
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7646,
+              "p95": 2.1318
+            }
+          },
+          "sha256": "056350d548c9142d68636dbca8d9e6f67c14d1443db90ad393781f992f5f8e7c"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.668672,
+              "p95": 0.692224
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0429
+            },
+            "cpuRecord": {
+              "median": 0.1383,
+              "p95": 0.1892
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.789152,
+              "p95": 0.805344
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7729,
+              "p95": 2.0697
+            }
+          },
+          "sha256": "312f563596ac419a03f332670e30a53ab4a45ce68c46f713e192d8c96b9aad0c"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.671744,
+              "p95": 0.739328
+            },
+            "cpuCull": {
+              "median": 0.0378,
+              "p95": 0.0483
+            },
+            "cpuRecord": {
+              "median": 0.1441,
+              "p95": 0.219
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.793888,
+              "p95": 0.837248
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.8295,
+              "p95": 2.2643
+            }
+          },
+          "sha256": "c206cc62f147b50e64b3e1dcffb226bffd003e0771d138c79f45ca42a7b1ebb4"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.67072,
+              "p95": 0.719872
+            },
+            "cpuCull": {
+              "median": 0.0377,
+              "p95": 0.0475
+            },
+            "cpuRecord": {
+              "median": 0.1403,
+              "p95": 0.194
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.789152,
+              "p95": 0.802976
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7837,
+              "p95": 2.0676
+            }
+          },
+          "sha256": "bf932db6342518f82c158efa1c46ff1212b0131bdb0532a26fd9dd93f1685fb3"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.669696,
+          "minimum": 0.667648,
+          "maximum": 0.671744,
+          "medianP95": 0.719872
+        },
+        "cpuCull": {
+          "median": 0.0377,
+          "minimum": 0.0375,
+          "maximum": 0.0378,
+          "medianP95": 0.0452
+        },
+        "cpuRecord": {
+          "median": 0.1384,
+          "minimum": 0.1377,
+          "maximum": 0.1441,
+          "medianP95": 0.1914
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 0.789792,
+          "minimum": 0.789152,
+          "maximum": 0.793888,
+          "medianP95": 0.806624
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.78,
+          "minimum": 1.7646,
+          "maximum": 1.8295,
+          "medianP95": 2.1318
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Plaza",
+      "topic": "31_FrustumCulling",
+      "mode": "frustum",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.672768,
+              "p95": 0.719872
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.042
+            },
+            "cpuRecord": {
+              "median": 0.141,
+              "p95": 0.1973
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.792576,
+              "p95": 0.831424
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.803,
+              "p95": 2.2693
+            }
+          },
+          "sha256": "86b95a3fdea797b4a9e6c9febb42918c17214e40a93fea3f32d9deeb60a22139"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.667648,
+              "p95": 0.702464
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0462
+            },
+            "cpuRecord": {
+              "median": 0.1388,
+              "p95": 0.1941
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.789088,
+              "p95": 0.814464
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7801,
+              "p95": 2.2261
+            }
+          },
+          "sha256": "9853651ba79f39a5792815c81cb0c5fadbf795b8db66a4e2dc4c5cc6a394edba"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.667648,
+              "p95": 0.731136
+            },
+            "cpuCull": {
+              "median": 0.0378,
+              "p95": 0.0443
+            },
+            "cpuRecord": {
+              "median": 0.1392,
+              "p95": 0.1973
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.784,
+              "p95": 0.815296
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.751,
+              "p95": 2.2204
+            }
+          },
+          "sha256": "f0bab281a3383dbcec239445a7bb5d64fe2faf4c01cda5050a4288797c047c83"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.671744,
+              "p95": 0.7168
+            },
+            "cpuCull": {
+              "median": 0.0377,
+              "p95": 0.061
+            },
+            "cpuRecord": {
+              "median": 0.1414,
+              "p95": 0.2397
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.791744,
+              "p95": 0.848672
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7887,
+              "p95": 2.5035
+            }
+          },
+          "sha256": "7bc84ebadf4a91649338ffaf0ed21299130b184bb8b48269a6c5228aa60794ee"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.671744,
+              "p95": 0.8192
+            },
+            "cpuCull": {
+              "median": 0.0377,
+              "p95": 0.0493
+            },
+            "cpuRecord": {
+              "median": 0.1421,
+              "p95": 0.1985
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.793856,
+              "p95": 0.941056
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7971,
+              "p95": 2.4627
+            }
+          },
+          "sha256": "a16364d5b3d45ddf0e896fa1798fbf100ea75fd3accad57318139de81bdd3d34"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.671744,
+          "minimum": 0.667648,
+          "maximum": 0.672768,
+          "medianP95": 0.719872
+        },
+        "cpuCull": {
+          "median": 0.0377,
+          "minimum": 0.0375,
+          "maximum": 0.0378,
+          "medianP95": 0.0462
+        },
+        "cpuRecord": {
+          "median": 0.141,
+          "minimum": 0.1388,
+          "maximum": 0.1421,
+          "medianP95": 0.1973
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 0.791744,
+          "minimum": 0.784,
+          "maximum": 0.793856,
+          "medianP95": 0.831424
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.7887,
+          "minimum": 1.751,
+          "maximum": 1.803,
+          "medianP95": 2.2693
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Plaza",
+      "topic": "32_OcclusionQueries",
+      "mode": "depth-only",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.728064,
+              "p95": 0.764928
+            },
+            "cpuCull": {
+              "median": 0.0373,
+              "p95": 0.0448
+            },
+            "cpuRecord": {
+              "median": 0.1562,
+              "p95": 0.2142
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.78832,
+              "p95": 0.827168
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7763,
+              "p95": 2.2577
+            }
+          },
+          "sha256": "60342eae1c76698baa7abc45c7804e0f48011885dd86d1534c6cb3c4fabc6138"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.728064,
+              "p95": 0.774144
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.062
+            },
+            "cpuRecord": {
+              "median": 0.1595,
+              "p95": 0.2533
+            },
+            "depth": {
+              "median": 0.01536,
+              "p95": 0.017408
+            },
+            "gpuTotal": {
+              "median": 0.789632,
+              "p95": 0.83536
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.8315,
+              "p95": 2.5135
+            }
+          },
+          "sha256": "e5a1aaf7465c5088721c10d335edb05ba5ffad5e1e6089d86cf7999907125da8"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.728064,
+              "p95": 0.859136
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.073
+            },
+            "cpuRecord": {
+              "median": 0.1618,
+              "p95": 0.3203
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.016384
+            },
+            "gpuTotal": {
+              "median": 0.78848,
+              "p95": 0.92432
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.8589,
+              "p95": 2.6493
+            }
+          },
+          "sha256": "8961d7ecf63ebc6720c1c90929881764f203a5b67744c7ab4070fcc506553065"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.728064,
+              "p95": 0.750592
+            },
+            "cpuCull": {
+              "median": 0.0373,
+              "p95": 0.0436
+            },
+            "cpuRecord": {
+              "median": 0.1556,
+              "p95": 0.2103
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.788736,
+              "p95": 0.81232
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.797,
+              "p95": 2.182
+            }
+          },
+          "sha256": "b8154cc4c3d4dab9beff84d7baac940338fb3977709ea0f19633d9678e60803c"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.724992,
+              "p95": 0.76288
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0516
+            },
+            "cpuRecord": {
+              "median": 0.1589,
+              "p95": 0.223
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.785856,
+              "p95": 0.824288
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.786,
+              "p95": 2.2685
+            }
+          },
+          "sha256": "fd52a73d891a4ceb54314ac8fba3ebc61893d3a7c271eadf54ca175f81b27795"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.728064,
+          "minimum": 0.724992,
+          "maximum": 0.728064,
+          "medianP95": 0.764928
+        },
+        "cpuCull": {
+          "median": 0.0375,
+          "minimum": 0.0373,
+          "maximum": 0.0376,
+          "medianP95": 0.0516
+        },
+        "cpuRecord": {
+          "median": 0.1589,
+          "minimum": 0.1556,
+          "maximum": 0.1618,
+          "medianP95": 0.223
+        },
+        "depth": {
+          "median": 0.014336,
+          "minimum": 0.014336,
+          "maximum": 0.01536,
+          "medianP95": 0.01536
+        },
+        "gpuTotal": {
+          "median": 0.78848,
+          "minimum": 0.785856,
+          "maximum": 0.789632,
+          "medianP95": 0.827168
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.797,
+          "minimum": 1.7763,
+          "maximum": 1.8589,
+          "medianP95": 2.2685
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Plaza",
+      "topic": "32_OcclusionQueries",
+      "mode": "query",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.586752,
+              "p95": 0.637952
+            },
+            "cpuCull": {
+              "median": 0.0377,
+              "p95": 0.0475
+            },
+            "cpuRecord": {
+              "median": 0.2256,
+              "p95": 0.305
+            },
+            "depth": {
+              "median": 0.013312,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.703424,
+              "p95": 0.759104
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000448
+            },
+            "queryResolve": {
+              "median": 0.05408,
+              "p95": 0.056704
+            },
+            "renderWall": {
+              "median": 1.8372,
+              "p95": 2.5381
+            }
+          },
+          "sha256": "5756fcc0381d28c4aff4d86ade20587367f4b84b3ba9eb7cb0858318a7256847"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.57856,
+              "p95": 0.632832
+            },
+            "cpuCull": {
+              "median": 0.0373,
+              "p95": 0.0485
+            },
+            "cpuRecord": {
+              "median": 0.2253,
+              "p95": 0.3055
+            },
+            "depth": {
+              "median": 0.013312,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.6928,
+              "p95": 0.748576
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000224
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000448
+            },
+            "queryResolve": {
+              "median": 0.051488,
+              "p95": 0.053408
+            },
+            "renderWall": {
+              "median": 1.8159,
+              "p95": 2.179
+            }
+          },
+          "sha256": "0d88350a608ada064ab65a1ae8d71211d45e50d0b5ca11812275273d16e0e0f8"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.581632,
+              "p95": 0.631808
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.0494
+            },
+            "cpuRecord": {
+              "median": 0.2277,
+              "p95": 0.3327
+            },
+            "depth": {
+              "median": 0.013312,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.695392,
+              "p95": 0.74544
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000384
+            },
+            "queryResolve": {
+              "median": 0.051296,
+              "p95": 0.054656
+            },
+            "renderWall": {
+              "median": 1.8259,
+              "p95": 2.1412
+            }
+          },
+          "sha256": "6d71766b53996b3536ec4b3d3e7c89e3e10081d0401ddf832f8e6ea1ac6333c1"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.575488,
+              "p95": 0.622592
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0457
+            },
+            "cpuRecord": {
+              "median": 0.2263,
+              "p95": 0.3045
+            },
+            "depth": {
+              "median": 0.013312,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.690752,
+              "p95": 0.739136
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000384
+            },
+            "queryResolve": {
+              "median": 0.051648,
+              "p95": 0.05328
+            },
+            "renderWall": {
+              "median": 1.8243,
+              "p95": 2.2944
+            }
+          },
+          "sha256": "b89d9dc0c21bc545d761d2231d3dbc2a068b613aecad59c895bec4389ce9eebb"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.577536,
+              "p95": 0.623616
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0479
+            },
+            "cpuRecord": {
+              "median": 0.2254,
+              "p95": 0.2992
+            },
+            "depth": {
+              "median": 0.013312,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.692032,
+              "p95": 0.7368
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.000192
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.000384
+            },
+            "queryResolve": {
+              "median": 0.051296,
+              "p95": 0.053536
+            },
+            "renderWall": {
+              "median": 1.8547,
+              "p95": 2.0593
+            }
+          },
+          "sha256": "3d6ea214499b4c755fd79003c688e91b467a8406788bc0b3e747149742bb58da"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.57856,
+          "minimum": 0.575488,
+          "maximum": 0.586752,
+          "medianP95": 0.631808
+        },
+        "cpuCull": {
+          "median": 0.0375,
+          "minimum": 0.0373,
+          "maximum": 0.0377,
+          "medianP95": 0.0479
+        },
+        "cpuRecord": {
+          "median": 0.2256,
+          "minimum": 0.2253,
+          "maximum": 0.2277,
+          "medianP95": 0.305
+        },
+        "depth": {
+          "median": 0.013312,
+          "minimum": 0.013312,
+          "maximum": 0.013312,
+          "medianP95": 0.014336
+        },
+        "gpuTotal": {
+          "median": 0.6928,
+          "minimum": 0.690752,
+          "maximum": 0.703424,
+          "medianP95": 0.74544
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.000192
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.000384
+        },
+        "queryResolve": {
+          "median": 0.051488,
+          "minimum": 0.051296,
+          "maximum": 0.05408,
+          "medianP95": 0.053536
+        },
+        "renderWall": {
+          "median": 1.8259,
+          "minimum": 1.8159,
+          "maximum": 1.8547,
+          "medianP95": 2.179
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Plaza",
+      "topic": "33_SoftwareOcclusion",
+      "mode": "software",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.666624,
+              "p95": 0.72704
+            },
+            "cpuCull": {
+              "median": 1.2203,
+              "p95": 1.4704
+            },
+            "cpuRecord": {
+              "median": 0.1441,
+              "p95": 0.2027
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.786976,
+              "p95": 0.839968
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 3.0195,
+              "p95": 3.7668
+            }
+          },
+          "sha256": "8b34603d9c4e0939e51d62d86d1b7ba8fa56cf01077c09eb3cdd3f7a852994da"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.681984,
+              "p95": 0.7424
+            },
+            "cpuCull": {
+              "median": 1.2011,
+              "p95": 1.4225
+            },
+            "cpuRecord": {
+              "median": 0.1416,
+              "p95": 0.2014
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.79744,
+              "p95": 0.825152
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 3.0054,
+              "p95": 3.2853
+            }
+          },
+          "sha256": "577e38bc617590dbe9e38eec2d93b87c5703d8bda4a13e597bb20f6ca0d82c92"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.674816,
+              "p95": 0.733184
+            },
+            "cpuCull": {
+              "median": 1.2108,
+              "p95": 1.4515
+            },
+            "cpuRecord": {
+              "median": 0.1429,
+              "p95": 0.2032
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.790464,
+              "p95": 0.822304
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.9987,
+              "p95": 3.5282
+            }
+          },
+          "sha256": "bb32c704bfc0adfa48166738b1001a52b25e2bae123c3db047fda65b9d0eb569"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.668672,
+              "p95": 0.70656
+            },
+            "cpuCull": {
+              "median": 1.2171,
+              "p95": 1.4431
+            },
+            "cpuRecord": {
+              "median": 0.1425,
+              "p95": 0.2023
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.787648,
+              "p95": 0.831328
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 2.9961,
+              "p95": 3.5789
+            }
+          },
+          "sha256": "bd3dc0edc7d75cccd2c24aeb6770523deb995d0c36550b324962df48275b7669"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.664576,
+              "p95": 0.6912
+            },
+            "cpuCull": {
+              "median": 1.2019,
+              "p95": 1.4086
+            },
+            "cpuRecord": {
+              "median": 0.1423,
+              "p95": 0.1964
+            },
+            "depth": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "gpuTotal": {
+              "median": 0.784736,
+              "p95": 0.813632
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 3.0032,
+              "p95": 3.2329
+            }
+          },
+          "sha256": "543e360e14c9230c8a2a9a7fcfa2479695620754c3d46238648bc6c20803b886"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.668672,
+          "minimum": 0.664576,
+          "maximum": 0.681984,
+          "medianP95": 0.72704
+        },
+        "cpuCull": {
+          "median": 1.2108,
+          "minimum": 1.2011,
+          "maximum": 1.2203,
+          "medianP95": 1.4431
+        },
+        "cpuRecord": {
+          "median": 0.1425,
+          "minimum": 0.1416,
+          "maximum": 0.1441,
+          "medianP95": 0.2023
+        },
+        "depth": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "gpuTotal": {
+          "median": 0.787648,
+          "minimum": 0.784736,
+          "maximum": 0.79744,
+          "medianP95": 0.825152
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 3.0032,
+          "minimum": 2.9961,
+          "maximum": 3.0195,
+          "medianP95": 3.5282
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Plaza",
+      "topic": "34_HiZOcclusion",
+      "mode": "depth-only",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.723968,
+              "p95": 0.739328
+            },
+            "cpuCull": {
+              "median": 0.0385,
+              "p95": 0.0582
+            },
+            "cpuRecord": {
+              "median": 0.1623,
+              "p95": 0.2545
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.78384,
+              "p95": 0.800192
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7951,
+              "p95": 2.0927
+            }
+          },
+          "sha256": "6727a18911910e5dae425c4d5f713c92b57b85f3b9b0549caf7a8204d259037c"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.720896,
+              "p95": 0.743424
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.0549
+            },
+            "cpuRecord": {
+              "median": 0.1602,
+              "p95": 0.2448
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.78128,
+              "p95": 0.805248
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7984,
+              "p95": 2.1759
+            }
+          },
+          "sha256": "7cdcf795f348d066430595d7d0e4f2e134a52659b76d8cd66864352d3b09508e"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.726016,
+              "p95": 0.748544
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0522
+            },
+            "cpuRecord": {
+              "median": 0.1579,
+              "p95": 0.2213
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.786464,
+              "p95": 0.811904
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.7957,
+              "p95": 2.5163
+            }
+          },
+          "sha256": "0e3fb26f59438cce00d0c5211783acd5d700b001e29288dc85496c9a55928b54"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.731136,
+              "p95": 0.822272
+            },
+            "cpuCull": {
+              "median": 0.0377,
+              "p95": 0.0474
+            },
+            "cpuRecord": {
+              "median": 0.1586,
+              "p95": 0.2225
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.016384
+            },
+            "gpuTotal": {
+              "median": 0.791744,
+              "p95": 0.892096
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.823,
+              "p95": 2.5416
+            }
+          },
+          "sha256": "23137dfdfa780ee2a542b778263b0b3d95fb2c37d0f1732408f5b7916efbafec"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.723968,
+              "p95": 0.763904
+            },
+            "cpuCull": {
+              "median": 0.0376,
+              "p95": 0.0651
+            },
+            "cpuRecord": {
+              "median": 0.1588,
+              "p95": 0.2829
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.784608,
+              "p95": 0.826016
+            },
+            "hizBuild": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "hizTest": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.8093,
+              "p95": 2.4858
+            }
+          },
+          "sha256": "b7b48c46dcb7e8eef3efeecd457faef338937475695f5592b9561e9cd27049fc"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.723968,
+          "minimum": 0.720896,
+          "maximum": 0.731136,
+          "medianP95": 0.748544
+        },
+        "cpuCull": {
+          "median": 0.0376,
+          "minimum": 0.0375,
+          "maximum": 0.0385,
+          "medianP95": 0.0549
+        },
+        "cpuRecord": {
+          "median": 0.1588,
+          "minimum": 0.1579,
+          "maximum": 0.1623,
+          "medianP95": 0.2448
+        },
+        "depth": {
+          "median": 0.014336,
+          "minimum": 0.014336,
+          "maximum": 0.014336,
+          "medianP95": 0.01536
+        },
+        "gpuTotal": {
+          "median": 0.784608,
+          "minimum": 0.78128,
+          "maximum": 0.791744,
+          "medianP95": 0.811904
+        },
+        "hizBuild": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "hizTest": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.7984,
+          "minimum": 1.7951,
+          "maximum": 1.823,
+          "medianP95": 2.4858
+        }
+      }
+    },
+    {
+      "api": "Vulkan",
+      "camera": "Plaza",
+      "topic": "34_HiZOcclusion",
+      "mode": "hiz",
+      "runs": [
+        {
+          "repeat": 1,
+          "metrics": {
+            "color": {
+              "median": 0.717824,
+              "p95": 0.754688
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.0476
+            },
+            "cpuRecord": {
+              "median": 0.1878,
+              "p95": 0.25
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.857504,
+              "p95": 0.902464
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.006176,
+              "p95": 0.006656
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.9527,
+              "p95": 2.6264
+            }
+          },
+          "sha256": "8aa7c1242f605060ad4231ef93ad935cdc5ff00e607e3528a908fccb6d17c818"
+        },
+        {
+          "repeat": 2,
+          "metrics": {
+            "color": {
+              "median": 0.712704,
+              "p95": 0.74752
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.0479
+            },
+            "cpuRecord": {
+              "median": 0.1857,
+              "p95": 0.2526
+            },
+            "depth": {
+              "median": 0.013312,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.852224,
+              "p95": 0.91584
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.006176,
+              "p95": 0.006688
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.9434,
+              "p95": 2.7327
+            }
+          },
+          "sha256": "659a40ec7cf6fadad14ac4fdba4de093e235ae76c191cd0f24d1b809a497853f"
+        },
+        {
+          "repeat": 3,
+          "metrics": {
+            "color": {
+              "median": 0.71168,
+              "p95": 0.736256
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.0471
+            },
+            "cpuRecord": {
+              "median": 0.1849,
+              "p95": 0.2507
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.851744,
+              "p95": 0.879904
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.00624,
+              "p95": 0.006752
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.9254,
+              "p95": 2.4679
+            }
+          },
+          "sha256": "58615830367324f4d50c8107c545b2a64e758feaa7ccde63819023548143cdd4"
+        },
+        {
+          "repeat": 4,
+          "metrics": {
+            "color": {
+              "median": 0.7168,
+              "p95": 0.741376
+            },
+            "cpuCull": {
+              "median": 0.0374,
+              "p95": 0.0439
+            },
+            "cpuRecord": {
+              "median": 0.1839,
+              "p95": 0.2402
+            },
+            "depth": {
+              "median": 0.014336,
+              "p95": 0.01536
+            },
+            "gpuTotal": {
+              "median": 0.85648,
+              "p95": 0.885824
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.006208,
+              "p95": 0.006688
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.9376,
+              "p95": 2.3659
+            }
+          },
+          "sha256": "503155234005168884dc9c996e40007c08f4e6cbcf5b22a012ca26f45ec51aaa"
+        },
+        {
+          "repeat": 5,
+          "metrics": {
+            "color": {
+              "median": 0.714752,
+              "p95": 0.73216
+            },
+            "cpuCull": {
+              "median": 0.0375,
+              "p95": 0.0462
+            },
+            "cpuRecord": {
+              "median": 0.1841,
+              "p95": 0.2493
+            },
+            "depth": {
+              "median": 0.013312,
+              "p95": 0.014336
+            },
+            "gpuTotal": {
+              "median": 0.853888,
+              "p95": 0.878624
+            },
+            "hizBuild": {
+              "median": 0.069632,
+              "p95": 0.070656
+            },
+            "hizTest": {
+              "median": 0.006272,
+              "p95": 0.006784
+            },
+            "queryResolve": {
+              "median": 0.0,
+              "p95": 0.0
+            },
+            "renderWall": {
+              "median": 1.9299,
+              "p95": 2.2631
+            }
+          },
+          "sha256": "701bffa171661a67b292de3af3ce7a438fa3b1c80fb60165d385f2901aecec13"
+        }
+      ],
+      "metrics": {
+        "color": {
+          "median": 0.714752,
+          "minimum": 0.71168,
+          "maximum": 0.717824,
+          "medianP95": 0.741376
+        },
+        "cpuCull": {
+          "median": 0.0374,
+          "minimum": 0.0374,
+          "maximum": 0.0375,
+          "medianP95": 0.0471
+        },
+        "cpuRecord": {
+          "median": 0.1849,
+          "minimum": 0.1839,
+          "maximum": 0.1878,
+          "medianP95": 0.25
+        },
+        "depth": {
+          "median": 0.014336,
+          "minimum": 0.013312,
+          "maximum": 0.014336,
+          "medianP95": 0.01536
+        },
+        "gpuTotal": {
+          "median": 0.853888,
+          "minimum": 0.851744,
+          "maximum": 0.857504,
+          "medianP95": 0.885824
+        },
+        "hizBuild": {
+          "median": 0.069632,
+          "minimum": 0.069632,
+          "maximum": 0.069632,
+          "medianP95": 0.070656
+        },
+        "hizTest": {
+          "median": 0.006208,
+          "minimum": 0.006176,
+          "maximum": 0.006272,
+          "medianP95": 0.006688
+        },
+        "queryResolve": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "medianP95": 0.0
+        },
+        "renderWall": {
+          "median": 1.9376,
+          "minimum": 1.9254,
+          "maximum": 1.9527,
+          "medianP95": 2.4679
+        }
+      }
+    }
+  ]
+}

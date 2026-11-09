@@ -85,6 +85,7 @@ void ParseOptions(Options &options)
                 continue;
             }
             if (argument == L"--test-camera") { options.testCamera = true; continue; }
+            if (argument == L"--culling-freeze") { options.cullingFreeze = true; continue; }
             if (argument == L"--cg-force-unsupported") { options.clusterForceUnsupported = true; continue; }
             if (argument == L"--test-character") { options.testCharacter = true; continue; }
             if (argument == L"--pause-animation") { options.pauseAnimation = true; continue; }
@@ -242,6 +243,24 @@ void ParseOptions(Options &options)
                 if(argument==L"--animation-time")options.animationTime=v;else options.animationSpeed=v;
             }
             else if (argument == L"--render-path") options.meshRenderPath = value;
+            else if (argument == L"--culling") options.culling = value;
+            else if (argument == L"--culling-view") options.cullingView = value;
+            else if (argument == L"--culling-scene") options.cullingScene = value;
+            else if (argument == L"--culling-object-x") {
+                size_t n=0;float v=std::stof(value,&n);
+                if(n!=value.size() || !std::isfinite(v) || v < -4 || v>4)throw std::runtime_error("--culling-object-x: -4..4");
+                options.cullingObjectOffset=v;
+            }
+            else if (argument == L"--culling-door") {
+                size_t n=0;float v=std::stof(value,&n);
+                if(n!=value.size() || !std::isfinite(v) || v<0 || v>2.5f)throw std::runtime_error("--culling-door: 0..2.5");
+                options.occluderOffset=v;
+            }
+            else if (argument == L"--culling-divisor" || argument == L"--culling-mip") {
+                size_t n=0; auto v=std::stoul(value,&n);
+                if(n!=value.size() || value.empty() || value.front()==L'-' || v>16) throw std::runtime_error("Invalid culling parameter");
+                if(argument==L"--culling-divisor")options.cullingDivisor=uint32_t(v);else options.cullingMip=uint32_t(v);
+            }
             else if (argument == L"--meshlet-culling") options.meshCulling = value;
             else if (argument == L"--meshlet-view") options.meshView = value;
             else if (argument == L"--mesh-test-scene") options.meshTestScene = value;

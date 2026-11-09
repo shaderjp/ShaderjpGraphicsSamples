@@ -33,6 +33,9 @@ struct Options
     std::wstring sunShadow = L"rayquery";
     uint32_t shadowPointLights = 8;
     std::wstring meshRenderPath, meshCulling, meshView;
+    std::wstring culling, cullingView, cullingScene;
+    uint32_t cullingDivisor = 4, cullingMip = 0;
+    bool cullingFreeze = false;
     std::wstring meshTestScene;
     std::wstring rayTestScene;
     std::wstring ptScene = L"room", ptSampling = L"mis";
@@ -63,6 +66,7 @@ struct Options
     std::wstring binding = L"textures", galleryPreset = L"Standard", galleryView = L"final";
     uint32_t galleryObjects = 0, galleryMaterials = 0;
     bool galleryGpuDriven = false;
+    float cullingObjectOffset = 0;
 };
 
 // Only the application lifecycle is shared; graphics resources belong to each sample.

@@ -432,3 +432,13 @@ VS 2026 Community 18.10.12201.205、v145／MSVC 19.51.36257.0、Windows SDK 10.0
 Releaseは他の検証プロセスを終了後、60フレーム準備＋1,200フレームを5反復しました。室内／広場・両API・7モード、計140ラン・168,000計測フレームを保存し、中央値・p95を元データと照合しています。室内ではQueryによるGPU時間短縮、広場ではHi-Zの追加費用、CPU Softwareでは単一スレッド判定の費用を確認しました。動的クロックによる反復の幅と、GPU完了待ちを含むOnRenderの測定範囲も明記しています。
 
 [共通解説](TraditionalCulling.md)、[実機検証記録](CullingVerification.md)、[数値結果](CullingResults.json)、[環境](CullingEnvironment.json)、[画像ハッシュ](CullingCaptures.json)、[性能比較表](Measurements/Culling/Summary.md)を参照してください。
+
+## 基本35・36 深度精度とShadow Map（2026-11-10）
+
+Direct3D12／Vulkanへ、DepthPrecisionとShadowDepthの独立した4プロジェクトを追加しました。通常Z／Reverse-Z、D16／D24／D32、無限遠、平行投影、方向光／スポットライト、投影深度／明示的な線形深度を、日本語UI、連動する画像・グラフ、実GPUの読戻しで比較します。日本語の共通2記事とAPI別4記事、1920×1080の実GPU画像26枚を収録しました。
+
+NuGet Restore、全117プロジェクト（114 APIアプリ＋3 Support）のx64 Debug／Releaseビルド、project／filtersのXML対応、SPIR-V検証が成功しました。新4アプリの両構成88条件のGPU・UI・不正入力試験と8条件のライフサイクル試験、CPUの深度変換・精度試験、既存Loader／09 ImGuiの関連回帰を通過し、Debugのグラフィックス検証エラーは0件です。
+
+実測環境はWindows 11 Pro 10.0.26300、VS 2026 Community 18.10.12201.205、v145／MSVC 19.51.36257、Windows SDK 10.0.26100.0、Agility 1.620.1、D3D12 DXC 1.9.2609.5、Vulkan SDK 1.4.341.1／付属DXC 1.9.0.5180、RTX 4070／NVIDIA 621.01です。NVIDIA記事の投影・精度の説明と、現在のclip control拡張の扱いを区別し、Shadow Mapが常に線形であるという誤解も整理しました。
+
+[深度の入門記事](DepthPrecision.md)、[Shadow Mapの深度](ShadowDepth.md)、[検証範囲と実測値](DepthVerification.md)、[数値結果](DepthResults.json)、[環境](DepthEnvironment.json)、[撮影条件と画像ハッシュ](DepthCaptures.json)を参照してください。

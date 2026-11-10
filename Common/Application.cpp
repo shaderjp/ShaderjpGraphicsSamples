@@ -122,6 +122,7 @@ void ParseOptions(Options &options)
             std::wstring value = arguments[++i];
             if (argument == L"--model")
                 options.model = std::filesystem::absolute(value);
+            else if (argument.starts_with(L"--depth-")) options.depthOptions.emplace_back(argument, value);
             else if (argument == L"--cg-mode") options.clusterMode = value;
             else if (argument == L"--cg-view") options.clusterView = value;
             else if (argument == L"--cg-partition") options.clusterPartition = value;

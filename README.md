@@ -1,6 +1,6 @@
 # Shader.jp Graphics Samples
 
-[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編34テーマ＋発展編23テーマ、D3D12 57本・Vulkan 53本、計110本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
+[Shader.jp](https://shader.jp/)のDirect3D12／Vulkanチュートリアル用サンプルです。**基本編36テーマ＋発展編23テーマ、D3D12 59本・Vulkan 55本、計114本の独立した実行プロジェクト**を収録しています。共通HLSLからDXILとSPIR-Vを生成し、API処理を各プロジェクトで追える構成にしています。
 
 基本編は初期化からPBR・IBL・Shadow・Compute・Deferred・Visibility Buffer・GPUスキニングへ、発展編はレイトレーシングとMesh Shader・GPU Driven Renderingへ進みます。収録内容は[基本編一覧](#基本編サンプル一覧)と[発展編一覧](#発展編サンプル一覧)から参照できます。
 
@@ -86,6 +86,10 @@ msbuild Samples\Direct3D12\02_Triangle\Direct3D12_02_Triangle.vcxproj -p:Configu
 | オクルージョンクエリ | [32 OcclusionQueries](Docs/Direct3D12/32_OcclusionQueries.md) | [32 OcclusionQueries](Docs/Vulkan/32_OcclusionQueries.md) |
 | CPUソフトウェア遮蔽判定 | [33 SoftwareOcclusion](Docs/Direct3D12/33_SoftwareOcclusion.md) | [33 SoftwareOcclusion](Docs/Vulkan/33_SoftwareOcclusion.md) |
 | Compute Hi-Z遮蔽判定 | [34 HiZOcclusion](Docs/Direct3D12/34_HiZOcclusion.md) | [34 HiZOcclusion](Docs/Vulkan/34_HiZOcclusion.md) |
+| 深度の可視化・精度・Reverse-Z | [35 DepthPrecision](Docs/Direct3D12/35_DepthPrecision.md) | [35 DepthPrecision](Docs/Vulkan/35_DepthPrecision.md) |
+| 方向光／スポット光・投影深度／線形深度 | [36 ShadowDepth](Docs/Direct3D12/36_ShadowDepth.md) | [36 ShadowDepth](Docs/Vulkan/36_ShadowDepth.md) |
+
+[深度バッファの入門記事](Docs/DepthPrecision.md)と[Shadow Mapの深度](Docs/ShadowDepth.md)では、日本語UI・連動する画像とグラフ・GPUの数値読戻しを使って学びます。第04回から35へ、第13回から36へ進めます。35／36は実験条件を比較する固定カメラを使い、通常のWASD操作はありません。
 
 [伝統的なカリングの共通解説](Docs/TraditionalCulling.md)は、通常のIndexed Drawから視錐台・遮蔽判定を学ぶ4回です。31〜34の後に発展05・06へ進む読み順も選べます。
 

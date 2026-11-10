@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ADFB2489-696F-49D3-AA8C-F63A4D47E942}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>Direct3D12_35_DepthPrecision</ProjectName>
+    <RootNamespace>Direct3D12_35_DepthPrecision</RootNamespace>
+    <GraphicsApi>Direct3D12</GraphicsApi>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <SampleClientWidth>1920</SampleClientWidth>
+    <SampleClientHeight>1080</SampleClientHeight>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\..\Build\Common.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\imgui;$(RepositoryRoot)ThirdParty\imgui\backends;$(RepositoryRoot)ThirdParty\nlohmann-json\single_include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\..\Build\Samples.targets" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>DEPTH_SAMPLE=35;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(RepositoryRoot)ThirdParty\imgui;$(RepositoryRoot)ThirdParty\imgui\backends;$(RepositoryRoot)ThirdParty\nlohmann-json\single_include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sample.cpp" />
+    <ClCompile Include="ImGuiRenderer.cpp" />
+    <ClCompile Include="..\..\..\Common\Application.cpp" />
+    <ClCompile Include="..\..\..\Common\Image.cpp" />
+    <ClInclude Include="Sample.h" />
+    <ClInclude Include="..\..\..\Common\Application.h" />
+    <ClInclude Include="..\..\..\Common\Image.h" />
+    <ClInclude Include="..\..\Shared\DepthMath.h" />
+    <ClInclude Include="..\..\Shared\DepthData.h" />
+    <ClInclude Include="..\..\Shared\DepthPanel.h" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.cpp" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imconfig.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\..\..\ThirdParty\imgui\backends\imgui_impl_win32.h" />
+    <ClInclude Include="..\..\..\ThirdParty\nlohmann-json\single_include\nlohmann\json.hpp" />
+    <None Include="..\..\..\Build\Common.props" />
+    <None Include="..\..\..\Build\Samples.targets" />
+    <None Include="..\..\..\ThirdParty\imgui\LICENSE.txt">
+      <AssetTargetPath>Licenses\imgui-LICENSE.txt</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\ThirdParty\nlohmann-json\LICENSE.MIT">
+      <AssetTargetPath>Licenses\nlohmann-json-LICENSE.MIT</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\ThirdParty\BIZUDGothic\OFL.txt">
+      <AssetTargetPath>Licenses\BIZUDGothic-OFL.txt</AssetTargetPath>
+    </None>
+    <None Include="..\..\..\ThirdParty\BIZUDGothic\fonts\ttf\BIZUDGothic-Regular.ttf">
+      <AssetTargetPath>Assets\Fonts\BIZUDGothic-Regular.ttf</AssetTargetPath>
+    </None>
+    <None Include="packages.config" />
+    <ClInclude Include="..\..\..\Shaders\Common.hlsli" />
+    <ClInclude Include="..\..\..\Shaders\Depth\Depth.hlsli" />
+    <ClInclude Include="..\..\..\Shaders\09_ImGui\Ui.hlsli" />
+    <CustomBuild Include="..\..\..\Shaders\Depth\DepthVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Depth\Depth.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Depth\DepthPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Depth\Depth.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Depth\ShadowLinear.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Depth\Depth.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Depth\DepthFullscreen.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Depth\Depth.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\Depth\DepthDisplay.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Depth\Depth.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiVertex.hlsl">
+      <ShaderProfile>vs_6_6</ShaderProfile>
+      <ShaderEntry>VSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T vs_6_6 -E VSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Depth\Depth.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Shaders\09_ImGui\ImGuiPixel.hlsl">
+      <ShaderProfile>ps_6_6</ShaderProfile>
+      <ShaderEntry>PSMain</ShaderEntry>
+      <Command>"$(DxcToolPath)" -nologo -HV 2021 -Zpr -WX -T ps_6_6 -E PSMain $(ShaderApiFlags) $(ShaderBuildFlags) -Fo "$(OutDir)Shaders\%(Filename).$(ShaderExtension)" "%(FullPath)"</Command>
+      <AdditionalInputs>$(RepositoryRoot)Shaders\Depth\Depth.hlsli;$(RepositoryRoot)Shaders\09_ImGui\Ui.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Tools\TestDepth.ps1" />
+    <None Include="..\..\..\Tools\TestDepthCpu.ps1" />
+    <None Include="..\..\..\Tests\DepthTests.cpp" />
+    <None Include="..\..\..\Tests\DepthGpuTests.py" />
+  </ItemGroup>
+</Project>

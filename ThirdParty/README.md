@@ -21,3 +21,7 @@ Agility SDK／D3D12用DXCはNuGet、Vulkan／Vulkan用DXCはVulkan SDKで管理�
 取得は`git submodule update --init --recursive`です。バージョン更新時は対象タグのコミット・ライセンス・バックエンドAPIを確認してcheckoutし、親リポジトリへgitlinkを記録したうえで09のDebug／Releaseと`Tools/TestImGui.ps1`を検証します。
 
 制作検証用のKhronos glTF-Validatorは固定リリースを`.cache`に取得し、配布サンプルのランタイム依存とは分けています。
+
+## 日本語UI用 BIZ UDゴシック
+
+基本35／36は[BIZ UD Gothic v1.051](https://github.com/googlefonts/morisawa-biz-ud-gothic/tree/v1.051)をBIZUDGothicへSubmoduleとして追加し、コミット18934af56b9c003ca58c54bffbf226848cb11032に固定しています。vendorのファイルは変更せず、Regular TTFとSIL OFL 1.1のOFL.txtを実行ファイルのAssets/FontsとLicensesへ配置します。静的なImGuiフォントアトラスに日本語グリフを収録するため、実行PCの日本語フォントへの依存はありません。

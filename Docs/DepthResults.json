@@ -1,0 +1,765 @@
+{
+  "date": "2026-11-10",
+  "normalCaseCount": 88,
+  "documentationCaseCount": 22,
+  "lifecycleCaseCount": 8,
+  "uiCaseOrder": [
+    "35_DepthPrecision",
+    "36_ShadowDepth"
+  ],
+  "results": {
+    "Debug": [
+      {
+        "api": "Direct3D12",
+        "case": "mapping-d32",
+        "coverage": 32578,
+        "max_depth_error_0": 1.347147545738281e-07,
+        "max_depth_error_1": 3.3560568733770335e-09
+      },
+      {
+        "api": "Direct3D12",
+        "case": "precision-d16",
+        "coverage": 8787,
+        "max_depth_error_0": 7.62345258165098e-06,
+        "max_depth_error_1": 8.557936130848532e-06,
+        "centre_ids": [
+          10,
+          10
+        ]
+      },
+      {
+        "api": "Direct3D12",
+        "case": "precision-d24",
+        "coverage": 8787,
+        "max_depth_error_0": 8.75315415704847e-08,
+        "max_depth_error_1": 2.9742974662718726e-08,
+        "centre_ids": [
+          10,
+          10
+        ]
+      },
+      {
+        "api": "Direct3D12",
+        "case": "precision-d32",
+        "coverage": 8787,
+        "max_depth_error_0": 8.75315415704847e-08,
+        "max_depth_error_1": 3.037225756541504e-11,
+        "standard_wrong_near_fraction": 0.7665770609318996,
+        "centre_ids": [
+          10,
+          11
+        ]
+      },
+      {
+        "api": "Direct3D12",
+        "case": "orthographic-d32",
+        "coverage": 3303,
+        "max_depth_error_0": 8.217235425433955e-08,
+        "max_depth_error_1": 1.2311369290696206e-07
+      },
+      {
+        "api": "Direct3D12",
+        "case": "infinite-d32",
+        "coverage": 8787,
+        "max_depth_error_0": 8.582536914492067e-08,
+        "max_depth_error_1": 3.2590380277829935e-11
+      },
+      {
+        "api": "Direct3D12",
+        "case": "directional",
+        "coverage": 10718,
+        "shadow_depth_error": 1.1920928955078125e-07,
+        "shadow_encoding_different_pixels": 0,
+        "pcf_changed_pixels": 628
+      },
+      {
+        "api": "Direct3D12",
+        "case": "directional-projected",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "directional-linear",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "spot",
+        "coverage": 10718,
+        "shadow_depth_error": 1.406533080006156e-07,
+        "shadow_encoding_different_pixels": 0,
+        "pcf_changed_pixels": 395
+      },
+      {
+        "api": "Direct3D12",
+        "case": "spot-projected",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "spot-linear",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "low-resolution",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "ui",
+        "coverage": 130179,
+        "ui": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "ui",
+        "coverage": 42871,
+        "ui": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "near-zero",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "nan",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "equal-range",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "ortho-infinite",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "unknown",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "fractional-resolution",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "bad-light",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "mapping",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "near",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "precision",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "infinite",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "orthographic",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "spacing",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "toy",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "directional",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "spot",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "bias",
+        "documentation": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "resolution",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "mapping-d32",
+        "coverage": 32578,
+        "max_depth_error_0": 1.347147545738281e-07,
+        "max_depth_error_1": 3.3560568733770335e-09
+      },
+      {
+        "api": "Vulkan",
+        "case": "precision-d16",
+        "coverage": 8787,
+        "max_depth_error_0": 7.62345258165098e-06,
+        "max_depth_error_1": 8.557936130848532e-06,
+        "centre_ids": [
+          10,
+          10
+        ]
+      },
+      {
+        "api": "Vulkan",
+        "case": "precision-d24",
+        "coverage": 8787,
+        "max_depth_error_0": 8.75315415704847e-08,
+        "max_depth_error_1": 2.9742974662718726e-08,
+        "centre_ids": [
+          10,
+          10
+        ]
+      },
+      {
+        "api": "Vulkan",
+        "case": "precision-d32",
+        "coverage": 8787,
+        "max_depth_error_0": 8.75315415704847e-08,
+        "max_depth_error_1": 3.037225756541504e-11,
+        "standard_wrong_near_fraction": 0.7665770609318996,
+        "centre_ids": [
+          10,
+          11
+        ]
+      },
+      {
+        "api": "Vulkan",
+        "case": "orthographic-d32",
+        "coverage": 3303,
+        "max_depth_error_0": 8.217235425433955e-08,
+        "max_depth_error_1": 1.2311369290696206e-07
+      },
+      {
+        "api": "Vulkan",
+        "case": "infinite-d32",
+        "coverage": 8787,
+        "max_depth_error_0": 8.582536914492067e-08,
+        "max_depth_error_1": 3.2590380277829935e-11
+      },
+      {
+        "api": "Vulkan",
+        "case": "directional",
+        "coverage": 10718,
+        "shadow_depth_error": 1.1920928955078125e-07,
+        "shadow_encoding_different_pixels": 0,
+        "pcf_changed_pixels": 628
+      },
+      {
+        "api": "Vulkan",
+        "case": "directional-projected",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "directional-linear",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "spot",
+        "coverage": 10718,
+        "shadow_depth_error": 1.406533080006156e-07,
+        "shadow_encoding_different_pixels": 0,
+        "pcf_changed_pixels": 395
+      },
+      {
+        "api": "Vulkan",
+        "case": "spot-projected",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "spot-linear",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "low-resolution",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "ui",
+        "coverage": 130179,
+        "ui": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "ui",
+        "coverage": 42871,
+        "ui": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "near-zero",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "nan",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "equal-range",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "ortho-infinite",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "unknown",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "fractional-resolution",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "bad-light",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "mapping",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "near",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "precision",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "infinite",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "orthographic",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "spacing",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "toy",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "directional",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "spot",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "bias",
+        "documentation": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "resolution",
+        "documentation": true
+      }
+    ],
+    "Release": [
+      {
+        "api": "Direct3D12",
+        "case": "mapping-d32",
+        "coverage": 32578,
+        "max_depth_error_0": 1.347147545738281e-07,
+        "max_depth_error_1": 3.3560568733770335e-09
+      },
+      {
+        "api": "Direct3D12",
+        "case": "precision-d16",
+        "coverage": 8787,
+        "max_depth_error_0": 7.62345258165098e-06,
+        "max_depth_error_1": 8.557936130848532e-06,
+        "centre_ids": [
+          10,
+          10
+        ]
+      },
+      {
+        "api": "Direct3D12",
+        "case": "precision-d24",
+        "coverage": 8787,
+        "max_depth_error_0": 8.75315415704847e-08,
+        "max_depth_error_1": 2.9742974662718726e-08,
+        "centre_ids": [
+          10,
+          10
+        ]
+      },
+      {
+        "api": "Direct3D12",
+        "case": "precision-d32",
+        "coverage": 8787,
+        "max_depth_error_0": 8.75315415704847e-08,
+        "max_depth_error_1": 3.037225756541504e-11,
+        "standard_wrong_near_fraction": 0.7665770609318996,
+        "centre_ids": [
+          10,
+          11
+        ]
+      },
+      {
+        "api": "Direct3D12",
+        "case": "orthographic-d32",
+        "coverage": 3303,
+        "max_depth_error_0": 8.217235425433955e-08,
+        "max_depth_error_1": 1.2311369290696206e-07
+      },
+      {
+        "api": "Direct3D12",
+        "case": "infinite-d32",
+        "coverage": 8787,
+        "max_depth_error_0": 8.582536914492067e-08,
+        "max_depth_error_1": 3.2590380277829935e-11
+      },
+      {
+        "api": "Direct3D12",
+        "case": "directional",
+        "coverage": 10718,
+        "shadow_depth_error": 1.1920928955078125e-07,
+        "shadow_encoding_different_pixels": 0,
+        "pcf_changed_pixels": 628
+      },
+      {
+        "api": "Direct3D12",
+        "case": "directional-projected",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "directional-linear",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "spot",
+        "coverage": 10718,
+        "shadow_depth_error": 1.406533080006156e-07,
+        "shadow_encoding_different_pixels": 0,
+        "pcf_changed_pixels": 395
+      },
+      {
+        "api": "Direct3D12",
+        "case": "spot-projected",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "spot-linear",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "low-resolution",
+        "coverage": 10718
+      },
+      {
+        "api": "Direct3D12",
+        "case": "ui",
+        "coverage": 130179,
+        "ui": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "ui",
+        "coverage": 42871,
+        "ui": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "near-zero",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "nan",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "equal-range",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "ortho-infinite",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "unknown",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "fractional-resolution",
+        "rejected": true
+      },
+      {
+        "api": "Direct3D12",
+        "case": "bad-light",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "mapping-d32",
+        "coverage": 32578,
+        "max_depth_error_0": 1.347147545738281e-07,
+        "max_depth_error_1": 3.3560568733770335e-09
+      },
+      {
+        "api": "Vulkan",
+        "case": "precision-d16",
+        "coverage": 8787,
+        "max_depth_error_0": 7.62345258165098e-06,
+        "max_depth_error_1": 8.557936130848532e-06,
+        "centre_ids": [
+          10,
+          10
+        ]
+      },
+      {
+        "api": "Vulkan",
+        "case": "precision-d24",
+        "coverage": 8787,
+        "max_depth_error_0": 8.75315415704847e-08,
+        "max_depth_error_1": 2.9742974662718726e-08,
+        "centre_ids": [
+          10,
+          10
+        ]
+      },
+      {
+        "api": "Vulkan",
+        "case": "precision-d32",
+        "coverage": 8787,
+        "max_depth_error_0": 8.75315415704847e-08,
+        "max_depth_error_1": 3.037225756541504e-11,
+        "standard_wrong_near_fraction": 0.7665770609318996,
+        "centre_ids": [
+          10,
+          11
+        ]
+      },
+      {
+        "api": "Vulkan",
+        "case": "orthographic-d32",
+        "coverage": 3303,
+        "max_depth_error_0": 8.217235425433955e-08,
+        "max_depth_error_1": 1.2311369290696206e-07
+      },
+      {
+        "api": "Vulkan",
+        "case": "infinite-d32",
+        "coverage": 8787,
+        "max_depth_error_0": 8.582536914492067e-08,
+        "max_depth_error_1": 3.2590380277829935e-11
+      },
+      {
+        "api": "Vulkan",
+        "case": "directional",
+        "coverage": 10718,
+        "shadow_depth_error": 1.1920928955078125e-07,
+        "shadow_encoding_different_pixels": 0,
+        "pcf_changed_pixels": 628
+      },
+      {
+        "api": "Vulkan",
+        "case": "directional-projected",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "directional-linear",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "spot",
+        "coverage": 10718,
+        "shadow_depth_error": 1.406533080006156e-07,
+        "shadow_encoding_different_pixels": 0,
+        "pcf_changed_pixels": 395
+      },
+      {
+        "api": "Vulkan",
+        "case": "spot-projected",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "spot-linear",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "low-resolution",
+        "coverage": 10718
+      },
+      {
+        "api": "Vulkan",
+        "case": "ui",
+        "coverage": 130179,
+        "ui": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "ui",
+        "coverage": 42871,
+        "ui": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "near-zero",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "nan",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "equal-range",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "ortho-infinite",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "unknown",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "fractional-resolution",
+        "rejected": true
+      },
+      {
+        "api": "Vulkan",
+        "case": "bad-light",
+        "rejected": true
+      }
+    ]
+  },
+  "lifecycle": [
+    {
+      "configuration": "Debug",
+      "api": "Direct3D12",
+      "sample": "35_DepthPrecision",
+      "sha256": "f57e2e460aeebdece629eea0565aa2492384f74b3faaec5cac1bbded13277912",
+      "passed": true
+    },
+    {
+      "configuration": "Debug",
+      "api": "Direct3D12",
+      "sample": "36_ShadowDepth",
+      "sha256": "8c127608904948ff4230dc796e49fc22d6708b06c673b33bac115cafebe917a4",
+      "passed": true
+    },
+    {
+      "configuration": "Debug",
+      "api": "Vulkan",
+      "sample": "35_DepthPrecision",
+      "sha256": "2ce142491f8ff69b646f60f815e6c5806a50e9b7d550012bbccf8364b78f1a25",
+      "passed": true
+    },
+    {
+      "configuration": "Debug",
+      "api": "Vulkan",
+      "sample": "36_ShadowDepth",
+      "sha256": "f2d46217594876dc467f74782f7c1d6a6074582199e347c87572993a7be25a1a",
+      "passed": true
+    },
+    {
+      "configuration": "Release",
+      "api": "Direct3D12",
+      "sample": "35_DepthPrecision",
+      "sha256": "2e0864d2e4986eba9de79c7267c6afb276fef2d34189c93d7c1126ce219d4131",
+      "passed": true
+    },
+    {
+      "configuration": "Release",
+      "api": "Direct3D12",
+      "sample": "36_ShadowDepth",
+      "sha256": "f8266d4620ea42b4a789756ae43db82e07fc4ac53f76081fbee3d97102b98bdb",
+      "passed": true
+    },
+    {
+      "configuration": "Release",
+      "api": "Vulkan",
+      "sample": "35_DepthPrecision",
+      "sha256": "2220d8c72f23f46b8db245b14a74e2d509a2f5fb974ad0580e89cdc78539547c",
+      "passed": true
+    },
+    {
+      "configuration": "Release",
+      "api": "Vulkan",
+      "sample": "36_ShadowDepth",
+      "sha256": "86384494f414437d96c8dd7a0bf36234c3c235481ab4322cb2924b0f8c0d0b39",
+      "passed": true
+    }
+  ],
+  "tolerances": {
+    "d16": 3.0518043793392844e-05,
+    "d24": 2.3841859331241806e-07,
+    "d32": 4e-07,
+    "shadowDepth": 5e-07,
+    "shadowRgbThreshold": 2,
+    "shadowDifferenceFraction": 0.002
+  },
+  "note": "Depth errors compare sampled GPU d against float64 formulae applied to GPU float32 view z, not pure storage quantization errors. No performance claim."
+}

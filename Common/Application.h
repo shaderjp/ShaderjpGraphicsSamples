@@ -9,6 +9,7 @@
 #include <filesystem>
 #include <string>
 #include <vector>
+#include <utility>
 #include <windows.h>
 
 namespace tutorial
@@ -20,6 +21,8 @@ struct Options
     uint32_t clientWidthOverride = 0, clientHeightOverride = 0;
     bool testWindow = false, testCamera = false, testCharacter = false;
     std::wstring shading; // Sample 07/08 choose their supported display modes.
+    // Sample-owned interpretation keeps depth teaching settings out of the Win32 lifecycle.
+    std::vector<std::pair<std::wstring, std::wstring>> depthOptions;
     bool rotateLight = false;
     bool testUi = false; // Sample 09 exercises actual ImGui widgets through queued input.
     std::filesystem::path scene;

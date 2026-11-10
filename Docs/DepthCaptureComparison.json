@@ -1,0 +1,71 @@
+{
+  "region": "Full image below y=76; API title excluded",
+  "comparisons": [
+    {
+      "file": "35_DepthPrecision-infinite.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "35_DepthPrecision-mapping.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "35_DepthPrecision-near.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "35_DepthPrecision-orthographic.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "35_DepthPrecision-precision.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "35_DepthPrecision-spacing.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "35_DepthPrecision-toy.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "35_DepthPrecision.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "36_ShadowDepth-bias.png",
+      "differentPixels": 1,
+      "maxRgbDifference": 12
+    },
+    {
+      "file": "36_ShadowDepth-directional.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "36_ShadowDepth-resolution.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "36_ShadowDepth-spot.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "file": "36_ShadowDepth.png",
+      "differentPixels": 0,
+      "maxRgbDifference": 0
+    }
+  ],
+  "note": "Diagnostic only. Shadow acne at zero bias is sensitive to API arithmetic/rasterization; screenshots are not required to be bit-identical."
+}

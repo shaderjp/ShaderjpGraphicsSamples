@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-10",
+  "os": "Windows 11 Pro 10.0.26300",
+  "cpu": "Intel Core i9-13900F",
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "nvidiaDriver": "621.01",
+  "windowsDriver": "32.0.16.2101",
+  "visualStudio": "Community 2026 18.10.12201.205",
+  "toolset": "v145",
+  "msvc": "19.51.36257",
+  "msvcToolDirectory": "14.51.36231",
+  "windowsSdk": "10.0.26100.0",
+  "cpp": "C++20",
+  "platform": "x64",
+  "agilitySdk": "1.620.1",
+  "sdkExport": 620,
+  "d3dDxc": "1.9.2609.5 (01b62ad47)",
+  "vulkanSdk": "1.4.341.1",
+  "vulkanTarget": "1.3",
+  "vulkanDxc": "1.9.0.5180 (e35541826); DLL 1.10",
+  "spirvTools": "v2026.1-0-gfbe4f3ad",
+  "hlsl": "2021",
+  "shaderModel": "6.6",
+  "matrixPacking": "row-major",
+  "camera": "left-handed, depth 0..1",
+  "imgui": "1.92.9b (f1cc2ae15e53a861a874c3034aae6798fde194ab)",
+  "font": "BIZ UD Gothic v1.051 (18934af56b9c003ca58c54bffbf226848cb11032)",
+  "numericWindow": [
+    960,
+    540
+  ],
+  "numericSceneReadback": [
+    377,
+    175
+  ],
+  "uiAndDocumentationWindow": [
+    1920,
+    1080
+  ],
+  "debugValidation": [
+    "D3D12 Debug Layer",
+    "VK_LAYER_KHRONOS_validation",
+    "VK_LAYER_VALIDATE_SYNC=1"
+  ],
+  "builds": [
+    {
+      "configuration": "Debug",
+      "scope": "117 solution projects (114 API + 3 support)",
+      "logSha256": "d3123468cb9f3d97abc25d1aa580787b601b1dfbf2e89bda93dab1f39ffab841"
+    },
+    {
+      "configuration": "Release",
+      "scope": "117 solution projects (114 API + 3 support)",
+      "logSha256": "44ac8a087b51f0a6f6111944898b98b01600214cffcde84f4953c7ecc7eae1ef"
+    }
+  ]
+}

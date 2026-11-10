@@ -1,0 +1,396 @@
+[
+  {
+    "file": "Docs/Direct3D12/Images/35_DepthPrecision-infinite.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "7ef4d60d5ada81eb447b532b6dd7c7a904c859a4f7e902b88866057c937b2207",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "infinite"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/35_DepthPrecision-mapping.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "7982f63408d089eede4038efe35b615eae78fb30e07d41c00407d061ba5459f9",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "mapping"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/35_DepthPrecision-near.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "6333137058c6eeb4425d0ea0dc01a464dd31d165612afb3e78b9e5bc0b23e4c6",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "near"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/35_DepthPrecision-orthographic.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "b78f62d9e003e4d423f780ffb26d01a150a85354227a889821c4485123333108",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "orthographic"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/35_DepthPrecision-precision.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "9e1e43432df8a985ceec9e39bf4000cc0ca9fa0106044bbc19bff4898e72698f",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "precision"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/35_DepthPrecision-spacing.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "f88b1905aaaa00e09418228a4846a4b8ffafb3f4a850d6836441bade9ea6d823",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "precision",
+      "--depth-graph",
+      "spacing"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/35_DepthPrecision-toy.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "7b9e116393af185e2f3159f4dee4ff3dbd454c7a1a231910a86c8f404d412b6f",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "precision",
+      "--depth-graph",
+      "toy"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/35_DepthPrecision.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "7982f63408d089eede4038efe35b615eae78fb30e07d41c00407d061ba5459f9",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "48",
+      "--test-window"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/36_ShadowDepth-bias.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "42d740e77ee2e8f1c8010672a6c6b189c78240f7d9ec9aa3da0140e3762d2bad",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "bias"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/36_ShadowDepth-directional.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "ecba30e553ba19cd86db6214f9ed63b6bb01bc427c1da2dafe88d019bead4db9",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "directional"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/36_ShadowDepth-resolution.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "137d93218a6caba2ac94ef4e84ec6bcc065c79a5c5f1e177f54bc9e07f8042fa",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "resolution"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/36_ShadowDepth-spot.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "549ffa9095319f7f6ad3e9266ec52a7beab7736e2b9cee672474c796ecf7cfb1",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "spot"
+    ]
+  },
+  {
+    "file": "Docs/Direct3D12/Images/36_ShadowDepth.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "ecba30e553ba19cd86db6214f9ed63b6bb01bc427c1da2dafe88d019bead4db9",
+    "source": "Real GPU / Debug",
+    "api": "Direct3D12",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "48",
+      "--test-window"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/35_DepthPrecision-infinite.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "1ce9564aa4d320f1263b775600c4fe7d3b892dc0118a4d075f8216d965fa2f7c",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "infinite"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/35_DepthPrecision-mapping.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "57fb1367963a4cf519686d30edcc6a4adb860001309e3d0fbdb072b34a5f6988",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "mapping"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/35_DepthPrecision-near.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "69018e53afab2a8be7eb45e94c1861f4579a0f50694b9b39c5c070842807605c",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "near"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/35_DepthPrecision-orthographic.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "2a13a436ea36945d89657972c7c5b84100e1ef74248310f043d78aba3ba86a58",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "orthographic"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/35_DepthPrecision-precision.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "8db92653546f239f9edf6f381d286002ed5409a8b1818dfb6db9042fee93ff79",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "precision"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/35_DepthPrecision-spacing.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "f6153fce437e6bbbdb38e56eef9b92d59a480dbd538f8768cc57a815835cfe87",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "precision",
+      "--depth-graph",
+      "spacing"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/35_DepthPrecision-toy.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "c295dc765805f85ba7e34fb0ca450ff4abdcb158efe73cab8b621a10a6fdf8d3",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "precision",
+      "--depth-graph",
+      "toy"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/35_DepthPrecision.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "57fb1367963a4cf519686d30edcc6a4adb860001309e3d0fbdb072b34a5f6988",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "35_DepthPrecision",
+    "options": [
+      "--frames",
+      "48",
+      "--test-window"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/36_ShadowDepth-bias.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "1e830a1ae9245338fad36210b67181e1f52d2bd5fc976d1179f10f9f0e5a62b9",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "bias"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/36_ShadowDepth-directional.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "1c2cae196fedd4508a2c1b27bfb6e0e026987e9e95473ba80dc9c845ee60dcfc",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "directional"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/36_ShadowDepth-resolution.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "320b23056725432949d3d7af691ed3e2a7d26d6f8d36f2ebcf2fec12909cc2af",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "resolution"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/36_ShadowDepth-spot.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "5d36340622d260f08e14f34b8c4d90805332aa0f89af9ff32eb79ab3db8df988",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "3",
+      "--depth-preset",
+      "spot"
+    ]
+  },
+  {
+    "file": "Docs/Vulkan/Images/36_ShadowDepth.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "1c2cae196fedd4508a2c1b27bfb6e0e026987e9e95473ba80dc9c845ee60dcfc",
+    "source": "Real GPU / Debug",
+    "api": "Vulkan",
+    "sample": "36_ShadowDepth",
+    "options": [
+      "--frames",
+      "48",
+      "--test-window"
+    ]
+  }
+]

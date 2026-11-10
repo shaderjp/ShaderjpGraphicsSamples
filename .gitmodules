@@ -13,3 +13,6 @@
 [submodule "ThirdParty/UniversalAnimationLibrary"]
 	path = ThirdParty/UniversalAnimationLibrary
 	url = https://github.com/J-Ponzo/gltf-universal-animation-library.git
+[submodule "ThirdParty/BIZUDGothic"]
+	path = ThirdParty/BIZUDGothic
+	url = https://github.com/googlefonts/morisawa-biz-ud-gothic.git

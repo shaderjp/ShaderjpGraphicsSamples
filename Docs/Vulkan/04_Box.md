@@ -53,3 +53,7 @@ MVP行列は`b0`で宣言します。Vulkanのbinding/locationは`Common.hlsli`�
 次のテーマ: [05 OBJモデルとテクスチャの読込](05_Model.md)
 
 同じテーマの別API: [Direct3D12](../Direct3D12/04_Box.md)
+
+## 深度を可視化して学ぶ
+
+[保存深度の非線形性とReverse-Z](35_DepthPrecision.md)では、日本語UIと実GPU画像を操作しながら深度の定義と精度を確認できます。
